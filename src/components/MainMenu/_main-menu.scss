@@ -1,0 +1,8 @@
+.main-menu__points {
+  display: flex;
+  align-items: center;
+
+  & a:hover {
+    color: #888;
+  }
+}

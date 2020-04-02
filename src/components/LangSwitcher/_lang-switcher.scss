@@ -1,0 +1,114 @@
+.lang-menu {
+  position: relative;
+
+  @media (min-width: 1024px) {
+    margin-left: 30px;
+  }
+}
+
+.lang-menu__btn {
+  position: relative;
+
+  @media (min-width: 1024px) {
+    margin-left: 15px;
+    animation: .3s ease-in;
+  }
+}
+
+.lang-menu__btn_hoverOn {
+  animation-name: langBtnHoverOn;
+  margin-left: 1px;
+}
+
+.lang-menu__btn_hoverOff {
+  animation-name: langBtnHoverOff;
+}
+
+@keyframes langBtnHoverOn {
+  from {
+    margin-left: 15px;
+  }
+  to {
+    margin-left: 1px;
+  }
+}
+
+@keyframes langBtnHoverOff {
+  from {
+    margin-left: 1px;
+  }
+  to {
+    margin-left: 15px;
+  }
+}
+
+.lang-menu__modal {
+  position: absolute;
+  left: -45px;
+  width: 90px;
+  height: 50px;
+  padding: 15px;
+  animation: .4s ease-in;
+  opacity: 0;
+  z-index: -1;
+
+  .lang-menu__modal-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #fff;
+    background: rgba(23, 24, 46, 0.98);
+    cursor: pointer;
+  }
+
+  .flag-icon {
+    width: 15px;
+    height: 15px;
+    margin-right: 15px;
+  }
+}
+
+.lang-menu__modal_animateOn {
+  animation-name: showLang;
+  top: 100%;
+  opacity: 1;
+  z-index: 0;
+}
+
+.lang-menu__modal_animatOff {
+  animation-name: hideLang;
+}
+
+@keyframes showLang {
+  from {
+    top: -100%;
+    opacity: 0;
+    z-index: -1;
+  }
+  to {
+    top: 100%;
+    opacity: 1;
+    z-index: 0;
+  }
+}
+
+@keyframes hideLang {
+  from {
+    top: 100%;
+    opacity: 1;
+    z-index: 0;
+  }
+  to {
+    top: -100%;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+.lang-menu__arrow {
+  display: none;
+}
+
+.lang-menu__arrow_active {
+  display: inline-block;
+}

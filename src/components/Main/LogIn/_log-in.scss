@@ -1,0 +1,92 @@
+.auth-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-transform: uppercase;
+
+  .auth-content__social-wrapper,
+  .auth-content__form {
+    margin: 38px 0;
+  }
+
+  .auth-content__social-box {
+    @include block_centered_content(43px, 43px, $secondary_bg);
+
+    &:not(:last-child) {
+      margin-right: 27px;
+    }
+  }
+
+  .auth-content__or {
+    position: relative;
+    @include open-sans_font($white_font, 16px);
+    font-weight: 300;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      width: 133px;
+      height: 1px;
+      background-color: #fff;
+      opacity: 0.2;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0%;
+      width: 133px;
+      height: 1px;
+      background-color: #fff;
+      opacity: 0.2;
+    }
+  }
+
+  .auth-content__form {
+    input {
+      box-sizing: border-box;
+      display: block;
+      width: 325px;
+      height: 45px;
+      padding: 15px;
+      border: 0;
+      @include open-sans_font($grey_font, $desctop_size_font);
+      background-color: $secondary_bg;
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+
+      &:hover {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: $secondary_bg-sec;
+        color: $white_font;
+      }
+    }
+
+    .info-icon {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+  }
+
+  .auth-content__forgot-pass {
+    text-align: right;
+
+    a {
+      @include open-sans_font($white_font, 12px);
+      text-transform: initial;
+    }
+  }
+
+  .auth-content__btn {
+    @include btn_main(133px, 43px, $btn-main_bg, 14px);
+    font-weight: 300;
+  }
+}

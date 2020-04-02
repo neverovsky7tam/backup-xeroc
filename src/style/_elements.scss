@@ -1,0 +1,147 @@
+@mixin block_centered_content($width, $height, $bg) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $width;
+  height: $height;
+  background-color: $bg;
+}
+
+@mixin btn_main($width, $height, $bg, $font_size) {
+  width: $width;
+  height: $height;
+  @include open-sans_font($white_font, $font_size);
+  text-transform: none;
+  background-color: $bg;
+}
+
+@mixin diamond_part($diamond_right) {
+  position: absolute;
+  top: -6px;
+  right: $diamond_right;
+  width: 10px;
+  height: 10px;
+  transform: rotate(-45deg);
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+  background-color: rgba(23, 24, 46, 0.98);
+}
+
+@mixin drop_menu($width, $right, $diamond_right) {
+  position: absolute;
+  display: none;
+  top: 0;
+  right: $right;
+  width: $width;
+  padding-top: 40px;
+  text-transform: none;
+  @include open-sans_font($grey_font, 12px);
+
+  button {
+    display: block;
+  }
+
+  .drop-menu__inner {
+    position: relative;
+    border-top: 1px solid $grey_font;
+    background-color: $popup_bg;
+    opacity: 0.98;
+
+    .diamond-part {
+      @include diamond_part($diamond_right);
+    }
+  }
+
+  .drop-menu__header {
+    padding: 20px 15px;
+    align-items: center;
+    border-bottom: 1px solid rgba(196, 196, 196, 0.2);
+
+    h4 {
+      @include open-sans_font($white_font, 16px);
+    }
+  }
+
+  .drop-menu__link {
+    &:hover {
+      color: $white_font;
+    }
+  }
+
+  .drop-menu__box {
+    padding: 15px;
+  }
+
+  .drop-menu__footer {
+    padding: 15px;
+    border-top: 1px solid rgba(196, 196, 196, 0.2);
+  }
+
+  .drop-menu__btn-wrapper {
+    padding-bottom: 20px;
+
+    .drop-menu__btn {
+      position: relative;
+      margin: auto;
+      @include btn_main(85px, 30px, #0b0c23, 12px);
+      opacity: 0.8;
+    }
+  }
+
+  // NOTIFY
+  .drop-menu__notify-item-icon {
+    margin-right: 10px;
+  }
+}
+
+// @mixin hover_popup($content_width, $inner_padding) {
+//   display: none;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   padding-top: 30px;
+//   @include open-sans_font($grey_font, $desctop_size_font);
+//   text-transform: none;
+//   font-weight: normal;
+
+//   .hover-popup__inner {
+//     padding-top: $inner_padding;
+//   }
+
+//   .hover-popup__content {
+//     position: relative;
+//     box-sizing: border-box;
+//     width: $content_width;
+//     padding: 0 15px;
+//     background-color: $popup_bg;
+//     opacity: 0.98;
+
+//     nav {
+//       padding: 15px 0;
+
+//       a {
+//         position: relative;
+//         display: block;
+
+//         &:not(:last-child) {
+//           margin-bottom: 15px;
+//         }
+
+//         &:hover {
+//           color: $white_font;
+
+//           &:before {
+//             content: "";
+//             position: absolute;
+//             top: 0;
+//             left: -15px;
+//             width: 3px;
+//             height: 100%;
+//             background-color: $white_font;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

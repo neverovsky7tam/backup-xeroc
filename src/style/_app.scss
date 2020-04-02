@@ -1,0 +1,64 @@
+body {
+  box-sizing: border-box;
+  padding: 15px;
+  background-color: #0b0c23;
+
+  @media (min-width: 768px) {
+    padding: 30px;
+  }
+}
+
+h2 {
+  text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    @include exo-font($white_font, $desctop_h2_size, 500);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.p-relative {
+  position: relative;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.points-separate-expand-menu {
+  margin: 0 30px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

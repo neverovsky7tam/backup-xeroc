@@ -1,0 +1,13 @@
+@mixin open-sans_font($color, $size) {
+  font-family: "Open Sans", sans-serif;
+  font-size: $size;
+  font-weight: normal;
+  color: $color;
+}
+
+@mixin exo_font($color, $size, $weight) {
+  font-family: "Exo", sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}

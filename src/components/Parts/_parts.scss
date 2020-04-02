@@ -1,0 +1,59 @@
+//*** Box Decor
+
+$pos: 0;
+@mixin box_decor($dim) {
+  position: absolute;
+  width: $dim;
+  height: $dim;
+  background-color: #dadada;
+}
+
+.corner-top-left {
+  @include box_decor(2px);
+  top: $pos;
+  left: $pos;
+}
+
+.corner-top-right {
+  @include box_decor(2px);
+  top: $pos;
+  right: $pos;
+}
+
+.corner-bottom-left {
+  @include box_decor(2px);
+  bottom: $pos;
+  left: $pos;
+}
+
+.corner-bottom-right {
+  @include box_decor(2px);
+  bottom: $pos;
+  right: $pos;
+}
+
+.corner-top-left-thick {
+  @include box_decor(1px);
+  top: $pos;
+  left: $pos;
+}
+
+.corner-top-right-thick {
+  @include box_decor(1px);
+  top: $pos;
+  right: $pos;
+}
+
+.corner-bottom-left-thick {
+  @include box_decor(1px);
+  bottom: $pos;
+  left: $pos;
+}
+
+.corner-bottom-right-thick {
+  @include box_decor(1px);
+  bottom: $pos;
+  right: $pos;
+}
+
+//*** ENDBox Decor
