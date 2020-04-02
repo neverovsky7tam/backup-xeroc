@@ -4,30 +4,12 @@ import { Diamond } from '../Parts/Parts';
 import { ReactComponent as Planet } from '../../assets/img/Header/planet-earth.svg';
 
 const LangSwitcher = () => {
-  const langBtn = React.createRef();
   const langModal = React.createRef();
-  const arrow = React.createRef();
 
   const [langObj, setLang] = useState(languages[0]);
 
-  const onHover = (param) => {
-    if (param) {
-      langModal.current.classList.remove('lang-menu__modal_animatOff');
-      langModal.current.classList.add('lang-menu__modal_animateOn');
-
-      langBtn.current.classList.remove('lang-menu__btn_hoverOff');
-      langBtn.current.classList.add('lang-menu__btn_hoverOn')
-
-      arrow.current.classList.add('lang-menu__arrow_active');
-    } else {
-      langModal.current.classList.remove('lang-menu__modal_animateOn');
-      langModal.current.classList.add('lang-menu__modal_animatOff');
-
-      langBtn.current.classList.remove('lang-menu__btn_hoverOn')
-      langBtn.current.classList.add('lang-menu__btn_hoverOff')
-
-      arrow.current.classList.remove('lang-menu__arrow_active');
-    }
+  const onHover = (elem, action) => {
+    elem.current.style.display = action;
   }
 
   const changeLang = (e) => {
@@ -44,20 +26,17 @@ const LangSwitcher = () => {
       <Planet />
       <button
         className="lang-menu__btn"
-        onMouseEnter={() => onHover(true)}
-        ref={langBtn}
-      >
+        onMouseEnter={() => onHover(langModal, 'block')}>
         {langObj.lang}
-        <span className="lang-menu__arrow" ref={arrow}><i className="fas fa-long-arrow-alt-left"></i></span>
       </button>
       <div
         className="lang-menu__modal"
         ref={langModal}
         onClick={changeLang}
-        onMouseLeave={() => onHover(false)}>
+        onMouseLeave={() => onHover(langModal, '')}>
         <div className="lang-menu__modal-content d-flex justify-content-center align-items-center cursor-pointer">
           <div className="d-flex">
-            <langObj.pic className="flag-icon"/>
+            <langObj.pic className="flag-icon" />
             <button>{langObj.lang}</button>
           </div>
           <Diamond />

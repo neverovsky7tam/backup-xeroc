@@ -8,13 +8,13 @@ import { ReactComponent as LogoIcon } from '../../assets/img/Header/corex-logo.s
 
 const Header = ({ setMainContent, isLogin }) => {
   return (
-    <header className="header d-flex justify-content-between">
+    <header className="header p-relative d-flex justify-content-between">
       <div className="logo-wrapper d-flex align-items-center">
         <LogoIcon />
         <LangSwitcher />
       </div>
       <div className="main-menu d-flex align-items-center">
-        <MenuPoints linkStyle={"points-separate-expand-menu"} />
+        <MenuPoints linkStyle={"desctop-menu-points-separator"} />
       </div>
       <div className="account-menu d-flex align-items-center">
         <div className="account-menu__btn-group d-flex align-items-center">

@@ -15,42 +15,42 @@
   }
 }
 
-.lang-menu__btn_hoverOn {
-  animation-name: langBtnHoverOn;
-  margin-left: 1px;
-}
+// .lang-menu__btn_hoverOn {
+//   animation-name: langBtnHoverOn;
+//   margin-left: 1px;
+// }
 
-.lang-menu__btn_hoverOff {
-  animation-name: langBtnHoverOff;
-}
+// .lang-menu__btn_hoverOff {
+//   animation-name: langBtnHoverOff;
+// }
 
-@keyframes langBtnHoverOn {
-  from {
-    margin-left: 15px;
-  }
-  to {
-    margin-left: 1px;
-  }
-}
+// @keyframes langBtnHoverOn {
+//   from {
+//     margin-left: 15px;
+//   }
+//   to {
+//     margin-left: 1px;
+//   }
+// }
 
-@keyframes langBtnHoverOff {
-  from {
-    margin-left: 1px;
-  }
-  to {
-    margin-left: 15px;
-  }
-}
+// @keyframes langBtnHoverOff {
+//   from {
+//     margin-left: 1px;
+//   }
+//   to {
+//     margin-left: 15px;
+//   }
+// }
 
 .lang-menu__modal {
   position: absolute;
-  left: -45px;
+  display: none;
+  top: 0;
+  right: 0;
   width: 90px;
   height: 50px;
-  padding: 15px;
-  animation: .4s ease-in;
-  opacity: 0;
-  z-index: -1;
+  padding-top: 40px;
+
 
   .lang-menu__modal-content {
     position: relative;
@@ -59,6 +59,10 @@
     border-top: 1px solid #fff;
     background: rgba(23, 24, 46, 0.98);
     cursor: pointer;
+
+    .diamond-part {
+      @include diamond_part(25%);
+    }
   }
 
   .flag-icon {
@@ -68,47 +72,47 @@
   }
 }
 
-.lang-menu__modal_animateOn {
-  animation-name: showLang;
-  top: 100%;
-  opacity: 1;
-  z-index: 0;
-}
+// .lang-menu__modal_animateOn {
+//   animation-name: showLang;
+//   top: 100%;
+//   opacity: 1;
+//   z-index: 0;
+// }
 
-.lang-menu__modal_animatOff {
-  animation-name: hideLang;
-}
+// .lang-menu__modal_animatOff {
+//   animation-name: hideLang;
+// }
 
-@keyframes showLang {
-  from {
-    top: -100%;
-    opacity: 0;
-    z-index: -1;
-  }
-  to {
-    top: 100%;
-    opacity: 1;
-    z-index: 0;
-  }
-}
+// @keyframes showLang {
+//   from {
+//     top: -100%;
+//     opacity: 0;
+//     z-index: -1;
+//   }
+//   to {
+//     top: 100%;
+//     opacity: 1;
+//     z-index: 0;
+//   }
+// }
 
-@keyframes hideLang {
-  from {
-    top: 100%;
-    opacity: 1;
-    z-index: 0;
-  }
-  to {
-    top: -100%;
-    opacity: 0;
-    z-index: -1;
-  }
-}
+// @keyframes hideLang {
+//   from {
+//     top: 100%;
+//     opacity: 1;
+//     z-index: 0;
+//   }
+//   to {
+//     top: -100%;
+//     opacity: 0;
+//     z-index: -1;
+//   }
+// }
 
-.lang-menu__arrow {
-  display: none;
-}
+// .lang-menu__arrow {
+//   display: none;
+// }
 
-.lang-menu__arrow_active {
-  display: inline-block;
-}
+// .lang-menu__arrow_active {
+//   display: inline-block;
+// }

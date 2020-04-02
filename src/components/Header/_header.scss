@@ -1,5 +1,4 @@
 .header {
-  padding: 15px 15px 0;
   @include exo_font($white_font, 14px, bold);
   text-transform: uppercase;
 
@@ -10,12 +9,18 @@
   }
 }
 
+.main-menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .account-menu {
   position: relative;
 }
 
 .account-menu__btn-group {
-
   button {
     display: flex;
     align-items: center;
