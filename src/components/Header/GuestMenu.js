@@ -6,7 +6,7 @@ const GuestMenu = ({ setMainContent }) => {
   return (
     <>
       <button onClick={() => setMainContent('signin')}>
-        <PencilIcon className="pencil-icon" />sign in
+        <PencilIcon className="pencil-icon" />sign up
       </button>
       <button onClick={() => setMainContent('login')} style={{marginRight: '90px'}}>
         <LoginIcon className="login-icon" />log in

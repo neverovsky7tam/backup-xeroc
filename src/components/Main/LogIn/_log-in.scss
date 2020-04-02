@@ -11,7 +11,7 @@
     margin: 38px 0;
   }
 
-  .auth-content__social-box {
+  .auth-content__social-link {
     @include block_centered_content(43px, 43px, $secondary_bg);
 
     &:not(:last-child) {

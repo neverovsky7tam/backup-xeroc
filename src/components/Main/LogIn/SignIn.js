@@ -11,22 +11,22 @@ const SignUp = ({ setLogin }) => {
     <section className="auth-content">
       <h2>sign up</h2>
       <div className="auth-content__social-wrapper d-flex justify-content-center">
-        <div className="auth-content__social-box">
+        <a className="auth-content__social-link" href="#">
           <FacebookIcon />
           <BoxDecorThick />
-        </div>
-        <div className="auth-content__social-box">
+        </a>
+        <a className="auth-content__social-link" href="#">
           <TwitterIcon />
           <BoxDecorThick />
-        </div>
-        <div className="auth-content__social-box">
+        </a>
+        <a className="auth-content__social-link" href="#">
           <GoogleIcon />
           <BoxDecorThick />
-        </div>
-        <div className="auth-content__social-box">
+        </a>
+        <a className="auth-content__social-link" href="#">
           <TelegramIcon />
           <BoxDecorThick />
-        </div>
+        </a>
       </div>
       <div className="auth-content__or">or</div>
       <form className="auth-content__form">
@@ -53,12 +53,8 @@ const SignUp = ({ setLogin }) => {
           <input type="email" placeholder="Enter your e-mail" />
           <BoxDecorThick />
         </div>
-        <div className="p-relative">
-          <input type="password" placeholder="Confirm your password" />
-          <BoxDecorThick />
-        </div>
       </form>
-      <button className="auth-content__btn" onClick={() => setLogin(true)}>Sign up</button>
+      <button className="auth-content__btn cursor-pointer" onClick={() => setLogin(true)}>Sign up</button>
     </section>
   )
 }
