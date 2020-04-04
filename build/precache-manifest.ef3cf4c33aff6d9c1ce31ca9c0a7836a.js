@@ -1,27 +1,43 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0ec4329e2e72eb5b7933c797cc96dfb6",
+    "revision": "dbe58b59aac4d83b7ecda458c5505d41",
     "url": "/index.html"
   },
   {
-    "revision": "ff8669399b033619b272",
-    "url": "/static/css/main.ab37c19c.chunk.css"
+    "revision": "23959216f065f957e2fb",
+    "url": "/static/css/main.06b9b074.chunk.css"
   },
   {
-    "revision": "823212bcf10474bc6b4d",
-    "url": "/static/js/2.1544a642.chunk.js"
+    "revision": "933596ac279b0a32f03e",
+    "url": "/static/js/2.0f3fc8ec.chunk.js"
   },
   {
-    "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/static/js/2.1544a642.chunk.js.LICENSE.txt"
+    "revision": "c64c486544348f10a6d6c716950bc223",
+    "url": "/static/js/2.0f3fc8ec.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ff8669399b033619b272",
-    "url": "/static/js/main.610889ef.chunk.js"
+    "revision": "23959216f065f957e2fb",
+    "url": "/static/js/main.f3d7c8aa.chunk.js"
   },
   {
     "revision": "220d64f6f8cb5da655ce",
     "url": "/static/js/runtime-main.c730f065.js"
+  },
+  {
+    "revision": "0773c997221d15081f94933c6e125800",
+    "url": "/static/media/achievment_bronze.0773c997.svg"
+  },
+  {
+    "revision": "a1b6375db21f76039aca971b93b13b7e",
+    "url": "/static/media/achievment_gold.a1b6375d.svg"
+  },
+  {
+    "revision": "131d567e6a7d4e23ce77380b5163f197",
+    "url": "/static/media/achievment_platinum.131d567e.svg"
+  },
+  {
+    "revision": "ec77365d18d0e9e2d46e96739cf422c2",
+    "url": "/static/media/achievment_silver.ec77365d.svg"
   },
   {
     "revision": "9e1335cc83270fb06e5343f2b27f4e8e",
@@ -96,6 +112,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/planet-earth.337fcb35.svg"
   },
   {
+    "revision": "25d130790b089dc526b5a85757ab97ec",
+    "url": "/static/media/rating-star-smaller.25d13079.svg"
+  },
+  {
+    "revision": "605869ed04672614ece8334d38aa2110",
+    "url": "/static/media/rating-star.605869ed.svg"
+  },
+  {
+    "revision": "885ce903f99ca421f7d254143c507893",
+    "url": "/static/media/reddit.885ce903.svg"
+  },
+  {
     "revision": "10fbf738ad453567bc1bc58bff38f889",
     "url": "/static/media/skrill.10fbf738.svg"
   },
@@ -126,5 +154,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f94e8c6ae9f436a283c6cb3d235e7861",
     "url": "/static/media/webmoney.f94e8c6a.svg"
+  },
+  {
+    "revision": "91b89dc56fdbda0b8550722222097378",
+    "url": "/static/media/youtube.91b89dc5.svg"
   }
 ]);
