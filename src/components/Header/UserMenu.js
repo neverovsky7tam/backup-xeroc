@@ -61,7 +61,7 @@ const UserMenu = () => {
           onMouseLeave={() => onHover(notifyPop, '')}
           ref={notifyPop}>
           <div className="drop-menu__inner">
-            <div className="drop-menu__header d-flex justify-content-between">
+            <div className="drop-menu__header">
               <h4>Last notifications</h4>
               <a className="drop-menu__link" href="#">Settings</a>
             </div>
@@ -94,7 +94,7 @@ const UserMenu = () => {
           onMouseLeave={() => onHover(balancePop, '')}
           ref={balancePop}>
           <div className="drop-menu__inner">
-            <div className="drop-menu__header d-flex justify-content-between">
+            <div className="drop-menu__header">
               <h4>Balance <span>$</span>650</h4>
               <CloseIcon className="cursor-pointer" />
             </div>

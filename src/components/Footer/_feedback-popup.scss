@@ -1,0 +1,45 @@
+.feedback {
+  .drop-menu {
+    top: inherit !important;
+    bottom: 0;
+    left: 0;
+    padding-top: 0;
+    padding-bottom: 50px;
+
+    @include drop_menu(295px, 0, 0);
+
+    .drop-menu__inner {
+      border-top: 0 !important;
+      border-bottom: 1px solid $grey_font;
+
+      .diamond-part {
+        top: initial;
+        bottom: -6px;
+        transform: rotate(135deg);
+      }
+    }
+
+    .drop-menu__header {
+      border-bottom: 0;
+    }
+  }
+
+  .feedback__top-sellers {
+    margin: 0 15px 5px;
+    @include open-sans_font($grey_font, 14px);
+
+    li {
+      padding-bottom: 15px;
+    }
+  }
+
+  .feedback__top-seller-num {
+    width: 20px;
+    min-width: 20px;
+  }
+
+  .feedback__top-seller-img-wrapper img {
+    padding: 0 15px 0 7px;
+    border-radius: 50%;
+  }
+}

@@ -63,7 +63,9 @@
 // USER MENU BALACE
 .user-menu__balance {
   .icon-balance {
-    @media (min-width: 1440px) {
+    display: none;
+    
+    @media (min-width: 1920px) {
       display: none;
     }
   }
