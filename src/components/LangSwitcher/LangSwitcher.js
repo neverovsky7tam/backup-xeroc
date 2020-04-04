@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
-import { languages } from '../../data/languages';
+import { useDispatch } from 'react-redux';
+import { switchLang } from '../../store/actions';
+import { langBtnContent } from '../../data/languages';
 import { Diamond } from '../Parts/Parts';
 import { ReactComponent as Planet } from '../../assets/img/Header/planet-earth.svg';
 
 const LangSwitcher = () => {
   const langModal = React.createRef();
 
-  const [langObj, setLang] = useState(languages[0]);
+  const [langObj, setLang] = useState(langBtnContent[0]);
+  const dispatch = useDispatch()
 
   const onHover = (elem, action) => {
     elem.current.style.display = action;
   }
 
   const changeLang = (e) => {
-    const nextLang = (langObj.lang === 'eng') ? languages[1] : languages[0];
+    const nextLang = (langObj.lang === 'eng') ? langBtnContent[1] : langBtnContent[0];
     setLang(nextLang);
+    dispatch(switchLang(nextLang.lang));
 
     e.target.addEventListener('selectstart', (e) => {
       e.preventDefault();

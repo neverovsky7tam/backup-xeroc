@@ -9,25 +9,25 @@ $pos: 0;
 }
 
 .corner-top-left {
-  @include box_decor(2px);
+  @include box_decor(1px);
   top: $pos;
   left: $pos;
 }
 
 .corner-top-right {
-  @include box_decor(2px);
+  @include box_decor(1px);
   top: $pos;
   right: $pos;
 }
 
 .corner-bottom-left {
-  @include box_decor(2px);
+  @include box_decor(1px);
   bottom: $pos;
   left: $pos;
 }
 
 .corner-bottom-right {
-  @include box_decor(2px);
+  @include box_decor(1px);
   bottom: $pos;
   right: $pos;
 }

@@ -1,0 +1,37 @@
+.awards {
+  .drop-menu {
+    top: inherit !important;
+    bottom: 0;
+    padding-top: 0;
+    padding-bottom: 50px;
+
+    @include drop_menu(170px, 0, 0);
+
+    .drop-menu__inner {
+      border-top: 0 !important;
+      border-bottom: 1px solid $grey_font;
+
+      .diamond-part {
+        top: initial;
+        bottom: -6px;
+        transform: rotate(135deg);
+      }
+
+      .corner-bottom-left,
+      .corner-bottom-right {
+        display: none;
+      }
+    }
+
+    .drop-menu__awards-inner {
+      padding: 30px 30px 15px;
+      text-align: center;
+    }
+  }
+
+  .awards-title {
+    padding: 15px 0 30px;
+    @include open-sans_font($white_font, 12px);
+    line-height: 16px;
+  }
+}

@@ -3,6 +3,7 @@ import Header from './components/Header/Header';
 import Home from './components/Main/Home';
 import SignUp from './components/Main/LogIn/SignIn';
 import LogIn from './components/Main/LogIn/LogIn';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const [mainContent, setMainContent] = useState(Home);
@@ -18,6 +19,7 @@ function App() {
       <main className="main">
         {content}
       </main>
+      <Footer />
     </>
   );
 }

@@ -1,10 +1,10 @@
 @mixin block_centered_content($width, $height, $bg) {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
   width: $width;
   height: $height;
+  align-items: center;
+  justify-content: center;
   background-color: $bg;
 }
 
@@ -54,6 +54,8 @@
   }
 
   .drop-menu__header {
+    display: flex;
+    justify-content: space-between;
     padding: 20px 15px;
     align-items: center;
     border-bottom: 1px solid rgba(196, 196, 196, 0.2);
