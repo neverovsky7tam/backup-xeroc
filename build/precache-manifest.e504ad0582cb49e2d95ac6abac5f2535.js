@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dbe58b59aac4d83b7ecda458c5505d41",
+    "revision": "b0c8b43a75af1d66ea33d0695c5599dc",
     "url": "/index.html"
   },
   {
-    "revision": "23959216f065f957e2fb",
-    "url": "/static/css/main.06b9b074.chunk.css"
+    "revision": "7a4d86e7c53826c0cf95",
+    "url": "/static/css/main.478e6e8e.chunk.css"
   },
   {
     "revision": "933596ac279b0a32f03e",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.0f3fc8ec.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "23959216f065f957e2fb",
-    "url": "/static/js/main.f3d7c8aa.chunk.js"
+    "revision": "7a4d86e7c53826c0cf95",
+    "url": "/static/js/main.b8295f25.chunk.js"
   },
   {
     "revision": "220d64f6f8cb5da655ce",
@@ -52,12 +52,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/balance-icon.8f9b10a4.svg"
   },
   {
-    "revision": "33aafa1c7649cf7717b77285ceba31ef",
-    "url": "/static/media/bell-icon.33aafa1c.svg"
-  },
-  {
-    "revision": "292f0070289fec1c15c7664d7225d4d2",
-    "url": "/static/media/cart-icon.292f0070.svg"
+    "revision": "4bace8dd1eb529b1e9576b49e8e66da3",
+    "url": "/static/media/cart.4bace8dd.svg"
   },
   {
     "revision": "7f8455b70734a87596991e1f24053edc",
@@ -100,6 +96,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/menu-separate.de3799ae.svg"
   },
   {
+    "revision": "2e03323dd150412b5a6b2a67174c82bc",
+    "url": "/static/media/notification.2e03323d.svg"
+  },
+  {
     "revision": "544318ff764180221979bc6a7956352e",
     "url": "/static/media/paypal.544318ff.svg"
   },
@@ -140,8 +140,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/united-states.36ab476e.svg"
   },
   {
-    "revision": "70da1de086f46549c43c0c58e2688613",
-    "url": "/static/media/user-icon.70da1de0.svg"
+    "revision": "27ef606080c498764b238d3cfef786f9",
+    "url": "/static/media/user.27ef6060.svg"
   },
   {
     "revision": "a849f3888400c955e4f0c7f344d6528f",

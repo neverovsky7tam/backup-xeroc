@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.06b9b074.chunk.css",
-    "main.js": "/static/js/main.f3d7c8aa.chunk.js",
-    "main.js.map": "/static/js/main.f3d7c8aa.chunk.js.map",
+    "main.css": "/static/css/main.478e6e8e.chunk.css",
+    "main.js": "/static/js/main.b8295f25.chunk.js",
+    "main.js.map": "/static/js/main.b8295f25.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c730f065.js",
     "runtime-main.js.map": "/static/js/runtime-main.c730f065.js.map",
     "static/js/2.0f3fc8ec.chunk.js": "/static/js/2.0f3fc8ec.chunk.js",
     "static/js/2.0f3fc8ec.chunk.js.map": "/static/js/2.0f3fc8ec.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.ef3cf4c33aff6d9c1ce31ca9c0a7836a.js": "/precache-manifest.ef3cf4c33aff6d9c1ce31ca9c0a7836a.js",
+    "precache-manifest.e504ad0582cb49e2d95ac6abac5f2535.js": "/precache-manifest.e504ad0582cb49e2d95ac6abac5f2535.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.06b9b074.chunk.css.map": "/static/css/main.06b9b074.chunk.css.map",
+    "static/css/main.478e6e8e.chunk.css.map": "/static/css/main.478e6e8e.chunk.css.map",
     "static/js/2.0f3fc8ec.chunk.js.LICENSE.txt": "/static/js/2.0f3fc8ec.chunk.js.LICENSE.txt",
     "static/media/achievment_bronze.0773c997.svg": "/static/media/achievment_bronze.0773c997.svg",
     "static/media/achievment_gold.a1b6375d.svg": "/static/media/achievment_gold.a1b6375d.svg",
@@ -19,8 +19,7 @@
     "static/media/alipay.9e1335cc.svg": "/static/media/alipay.9e1335cc.svg",
     "static/media/arrow-dropdown-menu.7d060a9a.svg": "/static/media/arrow-dropdown-menu.7d060a9a.svg",
     "static/media/balance-icon.8f9b10a4.svg": "/static/media/balance-icon.8f9b10a4.svg",
-    "static/media/bell-icon.33aafa1c.svg": "/static/media/bell-icon.33aafa1c.svg",
-    "static/media/cart-icon.292f0070.svg": "/static/media/cart-icon.292f0070.svg",
+    "static/media/cart.4bace8dd.svg": "/static/media/cart.4bace8dd.svg",
     "static/media/china.7f8455b7.svg": "/static/media/china.7f8455b7.svg",
     "static/media/close.1363b831.svg": "/static/media/close.1363b831.svg",
     "static/media/coinpayments.d2beede8.svg": "/static/media/coinpayments.d2beede8.svg",
@@ -31,6 +30,7 @@
     "static/media/login-icon.f5c2afd0.svg": "/static/media/login-icon.f5c2afd0.svg",
     "static/media/master-card.7e6b5075.svg": "/static/media/master-card.7e6b5075.svg",
     "static/media/menu-separate.de3799ae.svg": "/static/media/menu-separate.de3799ae.svg",
+    "static/media/notification.2e03323d.svg": "/static/media/notification.2e03323d.svg",
     "static/media/paypal.544318ff.svg": "/static/media/paypal.544318ff.svg",
     "static/media/pencil-icon.967c0272.svg": "/static/media/pencil-icon.967c0272.svg",
     "static/media/planet-earth.337fcb35.svg": "/static/media/planet-earth.337fcb35.svg",
@@ -41,7 +41,7 @@
     "static/media/telegram.690eae12.svg": "/static/media/telegram.690eae12.svg",
     "static/media/twitter.dd26de2d.svg": "/static/media/twitter.dd26de2d.svg",
     "static/media/united-states.36ab476e.svg": "/static/media/united-states.36ab476e.svg",
-    "static/media/user-icon.70da1de0.svg": "/static/media/user-icon.70da1de0.svg",
+    "static/media/user.27ef6060.svg": "/static/media/user.27ef6060.svg",
     "static/media/vector-star.a849f388.svg": "/static/media/vector-star.a849f388.svg",
     "static/media/visa.e51cb683.svg": "/static/media/visa.e51cb683.svg",
     "static/media/webmoney.f94e8c6a.svg": "/static/media/webmoney.f94e8c6a.svg",
@@ -50,7 +50,7 @@
   "entrypoints": [
     "static/js/runtime-main.c730f065.js",
     "static/js/2.0f3fc8ec.chunk.js",
-    "static/css/main.06b9b074.chunk.css",
-    "static/js/main.f3d7c8aa.chunk.js"
+    "static/css/main.478e6e8e.chunk.css",
+    "static/js/main.b8295f25.chunk.js"
   ]
 }
