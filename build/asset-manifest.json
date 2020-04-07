@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.478e6e8e.chunk.css",
-    "main.js": "/static/js/main.b8295f25.chunk.js",
-    "main.js.map": "/static/js/main.b8295f25.chunk.js.map",
+    "main.css": "/static/css/main.d0bc7b90.chunk.css",
+    "main.js": "/static/js/main.b22b0383.chunk.js",
+    "main.js.map": "/static/js/main.b22b0383.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c730f065.js",
     "runtime-main.js.map": "/static/js/runtime-main.c730f065.js.map",
     "static/js/2.0f3fc8ec.chunk.js": "/static/js/2.0f3fc8ec.chunk.js",
     "static/js/2.0f3fc8ec.chunk.js.map": "/static/js/2.0f3fc8ec.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.e504ad0582cb49e2d95ac6abac5f2535.js": "/precache-manifest.e504ad0582cb49e2d95ac6abac5f2535.js",
+    "precache-manifest.107b79f0ed98d078d8cef8c2e047cb52.js": "/precache-manifest.107b79f0ed98d078d8cef8c2e047cb52.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.478e6e8e.chunk.css.map": "/static/css/main.478e6e8e.chunk.css.map",
+    "static/css/main.d0bc7b90.chunk.css.map": "/static/css/main.d0bc7b90.chunk.css.map",
     "static/js/2.0f3fc8ec.chunk.js.LICENSE.txt": "/static/js/2.0f3fc8ec.chunk.js.LICENSE.txt",
     "static/media/achievment_bronze.0773c997.svg": "/static/media/achievment_bronze.0773c997.svg",
     "static/media/achievment_gold.a1b6375d.svg": "/static/media/achievment_gold.a1b6375d.svg",
@@ -35,7 +35,7 @@
     "static/media/pencil-icon.967c0272.svg": "/static/media/pencil-icon.967c0272.svg",
     "static/media/planet-earth.337fcb35.svg": "/static/media/planet-earth.337fcb35.svg",
     "static/media/rating-star-smaller.25d13079.svg": "/static/media/rating-star-smaller.25d13079.svg",
-    "static/media/rating-star.605869ed.svg": "/static/media/rating-star.605869ed.svg",
+    "static/media/rating-star.8026037e.svg": "/static/media/rating-star.8026037e.svg",
     "static/media/reddit.885ce903.svg": "/static/media/reddit.885ce903.svg",
     "static/media/skrill.10fbf738.svg": "/static/media/skrill.10fbf738.svg",
     "static/media/telegram.690eae12.svg": "/static/media/telegram.690eae12.svg",
@@ -50,7 +50,7 @@
   "entrypoints": [
     "static/js/runtime-main.c730f065.js",
     "static/js/2.0f3fc8ec.chunk.js",
-    "static/css/main.478e6e8e.chunk.css",
-    "static/js/main.b8295f25.chunk.js"
+    "static/css/main.d0bc7b90.chunk.css",
+    "static/js/main.b22b0383.chunk.js"
   ]
 }
