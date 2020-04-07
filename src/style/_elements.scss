@@ -18,14 +18,14 @@
 
 @mixin diamond_part($diamond_right) {
   position: absolute;
-  top: -6px;
+  top: -6.3px;
   right: $diamond_right;
   width: 10px;
   height: 10px;
   transform: rotate(-45deg);
-  border-top: 1px solid #fff;
-  border-right: 1px solid #fff;
-  background-color: rgba(23, 24, 46, 0.98);
+  border-top: 1px solid $grey_font;
+  border-right: 1px solid $grey_font;
+  background-color: $popup_bg;
 }
 
 @mixin drop_menu($width, $right, $diamond_right) {
@@ -46,7 +46,6 @@
     position: relative;
     border-top: 1px solid $grey_font;
     background-color: $popup_bg;
-    opacity: 0.98;
 
     .diamond-part {
       @include diamond_part($diamond_right);
@@ -76,18 +75,22 @@
   }
 
   .drop-menu__footer {
-    padding: 15px;
+    padding: 20px 15px;
     border-top: 1px solid rgba(196, 196, 196, 0.2);
   }
 
   .drop-menu__btn-wrapper {
-    padding-bottom: 20px;
+    padding: 20px 0;
 
     .drop-menu__btn {
       position: relative;
       margin: auto;
       @include btn_main(85px, 30px, #0b0c23, 12px);
       opacity: 0.8;
+
+      &:hover {
+        background-color: $hover_btn;
+      }
     }
   }
 

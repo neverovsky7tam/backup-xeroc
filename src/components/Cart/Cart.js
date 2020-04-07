@@ -1,14 +1,14 @@
 import React from 'react';
 import { ReactComponent as MenuSeparate } from '../../assets/img/Header/menu-separate.svg';
-import { ReactComponent as CartIcon } from '../../assets/img/Header/cart-icon.svg';
+import { ReactComponent as CartIcon } from '../../assets/img/Header/cart.svg';
 
 const Cart = ({ isLogin }) => {
   return (
     <>
       {isLogin &&
         <>
-          <span className="cart__menu-currency">$</span>
-          <span className="cart__menu-value">457</span>
+          <span className="cart__menu-currency line-height-8">$</span>
+          <span className="cart__menu-value line-height-8">457</span>
           <MenuSeparate className="user-menu__separate" />
           <div className="cart__menu-counter">0</div>
         </>

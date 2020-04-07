@@ -8,10 +8,14 @@
 
 .lang-menu__btn {
   position: relative;
+  z-index: 99;
+
+  &:hover {
+    color: $text_hover;
+  }
 
   @media (min-width: 1024px) {
     margin-left: 15px;
-    animation: .3s ease-in;
   }
 }
 
