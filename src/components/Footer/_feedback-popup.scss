@@ -27,6 +27,7 @@
   .feedback__top-sellers {
     margin: 0 15px 5px;
     @include open-sans_font($grey_font, 14px);
+    font-weight: 300;
 
     li {
       padding-bottom: 15px;
@@ -36,10 +37,15 @@
   .feedback__top-seller-num {
     width: 20px;
     min-width: 20px;
+    font-weight: 400;
   }
 
   .feedback__top-seller-img-wrapper img {
-    padding: 0 15px 0 7px;
+    margin: 0 15px 0 5px;
     border-radius: 50%;
+  }
+
+  .feedback__top-sellers-rating {
+    color: $white_font;
   }
 }

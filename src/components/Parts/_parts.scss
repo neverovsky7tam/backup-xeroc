@@ -1,3 +1,35 @@
+// Diamond part
+
+@mixin diamond_part($diamond_right) {
+  position: absolute;
+  top: -6.5px;
+  right: $diamond_right;
+  width: 10px;
+  height: 10px;
+  transform: rotate(-45deg);
+  border-top: 1px solid $grey_font;
+  border-right: 1px solid $grey_font;
+  background-color: $popup_bg;
+
+  // .diamond-layer-light {
+  //   border-top: 10px solid transparent;
+  //   border-right: 10px solid transparent;
+  //   border-bottom: 10px solid #c4c4c4;
+  //   border-left: 10px solid transparent;
+  //   z-index: -1;
+  // }
+
+  // .diamond-layer-dark {
+  //   position: absolute;
+  //   top: 15px;
+  //   left: 2.5px;
+  //   width: 15px;
+  //   height: 15px;
+  //   transform: rotate(45deg);
+  //   background-color: $popup_bg;
+  // }
+}
+
 //*** Box Decor
 
 $pos: 0;

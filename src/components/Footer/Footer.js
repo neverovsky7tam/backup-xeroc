@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import FeedbackPopup from './FeedbackPopup';
 import AwardsPopup from './AwardsPopup';
+import { hideDecor } from '../Parts/BoxDecor';
 import { BoxDecor } from '../Parts/BoxDecor';
 import { ReactComponent as RatingStar } from '../../assets/img/rating-star.svg';
 import { ReactComponent as FacebookIcon } from '../../assets/img/Social/facebook.svg';
@@ -15,6 +16,10 @@ import { ReactComponent as AchieveBronze } from '../../assets/img/achievment_bro
 const Footer = () => {
   const feedbackPop = React.createRef();
   const awardsPop = React.createRef();
+  const decorFacebook = React.createRef();
+  const decorTwitter = React.createRef();
+  const decorYoutube = React.createRef();
+  const decorReddit = React.createRef();
 
   const onHover = (element, action) => {
     element.current.style.display = action;
@@ -38,7 +43,7 @@ const Footer = () => {
           <span className="feedback__rate">4.9</span>
           <div className="feedback__message">
             <p>Great service and prices!</p>
-            <div className="d-flex align-items-center">
+            <div className="feedback__message-rating d-flex align-items-center">
               <RatingStar />
               <RatingStar />
               <RatingStar />
@@ -52,21 +57,29 @@ const Footer = () => {
             hidePop={onHover} />
         </div>
         <div className="social d-flex">
-          <a className="social__link" href="https://www.facebook.com/">
-            <FacebookIcon />
-            <BoxDecor />
+          <a className="social__link" href="https://www.facebook.com/"
+            onMouseEnter={() => hideDecor(decorFacebook, 'none')}
+            onMouseLeave={() => hideDecor(decorFacebook, '')}>
+            <FacebookIcon style={{ width: '8.11px', height: '15px' }} />
+            <BoxDecor ref={decorFacebook} />
           </a>
-          <a className="social__link" href="https://twitter.com/">
-            <TwitterIcon />
-            <BoxDecor />
+          <a className="social__link" href="https://twitter.com/"
+            onMouseEnter={() => hideDecor(decorTwitter, 'none')}
+            onMouseLeave={() => hideDecor(decorTwitter, '')}>
+            <TwitterIcon style={{ width: '16px', height: '13px' }} />
+            <BoxDecor ref={decorTwitter} />
           </a>
-          <a className="social__link" href="https://www.youtube.com/">
+          <a className="social__link" href="https://www.youtube.com/"
+            onMouseEnter={() => hideDecor(decorYoutube, 'none')}
+            onMouseLeave={() => hideDecor(decorYoutube, '')}>
             <YoutubeIcon />
-            <BoxDecor />
+            <BoxDecor ref={decorYoutube} />
           </a>
-          <a className="social__link" href="https://www.reddit.com/">
+          <a className="social__link" href="https://www.reddit.com/"
+            onMouseEnter={() => hideDecor(decorReddit, 'none')}
+            onMouseLeave={() => hideDecor(decorReddit, '')}>
             <RedditIcon />
-            <BoxDecor />
+            <BoxDecor ref={decorReddit} />
           </a>
         </div>
         <div className="awards p-relative d-flex align-items-center">
@@ -74,38 +87,35 @@ const Footer = () => {
             <AchieveGold />
             <div
               className="awards__point-layer"
-              onMouseEnter={() => onHoverAwards(awardsPop, 'block', '87%', <AchieveGold style={{ width: '105px', height: '75px' }} />)}
-              onMouseLeave={() => onHoverAwards(awardsPop, '')}>
+              onMouseEnter={() => onHoverAwards(awardsPop, 'block', '87%', <AchieveGold style={{ width: '105px', height: '75px' }} />)}>
             </div>
           </div>
           <div className="awards__point">
             <AchieveSilver />
             <div
               className="awards__point-layer"
-              onMouseEnter={() => onHoverAwards(awardsPop, 'block', '60%', <AchieveSilver style={{ width: '105px', height: '75px' }} />)}
-              onMouseLeave={() => onHoverAwards(awardsPop, '')}>
+              onMouseEnter={() => onHoverAwards(awardsPop, 'block', '60%', <AchieveSilver style={{ width: '105px', height: '75px' }} />)}>
             </div>
           </div>
           <div className="awards__point">
             <AchievePlatinum />
             <div
               className="awards__point-layer"
-              onMouseEnter={() => onHoverAwards(awardsPop, 'block', '33%', <AchievePlatinum style={{ width: '105px', height: '75px' }} />)}
-              onMouseLeave={() => onHoverAwards(awardsPop, '')}>
+              onMouseEnter={() => onHoverAwards(awardsPop, 'block', '33%', <AchievePlatinum style={{ width: '105px', height: '75px' }} />)}>
             </div>
           </div>
           <div className="awards__point">
             <AchieveBronze />
             <div
               className="awards__point-layer"
-              onMouseEnter={() => onHoverAwards(awardsPop, 'block', '6%', <AchieveBronze style={{ width: '105px', height: '75px' }} />)}
-              onMouseLeave={() => onHoverAwards(awardsPop, '')}>
+              onMouseEnter={() => onHoverAwards(awardsPop, 'block', '6%', <AchieveBronze style={{ width: '105px', height: '75px' }} />)}>
             </div>
           </div>
           <AwardsPopup
             ref={awardsPop}
             diamondRight={{ right: diamodRight }}
-            icon={awardsIcon} />
+            icon={awardsIcon}
+            onHover={onHoverAwards} />
         </div>
       </div>
     </footer>
