@@ -24,10 +24,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-weight: 300;
+
+    .feedback__message-rating {
+      align-items: baseline;
+
+      svg {
+        margin-right: 3px;
+      }
+    }
   }
 
   .feedback__author {
-    margin-left: 3px;
     font-size: 10px;
   }
 
@@ -39,14 +47,14 @@
   }
 
   .social__link {
-    @include block_centered_content(33px, 33px, $secondary_bg);
+    @include block_centered_content(30px, 30px, $secondary_bg);
 
     &:not(:last-child) {
-      margin-right: 12px;
+      margin-right: 15px;
     }
 
     &:hover {
-      background-color: $hover_block_bg;
+      background-color: $hover_btn;
     }
   }
 
@@ -56,10 +64,11 @@
 
     .awards__point-layer {
       position: absolute;
-      top: 0;
+      top: -50px;
       left: 0;
       width: 100%;
       height: 100%;
+      padding-top: 50px;
       z-index: 9;
     }
   }

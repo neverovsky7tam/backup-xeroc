@@ -25,7 +25,7 @@ const renderItems = () => {
           <span>{item.name}</span>
         </div>
         <div className="d-flex align-items-center">
-          <span>{item.rating}</span>
+          <span className="feedback__top-sellers-rating">{item.rating}</span>
           <div className="d-flex align-items-center justify-content-between" style={{ width: '47px', marginLeft: '15px' }}>
             {starArr}
           </div>

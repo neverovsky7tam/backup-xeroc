@@ -13,19 +13,8 @@
   height: $height;
   @include open-sans_font($white_font, $font_size);
   text-transform: none;
+  font-weight: 300;
   background-color: $bg;
-}
-
-@mixin diamond_part($diamond_right) {
-  position: absolute;
-  top: -6.3px;
-  right: $diamond_right;
-  width: 10px;
-  height: 10px;
-  transform: rotate(-45deg);
-  border-top: 1px solid $grey_font;
-  border-right: 1px solid $grey_font;
-  background-color: $popup_bg;
 }
 
 @mixin drop_menu($width, $right, $diamond_right) {

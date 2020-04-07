@@ -55,6 +55,7 @@
       padding: 15px;
       border: 1px solid transparent;
       @include open-sans_font($grey_font, $desctop_size_font);
+      font-weight: 300;
       background-color: $secondary_bg;
       outline: 0;
 
