@@ -31,7 +31,7 @@ const LangSwitcher = () => {
       onMouseEnter={() => onHover(langModal, 'block')}>
       <Planet />
       <button
-        className="lang-menu__btn">
+        className="lang-menu__btn cursor-pointer">
         {langObj.lang}
       </button>
       <div

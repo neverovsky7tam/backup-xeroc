@@ -9,7 +9,7 @@ const MenuPoints = ({ linkStyle }) => {
   }
 
   return (
-    <nav className="main-menu__points">
+    <nav className="main-menu__points line-height-8">
       <a href="#" onClick={handleClick}>{lang.home}</a>
       <MenuSeparate className={linkStyle} />
       <a href="#" onClick={handleClick}>{lang.sell}</a>

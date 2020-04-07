@@ -20,7 +20,8 @@ const Balance = ({ onHover }) => {
   const activeItem = (e) => {
     const item = e.target.closest('.list__item');
     item.style.border = '1px solid rgba(255, 255, 255, 0.1)';
-    if (currentActiveItem) {
+
+    if (currentActiveItem && item !== currentActiveItem) {
       currentActiveItem.style.border = '1px solid rgba(0, 0, 0, 0)';
     }
     currentActiveItem = item;

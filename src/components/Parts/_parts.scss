@@ -1,8 +1,14 @@
-// Diamond part
+// Decor Arrow
+.decor-arrow {
+  position: absolute;
+  top: -6px;
+  right: 50%;
+}
 
+// Diamond part
 @mixin diamond_part($diamond_right) {
   position: absolute;
-  top: -6.5px;
+  top: -6px;
   right: $diamond_right;
   width: 10px;
   height: 10px;
