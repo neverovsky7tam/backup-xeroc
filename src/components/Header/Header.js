@@ -2,7 +2,7 @@ import React from 'react';
 import MenuPoints from '../MainMenu/MenuPoints';
 import LangSwitcher from '../LangSwitcher/LangSwitcher';
 import GuestMenu from './GuestMenu';
-import UserMenu from './UserMenu';
+import UserMenu from './UserMenu/UserMenu';
 import Cart from '../Cart/Cart';
 import { ReactComponent as LogoIcon } from '../../assets/img/Header/corex-logo.svg';
 

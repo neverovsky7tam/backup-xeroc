@@ -12,24 +12,23 @@
   }
 
   .auth-content__social-link {
-    @include block_centered_content(43px, 43px, $secondary_bg);
+    @include block_centered_content(40px, 40px, $secondary_bg);
 
     &:not(:last-child) {
-      margin-right: 27px;
+      margin-right: 30px;
     }
   }
 
   .auth-content__or {
     position: relative;
     @include open-sans_font($white_font, 16px);
-    font-weight: 300;
 
     &::before {
       content: "";
       position: absolute;
       top: 50%;
       left: 0%;
-      width: 133px;
+      width: 130px;
       height: 1px;
       background-color: #fff;
       opacity: 0.2;
@@ -40,7 +39,7 @@
       position: absolute;
       top: 50%;
       right: 0%;
-      width: 133px;
+      width: 130px;
       height: 1px;
       background-color: #fff;
       opacity: 0.2;
@@ -51,19 +50,19 @@
     input {
       box-sizing: border-box;
       display: block;
-      width: 325px;
-      height: 45px;
+      width: 320px;
+      height: 40px;
       padding: 15px;
-      border: 0;
+      border: 1px solid transparent;
       @include open-sans_font($grey_font, $desctop_size_font);
       background-color: $secondary_bg;
+      outline: 0;
 
       &:not(:last-child) {
         margin-bottom: 15px;
       }
 
       &:hover {
-        border: 1px solid rgba(255, 255, 255, 0.1);
         background-color: $secondary_bg-sec;
         color: $white_font;
       }
@@ -86,7 +85,10 @@
   }
 
   .auth-content__btn {
-    @include btn_main(133px, 43px, $btn-main_bg, 14px);
-    font-weight: 300;
+    @include btn_main(130px, 40px, $secondary_bg, 14px);
+
+    &:hover {
+      background-color: $hover_btn;
+    }
   }
 }

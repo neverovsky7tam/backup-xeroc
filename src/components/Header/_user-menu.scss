@@ -75,7 +75,7 @@
   }
 
   .drop-menu {
-    @include drop_menu(415px, 0, 260px);
+    @include drop_menu(411px, 0, 260px);
   }
 
   .list {
@@ -83,30 +83,26 @@
     flex-flow: row wrap;
   }
 
-  .list li {
+  .list__item {
     position: relative;
-    width: 115px;
-    height: 95px;
+    width: 117px;
+    height: 98px;
     box-sizing: border-box;
     border: 1px solid transparent;
     background-color: rgba(11, 12, 35, 0.3);
     cursor: pointer;
-
-    &:hover {
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
   }
 
-  .list__item-margin-r-b {
+  .list__item_margin-r-b {
     margin-right: 15px;
     margin-bottom: 15px;
   }
 
-  .list__item-margin-r {
+  .list__item_margin-r {
     margin-right: 15px;
   }
 
-  .list__item-margin-b {
+  .list__item_margin-b {
     margin-bottom: 15px;
   }
 
@@ -121,5 +117,9 @@
   .drop-menu__footer-btn {
     position: relative;
     @include btn_main(85px, 30px, rgba(11, 12, 35, 0.8), 12px);
+
+    &:hover {
+      background-color: $hover_btn;
+    }
   }
 }
