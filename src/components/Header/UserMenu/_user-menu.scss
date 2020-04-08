@@ -56,6 +56,10 @@
 .user-menu__notify {
   .drop-menu {
     @include drop_menu(275px, calc(100% - 275px), 95px);
+
+    .drop-menu__box {
+      padding-bottom: 0;
+    }
   }
 }
 
@@ -63,7 +67,7 @@
 .user-menu__balance {
   .icon-balance {
     display: none;
-    
+
     @media (min-width: 1920px) {
       display: none;
     }
@@ -90,6 +94,10 @@
     border: 1px solid transparent;
     background-color: rgba(11, 12, 35, 0.3);
     cursor: pointer;
+  }
+
+  .list-item_active {
+    border: 1px solid $secondary_bg;
   }
 
   .list__item_margin-r-b {

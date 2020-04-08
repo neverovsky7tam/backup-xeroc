@@ -18,7 +18,7 @@ const renderItems = () => {
     return (
       <li key={idx} className="d-flex align-items-center justify-content-between">
         <div className="d-flex align-items-center">
-          <span className="feedback__top-seller-num">{idx + 1}.</span>
+          {/* <span className="feedback__top-seller-num">{idx + 1}.</span> */}
           <div className="feedback__top-seller-img-wrapper">
             <img src={item.img} alt={item.name} />
           </div>

@@ -17,7 +17,7 @@ export const langEN = {
     }
   },
   footer: {
-    sellersTitle: 'Top-10 sellers',
+    sellersTitle: 'Top 10 sellers',
     awardsTitle: 'Best market place 2020',
   }
 }
@@ -33,7 +33,7 @@ export const langCH = {
     }
   },
   footer: {
-    sellersTitle: '十大卖家',
+    sellersTitle: '销量前十名',
     awardsTitle: '2020年最好的市场场所',
   }
 }

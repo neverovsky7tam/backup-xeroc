@@ -19,12 +19,15 @@ const Balance = ({ onHover }) => {
   let currentActiveItem = null;
   const activeItem = (e) => {
     const item = e.target.closest('.list__item');
-    item.style.border = '1px solid rgba(255, 255, 255, 0.1)';
-
-    if (currentActiveItem && item !== currentActiveItem) {
-      currentActiveItem.style.border = '1px solid rgba(0, 0, 0, 0)';
+    if (item === currentActiveItem) {
+      item.classList.toggle('list-item_active');
+    } else {
+      item.classList.add('list-item_active');
+      if (currentActiveItem) {
+        currentActiveItem.classList.remove('list-item_active');
+      }
+      currentActiveItem = item;
     }
-    currentActiveItem = item;
   }
 
   return (

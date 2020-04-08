@@ -15,13 +15,13 @@ export const BoxDecor = React.forwardRef((props, ref) => {
   )
 });
 
-export const BoxDecorThick = () => {
-  return (
-    <>
-      <div className="corner-top-left-thick"></div>
-      <div className="corner-top-right-thick"></div>
-      <div className="corner-bottom-left-thick"></div>
-      <div className="corner-bottom-right-thick"></div>
-    </>
-  )
-}
+// export const BoxDecorThick = () => {
+//   return (
+//     <>
+//       <div className="corner-top-left-thick"></div>
+//       <div className="corner-top-right-thick"></div>
+//       <div className="corner-bottom-left-thick"></div>
+//       <div className="corner-bottom-right-thick"></div>
+//     </>
+//   )
+// }
