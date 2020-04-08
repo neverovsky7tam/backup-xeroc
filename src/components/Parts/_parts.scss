@@ -15,25 +15,17 @@
   transform: rotate(-45deg);
   border-top: 1px solid $grey_font;
   border-right: 1px solid $grey_font;
-  background-color: $popup_bg;
 
-  // .diamond-layer-light {
-  //   border-top: 10px solid transparent;
-  //   border-right: 10px solid transparent;
-  //   border-bottom: 10px solid #c4c4c4;
-  //   border-left: 10px solid transparent;
-  //   z-index: -1;
-  // }
-
-  // .diamond-layer-dark {
-  //   position: absolute;
-  //   top: 15px;
-  //   left: 2.5px;
-  //   width: 15px;
-  //   height: 15px;
-  //   transform: rotate(45deg);
-  //   background-color: $popup_bg;
-  // }
+  .diamond-bg {
+    position: absolute;
+    top: -8px;
+    left: 2px;
+    border-top: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-bottom: 8px solid #17182e;
+    transform: rotate(45deg);
+  }
 }
 
 //*** Box Decor

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from './components/Header/Header';
-import Home from './components/Main/Home';
+import Home from './components/Main/Home/HomeGeneral';
 import SignUp from './components/Main/Auth/SignIn';
 import LogIn from './components/Main/Auth/LogIn';
 import Footer from './components/Footer/Footer';
