@@ -9,7 +9,7 @@ const LangSwitcher = () => {
   const langModal = React.createRef();
 
   const [langObj, setLang] = useState(langBtnContent[0]);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const onHover = (elem, action) => {
     elem.current.style.display = action;

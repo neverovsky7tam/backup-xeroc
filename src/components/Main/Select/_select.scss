@@ -1,0 +1,26 @@
+.select {
+  box-sizing: border-box;
+  height: 34px;
+  position: relative;
+  padding: 10px 9px 10px 13px;
+  overflow: hidden;
+}
+
+.select__show {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 9px 10px 13px;
+  border: 1px solid $secondary_bg;
+}
+
+.select__list {
+  position: absolute;
+  top: 45px;
+
+}

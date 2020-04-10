@@ -1,0 +1,26 @@
+.scroll-container {
+  @media (min-width: 1024px) {
+    height: 100%;
+    overflow-y: scroll;
+    margin-right: -17px;
+  }
+}
+
+.scroll-component {
+  position: absolute;
+  top: 0;
+  right: 2px;
+  height: 100%;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.scroll-thumb {
+  position: absolute;
+  top: 0;
+  right: -2px;
+  width: 5px;
+  height: 90px;
+  background: $white_font;
+  box-shadow: 0px 15px 0px #0b0c23;
+}

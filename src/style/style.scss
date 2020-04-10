@@ -8,8 +8,18 @@
 @import "../components/MainMenu/main-menu";
 @import "../components/LangSwitcher/lang-switcher";
 @import "../components/Header/UserMenu/user-menu";
-@import "../components/Main/Auth/log-in";
 @import "../components/Cart/cart";
+@import "../components/Main/main-container";
+@import "../components/Main/Scroll/scroll";
+@import "../components/Main/Select/select";
+@import "../components/Main/Home/home-general";
+@import "../components/Main/Home/home-filters";
+@import "../components/Main/Home/home-onsale";
+@import "../components/Main/Home/home-listings";
+@import "../components/Main/Home/product-list";
+
+@import "../components/Main/Auth/log-in";
+
 
 @import "../components/Footer/footer";
 @import "../components/Footer/feedback-popup";

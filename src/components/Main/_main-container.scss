@@ -1,0 +1,29 @@
+.main {
+  margin: 0 60px;
+  border: 1px solid #cccccc2a;
+
+  section {
+    height: 100%;
+
+    h2 {
+      line-height: 0.8;
+    }
+  }
+}
+
+.main-inner {
+  height: 100%;
+
+  @media (min-width: 768px) {
+    display: flex;
+    // height: 750px;
+  }
+}
+
+.main-section-inner {
+  position: relative;
+  height: calc(100% - 50px);
+  margin-top: 30px;
+  @include open-sans_font($grey_font, 12px);
+  font-weight: 300;
+}

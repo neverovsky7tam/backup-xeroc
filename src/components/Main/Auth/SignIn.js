@@ -1,4 +1,6 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { setAccountMenu } from '../../../store/actions';
 import SocialAuth from './SocialAuth';
 import { onInputChange } from '../../../utils/inputs';
 import { hideDecor } from '../../Parts/BoxDecor';
@@ -6,6 +8,7 @@ import { BoxDecor } from '../../Parts/BoxDecor';
 import { ReactComponent as InfoIcon } from '../../../assets/img/info.svg';
 
 const SignUp = ({ setLogin }) => {
+  const dispatch = useDispatch();
   const boxDecor = React.createRef();
 
   return (
@@ -40,7 +43,7 @@ const SignUp = ({ setLogin }) => {
       </form>
       <button
         className="auth-content__btn cursor-pointer p-relative"
-        onClick={() => setLogin(true)}
+        onClick={() => dispatch(setAccountMenu(true))}
         onMouseEnter={() => hideDecor(boxDecor, 'none')}
         onMouseLeave={() => hideDecor(boxDecor, '')}>
         Sign up
