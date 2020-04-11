@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ProductList from './ProductList';
 import Scroll from '../Scroll/Scroll';
 import { calcToScroll } from '../Scroll/Scroll';
 import { productsData } from '../../../data/productsData';
 
 const HomeOnsale = () => {
-  console.log('run');
-  const [toScroll, setScroll] = useState(0);
+  const scrollThumb = React.createRef();
   const scrollBlock = React.createRef();
 
-  const getScroll = () => {
-    const scroll = calcToScroll(scrollBlock);
-    setScroll(scroll);
-  }
-
   const productsBulk = productsData.concat(productsData, productsData, productsData);
+
+  const setScroll = () => {
+    const scroll = calcToScroll(scrollBlock.current, scrollThumb);
+    scrollThumb.current.style.transform = `translateY(${scroll.toScroll}px)`;
+  }
 
   return (
     <section className="onsale">
@@ -23,10 +22,10 @@ const HomeOnsale = () => {
         <ul
           className="products scroll-container"
           ref={scrollBlock}
-          onScroll={getScroll}>
+          onScroll={setScroll}>
           <ProductList data={productsBulk} />
         </ul>
-        <Scroll top={toScroll} />
+        <Scroll ref={scrollThumb} scrollBlock={scrollBlock} />
       </div>
     </section>
   )

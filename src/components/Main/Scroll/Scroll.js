@@ -2,30 +2,50 @@ import React from 'react';
 
 export const calcToScroll = (scrollBlock) => {
   const SCROLL_THUMB_HEIGHT = 120;
+  const elem = scrollBlock;
 
-  const elem = scrollBlock.current;
-  // console.log('scrollHeight', elem.scrollHeight);
-  // console.log('offsetHeight', elem.offsetHeight);
   const actualScrollHeight = elem.scrollHeight - elem.offsetHeight;
-  // console.log('actualScrollHeight', actualScrollHeight);
-
   const actualScrollTrackHeight = elem.offsetHeight - SCROLL_THUMB_HEIGHT;
-  // console.log('actualScrollTrackHeight', actualScrollTrackHeight);
 
   const scrollStep = actualScrollHeight / actualScrollTrackHeight;
-
-  // console.log('elem.scrollTop', elem.scrollTop, scrollStep);
   const toScroll = elem.scrollTop / scrollStep;
-  // console.log('toScroll', toScroll);
-  return toScroll;
+
+  return {
+    actualScrollHeight,
+    actualScrollTrackHeight,
+    scrollStep,
+    toScroll,
+  };
 }
 
-const Scroll = ({ top }) => {
+const Scroll = React.forwardRef(({scrollBlock}, ref) => {
+
+  const dragThumb = (e) => {
+    console.log('e', e.target);
+    const start = e.pageY;
+    const getSizes = calcToScroll(scrollBlock.current);
+    console.log('getSizes', getSizes);
+
+    e.target.addEventListener('mousemove', (evt) => {
+      console.log('move', evt.pageY);
+      let dist = (start - evt.pageY) - 23;
+      console.log('dist', dist);
+      ref.current.style.transform = `translateY(${-dist}px)`;
+    })
+    // const style = getComputedStyle(e.target).transform;
+    // console.log('e', getComputedStyle(e.target), style);
+  }
+
   return (
     <div className="scroll-component">
-      <div className="scroll-thumb" style={{ transform: `translateY(${top}px)` }}></div>
+      <div
+        className="scroll-thumb"
+        ref={ref}
+        onMouseDown={dragThumb}
+        style={{ transform: 'translateY(23px)' }}>
+      </div>
     </div>
   )
-}
+});
 
 export default Scroll;
