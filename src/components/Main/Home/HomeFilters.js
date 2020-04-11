@@ -12,8 +12,8 @@ const HomeFilters = () => {
         <div ref={scrollBlock}>
           Lorem ipsum dolor
         </div>
-        <Scroll top={toScroll} />
       </div>
+      <Scroll top={toScroll} />
     </section>
   )
 }

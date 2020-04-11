@@ -25,8 +25,8 @@ const HomeOnsale = () => {
           onScroll={setScroll}>
           <ProductList data={productsBulk} />
         </ul>
-        <Scroll ref={scrollThumb} scrollBlock={scrollBlock} />
       </div>
+      <Scroll ref={scrollThumb} scrollBlock={scrollBlock} />
     </section>
   )
 }

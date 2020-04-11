@@ -3,6 +3,7 @@
   border: 1px solid #cccccc2a;
 
   section {
+    position: relative;
     height: 100%;
 
     h2 {
@@ -26,4 +27,5 @@
   margin-top: 30px;
   @include open-sans_font($grey_font, 12px);
   font-weight: 300;
+  z-index: 5;
 }
