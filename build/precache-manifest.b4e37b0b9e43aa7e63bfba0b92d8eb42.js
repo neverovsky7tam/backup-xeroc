@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "96a7e3829edd5ce1d09428ed7a39986d",
+    "revision": "9a463dd9af3398ace46ed13921caa413",
     "url": "/index.html"
   },
   {
-    "revision": "a4f59fa855bd4aa0a9ab",
-    "url": "/static/css/main.aa83ae7b.chunk.css"
+    "revision": "f996cbdc444ac0d47c62",
+    "url": "/static/css/main.8424d07f.chunk.css"
   },
   {
     "revision": "933596ac279b0a32f03e",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.0f3fc8ec.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a4f59fa855bd4aa0a9ab",
-    "url": "/static/js/main.603fcb6a.chunk.js"
+    "revision": "f996cbdc444ac0d47c62",
+    "url": "/static/js/main.5c1618d6.chunk.js"
   },
   {
     "revision": "220d64f6f8cb5da655ce",
@@ -110,6 +110,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "337fcb353c25ee6497324408e0ac58aa",
     "url": "/static/media/planet-earth.337fcb35.svg"
+  },
+  {
+    "revision": "40f17cca0ab234800b57930b0b7de197",
+    "url": "/static/media/product-half-star.40f17cca.svg"
+  },
+  {
+    "revision": "5c04c9319b6326dacd8f46e26c34ac83",
+    "url": "/static/media/product-star.5c04c931.svg"
   },
   {
     "revision": "25d130790b089dc526b5a85757ab97ec",

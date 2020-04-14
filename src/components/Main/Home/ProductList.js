@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Select from '../Select/Select';
 import { BoxDecor } from '../../Parts/BoxDecor';
 import { hideDecor } from '../../Parts/BoxDecor';
@@ -12,17 +12,11 @@ const ProductCard = ({ item, itemHash, itemPrice, hashArr }) => {
   const itemInner = React.createRef();
   const productImg = React.createRef();
   const orderBlock = React.createRef();
-  // const productTitle = React.createRef();
   const boxDecor = React.createRef();
 
   const arrow = React.createRef();
   const select = React.createRef();
   const refObj = { arrow, select };
-
-  useEffect(() => {
-    console.log('title', item.title.length);
-  });
-
 
   const itemHoverOn = (img, order) => {
     img.current.classList.remove('item-img_hover-off');
