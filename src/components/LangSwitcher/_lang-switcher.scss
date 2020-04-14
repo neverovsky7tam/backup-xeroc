@@ -21,33 +21,6 @@
   }
 }
 
-// .lang-menu__btn_hoverOn {
-//   animation-name: langBtnHoverOn;
-//   margin-left: 1px;
-// }
-
-// .lang-menu__btn_hoverOff {
-//   animation-name: langBtnHoverOff;
-// }
-
-// @keyframes langBtnHoverOn {
-//   from {
-//     margin-left: 15px;
-//   }
-//   to {
-//     margin-left: 1px;
-//   }
-// }
-
-// @keyframes langBtnHoverOff {
-//   from {
-//     margin-left: 1px;
-//   }
-//   to {
-//     margin-left: 15px;
-//   }
-// }
-
 .lang-menu__modal {
   position: absolute;
   display: none;
@@ -76,48 +49,3 @@
     margin-right: 15px;
   }
 }
-
-// .lang-menu__modal_animateOn {
-//   animation-name: showLang;
-//   top: 100%;
-//   opacity: 1;
-//   z-index: 0;
-// }
-
-// .lang-menu__modal_animatOff {
-//   animation-name: hideLang;
-// }
-
-// @keyframes showLang {
-//   from {
-//     top: -100%;
-//     opacity: 0;
-//     z-index: -1;
-//   }
-//   to {
-//     top: 100%;
-//     opacity: 1;
-//     z-index: 0;
-//   }
-// }
-
-// @keyframes hideLang {
-//   from {
-//     top: 100%;
-//     opacity: 1;
-//     z-index: 0;
-//   }
-//   to {
-//     top: -100%;
-//     opacity: 0;
-//     z-index: -1;
-//   }
-// }
-
-// .lang-menu__arrow {
-//   display: none;
-// }
-
-// .lang-menu__arrow_active {
-//   display: inline-block;
-// }
