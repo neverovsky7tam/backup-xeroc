@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import Scroll from '../Scroll/Scroll';
+import React from 'react';
+// import Scroll from '../Scroll/Scroll';
 
 const HomeFilters = () => {
-  const [toScroll, setScroll] = useState(0);
   const scrollBlock = React.createRef();
 
   return (
@@ -13,7 +12,7 @@ const HomeFilters = () => {
           Lorem ipsum dolor
         </div>
       </div>
-      <Scroll top={toScroll} />
+      {/* <Scroll /> */}
     </section>
   )
 }
