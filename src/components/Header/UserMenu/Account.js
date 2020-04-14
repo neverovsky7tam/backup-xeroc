@@ -1,7 +1,7 @@
 import React from 'react';
 import { BoxDecor } from '../../Parts/BoxDecor';
 import { ReactComponent as UserIcon } from '../../../assets/img/Header/user.svg';
-import { ReactComponent as ArrowDropdownMenu } from '../../../assets/img/Header/arrow-dropdown-menu.svg';
+import { ReactComponent as ArrowDropdownMenu } from '../../../assets/img/arrow-dropdown-menu.svg';
 
 const Account = ({ onHover }) => {
   const accountPop = React.createRef();

@@ -1,0 +1,24 @@
+@mixin btn_main($width, $height, $bg, $font_size) {
+  width: $width;
+  height: $height;
+  @include open-sans_font($white_font, $font_size);
+  text-transform: none;
+  font-weight: 300;
+  background-color: $bg;
+}
+
+@mixin dark_btn($width, $height) {
+  position: relative;
+  @include btn_main($width, $height, $dark_btn_color, 12px);
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hover_btn;
+  }
+}
+
+@mixin blue_btn($width, $height) {
+  position: relative;
+  @include btn_main($width, $height, $btn-main_bg, 12px);
+  cursor: pointer;
+}

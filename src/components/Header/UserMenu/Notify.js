@@ -31,7 +31,7 @@ const Notify = ({ onHover }) => {
           </div>
           <div className="drop-menu__btn-wrapper">
             <button
-              className="drop-menu__btn"
+              className="drop-menu__notify-btn"
               onMouseEnter={() => hideDecor(boxDecor, 'none')}
               onMouseLeave={() => hideDecor(boxDecor, '')}>
               Show all
