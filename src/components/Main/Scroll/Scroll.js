@@ -29,7 +29,7 @@ const Scroll = React.forwardRef(({ scrollBlock }, ref) => {
     const content = scrollBlock.current;
     const layer = scrollLayer.current;
     const thumb = ref.current;
-    layer.style.width = '200px';
+    layer.style.width = '202px';
 
     const parseTranslateValue = thumb.style.transform.slice(11);
     const currentTranslate = parseFloat(parseTranslateValue);
