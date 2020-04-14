@@ -2,13 +2,8 @@
   margin: 0 60px;
   border: 1px solid #cccccc2a;
 
-  section {
-    position: relative;
-    height: 100%;
-
-    h2 {
-      line-height: 0.8;
-    }
+  h2 {
+    line-height: 0.8;
   }
 }
 
@@ -17,7 +12,6 @@
 
   @media (min-width: 768px) {
     display: flex;
-    // height: 750px;
   }
 }
 

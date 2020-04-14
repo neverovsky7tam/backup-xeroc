@@ -122,11 +122,6 @@
   }
 
   .drop-menu__footer-btn {
-    position: relative;
-    @include btn_main(85px, 30px, rgba(11, 12, 35, 0.8), 12px);
-
-    &:hover {
-      background-color: $hover_btn;
-    }
+    @include dark_btn(84px, 30px);
   }
 }

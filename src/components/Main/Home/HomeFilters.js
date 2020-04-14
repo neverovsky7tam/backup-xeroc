@@ -6,7 +6,7 @@ const HomeFilters = () => {
   const scrollBlock = React.createRef();
 
   return (
-    <section className="filters">
+    <section className="filters home-page">
       <h2>filters</h2>
       <div className="filters-inner main-section-inner">
         <div ref={scrollBlock}>

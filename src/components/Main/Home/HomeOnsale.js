@@ -16,7 +16,7 @@ const HomeOnsale = () => {
   }
 
   return (
-    <section className="onsale">
+    <section className="onsale home-page">
       <h2>on sale</h2>
       <div className="onsale__inner main-section-inner">
         <ul

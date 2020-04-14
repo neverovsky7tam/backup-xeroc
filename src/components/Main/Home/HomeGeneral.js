@@ -9,7 +9,7 @@ const Home = () => {
       <HomeFilters />
       <HomeOnsale />
       <HomeListings />
-      <section className="news">
+      <section className="news home-page">
         <h2>news</h2>
         <div className="main-section-inner">Hello world</div>
       </section>

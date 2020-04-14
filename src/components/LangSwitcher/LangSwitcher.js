@@ -25,6 +25,8 @@ const LangSwitcher = () => {
     })
   }
 
+  const nextLang = (langObj.lang === 'eng') ? langBtnContent[1] : langBtnContent[0];
+
   return (
     <div
       className="lang-menu d-flex align-items-center cursor-pointer"
@@ -41,8 +43,8 @@ const LangSwitcher = () => {
         onMouseLeave={() => onHover(langModal, '')}>
         <div className="lang-menu__modal-content d-flex justify-content-center align-items-center cursor-pointer">
           <div className="d-flex">
-            <langObj.pic className="flag-icon" />
-            <button className="cursor-pointer">{langObj.lang}</button>
+            <nextLang.pic className="flag-icon" />
+            <button className="cursor-pointer">{nextLang.lang}</button>
           </div>
           <Diamond />
         </div>

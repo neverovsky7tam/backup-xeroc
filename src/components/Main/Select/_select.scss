@@ -1,9 +1,29 @@
 .select {
+  position: relative;
   box-sizing: border-box;
   height: 34px;
-  position: relative;
+  margin: 15px 0;
   padding: 10px 9px 10px 13px;
   overflow: hidden;
+  border: 1px solid $secondary_bg;
+  background-color: rgba(23, 24, 46, 0.8);
+  z-index: 10;
+}
+
+.select__show-title {
+  cursor: default;
+}
+
+.select__show-btn {
+  position: absolute;
+  display: flex;
+  top: 6px;
+  right: 4px;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .select__show {
@@ -21,6 +41,18 @@
 
 .select__list {
   position: absolute;
-  top: 45px;
+  top: 34px;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(23, 24, 46, 0.8);
 
+  li {
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: 7px;
+    }
+  }
 }

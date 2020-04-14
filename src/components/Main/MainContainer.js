@@ -6,7 +6,7 @@ import SignUp from '../Main/Auth/SignIn';
 import LogIn from '../Main/Auth/LogIn';
 
 const MainContainer = () => {
-  const HEADER_AND_FOOTER_HEIGHT = 352;
+  const HEADER_AND_FOOTER_HEIGHT = 354;
   const BREAK_POINT_PAD = 786;
 
   const contentVar = useSelector((state) => state.mainBlock);

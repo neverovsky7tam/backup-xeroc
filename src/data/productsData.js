@@ -6,7 +6,7 @@ export const productsData = [
     title: 'USED Antminer S9',
     hash: {
       option: 'TH/s',
-      value: [{ h: 10.5, price: '137' }, { h: 11.5, price: '145' }, { h: 14.1, price: '180' }],
+      value: [{ id: 1, h: 18.5, price: '181' }, { id: 2, h: 11.5, price: '145' }, { id: 3, h: 14.1, price: '136.6' }],
     },
     star: 'full',
     psu: true,
@@ -14,10 +14,10 @@ export const productsData = [
   },
   {
     id: 2,
-    title: 'Antminer DR5',
+    title: 'Antminer DR5 Extra Strong Power',
     hash: {
       option: 'MH/s',
-      value: [{ h: 23, price: '1045' }, { h: 41, price: '1800' }],
+      value: [{ id: 1, h: 23, price: '1045' }, { id: 2, h: 41, price: '1800' }],
     },
     star: 'half',
     psu: false,
@@ -28,7 +28,7 @@ export const productsData = [
     title: 'GPU Enclosure',
     hash: {
       option: 'Hashs/s',
-      value: [{ h: 22, price: '371' }],
+      value: [{ id: 1, h: 22, price: '371' }],
     },
     star: 'half',
     psu: false,
@@ -39,7 +39,7 @@ export const productsData = [
     title: 'Innosilicon A6',
     hash: {
       option: 'PH/s',
-      value: [{ h: 89, price: '989' }],
+      value: [{ id: 1, h: 89, price: '989' }],
     },
     star: false,
     psu: true,
@@ -50,7 +50,7 @@ export const productsData = [
     title: 'PandaMiner B3 Pro 4g',
     hash: {
       option: 'KH/s',
-      value: [{ h: 12, price: '2442' }, { h: 16.1, price: '2315' }, { h: 19, price: '1989' }],
+      value: [{ id: 1, h: 12, price: '2442' }, { id: 2, h: 16.1, price: '2315' }, { id: 3, h: 19, price: '1989' }],
     },
     star: false,
     psu: false,
@@ -61,7 +61,7 @@ export const productsData = [
     title: 'Innosilicon A6',
     hash: {
       option: 'Ksol/s',
-      value: [{ h: 1.9, price: '376' }],
+      value: [{ id: 1, h: 1.9, price: '376' }],
     },
     star: false,
     psu: true,
@@ -72,7 +72,7 @@ export const productsData = [
     title: 'GPU Enclosure',
     hash: {
       option: 'GH/s',
-      value: [{ h: 1.2, price: '672' }, { h: 5.0, price: '840' }, { h: 1.9, price: '376' }, { h: 2.3, price: '290' },],
+      value: [{ id: 1, h: 1.2, price: '672' }, { id: 2, h: 5.0, price: '840' }, { id: 3, h: 1.9, price: '376' }, { id: 4, h: 2.3, price: '290' },],
     },
     star: 'full',
     psu: false,
@@ -83,7 +83,7 @@ export const productsData = [
     title: 'Innosilicon T3',
     hash: {
       option: 'H/s',
-      value: [{ h: 913, price: '5376' }],
+      value: [{ id: 1, h: 913, price: '5376' }],
     },
     star: false,
     psu: true,
@@ -94,7 +94,7 @@ export const productsData = [
     title: 'Antminer Z9 Mini',
     hash: {
       option: 'MH/s',
-      value: [{ h: 230, price: '2209' }],
+      value: [{ id: 1, h: 230, price: '2209' }],
     },
     star: 'half',
     psu: false,
@@ -105,7 +105,7 @@ export const productsData = [
     title: 'APW3++',
     hash: {
       option: 'Hashs/s',
-      value: [{ h: 19.5, price: '103' }],
+      value: [{ id: 1, h: 19.5, price: '103' }],
     },
     star: false,
     psu: false,
@@ -116,7 +116,7 @@ export const productsData = [
     title: 'Innosilicon A6',
     hash: {
       option: 'GH/s',
-      value: [{ h: 1.23, price: '3240' }],
+      value: [{ id: 1, h: 1.23, price: '3240' }],
     },
     star: false,
     psu: false,
@@ -127,7 +127,7 @@ export const productsData = [
     title: 'Dayun Zig Z1+',
     hash: {
       option: 'PH/s',
-      value: [{ h: 7.2, price: '1242' }],
+      value: [{ id: 1, h: 7.2, price: '1242' }],
     },
     star: false,
     psu: false,
@@ -138,7 +138,7 @@ export const productsData = [
     title: 'Antminer S11',
     hash: {
       option: 'TH/s',
-      value: [{ h: 55, price: '535' }, { h: 59, price: '700' }],
+      value: [{ id: 1, h: 55, price: '535' }, { id: 2, h: 59, price: '700' }],
     },
     star: 'half',
     psu: true,
@@ -149,7 +149,7 @@ export const productsData = [
     title: 'GPU Enclosure',
     hash: {
       option: 'Ksol/s',
-      value: [{ h: 5, price: '1535' }],
+      value: [{ id: 1, h: 5, price: '1535' }],
     },
     star: false,
     psu: true,
