@@ -1,11 +1,7 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { mainContent } from '../../../store/actions';
 import { TermsEN } from './TermsEN';
-import { ReactComponent as CloseCross } from '../../../assets/img/close-cross.svg';
 
 const Terms = () => {
-  const dispatch = useDispatch();
   const scrollBox = React.createRef();
   const gradientBlock = React.createRef();
 
@@ -25,22 +21,18 @@ const Terms = () => {
   }
 
   return (
-    <div className="terms-wrapper">
-      <section className="terms">
-        <div
-          className="terms-inner scroll-container"
-          ref={scrollBox}
-          onScroll={calcScrollTop}>
-          <TermsEN />
-        </div>
-        <div className="terms__footer-gradient" ref={gradientBlock}></div>
-      </section>
-      <div
-        className="terms__close-btn cursor-pointer"
-        onClick={() => dispatch(mainContent('sign-up'))}>
-        <CloseCross />
+    <section className="terms">
+      <div className="terms__header">
+        <h2>privacy policy</h2>
       </div>
-    </div>
+      <div
+        className="terms-inner scroll-container"
+        ref={scrollBox}
+        onScroll={calcScrollTop}>
+        <TermsEN />
+      </div>
+      <div className="terms__footer-gradient" ref={gradientBlock}></div>
+    </section>
   )
 }
 

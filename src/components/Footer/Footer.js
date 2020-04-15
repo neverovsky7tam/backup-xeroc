@@ -9,7 +9,8 @@ import { ReactComponent as AchievePlatinum } from '../../assets/img/achievment_p
 import { ReactComponent as AchieveBronze } from '../../assets/img/achievment_bronze.svg';
 
 
-const Footer = ({ footerState, footerMiddle }) => {
+const Footer = ({ footerState, closeBtn }) => {
+  console.log('closeBtn', closeBtn);
   const feedbackPop = React.createRef();
   const awardsPop = React.createRef();
 
@@ -49,6 +50,7 @@ const Footer = ({ footerState, footerMiddle }) => {
             hidePop={onHover} />
         </div>
         <Social />
+        {closeBtn}
         <div className="awards p-relative d-flex align-items-center">
           <div className="awards__point">
             <AchieveGold />
