@@ -61,27 +61,27 @@
   animation-name: image-hover-off;
 }
 
-@keyframes image-hover-on {
-  from {
-    filter: none;
-    background-color: rgba(0, 0, 0, 0);
-  }
-  to {
-    filter: blur(20px);
-    background-color: $dark_btn_color;
-  }
-}
+// @keyframes image-hover-on {
+//   from {
+//     filter: none;
+//     background-color: rgba(0, 0, 0, 0);
+//   }
+//   to {
+//     filter: blur(20px);
+//     background-color: $dark_btn_color;
+//   }
+// }
 
-@keyframes image-hover-off {
-  from {
-    filter: blur(20px);
-    background-color: $dark_btn_color;
-  }
-  to {
-    filter: none;
-    background-color: rgba(0, 0, 0, 0);
-  }
-}
+// @keyframes image-hover-off {
+//   from {
+//     filter: blur(20px);
+//     background-color: $dark_btn_color;
+//   }
+//   to {
+//     filter: none;
+//     background-color: rgba(0, 0, 0, 0);
+//   }
+// }
 
 //  ORDER block
 
@@ -130,20 +130,20 @@
   animation-name: order-hover-off;
 }
 
-@keyframes order-hover-on {
-  from {
-    bottom: -95px;
-  }
-  to {
-    bottom: 0;
-  }
-}
+// @keyframes order-hover-on {
+//   from {
+//     bottom: -95px;
+//   }
+//   to {
+//     bottom: 0;
+//   }
+// }
 
-@keyframes order-hover-off {
-  from {
-    bottom: 0;
-  }
-  to {
-    bottom: -95px;
-  }
-}
+// @keyframes order-hover-off {
+//   from {
+//     bottom: 0;
+//   }
+//   to {
+//     bottom: -95px;
+//   }
+// }

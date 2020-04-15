@@ -1,25 +1,17 @@
 import React, { useState } from 'react';
 import FeedbackPopup from './FeedbackPopup';
 import AwardsPopup from './AwardsPopup';
-import { hideDecor } from '../Parts/BoxDecor';
-import { BoxDecor } from '../Parts/BoxDecor';
+import Social from './Social';
 import { ReactComponent as RatingStar } from '../../assets/img/rating-star.svg';
-import { ReactComponent as FacebookIcon } from '../../assets/img/Social/facebook.svg';
-import { ReactComponent as TwitterIcon } from '../../assets/img/Social/twitter.svg';
-import { ReactComponent as YoutubeIcon } from '../../assets/img/Social/youtube.svg';
-import { ReactComponent as RedditIcon } from '../../assets/img/Social/reddit.svg';
 import { ReactComponent as AchieveGold } from '../../assets/img/achievment_gold.svg';
 import { ReactComponent as AchieveSilver } from '../../assets/img/achievment_silver.svg';
 import { ReactComponent as AchievePlatinum } from '../../assets/img/achievment_platinum.svg';
 import { ReactComponent as AchieveBronze } from '../../assets/img/achievment_bronze.svg';
 
-const Footer = () => {
+
+const Footer = ({ footerState, footerMiddle }) => {
   const feedbackPop = React.createRef();
   const awardsPop = React.createRef();
-  const decorFacebook = React.createRef();
-  const decorTwitter = React.createRef();
-  const decorYoutube = React.createRef();
-  const decorReddit = React.createRef();
 
   const onHover = (element, action) => {
     element.current.style.display = action;
@@ -35,7 +27,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="footer d-flex">
+    <footer className={footerState}>
       <div className="footer-inner p-relative d-flex justify-content-between">
         <div
           className="feedback p-relative d-flex"
@@ -56,32 +48,7 @@ const Footer = () => {
             ref={feedbackPop}
             hidePop={onHover} />
         </div>
-        <div className="social d-flex">
-          <a className="social__link" href="https://www.facebook.com/"
-            onMouseEnter={() => hideDecor(decorFacebook, 'none')}
-            onMouseLeave={() => hideDecor(decorFacebook, '')}>
-            <FacebookIcon style={{ width: '8.11px', height: '15px' }} />
-            <BoxDecor ref={decorFacebook} />
-          </a>
-          <a className="social__link" href="https://twitter.com/"
-            onMouseEnter={() => hideDecor(decorTwitter, 'none')}
-            onMouseLeave={() => hideDecor(decorTwitter, '')}>
-            <TwitterIcon style={{ width: '16px', height: '13px' }} />
-            <BoxDecor ref={decorTwitter} />
-          </a>
-          <a className="social__link" href="https://www.youtube.com/"
-            onMouseEnter={() => hideDecor(decorYoutube, 'none')}
-            onMouseLeave={() => hideDecor(decorYoutube, '')}>
-            <YoutubeIcon />
-            <BoxDecor ref={decorYoutube} />
-          </a>
-          <a className="social__link" href="https://www.reddit.com/"
-            onMouseEnter={() => hideDecor(decorReddit, 'none')}
-            onMouseLeave={() => hideDecor(decorReddit, '')}>
-            <RedditIcon />
-            <BoxDecor ref={decorReddit} />
-          </a>
-        </div>
+        <Social />
         <div className="awards p-relative d-flex align-items-center">
           <div className="awards__point">
             <AchieveGold />

@@ -1,13 +1,14 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setAccountMenu } from '../../../store/actions';
+import { mainContent } from '../../../store/actions';
 import SocialAuth from './SocialAuth';
 import { onInputChange } from '../../../utils/inputs';
 import { hideDecor } from '../../Parts/BoxDecor';
 import { BoxDecor } from '../../Parts/BoxDecor';
 import { ReactComponent as InfoIcon } from '../../../assets/img/info.svg';
 
-const SignUp = ({ setLogin }) => {
+const SignUp = () => {
   const dispatch = useDispatch();
   const boxDecor = React.createRef();
 
@@ -39,6 +40,13 @@ const SignUp = ({ setLogin }) => {
         <div className="p-relative">
           <input type="email" placeholder="Enter your e-mail" onChange={onInputChange} />
           <BoxDecor />
+        </div>
+        <div className="auth-content__form-tips">
+          By signing up, you agree to our <a
+            href="#"
+            style={{ textDecoration: 'underline' }}
+            onClick={() => dispatch(mainContent('terms'))}>
+            Terms and Conditions</a>
         </div>
       </form>
       <button

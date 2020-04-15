@@ -36,7 +36,7 @@ const LogIn = () => {
             onChange={onInputChange} />
           <BoxDecor />
         </div>
-        <div className="auth-content__forgot-pass"><a href="#" onClick={handleClick}>Forgot your password?</a></div>
+        <div className="auth-content__form-tips"><a href="#" onClick={handleClick}>Forgot your password?</a></div>
       </form>
       <button
         className="auth-content__btn cursor-pointer p-relative"
