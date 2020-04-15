@@ -25,6 +25,7 @@ body {
 
 h2 {
   text-transform: uppercase;
+  line-height: 0.8;
 
   @media (min-width: 768px) {
     @include exo-font($white_font, $desctop_h2_size, 500);
@@ -76,6 +77,10 @@ button {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.text-underline {
+  text-decoration: underline;
 }
 
 .line-height-8 {
