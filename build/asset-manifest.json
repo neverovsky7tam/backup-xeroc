@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.0d41b1b4.chunk.css",
-    "main.js": "/static/js/main.5631e18d.chunk.js",
-    "main.js.map": "/static/js/main.5631e18d.chunk.js.map",
+    "main.css": "/static/css/main.453859e1.chunk.css",
+    "main.js": "/static/js/main.152466b5.chunk.js",
+    "main.js.map": "/static/js/main.152466b5.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c730f065.js",
     "runtime-main.js.map": "/static/js/runtime-main.c730f065.js.map",
     "static/js/2.0f3fc8ec.chunk.js": "/static/js/2.0f3fc8ec.chunk.js",
     "static/js/2.0f3fc8ec.chunk.js.map": "/static/js/2.0f3fc8ec.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.bca66db88102981c038b05f14ce7bc99.js": "/precache-manifest.bca66db88102981c038b05f14ce7bc99.js",
+    "precache-manifest.a265d44def3566d016a972f5ced35c61.js": "/precache-manifest.a265d44def3566d016a972f5ced35c61.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.0d41b1b4.chunk.css.map": "/static/css/main.0d41b1b4.chunk.css.map",
+    "static/css/main.453859e1.chunk.css.map": "/static/css/main.453859e1.chunk.css.map",
     "static/js/2.0f3fc8ec.chunk.js.LICENSE.txt": "/static/js/2.0f3fc8ec.chunk.js.LICENSE.txt",
     "static/media/achievment_bronze.0773c997.svg": "/static/media/achievment_bronze.0773c997.svg",
     "static/media/achievment_gold.a1b6375d.svg": "/static/media/achievment_gold.a1b6375d.svg",
@@ -21,6 +21,7 @@
     "static/media/balance-icon.8f9b10a4.svg": "/static/media/balance-icon.8f9b10a4.svg",
     "static/media/cart.4bace8dd.svg": "/static/media/cart.4bace8dd.svg",
     "static/media/china.7f8455b7.svg": "/static/media/china.7f8455b7.svg",
+    "static/media/close-cross.f6a53dbe.svg": "/static/media/close-cross.f6a53dbe.svg",
     "static/media/close.1363b831.svg": "/static/media/close.1363b831.svg",
     "static/media/coinpayments.d2beede8.svg": "/static/media/coinpayments.d2beede8.svg",
     "static/media/corex-logo.2a877e13.svg": "/static/media/corex-logo.2a877e13.svg",
@@ -52,7 +53,7 @@
   "entrypoints": [
     "static/js/runtime-main.c730f065.js",
     "static/js/2.0f3fc8ec.chunk.js",
-    "static/css/main.0d41b1b4.chunk.css",
-    "static/js/main.5631e18d.chunk.js"
+    "static/css/main.453859e1.chunk.css",
+    "static/js/main.152466b5.chunk.js"
   ]
 }
