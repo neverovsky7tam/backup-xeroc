@@ -82,8 +82,11 @@
     }
   }
 
-  .auth-content__forgot-pass {
+  .auth-content__form-tips {
+    @include open-sans_font($grey_font, 12px);
     text-align: right;
+    text-transform: initial;
+    font-weight: 300;
 
     a {
       @include open-sans_font($white_font, 12px);
