@@ -1,9 +1,9 @@
 .terms {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   width: 642px;
   height: 100%;
   margin: auto;
-  overflow: hidden;
 
   .terms__footer-gradient {
     position: absolute;
@@ -18,6 +18,12 @@
   .terms__header {
     margin-bottom: 60px;
     text-align: center;
+  }
+
+  .terms-body {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
   }
 
   .terms__title {

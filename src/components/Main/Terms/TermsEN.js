@@ -2,7 +2,7 @@ import React from 'react';
 
 export const TermsEN = () => {
   return (
-    <div className="terms__body">
+    <div className="terms__content">
       <h3 className="terms__title">Agora Labs, Llc Dba Corex</h3>
       <p className="terms__subtitle">February 12, 2020</p>
       <p>

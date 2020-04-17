@@ -25,13 +25,15 @@ const Terms = () => {
       <div className="terms__header">
         <h2>privacy policy</h2>
       </div>
-      <div
-        className="terms-inner scroll-container"
-        ref={scrollBox}
-        onScroll={calcScrollTop}>
-        <TermsEN />
+      <div className="terms-body">
+        <div
+          className="scroll-container"
+          ref={scrollBox}
+          onScroll={calcScrollTop}>
+          <TermsEN />
+        </div>
+        <div className="terms__footer-gradient" ref={gradientBlock}></div>
       </div>
-      <div className="terms__footer-gradient" ref={gradientBlock}></div>
     </section>
   )
 }
