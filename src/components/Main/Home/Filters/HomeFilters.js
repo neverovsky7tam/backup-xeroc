@@ -6,8 +6,10 @@ const HomeFilters = () => {
 
   return (
     <section className="filters home-page">
-      <h2>filters</h2>
-      <div className="filters-inner main-section-inner">
+      <div className="main-header">
+        <h2>filters</h2>
+      </div>
+      <div className="filters-inner main-body">
         <div ref={scrollBlock}>
           Lorem ipsum dolor
         </div>
