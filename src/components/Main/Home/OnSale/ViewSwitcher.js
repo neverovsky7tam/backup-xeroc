@@ -16,7 +16,6 @@ const ViewSwitcher = ({ view, setView }) => {
     }
   });
 
-
   const viewState = (view) ? 'Grid' : 'Release list';
 
   return (

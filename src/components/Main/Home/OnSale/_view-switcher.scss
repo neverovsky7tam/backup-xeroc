@@ -11,6 +11,7 @@
   button {
     margin-left: 6px;
     @include exo_font($white_font, 10px, normal);
+    cursor: pointer;
   }
 }
 
