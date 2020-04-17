@@ -6,7 +6,9 @@ const HomeListings = () => {
       <div className="main-header">
         <h2>new listings</h2>
       </div>
-      <div className="main-body">Hello world</div>
+      <div className="listings__body main-body">
+        Hello world
+      </div>
     </section>
   )
 }
