@@ -3,6 +3,12 @@
   flex-grow: 1;
 }
 
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
 .main-inner {
   height: 100%;
 
@@ -11,10 +17,9 @@
   }
 }
 
-.main-section-inner {
+.main-body {
   position: relative;
   height: calc(100% - 50px);
-  margin-top: 30px;
   @include open-sans_font($grey_font, 12px);
   font-weight: 300;
   z-index: 5;

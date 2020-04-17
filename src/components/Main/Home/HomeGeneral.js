@@ -1,7 +1,7 @@
 import React from 'react';
-import HomeOnsale from './HomeOnsale';
-import HomeFilters from './HomeFilters';
-import HomeListings from './HomeListings';
+import HomeOnsale from './OnSale/HomeOnsale';
+import HomeFilters from './Filters/HomeFilters';
+import HomeListings from './Listings/HomeListings';
 
 const Home = () => {
   return (
@@ -10,8 +10,10 @@ const Home = () => {
       <HomeOnsale />
       <HomeListings />
       <section className="news home-page">
-        <h2>news</h2>
-        <div className="main-section-inner">Hello world</div>
+        <div className="main-header">
+          <h2>news</h2>
+        </div>
+        <div className="main-body">Hello world</div>
       </section>
     </div>
   )

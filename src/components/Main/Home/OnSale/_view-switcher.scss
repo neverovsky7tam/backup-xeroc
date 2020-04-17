@@ -1,0 +1,23 @@
+.view-switcher {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.view-switcher__active {
+  display: flex;
+  align-items: center;
+
+  button {
+    margin-left: 6px;
+    @include exo_font($white_font, 10px, normal);
+  }
+}
+
+.view-switcher__active-title {
+  @include exo_font($grey_font, 10px, normal);
+}
+
+.view-switcher__icon {
+  margin-left: 15px;
+}
