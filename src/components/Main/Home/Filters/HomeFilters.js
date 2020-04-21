@@ -1,18 +1,21 @@
 import React from 'react';
-// import Scroll from '../Scroll/Scroll';
+import Scroll from '../../Scroll/Scroll';
 
 const HomeFilters = () => {
+  const scrollThumb = React.createRef();
   const scrollBlock = React.createRef();
 
   return (
     <section className="filters home-page">
-      <h2>filters</h2>
-      <div className="filters-inner main-section-inner">
+      <div className="main-header">
+        <h2>filters</h2>
+      </div>
+      <div className="filters-body main-body">
         <div ref={scrollBlock}>
           Lorem ipsum dolor
         </div>
       </div>
-      {/* <Scroll /> */}
+      <Scroll ref={scrollThumb} scrollBlock={scrollBlock} />
     </section>
   )
 }

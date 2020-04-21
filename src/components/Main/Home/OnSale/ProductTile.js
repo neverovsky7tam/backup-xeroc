@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Select from '../Select/Select';
-import { BoxDecor } from '../../Parts/BoxDecor';
-import { hideDecor } from '../../Parts/BoxDecor';
-import { ReactComponent as ProductStar } from '../../../assets/img/product-star.svg';
-import { ReactComponent as ProductHalfStar } from '../../../assets/img/product-half-star.svg';
+import Select from '../../Select/Select';
+import { BoxDecor } from '../../../Parts/BoxDecor';
+import { hideDecor } from '../../../Parts/BoxDecor';
+import { ReactComponent as ProductStar } from '../../../../assets/img/product-star.svg';
+import { ReactComponent as ProductHalfStar } from '../../../../assets/img/product-half-star.svg';
 
 const ProductCard = ({ item, itemHash, itemPrice, hashArr }) => {
   const [price, setPrice] = useState(itemPrice);
@@ -70,7 +70,7 @@ const ProductCard = ({ item, itemHash, itemPrice, hashArr }) => {
         className="products__item-inner"
         ref={itemInner}>
         <div className="products__item-header d-flex justify-content-between">
-          <div className="products__item-header-left">
+          <div className="products__item-header-text">
             <h5 className="poducts__item-title">{item.title}</h5>
             <span className="products__item-hash">{itemHash} {item.hash.option}</span>
           </div>
@@ -112,7 +112,7 @@ const ProductCard = ({ item, itemHash, itemPrice, hashArr }) => {
   )
 }
 
-const ProductList = ({ data }) => {
+const ProductTile = ({ data }) => {
   const items = data.map((el, idx) => {
     let hash = null;
     let price = null;
@@ -147,4 +147,4 @@ const ProductList = ({ data }) => {
   return items;
 }
 
-export default ProductList;
+export default ProductTile;

@@ -1,7 +1,6 @@
 html,
 body,
 #root {
-  // height: 100%;
   height: 100vh;
 }
 
@@ -13,20 +12,16 @@ body,
 body {
   box-sizing: border-box;
   margin: 0 15px;
-  background-color: #0b0c23;
+  background-color: $main_bg;
 
   @media (min-width: 425px) {
     margin: 0 30px;
   }
 }
 
-// .main {
-//   flex-grow: 1;
-// }
-
 h2 {
   text-transform: uppercase;
-  line-height: 0.8;
+  line-height: 0.9;
 
   @media (min-width: 768px) {
     @include exo-font($white_font, $desctop_h2_size, 500);

@@ -29,6 +29,10 @@
   padding: 0 15px;
 }
 
+.products__item-header-text {
+  z-index: 11;
+}
+
 .poducts__item-title {
   margin-bottom: 7px;
   @include open-sans_font($grey_font, 12px);
@@ -87,7 +91,7 @@
 
 .order {
   position: absolute;
-  bottom: -95px;
+  bottom: -90px;
   box-sizing: border-box;
   width: 100%;
   padding: 0 15px;

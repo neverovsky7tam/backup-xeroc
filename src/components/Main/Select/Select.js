@@ -6,31 +6,29 @@ const Select = React.forwardRef(({ hashArr, displayHash, hashOpt, expandFunc, ha
   const hashList = () => {
     if (hashArr.length > 1) {
       const arr = hashArr.slice();
-      return (
-        <>
-          <div className="select__show-btn" onClick={expandFunc}>
-            <ArrowDropdownMenu ref={ref.arrow} />
-          </div>
-          <ul className="select__list">
-            {arr.map((el) => {
-              return (
-                <li
-                  key={el.id}
-                  onClick={() => hashClick(el)}>
-                  {el.h} {hashOpt}
-                </li>
-              )
-            })}
-          </ul>
-        </>
-      )
+      return arr.map((el) => {
+        return (
+          <li
+            key={el.id}
+            onClick={() => hashClick(el)}>
+            {el.h} {hashOpt}
+          </li>
+        )
+      });
     }
   }
 
   return (
     <div className="select" ref={ref.select}>
-      <span className="select__show-title">Hash rate: {displayHash} {hashOpt}</span>
-      {hashList()}
+      <div className="select__shown-area">
+        <span className="select__show-title">Hash rate: {displayHash} {hashOpt}</span>
+        <div className="select__show-btn" onClick={expandFunc}>
+          <ArrowDropdownMenu ref={ref.arrow} />
+        </div>
+      </div>
+      <ul className="select__list">
+        {hashList()}
+      </ul>
       <BoxDecor />
     </div>
   )

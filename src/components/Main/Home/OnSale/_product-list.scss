@@ -1,0 +1,12 @@
+.list {
+  width: 100%;
+}
+
+.list__head {
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    margin-right: 15px;
+  }
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setAccountMenu } from '../../../store/actions';
 import SocialAuth from './SocialAuth';
-import { onInputChange } from '../../../utils/inputs';
+import { onInputChange } from './inputs';
 import { hideDecor } from '../../Parts/BoxDecor';
 import { BoxDecor } from '../../Parts/BoxDecor';
 

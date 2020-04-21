@@ -1,9 +1,10 @@
 .onsale {
   @media (min-width: 1024px) {
-    margin-left: 30px;
+    flex-grow: 1;
+    padding: 0 30px;
   }
 }
 
-.onsale__inner {
+.onsale__body {
   overflow: hidden;
 }
