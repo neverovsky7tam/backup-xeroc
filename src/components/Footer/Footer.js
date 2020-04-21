@@ -10,7 +10,6 @@ import { ReactComponent as AchieveBronze } from '../../assets/img/achievment_bro
 
 
 const Footer = ({ footerState, closeBtn }) => {
-  console.log('closeBtn', closeBtn);
   const feedbackPop = React.createRef();
   const awardsPop = React.createRef();
 

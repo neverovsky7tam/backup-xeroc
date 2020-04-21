@@ -70,7 +70,7 @@ const ProductCard = ({ item, itemHash, itemPrice, hashArr }) => {
         className="products__item-inner"
         ref={itemInner}>
         <div className="products__item-header d-flex justify-content-between">
-          <div className="products__item-header-left">
+          <div className="products__item-header-text">
             <h5 className="poducts__item-title">{item.title}</h5>
             <span className="products__item-hash">{itemHash} {item.hash.option}</span>
           </div>

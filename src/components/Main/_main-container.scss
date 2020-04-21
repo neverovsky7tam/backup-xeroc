@@ -4,18 +4,18 @@
   overflow: hidden;
 }
 
-.main-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
-}
-
 .main-inner {
   height: 100%;
 
   @media (min-width: 768px) {
     display: flex;
   }
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
 }
 
 .main-body {
