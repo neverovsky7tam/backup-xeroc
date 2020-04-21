@@ -1,5 +1,3 @@
-const productDetailsHash = 'H/s, MH/s, GH/s, TH/s, PH/s, Hashs/s, KH/s, Ksol/s';
-
 export const productsData = [
   {
     id: 1,
