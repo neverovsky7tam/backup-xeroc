@@ -90,13 +90,15 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr }) => {
             <span className="order__price">{price}</span>
             <span className="order__psu">{item.psu && 'psu'}</span>
           </div>
-          <Select
-            hashArr={hashArr}
-            displayHash={hash}
-            hashOpt={item.hash.option}
-            expandFunc={expandItemInner}
-            hashClick={onHashListClick}
-            ref={refObj} />
+          <div className="select-wrapper">
+            <Select
+              hashArr={hashArr}
+              displayHash={hash}
+              hashOpt={item.hash.option}
+              expandFunc={expandItemInner}
+              hashClick={onHashListClick}
+              ref={refObj} />
+          </div>
           <div className="order__btns-wrapper">
             <button className="order__btn-details"
               onMouseEnter={() => hideDecor(boxDecor, 'none')}

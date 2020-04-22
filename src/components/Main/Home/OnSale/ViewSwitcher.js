@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { ReactComponent as DotsIcon } from './img/3-vert-dot.svg';
 import { ReactComponent as ViewIcon } from './img/view-icon.svg';
+import { ReactComponent as ArrowDots } from '../../../../assets/img/arrow-dots.svg';
 
 const ViewSwitcher = ({ view, setView }) => {
   const viewIcon = React.createRef();
@@ -19,13 +20,26 @@ const ViewSwitcher = ({ view, setView }) => {
   const viewState = (view) ? 'Grid' : 'Release list';
 
   return (
-    <div className="view-switcher" onClick={() => setView(!view)}>
-      <div className="view-switcher__active">
-        <span className="view-switcher__active-title">View:</span>
-        <button>{viewState}</button>
+    <div className="d-flex">
+      {!view &&
+        <div className="electicity-switcher">
+          <div className="electicity-switcher__active">
+            <ArrowDots style={{ transform: 'rotate(45deg)' }} />
+            <div>Hello</div>
+            <ArrowDots style={{ transform: 'rotate(-45deg)' }} />
+          </div>
+          <div className="electicity-switcher__title">
+            <span className="green-text">$/kWh</span>&nbsp;Electricity
+          </div>
+        </div>}
+      <div className="view-switcher" onClick={() => setView(!view)}>
+        <div className="view-switcher__active">
+          <span className="view-switcher__active-title">View:</span>
+          <button>{viewState}</button>
+        </div>
+        <ViewIcon className="view-switcher__icon" ref={viewIcon} />
+        <DotsIcon className="view-switcher__icon" ref={dotsIcon} />
       </div>
-      <ViewIcon className="view-switcher__icon" ref={viewIcon} />
-      <DotsIcon className="view-switcher__icon" ref={dotsIcon} />
     </div>
   )
 }
