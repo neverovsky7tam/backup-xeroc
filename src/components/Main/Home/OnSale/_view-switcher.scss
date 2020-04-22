@@ -1,3 +1,13 @@
+.electicity-switcher {
+  margin-right: 30px;
+  @include open-sans_font($white_font, 12px);
+  font-weight: 300;
+
+  .green-text {
+    color: #029e4e;
+  }
+}
+
 .view-switcher {
   display: flex;
   align-items: center;
