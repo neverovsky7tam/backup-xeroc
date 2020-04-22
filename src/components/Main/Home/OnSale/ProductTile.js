@@ -5,7 +5,7 @@ import { hideDecor } from '../../../Parts/BoxDecor';
 import { ReactComponent as ProductStar } from '../../../../assets/img/product-star.svg';
 import { ReactComponent as ProductHalfStar } from '../../../../assets/img/product-half-star.svg';
 
-const ProductCard = ({ item, itemHash, itemPrice, hashArr }) => {
+const ProductTile = ({ item, itemHash, itemPrice, hashArr }) => {
   const [price, setPrice] = useState(itemPrice);
   const [hash, setHash] = useState('');
 
@@ -110,41 +110,6 @@ const ProductCard = ({ item, itemHash, itemPrice, hashArr }) => {
       </div>
     </li>
   )
-}
-
-const ProductTile = ({ data }) => {
-  const items = data.map((el, idx) => {
-    let hash = null;
-    let price = null;
-
-    const priceRangeArr = [];
-    const hashArr = el.hash.value;
-
-    if (hashArr.length > 1) {
-      hashArr.forEach((item) => {
-        priceRangeArr.push(+item.price);
-      });
-
-      hashArr.sort((a, b) => a.h - b.h);
-      priceRangeArr.sort((a, b) => a - b);
-
-      hash = `${hashArr[0].h} - ${hashArr[hashArr.length - 1].h}`;
-      price = `$${priceRangeArr[0]} - $${priceRangeArr[priceRangeArr.length - 1]}`;
-    } else {
-      hash = `${hashArr[0].h}`;
-      price = `$${hashArr[0].price}`;
-    }
-
-    return <ProductCard
-      key={idx}
-      itemHash={hash}
-      itemPrice={price}
-      id={idx}
-      item={el}
-      hashArr={hashArr} />;
-  });
-
-  return items;
-}
+};
 
 export default ProductTile;

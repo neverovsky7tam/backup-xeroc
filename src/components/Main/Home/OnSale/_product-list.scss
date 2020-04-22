@@ -1,12 +1,104 @@
-.list {
+.list-head-wrapper {
+  position: absolute;
   width: 100%;
+  height: 45px;
+  background-color: $main_bg;
+  z-index: 11;
+
+  .list__price {
+    text-align: center;
+  }
 }
 
-.list__head {
-  display: flex;
-  justify-content: space-between;
+.list-item-wrapper {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 15px;
+  overflow: hidden;
 
-  div {
-    margin-right: 15px;
+  .order__btn-add {
+    @include blue_btn(112px, 40px);
   }
+}
+
+.list-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+
+// .list-glob {
+//   display: flex;
+// }
+
+.list-inner-item {
+  padding: 0 15px;
+}
+
+.list-inner-header {
+  padding-left: 15px;
+  border: 1px solid $secondary_bg;
+  background-color: $secondary_bg-sec;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 29px 20px repeat(10, 1fr);
+  box-sizing: border-box;
+  height: 100%;
+  align-items: center;
+
+  @media (min-width: 1920px) {
+    grid-template-columns: 29px 35px repeat(10, 1fr);
+  }
+}
+
+.list_header {
+  height: 30px;
+}
+
+// .list_item {
+//   height: 40px;
+// }
+
+.list__release {
+  text-align: left;
+}
+
+.list__manufacturer {
+  text-align: center;
+}
+
+.list__model {
+  text-align: left;
+}
+
+.list__hash {
+  text-align: center;
+}
+
+.list__noise {
+  text-align: center;
+}
+
+.list__power {
+  text-align: center;
+}
+
+.list__algorithm {
+  text-align: left;
+}
+
+.list__efficiency {
+  text-align: left;
+}
+
+.list__profit {
+  text-align: left;
+}
+
+.list__price {
+  text-align: right;
 }
