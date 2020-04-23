@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Select from '../../Select/Select';
 import { BoxDecor } from '../../../Parts/BoxDecor';
 import { ReactComponent as ProductStar } from '../../../../assets/img/product-star.svg';
@@ -19,7 +20,8 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr }) => {
 
   const colorItem = (idx % 2) ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255, 255, 255, 0.1)';
 
-  const profit = (+item.efficiency / 0.17) - (item.power * 0.17) / 10;
+  const electricityVal = useSelector((state) => state.electricityValue);
+  const profit = (+item.efficiency / electricityVal) - (item.power * electricityVal) / 10;
   const colorProfit = (profit > 0) ? '#00a651' : '#d02e32';
   const rate = (profit > 0) ? <GreenArrow /> : <RedArrow />;
 

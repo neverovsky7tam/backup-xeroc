@@ -1,7 +1,7 @@
 export const CHANGE_LANG = "CHANGE_LANG";
 export const SET_MAIN_CONTENT = "SET_MAIN_CONTENT";
 export const SET_ACCOUNT_MENU = "SET_ACCOUNT_MENU";
-export const SET_MAIN_CONTAINER_HEIGHT = "SET_MAIN_CONTAINER_HEIGHT";
+export const SET_ELECTRICITY_VALUE = "SET_ELECTRICITY_VALUE";
 
 export const switchLang = (lang) => ({
   type: CHANGE_LANG,
@@ -18,8 +18,8 @@ export const setAccountMenu = (isLogin) => ({
   isLogin,
 })
 
-export const setMainContainerHeight = (height) => ({
-  type: SET_MAIN_CONTAINER_HEIGHT,
-  height,
+export const setElectricityValue = (val) => ({
+  type: SET_ELECTRICITY_VALUE,
+  val,
 })
 

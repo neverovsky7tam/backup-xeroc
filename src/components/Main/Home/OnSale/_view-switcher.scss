@@ -8,6 +8,30 @@
   }
 }
 
+.electicity-switcher__active {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70px;
+  margin-right: 15px;
+
+  .arrow-left {
+    transform: rotate(90deg);
+
+    svg {
+      cursor: pointer;
+    }
+  }
+
+  .arrow-right {
+    transform: rotate(-90deg);
+
+    svg {
+      cursor: pointer;
+    }
+  }
+}
+
 .view-switcher {
   display: flex;
   align-items: center;
