@@ -10,7 +10,8 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr }) => {
   const [price, setPrice] = useState(itemPrice);
   const [hash, setHash] = useState('');
 
-  const itemWrapper = React.createRef();
+  const itemInner = React.createRef();
+  const orderBlock = React.createRef();
 
   const arrow = React.createRef();
   const select = React.createRef();
@@ -25,13 +26,18 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr }) => {
   const itemHoverOn = () => {
     setPrice(`$${hashArr[0].price}`);
     setHash(hashArr[0].h);
-    itemWrapper.current.style.right = '33%';
+
+    itemInner.current.style.right = '322px';
+    itemInner.current.style.border = '1px solid rgba(255, 255, 255, 0.05)';
+    orderBlock.current.style.right = '0';
   }
 
   const itemHoverOff = () => {
     setPrice(itemPrice);
-    itemWrapper.current.style.right = '0';
-    
+    itemInner.current.style.right = '0';
+    itemInner.current.style.border = '1px solid rgba(255, 255, 255, 0.0)';
+        orderBlock.current.style.right = '-50%';
+
     if (select.current.style.overflow) showHashList();
   }
 
@@ -53,10 +59,12 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr }) => {
   return (
     <li
       className="list-item-wrapper"
-      ref={itemWrapper}
       onMouseEnter={itemHoverOn}
       onMouseLeave={itemHoverOff}>
-      <div className="list-inner-item" style={{ backgroundColor: colorItem }}>
+      <div
+        className="list-inner-item"
+        style={{ backgroundColor: colorItem }}
+        ref={itemInner}>
         <div className="list">
           <div className="list__star">
             {(!item.star) ? '' : (item.star === 'full') ? <ProductStar /> : <ProductHalfStar />}
@@ -76,8 +84,10 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr }) => {
         <BoxDecor />
       </div>
       <div
-        className="order d-flex">
-        <div className="select-wrapper">
+        className="order d-flex"
+        ref={orderBlock}>
+        <div
+          className="select-wrapper">
           <Select
             hashArr={hashArr}
             displayHash={hash}
