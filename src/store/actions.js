@@ -2,6 +2,7 @@ export const CHANGE_LANG = "CHANGE_LANG";
 export const SET_MAIN_CONTENT = "SET_MAIN_CONTENT";
 export const SET_ACCOUNT_MENU = "SET_ACCOUNT_MENU";
 export const SET_ELECTRICITY_VALUE = "SET_ELECTRICITY_VALUE";
+export const SET_CURRENT_SCROLL_TOP = "SET_CURRENT_SCROLL_TOP";
 
 export const switchLang = (lang) => ({
   type: CHANGE_LANG,
@@ -20,6 +21,11 @@ export const setAccountMenu = (isLogin) => ({
 
 export const setElectricityValue = (val) => ({
   type: SET_ELECTRICITY_VALUE,
+  val,
+})
+
+export const setCurrentScrollTop = (val) => ({
+  type: SET_CURRENT_SCROLL_TOP,
   val,
 })
 
