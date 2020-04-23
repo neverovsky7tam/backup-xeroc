@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.9f9b63c1.chunk.css",
-    "main.js": "/static/js/main.8bb8622d.chunk.js",
-    "main.js.map": "/static/js/main.8bb8622d.chunk.js.map",
+    "main.css": "/static/css/main.ccc0f1f1.chunk.css",
+    "main.js": "/static/js/main.ff2b1fe6.chunk.js",
+    "main.js.map": "/static/js/main.ff2b1fe6.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c730f065.js",
     "runtime-main.js.map": "/static/js/runtime-main.c730f065.js.map",
     "static/js/2.0f3fc8ec.chunk.js": "/static/js/2.0f3fc8ec.chunk.js",
     "static/js/2.0f3fc8ec.chunk.js.map": "/static/js/2.0f3fc8ec.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.f5deea80391fca80cbfa8f019c285754.js": "/precache-manifest.f5deea80391fca80cbfa8f019c285754.js",
+    "precache-manifest.e4f66cc6a5dd17c8f7d97fc52e5440d6.js": "/precache-manifest.e4f66cc6a5dd17c8f7d97fc52e5440d6.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.9f9b63c1.chunk.css.map": "/static/css/main.9f9b63c1.chunk.css.map",
+    "static/css/main.ccc0f1f1.chunk.css.map": "/static/css/main.ccc0f1f1.chunk.css.map",
     "static/js/2.0f3fc8ec.chunk.js.LICENSE.txt": "/static/js/2.0f3fc8ec.chunk.js.LICENSE.txt",
     "static/media/3-vert-dot.ecd3988d.svg": "/static/media/3-vert-dot.ecd3988d.svg",
     "static/media/achievment_bronze.0773c997.svg": "/static/media/achievment_bronze.0773c997.svg",
@@ -18,7 +18,7 @@
     "static/media/achievment_platinum.131d567e.svg": "/static/media/achievment_platinum.131d567e.svg",
     "static/media/achievment_silver.ec77365d.svg": "/static/media/achievment_silver.ec77365d.svg",
     "static/media/alipay.9e1335cc.svg": "/static/media/alipay.9e1335cc.svg",
-    "static/media/arrow-dropdown-menu.7d060a9a.svg": "/static/media/arrow-dropdown-menu.7d060a9a.svg",
+    "static/media/arrow-dots.7d060a9a.svg": "/static/media/arrow-dots.7d060a9a.svg",
     "static/media/balance-icon.8f9b10a4.svg": "/static/media/balance-icon.8f9b10a4.svg",
     "static/media/cart.4bace8dd.svg": "/static/media/cart.4bace8dd.svg",
     "static/media/china.7f8455b7.svg": "/static/media/china.7f8455b7.svg",
@@ -28,6 +28,7 @@
     "static/media/corex-logo.2a877e13.svg": "/static/media/corex-logo.2a877e13.svg",
     "static/media/facebook.fbede682.svg": "/static/media/facebook.fbede682.svg",
     "static/media/google.07a425a1.svg": "/static/media/google.07a425a1.svg",
+    "static/media/green-arrow.ea90de45.svg": "/static/media/green-arrow.ea90de45.svg",
     "static/media/login-icon.f5c2afd0.svg": "/static/media/login-icon.f5c2afd0.svg",
     "static/media/master-card.7e6b5075.svg": "/static/media/master-card.7e6b5075.svg",
     "static/media/menu-separate.de3799ae.svg": "/static/media/menu-separate.de3799ae.svg",
@@ -39,6 +40,7 @@
     "static/media/product-star.5c04c931.svg": "/static/media/product-star.5c04c931.svg",
     "static/media/rating-star-smaller.25d13079.svg": "/static/media/rating-star-smaller.25d13079.svg",
     "static/media/rating-star.8026037e.svg": "/static/media/rating-star.8026037e.svg",
+    "static/media/red-arrow.a39e9c59.svg": "/static/media/red-arrow.a39e9c59.svg",
     "static/media/reddit.885ce903.svg": "/static/media/reddit.885ce903.svg",
     "static/media/skrill.10fbf738.svg": "/static/media/skrill.10fbf738.svg",
     "static/media/telegram.690eae12.svg": "/static/media/telegram.690eae12.svg",
@@ -54,7 +56,7 @@
   "entrypoints": [
     "static/js/runtime-main.c730f065.js",
     "static/js/2.0f3fc8ec.chunk.js",
-    "static/css/main.9f9b63c1.chunk.css",
-    "static/js/main.8bb8622d.chunk.js"
+    "static/css/main.ccc0f1f1.chunk.css",
+    "static/js/main.ff2b1fe6.chunk.js"
   ]
 }
