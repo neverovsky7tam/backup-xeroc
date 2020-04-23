@@ -2,10 +2,10 @@ import {
   CHANGE_LANG,
   SET_MAIN_CONTENT,
   SET_ACCOUNT_MENU,
-  SET_MAIN_CONTAINER_HEIGHT,
+  SET_ELECTRICITY_VALUE,
 } from '../actions';
-import { langEN, langCH } from '../../data/languages';
 
+import { langEN, langCH } from '../../data/languages';
 
 export const langObj = (state = langEN, action) => {
   switch (action.type) {
@@ -35,10 +35,10 @@ export const accountMenu = (state = false, action) => {
   }
 }
 
-export const mainContainerHeight = (state = 'auto', action) => {
+export const electricityValue = (state = 0.17, action) => {
   switch (action.type) {
-    case SET_MAIN_CONTAINER_HEIGHT:
-      return action.height;
+    case SET_ELECTRICITY_VALUE:
+      return action.val;
     default:
       return state;
   }

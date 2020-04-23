@@ -1,3 +1,37 @@
+.electicity-switcher {
+  margin-right: 30px;
+  @include open-sans_font($white_font, 12px);
+  font-weight: 300;
+
+  .green-text {
+    color: #029e4e;
+  }
+}
+
+.electicity-switcher__active {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70px;
+  margin-right: 15px;
+
+  .arrow-left {
+    transform: rotate(90deg);
+
+    svg {
+      cursor: pointer;
+    }
+  }
+
+  .arrow-right {
+    transform: rotate(-90deg);
+
+    svg {
+      cursor: pointer;
+    }
+  }
+}
+
 .view-switcher {
   display: flex;
   align-items: center;

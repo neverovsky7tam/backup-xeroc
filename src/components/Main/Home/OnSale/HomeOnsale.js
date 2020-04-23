@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import renderProducts from './renderProducts';
 import ProductTile from './ProductTile';
-import ProductList from './ProductList';
+import { ProductListHead, ProductList } from './ProductList';
 import Scroll from '../../Scroll/Scroll';
 import ViewSwitcher from './ViewSwitcher';
 import { calcToScroll } from '../../Scroll/Scroll';
@@ -8,14 +9,15 @@ import { productsData } from '../../../../data/productsData';
 
 const HomeOnsale = () => {
   const [view, setView] = useState(true);
+  const scrollBlockStyle = (view) ? null : { paddingTop: '45px', boxSizing: 'border-box' };
 
   const scrollThumb = React.createRef();
   const scrollBlock = React.createRef();
 
-  const productsBulk = productsData.concat(productsData, productsData, productsData);
+  const data = productsData.concat(productsData, productsData, productsData);
 
   const setScroll = () => {
-    const scroll = calcToScroll(scrollBlock.current, scrollThumb);
+    const scroll = calcToScroll(scrollBlock.current);
     scrollThumb.current.style.transform = `translateY(${scroll.toScroll}px)`;
   }
 
@@ -28,11 +30,13 @@ const HomeOnsale = () => {
         </div>
       </div>
       <div className="onsale__body main-body">
+        {!view && <ProductListHead />}
         <ul
           className="products scroll-container"
+          style={scrollBlockStyle}
           ref={scrollBlock}
           onScroll={setScroll}>
-          {(view) ? <ProductTile data={productsBulk} /> : <ProductList data={productsBulk} />}
+          {(view) ? renderProducts(ProductTile, data) : renderProducts(ProductList, data)}
         </ul>
       </div>
       <Scroll ref={scrollThumb} scrollBlock={scrollBlock} />

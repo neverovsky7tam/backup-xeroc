@@ -8,3 +8,11 @@
 .onsale__body {
   overflow: hidden;
 }
+
+.products {
+  @media (min-width: 1024px) {
+    display: flex;
+    flex-flow: wrap;
+    overflow-x: hidden;
+  }
+}
