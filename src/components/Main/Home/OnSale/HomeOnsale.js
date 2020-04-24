@@ -21,6 +21,8 @@ const HomeOnsale = () => {
     scrollThumb.current.style.transform = `translateY(${scroll.toScroll}px)`;
   }
 
+  const bodyMarginLeft = (view) ? '0' : '30px';
+
   return (
     <section className="onsale home-page">
       <div className="main-header">
@@ -29,7 +31,7 @@ const HomeOnsale = () => {
           <ViewSwitcher view={view} setView={setView} />
         </div>
       </div>
-      <div className="onsale__body main-body">
+      <div className="onsale__body main-body" style={{ marginLeft: bodyMarginLeft }}>
         {!view && <ProductListHead />}
         <ul
           className="products scroll-container"

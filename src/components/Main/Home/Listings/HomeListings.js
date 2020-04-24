@@ -13,7 +13,7 @@ const HomeListings = () => {
 
   const dispatch = useDispatch();
   const scrollTop = useSelector((state) => state.scrollHeight);  
-  console.log('state', scrollTop);
+
   useLayoutEffect(() => {
     scrollBlock.current.scrollTop = scrollTop;
   });
