@@ -3,16 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setCurrentScrollTop } from '../../../../store/actions'
 import renderProducts from '../OnSale/renderProducts';
 import ProductTile from '../OnSale/ProductTile';
-import { productsData } from '../../../../data/productsData';
 
-const HomeListings = () => {
-  const productsDataCut = productsData.slice(0, 10);
+const HomeListings = ({ productsObj }) => {
+  const productsDataCut = productsObj.slice(0, 10);
   const data = productsDataCut.concat(productsDataCut);
 
   const scrollBlock = React.createRef();
 
   const dispatch = useDispatch();
-  const scrollTop = useSelector((state) => state.scrollHeight);  
+  const scrollTop = useSelector((state) => state.scrollHeight);
 
   useLayoutEffect(() => {
     scrollBlock.current.scrollTop = scrollTop;

@@ -1,7 +1,41 @@
 .filters {
-  padding-right: 30px;
+  padding-right: 32px;
 }
 
 .filters-body {
-  width: 215px;
+  width: 212px;
+
+  .filter-select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    background-color: $secondary_bg;
+
+    &:hover {
+      background-color: $secondary_bg-sec;
+    }
+
+    .arrow {
+      display: flex;
+      cursor: pointer;
+    }
+  }
+
+  .filter-select_active {
+    // border: 1px solid $secondary_bg;
+    background-color: $secondary_bg-sec;
+  }
+
+  .filter-items-wrapper {
+    margin-top: 15px;
+  }
+
+  .algorithm {
+    margin-bottom: 15px;
+    overflow: hidden;
+  }
 }

@@ -5,16 +5,15 @@ import { ProductListHead, ProductList } from './ProductList';
 import Scroll from '../../Scroll/Scroll';
 import ViewSwitcher from './ViewSwitcher';
 import { calcToScroll } from '../../Scroll/Scroll';
-import { productsData } from '../../../../data/productsData';
 
-const HomeOnsale = () => {
+const HomeOnsale = ({ productsObj }) => {
   const [view, setView] = useState(true);
   const scrollBlockStyle = (view) ? null : { paddingTop: '45px', boxSizing: 'border-box' };
 
   const scrollThumb = React.createRef();
   const scrollBlock = React.createRef();
 
-  const data = productsData.concat(productsData, productsData, productsData);
+  const data = productsObj.concat(productsObj, productsObj, productsObj);
 
   const setScroll = () => {
     const scroll = calcToScroll(scrollBlock.current);
