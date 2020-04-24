@@ -3,5 +3,13 @@
 }
 
 .listings__body {
-  width: 215px;
+  overflow: hidden;
+
+  .scroll-container {
+    overflow-y: scroll;
+  }
+
+  .products__item {
+    margin-bottom: 30px;
+  }
 }

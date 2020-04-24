@@ -1,12 +1,16 @@
 .onsale {
   @media (min-width: 1024px) {
     flex-grow: 1;
-    padding: 0 30px;
+    padding-right: 30px;
   }
 }
 
 .onsale__body {
   overflow: hidden;
+
+  .products__item {
+    margin: 0 0 30px 30px;
+  }
 }
 
 .products {
