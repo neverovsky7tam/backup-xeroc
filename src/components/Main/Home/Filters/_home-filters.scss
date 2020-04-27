@@ -2,10 +2,14 @@
   padding-right: 32px;
 }
 
-.filters-body {
+.filters__body {
   width: 212px;
 
-  .filter-select {
+  .algorithm {
+    padding-bottom: 15px;
+  }
+
+  .filters__select {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -19,23 +23,73 @@
       background-color: $secondary_bg-sec;
     }
 
+    input {
+      border: 0;
+      @include open-sans_font($white_font, 12px);
+      font-weight: 300;
+      background-color: rgba(0, 0, 0, 0);
+      outline: 0;
+
+      &::placeholder {
+        color: $grey_font;
+      }
+    }
+
     .arrow {
       display: flex;
       cursor: pointer;
     }
   }
 
-  .filter-select_active {
-    // border: 1px solid $secondary_bg;
+  .filters__select_expand {
     background-color: $secondary_bg-sec;
   }
 
-  .filter-items-wrapper {
-    margin-top: 15px;
+  .filters__select_active {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    input::placeholder {
+      color: $white_font;
+    }
   }
 
-  .algorithm {
-    margin-bottom: 15px;
-    overflow: hidden;
+  .filter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    margin-top: 15px;
+
+    .filter__item {
+      border: 1px solid rgba(0, 0, 0, 0);
+      background-color: $secondary_bg;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $secondary_bg-sec;
+      }
+    }
+
+    .filter__item_active {
+      border: 1px solid $secondary_bg;
+      background-color: $secondary_bg-sec;
+
+      .filter__item-inner {
+        color: $white_font;
+      }
+    }
+
+    .filter__item-inner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      @include open-sans_font($grey_font, 10px);
+      font-weight: 300;
+    }
+  }
+
+  .filter_text-block {
+    grid-auto-rows: 30px;
   }
 }

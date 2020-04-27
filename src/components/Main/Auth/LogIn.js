@@ -24,16 +24,16 @@ const LogIn = () => {
           <input
             type="text"
             placeholder="Enter your login"
-            required
-            onChange={onInputChange} />
+            data-error="0"
+            onChange={(e) => onInputChange(e.target)} />
           <BoxDecor />
         </div>
         <div className="p-relative">
           <input
             type="password"
             placeholder="Enter your password"
-            required
-            onChange={onInputChange} />
+            data-error="0"
+            onChange={(e) => onInputChange(e.target)} />
           <BoxDecor />
         </div>
         <div className="auth-content__form-tips"><a href="#" onClick={handleClick}>Forgot your password?</a></div>

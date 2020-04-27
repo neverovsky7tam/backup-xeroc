@@ -5,9 +5,16 @@
   }
 }
 
+.onsale__header {
+  margin-left: 30px;
+}
+
 .onsale__body {
   overflow: hidden;
-
+  
+  .plug-text {
+    margin-left: 30px;
+  }
   .products__item {
     margin: 0 0 30px 30px;
   }
@@ -17,6 +24,7 @@
   @media (min-width: 1024px) {
     display: flex;
     flex-flow: wrap;
+    align-content: flex-start;
     overflow-x: hidden;
   }
 }

@@ -1,12 +1,34 @@
 import {
+  SET_ON_SALE_DISPLAY,
   CHANGE_LANG,
   SET_MAIN_CONTENT,
   SET_ACCOUNT_MENU,
   SET_ELECTRICITY_VALUE,
   SET_CURRENT_SCROLL_TOP,
+  SET_FILTERS_STATE,
 } from '../actions';
 
 import { langEN, langCH } from '../../data/languages';
+import { productsObj } from '../../data/productsData';
+
+export const filtersState = (state = {}, action) => {
+  switch (action.type) {
+    case SET_FILTERS_STATE:
+      return Object.assign({}, state, action);
+    default:
+      return state;
+  }
+}
+
+export const productsDisplay = (state = productsObj, action) => {
+  switch (action.type) {
+    case SET_ON_SALE_DISPLAY:
+      if (Array.isArray(action.products)) return action.products;
+      else return productsObj;
+    default:
+      return state;
+  }
+}
 
 export const langObj = (state = langEN, action) => {
   switch (action.type) {
@@ -45,7 +67,8 @@ export const electricityValue = (state = 0.17, action) => {
   }
 }
 
-export const scrollHeight = (state = 243, action) => {
+const SATART_POINT_INFINITY_SCROLL = 243;
+export const scrollHeight = (state = SATART_POINT_INFINITY_SCROLL, action) => {
   switch (action.type) {
     case SET_CURRENT_SCROLL_TOP:
       return action.val;

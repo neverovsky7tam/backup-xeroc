@@ -22,15 +22,15 @@ const HomeListings = ({ productsObj }) => {
     const scrollBottom = elem.scrollHeight - elem.offsetHeight - elem.scrollTop;
 
     if (elem.scrollTop === 0) {
-      let mediumScrollheight = elem.scrollHeight / 2;
-      if (mediumScrollheight === scrollTop) mediumScrollheight += 1;
-      dispatch(setCurrentScrollTop(mediumScrollheight));
+      let mediumScrollHeight = elem.scrollHeight / 2;
+      if (mediumScrollHeight === scrollTop) mediumScrollHeight += 1;
+      dispatch(setCurrentScrollTop(mediumScrollHeight));
     }
 
     if (scrollBottom < 1) {
-      let currentScrollState = elem.scrollHeight / 2 - elem.offsetHeight;
-      if (currentScrollState === scrollTop) currentScrollState += 1;
-      dispatch(setCurrentScrollTop(currentScrollState));
+      let currentScrollHeight = elem.scrollHeight / 2 - elem.offsetHeight;
+      if (currentScrollHeight === scrollTop) currentScrollHeight += 1;
+      dispatch(setCurrentScrollTop(currentScrollHeight));
     }
   }
 

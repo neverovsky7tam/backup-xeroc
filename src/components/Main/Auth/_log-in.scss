@@ -66,6 +66,10 @@
       outline: 0;
       z-index: 11;
 
+      &::placeholder {
+        color: $grey_font;
+      }
+
       &:not(:last-child) {
         margin-bottom: 15px;
       }
@@ -76,16 +80,6 @@
       }
     }
 
-    // .email,
-    // .password,
-    // .password-confirm {
-    //   border: 1px solid #ff4757;
-    //   background-color: $main_bg;
-
-    //   &:hover {
-    //     background-color: $main_bg;
-    //   }
-    // }
     .field-error,
     .email-error,
     .password-error,
