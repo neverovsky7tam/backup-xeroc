@@ -1,21 +1,19 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector, useStore } from 'react-redux';
-import { setUserFilterSelect } from '../../../../../store/actions';
+import { useSelector } from 'react-redux';
 import { expandFilter } from '../logicFilters';
 import { ReactComponent as ArrowDots } from '../../../../../assets/img/arrow-dots.svg';
 
 const AlgorithmSelect = ({ isExpand, setExpandFilter }) => {
   const input = React.createRef();
+
   useEffect(() => {
     if (userSelect.algorithm) {
-      console.log('tag', userSelect.algorithm.tag.length);
       if (userSelect.algorithm.tag.length) input.current.placeholder = '';
       else input.current.placeholder = 'By Algorithm';
     }
   });
 
   const userSelect = useSelector((state) => state.filtersState);
-  console.log('userSelect', userSelect);
 
   let tags = null;
   if (userSelect.algorithm) {
@@ -30,11 +28,10 @@ const AlgorithmSelect = ({ isExpand, setExpandFilter }) => {
       if (idx === 2) tag = `+${length - 2}...`;
 
       return (
-        <div className="user-select">{tag}</div>
+        <div key={el} className="user-select">{tag}</div>
       )
     })
   };
-
 
   let inputValue = null;
   const onInputChange = (e) => {

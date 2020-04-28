@@ -5,8 +5,7 @@ import renderProducts from '../OnSale/renderProducts';
 import ProductTile from '../OnSale/ProductTile';
 
 const HomeListings = ({ productsObj }) => {
-  const productsDataCut = productsObj.slice(0, 10);
-  const data = productsDataCut.concat(productsDataCut);
+  const data = productsObj.slice(0, 10);
 
   const scrollBlock = React.createRef();
 

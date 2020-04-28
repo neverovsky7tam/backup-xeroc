@@ -1,6 +1,6 @@
 import store from '../../../../store/store';
 import { setOnSaleDisplay, setFiltersState } from '../../../../store/actions';
-import { sortedProducts } from '../../../../data/productsData';
+import { sortedProducts } from '../../../../data/productsProcessing';
 
 const tempObj = {};
 export const setProductsDisplay = (isActive, value, isEmpty) => {
@@ -36,7 +36,6 @@ export const onItemClick = (e, filtersStateObj) => {
 export const expandFilter = (e, isExpand, setExpandFilter) => {
   const filter = e.currentTarget;
   const arrowBtn = e.currentTarget.children[1];
-  // const input = e.currentTarget.children[0];
 
   if (!isExpand) {
     filter.classList.add('filter__select_expand');
