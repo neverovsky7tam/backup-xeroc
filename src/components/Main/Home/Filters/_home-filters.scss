@@ -5,11 +5,11 @@
 .filters__body {
   width: 212px;
 
-  .algorithm {
+  .filter {
     padding-bottom: 15px;
   }
 
-  .filters__select {
+  .filter__select {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -21,6 +21,22 @@
 
     &:hover {
       background-color: $secondary_bg-sec;
+    }
+
+    .select-wrapper {
+      display: flex;
+      align-items: center;
+
+      .user-select {
+        padding: 0 10px;
+        margin-right: 5px;
+        @include open-sans_font($white_font, 10px);
+        font-weight: 300;
+        line-height: 18px;
+        text-align: center;
+        background-color: $btn-main_bg;
+        cursor: pointer;
+      }
     }
 
     input {
@@ -41,11 +57,11 @@
     }
   }
 
-  .filters__select_expand {
+  .filter__select_expand {
     background-color: $secondary_bg-sec;
   }
 
-  .filters__select_active {
+  .filter__select_active {
     border: 1px solid rgba(255, 255, 255, 0.1);
 
     input::placeholder {
@@ -53,7 +69,7 @@
     }
   }
 
-  .filter {
+  .filter__items-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
@@ -89,7 +105,7 @@
     }
   }
 
-  .filter_text-block {
+  .filter__items-container_txt {
     grid-auto-rows: 30px;
   }
 }

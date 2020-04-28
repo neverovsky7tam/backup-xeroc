@@ -335,6 +335,7 @@ const classifyProducts = () => {
 
   });
 
-  console.log('sortedProducts', sortedProducts);
+  // console.log('sortedProducts', sortedProducts);
+  // console.log('equipmentSpecies', [...equipmentSpecies]);
 };
 classifyProducts();

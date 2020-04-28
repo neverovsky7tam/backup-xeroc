@@ -6,15 +6,25 @@ import {
   SET_ELECTRICITY_VALUE,
   SET_CURRENT_SCROLL_TOP,
   SET_FILTERS_STATE,
+  SET_USER_FILTER_SELECT,
 } from '../actions';
 
 import { langEN, langCH } from '../../data/languages';
 import { productsObj } from '../../data/productsData';
 
+export const userFilterSelect = (state = {}, action) => {
+  switch (action.type) {
+    case SET_USER_FILTER_SELECT:
+      return Object.assign({}, state, action.filters);
+    default:
+      return state;
+  }
+}
+
 export const filtersState = (state = {}, action) => {
   switch (action.type) {
     case SET_FILTERS_STATE:
-      return Object.assign({}, state, action);
+      return Object.assign({}, state, action.filters);
     default:
       return state;
   }
