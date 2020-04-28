@@ -1,4 +1,9 @@
-export const productsData = [
+export const algorithmsSpecies = [['Blake (2b)', 0], ['SHA256', 0], ['X11', 0], ['Scrypt', 0], ['Quark', 0], ['CryptoNight', 0], ['Qubit', 0], ['Myr-Groestl', 0], ['LBRY', 0], ['Skein', 0], ['Blake256R14', 0], ['Pascal', 0], ['Ethash', 0], ['Znash', 0], ['CNHeavy', 0], ['Equihash', 0], ['Lyra2REv2', 0], ['NeoScrypt', 0], ['TimeTravel10', 0], ['Lyra2z', 0], ['PHI2', 0], ['Xevan', 0], ['CryptoNightV7', 0]];
+const manufacturerSpecies = ['AMD', 'AsRock', 'Bitmain', 'Innosilicon', 'Canaan', 'Baikal', 'Boundary Electric', 'Sunbelt', 'Whatsminer', 'iBeLink', 'Nvidia', 'Pandaminer', 'Ebit', 'Dayun', 'Bitfury']
+const equipmentSpecies = ['ASIC miners', 'Video Cards', 'GPU Enclosures', 'Used rigs', 'Power Supplies', 'Hardware wallets', 'Motherboards', 'Containers', 'Accessories',];
+const coinsSpecies = ['bch', 'bsd', 'btc', 'pac', 'pirl', 'ppc', 'ryo', 'start', 'tzc', 'ubq', 'vivo', 'vtc', 'xdn', 'xmcc', 'xmr', 'xmy', 'xvg', 'xzc', 'zcl', 'zec', 'zen', 'nlg', 'music', 'mona', 'ltc', 'kmd', 'hush', 'generic', 'gbx', 'ftc', 'flo', 'exp', 'etp', 'eth', 'etc', 'ella', 'dcr', 'crw', 'btx', 'btg', 'btcp',];
+
+export const productsObj = [
   {
     id: 1,
     title: 'USED Antminer S9',
@@ -10,30 +15,34 @@ export const productsData = [
     psu: true,
     img: '/data/products/img/1.png',
     release: 'Mar 2019',
-    manufacturer: 'Antminer',
     model: 'S9',
     noise: '76db',
     power: 2450,
-    algorithm: 'SHA-256',
+    algorithm: 'Blake (2b)',
     efficiency: '8.00',
+    manufacturer: 'AMD',
+    equipment: 'ASIC miners',
+    coins: ['btc', 'dcr', 'eth', 'lcc'],
   },
   {
     id: 2,
     title: 'Antminer DR5 Extra Strong Power',
     hash: {
       option: 'MH/s',
-      value: [{ id: 1, h: 23, price: '1045' }, { id: 2, h: 41, price: '1800' }],
+      value: [{ id: 1, h: 23, price: '1045' }, { id: 2, h: 41, price: '1800' }, { id: 3, h: 39, price: '1560' }, { id: 4, h: 27, price: '1153' }, { id: 5, h: 33, price: '977' }, { id: 6, h: 35, price: '1500' }, { id: 7, h: 31, price: '775' }, { id: 8, h: 41, price: '1960' }, { id: 9, h: 30, price: '1010' }],
     },
     star: 'half',
     psu: false,
     img: '/data/products/img/2.png',
     release: 'Apr 2019',
-    manufacturer: 'Antminer',
     model: 'DR5',
     noise: '76db',
     power: 1240,
-    algorithm: 'SHA-256',
+    algorithm: 'SHA256',
     efficiency: '7.00',
+    manufacturer: 'AsRock',
+    equipment: 'Video Cards',
+    coins: ['btc', 'dcr', 'eth', 'lcc'],
   },
   {
     id: 3,
@@ -46,12 +55,14 @@ export const productsData = [
     psu: false,
     img: '/data/products/img/3.png',
     release: 'Apr 2019',
-    manufacturer: 'GPU',
     model: 'Enclosure',
     noise: '76db',
     power: 3149,
     algorithm: 'SHA-256',
     efficiency: '17.00',
+    manufacturer: 'Bitmain',
+    equipment: 'ASIC miners',
+    coins: ['btc', 'dcr', 'eth', 'lcc'],
   },
   {
     id: 4,
@@ -64,12 +75,14 @@ export const productsData = [
     psu: true,
     img: '/data/products/img/4.png',
     release: 'Jun 2017',
-    manufacturer: 'Innosilicon',
     model: 'A6',
     noise: '76db',
     power: 1850,
-    algorithm: 'SHA-256',
+    algorithm: 'X11',
     efficiency: '2.50',
+    manufacturer: 'Canaan',
+    equipment: 'Video Cards',
+    coins: ['btc', 'dcr', 'eth', 'lcc'],
   },
   {
     id: 5,
@@ -82,12 +95,14 @@ export const productsData = [
     psu: false,
     img: '/data/products/img/5.png',
     release: 'Jan 2020',
-    manufacturer: 'PandaMiner',
     model: 'B3',
     noise: '76db',
     power: 1100,
-    algorithm: 'SHA-256',
+    algorithm: 'Scrypt',
     efficiency: '7.10',
+    manufacturer: 'AMD',
+    equipment: 'Video Cards',
+    coins: ['btc', 'dcr',],
   },
   {
     id: 6,
@@ -100,12 +115,14 @@ export const productsData = [
     psu: true,
     img: '/data/products/img/6.png',
     release: 'Jan 2020',
-    manufacturer: 'Innosilicon',
     model: 'A6',
     noise: '76db',
     power: 1200,
-    algorithm: 'SHA-256',
+    algorithm: 'Blake (2b)',
     efficiency: '10.70',
+    manufacturer: 'Bitmain',
+    equipment: 'Motherboards',
+    coins: ['btc', 'music',],
   },
   {
     id: 7,
@@ -118,12 +135,14 @@ export const productsData = [
     psu: false,
     img: '/data/products/img/7.png',
     release: 'Dec 2018',
-    manufacturer: 'GPU',
     model: 'Enclosure',
     noise: '76db',
     power: 1350,
-    algorithm: 'SHA-256',
+    algorithm: 'X11',
     efficiency: '10.70',
+    manufacturer: 'Bitmain',
+    equipment: 'Motherboards',
+    coins: ['btc', 'dcr', 'eth', 'lcc'],
   },
   {
     id: 8,
@@ -136,12 +155,14 @@ export const productsData = [
     psu: true,
     img: '/data/products/img/8.png',
     release: 'Feb 2016',
-    manufacturer: 'Innosilicon',
     model: 'T3',
     noise: '76db',
     power: 1950,
-    algorithm: 'SHA-256',
+    algorithm: 'Quark',
     efficiency: '4.70',
+    manufacturer: 'AsRock',
+    equipment: 'ASIC miners',
+    coins: ['bch', 'bsd', 'btc', 'pac', 'pirl', 'ppc', 'ryo', 'start', 'tzc', 'ubq', 'vivo', 'vtc', 'xdn', 'xmcc', 'xmr', 'xmy', 'xvg', 'xzc', 'zcl', 'zec', 'zen', 'nlg', 'music', 'mona', 'ltc', 'kmd', 'hush', 'generic', 'gbx', 'ftc', 'flo', 'exp', 'etp', 'eth', 'etc', 'ella', 'dcr', 'crw', 'btx', 'btg', 'btcp',],
   },
   {
     id: 9,
@@ -154,12 +175,14 @@ export const productsData = [
     psu: false,
     img: '/data/products/img/9.png',
     release: 'Feb 2020',
-    manufacturer: 'Antminer',
     model: 'Z9',
     noise: '76db',
     power: 1950,
-    algorithm: 'SHA-256',
+    algorithm: 'Quark',
     efficiency: '11.00',
+    manufacturer: 'Baikal',
+    equipment: 'ASIC miners',
+    coins: ['btc', 'dcr', 'eth', 'lcc'],
   },
   {
     id: 10,
@@ -172,12 +195,14 @@ export const productsData = [
     psu: false,
     img: '/data/products/img/10.png',
     release: 'Apr 2019',
-    manufacturer: 'APW3++',
     model: 'T3',
     noise: '76db',
     power: 1110,
-    algorithm: 'SHA-256',
+    algorithm: 'CryptoNightV7',
     efficiency: '7.90',
+    manufacturer: 'Canaan',
+    equipment: 'Motherboards',
+    coins: ['bch', 'bsd', 'btc', 'pac', 'pirl', 'ppc', 'ryo', 'start', 'tzc', 'ubq', 'vivo', 'vtc', 'xdn', 'xmcc', 'xmr', 'xmy', 'xvg',],
   },
   {
     id: 11,
@@ -190,12 +215,14 @@ export const productsData = [
     psu: false,
     img: '/data/products/img/11.png',
     release: 'Aug 2016',
-    manufacturer: 'Innosilicon',
     model: 'A11',
     noise: '76db',
     power: 1550,
-    algorithm: 'SHA-256',
+    algorithm: 'CryptoNight',
     efficiency: '23.70',
+    manufacturer: 'AsRock',
+    equipment: 'ASIC miners',
+    coins: ['xzc', 'zcl', 'zec', 'zen', 'nlg', 'music', 'mona', 'ltc', 'kmd', 'hush', 'generic', 'gbx', 'ftc', 'flo', 'exp', 'etp', 'eth', 'etc', 'ella', 'dcr', 'crw', 'btx', 'btg', 'btcp',],
   },
   {
     id: 12,
@@ -208,12 +235,14 @@ export const productsData = [
     psu: false,
     img: '/data/products/img/12.png',
     release: 'Okt 2020',
-    manufacturer: 'Dayun',
     model: 'Zig Z1+',
     noise: '76db',
     power: 1150,
-    algorithm: 'SHA-256',
+    algorithm: 'CryptoNight',
     efficiency: '12.00',
+    manufacturer: 'Baikal',
+    equipment: 'Video Cards',
+    coins: ['btc', 'dcr', 'eth', 'lcc', 'ella', 'dcr', 'crw', 'btx', 'btg', 'btcp',],
   },
   {
     id: 13,
@@ -226,12 +255,14 @@ export const productsData = [
     psu: true,
     img: '/data/products/img/14.png',
     release: 'Aug 2019',
-    manufacturer: 'Antminer',
     model: 'S5',
     noise: '76db',
     power: 950,
-    algorithm: 'SHA-256',
+    algorithm: 'Qubit',
     efficiency: '9.00',
+    manufacturer: 'Innosilicon',
+    equipment: 'Used rigs',
+    coins: ['btc', 'eth', 'etc', 'ella', 'dcr', 'crw', 'btx', 'btg', 'btcp',],
   },
   {
     id: 14,
@@ -244,11 +275,70 @@ export const productsData = [
     psu: true,
     img: '/data/products/img/15.png',
     release: 'Feb 2016',
-    manufacturer: 'GPU',
     model: 'Enclosure',
     noise: '76db',
     power: 1200,
-    algorithm: 'SHA-256',
+    algorithm: 'Quark',
     efficiency: '10.00',
+    manufacturer: 'Bitmain',
+    equipment: 'GPU Enclosures',
+    coins: ['btc', 'dcr', 'eth', 'lcc', 'tzc', 'ubq', 'vivo', 'vtc', 'xdn', 'xmcc', 'xmr', 'xmy', 'xvg', 'xzc', 'zcl', 'zec', 'zen', 'nlg', 'music', 'mona', 'ltc',],
   },
-]
+];
+
+export const sortedProducts = {};
+
+const classifyProducts = () => {
+  algorithmsSpecies.forEach((item) => {
+    sortedProducts[item[0]] = {};
+  });
+
+  manufacturerSpecies.forEach((item) => {
+    sortedProducts[item] = {};
+  });
+
+  equipmentSpecies.forEach((item) => {
+    sortedProducts[item] = {};
+  });
+
+  coinsSpecies.forEach((item) => {
+    sortedProducts[item] = {};
+  });
+
+  sortedProducts.search = {};
+
+  productsObj.forEach((el) => {
+    if (sortedProducts[el.algorithm]) {
+      sortedProducts[el.algorithm][el.id] = el;
+    };
+
+    if (sortedProducts[el.manufacturer]) {
+      sortedProducts[el.manufacturer][el.id] = el;
+    };
+
+    if (sortedProducts[el.equipment]) {
+      sortedProducts[el.equipment][el.id] = el;
+    };
+
+    if (sortedProducts[el.coins]) {
+      sortedProducts[el.coins][el.id] = el;
+    };
+
+    // accomodare items in object by keys as a string that contains all searching field in items [key: element]
+    let hashValueStr = '';
+    el.hash.value.forEach((item) => {
+      hashValueStr += String(item.h);
+    });
+
+    const searchStr = el.title + el.hash.option + hashValueStr + el.release + el.model + el.noise + String(el.power) + el.algorithm + el.efficiency + el.manufacturer + el.equipment;
+    sortedProducts.search[searchStr] = el;
+
+  });
+
+  const arr = [1, 2, 3];
+  delete arr[1];
+  console.log('arr', arr.length);
+  // console.log('sortedProducts', sortedProducts);
+  // console.log('equipmentSpecies', [...equipmentSpecies]);
+};
+classifyProducts();
