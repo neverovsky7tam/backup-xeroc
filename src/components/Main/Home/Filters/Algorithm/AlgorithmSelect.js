@@ -1,22 +1,40 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector, useStore } from 'react-redux';
+import { setUserFilterSelect } from '../../../../../store/actions';
 import { expandFilter } from '../logicFilters';
 import { ReactComponent as ArrowDots } from '../../../../../assets/img/arrow-dots.svg';
 
-
-
 const AlgorithmSelect = ({ isExpand, setExpandFilter }) => {
+  const input = React.createRef();
+  useEffect(() => {
+    if (userSelect.algorithm) {
+      console.log('tag', userSelect.algorithm.tag.length);
+      if (userSelect.algorithm.tag.length) input.current.placeholder = '';
+      else input.current.placeholder = 'By Algorithm';
+    }
+  });
+
   const userSelect = useSelector((state) => state.filtersState);
   console.log('userSelect', userSelect);
 
-  let tags = [];
+  let tags = null;
   if (userSelect.algorithm) {
-    console.log('check');
-    for (let key in userSelect.algorithm) {
-      if (userSelect.algorithm[key]) tags.push(key);
-    }
-  }
-  // console.log('tag', tags)
+    let tagsArr = userSelect.algorithm.tag.slice();
+    const length = tagsArr.length;
+    tagsArr.length = 3;
+
+    tags = tagsArr.map((el, idx) => {
+      let tag = null;
+      if (el.length > 3) el = el.slice(0, 3);
+      tag = el + '...';
+      if (idx === 2) tag = `+${length - 2}...`;
+
+      return (
+        <div className="user-select">{tag}</div>
+      )
+    })
+  };
+
 
   let inputValue = null;
   const onInputChange = (e) => {
@@ -31,6 +49,7 @@ const AlgorithmSelect = ({ isExpand, setExpandFilter }) => {
       <div className="select-wrapper">
         {tags}
         <input
+          ref={input}
           onChange={onInputChange}
           type="text"
           placeholder="By Algorithm" />

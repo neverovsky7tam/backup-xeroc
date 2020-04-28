@@ -20,29 +20,17 @@ export const setProductsDisplay = (isActive, value, isEmpty) => {
   else store.dispatch(setOnSaleDisplay(null));
 };
 
-// export const setFilterBorder = (countFilters, field) => {
-//   if (countFilters.length) {
-//     field.current.classList.add('filter__select_active');
-//   } else {
-//     field.current.classList.remove('filter__select_active');
-//   };
-// };
-
-// const countFilters = [];
 export const onItemClick = (e, filtersStateObj) => {
   const item = e.currentTarget;
-  // item.classList.toggle('filter__item_active');
   item.dataset.active = (+item.dataset.active) ? 0 : 1;
   const isActive = +item.dataset.active;
   const value = item.dataset.value;
   filtersStateObj[value] = isActive;
-  console.log('filtersStateObj', filtersStateObj)
-  store.dispatch(setFiltersState('algorithm', filtersStateObj));
-  // (+item.dataset.active) ? countFilters.push(1) : countFilters.pop();
+  store.dispatch(setFiltersState('algorithm', 'filter', filtersStateObj));
+  store.dispatch(setFiltersState('algorithm', 'tag', value));
+
   const isEmpty = Object.values(filtersStateObj).reduce((sum, val) => sum + val);
-  console.log('isEmpty', isEmpty);
   setProductsDisplay(isActive, value, isEmpty);
-  // setFilterBorder(countFilters, field);
 }
 
 export const expandFilter = (e, isExpand, setExpandFilter) => {

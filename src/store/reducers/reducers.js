@@ -6,25 +6,46 @@ import {
   SET_ELECTRICITY_VALUE,
   SET_CURRENT_SCROLL_TOP,
   SET_FILTERS_STATE,
-  SET_USER_FILTER_SELECT,
 } from '../actions';
 
 import { langEN, langCH } from '../../data/languages';
 import { productsObj } from '../../data/productsData';
 
-export const userFilterSelect = (state = {}, action) => {
-  switch (action.type) {
-    case SET_USER_FILTER_SELECT:
-      return Object.assign({}, state, action.filters);
-    default:
-      return state;
-  }
-}
-
 export const filtersState = (state = {}, action) => {
   switch (action.type) {
     case SET_FILTERS_STATE:
-      return Object.assign({}, state, action.filters);
+      const newState = Object.assign({}, state);
+      const key = Object.keys(action.filters);
+      const actionFilter = action.filters[key[0]].filter;
+      const actionTag = action.filters[key[0]].tag;
+      console.log('actionTag',actionTag);
+      if (!newState[key[0]]) {
+        newState[key[0]] = { filter: {}, tag: [] }
+      };
+
+      if (actionFilter) newState[key[0]].filter = actionFilter;
+
+      if (actionTag) {
+        // const checkArr = [];
+        if (newState[key[0]].tag.length) {
+          // const checkArr = newState[key[0]].tag;
+          console.log('tag.length', newState[key[0]].tag);
+          const checkObj = {};
+          newState[key[0]].tag.forEach((el) => {
+            console.log('el', el);
+            checkObj[el] = 1;
+          });
+          console.log('checkObj', checkObj);
+          if (checkObj[actionTag]) delete checkObj[actionTag];
+          else checkObj[actionTag] = 1;
+
+          newState[key[0]].tag = Object.keys(checkObj);
+        } else {
+          newState[key[0]].tag.push(actionTag);
+        }
+      }
+
+      return newState;
     default:
       return state;
   }

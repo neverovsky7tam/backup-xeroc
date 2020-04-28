@@ -5,7 +5,7 @@ export const SET_ACCOUNT_MENU = "SET_ACCOUNT_MENU";
 export const SET_ELECTRICITY_VALUE = "SET_ELECTRICITY_VALUE";
 export const SET_CURRENT_SCROLL_TOP = "SET_CURRENT_SCROLL_TOP";
 export const SET_FILTERS_STATE = "SET_FILTERS_STATE";
-export const SET_USER_FILTER_SELECT = "SET_USER_FILTER_SELECT";
+// export const SET_FILTER_TAG = "SET_FILTER_TAG";
 
 export const setOnSaleDisplay = (products) => ({
   type: SET_ON_SALE_DISPLAY,
@@ -37,13 +37,13 @@ export const setCurrentScrollTop = (val) => ({
   val,
 });
 
-export const setFiltersState = (filter, filtersStateObj) => ({
+export const setFiltersState = (filter, prop, value) => ({
   type: SET_FILTERS_STATE,
-  filters: { [filter]: filtersStateObj, },
+  filters: { [filter]: { [prop]: value, }, },
 });
 
-export const setUserFilterSelect = (filter, userSelectArr) => ({
-  type: SET_USER_FILTER_SELECT,
-  filters: { [filter]: userSelectArr, },
-});
+// export const setFilterTag = (filter, prop, value) => ({
+//   type: SET_FILTER_TAG,
+//   filters: { [filter]: { [prop]: value, }, },
+// });
 

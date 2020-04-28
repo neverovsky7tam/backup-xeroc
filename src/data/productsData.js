@@ -335,6 +335,9 @@ const classifyProducts = () => {
 
   });
 
+  const arr = [1, 2, 3];
+  delete arr[1];
+  console.log('arr', arr.length);
   // console.log('sortedProducts', sortedProducts);
   // console.log('equipmentSpecies', [...equipmentSpecies]);
 };
