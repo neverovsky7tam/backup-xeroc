@@ -18,7 +18,7 @@ export const filtersState = (state = {}, action) => {
       const key = Object.keys(action.filters);
       const actionFilter = action.filters[key[0]].filter;
       const actionTag = action.filters[key[0]].tag;
-      console.log('actionTag',actionTag);
+
       if (!newState[key[0]]) {
         newState[key[0]] = { filter: {}, tag: [] }
       };
@@ -26,16 +26,12 @@ export const filtersState = (state = {}, action) => {
       if (actionFilter) newState[key[0]].filter = actionFilter;
 
       if (actionTag) {
-        // const checkArr = [];
         if (newState[key[0]].tag.length) {
-          // const checkArr = newState[key[0]].tag;
-          console.log('tag.length', newState[key[0]].tag);
           const checkObj = {};
           newState[key[0]].tag.forEach((el) => {
-            console.log('el', el);
             checkObj[el] = 1;
           });
-          console.log('checkObj', checkObj);
+
           if (checkObj[actionTag]) delete checkObj[actionTag];
           else checkObj[actionTag] = 1;
 

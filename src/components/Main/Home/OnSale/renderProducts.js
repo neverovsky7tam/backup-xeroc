@@ -5,7 +5,7 @@ const renderProducts = (ProductTemplate, data) => {
     const productProcess = productsProcessing(el);
 
     return <ProductTemplate
-      key={idx}
+      key={el.id}
       idx={idx}
       item={el}
       itemHash={productProcess.hash}
