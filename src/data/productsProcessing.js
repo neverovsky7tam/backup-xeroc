@@ -50,3 +50,32 @@ const classifyProducts = () => {
 };
 
 classifyProducts();
+
+// async function f() {
+//   let promise = Promise.resolve(1);
+//   promise.then((res) => console.log('res', res));
+// }
+
+// f();
+
+// const load = () => {
+//   let i = 0;
+//   let start = Date.now();
+
+//   function count() {
+//     do {
+//       i++;
+//       // console.log('i++');
+//     } while (i % 1e6 != 0);
+
+//     if (i == 1e9) {
+//       alert("Done in " + (Date.now() - start) + 'ms');
+//     } else {
+//       setTimeout(count); // планируем новый вызов (**)
+//     }
+//   };
+
+//   count();
+//   console.log('done', ("Done in " + (Date.now() - start) + 'ms'));
+
+// };

@@ -46,7 +46,8 @@ export const expandFilter = (e, isExpand, setExpandFilter) => {
   if (e.target.closest('.arrow')) {
     if (isExpand) {
       arrowBtn.style.transform = '';
-      filter.classList.remove('filter__select_expand');
+      const elementsInField = filter.children[0].childNodes.length;
+      if (elementsInField < 2) filter.classList.remove('filter__select_expand');
     } else {
       arrowBtn.style.transform = 'rotate(180deg)';
       filter.classList.add('filter__select_expand');
