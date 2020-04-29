@@ -2,16 +2,19 @@
   padding-right: 32px;
 }
 
-.filters-body {
+.filters__body {
   width: 212px;
 
-  .filter-select {
+  .filter {
+    padding-bottom: 15px;
+  }
+
+  .filter__select {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     box-sizing: border-box;
     height: 30px;
-    padding: 0 10px;
+    padding: 0 9px;
     border: 1px solid rgba(0, 0, 0, 0);
     background-color: $secondary_bg;
 
@@ -19,23 +22,96 @@
       background-color: $secondary_bg-sec;
     }
 
-    .arrow {
+    .select-wrapper {
       display: flex;
+      align-items: center;
+
+      .user-select {
+        padding: 0 10px;
+        margin-right: 5px;
+        @include open-sans_font($white_font, 10px);
+        font-weight: 300;
+        line-height: 18px;
+        text-align: center;
+        background-color: $btn-main_bg;
+        cursor: pointer;
+      }
+    }
+
+    input {
+      border: 0;
+      @include open-sans_font($white_font, 12px);
+      font-weight: 300;
+      background-color: rgba(0, 0, 0, 0);
+      outline: 0;
+      cursor: default;
+
+      &::placeholder {
+        color: $grey_font;
+      }
+    }
+
+    .arrow {
+      position: absolute;
+      display: flex;
+      right: 10px;
+      width: 20px;
+      height: 20px;
+      justify-content: center;
+      align-items: center;
       cursor: pointer;
     }
   }
 
-  .filter-select_active {
-    // border: 1px solid $secondary_bg;
+  .filter__select_expand {
     background-color: $secondary_bg-sec;
   }
 
-  .filter-items-wrapper {
-    margin-top: 15px;
+  .filter__select_active {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    input::placeholder {
+      color: $white_font;
+    }
   }
 
-  .algorithm {
-    margin-bottom: 15px;
-    overflow: hidden;
+  .filter__items-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    margin-top: 15px;
+
+    .filter__item {
+      border: 1px solid rgba(0, 0, 0, 0);
+      background-color: $secondary_bg;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $secondary_bg-sec;
+      }
+    }
+
+    .filter__item_active {
+      border: 1px solid $secondary_bg;
+      background-color: $secondary_bg-sec;
+
+      .filter__item-inner {
+        color: $white_font;
+      }
+    }
+
+    .filter__item-inner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      @include open-sans_font($grey_font, 10px);
+      font-weight: 300;
+    }
+  }
+
+  .filter__items-container_txt {
+    grid-auto-rows: 30px;
   }
 }

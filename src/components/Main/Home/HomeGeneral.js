@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className="main-inner">
       <HomeFilters />
-      <HomeOnsale productsObj={productsObj} />
+      <HomeOnsale />
       <HomeListings productsObj={productsObj} />
       <HomeNews />
     </div>

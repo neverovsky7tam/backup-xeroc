@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux';
-import { langObj, mainBlock, accountMenu, electricityValue, scrollHeight } from './reducers';
+import * as reducers from './reducers';
 
-export default combineReducers({ langObj, mainBlock, accountMenu, electricityValue, scrollHeight });
+export default combineReducers(reducers);

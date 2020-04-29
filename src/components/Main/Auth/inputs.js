@@ -13,11 +13,10 @@ export const onInputChange = (input, errorElement, password) => {
   if (!input.value) {
     input.style.border = '1px solid transparent';
     input.style.backgroundColor = '';
-    errorElement.style = '';
+    if (errorElement) errorElement.style = '';
     input.dataset.check = 0;
   }
 }
-
 
 export const checkInputValue = (input, errorElement, passwordField) => {
   if (input.value) {
