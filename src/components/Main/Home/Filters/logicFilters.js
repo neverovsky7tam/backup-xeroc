@@ -20,14 +20,13 @@ export const setProductsDisplay = (isActive, value, isEmpty) => {
   else store.dispatch(setOnSaleDisplay(null));
 };
 
-export const onItemClick = (e, filtersStateObj) => {
-  const item = e.currentTarget;
-  item.dataset.active = (+item.dataset.active) ? 0 : 1;
-  const isActive = +item.dataset.active;
-  const value = item.dataset.value;
+export const setFilters = (value, filtersStateObj, filter) => {
+  let isActive = filtersStateObj[value];
+  isActive = (+isActive) ? 0 : 1;
   filtersStateObj[value] = isActive;
-  store.dispatch(setFiltersState('algorithm', 'filter', filtersStateObj));
-  store.dispatch(setFiltersState('algorithm', 'tag', value));
+
+  store.dispatch(setFiltersState(filter, 'filter', filtersStateObj));
+  store.dispatch(setFiltersState(filter, 'tag', value));
 
   const isEmpty = Object.values(filtersStateObj).reduce((sum, val) => sum + val);
   setProductsDisplay(isActive, value, isEmpty);

@@ -1,7 +1,7 @@
 import React, { useLayoutEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { expandFilter } from '../logicFilters';
-import { renderTags } from '../logicInput';
+import { renderTags, deleteTag } from '../logicInput';
 import { ReactComponent as ArrowDots } from '../../../../../assets/img/arrow-dots.svg';
 
 const AlgorithmSelect = ({ isExpand, setExpandFilter }) => {
@@ -10,11 +10,19 @@ const AlgorithmSelect = ({ isExpand, setExpandFilter }) => {
 
   const userSelect = useSelector((state) => state.filtersState);
 
+  let storeTags = null;
+  let tags = null;
+  if (userSelect.algorithm) storeTags = userSelect.algorithm.tag;
+
+  if (storeTags) {
+    tags = renderTags(storeTags);
+  }
+
   useLayoutEffect(() => {
     const elementsInField = filter.current.children[0].childNodes.length;
     if (elementsInField > 1) filter.current.classList.add('filter__select_expand');
 
-    if (userSelect.algorithm) {
+    if (storeTags) {
       if (userSelect.algorithm.tag.length) {
         filter.current.classList.add('filter__select_active');
         input.current.placeholder = '';
@@ -30,11 +38,6 @@ const AlgorithmSelect = ({ isExpand, setExpandFilter }) => {
     }
   });
 
-  let tags = null;
-  if (userSelect.algorithm) {
-    const storeTags = userSelect.algorithm.tag;
-    tags = renderTags(storeTags);
-  };
 
   let inputValue = null;
   const onInputChange = (e) => {
@@ -43,8 +46,12 @@ const AlgorithmSelect = ({ isExpand, setExpandFilter }) => {
   };
 
   const onInputKey = (e) => {
-    console.log('e', e);
-  }
+    if ((tags && tags.length) && (e.key === 'Backspace' && !e.target.value)) {
+      deleteTag('algorithm');
+    }
+  };
+
+
 
   return (
     <div
@@ -56,7 +63,7 @@ const AlgorithmSelect = ({ isExpand, setExpandFilter }) => {
         <input
           ref={input}
           onChange={onInputChange}
-          onKeyPress={onInputKey}
+          onKeyDown={onInputKey}
           type="text"
           placeholder="By Algorithm"
           maxLength="10" />
@@ -69,5 +76,3 @@ const AlgorithmSelect = ({ isExpand, setExpandFilter }) => {
 };
 
 export default AlgorithmSelect;
-
-// <div className="user-select">X11...</div>

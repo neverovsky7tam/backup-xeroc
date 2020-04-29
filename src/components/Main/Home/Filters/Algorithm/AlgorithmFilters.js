@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { onItemClick } from '../logicFilters';
+import { setFilters } from '../logicFilters';
 import { algorithmsSpecies } from '../../../../../data/productsData';
 import { BoxDecor } from '../../../../Parts/BoxDecor';
 
@@ -18,9 +18,10 @@ const AlgorithmFilter = () => {
   const filtersStateArr = Object.entries(filtersStateObj);
 
   const onFilterClick = (e) => {
-    onItemClick(e, filtersStateObj);
+    const value = e.currentTarget.dataset.value;
+    setFilters(value, filtersStateObj, 'algorithm');
   };
-  
+
   return (
     <ul className="filter__items-container filter__items-container_txt">
       {filtersStateArr.map((el, idx) => {

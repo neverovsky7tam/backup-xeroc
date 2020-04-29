@@ -1,14 +1,11 @@
 import React from 'react';
+import store from '../../../../store/store';
+import { setFilters } from './logicFilters';
 
 export const renderTags = (storeTags) => {
   let tagsArr = storeTags.slice();
-  // console.log('1', tagsArr.length);
-  // tagsArr.length -= 1;
-  // console.log('2', tagsArr.length);
   const length = tagsArr.length;
   if (tagsArr.length > 3) tagsArr.length = 3;
-  // console.log('3', tagsArr.length);
-  // console.log('arr', tagsArr);
 
   return tagsArr.map((el, idx) => {
     let tag = null;
@@ -20,4 +17,12 @@ export const renderTags = (storeTags) => {
       <div key={el} className="user-select">{tag}</div>
     )
   });
-}
+};
+
+export const deleteTag = (filter) => {
+  const state = store.getState();
+  const targetObj = state.filtersState[filter];
+  const filtersStateObj = targetObj.filter;
+  const value = targetObj.tag[targetObj.tag.length - 1];
+  setFilters(value, filtersStateObj, 'algorithm');
+};
