@@ -1,13 +1,13 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { expandFilter } from '../logicFilters';
-import { renderTags, deleteTag } from '../logicInput';
+import { renderTags, deleteTag, setSelectFieldState, setSearchBlock, setSearchFilterItems } from '../logicInput';
 import { ReactComponent as ArrowDots } from '../../../../../assets/img/arrow-dots.svg';
 
-const AlgorithmSelect = ({ isExpand, setExpandFilter }) => {
+const AlgorithmSelect = ({ isExpand, setExpand, isSearch, setSearchExpand, setFiltersArr }) => {
   const filter = React.createRef();
+  const arrow = React.createRef();
   const input = React.createRef();
-
   const userSelect = useSelector((state) => state.filtersState);
 
   let storeTags = null;
@@ -16,33 +16,27 @@ const AlgorithmSelect = ({ isExpand, setExpandFilter }) => {
 
   if (storeTags) {
     tags = renderTags(storeTags);
-  }
+  };
 
-  useLayoutEffect(() => {
-    const elementsInField = filter.current.children[0].childNodes.length;
-    if (elementsInField > 1) filter.current.classList.add('filter__select_expand');
-
-    if (storeTags) {
-      if (userSelect.algorithm.tag.length) {
-        filter.current.classList.add('filter__select_active');
-        input.current.placeholder = '';
-        input.current.value = '';
-        input.current.focus();
-        input.current.maxLength = 5;
-      }
-      else {
-        filter.current.classList.remove('filter__select_active');
-        input.current.placeholder = 'By Algorithm';
-        input.current.maxLength = 10;
-      }
-    }
+  useEffect(() => {
+    const closeFilters = (e) => {
+      const target = e.target;
+      if (!target.closest('.algorithm') && !target.closest('.filter__item')) {
+        setExpand(false);
+        setSearchExpand(false);
+        document.removeEventListener('click', closeFilters);
+      };
+    };
+    document.addEventListener('click', closeFilters);
   });
 
+  useLayoutEffect(() => {
+    setSelectFieldState(filter.current, input.current, arrow.current, storeTags, isExpand, isSearch);
+  });
 
-  let inputValue = null;
-  const onInputChange = (e) => {
-    // console.log('onChange', e.target.value);
-    inputValue = e.target.value;
+  const onInputChange = () => {
+    setSearchBlock(input.current, setExpand, setSearchExpand);
+    setSearchFilterItems('algorithm', input.current.value, setFiltersArr);
   };
 
   const onInputKey = (e) => {
@@ -51,12 +45,10 @@ const AlgorithmSelect = ({ isExpand, setExpandFilter }) => {
     }
   };
 
-
-
   return (
     <div
       className="filter__select"
-      onClick={(e) => expandFilter(e, isExpand, setExpandFilter)}
+      onClick={(e) => expandFilter(e, isExpand, setExpand, setSearchExpand, input.current)}
       ref={filter}>
       <div className="select-wrapper">
         {tags}
@@ -68,7 +60,7 @@ const AlgorithmSelect = ({ isExpand, setExpandFilter }) => {
           placeholder="By Algorithm"
           maxLength="10" />
       </div>
-      <div className="arrow">
+      <div className="arrow" ref={arrow}>
         <ArrowDots />
       </div>
     </div>

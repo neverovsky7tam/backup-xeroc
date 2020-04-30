@@ -80,13 +80,14 @@ const Scroll = React.forwardRef(({ scrollBlock }, ref) => {
   return (
     <div
       className="scroll-layer"
-      ref={scrollLayer}>
+      ref={scrollLayer}
+      onMouseLeave={clear}
+      onMouseUp={clear}>
       <div className="scroll-component">
         <div
           className="scroll-thumb"
           ref={ref}
           onMouseDown={dragThumb}
-          onMouseUp={clear}
           style={{ transform: 'translateY(0px)' }}>
         </div>
       </div>

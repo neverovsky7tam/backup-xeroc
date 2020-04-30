@@ -27,7 +27,7 @@
       align-items: center;
 
       .user-select {
-        padding: 0 10px;
+        width: 45px;
         margin-right: 5px;
         @include open-sans_font($white_font, 10px);
         font-weight: 300;
@@ -88,6 +88,14 @@
 
       &:hover {
         background-color: $secondary_bg-sec;
+      }
+    }
+
+    .filter__item_not-found {
+      cursor: default;
+      
+      &:hover {
+        background-color: $secondary_bg;
       }
     }
 

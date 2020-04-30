@@ -40,7 +40,6 @@ export const filtersState = (state = {}, action) => {
           newState[key[0]].tag.push(actionTag);
         }
       }
-
       return newState;
     default:
       return state;

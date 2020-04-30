@@ -1,6 +1,7 @@
 import store from '../../../../store/store';
 import { setOnSaleDisplay, setFiltersState } from '../../../../store/actions';
 import { sortedProducts } from '../../../../data/productsProcessing';
+import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../data/productsData';
 
 const tempObj = {};
 export const setProductsDisplay = (isActive, value, isEmpty) => {
@@ -20,7 +21,9 @@ export const setProductsDisplay = (isActive, value, isEmpty) => {
   else store.dispatch(setOnSaleDisplay(null));
 };
 
-export const setFilters = (value, filtersStateObj, filter) => {
+export const setFilters = (value, filter) => {
+  const filtersStateObj = defineObject(filter);
+
   let isActive = filtersStateObj[value];
   isActive = (+isActive) ? 0 : 1;
   filtersStateObj[value] = isActive;
@@ -30,27 +33,41 @@ export const setFilters = (value, filtersStateObj, filter) => {
 
   const isEmpty = Object.values(filtersStateObj).reduce((sum, val) => sum + val);
   setProductsDisplay(isActive, value, isEmpty);
-}
+};
 
-export const expandFilter = (e, isExpand, setExpandFilter) => {
-  const filter = e.currentTarget;
-  const arrowBtn = e.currentTarget.children[1];
+const defineObject = (filter) => {
+  const state = store.getState();
+  let filtersStateObj = null;
 
-  if (!isExpand) {
-    filter.classList.add('filter__select_expand');
-    arrowBtn.style.transform = 'rotate(180deg)';
-    setExpandFilter(!isExpand);
-  };
-
-  if (e.target.closest('.arrow')) {
-    if (isExpand) {
-      arrowBtn.style.transform = '';
-      const elementsInField = filter.children[0].childNodes.length;
-      if (elementsInField < 2) filter.classList.remove('filter__select_expand');
-    } else {
-      arrowBtn.style.transform = 'rotate(180deg)';
-      filter.classList.add('filter__select_expand');
+  if (state.filtersState) {
+    if (state.filtersState[filter]) {
+      filtersStateObj = state.filtersState[filter].filter;
+    }
+    else {
+      switch (filter) {
+        case 'algorithm':
+          filtersStateObj = algorithmsSpecies;
+          break;
+        case 'coin':
+          filtersStateObj = coinsSpecies;
+          break;
+        case 'equipment':
+          filtersStateObj = equipmentSpecies;
+          break;
+        case 'manufacturer':
+          filtersStateObj = manufacturerSpecies;
+          break;
+      };
+      filtersStateObj = Object.fromEntries(filtersStateObj);
     };
+  };
+  return filtersStateObj;
+};
+
+export const expandFilter = (e, isExpand, setExpandFilter, setSearchExpand, input) => {
+  if (!isExpand && !input.value) {
     setExpandFilter(!isExpand);
   };
+
+  if (e.target.closest('.arrow')) setExpandFilter(!isExpand);
 };
