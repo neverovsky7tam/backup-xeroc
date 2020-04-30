@@ -1,57 +1,66 @@
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { expandFilter } from '../logicFilters';
+import { renderTags, deleteTag, setSelectFieldState, setSearchBlock, setSearchFilterItems } from '../logicInput';
 import { ReactComponent as ArrowDots } from '../../../../../assets/img/arrow-dots.svg';
 
-const AlgorithmSelect = ({ isExpand, setExpandFilter }) => {
+const AlgorithmSelect = ({ isExpand, setExpand, isSearch, setSearchExpand, setFiltersArr }) => {
+  const filter = React.createRef();
+  const arrow = React.createRef();
   const input = React.createRef();
-
-  useEffect(() => {
-    if (userSelect.algorithm) {
-      if (userSelect.algorithm.tag.length) input.current.placeholder = '';
-      else input.current.placeholder = 'By Algorithm';
-    }
-  });
-
   const userSelect = useSelector((state) => state.filtersState);
 
+  let storeTags = null;
   let tags = null;
-  if (userSelect.algorithm) {
-    let tagsArr = userSelect.algorithm.tag.slice();
-    const length = tagsArr.length;
-    tagsArr.length = 3;
+  if (userSelect.algorithm) storeTags = userSelect.algorithm.tag;
 
-    tags = tagsArr.map((el, idx) => {
-      let tag = null;
-      if (el.length > 3) el = el.slice(0, 3);
-      tag = el + '...';
-      if (idx === 2) tag = `+${length - 2}...`;
-
-      return (
-        <div key={el} className="user-select">{tag}</div>
-      )
-    })
+  if (storeTags) {
+    tags = renderTags(storeTags);
   };
 
-  let inputValue = null;
-  const onInputChange = (e) => {
-    console.log('onChange', e.target.value);
-    inputValue = e.target.value
+  useEffect(() => {
+    const closeFilters = (e) => {
+      const target = e.target;
+      if (!target.closest('.algorithm') && !target.closest('.filter__item')) {
+        setExpand(false);
+        setSearchExpand(false);
+        document.removeEventListener('click', closeFilters);
+      };
+    };
+    document.addEventListener('click', closeFilters);
+  });
+
+  useLayoutEffect(() => {
+    setSelectFieldState(filter.current, input.current, arrow.current, storeTags, isExpand, isSearch);
+  });
+
+  const onInputChange = () => {
+    setSearchBlock(input.current, setExpand, setSearchExpand);
+    setSearchFilterItems('algorithm', input.current.value, setFiltersArr);
+  };
+
+  const onInputKey = (e) => {
+    if ((tags && tags.length) && (e.key === 'Backspace' && !e.target.value)) {
+      deleteTag('algorithm');
+    }
   };
 
   return (
     <div
       className="filter__select"
-      onClick={(e) => expandFilter(e, isExpand, setExpandFilter)}>
+      onClick={(e) => expandFilter(e, isExpand, setExpand, setSearchExpand, input.current)}
+      ref={filter}>
       <div className="select-wrapper">
         {tags}
         <input
           ref={input}
           onChange={onInputChange}
+          onKeyDown={onInputKey}
           type="text"
-          placeholder="By Algorithm" />
+          placeholder="By Algorithm"
+          maxLength="10" />
       </div>
-      <div className="arrow">
+      <div className="arrow" ref={arrow}>
         <ArrowDots />
       </div>
     </div>
@@ -59,5 +68,3 @@ const AlgorithmSelect = ({ isExpand, setExpandFilter }) => {
 };
 
 export default AlgorithmSelect;
-
-// <div className="user-select">X11...</div>

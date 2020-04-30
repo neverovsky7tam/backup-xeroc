@@ -1,11 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { onItemClick } from '../logicFilters';
 import { algorithmsSpecies } from '../../../../../data/productsData';
-import { BoxDecor } from '../../../../Parts/BoxDecor';
+import FilterItems from '../FilterItems';
+import { setFilters } from '../logicFilters';
 
 const AlgorithmFilter = () => {
-
   const store = useSelector((store) => store.filtersState);
 
   let filtersStateObj = null;
@@ -15,31 +14,14 @@ const AlgorithmFilter = () => {
     filtersStateObj = Object.fromEntries(algorithmsSpecies);
   };
 
-  const filtersStateArr = Object.entries(filtersStateObj);
+  const filtersArr = Object.entries(filtersStateObj);
 
-  const onFilterClick = (e) => {
-    onItemClick(e, filtersStateObj);
+  const onItemClick = (e) => {
+    const value = e.currentTarget.dataset.value;
+    setFilters(value, 'algorithm');
   };
-  
-  return (
-    <ul className="filter__items-container filter__items-container_txt">
-      {filtersStateArr.map((el, idx) => {
-        return (
-          <li
-            key={idx}
-            className={(el[1]) ? 'filter__item filter__item_active' : 'filter__item'}
-            data-active={el[1]}
-            data-value={el[0]}
-            onClick={onFilterClick}>
-            <div className="filter__item-inner">
-              {el[0]}
-              <BoxDecor />
-            </div>
-          </li>
-        )
-      })}
-    </ul>
-  )
+
+  return <FilterItems filtersArr={filtersArr} onItemClick={onItemClick} />
 };
 
 export default AlgorithmFilter;

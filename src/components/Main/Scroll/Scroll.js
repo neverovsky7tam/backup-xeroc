@@ -73,10 +73,16 @@ const Scroll = React.forwardRef(({ scrollBlock }, ref) => {
     }
   }
 
+  const clear = () => {
+    scrollLayer.current.style.width = '';
+  }
+
   return (
     <div
       className="scroll-layer"
-      ref={scrollLayer}>
+      ref={scrollLayer}
+      onMouseLeave={clear}
+      onMouseUp={clear}>
       <div className="scroll-component">
         <div
           className="scroll-thumb"
