@@ -3,26 +3,21 @@ import store from '../../../../store/store';
 import { setFilters } from './logicFilters';
 import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../data/productsData';
 
-let tagOriginValue = null;
 const onMouseTag = (e) => {
   if (e.type === 'mouseenter') {
-    tagOriginValue = e.target.innerHTML;
-    e.target.innerHTML = '&times;';
-    e.target.style.fontSize = '16px';
-    e.target.style.fontWeight = '400';
+    e.currentTarget.children[1].style.top = '0';
   } else {
-    e.target.innerHTML = tagOriginValue;
-    e.target.style = '';
+    e.currentTarget.children[1].style = '';
   }
 };
 
 const onClickTag = (e) => {
-  console.log('e', +e.target.dataset.tag);
   const tag = e.target.dataset.tag;
-  deleteTag('algorithm', tag);
+  const filterTag = e.target.dataset.filter;
+  deleteTag(filterTag, tag);
 };
 
-export const renderTags = (storeTags) => {
+export const renderTags = (storeTags, filter) => {
   let tagsArr = storeTags.slice();
   const length = tagsArr.length;
   if (tagsArr.length > 3) tagsArr.length = 3;
@@ -41,12 +36,19 @@ export const renderTags = (storeTags) => {
     return (
       <div
         key={el}
-        className="user-select"
+        className="filter-tag"
         onMouseEnter={onMouseTag}
-        onMouseLeave={onMouseTag}
-        onClick={onClickTag}
-        data-tag={dataTarget}>
-        {tag}
+        onMouseLeave={onMouseTag}>
+        <div className="filter-tag__content">
+          {tag}
+        </div>
+        <div
+          className="filter-tag__close"
+          data-tag={dataTarget}
+          data-filter={filter}
+          onClick={onClickTag}>
+          &times;
+        </div>
       </div>
     )
   });
@@ -56,8 +58,9 @@ export const deleteTag = (filter, tag) => {
   const state = store.getState();
   const targetObj = state.filtersState[filter];
 
-  const hasName = (+tag === 0) ? false : true;
-  console.log('hasName', hasName);
+  let hasName = null;
+  if (tag) hasName = (+tag === 0) ? false : true;
+
   if (hasName) {
     setFilters(tag, filter);
   }
@@ -132,7 +135,6 @@ export const setSearchFilterItems = (filter, value, setFiltersArr) => {
 
   const val = value.toLowerCase();
   const renderFiltersArr = filtersArr.filter((item) => item[0].toLowerCase().includes(val));
-  // console.log('renderFiltersArr', renderFiltersArr);
   setFiltersArr(renderFiltersArr);
 };
 

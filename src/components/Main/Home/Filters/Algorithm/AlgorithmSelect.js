@@ -15,7 +15,7 @@ const AlgorithmSelect = ({ isExpand, setExpand, isSearch, setSearchExpand, setFi
   if (userSelect.algorithm) storeTags = userSelect.algorithm.tag;
 
   if (storeTags) {
-    tags = renderTags(storeTags);
+    tags = renderTags(storeTags, 'algorithm');
   };
 
   useEffect(() => {
