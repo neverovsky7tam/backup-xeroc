@@ -19,6 +19,7 @@ const classifyProducts = () => {
   });
 
   sortedProducts.search = {};
+  sortedProducts.byID = {};
 
   productsObj.forEach((el) => {
     if (sortedProducts[el.algorithm]) {
@@ -43,10 +44,12 @@ const classifyProducts = () => {
       hashValueStr += String(item.h);
     });
 
-    const searchStr = el.title + el.hash.option + hashValueStr + el.release + el.model + el.noise + String(el.power) + el.algorithm + el.efficiency + el.manufacturer + el.equipment;
+    const searchStr = (el.title + ' ' + el.hash.option + ' ' + hashValueStr + ' ' + el.release + ' ' + el.model + ' ' + el.noise + ' ' + String(el.power) + ' ' + el.algorithm + ' ' + el.efficiency + ' ' + el.manufacturer + ' ' + el.equipment + ' ' + el.id).toLowerCase();
     sortedProducts.search[searchStr] = el;
 
+    sortedProducts.byID[el.id] = el;
   });
+  console.log('sortedProducts', sortedProducts);
 };
 
 classifyProducts();
