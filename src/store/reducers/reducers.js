@@ -6,6 +6,7 @@ import {
   SET_ELECTRICITY_VALUE,
   SET_CURRENT_SCROLL_TOP,
   SET_FILTERS_STATE,
+  SET_RENDER_OBJ,
 } from '../actions';
 
 import { langEN, langCH } from '../../data/languages';
@@ -41,6 +42,15 @@ export const filtersState = (state = {}, action) => {
         }
       }
       return newState;
+    default:
+      return state;
+  }
+}
+
+export const renderObj = (state = {}, action) => {
+  switch (action.type) {
+    case SET_RENDER_OBJ:
+      return action.obj;
     default:
       return state;
   }

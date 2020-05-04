@@ -3,21 +3,21 @@ import { setOnSaleDisplay, setFiltersState } from '../../../../store/actions';
 import { sortedProducts } from '../../../../data/productsProcessing';
 import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../data/productsData';
 
-const tempObj = {};
-export const setProductsDisplay = (isActive, value, isEmpty) => {
+export const setProductsDisplay = (isActive, value, isEnableFilter) => {
+  const renderObj = store.getState().renderObj;
   const productsArr = Object.values(sortedProducts[value]);
 
   if (productsArr.length) {
     productsArr.forEach((el) => {
       if (isActive) {
-        if (!tempObj[el.id]) tempObj[el.id] = el;
+        if (!renderObj[el.id]) renderObj[el.id] = el;
       } else {
-        if (tempObj[el.id]) delete tempObj[el.id];
+        if (renderObj[el.id]) delete renderObj[el.id];
       }
     });
-  }
+  };
 
-  if (isEmpty) store.dispatch(setOnSaleDisplay(Object.values(tempObj)));
+  if (isEnableFilter) store.dispatch(setOnSaleDisplay(Object.values(renderObj)));
   else store.dispatch(setOnSaleDisplay(null));
 };
 
@@ -31,8 +31,8 @@ export const setFilters = (value, filter) => {
   store.dispatch(setFiltersState(filter, 'filter', filtersStateObj));
   store.dispatch(setFiltersState(filter, 'tag', value));
 
-  const isEmpty = Object.values(filtersStateObj).reduce((sum, val) => sum + val);
-  setProductsDisplay(isActive, value, isEmpty);
+  const isEnableFilter = Object.values(filtersStateObj).reduce((sum, val) => sum += val);
+  setProductsDisplay(isActive, value, isEnableFilter);
 };
 
 const defineObject = (filter) => {
@@ -64,7 +64,7 @@ const defineObject = (filter) => {
   return filtersStateObj;
 };
 
-export const expandFilter = (e, isExpand, setExpandFilter, setSearchExpand, input) => {
+export const expandFilter = (e, isExpand, setExpandFilter, input) => {
   if (!isExpand && !input.value) {
     setExpandFilter(!isExpand);
   };

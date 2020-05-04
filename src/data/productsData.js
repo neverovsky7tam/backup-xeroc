@@ -1089,7 +1089,7 @@ export const productsObj = [
     title: 'Antminer S5',
     hash: {
       option: 'TH/s',
-      value: [{ id: 1, h: 55, price: '535' }, { id: 2, h: 59, price: '700' }],
+      value: [{ id: 1, h: 55, price: '536' }, { id: 2, h: 59, price: '700' }],
     },
     star: 'half',
     psu: true,
@@ -1106,7 +1106,7 @@ export const productsObj = [
   },
   {
     id: 56,
-    title: 'GPU Enclosure',
+    title: 'GPU Enclosure vld',
     hash: {
       option: 'Ksol/s',
       value: [{ id: 1, h: 5, price: '1535' }],
