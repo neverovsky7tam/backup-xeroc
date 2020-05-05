@@ -6,7 +6,8 @@ import {
   SET_ELECTRICITY_VALUE,
   SET_CURRENT_SCROLL_TOP,
   SET_FILTERS_STATE,
-  SET_RENDER_OBJ,
+  SET_FILTER_OBJ,
+  SET_SEARCH_TOGGLE,
 } from '../actions';
 
 import { langEN, langCH } from '../../data/languages';
@@ -47,10 +48,20 @@ export const filtersState = (state = {}, action) => {
   }
 }
 
-export const renderObj = (state = {}, action) => {
+export const filterObj = (state = {}, action) => {
   switch (action.type) {
-    case SET_RENDER_OBJ:
+    case SET_FILTER_OBJ:
+      console.log('action.obj', action.obj);
       return action.obj;
+    default:
+      return state;
+  }
+}
+
+export const searchToggle = (state = { inputVal: null, isEnable: false, searchObj: null, searchFiltersObj: null, }, action) => {
+  switch (action.type) {
+    case SET_SEARCH_TOGGLE:
+      return action.searchState;
     default:
       return state;
   }

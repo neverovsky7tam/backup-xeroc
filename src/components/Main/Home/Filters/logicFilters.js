@@ -1,24 +1,78 @@
 import store from '../../../../store/store';
-import { setOnSaleDisplay, setFiltersState } from '../../../../store/actions';
+import { setOnSaleDisplay, setFiltersState, setSearchToggle } from '../../../../store/actions';
 import { sortedProducts } from '../../../../data/productsProcessing';
 import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../data/productsData';
+import { searchLogic } from './Search/searchLogic';
 
 export const setProductsDisplay = (isActive, value, isEnableFilter) => {
-  const renderObj = store.getState().renderObj;
+  let filterObj = store.getState().filterObj;
+  console.log('filterObj', filterObj);
+
+  const searchState = store.getState().searchToggle;
+  console.log('searchState', searchState);
+
   const productsArr = Object.values(sortedProducts[value]);
+  console.log('productsArr', productsArr);
 
-  if (productsArr.length) {
-    productsArr.forEach((el) => {
-      if (isActive) {
-        if (!renderObj[el.id]) renderObj[el.id] = el;
+  // filter active
+  if (isActive) {
+    if (searchState.isEnable) {
+      let renderObj = {};
+      productsArr.forEach((el) => {
+        if (searchState.searchObj[el.id]) renderObj[el.id] = el;
+      });
+
+      renderObj = Object.assign(renderObj, searchState.searchFiltersObj);
+      store.dispatch(setOnSaleDisplay(Object.values(renderObj)));
+      store.dispatch(setSearchToggle(searchState.inputVal, true, searchState.searchObj, renderObj));
+    } else {
+      productsArr.forEach((el) => {
+        if (!filterObj[el.id]) filterObj[el.id] = el;
+      });
+
+      if (isEnableFilter) store.dispatch(setOnSaleDisplay(Object.values(filterObj)));
+      else store.dispatch(setOnSaleDisplay(null));
+    }
+    // filter disactive 
+  } else {
+    // search is active
+    if (searchState.isEnable) {
+      // search + filter
+      console.log('searchFiltersObj', searchState.searchFiltersObj);
+      productsArr.forEach((el) => {
+        if (searchState.searchFiltersObj[el.id]) delete searchState.searchFiltersObj[el.id];
+        if (filterObj[el.id]) delete filterObj[el.id];
+      });
+
+      if (isEnableFilter) {
+        store.dispatch(setOnSaleDisplay(Object.values(searchState.searchFiltersObj)));
       } else {
-        if (renderObj[el.id]) delete renderObj[el.id];
-      }
-    });
-  };
 
-  if (isEnableFilter) store.dispatch(setOnSaleDisplay(Object.values(renderObj)));
-  else store.dispatch(setOnSaleDisplay(null));
+        store.dispatch(setOnSaleDisplay(Object.values(searchState.searchObj)));
+      }
+      // filter + search
+      // } else {
+      //   productsArr.forEach((el) => {
+      //     if (searchState.searchObj[el.id]) delete searchState.searchObj[el.id];
+      //   });
+
+      //   console.log('no filters')
+      //   if (isEnableFilter) {
+      //     store.dispatch(setOnSaleDisplay(Object.values(searchState.searchObj)));
+      //   } else {
+      //     searchLogic(searchState.inputVal);
+      //   }
+      // }
+      // search disactive
+    } else {
+      productsArr.forEach((el) => {
+        if (filterObj[el.id]) delete filterObj[el.id];
+      });
+
+      if (isEnableFilter) store.dispatch(setOnSaleDisplay(Object.values(filterObj)));
+      else store.dispatch(setOnSaleDisplay(null));
+    }
+  };
 };
 
 export const setFilters = (value, filter) => {
