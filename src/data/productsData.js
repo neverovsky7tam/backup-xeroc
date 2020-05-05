@@ -1006,7 +1006,7 @@ export const productsObj = [
   },
   {
     id: 51,
-    title: 'Antminer Z9 Mini',
+    title: 'Antminer Z9 Mini A6',
     hash: {
       option: 'MH/s',
       value: [{ id: 1, h: 230, price: '2209' }],

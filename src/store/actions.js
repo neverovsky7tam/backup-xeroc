@@ -5,7 +5,8 @@ export const SET_ACCOUNT_MENU = "SET_ACCOUNT_MENU";
 export const SET_ELECTRICITY_VALUE = "SET_ELECTRICITY_VALUE";
 export const SET_CURRENT_SCROLL_TOP = "SET_CURRENT_SCROLL_TOP";
 export const SET_FILTERS_STATE = "SET_FILTERS_STATE";
-export const SET_RENDER_OBJ = "SET_RENDER_OBJ";
+export const SET_FILTER_OBJ = "SET_FILTER_OBJ";
+export const SET_SEARCH_TOGGLE = "SET_SEARCH_TOGGLE";
 
 export const setOnSaleDisplay = (products) => ({
   type: SET_ON_SALE_DISPLAY,
@@ -42,7 +43,12 @@ export const setFiltersState = (filter, prop, value) => ({
   filters: { [filter]: { [prop]: value, }, },
 });
 
-export const setRenderObj = (obj) => ({
-  type: SET_RENDER_OBJ,
+export const setFilterObj = (obj) => ({
+  type: SET_FILTER_OBJ,
   obj,
+});
+
+export const setSearchToggle = (inputVal, isEnable, searchObj, searchFiltersObj) => ({
+  type: SET_SEARCH_TOGGLE,
+  searchState: { inputVal, isEnable, searchObj, searchFiltersObj, },
 });
