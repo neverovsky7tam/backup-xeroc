@@ -1,78 +1,50 @@
 import store from '../../../../store/store';
-import { setOnSaleDisplay, setFiltersState, setSearchToggle } from '../../../../store/actions';
+import { setOnSaleDisplay, setFiltersState, setFilterObj, setSearchToggle, setFilterOrigin } from '../../../../store/actions';
 import { sortedProducts } from '../../../../data/productsProcessing';
 import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../data/productsData';
 import { searchLogic } from './Search/searchLogic';
 
 export const setProductsDisplay = (isActive, value, isEnableFilter) => {
+  const filterOrigin = store.getState().filterOrigin;
   let filterObj = store.getState().filterObj;
-  console.log('filterObj', filterObj);
 
-  const searchState = store.getState().searchToggle;
-  console.log('searchState', searchState);
+  const search = store.getState().searchToggle;
 
   const productsArr = Object.values(sortedProducts[value]);
-  console.log('productsArr', productsArr);
+  let renderObj = {};
 
-  // filter active
   if (isActive) {
-    if (searchState.isEnable) {
-      let renderObj = {};
-      productsArr.forEach((el) => {
-        if (searchState.searchObj[el.id]) renderObj[el.id] = el;
-      });
-
-      renderObj = Object.assign(renderObj, searchState.searchFiltersObj);
-      store.dispatch(setOnSaleDisplay(Object.values(renderObj)));
-      store.dispatch(setSearchToggle(searchState.inputVal, true, searchState.searchObj, renderObj));
-    } else {
-      productsArr.forEach((el) => {
-        if (!filterObj[el.id]) filterObj[el.id] = el;
-      });
-
-      if (isEnableFilter) store.dispatch(setOnSaleDisplay(Object.values(filterObj)));
-      else store.dispatch(setOnSaleDisplay(null));
-    }
-    // filter disactive 
-  } else {
-    // search is active
-    if (searchState.isEnable) {
-      // search + filter
-      console.log('searchFiltersObj', searchState.searchFiltersObj);
-      productsArr.forEach((el) => {
-        if (searchState.searchFiltersObj[el.id]) delete searchState.searchFiltersObj[el.id];
-        if (filterObj[el.id]) delete filterObj[el.id];
-      });
-
-      if (isEnableFilter) {
-        store.dispatch(setOnSaleDisplay(Object.values(searchState.searchFiltersObj)));
+    productsArr.forEach((el) => {
+      if (search.isEnable) {
+        if (search.globalSearchObj[el.id]) renderObj[el.id] = el;
       } else {
+        if (!filterObj[el.id]) renderObj[el.id] = el;
+      };
+      // save filters without search value
+      if (!filterOrigin[el.id]) filterOrigin[el.id] = el;
+    });
 
-        store.dispatch(setOnSaleDisplay(Object.values(searchState.searchObj)));
-      }
-      // filter + search
-      // } else {
-      //   productsArr.forEach((el) => {
-      //     if (searchState.searchObj[el.id]) delete searchState.searchObj[el.id];
-      //   });
+    renderObj = Object.assign(renderObj, search.filterSearchObj);
+    store.dispatch(setFilterObj(renderObj));
+    store.dispatch(setSearchToggle(search.inputVal, search.isEnable, search.globalSearchObj, renderObj));
+  } else {
+    if (search.isEnable) filterObj = search.filterSearchObj;
+    productsArr.forEach((el) => {
+      if (filterObj[el.id]) delete filterObj[el.id];
+      // save filters without search value
+      if (filterOrigin[el.id]) delete filterOrigin[el.id];
+    });
 
-      //   console.log('no filters')
-      //   if (isEnableFilter) {
-      //     store.dispatch(setOnSaleDisplay(Object.values(searchState.searchObj)));
-      //   } else {
-      //     searchLogic(searchState.inputVal);
-      //   }
-      // }
-      // search disactive
-    } else {
-      productsArr.forEach((el) => {
-        if (filterObj[el.id]) delete filterObj[el.id];
-      });
-
-      if (isEnableFilter) store.dispatch(setOnSaleDisplay(Object.values(filterObj)));
-      else store.dispatch(setOnSaleDisplay(null));
-    }
+    renderObj = filterObj;
+    store.dispatch(setFilterObj(renderObj));
   };
+
+  if (isEnableFilter) {
+    store.dispatch(setOnSaleDisplay(Object.values(renderObj)));
+  } else {
+    if (search.isEnable) searchLogic(search.inputVal);
+    else store.dispatch(setOnSaleDisplay(null));
+  }
 };
 
 export const setFilters = (value, filter) => {

@@ -6,7 +6,8 @@ import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies 
 const onMouseTag = (e) => {
   if (e.type === 'mouseenter') {
     e.currentTarget.children[1].style.top = '0';
-  } else {
+  }
+  if (e.type === 'mouseleave') {
     e.currentTarget.children[1].style = '';
   }
 };

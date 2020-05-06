@@ -3,13 +3,12 @@ import { setOnSaleDisplay, setSearchToggle } from '../../../../../store/actions'
 import { sortedProducts } from '../../../../../data/productsProcessing';
 
 export const searchLogic = (e) => {
-  const filterObj = store.getState().filterObj;
-  console.log('sort-filterObj', filterObj);
+  const filterOrigin = store.getState().filterOrigin;
 
   const globalObj = sortedProducts.byID;
 
   const globalSearchObj = {};
-  const searchObj = {};
+  const filterSearchObj = {};
   const tempObj = {};
 
   let inputVal = null;
@@ -27,17 +26,17 @@ export const searchLogic = (e) => {
   findItems.forEach((el) => {
     if (globalObj[el.id]) globalSearchObj[el.id] = el;
 
-    if (Object.keys(filterObj).length) {
-      if (filterObj[el.id]) searchObj[el.id] = el;
+    if (Object.keys(filterOrigin).length) {
+      if (filterOrigin[el.id]) filterSearchObj[el.id] = el;
     }
   });
 
-  if (Object.keys(filterObj).length) store.dispatch(setOnSaleDisplay(Object.values(searchObj)));
+  if (Object.keys(filterOrigin).length) store.dispatch(setOnSaleDisplay(Object.values(filterSearchObj)));
   else store.dispatch(setOnSaleDisplay(Object.values(globalSearchObj)));
 
   if (inputVal) {
-    store.dispatch(setSearchToggle(inputVal, true, globalSearchObj, searchObj));
+    store.dispatch(setSearchToggle(inputVal, true, globalSearchObj, filterSearchObj));
   } else {
-    store.dispatch(setSearchToggle(null, false, null, null));
+    store.dispatch(setSearchToggle(null, false, {}, {}));
   }
 };

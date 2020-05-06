@@ -49,7 +49,6 @@ const classifyProducts = () => {
 
     sortedProducts.byID[el.id] = el;
   });
-  console.log('sortedProducts', sortedProducts);
 };
 
 classifyProducts();

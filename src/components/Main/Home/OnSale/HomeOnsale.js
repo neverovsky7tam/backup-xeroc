@@ -20,6 +20,7 @@ const HomeOnsale = () => {
   }
 
   const productsObj = useSelector((state) => state.productsDisplay);
+
   let content = <p className="plug-text">Sorry. No products to display</p>;
   if (productsObj.length) {
     const data = productsObj;
@@ -35,7 +36,7 @@ const HomeOnsale = () => {
         </ul>
       </>
     )
-  }
+  };
 
   const bodyMarginLeft = (view) ? '0' : '30px';
 
