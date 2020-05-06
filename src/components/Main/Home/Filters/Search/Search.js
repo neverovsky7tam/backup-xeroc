@@ -1,26 +1,22 @@
 import React from 'react';
 import { searchLogic } from './searchLogic';
+import { setInputState } from '../logicInput';
 import { BoxDecor } from '../../../../Parts/BoxDecor';
 
 const Search = () => {
-  const element = React.createRef();
-  const setBorder = (e) => {
-    if (e.target.value) element.current.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-    else element.current.style = '';
-  }
-
   const onInputChange = (e) => {
-    setBorder(e);
+    setInputState(e);
     searchLogic(e);
   };
 
   return (
-    <div className="search p-relative">
+    <div className="p-relative">
       <div className="p-relative">
-        <div className="filter__select" ref={element}>
+        <div className="filter__select">
           <input
             type="text"
             placeholder="Search"
+            onClick={(e) => e.target.focus()}
             onChange={onInputChange} />
         </div>
         <BoxDecor />
