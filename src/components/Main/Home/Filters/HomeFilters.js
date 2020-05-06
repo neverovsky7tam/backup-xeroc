@@ -1,6 +1,7 @@
 import React from 'react';
 import Algorithm from './Algorithm/Algorithm';
 import Search from './Search/Search';
+import Price from './Price/Price';
 import Scroll from '../../Scroll/Scroll';
 
 const HomeFilters = () => {
@@ -15,10 +16,11 @@ const HomeFilters = () => {
       <div className="filters__body main-body">
         <div ref={scrollBlock}>
           <Algorithm />
+          <Price />
           <Search />
         </div>
       </div>
-      <Scroll ref={scrollThumb} scrollBlock={scrollBlock} />
+      {/* <Scroll ref={scrollThumb} scrollBlock={scrollBlock} /> */}
     </section>
   )
 };

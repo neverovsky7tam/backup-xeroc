@@ -62,7 +62,7 @@ export const productsObj = [
     efficiency: '17.00',
     manufacturer: 'Bitfury',
     equipment: 'ASIC miners',
-    coins: ['btc', 'dcr', 'eth', 'lcc'],
+    coins: ['dcr', 'eth', 'lcc'],
   },
   {
     id: 4,
@@ -82,7 +82,7 @@ export const productsObj = [
     efficiency: '2.50',
     manufacturer: 'Canaan',
     equipment: 'Video Cards',
-    coins: ['btc', 'dcr', 'eth', 'lcc'],
+    coins: ['dcr', 'eth', 'lcc'],
   },
   {
     id: 5,
@@ -102,7 +102,7 @@ export const productsObj = [
     efficiency: '7.10',
     manufacturer: 'Sunbelt',
     equipment: 'Video Cards',
-    coins: ['btc', 'dcr',],
+    coins: ['dcr',],
   },
   {
     id: 6,
@@ -122,7 +122,7 @@ export const productsObj = [
     efficiency: '10.70',
     manufacturer: 'Nvidia',
     equipment: 'Motherboards',
-    coins: ['btc', 'music',],
+    coins: ['music',],
   },
   {
     id: 7,
@@ -142,7 +142,7 @@ export const productsObj = [
     efficiency: '10.70',
     manufacturer: 'Bitmain',
     equipment: 'Motherboards',
-    coins: ['btc', 'dcr', 'eth', 'lcc'],
+    coins: ['dcr', 'eth', 'lcc'],
   },
   {
     id: 8,
@@ -202,7 +202,7 @@ export const productsObj = [
     efficiency: '7.90',
     manufacturer: 'Canaan',
     equipment: 'Motherboards',
-    coins: ['bch', 'bsd', 'btc', 'pac', 'pirl', 'ppc', 'ryo', 'start', 'tzc', 'ubq', 'vivo', 'vtc', 'xdn', 'xmcc', 'xmr', 'xmy', 'xvg',],
+    coins: ['bsd', 'btc', 'pac', 'pirl', 'ppc', 'ryo', 'start', 'tzc', 'ubq', 'vivo', 'vtc', 'xdn', 'xmcc', 'xmr', 'xmy', 'xvg',],
   },
   {
     id: 11,
@@ -242,7 +242,7 @@ export const productsObj = [
     efficiency: '12.00',
     manufacturer: 'Ebit',
     equipment: 'Video Cards',
-    coins: ['btc', 'dcr', 'eth', 'lcc', 'ella', 'dcr', 'crw', 'btx', 'btg', 'btcp',],
+    coins: ['dcr', 'eth', 'lcc', 'ella', 'dcr', 'crw', 'btx', 'btg', 'btcp',],
   },
   {
     id: 13,
@@ -282,7 +282,7 @@ export const productsObj = [
     efficiency: '10.00',
     manufacturer: 'Bitmain',
     equipment: 'GPU Enclosures',
-    coins: ['btc', 'dcr', 'eth', 'lcc', 'tzc', 'ubq', 'vivo', 'vtc', 'xdn', 'xmcc', 'xmr', 'xmy', 'xvg', 'xzc', 'zcl', 'zec', 'zen', 'nlg', 'music', 'mona', 'ltc',],
+    coins: ['eth', 'lcc', 'tzc', 'ubq', 'vivo', 'vtc', 'xdn', 'xmcc', 'xmr', 'xmy', 'xvg', 'xzc', 'zcl', 'zec', 'zen', 'nlg', 'music', 'mona', 'ltc',],
   },
   {
     id: 15,
@@ -302,7 +302,7 @@ export const productsObj = [
     efficiency: '8.00',
     manufacturer: 'AMD',
     equipment: 'ASIC miners',
-    coins: ['btc', 'dcr', 'eth', 'lcc'],
+    coins: ['eth', 'lcc'],
   },
   {
     id: 16,
@@ -346,10 +346,10 @@ export const productsObj = [
   },
   {
     id: 18,
-    title: 'Innosilicon A6',
+    title: 'Innosilicon A6s',
     hash: {
       option: 'PH/s',
-      value: [{ id: 1, h: 89, price: '989' }],
+      value: [{ id: 1, h: 89, price: '491' }],
     },
     star: false,
     psu: true,
@@ -526,10 +526,10 @@ export const productsObj = [
   },
   {
     id: 27,
-    title: 'Antminer S5',
+    title: 'Antminer A6s',
     hash: {
       option: 'TH/s',
-      value: [{ id: 1, h: 55, price: '535' }, { id: 2, h: 59, price: '700' }],
+      value: [{ id: 1, h: 55, price: '590' }, { id: 2, h: 59, price: '725' }],
     },
     star: 'half',
     psu: true,
@@ -806,10 +806,10 @@ export const productsObj = [
   },
   {
     id: 41,
-    title: 'Antminer S5',
+    title: 'Antminer S5r',
     hash: {
       option: 'TH/s',
-      value: [{ id: 1, h: 55, price: '535' }, { id: 2, h: 59, price: '700' }],
+      value: [{ id: 1, h: 55, price: '611' }, { id: 2, h: 59, price: '802' }],
     },
     star: 'half',
     psu: true,
@@ -909,7 +909,7 @@ export const productsObj = [
     title: 'Innosilicon A6',
     hash: {
       option: 'PH/s',
-      value: [{ id: 1, h: 89, price: '989' }],
+      value: [{ id: 1, h: 89, price: '1007' }],
     },
     star: false,
     psu: true,

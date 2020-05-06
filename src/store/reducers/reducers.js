@@ -6,6 +6,7 @@ import {
   SET_ELECTRICITY_VALUE,
   SET_CURRENT_SCROLL_TOP,
   SET_FILTERS_STATE,
+  SET_FILTER_ORIGIN,
   SET_FILTER_OBJ,
   SET_SEARCH_TOGGLE,
 } from '../actions';
@@ -48,17 +49,25 @@ export const filtersState = (state = {}, action) => {
   }
 }
 
-export const filterObj = (state = {}, action) => {
+export const filterOrigin = (state = {}, action) => {
   switch (action.type) {
-    case SET_FILTER_OBJ:
-      console.log('action.obj', action.obj);
+    case SET_FILTER_ORIGIN:
       return action.obj;
     default:
       return state;
   }
 }
 
-export const searchToggle = (state = { inputVal: null, isEnable: false, searchObj: null, searchFiltersObj: null, }, action) => {
+export const filterObj = (state = {}, action) => {
+  switch (action.type) {
+    case SET_FILTER_OBJ:
+      return action.obj;
+    default:
+      return state;
+  }
+}
+
+export const searchToggle = (state = { inputVal: null, isEnable: false, globalSearchObj: {}, filterSearchObj: {}, }, action) => {
   switch (action.type) {
     case SET_SEARCH_TOGGLE:
       return action.searchState;

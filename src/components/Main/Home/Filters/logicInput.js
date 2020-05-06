@@ -6,7 +6,8 @@ import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies 
 const onMouseTag = (e) => {
   if (e.type === 'mouseenter') {
     e.currentTarget.children[1].style.top = '0';
-  } else {
+  }
+  if (e.type === 'mouseleave') {
     e.currentTarget.children[1].style = '';
   }
 };
@@ -70,12 +71,18 @@ export const deleteTag = (filter, tag) => {
   }
 };
 
+export const setInputState = (e) => {
+  const element = e.target.closest('.filter__select');
+  if (e.target.value) element.classList.add('filter__select_active', 'filter__select_expand');
+  else element.classList.remove('filter__select_active', 'filter__select_expand');
+}
+
 export const setSelectFieldState = (filter, input, arrow, storeTags, isExpand, isSearch) => {
   if (storeTags) {
     if (storeTags.length) {
       filter.classList.add('filter__select_active', 'filter__select_expand');
       input.placeholder = '';
-      input.focus();
+      // input.focus();
       input.maxLength = 3;
     }
     else {
