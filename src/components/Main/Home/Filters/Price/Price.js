@@ -4,12 +4,12 @@ import { filterByPrice } from './priceLogic';
 import { BoxDecor } from '../../../../Parts/BoxDecor';
 
 const Price = () => {
-  const onInputChange = (e) => {
+  const onInputChange = (e, param) => {
     const val = +e.target.value;
     if (isNaN(val)) e.target.value = '';
     else {
       setInputState(e);
-      filterByPrice(e);
+      filterByPrice(e, param);
     }
   };
 
@@ -22,7 +22,7 @@ const Price = () => {
               type="text"
               placeholder="Minimum price"
               onClick={(e) => e.target.focus()}
-              onChange={onInputChange} />
+              onChange={(e) => onInputChange(e, 'min')} />
           </div>
           <BoxDecor />
         </div>
@@ -34,7 +34,7 @@ const Price = () => {
               type="text"
               placeholder="Maximum price"
               onClick={(e) => e.target.focus()}
-              onChange={onInputChange} />
+              onChange={(e) => onInputChange(e, 'max')} />
           </div>
           <BoxDecor />
         </div>

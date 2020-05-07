@@ -4,9 +4,7 @@ import { sortedProducts } from '../../../../../data/productsProcessing';
 
 export const searchLogic = (e) => {
   const filterOrigin = store.getState().filterOrigin;
-
   const globalObj = sortedProducts.byID;
-
   const globalSearchObj = {};
   const filterSearchObj = {};
   const tempObj = {};

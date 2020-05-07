@@ -4,13 +4,11 @@ import { sortedProducts } from '../../../../data/productsProcessing';
 import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../data/productsData';
 import { searchLogic } from './Search/searchLogic';
 
-export const setProductsDisplay = (isActive, value, isEnableFilter) => {
+export const setProductsDisplay = (filter, value, isActive, isEnableFilter) => {
   const filterOrigin = store.getState().filterOrigin;
   let filterObj = store.getState().filterObj;
-
   const search = store.getState().searchToggle;
-
-  const productsArr = Object.values(sortedProducts[value]);
+  const productsArr = Object.values(sortedProducts[filter][value]);
   let renderObj = {};
 
   if (isActive) {
@@ -44,7 +42,7 @@ export const setProductsDisplay = (isActive, value, isEnableFilter) => {
   } else {
     if (search.isEnable) searchLogic(search.inputVal);
     else store.dispatch(setOnSaleDisplay(null));
-  }
+  };
 };
 
 export const setFilters = (value, filter) => {
@@ -58,7 +56,7 @@ export const setFilters = (value, filter) => {
   store.dispatch(setFiltersState(filter, 'tag', value));
 
   const isEnableFilter = Object.values(filtersStateObj).reduce((sum, val) => sum += val);
-  setProductsDisplay(isActive, value, isEnableFilter);
+  setProductsDisplay(filter, value, isActive, isEnableFilter);
 };
 
 const defineObject = (filter) => {
