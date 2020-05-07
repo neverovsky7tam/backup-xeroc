@@ -7,7 +7,8 @@ export const SET_CURRENT_SCROLL_TOP = "SET_CURRENT_SCROLL_TOP";
 export const SET_FILTERS_STATE = "SET_FILTERS_STATE";
 export const SET_FILTER_ORIGIN = "SET_FILTER_ORIGIN";
 export const SET_FILTER_OBJ = "SET_FILTER_OBJ";
-export const SET_SEARCH_TOGGLE = "SET_SEARCH_TOGGLE";
+export const SET_SEARCH_OBJ = "SET_SEARCH_OBJ";
+export const SET_JOINT_SEARCH_OBJ = "SET_JOINT_SEARCH_OBJ";
 
 export const setOnSaleDisplay = (products) => ({
   type: SET_ON_SALE_DISPLAY,
@@ -54,7 +55,17 @@ export const setFilterObj = (obj) => ({
   obj,
 });
 
-export const setSearchToggle = (inputVal, isEnable, globalSearchObj, filterSearchObj) => ({
-  type: SET_SEARCH_TOGGLE,
-  searchState: { inputVal, isEnable, globalSearchObj, filterSearchObj, },
+export const setSearchObj = (type, data) => ({
+  type: SET_SEARCH_OBJ,
+  fields: { [type]: data, },
+});
+
+export const setJointSearchObj = (inputType, inputVal, isEnable, globalSearchObj, filterSearchObj) => ({
+  type: SET_JOINT_SEARCH_OBJ,
+  searchState: {
+    client: { [inputType]: inputVal, },
+    isEnable,
+    globalSearchObj,
+    filterSearchObj,
+  },
 });

@@ -1,13 +1,13 @@
 import store from '../../../../store/store';
-import { setOnSaleDisplay, setFiltersState, setFilterObj, setSearchToggle, setFilterOrigin } from '../../../../store/actions';
+import { setOnSaleDisplay, setFiltersState, setFilterObj, setJointSearchObj } from '../../../../store/actions';
 import { sortedProducts } from '../../../../data/productsProcessing';
 import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../data/productsData';
-import { searchLogic } from './Search/searchLogic';
+import { logicSearch } from './logicSearch';
 
 export const setProductsDisplay = (filter, value, isActive, isEnableFilter) => {
   const filterOrigin = store.getState().filterOrigin;
   let filterObj = store.getState().filterObj;
-  const search = store.getState().searchToggle;
+  const search = store.getState().jointSearchObj;
   const productsArr = Object.values(sortedProducts[filter][value]);
   let renderObj = {};
 
@@ -24,7 +24,7 @@ export const setProductsDisplay = (filter, value, isActive, isEnableFilter) => {
 
     renderObj = Object.assign(renderObj, search.filterSearchObj);
     store.dispatch(setFilterObj(renderObj));
-    store.dispatch(setSearchToggle(search.inputVal, search.isEnable, search.globalSearchObj, renderObj));
+    store.dispatch(setJointSearchObj(search.inputVal, search.isEnable, search.globalSearchObj, renderObj));
   } else {
     if (search.isEnable) filterObj = search.filterSearchObj;
     productsArr.forEach((el) => {
@@ -40,7 +40,7 @@ export const setProductsDisplay = (filter, value, isActive, isEnableFilter) => {
   if (isEnableFilter) {
     store.dispatch(setOnSaleDisplay(Object.values(renderObj)));
   } else {
-    if (search.isEnable) searchLogic(search.inputVal);
+    if (search.isEnable) logicSearch(search.client);
     else store.dispatch(setOnSaleDisplay(null));
   };
 };
@@ -81,6 +81,8 @@ const defineObject = (filter) => {
         case 'manufacturer':
           filtersStateObj = manufacturerSpecies;
           break;
+        default:
+          return filtersStateObj;
       };
       filtersStateObj = Object.fromEntries(filtersStateObj);
     };

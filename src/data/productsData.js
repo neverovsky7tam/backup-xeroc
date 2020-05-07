@@ -29,7 +29,7 @@ export const productsObj = [
     title: 'Antminer DR5 Extra Strong Power',
     hash: {
       option: 'MH/s',
-      value: [{ id: 1, h: 23, price: '1045' }, { id: 2, h: 41, price: '1800' }, { id: 3, h: 39, price: '1560' }, { id: 4, h: 27, price: '1153' }, { id: 5, h: 33, price: '977' }, { id: 6, h: 35, price: '1500' }, { id: 7, h: 31, price: '775' }, { id: 8, h: 41, price: '1960' }, { id: 9, h: 30, price: '1010' }],
+      value: [{ id: 1, h: 18.5, price: '181' }, { id: 2, h: 11.5, price: '145' }, { id: 3, h: 14.1, price: '136.6' }],
     },
     star: 'half',
     psu: false,
@@ -89,7 +89,7 @@ export const productsObj = [
     title: 'PandaMiner B3 Pro 4g',
     hash: {
       option: 'KH/s',
-      value: [{ id: 1, h: 12, price: '2442' }, { id: 2, h: 16.1, price: '2315' }, { id: 3, h: 19, price: '1989' }],
+      value: [{ id: 1, h: 12, price: '2442' }, { id: 2, h: 16.1, price: '1800' }, { id: 3, h: 19, price: '1989' }],
     },
     star: false,
     psu: false,

@@ -1,6 +1,6 @@
 import { productsObj, algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from './productsData';
-export const sortedProducts = { algorithm: {}, manufacturer: {}, equipment: {}, coins: {}, search: {}, byID: {}, };
-
+export const sortedProducts = { algorithm: {}, manufacturer: {}, equipment: {}, coins: {}, search: {}, byID: {}, byPrice: {}, };
+// accomodare items in object by keys as a string that contains all searching field in items [key: element]
 const classifyProducts = () => {
   algorithmsSpecies.forEach((item) => {
     sortedProducts.algorithm[item[0]] = {};
@@ -35,17 +35,26 @@ const classifyProducts = () => {
       sortedProducts.coins[el.coins][el.id] = el;
     };
 
-    // accomodare items in object by keys as a string that contains all searching field in items [key: element]
     let hashValueStr = '';
+    // byPrice
     el.hash.value.forEach((item) => {
       hashValueStr += String(item.h);
+
+      if (!sortedProducts.byPrice[item.price]) sortedProducts.byPrice[item.price] = [];
+      const hashSpecies = Object.assign({}, item);
+      const itemSingleHash = Object.assign({}, el);
+      itemSingleHash.hash = { option: el.hash.option, value: [hashSpecies] };
+      sortedProducts.byPrice[item.price].push(itemSingleHash);
     });
-
-    const searchStr = (el.title + ' ' + el.hash.option + ' ' + hashValueStr + ' ' + el.release + ' ' + el.model + ' ' + el.noise + ' ' + String(el.power) + ' ' + el.algorithm + ' ' + el.efficiency + ' ' + el.manufacturer + ' ' + el.equipment + ' ' + el.id).toLowerCase();
-    sortedProducts.search[searchStr] = el;
-
+    // search field
+    const searchStr = (el.title + ' ' + el.hash.option + ' ' + hashValueStr + ' ' + el.release + ' ' + el.model + ' ' + el.noise + ' ' + String(el.power) + ' ' + el.algorithm + ' ' + el.efficiency + ' ' + el.manufacturer + ' ' + el.equipment).toLowerCase();
+    if (!sortedProducts.search[searchStr]) sortedProducts.search[searchStr] = [];
+    sortedProducts.search[searchStr].push(el);
+    // by ID
     sortedProducts.byID[el.id] = el;
+
   });
+
   console.log('sortedProducts', sortedProducts);
 };
 

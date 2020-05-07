@@ -1,13 +1,30 @@
 import store from '../../../../../store/store';
-import { setOnSaleDisplay, setSearchToggle } from '../../../../../store/actions';
+import { setSearchObj } from '../../../../../store/actions';
 import { sortedProducts } from '../../../../../data/productsProcessing';
+import { logicSearch } from '../logicSearch';
 
-export const filterByPrice = (e, param) => {
-  const filterOrigin = store.getState().filterOrigin;
-  console.log('filterOrigin', filterOrigin);
+export const priceLogic = (e) => {
+  const inputType = e.target.dataset.type;
+  const inputVal = +e.target.value;
 
-  const globalObj = sortedProducts.byID;
+  const source = Object.keys(sortedProducts.byPrice);
 
-  const value = e.target.value;
-  console.log('value', value, param);   
+  let tempArr = [];
+  if (inputType === 'minPrice') {
+    source.forEach((key) => {
+      if (+key >= inputVal) tempArr = tempArr.concat(sortedProducts.byPrice[key]);
+    });
+  } else {
+    source.forEach((key) => {
+      if (+key <= inputVal) tempArr = tempArr.concat(sortedProducts.byPrice[key]);
+    });
+  };
+
+  if (inputVal) {
+    store.dispatch(setSearchObj(inputType, tempArr));
+  } else {
+    store.dispatch(setSearchObj(inputType, []));
+  };
+
+  logicSearch(inputType);
 };
