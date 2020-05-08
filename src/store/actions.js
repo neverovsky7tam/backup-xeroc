@@ -55,15 +55,14 @@ export const setFilterObj = (obj) => ({
   obj,
 });
 
-export const setSearchObj = (type, data) => ({
+export const setSearchObj = (type, value, data) => ({
   type: SET_SEARCH_OBJ,
-  fields: { [type]: data, },
+  fields: { [type]: { value, data, }, },
 });
 
-export const setJointSearchObj = (inputType, inputVal, isEnable, globalSearchObj, filterSearchObj) => ({
+export const setJointSearchObj = (isEnable, globalSearchObj, filterSearchObj) => ({
   type: SET_JOINT_SEARCH_OBJ,
   searchState: {
-    client: { [inputType]: inputVal, },
     isEnable,
     globalSearchObj,
     filterSearchObj,

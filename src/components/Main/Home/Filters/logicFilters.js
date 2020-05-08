@@ -18,18 +18,18 @@ export const setProductsDisplay = (filter, value, isActive, isEnableFilter) => {
       } else {
         if (!filterObj[el.id]) renderObj[el.id] = el;
       };
-      // save filters without search value
+      // save filters without rendered data for increase searching results by add new filter data
       if (!filterOrigin[el.id]) filterOrigin[el.id] = el;
     });
 
     renderObj = Object.assign(renderObj, search.filterSearchObj);
     store.dispatch(setFilterObj(renderObj));
-    store.dispatch(setJointSearchObj(search.inputVal, search.isEnable, search.globalSearchObj, renderObj));
+    store.dispatch(setJointSearchObj(search.isEnable, search.globalSearchObj, renderObj));
   } else {
     if (search.isEnable) filterObj = search.filterSearchObj;
     productsArr.forEach((el) => {
       if (filterObj[el.id]) delete filterObj[el.id];
-      // save filters without search value
+      // save filters without rendered data for increase searching results by add new filter data
       if (filterOrigin[el.id]) delete filterOrigin[el.id];
     });
 

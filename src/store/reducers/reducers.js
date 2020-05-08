@@ -78,7 +78,6 @@ export const searchObj = (state = null, action) => {
 }
 
 export const jointSearchObj = (state = {
-  client: { text: null, minPrice: null, maxPrice: null },
   isEnable: false,
   globalSearchObj: {},
   filterSearchObj: {},
@@ -96,6 +95,7 @@ export const jointSearchObj = (state = {
 export const productsDisplay = (state = productsObj, action) => {
   switch (action.type) {
     case SET_ON_SALE_DISPLAY:
+      console.log('action.products', action.products);
       if (Array.isArray(action.products)) return action.products;
       else return productsObj;
     default:
