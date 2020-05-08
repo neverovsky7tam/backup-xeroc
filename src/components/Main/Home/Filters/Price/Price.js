@@ -1,6 +1,6 @@
 import React from 'react';
 import { setInputState } from '../logicInput';
-import { filterByPrice } from './priceLogic';
+import { priceLogic } from './priceLogic';
 import { BoxDecor } from '../../../../Parts/BoxDecor';
 
 const Price = () => {
@@ -9,8 +9,8 @@ const Price = () => {
     if (isNaN(val)) e.target.value = '';
     else {
       setInputState(e);
-      filterByPrice(e);
-    }
+      priceLogic(e);
+    };
   };
 
   return (
@@ -21,8 +21,9 @@ const Price = () => {
             <input
               type="text"
               placeholder="Minimum price"
+              data-type="minPrice"
               onClick={(e) => e.target.focus()}
-              onChange={onInputChange} />
+              onChange={(e) => onInputChange(e)} />
           </div>
           <BoxDecor />
         </div>
@@ -33,8 +34,9 @@ const Price = () => {
             <input
               type="text"
               placeholder="Maximum price"
+              data-type="maxPrice"
               onClick={(e) => e.target.focus()}
-              onChange={onInputChange} />
+              onChange={(e) => onInputChange(e)} />
           </div>
           <BoxDecor />
         </div>

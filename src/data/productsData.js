@@ -9,7 +9,7 @@ export const productsObj = [
     title: 'USED Antminer S9',
     hash: {
       option: 'TH/s',
-      value: [{ id: 1, h: 18.5, price: '181' }, { id: 2, h: 11.5, price: '145' }, { id: 3, h: 14.1, price: '136.6' }],
+      value: [{ id: 1.1, h: 18.5, price: '181' }, { id: 1.2, h: 11.5, price: '145' }, { id: 1.3, h: 14.1, price: '136.6' }],
     },
     star: 'full',
     psu: true,
@@ -29,7 +29,7 @@ export const productsObj = [
     title: 'Antminer DR5 Extra Strong Power',
     hash: {
       option: 'MH/s',
-      value: [{ id: 1, h: 23, price: '1045' }, { id: 2, h: 41, price: '1800' }, { id: 3, h: 39, price: '1560' }, { id: 4, h: 27, price: '1153' }, { id: 5, h: 33, price: '977' }, { id: 6, h: 35, price: '1500' }, { id: 7, h: 31, price: '775' }, { id: 8, h: 41, price: '1960' }, { id: 9, h: 30, price: '1010' }],
+      value: [{ id: 2.1, h: 18.5, price: '181' }, { id: 2.2, h: 11.5, price: '145' }, { id: 2.3, h: 14.1, price: '136.6' }],
     },
     star: 'half',
     psu: false,
@@ -49,7 +49,7 @@ export const productsObj = [
     title: 'GPU Enclosure',
     hash: {
       option: 'Hashs/s',
-      value: [{ id: 1, h: 22, price: '371' }],
+      value: [{ id: 3.1, h: 22, price: '371' }],
     },
     star: 'half',
     psu: false,
@@ -69,7 +69,7 @@ export const productsObj = [
     title: 'Innosilicon A6',
     hash: {
       option: 'PH/s',
-      value: [{ id: 1, h: 89, price: '989' }],
+      value: [{ id: 4.1, h: 89, price: '989' }],
     },
     star: false,
     psu: true,
@@ -89,7 +89,7 @@ export const productsObj = [
     title: 'PandaMiner B3 Pro 4g',
     hash: {
       option: 'KH/s',
-      value: [{ id: 1, h: 12, price: '2442' }, { id: 2, h: 16.1, price: '2315' }, { id: 3, h: 19, price: '1989' }],
+      value: [{ id: 5.1, h: 12, price: '2442' }, { id: 5.2, h: 16.1, price: '1800' }, { id: 5.3, h: 19, price: '1989' }],
     },
     star: false,
     psu: false,
@@ -109,7 +109,7 @@ export const productsObj = [
     title: 'Innosilicon A6',
     hash: {
       option: 'Ksol/s',
-      value: [{ id: 1, h: 1.9, price: '376' }],
+      value: [{ id: 6.1, h: 1.9, price: '376' }],
     },
     star: false,
     psu: true,
@@ -129,7 +129,7 @@ export const productsObj = [
     title: 'GPU Enclosure',
     hash: {
       option: 'GH/s',
-      value: [{ id: 1, h: 1.2, price: '672' }, { id: 2, h: 5.0, price: '840' }, { id: 3, h: 1.9, price: '376' }, { id: 4, h: 2.3, price: '290' },],
+      value: [{ id: 7.1, h: 1.2, price: '672' }, { id: 7.2, h: 5.0, price: '840' }, { id: 7.3, h: 1.9, price: '376' }, { id: 7.4, h: 2.3, price: '290' },],
     },
     star: 'full',
     psu: false,
@@ -149,7 +149,7 @@ export const productsObj = [
     title: 'Innosilicon T3',
     hash: {
       option: 'H/s',
-      value: [{ id: 1, h: 913, price: '5376' }],
+      value: [{ id: 8.1, h: 913, price: '5376' }],
     },
     star: false,
     psu: true,
@@ -169,7 +169,7 @@ export const productsObj = [
     title: 'Antminer Z9 Mini',
     hash: {
       option: 'MH/s',
-      value: [{ id: 1, h: 230, price: '2209' }],
+      value: [{ id: 9.1, h: 230, price: '2209' }],
     },
     star: 'half',
     psu: false,
@@ -189,7 +189,7 @@ export const productsObj = [
     title: 'APW3++',
     hash: {
       option: 'Hashs/s',
-      value: [{ id: 1, h: 19.5, price: '103' }],
+      value: [{ id: 10.1, h: 19.5, price: '103' }],
     },
     star: false,
     psu: false,
@@ -209,7 +209,7 @@ export const productsObj = [
     title: 'Innosilicon A11',
     hash: {
       option: 'GH/s',
-      value: [{ id: 1, h: 1.23, price: '3240' }],
+      value: [{ id: 11.1, h: 1.23, price: '3240' }],
     },
     star: false,
     psu: false,
@@ -229,7 +229,7 @@ export const productsObj = [
     title: 'Dayun Zig Z1+',
     hash: {
       option: 'PH/s',
-      value: [{ id: 1, h: 7.2, price: '1242' }],
+      value: [{ id: 12.1, h: 7.2, price: '1242' }],
     },
     star: false,
     psu: false,
@@ -249,7 +249,7 @@ export const productsObj = [
     title: 'Antminer S5',
     hash: {
       option: 'TH/s',
-      value: [{ id: 1, h: 55, price: '535' }, { id: 2, h: 59, price: '700' }],
+      value: [{ id: 13.1, h: 55, price: '535' }, { id: 13.2, h: 59, price: '700' }],
     },
     star: 'half',
     psu: true,
@@ -269,7 +269,7 @@ export const productsObj = [
     title: 'GPU Enclosure',
     hash: {
       option: 'Ksol/s',
-      value: [{ id: 1, h: 5, price: '1535' }],
+      value: [{ id: 14.1, h: 5, price: '1535' }],
     },
     star: false,
     psu: true,
@@ -289,7 +289,7 @@ export const productsObj = [
     title: 'USED Antminer S9',
     hash: {
       option: 'TH/s',
-      value: [{ id: 1, h: 18.5, price: '181' }, { id: 2, h: 11.5, price: '145' }, { id: 3, h: 14.1, price: '136.6' }],
+      value: [{ id: 15.1, h: 18.5, price: '181' }, { id: 15.2, h: 11.5, price: '145' }, { id: 15.3, h: 14.1, price: '136.6' }],
     },
     star: 'full',
     psu: true,
@@ -529,7 +529,7 @@ export const productsObj = [
     title: 'Antminer A6s',
     hash: {
       option: 'TH/s',
-      value: [{ id: 1, h: 55, price: '590' }, { id: 2, h: 59, price: '725' }],
+      value: [{ id: 27.1, h: 55, price: '590' }, { id: 27.2, h: 59, price: '725' }],
     },
     star: 'half',
     psu: true,

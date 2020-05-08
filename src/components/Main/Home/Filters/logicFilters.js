@@ -1,16 +1,14 @@
 import store from '../../../../store/store';
-import { setOnSaleDisplay, setFiltersState, setFilterObj, setSearchToggle, setFilterOrigin } from '../../../../store/actions';
+import { setOnSaleDisplay, setFiltersState, setFilterObj, setJointSearchObj } from '../../../../store/actions';
 import { sortedProducts } from '../../../../data/productsProcessing';
 import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../data/productsData';
-import { searchLogic } from './Search/searchLogic';
+import { logicSearch } from './logicSearch';
 
-export const setProductsDisplay = (isActive, value, isEnableFilter) => {
+export const setProductsDisplay = (filter, value, isActive, isEnableFilter) => {
   const filterOrigin = store.getState().filterOrigin;
   let filterObj = store.getState().filterObj;
-
-  const search = store.getState().searchToggle;
-
-  const productsArr = Object.values(sortedProducts[value]);
+  const search = store.getState().jointSearchObj;
+  const productsArr = Object.values(sortedProducts[filter][value]);
   let renderObj = {};
 
   if (isActive) {
@@ -20,18 +18,18 @@ export const setProductsDisplay = (isActive, value, isEnableFilter) => {
       } else {
         if (!filterObj[el.id]) renderObj[el.id] = el;
       };
-      // save filters without search value
+      // save filters without rendered data for increase searching results by add new filter data
       if (!filterOrigin[el.id]) filterOrigin[el.id] = el;
     });
 
     renderObj = Object.assign(renderObj, search.filterSearchObj);
     store.dispatch(setFilterObj(renderObj));
-    store.dispatch(setSearchToggle(search.inputVal, search.isEnable, search.globalSearchObj, renderObj));
+    store.dispatch(setJointSearchObj(search.isEnable, search.globalSearchObj, renderObj));
   } else {
     if (search.isEnable) filterObj = search.filterSearchObj;
     productsArr.forEach((el) => {
       if (filterObj[el.id]) delete filterObj[el.id];
-      // save filters without search value
+      // save filters without rendered data for increase searching results by add new filter data
       if (filterOrigin[el.id]) delete filterOrigin[el.id];
     });
 
@@ -42,9 +40,9 @@ export const setProductsDisplay = (isActive, value, isEnableFilter) => {
   if (isEnableFilter) {
     store.dispatch(setOnSaleDisplay(Object.values(renderObj)));
   } else {
-    if (search.isEnable) searchLogic(search.inputVal);
+    if (search.isEnable) logicSearch(search.client);
     else store.dispatch(setOnSaleDisplay(null));
-  }
+  };
 };
 
 export const setFilters = (value, filter) => {
@@ -58,7 +56,7 @@ export const setFilters = (value, filter) => {
   store.dispatch(setFiltersState(filter, 'tag', value));
 
   const isEnableFilter = Object.values(filtersStateObj).reduce((sum, val) => sum += val);
-  setProductsDisplay(isActive, value, isEnableFilter);
+  setProductsDisplay(filter, value, isActive, isEnableFilter);
 };
 
 const defineObject = (filter) => {
@@ -83,6 +81,8 @@ const defineObject = (filter) => {
         case 'manufacturer':
           filtersStateObj = manufacturerSpecies;
           break;
+        default:
+          return filtersStateObj;
       };
       filtersStateObj = Object.fromEntries(filtersStateObj);
     };

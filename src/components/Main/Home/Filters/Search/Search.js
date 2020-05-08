@@ -16,6 +16,7 @@ const Search = () => {
           <input
             type="text"
             placeholder="Search"
+            data-type="text"
             onClick={(e) => e.target.focus()}
             onChange={onInputChange} />
         </div>

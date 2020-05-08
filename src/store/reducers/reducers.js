@@ -8,7 +8,8 @@ import {
   SET_FILTERS_STATE,
   SET_FILTER_ORIGIN,
   SET_FILTER_OBJ,
-  SET_SEARCH_TOGGLE,
+  SET_SEARCH_OBJ,
+  SET_JOINT_SEARCH_OBJ,
 } from '../actions';
 
 import { langEN, langCH } from '../../data/languages';
@@ -67,9 +68,24 @@ export const filterObj = (state = {}, action) => {
   }
 }
 
-export const searchToggle = (state = { inputVal: null, isEnable: false, globalSearchObj: {}, filterSearchObj: {}, }, action) => {
+export const searchObj = (state = null, action) => {
   switch (action.type) {
-    case SET_SEARCH_TOGGLE:
+    case SET_SEARCH_OBJ:
+      return Object.assign({}, state, action.fields);
+    default:
+      return state;
+  }
+}
+
+export const jointSearchObj = (state = {
+  isEnable: false,
+  globalSearchObj: {},
+  filterSearchObj: {},
+},
+  action) => {
+  switch (action.type) {
+    case SET_JOINT_SEARCH_OBJ:
+      console.log('action-search', action.searchState);
       return action.searchState;
     default:
       return state;
@@ -79,6 +95,7 @@ export const searchToggle = (state = { inputVal: null, isEnable: false, globalSe
 export const productsDisplay = (state = productsObj, action) => {
   switch (action.type) {
     case SET_ON_SALE_DISPLAY:
+      console.log('action.products', action.products);
       if (Array.isArray(action.products)) return action.products;
       else return productsObj;
     default:
