@@ -1,9 +1,15 @@
 import React from 'react';
 import { setInputState } from '../logicInput';
 import { priceLogic } from './priceLogic';
+import { setPreviuosSearch, calcPrevResult } from '../logicSearch';
 import { BoxDecor } from '../../../../Parts/BoxDecor';
 
 const Price = () => {
+  const onInputClick = (e) => {
+    e.target.focus();
+    setPreviuosSearch();
+  };
+
   const onInputChange = (e) => {
     const val = +e.target.value;
     if (isNaN(val)) e.target.value = '';
@@ -11,6 +17,10 @@ const Price = () => {
       setInputState(e);
       priceLogic(e);
     };
+  };
+
+  const onInputKey = (e) => {
+    if (e.key === 'Backspace') calcPrevResult();
   };
 
   return (
@@ -22,8 +32,9 @@ const Price = () => {
               type="text"
               placeholder="Minimum price"
               data-type="minPrice"
-              onClick={(e) => e.target.focus()}
-              onChange={(e) => onInputChange(e)} />
+              onClick={onInputClick}
+              onChange={(e) => onInputChange(e)}
+              onKeyUp={onInputKey} />
           </div>
           <BoxDecor />
         </div>
@@ -35,8 +46,9 @@ const Price = () => {
               type="text"
               placeholder="Maximum price"
               data-type="maxPrice"
-              onClick={(e) => e.target.focus()}
-              onChange={(e) => onInputChange(e)} />
+              onClick={onInputClick}
+              onChange={(e) => onInputChange(e)}
+              onKeyUp={onInputKey} />
           </div>
           <BoxDecor />
         </div>

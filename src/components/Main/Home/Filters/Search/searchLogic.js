@@ -15,6 +15,7 @@ export const searchLogic = (e) => {
     resultKeys.forEach((el) => {
       tempArr = tempArr.concat(sortedProducts.search[el]);
     });
+    console.log('tempArr', tempArr);
     store.dispatch(setSearchObj(inputType, 1, tempArr));
   } else {
     store.dispatch(setSearchObj(inputType, 0, []));

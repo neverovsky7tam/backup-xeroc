@@ -6,7 +6,7 @@ import { logicSearch } from '../logicSearch';
 export const priceLogic = (e) => {
   const inputType = e.target.dataset.type;
   const inputVal = +e.target.value;
-  console.log('inputVal', inputVal);
+
   if (inputVal) {
     const source = Object.keys(sortedProducts.byPrice);
     let tempArr = [];

@@ -95,7 +95,6 @@ export const jointSearchObj = (state = {
   action) => {
   switch (action.type) {
     case SET_JOINT_SEARCH_OBJ:
-      console.log('action-search', action.searchState);
       return action.searchState;
     default:
       return state;
@@ -105,7 +104,6 @@ export const jointSearchObj = (state = {
 export const productsDisplay = (state = productsObj, action) => {
   switch (action.type) {
     case SET_ON_SALE_DISPLAY:
-      console.log('action.products', action.products);
       if (Array.isArray(action.products)) return action.products;
       else return productsObj;
     default:
