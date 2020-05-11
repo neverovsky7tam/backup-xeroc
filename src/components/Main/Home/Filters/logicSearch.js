@@ -24,29 +24,35 @@ export const calcPrevResult = () => {
       };
     };
   };
-  console.log('compareName', compareName);
+  console.log('length', length);
 
-  const objectsForCompare = [];
-  for (let key in searchObj) {
-    if (key !== compareName && searchObj[key].value) {
-      const targetCompareObj = {};
-      searchObj[key].data.forEach((el) => targetCompareObj[el.id] = el);
-      objectsForCompare.push(targetCompareObj);
-    };
-  };
-  console.log('objectsForCompare', objectsForCompare);
-  // make one object for compare from array with objects
-  const unionObj = {};
-  objectsForCompare.forEach((item) => Object.assign(unionObj, item));
-  console.log('unionObj', unionObj);
   let result = [];
-  if (Object.keys(unionObj).length) {
-    compareArr.forEach((el) => {
-      if (unionObj[el.id]) result.push(el);
-    });
+  if (length === null) {
+    result = null;
   } else {
-    result = compareArr;
-  };
+    const objectsForCompare = [];
+    for (let key in searchObj) {
+      if (key !== compareName && searchObj[key].value) {
+        const targetCompareObj = {};
+        searchObj[key].data.forEach((el) => targetCompareObj[el.id] = el);
+        objectsForCompare.push(targetCompareObj);
+      };
+    };
+    console.log('objectsForCompare', objectsForCompare);
+    // make one object for compare from array with objects
+    const unionObj = {};
+    objectsForCompare.forEach((item) => Object.assign(unionObj, item));
+    console.log('unionObj', unionObj);
+
+    if (Object.keys(unionObj).length) {
+      compareArr.forEach((el) => {
+        if (unionObj[el.id]) result.push(el);
+      });
+    } else {
+      result = compareArr;
+    };
+  }
+
   console.log('result', result);
   setSearchState(result);
   setPreviuosSearch();
