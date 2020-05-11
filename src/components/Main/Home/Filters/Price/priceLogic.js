@@ -6,7 +6,7 @@ import { logicSearch } from '../logicSearch';
 export const priceLogic = (e) => {
   const inputType = e.target.dataset.type;
   const inputVal = +e.target.value;
-
+  console.log('inputVal', inputVal);
   if (inputVal) {
     const source = Object.keys(sortedProducts.byPrice);
     let tempArr = [];
@@ -20,7 +20,13 @@ export const priceLogic = (e) => {
         if (+key <= inputVal) tempArr = tempArr.concat(sortedProducts.byPrice[key]);
       });
     };
-    store.dispatch(setSearchObj(inputType, 1, tempArr));
+
+    const tempObj = {};
+    tempArr.forEach((el) => {
+      if (!tempObj[el.id]) tempObj[el.id] = el;
+    });
+    const resulrArr = Object.values(tempObj);
+    store.dispatch(setSearchObj(inputType, 1, resulrArr));
   } else {
     store.dispatch(setSearchObj(inputType, 0, []));
   };

@@ -20,7 +20,6 @@ const HomeOnsale = () => {
   }
 
   const productsObj = useSelector((state) => state.productsDisplay);
-  console.log('onSale', productsObj);
   let content = <p className="plug-text">Sorry. No products to display</p>;
   if (productsObj.length) {
     const data = productsObj;

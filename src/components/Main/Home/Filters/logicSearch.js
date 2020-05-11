@@ -1,49 +1,45 @@
 import store from '../../../../store/store';
-import { setOnSaleDisplay, setJointSearchObj } from '../../../../store/actions';
+import { setOnSaleDisplay, setJointSearchObj, setPreviuosSearchResult } from '../../../../store/actions';
 
-const checkFilters = (globalSearchArr, globalSearchObj) => {
-  // check filters
-  const filterOrigin = store.getState().filterOrigin;
-  console.log('filterOrigin', filterOrigin);
+const comparePrevSearch = (currentData) => {
+  const prevSearch = store.getState().previousSearch;
+  console.log('prevSearch', prevSearch);
 
-  if (Object.keys(filterOrigin).length) {
-    console.log('length-true');
-    const filterSearchObj = {};
-    globalSearchArr.forEach((el) => {
-      if (filterOrigin[el.id]) filterSearchObj[el.id] = el;
-    });
-  } else {
-    console.log('setOnSaleDisplay');
-    store.dispatch(setOnSaleDisplay(globalSearchArr));
-  };
+  let result = [];
+  currentData.forEach((el) => {
+    if (prevSearch[el.id]) result.push(el);
+  });
+  return result;
 };
 
-const compareData = (searchObj) => {
-  let compareArr = null;
-  let compareName = null;
-  // selection the object wich has the minimum length
-  let length = null;
-  for (let key in searchObj) {
-    if (searchObj[key].value) {
+const compareActiveInput = (searchObj, inputType) => {
+  const currrentData = searchObj[inputType].data;
+  const currentValue = searchObj[inputType].value;
+  console.log('data-length=0', searchObj[inputType].data.length);
+
+  if (!currrentData.length && currentValue) {
+    return [];
+  };
+  if (!currrentData.length && !currentValue) {
+    // find the object with lowest length
+    let length = null;
+    let compareArr = [];
+    let compareName = '';
+    for (let key in searchObj) {
       if (length === null) {
         length = searchObj[key].data.length;
         compareArr = searchObj[key].data;
-        compareName = key;
+        compareName = key
       } else {
         if (searchObj[key].data.length <= length) {
           length = searchObj[key].data.length;
           compareArr = searchObj[key].data;
-          compareName = key;
+          compareName = key
         };
       };
-      console.log('key', key, length, compareName);
     };
-  };
+    console.log('check-length', length);
 
-  if (!length) {
-    store.dispatch(setOnSaleDisplay([]));
-  } else {
-    // make objects with keys as item's id and props = items; and push them to array
     const objectsForCompare = [];
     for (let key in searchObj) {
       if (key !== compareName) {
@@ -58,29 +54,63 @@ const compareData = (searchObj) => {
     const unionObj = {};
     objectsForCompare.forEach((item) => Object.assign(unionObj, item));
     console.log('unionObj', unionObj);
-    console.log('compareArr', compareArr);
-    // let's go to compare
-    let globalSearchArr = [];
-    const globalSearchObj = {};
 
-    if (!Object.keys(unionObj).length) {
-      globalSearchArr = compareArr;
-      compareArr.forEach((el) => globalSearchObj[el.id] = el);
-    } else {
+    let result = [];
+    if (Object.keys(unionObj).length) {
       compareArr.forEach((el) => {
-        if (unionObj[el.id]) {
-          globalSearchArr.push(el);
-          globalSearchObj[el.id] = el;
-        }
+        if (unionObj[el.id]) result.push(el);
       });
-    }
-    console.log('globalSearchArr', globalSearchArr);
-    checkFilters(globalSearchArr, globalSearchObj);
+    } else {
+      result = compareArr;
+    };
+    return result;
+  };
+};
+
+const setSearchState = (result) => {
+  const filterOrigin = store.getState().filterOrigin;
+  console.log('filterOrigin', filterOrigin);
+
+  const globalSearchObj = {};
+  const filterSearchObj = {};
+
+  if (result === null) {
+    // set searching data to redux store
+    // store.dispatch(setPreviuosSearchResult({}));
+    store.dispatch(setJointSearchObj(false, globalSearchObj, filterSearchObj));
+    // render results
+    store.dispatch(setOnSaleDisplay(null));
+  } else if (!result.length) {
+    store.dispatch(setJointSearchObj(true, globalSearchObj, filterSearchObj));
+    store.dispatch(setOnSaleDisplay([]));
+  } else {
+    result.forEach((el) => {
+      globalSearchObj[el.id] = el;
+
+      if (filterOrigin[el.id]) filterSearchObj[el.id] = el;
+    });
+    // set searching data to redux store
+    store.dispatch(setJointSearchObj(true, globalSearchObj, filterSearchObj));
+    // render results
+    console.log('globalSearchObj', globalSearchObj);
+    console.log('filterSearchObj', filterSearchObj);
+
+    if (Object.keys(filterSearchObj).length) {
+      // set searching data to redux store
+      store.dispatch(setPreviuosSearchResult(filterSearchObj));
+      // render results
+      store.dispatch(setOnSaleDisplay(Object.values(filterSearchObj)));
+    } else {
+      // set searching data to redux store
+      store.dispatch(setPreviuosSearchResult(globalSearchObj));
+      // render results
+      store.dispatch(setOnSaleDisplay(Object.values(globalSearchObj)));
+    };
   };
 };
 
 export const logicSearch = (inputType) => {
-  const searchObj = store.getState().searchObj
+  const searchObj = store.getState().searchObj;
   console.log('searchObj', searchObj, inputType);
 
   let fieldsCounter = 0;
@@ -91,63 +121,21 @@ export const logicSearch = (inputType) => {
 
   const currentData = searchObj[inputType].data;
   console.log('currentData', currentData);
+  let result = null;
+
   if (currentData.length) {
     if (fieldsCounter === 1) {
-      store.dispatch(setOnSaleDisplay(currentData));
+      result = currentData;
     } else {
-      compareData(searchObj);
+      result = comparePrevSearch(currentData);
     };
   } else {
     if (fieldsCounter) {
-      compareData(searchObj);
+      result = compareActiveInput(searchObj, inputType);
     } else {
-      store.dispatch(setOnSaleDisplay(null));
+      result = null;
     };
   };
 
-
-  // const searchState = store.getState().jointSearchObj;
-  // console.log('searchState', searchState);
-  // let searchSource = null;
-  // if (searchState.isEnable) searchSource = searchState.globalSearchObj;
-  // else searchSource = sortedProducts.byID;
-
-  // let inputType = null;
-  // let inputVal = null;
-  // if (e.type) {
-  //   inputType = e.target.dataset.type;
-  //   inputVal = e.target.value.toLowerCase();
-  //   console.log('inputVal', inputVal);
-  // } else {
-  //   console.log('not-type', e);
-  //   inputType = e.key;
-  //   inputVal = e.prop;
-  // };
-
-  // const source = Object.keys(sortedProducts.search);
-  // const resultKeys = source.filter((el) => el.includes(inputVal));
-
-  // let tempArr = [];
-  // resultKeys.forEach((el) => {
-  //   tempArr = tempArr.concat(sortedProducts.search[el]);
-  // });
-
-  // const globalSearchObj = {};
-  // const filterSearchObj = {};
-  // tempArr.forEach((el) => {
-  //   if (globalObj[el.id]) globalSearchObj[el.id] = el;
-
-  //   if (Object.keys(filterOrigin).length) {
-  //     if (filterOrigin[el.id]) filterSearchObj[el.id] = el;
-  //   }
-  // });
-
-  // if (Object.keys(filterOrigin).length) store.dispatch(setOnSaleDisplay(Object.values(filterSearchObj)));
-  // else store.dispatch(setOnSaleDisplay(Object.values(globalSearchObj)));
-
-  // if (inputVal) {
-  //   store.dispatch(setJointSearchObj(inputType, inputVal, true, globalSearchObj, filterSearchObj));
-  // } else {
-  //   store.dispatch(setJointSearchObj(inputType, null, false, {}, {}));
-  // }
+  setSearchState(result, inputType);
 };
