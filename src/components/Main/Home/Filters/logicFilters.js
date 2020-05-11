@@ -2,7 +2,6 @@ import store from '../../../../store/store';
 import { setOnSaleDisplay, setFiltersState, setFilterObj, setJointSearchObj } from '../../../../store/actions';
 import { sortedProducts } from '../../../../data/productsProcessing';
 import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../data/productsData';
-import { logicSearch } from './logicSearch';
 
 export const setProductsDisplay = (filter, value, isActive, isEnableFilter) => {
   const filterOrigin = store.getState().filterOrigin;
@@ -40,7 +39,7 @@ export const setProductsDisplay = (filter, value, isActive, isEnableFilter) => {
   if (isEnableFilter) {
     store.dispatch(setOnSaleDisplay(Object.values(renderObj)));
   } else {
-    if (search.isEnable) logicSearch(search.client);
+    if (search.isEnable) store.dispatch(setOnSaleDisplay(Object.values(search.globalSearchObj)));
     else store.dispatch(setOnSaleDisplay(null));
   };
 };
