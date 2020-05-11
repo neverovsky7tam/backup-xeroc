@@ -10,6 +10,7 @@ import {
   SET_FILTER_OBJ,
   SET_SEARCH_OBJ,
   SET_JOINT_SEARCH_OBJ,
+  SET_PREVIOUS_SEARCH_RESULT,
 } from '../actions';
 
 import { langEN, langCH } from '../../data/languages';
@@ -68,10 +69,19 @@ export const filterObj = (state = {}, action) => {
   }
 }
 
-export const searchObj = (state = null, action) => {
+export const searchObj = (state = {}, action) => {
   switch (action.type) {
     case SET_SEARCH_OBJ:
       return Object.assign({}, state, action.fields);
+    default:
+      return state;
+  }
+}
+
+export const previousSearch = (state = {}, action) => {
+  switch (action.type) {
+    case SET_PREVIOUS_SEARCH_RESULT:
+      return action.prevSearch;
     default:
       return state;
   }

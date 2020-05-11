@@ -18,7 +18,7 @@ export const setProductsDisplay = (filter, value, isActive, isEnableFilter) => {
       } else {
         if (!filterObj[el.id]) renderObj[el.id] = el;
       };
-      // save filters without rendered data for increase searching results by add new filter data
+      // save filters without searching data
       if (!filterOrigin[el.id]) filterOrigin[el.id] = el;
     });
 
@@ -29,7 +29,7 @@ export const setProductsDisplay = (filter, value, isActive, isEnableFilter) => {
     if (search.isEnable) filterObj = search.filterSearchObj;
     productsArr.forEach((el) => {
       if (filterObj[el.id]) delete filterObj[el.id];
-      // save filters without rendered data for increase searching results by add new filter data
+      // save filters without searching data
       if (filterOrigin[el.id]) delete filterOrigin[el.id];
     });
 
