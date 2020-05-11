@@ -41,10 +41,6 @@ const classifyProducts = () => {
       hashValueStr += String(item.h);
 
       if (!sortedProducts.byPrice[item.price]) sortedProducts.byPrice[item.price] = [];
-
-      // const hashSpecies = Object.assign({}, item);
-      // const itemSingleHash = Object.assign({}, el);
-      // itemSingleHash.hash = { option: el.hash.option, value: [hashSpecies] };
       sortedProducts.byPrice[item.price].push(el);
     });
     // search field
