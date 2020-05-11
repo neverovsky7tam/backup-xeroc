@@ -3,14 +3,12 @@ import { setOnSaleDisplay, setJointSearchObj, setPreviuosSearchResult } from '..
 
 export const calcPrevResult = () => {
   const searchObj = store.getState().searchObj;
-  console.log('searchObj', searchObj);
   // find the object with lowest length
   let length = null;
   let compareArr = [];
   let compareName = '';
   for (let key in searchObj) {
     if (searchObj[key].value) {
-      console.log('key=1', key)
       if (length === null) {
         length = searchObj[key].data.length;
         compareArr = searchObj[key].data;
@@ -24,7 +22,6 @@ export const calcPrevResult = () => {
       };
     };
   };
-  console.log('length', length);
 
   let result = [];
   if (length === null) {
@@ -38,11 +35,9 @@ export const calcPrevResult = () => {
         objectsForCompare.push(targetCompareObj);
       };
     };
-    console.log('objectsForCompare', objectsForCompare);
     // make one object for compare from array with objects
     const unionObj = {};
     objectsForCompare.forEach((item) => Object.assign(unionObj, item));
-    console.log('unionObj', unionObj);
 
     if (Object.keys(unionObj).length) {
       compareArr.forEach((el) => {
@@ -52,15 +47,13 @@ export const calcPrevResult = () => {
       result = compareArr;
     };
   }
-
-  console.log('result', result);
   setSearchState(result);
   setPreviuosSearch();
 };
 
 export const setPreviuosSearch = () => {
   const jointSearchObj = store.getState().jointSearchObj;
-  console.log('jointSearchObj', jointSearchObj);
+
   if (jointSearchObj.isEnable) {
     if (Object.keys(jointSearchObj.filterSearchObj).length) store.dispatch(setPreviuosSearchResult(jointSearchObj.filterSearchObj));
     else store.dispatch(setPreviuosSearchResult(jointSearchObj.globalSearchObj));
