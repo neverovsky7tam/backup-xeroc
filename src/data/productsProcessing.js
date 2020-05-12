@@ -7,15 +7,15 @@ const classifyProducts = () => {
   });
 
   manufacturerSpecies.forEach((item) => {
-    sortedProducts.manufacturer[item] = {};
+    sortedProducts.manufacturer[item[0]] = {};
   });
 
   equipmentSpecies.forEach((item) => {
-    sortedProducts.equipment[item] = {};
+    sortedProducts.equipment[item[0]] = {};
   });
 
   coinsSpecies.forEach((item) => {
-    sortedProducts.coins[item] = {};
+    sortedProducts.coins[item[0]] = {};
   });
 
   productsObj.forEach((el) => {
@@ -31,9 +31,11 @@ const classifyProducts = () => {
       sortedProducts.equipment[el.equipment][el.id] = el;
     };
 
-    if (sortedProducts.coins[el.coins]) {
-      sortedProducts.coins[el.coins][el.id] = el;
-    };
+    el.coins.forEach((coin) => {
+      if (sortedProducts.coins[coin]) {
+        sortedProducts.coins[coin][el.id] = el;
+      }
+    });
 
     let hashValueStr = '';
     // byPrice
@@ -50,6 +52,7 @@ const classifyProducts = () => {
     // by ID
     sortedProducts.byID[el.id] = el;
   });
+  console.log('sortedProducts', sortedProducts);
 };
 
 classifyProducts();

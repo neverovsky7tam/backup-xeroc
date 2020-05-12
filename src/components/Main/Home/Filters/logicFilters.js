@@ -5,7 +5,9 @@ import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies 
 
 export const setProductsDisplay = (filter, value, isActive, isEnableFilter) => {
   const filterOrigin = store.getState().filterOrigin;
+  console.log('filterOrigin', filterOrigin)
   let filterObj = store.getState().filterObj;
+  console.log('filterObj', filterObj)
   const search = store.getState().jointSearchObj;
   const productsArr = Object.values(sortedProducts[filter][value]);
   let renderObj = {};
@@ -71,7 +73,7 @@ const defineObject = (filter) => {
         case 'algorithm':
           filtersStateObj = algorithmsSpecies;
           break;
-        case 'coin':
+        case 'coins':
           filtersStateObj = coinsSpecies;
           break;
         case 'equipment':
@@ -89,10 +91,10 @@ const defineObject = (filter) => {
   return filtersStateObj;
 };
 
-export const expandFilter = (e, isExpand, setExpandFilter, input) => {
-  if (!isExpand && !input.value) {
-    setExpandFilter(!isExpand);
+export const expandFilter = (e, isExpand, setExpand, isSearch, setSearchExpand, input) => {
+  if (!isExpand && !input.value) setExpand(!isExpand);
+  if (e.target.closest('.arrow')) {
+    if (isSearch) setSearchExpand(false);
+    setExpand(!isExpand);
   };
-
-  if (e.target.closest('.arrow')) setExpandFilter(!isExpand);
 };

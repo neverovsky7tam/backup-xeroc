@@ -14,7 +14,7 @@ export const calcPrevResult = () => {
         compareArr = searchObj[key].data;
         compareName = key;
       } else {
-        if (searchObj[key].data.length && searchObj[key].data.length <= length) {
+        if (searchObj[key].data.length <= length) {
           length = searchObj[key].data.length;
           compareArr = searchObj[key].data;
           compareName = key;

@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import AlgorithmSelect from './AlgorithmSelect';
-import AlgorithmFilter from './AlgorithmFilters';
-import AlgorithmSearch from './AlgorithmSearch';
+import EquipmentSelect from './EquipmentSelect';
+import EquipmentFilter from './EquipmentFilter';
+import EquipmentSearch from './EquipmentSearch';
 import { BoxDecor } from '../../../../Parts/BoxDecor';
 
-const Algorithm = () => {
+const Equipment = () => {
   const [isExpand, setExpand] = useState(false);
   const [isSearch, setSearchExpand] = useState(false);
   const [itemsArr, setItemsArr] = useState([]);
 
   return (
-    <div className="filter algorithm">
+    <div className="filter equipment">
       <div className="p-relative">
-        <AlgorithmSelect
+        <EquipmentSelect
           isExpand={isExpand}
           isSearch={isSearch}
           setExpand={setExpand}
@@ -20,8 +20,8 @@ const Algorithm = () => {
           setItemsArr={setItemsArr} />
         <BoxDecor />
       </div>
-      {isExpand && <AlgorithmFilter />}
-      {isSearch && <AlgorithmSearch
+      {isExpand && <EquipmentFilter />}
+      {isSearch && <EquipmentSearch
         itemsArr={itemsArr}
         setExpand={setExpand}
         setSearchExpand={setSearchExpand} />}
@@ -29,4 +29,4 @@ const Algorithm = () => {
   )
 };
 
-export default Algorithm;
+export default Equipment;

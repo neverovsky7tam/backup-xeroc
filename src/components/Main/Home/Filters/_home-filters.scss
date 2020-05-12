@@ -4,6 +4,7 @@
 
 .filters__body {
   width: 212px;
+  overflow: hidden;
 
   .filter {
     padding-bottom: 15px;
@@ -93,7 +94,7 @@
 
   .filter__items-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    // grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
     margin-top: 15px;
 
@@ -127,15 +128,24 @@
     .filter__item-inner {
       position: relative;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100%;
       @include open-sans_font($grey_font, 10px);
       font-weight: 300;
+
+      .filter__item-img {
+        margin-bottom: 13px;
+      }
     }
   }
 
   .filter__items-container_txt {
     grid-auto-rows: 30px;
+  }
+
+  .filter__items-container_img {
+    grid-auto-rows: 80px;
   }
 }

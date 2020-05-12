@@ -4,23 +4,23 @@ import { expandFilter } from '../logicFilters';
 import { renderTags, deleteTag, setSelectFieldState, setSearchBlock, setSearchFilterItems } from '../logicInput';
 import { ReactComponent as ArrowDots } from '../../../../../assets/img/arrow-dots.svg';
 
-const AlgorithmSelect = ({ isExpand, setExpand, isSearch, setSearchExpand, setItemsArr }) => {
+const ManufacturerSelect = ({ isExpand, setExpand, isSearch, setSearchExpand, setItemsArr }) => {
   const filter = React.createRef();
   const arrow = React.createRef();
   const input = React.createRef();
   const userSelect = useSelector((state) => {
-    if (state.filtersState.algorithm) return state.filtersState.algorithm.tag;
+    if (state.filtersState.manufacturer) return state.filtersState.manufacturer.tag;
   });
 
   let tags = null;
   if (userSelect) {
-    tags = renderTags(userSelect, 'algorithm');
+    tags = renderTags(userSelect, 'manufacturer');
   };
 
   useEffect(() => {
     const closeFilters = (e) => {
       const target = e.target;
-      if ((!target.closest('.algorithm') && !target.closest('.filter__item')) && !target.closest('.filter-tag__close')) {
+      if ((!target.closest('.manufacturer') && !target.closest('.filter__item')) && !target.closest('.filter-tag__close')) {
         setExpand(false);
         setSearchExpand(false);
         document.removeEventListener('click', closeFilters);
@@ -35,13 +35,13 @@ const AlgorithmSelect = ({ isExpand, setExpand, isSearch, setSearchExpand, setIt
 
   const onInputChange = () => {
     setSearchBlock(input.current, setExpand, setSearchExpand);
-    setSearchFilterItems('algorithm', input.current.value, setItemsArr);
+    setSearchFilterItems('manufacturer', input.current.value, setItemsArr);
   };
 
   const onInputKey = (e) => {
     if ((userSelect && userSelect.length) && (e.key === 'Backspace' && !e.target.value)) {
-      deleteTag('algorithm');
-    };
+      deleteTag('manufacturer');
+    }
   };
 
   const onFieldClick = (e) => {
@@ -51,7 +51,7 @@ const AlgorithmSelect = ({ isExpand, setExpand, isSearch, setSearchExpand, setIt
   return (
     <div
       className="filter__select"
-      data-filter-placeholder="By Algorithm"
+      data-filter-placeholder="By Manufacturer"
       onClick={onFieldClick}
       ref={filter}>
       <div className="select-wrapper">
@@ -61,14 +61,14 @@ const AlgorithmSelect = ({ isExpand, setExpand, isSearch, setSearchExpand, setIt
           onChange={onInputChange}
           onKeyDown={onInputKey}
           type="text"
-          placeholder="By Algorithm"
+          placeholder="By Manufacturer"
           maxLength="10" />
       </div>
       <div className="arrow" ref={arrow}>
         <ArrowDots />
       </div>
     </div>
-  )
+  );
 };
 
-export default AlgorithmSelect;
+export default ManufacturerSelect;

@@ -20,6 +20,7 @@ export const filtersState = (state = {}, action) => {
   switch (action.type) {
     case SET_FILTERS_STATE:
       const newState = Object.assign({}, state);
+      console.log('newState', newState);
       const key = Object.keys(action.filters);
       const actionFilter = action.filters[key[0]].filter;
       const actionTag = action.filters[key[0]].tag;

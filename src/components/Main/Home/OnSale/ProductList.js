@@ -32,7 +32,7 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr }) => {
     itemInner.current.style.right = '322px';
     itemInner.current.style.border = '1px solid rgba(255, 255, 255, 0.05)';
     orderBlock.current.style.right = '0';
-  }
+  };
 
   const itemHoverOff = () => {
     setPrice(itemPrice);
@@ -41,7 +41,7 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr }) => {
         orderBlock.current.style.right = '-50%';
 
     if (select.current.style.overflow) showHashList();
-  }
+  };
 
   const showHashList = () => {
     if (!select.current.style.overflow) {
@@ -50,13 +50,13 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr }) => {
     } else {
       select.current.style.overflow = '';
       arrow.current.style = '';
-    }
-  }
+    };
+  };
 
   const onHashListClick = (item) => {
     setPrice(`$${item.price}`);
     setHash(item.h);
-  }
+  };
 
   return (
     <li
@@ -101,7 +101,7 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr }) => {
         <button className="order__btn-add">Add to cart</button>
       </div>
     </li>
-  )
+  );
 };
 
 export const ProductListHead = () => {
@@ -125,5 +125,5 @@ export const ProductListHead = () => {
         <BoxDecor />
       </div>
     </div>
-  )
-}
+  );
+};

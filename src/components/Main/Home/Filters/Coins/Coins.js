@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import AlgorithmSelect from './AlgorithmSelect';
-import AlgorithmFilter from './AlgorithmFilters';
-import AlgorithmSearch from './AlgorithmSearch';
+import CoinsSelect from './CoinsSelect';
+import CoinsFilter from './CoinsFilter';
+import CoinsSearch from './CoinsSearch';
 import { BoxDecor } from '../../../../Parts/BoxDecor';
 
-const Algorithm = () => {
+const Coins = () => {
   const [isExpand, setExpand] = useState(false);
   const [isSearch, setSearchExpand] = useState(false);
   const [itemsArr, setItemsArr] = useState([]);
 
   return (
-    <div className="filter algorithm">
+    <div className="filter coins">
       <div className="p-relative">
-        <AlgorithmSelect
+        <CoinsSelect
           isExpand={isExpand}
           isSearch={isSearch}
           setExpand={setExpand}
@@ -20,8 +20,8 @@ const Algorithm = () => {
           setItemsArr={setItemsArr} />
         <BoxDecor />
       </div>
-      {isExpand && <AlgorithmFilter />}
-      {isSearch && <AlgorithmSearch
+      {isExpand && <CoinsFilter />}
+      {isSearch && <CoinsSearch
         itemsArr={itemsArr}
         setExpand={setExpand}
         setSearchExpand={setSearchExpand} />}
@@ -29,4 +29,4 @@ const Algorithm = () => {
   )
 };
 
-export default Algorithm;
+export default Coins;

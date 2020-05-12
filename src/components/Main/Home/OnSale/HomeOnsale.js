@@ -20,7 +20,8 @@ const HomeOnsale = () => {
   }
 
   const productsObj = useSelector((state) => state.productsDisplay);
-  let content = <p className="plug-text">Sorry. No products to display</p>;
+  const plugTextMarginLeft = (view) ? '30px' : '0';
+  let content = <p style={{ marginLeft: plugTextMarginLeft }}>Sorry. No products to display</p>;
   if (productsObj.length) {
     const data = productsObj;
     content = (

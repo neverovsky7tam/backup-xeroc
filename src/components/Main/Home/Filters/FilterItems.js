@@ -1,11 +1,16 @@
 import React from 'react';
 import { BoxDecor } from '../../../Parts/BoxDecor';
 
-const FilterItems = ({ filtersArr, onItemClick }) => {
-  if (filtersArr.length) {
+const FilterItems = ({ itemsArr, onItemClick, img }) => {
+  const gridColumns = (img) ? 'repeat(3, 1fr)' : 'repeat(2, 1fr)';
+  const letterTransform = (img) ? 'uppercase' : 'none';
+
+  if (itemsArr.length) {
     return (
-      <ul className="filter__items-container filter__items-container_txt">
-        {filtersArr.map((el, idx) => {
+      <ul
+        className={(img) ? 'filter__items-container filter__items-container_img' : 'filter__items-container filter__items-container_txt'}
+        style={{ gridTemplateColumns: gridColumns }}>
+        {itemsArr.map((el, idx) => {
           return (
             <li
               key={idx}
@@ -13,7 +18,11 @@ const FilterItems = ({ filtersArr, onItemClick }) => {
               data-active={el[1]}
               data-value={el[0]}
               onClick={onItemClick}>
-              <div className="filter__item-inner">
+              <div className="filter__item-inner" style={{ textTransform: letterTransform }}>
+                {img &&
+                  <img
+                    className="filter__item-img"
+                    src={`/data/filters/coins_img/${el[0]}.svg`} />}
                 {el[0]}
                 <BoxDecor />
               </div>

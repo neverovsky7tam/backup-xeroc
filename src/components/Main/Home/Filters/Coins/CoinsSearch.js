@@ -2,10 +2,10 @@ import React from 'react';
 import FilterItems from '../FilterItems';
 import { setFilters } from '../logicFilters';
 
-const AlgorithmSearch = ({ itemsArr, setExpand, setSearchExpand }) => {
+const CoinsSearch = ({ itemsArr, setExpand, setSearchExpand }) => {
   const onItemClick = (e) => {
     const value = e.currentTarget.dataset.value;
-    setFilters(value, 'algorithm');
+    setFilters(value, 'coins');
     setExpand(true);
     setSearchExpand(false);
   };
@@ -15,4 +15,4 @@ const AlgorithmSearch = ({ itemsArr, setExpand, setSearchExpand }) => {
   );
 };
 
-export default AlgorithmSearch;
+export default CoinsSearch;

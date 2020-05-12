@@ -4,7 +4,8 @@ import { setFilters } from './logicFilters';
 import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../data/productsData';
 
 const onMouseTag = (e) => {
-  if (e.type === 'mouseenter') {
+  console.log('type', e.type);
+  if (e.type === 'mouseover') {
     e.currentTarget.children[1].style.top = '0';
   }
   if (e.type === 'mouseleave') {
@@ -38,8 +39,8 @@ export const renderTags = (storeTags, filter) => {
       <div
         key={el}
         className="filter-tag"
-        onMouseEnter={onMouseTag}
-        onMouseLeave={onMouseTag}>
+        onMouseLeave={onMouseTag}
+        onMouseOver={onMouseTag}>
         <div className="filter-tag__content">
           {tag}
         </div>
@@ -64,11 +65,10 @@ export const deleteTag = (filter, tag) => {
 
   if (hasName) {
     setFilters(tag, filter);
-  }
-  else {
+  } else {
     const value = targetObj.tag[targetObj.tag.length - 1];
     setFilters(value, filter);
-  }
+  };
 };
 
 export const setInputState = (e) => {
@@ -82,12 +82,11 @@ export const setSelectFieldState = (filter, input, arrow, storeTags, isExpand, i
     if (storeTags.length) {
       filter.classList.add('filter__select_active', 'filter__select_expand');
       input.placeholder = '';
-      // input.focus();
       input.maxLength = 3;
     }
     else {
       filter.classList.remove('filter__select_active', 'filter__select_expand');
-      input.placeholder = 'By Algorithm';
+      input.placeholder = filter.dataset.filterPlaceholder;
       input.maxLength = 10;
     }
   };
@@ -112,36 +111,36 @@ export const setSearchBlock = (input, setExpand, setSearchExpand) => {
   };
 };
 
-export const setSearchFilterItems = (filter, value, setFiltersArr) => {
+export const setSearchFilterItems = (filter, value, setItemsArr) => {
   const state = store.getState();
 
   let originFiltersObj = null;
   if (state.filtersState) {
     if (state.filtersState[filter]) originFiltersObj = state.filtersState[filter].filter;
-  }
+  };
 
-  let filtersArr = null;
+  let itemsArr = null;
   if (originFiltersObj) {
-    filtersArr = Object.entries(originFiltersObj);
+    itemsArr = Object.entries(originFiltersObj);
   } else {
     switch (filter) {
       case 'algorithm':
-        filtersArr = algorithmsSpecies;
+        itemsArr = algorithmsSpecies;
         break;
       case 'coin':
-        filtersArr = coinsSpecies;
+        itemsArr = coinsSpecies;
         break;
       case 'equipment':
-        filtersArr = equipmentSpecies;
+        itemsArr = equipmentSpecies;
         break;
       case 'manufacturer':
-        filtersArr = manufacturerSpecies;
+        itemsArr = manufacturerSpecies;
         break;
-    }
+    };
   };
 
   const val = value.toLowerCase();
-  const renderFiltersArr = filtersArr.filter((item) => item[0].toLowerCase().includes(val));
-  setFiltersArr(renderFiltersArr);
+  const renderFiltersArr = itemsArr.filter((item) => item[0].toLowerCase().includes(val));
+  setItemsArr(renderFiltersArr);
 };
 
