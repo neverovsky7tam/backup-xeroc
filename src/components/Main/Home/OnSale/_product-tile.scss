@@ -1,13 +1,19 @@
+.products__item-wrapper {
+  position: relative;
+}
+
 .products__item {
   box-sizing: border-box;
   width: 213px;
   height: 213px;
   padding: 15px 0;
+  border: 1px solid rgba(0, 0, 0, 0);
   background-color: $secondary_bg;
   // transition: background 0.3s ease-in;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid $secondary_bg-sec;
   }
 }
 
