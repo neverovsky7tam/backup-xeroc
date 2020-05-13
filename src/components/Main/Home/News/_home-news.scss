@@ -1,3 +1,49 @@
 .news__body {
-  width: 210px;
+  .banner-wrapper {
+    width: 209px;
+    height: 699px;
+    background-color: $secondary_bg;
+
+    &:hover {
+      background-color: $secondary_bg-sec;
+    }
+
+    .banner {
+      box-sizing: border-box;
+      height: 100%;
+      border: 1px solid rgba(255, 255, 255, 0);
+      text-align: center;
+
+      &:hover {
+        border-color: $secondary_bg;
+      }
+
+      h2 {
+        line-height: 30px;
+        letter-spacing: -0.5px;
+      }
+
+      li {
+        font-weight: 400;
+        line-height: 30px;
+        color: $white_font;
+      }
+
+      .banner__logo-buffer {
+        height: 6.45%;
+      }
+
+      .banner__title-buffer {
+        height: 8.5%;
+      }
+
+      .banner__benefits-buffer {
+        height: 4%;
+      }
+
+      .banner__illustration-buffer {
+        height: 7%;
+      }
+    }
+  }
 }
