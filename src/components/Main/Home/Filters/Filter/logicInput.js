@@ -1,10 +1,9 @@
 import React from 'react';
-import store from '../../../../store/store';
+import store from '../../../../../store/store';
 import { setFilters } from './logicFilters';
-import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../data/productsData';
+import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../../data/productsData';
 
 const onMouseTag = (e) => {
-  console.log('type', e.type);
   if (e.type === 'mouseover') {
     e.currentTarget.children[1].style.top = '0';
   }
@@ -29,11 +28,14 @@ export const renderTags = (storeTags, filter) => {
     let dataTarget = el;
 
     if (el.length > 3) el = el.slice(0, 3);
-    tag = el + '...';
+
     if (idx === 2) {
       tag = `+${length - 2}`;
       dataTarget = 0;
-    }
+    } else {
+      tag = el + '...';
+      if (filter === 'coins') tag = tag.toUpperCase(); 
+    };
 
     return (
       <div
@@ -127,7 +129,7 @@ export const setSearchFilterItems = (filter, value, setItemsArr) => {
       case 'algorithm':
         itemsArr = algorithmsSpecies;
         break;
-      case 'coin':
+      case 'coins':
         itemsArr = coinsSpecies;
         break;
       case 'equipment':

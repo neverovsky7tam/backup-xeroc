@@ -1,9 +1,9 @@
 import store from '../../../../../store/store';
 import { setSearchObj } from '../../../../../store/actions';
 import { sortedProducts } from '../../../../../data/productsProcessing';
-import { logicSearch } from '../logicSearch';
+import { logicSearch } from './logicSearch';
 
-export const searchLogic = (e) => {
+export const byTextLogic = (e) => {
   const inputType = e.target.dataset.type;
   const inputVal = e.target.value.toLowerCase();
 

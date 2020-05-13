@@ -1,7 +1,7 @@
 import React from 'react';
-import { setInputState } from '../logicInput';
+import { setInputState } from '../Filter/logicInput';
 import { priceLogic } from './priceLogic';
-import { setPreviuosSearch, calcPrevResult } from '../logicSearch';
+import { setPreviuosSearch, calcPrevResult } from './logicSearch';
 import { BoxDecor } from '../../../../Parts/BoxDecor';
 
 const Price = () => {
@@ -33,7 +33,7 @@ const Price = () => {
               placeholder="Minimum price"
               data-type="minPrice"
               onClick={onInputClick}
-              onChange={(e) => onInputChange(e)}
+              onChange={onInputChange}
               onKeyUp={onInputKey} />
           </div>
           <BoxDecor />
@@ -47,7 +47,7 @@ const Price = () => {
               placeholder="Maximum price"
               data-type="maxPrice"
               onClick={onInputClick}
-              onChange={(e) => onInputChange(e)}
+              onChange={onInputChange}
               onKeyUp={onInputKey} />
           </div>
           <BoxDecor />

@@ -1,12 +1,14 @@
 import React from 'react';
-import Algorithm from './Algorithm/Algorithm';
-import Coins from './Coins/Coins';
-import Equipment from './Equipment/Equipment';
-import Manufacturer from './Manufacturer/Manufacturer';
-import Search from './Search/Search';
-import Price from './Price/Price';
+// import Algorithm from './Algorithm/Algorithm';
+// import Coins from './Coins/Coins';
+// import Equipment from './Equipment/Equipment';
+// import Manufacturer from './Manufacturer/Manufacturer';
+import Filter from './Filter/Filter';
+import ByText from './Search/ByText';
+import Price from './Search/ByPrice';
 import Scroll from '../../Scroll/Scroll';
 import { calcToScroll } from '../../Scroll/Scroll';
+import { algorithmsSpecies, coinsSpecies, equipmentSpecies, manufacturerSpecies } from '../../../../data/productsData';
 
 const HomeFilters = () => {
   const scrollThumb = React.createRef();
@@ -16,6 +18,8 @@ const HomeFilters = () => {
     const scroll = calcToScroll(scrollBlock.current);
     scrollThumb.current.style.transform = `translateY(${scroll.toScroll}px)`;
   };
+
+  const filtersArr = [['algorithm', algorithmsSpecies], ['coins', coinsSpecies], ['equipment', equipmentSpecies], ['manufacturer', manufacturerSpecies]];
 
   return (
     <section className="filters home-page">
@@ -27,12 +31,12 @@ const HomeFilters = () => {
           className="scroll-container"
           ref={scrollBlock}
           onScroll={setScroll}>
-          <Algorithm />
-          <Coins />
-          <Equipment />
-          <Manufacturer />
+          {filtersArr.map((el) => <Filter
+            key={el[0]}
+            filterName={el[0]}
+            filterProps={el[1]} />)}
           <Price />
-          <Search />
+          <ByText />
         </div>
       </div>
       <Scroll ref={scrollThumb} scrollBlock={scrollBlock} />

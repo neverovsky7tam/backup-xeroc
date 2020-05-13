@@ -1,7 +1,7 @@
 import store from '../../../../../store/store';
 import { setSearchObj } from '../../../../../store/actions';
 import { sortedProducts } from '../../../../../data/productsProcessing';
-import { logicSearch } from '../logicSearch';
+import { logicSearch } from './logicSearch';
 
 export const priceLogic = (e) => {
   const inputType = e.target.dataset.type;

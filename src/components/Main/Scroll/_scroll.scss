@@ -11,8 +11,9 @@
 .scroll-container {
   @media (min-width: 1024px) {
     height: 100%;
+    margin-right: -17px;
     overflow-y: scroll;
-    margin-right: -18px;
+    overflow-x: hidden;
   }
 }
 

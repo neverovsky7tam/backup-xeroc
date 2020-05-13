@@ -1,5 +1,5 @@
-import store from '../../../../store/store';
-import { setOnSaleDisplay, setJointSearchObj, setPreviuosSearchResult } from '../../../../store/actions';
+import store from '../../../../../store/store';
+import { setOnSaleDisplay, setJointSearchObj, setPreviuosSearchResult } from '../../../../../store/actions';
 
 export const calcPrevResult = () => {
   const searchObj = store.getState().searchObj;
