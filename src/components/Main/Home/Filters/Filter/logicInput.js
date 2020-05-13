@@ -28,11 +28,14 @@ export const renderTags = (storeTags, filter) => {
     let dataTarget = el;
 
     if (el.length > 3) el = el.slice(0, 3);
-    tag = el + '...';
+
     if (idx === 2) {
       tag = `+${length - 2}`;
       dataTarget = 0;
-    }
+    } else {
+      tag = el + '...';
+      if (filter === 'coins') tag = tag.toUpperCase(); 
+    };
 
     return (
       <div
