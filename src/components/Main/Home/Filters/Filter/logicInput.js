@@ -1,10 +1,9 @@
 import React from 'react';
-import store from '../../../../store/store';
+import store from '../../../../../store/store';
 import { setFilters } from './logicFilters';
-import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../data/productsData';
+import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../../data/productsData';
 
 const onMouseTag = (e) => {
-  console.log('type', e.type);
   if (e.type === 'mouseover') {
     e.currentTarget.children[1].style.top = '0';
   }
@@ -127,7 +126,7 @@ export const setSearchFilterItems = (filter, value, setItemsArr) => {
       case 'algorithm':
         itemsArr = algorithmsSpecies;
         break;
-      case 'coin':
+      case 'coins':
         itemsArr = coinsSpecies;
         break;
       case 'equipment':

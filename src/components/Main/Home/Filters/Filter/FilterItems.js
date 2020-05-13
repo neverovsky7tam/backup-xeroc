@@ -1,5 +1,5 @@
 import React from 'react';
-import { BoxDecor } from '../../../Parts/BoxDecor';
+import { BoxDecor } from '../../../../Parts/BoxDecor';
 
 const FilterItems = ({ itemsArr, onItemClick, img }) => {
   const gridColumns = (img) ? 'repeat(3, 1fr)' : 'repeat(2, 1fr)';
@@ -30,7 +30,7 @@ const FilterItems = ({ itemsArr, onItemClick, img }) => {
           )
         })}
       </ul>
-    )
+    );
   } else {
     return (
       <div className="filter__items-container filter__items-container_txt">
@@ -42,8 +42,7 @@ const FilterItems = ({ itemsArr, onItemClick, img }) => {
         </div>
       </div>
     )
-  }
-
+  };
 };
 
 export default FilterItems;

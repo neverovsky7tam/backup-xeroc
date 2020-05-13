@@ -1,7 +1,7 @@
-import store from '../../../../store/store';
-import { setOnSaleDisplay, setFiltersState, setFilterObj, setJointSearchObj } from '../../../../store/actions';
-import { sortedProducts } from '../../../../data/productsProcessing';
-import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../data/productsData';
+import store from '../../../../../store/store';
+import { setOnSaleDisplay, setFiltersState, setFilterObj, setJointSearchObj } from '../../../../../store/actions';
+import { sortedProducts } from '../../../../../data/productsProcessing';
+import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../../data/productsData';
 
 export const setProductsDisplay = (filter, value, isActive, isEnableFilter) => {
   const filterOrigin = store.getState().filterOrigin;
@@ -92,7 +92,11 @@ const defineObject = (filter) => {
 };
 
 export const expandFilter = (e, isExpand, setExpand, isSearch, setSearchExpand, input) => {
-  if (!isExpand && !input.value) setExpand(!isExpand);
+  if (!isExpand && !input.value) {
+    console.log(isExpand, input.value)
+    setExpand(!isExpand);
+  };
+  
   if (e.target.closest('.arrow')) {
     if (isSearch) setSearchExpand(false);
     setExpand(!isExpand);

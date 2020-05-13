@@ -1,10 +1,10 @@
 import React from 'react';
-import { searchLogic } from './searchLogic';
-import { setInputState } from '../logicInput';
-import { setPreviuosSearch, calcPrevResult } from '../logicSearch';
+import { byTextLogic } from './textLogic';
+import { setInputState } from '../Filter/logicInput';
+import { setPreviuosSearch, calcPrevResult } from './logicSearch';
 import { BoxDecor } from '../../../../Parts/BoxDecor';
 
-const Search = () => {
+const ByText = () => {
   const onInputClick = (e) => {
     e.target.focus();
     setPreviuosSearch();
@@ -12,7 +12,7 @@ const Search = () => {
 
   const onInputChange = (e) => {
     setInputState(e);
-    searchLogic(e);
+    byTextLogic(e);
   };
 
   const onInputKey = (e) => {
@@ -37,4 +37,4 @@ const Search = () => {
   )
 };
 
-export default Search;
+export default ByText;
