@@ -1,8 +1,4 @@
 import React from 'react';
-// import Algorithm from './Algorithm/Algorithm';
-// import Coins from './Coins/Coins';
-// import Equipment from './Equipment/Equipment';
-// import Manufacturer from './Manufacturer/Manufacturer';
 import Filter from './Filter/Filter';
 import ByText from './Search/ByText';
 import Price from './Search/ByPrice';

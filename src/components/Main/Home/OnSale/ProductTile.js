@@ -62,54 +62,57 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr }) => {
   }
 
   return (
-    <li
-      className="products__item"
-      onMouseEnter={() => itemHoverOn(productImg, orderBlock)}
-      onMouseLeave={() => itemHoverOff(productImg, orderBlock)}>
+    <li className="products__item-wrapper">
       <div
-        className="products__item-inner"
-        ref={itemInner}>
-        <div className="products__item-header d-flex justify-content-between">
-          <div className="products__item-header-text">
-            <h5 className="poducts__item-title">{item.title}</h5>
-            <span className="products__item-hash">{itemHash} {item.hash.option}</span>
-          </div>
-          <div className="products__item-star">
-            {(!item.star) ? '' : (item.star === 'full') ? <ProductStar /> : <ProductHalfStar />}
-          </div>
-        </div>
+        className="products__item"
+        onMouseEnter={() => itemHoverOn(productImg, orderBlock)}
+        onMouseLeave={() => itemHoverOff(productImg, orderBlock)}>
         <div
-          className="products__item-img"
-          style={{ backgroundImage: `url("${item.img}")` }}
-          ref={productImg}>
-        </div>
-        <div
-          className="order"
-          ref={orderBlock}>
-          <div className="order__price-wrapper d-flex justify-content-between align-items-center">
-            <span className="order__price">{price}</span>
-            <span className="order__psu">{item.psu && 'psu'}</span>
+          className="products__item-inner"
+          ref={itemInner}>
+          <div className="products__item-header d-flex justify-content-between">
+            <div className="products__item-header-text">
+              <h5 className="poducts__item-title">{item.title}</h5>
+              <span className="products__item-hash">{itemHash} {item.hash.option}</span>
+            </div>
+            <div className="products__item-star">
+              {(!item.star) ? '' : (item.star === 'full') ? <ProductStar /> : <ProductHalfStar />}
+            </div>
           </div>
-          <div className="select-wrapper">
-            <Select
-              hashArr={hashArr}
-              displayHash={hash}
-              hashOpt={item.hash.option}
-              expandFunc={expandItemInner}
-              hashClick={onHashListClick}
-              ref={refObj} />
+          <div
+            className="products__item-img"
+            style={{ backgroundImage: `url("${item.img}")` }}
+            ref={productImg}>
           </div>
-          <div className="order__btns-wrapper">
-            <button className="order__btn-details"
-              onMouseEnter={() => hideDecor(boxDecor, 'none')}
-              onMouseLeave={() => hideDecor(boxDecor, '')}>
-              Details
+          <div
+            className="order"
+            ref={orderBlock}>
+            <div className="order__price-wrapper d-flex justify-content-between align-items-center">
+              <span className="order__price">{price}</span>
+              <span className="order__psu">{item.psu && 'psu'}</span>
+            </div>
+            <div className="select-wrapper">
+              <Select
+                hashArr={hashArr}
+                displayHash={hash}
+                hashOpt={item.hash.option}
+                expandFunc={expandItemInner}
+                hashClick={onHashListClick}
+                ref={refObj} />
+            </div>
+            <div className="order__btns-wrapper">
+              <button className="order__btn-details"
+                onMouseEnter={() => hideDecor(boxDecor, 'none')}
+                onMouseLeave={() => hideDecor(boxDecor, '')}>
+                Details
               <BoxDecor ref={boxDecor} />
-            </button>
-            <button className="order__btn-add">Add to cart</button>
+              </button>
+              <button className="order__btn-add">Add to cart</button>
+            </div>
           </div>
         </div>
       </div>
+      <BoxDecor />
     </li>
   )
 };
