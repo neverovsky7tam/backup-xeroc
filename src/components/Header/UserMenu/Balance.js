@@ -35,9 +35,11 @@ const Balance = ({ onHover }) => {
       className="user-menu__balance line-height-8"
       onMouseEnter={() => onHover(balancePop, 'block')}>
       <BalanceIcon className="icon-balance cursor-pointer" />
-      <span>balance</span>
-      <span className="user-menu__balance-currency">$</span>
-      <span className="user-menu__balance-value">650</span>
+      <div className="responsive-1919">
+        <span>balance</span>
+        <span className="user-menu__balance-currency">$</span>
+        <span className="user-menu__balance-value">650</span>
+      </div>
       <div
         className="drop-menu"
         onMouseLeave={() => onHover(balancePop, '')}

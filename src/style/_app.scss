@@ -11,12 +11,7 @@ body,
 
 body {
   box-sizing: border-box;
-  margin: 0 15px;
   background-color: $main_bg;
-
-  @media (min-width: 425px) {
-    margin: 0 30px;
-  }
 }
 
 h2 {
@@ -71,10 +66,6 @@ button {
   justify-content: space-between;
 }
 
-.desctop-menu-points-separator {
-  margin: 0 30px;
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
@@ -85,4 +76,10 @@ button {
 
 .line-height-8 {
   line-height: .8;
+}
+
+@media(max-width: 1919px) {
+  .responsive-1919 {
+    display: none;
+  }
 }

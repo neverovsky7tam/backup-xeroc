@@ -3,29 +3,31 @@ import { useSelector, useDispatch } from 'react-redux';
 import { mainContent } from '../../store/actions';
 import { ReactComponent as MenuSeparate } from '../../assets/img/Header/menu-separate.svg';
 
-const MenuPoints = ({ linkStyle }) => {
+const MenuItems = ({ background }) => {
   const dispatch = useDispatch();
   const lang = useSelector((state) => state.langObj.header.menu);
 
   const setContent = (e, page) => {
     e.preventDefault();
     dispatch(mainContent(page));
-  }
-
+  };
 
   return (
-    <nav className="main-menu__points line-height-8">
+    <nav className="main-menu__items line-height-8">
       <a href="#" onClick={(e) => setContent(e, 'home')}>{lang.home}</a>
-      <MenuSeparate className={linkStyle} />
-      <a href="#" onClick={(e) => setContent(e, 'home')}>{lang.sell}</a>
-      <MenuSeparate className={linkStyle} />
+      <MenuSeparate className="main-menu__items-separator" />
+      <a className="p-relative" href="#" onClick={(e) => setContent(e, 'home')}>
+        {lang.sell}
+        {background && <div className="overlay-menu-background">menu</div>}
+      </a>
+      <MenuSeparate className="main-menu__items-separator" />
       <a href="#" onClick={(e) => setContent(e, 'home')}>{lang.host}</a>
-      <MenuSeparate className={linkStyle} />
+      <MenuSeparate className="main-menu__items-separator" />
       <a href="#" onClick={(e) => setContent(e, 'home')}>{lang.about}</a>
-      <MenuSeparate className={linkStyle} />
+      <MenuSeparate className="main-menu__items-separator" />
       <a href="#" onClick={(e) => setContent(e, 'home')}>{lang.support}</a>
     </nav>
-  )
-}
+  );
+};
 
-export default MenuPoints;
+export default MenuItems;

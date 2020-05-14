@@ -5,8 +5,8 @@ import Balance from './Balance';
 import { ReactComponent as MenuSeparate } from '../../../assets/img/Header/menu-separate.svg';
 
 const UserMenu = () => {
-  const onHover = (element, action) => {
-    element.current.style.display = action;
+  const onHover = (element, state) => {
+    element.current.style.display = state;
   }
 
   return (
