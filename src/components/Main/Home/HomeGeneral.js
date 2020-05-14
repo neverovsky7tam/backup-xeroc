@@ -7,13 +7,13 @@ import { productsObj } from '../../../data/productsData';
 
 const Home = () => {
   return (
-    <div className="main-inner">
+    <div className="home-wrapper">
       <HomeFilters />
       <HomeOnsale />
       <HomeListings productsObj={productsObj} />
       <HomeNews />
     </div>
-  )
-}
+  );
+};
 
 export default Home;

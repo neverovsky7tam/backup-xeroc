@@ -20,7 +20,7 @@ const MainContainer = () => {
     footerState = 'footer-mini';
     closeBtn = <FooterCloseBtn />
     Content = Terms;
-  }
+  };
 
   return (
     <>
@@ -29,7 +29,7 @@ const MainContainer = () => {
       </main>
       <Footer footerState={footerState} closeBtn={closeBtn} />
     </>
-  )
-}
+  );
+};
 
 export default MainContainer;

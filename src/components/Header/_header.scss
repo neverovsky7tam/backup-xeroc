@@ -1,20 +1,40 @@
 .header {
-  margin: 30px 0 120px;
+  margin-top: 30px;
+
   @include exo_font($white_font, 14px, bold);
   text-transform: uppercase;
+
+  @media(min-width: 768px) {
+    margin-bottom: 120px;
+  }
 
   button {
     @include exo_font($white_font, 14px, bold);
     text-transform: uppercase;
     color: #fff;
   }
+
+  .header_top-line {
+    margin: 0 30px;
+  }
 }
+
 
 .main-menu {
   position: absolute;
   top: 54%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media(max-width: 767px) {
+    display: none;
+  }
+
+  .burger-btn {
+    @media(min-width: 1920px) {
+      display: none;
+    }
+  }
 }
 
 .account-menu {

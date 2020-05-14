@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c5e653dc80205a3789a0e797da540d72",
+    "revision": "cdfc6a6f8ded21f554e687bdda8e25f4",
     "url": "/index.html"
   },
   {
-    "revision": "21047277ed6d060e3288",
-    "url": "/static/css/main.4f6e8640.chunk.css"
+    "revision": "500990426174242f350b",
+    "url": "/static/css/main.5a7540ab.chunk.css"
   },
   {
     "revision": "f19b71dcd0a56fb2bd78",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.8cf65752.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "21047277ed6d060e3288",
-    "url": "/static/js/main.7944b0f2.chunk.js"
+    "revision": "500990426174242f350b",
+    "url": "/static/js/main.271ca4a2.chunk.js"
   },
   {
     "revision": "220d64f6f8cb5da655ce",
@@ -56,6 +56,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/balance-icon.8f9b10a4.svg"
   },
   {
+    "revision": "5a0a9fe75eedfc314135362388806832",
+    "url": "/static/media/burger-btn.5a0a9fe7.svg"
+  },
+  {
     "revision": "4bace8dd1eb529b1e9576b49e8e66da3",
     "url": "/static/media/cart.4bace8dd.svg"
   },
@@ -90,6 +94,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "ea90de456d5dcb0fdb213c4fbfdaa6f7",
     "url": "/static/media/green-arrow.ea90de45.svg"
+  },
+  {
+    "revision": "d5b2a76fb8c4af3fc6d7f026b83f0871",
+    "url": "/static/media/hamburger-close.d5b2a76f.svg"
   },
   {
     "revision": "8e32d05917b084ea975a5ce996b50325",

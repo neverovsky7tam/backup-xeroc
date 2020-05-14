@@ -8,7 +8,7 @@ const Account = ({ onHover }) => {
 
   const handleClick = (e) => {
     e.preventDefault()
-  }
+  };
 
   return (
     <div
@@ -31,7 +31,7 @@ const Account = ({ onHover }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Account;

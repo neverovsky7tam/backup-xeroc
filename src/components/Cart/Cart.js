@@ -7,8 +7,10 @@ const Cart = ({ isLogin }) => {
     <>
       {isLogin &&
         <>
-          <span className="cart__menu-currency line-height-8">$</span>
-          <span className="cart__menu-value line-height-8">457</span>
+          <div className="responsive-1919">
+            <span className="cart__menu-currency line-height-8">$</span>
+            <span className="cart__menu-value line-height-8">457</span>
+          </div>
           <MenuSeparate className="user-menu__separate" />
           <div className="cart__menu-counter line-height-8">0</div>
         </>
