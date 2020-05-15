@@ -1,20 +1,22 @@
 .footer-standart {
+  display: none;
   margin: 120px 30px 30px;
   align-items: flex-end;
   @include open-sans_font($grey_font, $desctop_size_font);
 
-  @media (max-width: 1023px) {
-    display: none;
+  @media (min-width: 768px) {
+    display: block;
   }
 }
 
 .footer-mini {
+  display: none;
   margin: 30px 30px;
   align-items: flex-end;
   @include open-sans_font($grey_font, $desctop_size_font);
 
-  @media (max-width: 1023px) {
-    display: none;
+  @media (min-width: 768px) {
+    display: block;
   }
 
   .social {

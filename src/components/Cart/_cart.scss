@@ -10,9 +10,18 @@
 }
 
 .cart__menu-counter {
+  display: none;
   margin-right: 15px;
 
-  @media (max-width: 767px) {
-    display: none;
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+.user-menu__separate {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
   }
 }
