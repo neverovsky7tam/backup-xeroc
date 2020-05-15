@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setAccountMenu } from '../../../store/actions';
-import { mainContent } from '../../../store/actions';
+import { setMainContent } from '../../../store/actions';
 import SocialAuth from './SocialAuth';
 import { onInputChange, checkInputValue, checkInputCorrect } from './inputs';
 import { hideDecor } from '../../Parts/BoxDecor';
@@ -121,7 +121,7 @@ const SignUp = () => {
           <a
             href="#"
             className="terms-link"
-            onClick={() => dispatch(mainContent('terms'))}>
+            onClick={() => dispatch(setMainContent('terms'))}>
             Terms and Conditions</a>
         </div>
       </form>

@@ -123,7 +123,7 @@ export const langObj = (state = langEN, action) => {
   }
 }
 
-export const mainBlock = (state = 'home', action) => {
+export const mainContent = (state = 'home', action) => {
   switch (action.type) {
     case SET_MAIN_CONTENT:
       return action.content;

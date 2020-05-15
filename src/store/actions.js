@@ -21,7 +21,7 @@ export const switchLang = (lang) => ({
   lang,
 });
 
-export const mainContent = (content) => ({
+export const setMainContent = (content) => ({
   type: SET_MAIN_CONTENT,
   content,
 });
