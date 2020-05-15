@@ -21,7 +21,7 @@ export const switchLang = (lang) => ({
   lang,
 });
 
-export const mainContent = (content) => ({
+export const setMainContent = (content) => ({
   type: SET_MAIN_CONTENT,
   content,
 });
@@ -41,9 +41,14 @@ export const setCurrentScrollTop = (val) => ({
   val,
 });
 
-export const setFiltersState = (filter, prop, value) => ({
+export const setFiltersState = (filter, prop, value, isEnable) => ({
   type: SET_FILTERS_STATE,
-  filters: { [filter]: { [prop]: value, }, },
+  filters: {
+    [filter]: { 
+      [prop]: value,
+      isEnableFilter: isEnable,
+     },
+  },
 });
 
 export const setFilterOrigin = (obj) => ({

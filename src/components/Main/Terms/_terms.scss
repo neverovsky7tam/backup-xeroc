@@ -1,9 +1,13 @@
 .terms {
   display: flex;
   flex-direction: column;
-  width: 642px;
+  width: auto;
   height: 100%;
   margin: auto;
+
+  @media (min-width: 768px) {
+    width: 642px;
+  }
 
   .terms__footer-gradient {
     position: absolute;
@@ -16,14 +20,33 @@
   }
 
   .terms__header {
+    margin-top: 90px;
     margin-bottom: 57px;
     text-align: center;
+
+    @media (min-width: 768px) {
+      margin-top: 0;
+    }
   }
 
   .terms-body {
     position: relative;
     height: 100%;
+    margin: 0 30px 80px;
     overflow: hidden;
+
+    @media (min-width: 768px) {
+      margin: 0;
+    }
+
+    .terms__close-btn {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 101;
+      cursor: pointer;
+    }
   }
 
   .terms__title {

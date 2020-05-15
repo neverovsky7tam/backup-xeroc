@@ -45,6 +45,8 @@ export const filtersState = (state = {}, action) => {
           newState[key[0]].tag.push(actionTag);
         }
       }
+
+      newState[key[0]].isEnableFilter = action.filters[key[0]].isEnableFilter;
       return newState;
     default:
       return state;
@@ -121,7 +123,7 @@ export const langObj = (state = langEN, action) => {
   }
 }
 
-export const mainBlock = (state = 'home', action) => {
+export const mainContent = (state = 'home', action) => {
   switch (action.type) {
     case SET_MAIN_CONTENT:
       return action.content;

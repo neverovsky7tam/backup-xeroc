@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { mainContent } from '../../store/actions';
+import { setMainContent } from '../../store/actions';
 import { ReactComponent as MenuSeparate } from '../../assets/img/Header/menu-separate.svg';
 
 const MenuItems = ({ background }) => {
@@ -9,7 +9,7 @@ const MenuItems = ({ background }) => {
 
   const setContent = (e, page) => {
     e.preventDefault();
-    dispatch(mainContent(page));
+    dispatch(setMainContent(page));
   };
 
   return (

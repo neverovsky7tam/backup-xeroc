@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { expandFilter } from './logicFilters';
 import { renderTags, deleteTag, setSelectFieldState, setSearchBlock, setSearchFilterItems } from './logicInput';
@@ -9,9 +9,12 @@ const FilterHead = ({ filterName, isExpand, setExpand, isSearch, setSearchExpand
   const arrow = React.createRef();
   const input = React.createRef();
   const userSelect = useSelector((state) => {
-    if (state.filtersState[filterName]) return state.filtersState[filterName].tag;
+    if (state.filtersState[filterName]) {
+      return state.filtersState[filterName].tag;
+    }
   });
 
+  console.log('userSelect', userSelect);
   let tags = null;
   if (userSelect) {
     tags = renderTags(userSelect, filterName);

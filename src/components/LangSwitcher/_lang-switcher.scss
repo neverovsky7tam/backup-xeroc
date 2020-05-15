@@ -1,23 +1,22 @@
 .lang-menu {
   position: relative;
+  display: none;
+  margin-left: 30px;
 
-  @media (min-width: 1024px) {
-    margin-left: 30px;
+  @media (min-width: 768px) {
+    display: flex;
   }
 }
 
 .lang-menu__btn {
   position: relative;
+  min-width: 28px;
+  margin-left: 15px;
+  text-align: left;
   z-index: 99;
 
   &:hover {
     color: $text_hover;
-  }
-
-  @media (min-width: 1024px) {
-    min-width: 28px;
-    margin-left: 15px;
-    text-align: left;
   }
 }
 
