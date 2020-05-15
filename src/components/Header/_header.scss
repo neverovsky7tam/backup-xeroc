@@ -4,7 +4,7 @@
   @include exo_font($white_font, 14px, bold);
   text-transform: uppercase;
 
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     margin-bottom: 120px;
   }
 
@@ -17,8 +17,23 @@
   .header_top-line {
     margin: 0 30px;
   }
-}
 
+  .controls-mob {
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  .logo-wrapper {
+    .logo {
+      height: 18px;
+
+      @media (min-width: 768px) {
+        height: auto;
+      }
+    }
+  }
+}
 
 .main-menu {
   position: absolute;
@@ -26,12 +41,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     display: none;
   }
 
   .burger-btn {
-    @media(min-width: 1920px) {
+    @media (min-width: 1920px) {
       display: none;
     }
   }

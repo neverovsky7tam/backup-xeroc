@@ -1,9 +1,10 @@
 .lang-menu {
-  display: none;
   position: relative;
+  display: none;
+  margin-left: 30px;
 
-  @media (min-width: 1024px) {
-    margin-left: 30px;
+  @media (min-width: 768px) {
+    display: block;
   }
 }
 
