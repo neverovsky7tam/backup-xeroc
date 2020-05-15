@@ -9,12 +9,10 @@
 }
 
 .scroll-container {
-  @media (min-width: 1024px) {
-    height: 100%;
-    margin-right: -17px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
+  height: 100%;
+  margin-right: -17px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .scroll-component {
