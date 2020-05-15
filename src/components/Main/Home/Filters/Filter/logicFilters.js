@@ -3,14 +3,16 @@ import { setOnSaleDisplay, setFiltersState, setFilterObj, setJointSearchObj } fr
 import { sortedProducts } from '../../../../../data/productsProcessing';
 import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../../data/productsData';
 
-export const setProductsDisplay = (filter, value, isActive, filtersCounter) => {
+export const setProductsDisplay = (filter, value, isActive) => {
   const filterOrigin = store.getState().filterOrigin;
   let filterObj = store.getState().filterObj;
   const search = store.getState().jointSearchObj;
   const productsArr = Object.values(sortedProducts[filter][value]);
   let renderObj = {};
+  let filtersCounter = 0;
 
   if (isActive) {
+    filtersCounter = 1;
     productsArr.forEach((el) => {
       if (search.isEnable) {
         if (search.globalSearchObj[el.id]) renderObj[el.id] = el;
@@ -26,13 +28,18 @@ export const setProductsDisplay = (filter, value, isActive, filtersCounter) => {
     store.dispatch(setJointSearchObj(search.isEnable, search.globalSearchObj, Object.assign(search.filterSearchObj, renderObj)));
   } else {
     const filtersState = store.getState().filtersState;
-    const tempObj = {};
 
-    filtersState[filter].tag.forEach((el) => {
-      Object.assign(renderObj, sortedProducts[filter][el]);
-    });
+    for (let key in filtersState) {
+      filtersCounter += filtersState[key].isEnableFilter;
+      if (filtersState[key].isEnableFilter) {
+        filtersState[key].tag.forEach((el) => {
+          Object.assign(renderObj, sortedProducts[key][el]);
+        });
+      };
+    };
 
     if (search.isEnable) {
+      const tempObj = {};
       const compareArr = Object.keys(search.filterSearchObj);
       compareArr.forEach((el) => {
         if (renderObj[el]) tempObj[el] = renderObj[el];
@@ -43,7 +50,6 @@ export const setProductsDisplay = (filter, value, isActive, filtersCounter) => {
   };
 
   if (filtersCounter) {
-    console.log('set', Object.values(renderObj));
     store.dispatch(setOnSaleDisplay(Object.values(renderObj)));
   } else {
     if (search.isEnable) store.dispatch(setOnSaleDisplay(Object.values(search.globalSearchObj)));
@@ -65,16 +71,16 @@ export const setFilters = (value, filter) => {
   store.dispatch(setFiltersState(filter, 'filter', filtersStateObj, isEnableFilter));
   store.dispatch(setFiltersState(filter, 'tag', value, isEnableFilter));
 
-  const filtersState = store.getState().filtersState;
-  console.log('filtersState', filtersState);
-  let filtersCounter = 0;
-  for (let key in filtersState) {
-    console.log('isEnableFilter', filtersState[key].isEnableFilter);
-    filtersCounter += filtersState[key].isEnableFilter;
-  };
-  console.log('filtersCounter', filtersCounter);
+  // const filtersState = store.getState().filtersState;
+  // console.log('filtersState', filtersState);
+  // let filtersCounter = 0;
+  // for (let key in filtersState) {
+  //   console.log('isEnableFilter', filtersState[key].isEnableFilter);
+  //   filtersCounter += filtersState[key].isEnableFilter;
+  // };
+  // console.log('filtersCounter', filtersCounter);
 
-  setProductsDisplay(filter, value, isActive, filtersCounter);
+  setProductsDisplay(filter, value, isActive);
 };
 
 const defineObject = (filter) => {
