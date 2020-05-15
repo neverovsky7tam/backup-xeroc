@@ -1,9 +1,13 @@
 .terms {
   display: flex;
   flex-direction: column;
-  width: 642px;
+  width: auto;
   height: 100%;
   margin: auto;
+
+  @media (min-width: 768px) {
+    width: 642px;
+  }
 
   .terms__footer-gradient {
     position: absolute;
@@ -16,8 +20,13 @@
   }
 
   .terms__header {
+    margin-top: 90px;
     margin-bottom: 57px;
     text-align: center;
+
+    @media (min-width: 768px) {
+      margin-top: 0;
+    }
   }
 
   .terms-body {
