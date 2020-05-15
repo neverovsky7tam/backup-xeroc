@@ -8,6 +8,7 @@ import UserMenu from './UserMenu/UserMenu';
 import Cart from '../Cart/Cart';
 import { ReactComponent as LogoIcon } from '../../assets/img/Header/corex-logo.svg';
 import { ReactComponent as BurgerBtn } from '../../assets/img/Header/burger-btn.svg';
+import { ReactComponent as ControlsMob } from '../../assets/img/Header/controls-mob.svg';
 
 const Header = () => {
   const [overlayMenu, setOverlayMenu] = useState(false);
@@ -21,8 +22,13 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header_top-line p-relative d-flex justify-content-between">
+        <nav className="controls-mob">
+          <a href="#">
+            <ControlsMob />
+          </a>
+        </nav>
         <div className="logo-wrapper d-flex align-items-center">
-          <LogoIcon />
+          <LogoIcon className="logo" />
           <LangSwitcher />
         </div>
         <div className="main-menu d-flex align-items-center">
