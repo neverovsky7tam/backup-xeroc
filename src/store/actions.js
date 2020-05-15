@@ -41,9 +41,14 @@ export const setCurrentScrollTop = (val) => ({
   val,
 });
 
-export const setFiltersState = (filter, prop, value) => ({
+export const setFiltersState = (filter, prop, value, isEnable) => ({
   type: SET_FILTERS_STATE,
-  filters: { [filter]: { [prop]: value, }, },
+  filters: {
+    [filter]: { 
+      [prop]: value,
+      isEnableFilter: isEnable,
+     },
+  },
 });
 
 export const setFilterOrigin = (obj) => ({

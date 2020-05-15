@@ -45,6 +45,8 @@ export const filtersState = (state = {}, action) => {
           newState[key[0]].tag.push(actionTag);
         }
       }
+
+      newState[key[0]].isEnableFilter = action.filters[key[0]].isEnableFilter;
       return newState;
     default:
       return state;
