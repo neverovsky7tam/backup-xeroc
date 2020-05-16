@@ -1,10 +1,14 @@
 .header {
-  margin-top: 30px;
-
+  position: fixed;
+  width: 100%;
+  padding-top: 30px;
   @include exo_font($white_font, 14px, bold);
   text-transform: uppercase;
+  background-color: #0b0c23;
+  z-index: 404;
 
   @media (min-width: 768px) {
+    position: static;
     margin-bottom: 120px;
   }
 
@@ -19,7 +23,7 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    margin: 0 30px;
+    padding: 0 30px;
   }
 
   .header_navbar-short {
@@ -28,6 +32,12 @@
       .cart {
         visibility: hidden;
       }
+    }
+  }
+
+  .header-navbar-padding-bottom-90 {
+    @media (max-width: 767px) {
+      padding-bottom: 90px;
     }
   }
 
