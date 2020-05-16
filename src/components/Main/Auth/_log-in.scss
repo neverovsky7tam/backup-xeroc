@@ -2,13 +2,24 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 30px;
   transform: translate(-50%, -50%);
   text-align: center;
   text-transform: uppercase;
 
-  .auth-content__social-wrapper,
-  .auth-content__form {
-    margin: 38px 0;
+  @media (min-width: 768px) {
+    width: auto;
+    padding: 0;
+  }
+
+  .auth-content__social-wrapper {
+    margin-top: 90px;
+
+    @media (min-width: 768px) {
+      margin-top: 38px;
+    }
   }
 
   .auth-content__social-link {
@@ -25,15 +36,20 @@
 
   .auth-content__or {
     position: relative;
+    margin: 53px 0;
     @include open-sans_font($white_font, 16px);
     font-weight: 300;
+
+    @media (min-width: 768px) {
+      margin: 38px 0;
+    }
 
     &::before {
       content: "";
       position: absolute;
       top: 50%;
       left: 0%;
-      width: 130px;
+      width: calc(50% - 25px);
       height: 1px;
       background-color: #fff;
       opacity: 0.2;
@@ -44,7 +60,7 @@
       position: absolute;
       top: 50%;
       right: 0%;
-      width: 130px;
+      width: calc(50% - 25px);
       height: 1px;
       background-color: #fff;
       opacity: 0.2;
@@ -52,31 +68,39 @@
   }
 
   .auth-content__form {
-    input {
+    .auth-content__input-wrapper {
       position: relative;
-      box-sizing: border-box;
-      display: block;
-      width: 320px;
-      height: 40px;
-      padding: 15px;
-      border: 1px solid transparent;
-      @include open-sans_font($grey_font, $desctop_size_font);
-      font-weight: 300;
-      background-color: $secondary_bg;
-      outline: 0;
-      z-index: 11;
-
-      &::placeholder {
-        color: $grey_font;
-      }
 
       &:not(:last-child) {
         margin-bottom: 15px;
       }
 
-      &:hover {
-        background-color: $secondary_bg-sec;
-        color: $white_font;
+      input {
+        position: relative;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        height: 40px;
+        padding: 15px;
+        border: 1px solid transparent;
+        @include open-sans_font($grey_font, $desctop_size_font);
+        font-weight: 300;
+        background-color: $secondary_bg;
+        outline: 0;
+        z-index: 11;
+
+        @media (min-width: 768px) {
+          width: 320px;
+        }
+
+        &::placeholder {
+          color: $grey_font;
+        }
+
+        &:hover {
+          background-color: $secondary_bg-sec;
+          color: $white_font;
+        }
       }
     }
 
@@ -97,7 +121,7 @@
     }
   }
 
-  .auth-content__form-tips {
+  .auth-content__terms {
     @include open-sans_font($grey_font, 12px);
     text-align: right;
     text-transform: initial;

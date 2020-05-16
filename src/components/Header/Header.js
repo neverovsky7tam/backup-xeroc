@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import MenuItems from '../MainMenu/MenuItems';
 import OverlayMenu from '../MainMenu/OverlayMenu';
 import LangSwitcher from '../LangSwitcher/LangSwitcher';
 import GuestMenu from './GuestMenu';
 import UserMenu from './UserMenu/UserMenu';
 import Cart from '../Cart/Cart';
+import { setMainContent } from '../../store/actions';
 import { ReactComponent as LogoIcon } from '../../assets/img/Header/corex-logo.svg';
 import { ReactComponent as BurgerBtn } from '../../assets/img/Header/burger-btn.svg';
 import { ReactComponent as ControlsMob } from '../../assets/img/Header/controls-mob.svg';
@@ -13,6 +14,9 @@ import { ReactComponent as ControlsMob } from '../../assets/img/Header/controls-
 const Header = () => {
   const [overlayMenu, setOverlayMenu] = useState(false);
   const isLogin = useSelector((state) => state.accountMenu);
+  const headerClassName = useSelector((state) => state.headerCssClass);
+  
+  const dispatch = useDispatch();
 
   const burgerClick = (e) => {
     e.preventDefault();
@@ -21,14 +25,17 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="header_top-line p-relative d-flex justify-content-between">
+      <div 
+        className={headerClassName}>
         <nav className="controls-mob">
           <a href="#">
             <ControlsMob />
           </a>
         </nav>
         <div className="logo-wrapper d-flex align-items-center">
-          <LogoIcon className="logo" />
+          <LogoIcon 
+            className="logo"
+            onClick={() => dispatch(setMainContent('home'))} />
           <LangSwitcher />
         </div>
         <div className="main-menu d-flex align-items-center">

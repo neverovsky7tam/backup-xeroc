@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { setHeaderCssClass, setTermsCloseBtn } from '../../../store/actions';
 import { TermsEN } from './TermsEN';
-import { setMainContent } from '../../../store/actions';
-import { ReactComponent as CloseCross } from '../../../assets/img/close-cross.svg';
 
 const Terms = () => {
   const scrollBox = React.createRef();
   const gradientBlock = React.createRef();
+
   const dispatch = useDispatch();
+  useEffect(() => {
+    return () => {
+      dispatch(setHeaderCssClass('header_navbar-full'));
+      dispatch(setTermsCloseBtn(false));
+    }
+  });
 
   const calcScrollTop = () => {
     const elem = scrollBox.current;
@@ -22,7 +28,7 @@ const Terms = () => {
         gradientBlock.current.style.display = '';
       }
     }
-  }
+  };
 
   return (
     <section className="terms">
@@ -37,14 +43,9 @@ const Terms = () => {
           <TermsEN />
         </div>
         <div className="terms__footer-gradient" ref={gradientBlock}></div>
-        <div
-          className="terms__close-btn"
-          onClick={() => dispatch(setMainContent('sign-up'))}>
-          <CloseCross />
-        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Terms;

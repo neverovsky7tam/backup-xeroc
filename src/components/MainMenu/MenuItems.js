@@ -3,13 +3,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setMainContent } from '../../store/actions';
 import { ReactComponent as MenuSeparate } from '../../assets/img/Header/menu-separate.svg';
 
-const MenuItems = ({ background }) => {
+const MenuItems = ({ background, setOverlayMenu }) => {
   const dispatch = useDispatch();
   const lang = useSelector((state) => state.langObj.header.menu);
 
   const setContent = (e, page) => {
     e.preventDefault();
     dispatch(setMainContent(page));
+    if (background) setOverlayMenu(false);
   };
 
   return (
