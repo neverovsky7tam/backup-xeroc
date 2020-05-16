@@ -11,15 +11,6 @@ const LogIn = () => {
   const dispatch = useDispatch();
   const boxDecor = React.createRef();
 
-  const handleClick = (e) => {
-    e.preventDefault()
-  };
-
-  const onSwicher = (e) => {
-    e.preventDefault()
-    dispatch(setMainContent('sign-up'));
-  };
-
   useEffect(() => {
     dispatch(setHeaderCssClass('header_navbar-short header-navbar-padding-bottom-90'));
     return () => {
@@ -30,6 +21,11 @@ const LogIn = () => {
   const onLogIn = () => {
     dispatch(setAccountMenu(true));
     dispatch(setMainContent('home'));
+  };
+
+  const onSwicher = (e) => {
+    e.preventDefault()
+    dispatch(setMainContent('sign-up'));
   };
 
   return (
@@ -59,7 +55,7 @@ const LogIn = () => {
       <div className="auth-content__terms">
         <a
           href="#"
-          onClick={handleClick}>
+          onClick={(e) => e.preventDefault()}>
           Forgot your password?
         </a>
       </div>

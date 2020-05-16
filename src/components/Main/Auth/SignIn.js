@@ -25,11 +25,6 @@ const SignUp = () => {
     }
   });
 
-  const onSwicher = (e) => {
-    e.preventDefault()
-    dispatch(setMainContent('log-in'));
-  };
-
   const checkInput = (e, errorElem, password) => {
     const input = e.target;
     const errorElement = errorElem.current;
@@ -63,6 +58,11 @@ const SignUp = () => {
   const onTermsClick = () => {
     dispatch(setMainContent('terms'));
     dispatch(setTermsCloseBtn(true));
+  };
+
+  const onSwicher = (e) => {
+    e.preventDefault()
+    dispatch(setMainContent('log-in'));
   };
 
   return (
