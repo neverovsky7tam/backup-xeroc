@@ -1,6 +1,11 @@
 .main {
-  flex-grow: 1;
-  overflow: hidden;
+  margin-top: 55px;
+
+  @media (min-width: 768px) {
+    margin-top: 0;
+    flex-grow: 1;
+    overflow: hidden;
+  }
 }
 
 .home-wrapper {

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setAccountMenu, setMainContent, setTermsCloseBtn, setHeaderCssClass } from '../../../store/actions';
+import AuthCloseBtn from './AuthCloseBtn';
 import SocialAuth from './SocialAuth';
 import { onInputChange, checkInputValue, checkInputCorrect } from './inputs';
 import { hideDecor } from '../../Parts/BoxDecor';
@@ -16,6 +17,18 @@ const SignUp = () => {
   const passwordConfirmError = React.createRef();
   const passwordField = React.createRef();
   const form = React.createRef();
+
+  useEffect(() => {
+    dispatch(setHeaderCssClass('header_navbar-short header-navbar-padding-bottom-90'));
+    return () => {
+      dispatch(setHeaderCssClass('header_navbar-full'));
+    }
+  });
+
+  const onSwicher = (e) => {
+    e.preventDefault()
+    dispatch(setMainContent('log-in'));
+  };
 
   const checkInput = (e, errorElem, password) => {
     const input = e.target;
@@ -41,17 +54,20 @@ const SignUp = () => {
         if (!+input.dataset.check) nextStep = false;
       }
     }
-    if (nextStep) dispatch(setAccountMenu(true));
-  }
+    if (nextStep) {
+      dispatch(setAccountMenu(true));
+      dispatch(setMainContent('home'));
+    };
+  };
 
   const onTermsClick = () => {
     dispatch(setMainContent('terms'));
     dispatch(setTermsCloseBtn(true));
-    dispatch(setHeaderCssClass('header_navbar-short'));
   };
 
   return (
     <section className="auth-content">
+      <AuthCloseBtn />
       <h2>sign up</h2>
       <SocialAuth />
       <div className="auth-content__or">or</div>
@@ -138,8 +154,14 @@ const SignUp = () => {
         Sign up
         <BoxDecor ref={boxDecor} />
       </button>
+      <a
+        className="auth-content__btn-switcher"
+        href="#"
+        onClick={onSwicher}>
+        Log in
+      </a>
     </section>
-  )
-}
+  );
+};
 
 export default SignUp;
