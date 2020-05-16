@@ -15,6 +15,15 @@
   overflow-x: hidden;
 }
 
+.scroll-container-mob {
+  @media (max-width: 767px) {
+    height: 100%;
+    margin-right: -17px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
+
 .scroll-component {
   position: absolute;
   top: 0;

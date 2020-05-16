@@ -9,6 +9,7 @@ const Terms = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(setHeaderCssClass('header_navbar-short'));
     return () => {
       dispatch(setHeaderCssClass('header_navbar-full'));
       dispatch(setTermsCloseBtn(false));

@@ -13,11 +13,13 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 55px);
   margin: auto;
+  overflow: hidden;
 
   @media (min-width: 768px) {
     width: 642px;
+    height: 100%;
   }
 
   .terms__footer-gradient {
