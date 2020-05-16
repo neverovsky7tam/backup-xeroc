@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setHeaderCssClass, setTermsCloseBtn } from '../../../store/actions';
 import { TermsEN } from './TermsEN';
 
 const Terms = () => {
   const scrollBox = React.createRef();
   const gradientBlock = React.createRef();
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    return () => {
+      dispatch(setHeaderCssClass('header_navbar-full'));
+      dispatch(setTermsCloseBtn(false));
+    }
+  });
 
   const calcScrollTop = () => {
     const elem = scrollBox.current;
@@ -18,7 +28,7 @@ const Terms = () => {
         gradientBlock.current.style.display = '';
       }
     }
-  }
+  };
 
   return (
     <section className="terms">
@@ -35,7 +45,7 @@ const Terms = () => {
         <div className="terms__footer-gradient" ref={gradientBlock}></div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Terms;

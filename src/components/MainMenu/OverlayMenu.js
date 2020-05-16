@@ -9,7 +9,7 @@ const OverlayMenu = ({ setOverlayMenu }) => {
         onClick={() => setOverlayMenu(false)}>
         <BurgerClose />
       </button>
-      <MenuItems background={true} />
+      <MenuItems background={true} setOverlayMenu={setOverlayMenu} />
     </div>
   );
 };

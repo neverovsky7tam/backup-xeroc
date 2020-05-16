@@ -3,6 +3,8 @@ import {
   CHANGE_LANG,
   SET_MAIN_CONTENT,
   SET_ACCOUNT_MENU,
+  SET_TERMS_CLOSE_BTN,
+  SET_HEADER_CSS_CLASS,
   SET_ELECTRICITY_VALUE,
   SET_CURRENT_SCROLL_TOP,
   SET_FILTERS_STATE,
@@ -123,7 +125,7 @@ export const langObj = (state = langEN, action) => {
   }
 }
 
-export const mainBlock = (state = 'home', action) => {
+export const mainContent = (state = 'home', action) => {
   switch (action.type) {
     case SET_MAIN_CONTENT:
       return action.content;
@@ -140,6 +142,33 @@ export const accountMenu = (state = false, action) => {
       return state;
   }
 }
+
+export const termsCloseBtn = (state = false, action) => {
+  switch (action.type) {
+    case SET_TERMS_CLOSE_BTN:
+      return action.isOpen;
+    default:
+      return state;
+  }
+}
+
+export const headerCssClass = (state = 'header_navbar-full', action) => {
+  switch (action.type) {
+    case SET_HEADER_CSS_CLASS:
+      return action.cssClass;
+    default:
+      return state;
+  }
+}
+
+// export const cartBtnDisplay = (state = true, action) => {
+//   switch (action.type) {
+//     case SET_CART_BTN:
+//       return action.isDisplay;
+//     default:
+//       return state;
+//   }
+// }
 
 export const electricityValue = (state = 0.17, action) => {
   switch (action.type) {

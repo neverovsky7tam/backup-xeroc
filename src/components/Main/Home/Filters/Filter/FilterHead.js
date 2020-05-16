@@ -14,7 +14,6 @@ const FilterHead = ({ filterName, isExpand, setExpand, isSearch, setSearchExpand
     }
   });
 
-  console.log('userSelect', userSelect);
   let tags = null;
   if (userSelect) {
     tags = renderTags(userSelect, filterName);

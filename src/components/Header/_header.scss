@@ -14,8 +14,21 @@
     color: #fff;
   }
 
-  .header_top-line {
+  .header_navbar-full,
+  .header_navbar-short {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
     margin: 0 30px;
+  }
+
+  .header_navbar-short {
+    @media (max-width: 767px) {
+      .controls-mob,
+      .cart {
+        visibility: hidden;
+      }
+    }
   }
 
   .controls-mob {
@@ -27,6 +40,7 @@
   .logo-wrapper {
     .logo {
       height: 18px;
+      cursor: pointer;
 
       @media (min-width: 768px) {
         height: auto;
