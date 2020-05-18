@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "859b8c4b74cd8c87a51966bacdedca57",
+    "revision": "c180bfbf52070e90bf97108ca9123954",
     "url": "/index.html"
   },
   {
-    "revision": "3b93fa7573aa55b00115",
-    "url": "/static/css/main.7f4e8700.chunk.css"
+    "revision": "3279286bf508806a9ce0",
+    "url": "/static/css/main.ed45275b.chunk.css"
   },
   {
     "revision": "97363f867a0c73970cf8",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.e2590fb6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3b93fa7573aa55b00115",
-    "url": "/static/js/main.51709a8e.chunk.js"
+    "revision": "3279286bf508806a9ce0",
+    "url": "/static/js/main.b6d6e63b.chunk.js"
   },
   {
     "revision": "220d64f6f8cb5da655ce",
@@ -80,8 +80,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/coinpayments.d2beede8.svg"
   },
   {
-    "revision": "d4f28e72ac7f1b5fb10820a0f7039698",
-    "url": "/static/media/controls-mob.d4f28e72.svg"
+    "revision": "77da76196543ab8d46587c388fc948b5",
+    "url": "/static/media/controls-mob.77da7619.svg"
   },
   {
     "revision": "2a877e1308d99a0f61b4355be225e2b5",

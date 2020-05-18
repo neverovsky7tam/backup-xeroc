@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.7f4e8700.chunk.css",
-    "main.js": "/static/js/main.51709a8e.chunk.js",
-    "main.js.map": "/static/js/main.51709a8e.chunk.js.map",
+    "main.css": "/static/css/main.ed45275b.chunk.css",
+    "main.js": "/static/js/main.b6d6e63b.chunk.js",
+    "main.js.map": "/static/js/main.b6d6e63b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c730f065.js",
     "runtime-main.js.map": "/static/js/runtime-main.c730f065.js.map",
     "static/js/2.e2590fb6.chunk.js": "/static/js/2.e2590fb6.chunk.js",
     "static/js/2.e2590fb6.chunk.js.map": "/static/js/2.e2590fb6.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.0d252f09db037b29c8f5e21774e6e6a7.js": "/precache-manifest.0d252f09db037b29c8f5e21774e6e6a7.js",
+    "precache-manifest.cd59a22208bf0c7581a791b7537b6938.js": "/precache-manifest.cd59a22208bf0c7581a791b7537b6938.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.7f4e8700.chunk.css.map": "/static/css/main.7f4e8700.chunk.css.map",
+    "static/css/main.ed45275b.chunk.css.map": "/static/css/main.ed45275b.chunk.css.map",
     "static/js/2.e2590fb6.chunk.js.LICENSE.txt": "/static/js/2.e2590fb6.chunk.js.LICENSE.txt",
     "static/media/3-vert-dot.ecd3988d.svg": "/static/media/3-vert-dot.ecd3988d.svg",
     "static/media/achievment_bronze.0773c997.svg": "/static/media/achievment_bronze.0773c997.svg",
@@ -26,7 +26,7 @@
     "static/media/close-cross.f6a53dbe.svg": "/static/media/close-cross.f6a53dbe.svg",
     "static/media/close.1363b831.svg": "/static/media/close.1363b831.svg",
     "static/media/coinpayments.d2beede8.svg": "/static/media/coinpayments.d2beede8.svg",
-    "static/media/controls-mob.d4f28e72.svg": "/static/media/controls-mob.d4f28e72.svg",
+    "static/media/controls-mob.77da7619.svg": "/static/media/controls-mob.77da7619.svg",
     "static/media/corex-logo.2a877e13.svg": "/static/media/corex-logo.2a877e13.svg",
     "static/media/facebook.fbede682.svg": "/static/media/facebook.fbede682.svg",
     "static/media/google.07a425a1.svg": "/static/media/google.07a425a1.svg",
@@ -61,7 +61,7 @@
   "entrypoints": [
     "static/js/runtime-main.c730f065.js",
     "static/js/2.e2590fb6.chunk.js",
-    "static/css/main.7f4e8700.chunk.css",
-    "static/js/main.51709a8e.chunk.js"
+    "static/css/main.ed45275b.chunk.css",
+    "static/js/main.b6d6e63b.chunk.js"
   ]
 }
