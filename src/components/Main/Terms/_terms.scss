@@ -35,7 +35,7 @@
   }
 
   .terms__header {
-    margin-bottom: 27px;
+    margin-bottom: 57px;
     text-align: center;
 
     @media (min-width: 768px) {
@@ -54,17 +54,9 @@
     }
 
     .text-underline-desctop {
-      @media(min-width: 768px) {
+      @media (min-width: 768px) {
         text-decoration: underline;
       }
-    }
-  }
-
-  .terms__content {
-    margin-top: 30px;
-
-    @media(min-width: 768px) {
-      margin-top: 0;
     }
   }
 

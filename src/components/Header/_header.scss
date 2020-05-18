@@ -9,7 +9,6 @@
 
   @media (min-width: 768px) {
     position: static;
-    margin-bottom: 120px;
   }
 
   button {
@@ -18,30 +17,10 @@
     color: #fff;
   }
 
-  .header_navbar-full,
-  .header_navbar-short {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 30px;
-  }
+  .controls-btn {
+    line-height: 0.7;
+    cursor: pointer;
 
-  .header_navbar-short {
-    @media (max-width: 767px) {
-      .controls-mob,
-      .cart {
-        visibility: hidden;
-      }
-    }
-  }
-
-  .header-navbar-padding-bottom-140 {
-    @media (max-width: 767px) {
-      padding-bottom: 140px;
-    }
-  }
-
-  .controls-mob {
     @media (min-width: 768px) {
       display: none;
     }
@@ -59,11 +38,35 @@
   }
 }
 
+.header__navbar-full,
+.header__navbar-short {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px 60px;
+
+  @media (min-width: 768px) {
+    padding: 0 30px;
+  }
+}
+
+.header__navbar-short {
+  @media (max-width: 767px) {
+    .controls-btn,
+    .cart {
+      visibility: hidden;
+    }
+  }
+}
+
 .main-menu {
   position: absolute;
-  top: 54%;
+  top: 30px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
+
+  @media (min-width: 1920px) {
+    transform: translate(-50%, 5px);
+  }
 
   @media (max-width: 767px) {
     display: none;
@@ -98,5 +101,18 @@
   .pencil-icon,
   .login-icon {
     margin-right: 10px;
+  }
+}
+
+.header__title {
+  position: fixed;
+  height: 85px;
+  top: 111px;
+  background: #0b0c23;
+  width: 100%;
+  z-index: 401;
+
+  @media (min-width: 768px) {
+    display: none;
   }
 }

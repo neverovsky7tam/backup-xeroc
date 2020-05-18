@@ -4,7 +4,7 @@ import {
   SET_MAIN_CONTENT,
   SET_ACCOUNT_MENU,
   SET_TERMS_CLOSE_BTN,
-  SET_HEADER_CSS_CLASS,
+  SET_HEADER_NAVBAR_CSS_CLASS,
   SET_ELECTRICITY_VALUE,
   SET_CURRENT_SCROLL_TOP,
   SET_FILTERS_STATE,
@@ -152,9 +152,9 @@ export const termsCloseBtn = (state = false, action) => {
   }
 }
 
-export const headerCssClass = (state = 'header_navbar-full', action) => {
+export const headerNavbarCssClass = (state = 'header__navbar-full', action) => {
   switch (action.type) {
-    case SET_HEADER_CSS_CLASS:
+    case SET_HEADER_NAVBAR_CSS_CLASS:
       return action.cssClass;
     default:
       return state;
