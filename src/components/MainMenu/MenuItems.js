@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setMainContent } from '../../store/actions';
 import { ReactComponent as MenuSeparate } from '../../assets/img/Header/menu-separate.svg';
 
-const MenuItems = ({ background, setOverlayMenu }) => {
+const MenuItems = ({ background, setOverlayMenu, carousel }) => {
   const dispatch = useDispatch();
   const lang = useSelector((state) => state.langObj.header.menu);
 
@@ -14,7 +14,7 @@ const MenuItems = ({ background, setOverlayMenu }) => {
   };
 
   return (
-    <nav className="main-menu__items line-height-8">
+    <nav className={`main-menu__items line-height-8 ${carousel}`}>
       <a href="#" onClick={(e) => setContent(e, 'home')}>{lang.home}</a>
       <MenuSeparate className="main-menu__items-separator" />
       <a className="p-relative" href="#" onClick={(e) => setContent(e, 'home')}>

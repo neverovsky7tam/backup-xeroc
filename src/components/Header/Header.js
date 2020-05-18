@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import MenuItems from '../MainMenu/MenuItems';
 import OverlayMenu from '../MainMenu/OverlayMenu';
@@ -15,7 +15,8 @@ const Header = () => {
   const [overlayMenu, setOverlayMenu] = useState(false);
   const isLogin = useSelector((state) => state.accountMenu);
   const headerClassName = useSelector((state) => state.headerCssClass);
-  
+
+  // const headerElement = React.createRef();
   const dispatch = useDispatch();
 
   const burgerClick = (e) => {
@@ -23,9 +24,16 @@ const Header = () => {
     setOverlayMenu(true);
   };
 
+  // useEffect(() => {
+  //   // console.log('headerElement', headerElement.current);
+  //   headerElement.current.addEventListener('DOMSubtreeModified', (e) => {
+  //     console.log('e', e);
+  //   })
+  // })
+
   return (
     <header className="header">
-      <div 
+      <div
         className={headerClassName}>
         <nav className="controls-mob">
           <a href="#">
@@ -33,7 +41,7 @@ const Header = () => {
           </a>
         </nav>
         <div className="logo-wrapper d-flex align-items-center">
-          <LogoIcon 
+          <LogoIcon
             className="logo"
             onClick={() => dispatch(setMainContent('home'))} />
           <LangSwitcher />
@@ -57,6 +65,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+      {/* <MenuItems carousel={'main-menu__items_carousel'} /> */}
       {overlayMenu && <OverlayMenu setOverlayMenu={setOverlayMenu} />}
     </header>
   );

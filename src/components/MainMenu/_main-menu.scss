@@ -60,3 +60,10 @@
     z-index: -1;
   }
 }
+
+// Carousel menu
+.main-menu__items_carousel {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}

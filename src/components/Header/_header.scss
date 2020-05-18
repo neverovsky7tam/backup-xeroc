@@ -35,9 +35,9 @@
     }
   }
 
-  .header-navbar-padding-bottom-90 {
+  .header-navbar-padding-bottom-140 {
     @media (max-width: 767px) {
-      padding-bottom: 90px;
+      padding-bottom: 140px;
     }
   }
 
@@ -81,6 +81,10 @@
 }
 
 .account-menu__btn-group {
+  @media (max-width: 767px) {
+    display: none;
+  }
+
   button {
     display: flex;
     align-items: center;
@@ -94,9 +98,5 @@
   .pencil-icon,
   .login-icon {
     margin-right: 10px;
-  }
-
-  @media (max-width: 767px) {
-    display: none;
   }
 }

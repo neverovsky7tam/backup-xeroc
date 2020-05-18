@@ -10,14 +10,16 @@
 
 .terms {
   position: relative;
+  top: -55px;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: calc(100vh - 55px);
+  height: calc(100vh - 140px);
   margin: auto;
   overflow: hidden;
 
   @media (min-width: 768px) {
+    top: 0;
     width: 642px;
     height: 100%;
   }
@@ -33,8 +35,7 @@
   }
 
   .terms__header {
-    margin-top: 90px;
-    margin-bottom: 57px;
+    margin-bottom: 27px;
     text-align: center;
 
     @media (min-width: 768px) {
@@ -56,6 +57,14 @@
       @media(min-width: 768px) {
         text-decoration: underline;
       }
+    }
+  }
+
+  .terms__content {
+    margin-top: 30px;
+
+    @media(min-width: 768px) {
+      margin-top: 0;
     }
   }
 

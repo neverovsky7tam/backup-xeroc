@@ -19,7 +19,7 @@ const SignUp = () => {
   const form = React.createRef();
 
   useEffect(() => {
-    dispatch(setHeaderCssClass('header_navbar-short header-navbar-padding-bottom-90'));
+    dispatch(setHeaderCssClass('header_navbar-short header-navbar-padding-bottom-140'));
     return () => {
       dispatch(setHeaderCssClass('header_navbar-full'));
     }
