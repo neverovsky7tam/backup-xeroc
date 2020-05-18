@@ -15,12 +15,26 @@ body {
 }
 
 h2 {
+  font-family: "Exo", sans-serif;
+  font-weight: 500;
   text-transform: uppercase;
-  @include exo-font($white_font, $mob_h2_size, 500);
+  color: $white_font;
   line-height: 0.9;
 
   @media (min-width: 768px) {
-    @include exo-font($white_font, $desctop_h2_size, 500);
+    font-size: $desctop_h2_size;
+  }
+
+  @media (max-width: 767px) {
+    font-size: $mob_h2_425;
+  }
+
+  @media (max-width: 424px) {
+    font-size: $mob_h2_375;
+  }
+
+  @media (max-width: 374px) {
+    font-size: $mob_h2_320;
   }
 }
 
@@ -71,15 +85,11 @@ button {
   cursor: pointer;
 }
 
-.text-underline {
-  text-decoration: underline;
-}
-
 .line-height-8 {
-  line-height: .8;
+  line-height: 0.8;
 }
 
-@media(max-width: 1919px) {
+@media (max-width: 1919px) {
   .responsive-1919 {
     display: none;
   }

@@ -9,20 +9,20 @@ import Terms from './Terms/Terms';
 const MainContainer = () => {
   const contentVar = useSelector((state) => state.mainContent);
   let footerState = 'footer-standart';
-  let Content = null;
+  let content = null;
 
-  if (contentVar === 'home') Content = Home;
-  if (contentVar === 'sign-up') Content = SignUp;
-  if (contentVar === 'log-in') Content = LogIn;
+  if (contentVar === 'home') content = <Home />;
+  if (contentVar === 'sign-up') content = <SignUp />;
+  if (contentVar === 'log-in') content = <LogIn />;
   if (contentVar === 'terms') {
     footerState = 'footer-mini';
-    Content = Terms;
+    content = <Terms />;
   };
 
   return (
     <>
       <main className="main">
-        <Content />
+        {content}
       </main>
       <Footer footerState={footerState} />
     </>

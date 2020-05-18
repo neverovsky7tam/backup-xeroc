@@ -1,0 +1,252 @@
+.auth-content {
+  position: relative;
+  margin: 23px 30px 30px;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  .auth-content__social-wrapper {
+    margin-top: 90px;
+
+    @media (min-width: 768px) {
+      margin-top: 38px;
+    }
+  }
+
+  .auth__close-btn {
+    position: fixed;
+    top: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1111;
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  .auth-content__social-link {
+    @include block_centered_content(40px, 40px, $secondary_bg);
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    &:hover {
+      background-color: $hover_btn;
+    }
+  }
+
+  .auth-content__or {
+    position: relative;
+    margin: 53px 0;
+    font-weight: 300;
+
+    @media (min-width: 768px) {
+      margin: 38px 0;
+    }
+
+    @media (min-width: 425px) {
+      @include open-sans_font($white_font, 16px);
+    }
+
+    @media (max-width: 424px) {
+      @include open-sans_font($white_font, 15px);
+    }
+
+    @media (max-width: 374px) {
+      @include open-sans_font($white_font, 12px);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      width: calc(50% - 25px);
+      height: 1px;
+      background-color: #fff;
+      opacity: 0.2;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0%;
+      width: calc(50% - 25px);
+      height: 1px;
+      background-color: #fff;
+      opacity: 0.2;
+    }
+  }
+
+  .auth-content__form {
+    .auth-content__input-wrapper {
+      position: relative;
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+
+      input {
+        position: relative;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        height: 40px;
+        padding: 15px;
+        border: 1px solid transparent;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        background-color: $secondary_bg;
+        color: $grey_font;
+        outline: 0;
+        z-index: 11;
+
+        @media (min-width: 768px) {
+          width: 320px;
+          font-size: $desctop_size_font;
+        }
+
+        @media (max-width: 767px) {
+          font-size: 16px;
+        }
+
+        @media (max-width: 424px) {
+          font-size: 15px;
+        }
+
+        @media (max-width: 374px) {
+          font-size: 12px;
+        }
+
+        &::placeholder {
+          color: $grey_font;
+        }
+
+        &:hover {
+          background-color: $secondary_bg-sec;
+          color: $white_font;
+        }
+      }
+    }
+
+    .field-error,
+    .email-error,
+    .password-error,
+    .password-confirm-error {
+      display: none;
+      position: absolute;
+      bottom: -3px;
+      left: 10px;
+      padding: 0 5px;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 300;
+      text-transform: initial;
+      color: #ff4757;
+      background-color: $main_bg;
+      z-index: 11;
+
+      @media (min-width: 768px) {
+        font-size: 9px;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 12px;
+      }
+
+      @media (max-width: 424px) {
+        font-size: 11px;
+      }
+
+      @media (max-width: 374px) {
+        font-size: 10px;
+      }
+    }
+  }
+
+  .auth-content__terms {
+    margin-top: 30px;
+    text-align: right;
+    text-transform: initial;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    color: $grey_font;
+
+    @media (min-width: 768px) {
+      margin-top: 15px;
+    }
+
+    @media (min-width: 425px) {
+      font-size: 12px;
+    }
+
+    @media (max-width: 424px) {
+      font-size: 11px;
+    }
+
+    @media (max-width: 374px) {
+      font-size: 10px;
+    }
+
+    .terms-link {
+      @include open-sans_font($white_font, 12px);
+      text-transform: initial;
+      font-weight: 300;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .auth-content__btn {
+    margin-top: 57px;
+    @include btn_main(130px, 40px, $secondary_bg, 14px);
+
+    @media (min-width: 768px) {
+      margin-top: 37px;
+    }
+
+    &:hover {
+      background-color: $hover_btn;
+    }
+  }
+
+  .auth-content__btn-switcher {
+    display: block;
+    margin-top: 60px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    color: $white_font;
+    text-transform: none;
+    text-decoration: underline;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 424px) {
+      font-size: 15px;
+    }
+
+    @media (max-width: 374px) {
+      font-size: 12px;
+    }
+  }
+}

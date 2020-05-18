@@ -2,6 +2,9 @@ export const SET_ON_SALE_DISPLAY = "SET_ON_SALE_DISPLAY";
 export const CHANGE_LANG = "CHANGE_LANG";
 export const SET_MAIN_CONTENT = "SET_MAIN_CONTENT";
 export const SET_ACCOUNT_MENU = "SET_ACCOUNT_MENU";
+export const SET_TERMS_CLOSE_BTN = "SET_TERMS_CLOSE_BTN";
+export const SET_HEADER_NAVBAR_CSS_CLASS = "SET_HEADER_NAVBAR_CSS_CLASS";
+// export const SET_CART_BTN = "SET_CART_BTN";
 export const SET_ELECTRICITY_VALUE = "SET_ELECTRICITY_VALUE";
 export const SET_CURRENT_SCROLL_TOP = "SET_CURRENT_SCROLL_TOP";
 export const SET_FILTERS_STATE = "SET_FILTERS_STATE";
@@ -29,6 +32,16 @@ export const setMainContent = (content) => ({
 export const setAccountMenu = (isLogin) => ({
   type: SET_ACCOUNT_MENU,
   isLogin,
+});
+
+export const setTermsCloseBtn = (val) => ({
+  type: SET_TERMS_CLOSE_BTN,
+  isOpen: val,
+});
+
+export const setHeaderNavbarCssClass = (val) => ({
+  type: SET_HEADER_NAVBAR_CSS_CLASS,
+  cssClass: val,
 });
 
 export const setElectricityValue = (val) => ({

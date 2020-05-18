@@ -1,12 +1,27 @@
+.terms__close-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 0.7;
+  z-index: 101;
+  cursor: pointer;
+}
+
 .terms {
+  position: relative;
+  top: -55px;
   display: flex;
   flex-direction: column;
-  width: auto;
-  height: 100%;
+  width: 100%;
+  height: calc(100vh - 140px);
   margin: auto;
+  overflow: hidden;
 
   @media (min-width: 768px) {
+    top: 0;
     width: 642px;
+    height: 100%;
   }
 
   .terms__footer-gradient {
@@ -20,7 +35,6 @@
   }
 
   .terms__header {
-    margin-top: 90px;
     margin-bottom: 57px;
     text-align: center;
 
@@ -39,19 +53,28 @@
       margin: 0;
     }
 
-    .terms__close-btn {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 101;
-      cursor: pointer;
+    .text-underline-desctop {
+      @media (min-width: 768px) {
+        text-decoration: underline;
+      }
     }
   }
 
   .terms__title {
     margin: 0 auto;
     line-height: 0.9;
+
+    @media (max-width: 767px) {
+      font-size: 13px;
+    }
+
+    @media (max-width: 424px) {
+      font-size: 12px;
+    }
+
+    @media (max-width: 374px) {
+      font-size: 11px;
+    }
   }
 
   .terms__subtitle {
@@ -60,6 +83,18 @@
     font-weight: 300;
     text-align: center;
     line-height: 0.8;
+
+    @media (max-width: 767px) {
+      font-size: 12px;
+    }
+
+    @media (max-width: 424px) {
+      font-size: 11px;
+    }
+
+    @media (max-width: 374px) {
+      font-size: 10px;
+    }
   }
 
   h3 {
@@ -69,12 +104,36 @@
     text-transform: uppercase;
     text-align: center;
     line-height: 18px;
+
+    @media (max-width: 767px) {
+      font-size: 13px;
+    }
+
+    @media (max-width: 424px) {
+      font-size: 12px;
+    }
+
+    @media (max-width: 374px) {
+      font-size: 11px;
+    }
   }
 
   h4 {
     margin-top: 55px;
     @include exo_font($white_font, $desctop_size_font, 500);
     text-transform: uppercase;
+
+    @media (max-width: 767px) {
+      font-size: 13px;
+    }
+
+    @media (max-width: 424px) {
+      font-size: 12px;
+    }
+
+    @media (max-width: 374px) {
+      font-size: 11px;
+    }
   }
 
   ul {
@@ -87,6 +146,21 @@
     @include open-sans_font($white_font, 13px);
     font-weight: 300;
     line-height: 18px;
+
+    @media (max-width: 767px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @media (max-width: 424px) {
+      font-size: 13px;
+      line-height: 19px;
+    }
+
+    @media (max-width: 374px) {
+      font-size: 12px;
+      line-height: 18px;
+    }
   }
 
   a {

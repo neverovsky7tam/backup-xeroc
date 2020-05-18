@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setAccountMenu } from '../../../store/actions';
-import { setMainContent } from '../../../store/actions';
+import { setAccountMenu, setMainContent, setTermsCloseBtn, setHeaderNavbarCssClass } from '../../../store/actions';
+import AuthCloseBtn from './AuthCloseBtn';
 import SocialAuth from './SocialAuth';
 import { onInputChange, checkInputValue, checkInputCorrect } from './inputs';
 import { hideDecor } from '../../Parts/BoxDecor';
@@ -17,6 +17,13 @@ const SignUp = () => {
   const passwordConfirmError = React.createRef();
   const passwordField = React.createRef();
   const form = React.createRef();
+
+  useEffect(() => {
+    dispatch(setHeaderNavbarCssClass('header__navbar-short'));
+    return () => {
+      dispatch(setHeaderNavbarCssClass('header__navbar-full'));
+    }
+  });
 
   const checkInput = (e, errorElem, password) => {
     const input = e.target;
@@ -42,17 +49,30 @@ const SignUp = () => {
         if (!+input.dataset.check) nextStep = false;
       }
     }
+    if (nextStep) {
+      dispatch(setAccountMenu(true));
+      dispatch(setMainContent('home'));
+    };
+  };
 
-    if (nextStep) dispatch(setAccountMenu(true));
-  }
+  const onTermsClick = () => {
+    dispatch(setMainContent('terms'));
+    dispatch(setTermsCloseBtn(true));
+  };
+
+  const onSwicher = (e) => {
+    e.preventDefault()
+    dispatch(setMainContent('log-in'));
+  };
 
   return (
     <section className="auth-content">
+      <AuthCloseBtn />
       <h2>sign up</h2>
       <SocialAuth />
       <div className="auth-content__or">or</div>
       <form className="auth-content__form" ref={form}>
-        <div className="p-relative">
+        <div className="auth-content__input-wrapper">
           <input
             data-type="name"
             data-check="0"
@@ -64,7 +84,7 @@ const SignUp = () => {
           <div className="field-error" ref={nameError}>This field is required</div>
           <BoxDecor />
         </div>
-        <div className="p-relative">
+        <div className="auth-content__input-wrapper">
           <input
             data-type="name"
             data-check="0"
@@ -76,7 +96,7 @@ const SignUp = () => {
           <div className="field-error" ref={lastnameError}>This field is required</div>
           <BoxDecor />
         </div>
-        <div className="p-relative">
+        <div className="auth-content__input-wrapper">
           <input
             className="email"
             data-type="email"
@@ -89,7 +109,7 @@ const SignUp = () => {
           <div className="email-error" ref={emailError}>Wrong! Entereted e-mail address is invalid</div>
           <BoxDecor />
         </div>
-        <div className="p-relative">
+        <div className="auth-content__input-wrapper">
           <input
             className="password"
             data-type="pass"
@@ -103,7 +123,7 @@ const SignUp = () => {
           <div className="password-error" ref={passwordError}>Your password is not secure enough</div>
           <BoxDecor />
         </div>
-        <div className="p-relative">
+        <div className="auth-content__input-wrapper">
           <input
             className="password-confirm"
             data-type="confirm"
@@ -116,15 +136,16 @@ const SignUp = () => {
           <div className="password-confirm-error" ref={passwordConfirmError}>Passwords are different</div>
           <BoxDecor />
         </div>
-        <div className="auth-content__form-tips">
-          By signing up, you agree to our&nbsp;
-          <a
-            href="#"
-            className="terms-link"
-            onClick={() => dispatch(setMainContent('terms'))}>
-            Terms and Conditions</a>
-        </div>
       </form>
+      <div className="auth-content__terms">
+        By signing up, you agree to our&nbsp;
+          <a
+          href="#"
+          className="terms-link"
+          onClick={onTermsClick}>
+          Terms and Conditions
+          </a>
+      </div>
       <button
         className="auth-content__btn cursor-pointer p-relative"
         onClick={globalCheck}
@@ -133,8 +154,14 @@ const SignUp = () => {
         Sign up
         <BoxDecor ref={boxDecor} />
       </button>
+      <a
+        className="auth-content__btn-switcher"
+        href="#"
+        onClick={onSwicher}>
+        Log in
+      </a>
     </section>
-  )
-}
+  );
+};
 
 export default SignUp;
