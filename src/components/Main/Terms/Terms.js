@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setHeaderCssClass, setTermsCloseBtn } from '../../../store/actions';
+import { setHeaderNavbarCssClass, setTermsCloseBtn } from '../../../store/actions';
 import { TermsEN } from './TermsEN';
 
 const Terms = () => {
@@ -9,9 +9,9 @@ const Terms = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(setHeaderCssClass('header_navbar-short'));
+    dispatch(setHeaderNavbarCssClass('header__navbar-short'));
     return () => {
-      dispatch(setHeaderCssClass('header_navbar-full'));
+      dispatch(setHeaderNavbarCssClass('header__navbar-full'));
       dispatch(setTermsCloseBtn(false));
     }
   });

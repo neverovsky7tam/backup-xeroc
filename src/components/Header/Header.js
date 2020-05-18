@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import MenuItems from '../MainMenu/MenuItems';
+import CarouselMenu from '../MainMenu/CarouselMenu';
 import OverlayMenu from '../MainMenu/OverlayMenu';
 import LangSwitcher from '../LangSwitcher/LangSwitcher';
 import GuestMenu from './GuestMenu';
@@ -14,8 +15,9 @@ import { ReactComponent as ControlsMob } from '../../assets/img/Header/controls-
 const Header = () => {
   const [overlayMenu, setOverlayMenu] = useState(false);
   const isLogin = useSelector((state) => state.accountMenu);
-  const headerClassName = useSelector((state) => state.headerCssClass);
-  
+  const headerNavbarClassName = useSelector((state) => state.headerNavbarCssClass);
+
+  // const headerElement = React.createRef();
   const dispatch = useDispatch();
 
   const burgerClick = (e) => {
@@ -23,42 +25,52 @@ const Header = () => {
     setOverlayMenu(true);
   };
 
+  // useEffect(() => {
+  //   // console.log('headerElement', headerElement.current);
+  //   headerElement.current.addEventListener('DOMSubtreeModified', (e) => {
+  //     console.log('e', e);
+  //   })
+  // })
+
   return (
-    <header className="header">
-      <div 
-        className={headerClassName}>
-        <nav className="controls-mob">
-          <a href="#">
+    <>
+      <header className="header">
+        <div
+          className={headerNavbarClassName}>
+          <button className="controls-btn">
             <ControlsMob />
-          </a>
-        </nav>
-        <div className="logo-wrapper d-flex align-items-center">
-          <LogoIcon 
-            className="logo"
-            onClick={() => dispatch(setMainContent('home'))} />
-          <LangSwitcher />
-        </div>
-        <div className="main-menu d-flex align-items-center">
-          <div className="responsive-1919">
-            <MenuItems />
+          </button>
+          <div className="logo-wrapper d-flex align-items-center">
+            <LogoIcon
+              className="logo"
+              onClick={() => dispatch(setMainContent('home'))} />
+            <LangSwitcher />
           </div>
-          <nav className="burger-btn">
-            <a href="#" onClick={burgerClick} >
-              <BurgerBtn />
-            </a>
-          </nav>
-        </div>
-        <div className="account-menu d-flex align-items-center">
-          <div className="account-menu__btn-group d-flex align-items-center">
-            {isLogin ? <UserMenu /> : <GuestMenu />}
+          <div className="main-menu d-flex align-items-center">
+            <div className="responsive-1919">
+              <MenuItems isSeparator={true} />
+            </div>
+            <nav className="burger-btn">
+              <a href="#" onClick={burgerClick} >
+                <BurgerBtn />
+              </a>
+            </nav>
           </div>
-          <div className="cart d-flex align-items-center">
-            <Cart isLogin={isLogin} />
+          <div className="account-menu d-flex align-items-center">
+            <div className="account-menu__btn-group d-flex align-items-center">
+              {isLogin ? <UserMenu /> : <GuestMenu />}
+            </div>
+            <button className="cart d-flex align-items-center">
+              <Cart isLogin={isLogin} />
+            </button>
           </div>
         </div>
+        {overlayMenu && <OverlayMenu setOverlayMenu={setOverlayMenu} />}
+      </header>
+      <div className="header__title">
+        <CarouselMenu />
       </div>
-      {overlayMenu && <OverlayMenu setOverlayMenu={setOverlayMenu} />}
-    </header>
+    </>
   );
 };
 

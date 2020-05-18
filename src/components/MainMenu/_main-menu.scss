@@ -60,3 +60,35 @@
     z-index: -1;
   }
 }
+
+// Carousel menu
+.carousel-menu {
+  position: absolute;
+  top: 0;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  .main-menu__items a {
+    margin: 0 30px;
+    font-family: "Exo", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: .85;
+    white-space: nowrap;
+    color: $white_font;
+
+    @media (max-width: 767px) {
+      font-size: $mob_h2_425;
+    }
+
+    @media (max-width: 424px) {
+      font-size: $mob_h2_375;
+    }
+
+    @media (max-width: 374px) {
+      font-size: $mob_h2_320;
+    }
+  }
+}

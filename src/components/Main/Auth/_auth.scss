@@ -1,5 +1,6 @@
 .auth-content {
-  margin: 90px 30px 30px;
+  position: relative;
+  margin: 23px 30px 30px;
   text-align: center;
   text-transform: uppercase;
 
@@ -22,7 +23,11 @@
   }
 
   .auth__close-btn {
-    margin-bottom: 60px;
+    position: fixed;
+    top: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1111;
     cursor: pointer;
 
     @media (min-width: 768px) {

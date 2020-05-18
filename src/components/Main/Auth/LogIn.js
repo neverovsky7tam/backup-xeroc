@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setMainContent, setAccountMenu, setHeaderCssClass } from '../../../store/actions';
+import { setMainContent, setAccountMenu, setHeaderNavbarCssClass } from '../../../store/actions';
 import AuthCloseBtn from './AuthCloseBtn';
 import SocialAuth from './SocialAuth';
 import { onInputChange } from './inputs';
@@ -12,9 +12,9 @@ const LogIn = () => {
   const boxDecor = React.createRef();
 
   useEffect(() => {
-    dispatch(setHeaderCssClass('header_navbar-short header-navbar-padding-bottom-90'));
+    dispatch(setHeaderNavbarCssClass('header__navbar-short'));
     return () => {
-      dispatch(setHeaderCssClass('header_navbar-full'));
+      dispatch(setHeaderNavbarCssClass('header__navbar-full'));
     }
   });
 

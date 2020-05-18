@@ -10,14 +10,16 @@
 
 .terms {
   position: relative;
+  top: -55px;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: calc(100vh - 55px);
+  height: calc(100vh - 140px);
   margin: auto;
   overflow: hidden;
 
   @media (min-width: 768px) {
+    top: 0;
     width: 642px;
     height: 100%;
   }
@@ -33,7 +35,6 @@
   }
 
   .terms__header {
-    margin-top: 90px;
     margin-bottom: 57px;
     text-align: center;
 
@@ -53,7 +54,7 @@
     }
 
     .text-underline-desctop {
-      @media(min-width: 768px) {
+      @media (min-width: 768px) {
         text-decoration: underline;
       }
     }
