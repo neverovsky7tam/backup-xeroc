@@ -149,6 +149,7 @@ export const pageTopState = (state = { content: null, isDisplay: true }, action)
 export const carouselMenuPos = (state = { pos: 0, itemIndex: 0 }, action) => {
   switch (action.type) {
     case SET_CAROUSEL_MENU_POS:
+      console.log('action.store', action.store);
       return action.store;
     default:
       return state;
