@@ -65,19 +65,20 @@
 .carousel-menu {
   position: absolute;
   top: 0;
+  left: 50%;
 
   @media (min-width: 768px) {
     display: none;
   }
 
   .main-menu__items a {
-    margin: 0 30px;
+    padding: 0 30px;
     font-family: "Exo", sans-serif;
     font-weight: 500;
     text-transform: uppercase;
-    line-height: .85;
+    line-height: 0.85;
     white-space: nowrap;
-    color: $white_font;
+    color: rgba(255, 255, 255, 0.3);
 
     @media (max-width: 767px) {
       font-size: $mob_h2_425;
@@ -89,6 +90,12 @@
 
     @media (max-width: 374px) {
       font-size: $mob_h2_320;
+    }
+  }
+
+  .main-menu__items {
+    .active {
+      color: $white_font;
     }
   }
 }

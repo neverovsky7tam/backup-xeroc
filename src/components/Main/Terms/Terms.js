@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setHeaderNavbarCssClass, setTermsCloseBtn } from '../../../store/actions';
+import { setHeaderNavbarCssClass, setTermsCloseBtn, setPageTopState } from '../../../store/actions';
 import { TermsEN } from './TermsEN';
 
 const Terms = () => {
@@ -9,11 +9,13 @@ const Terms = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(setPageTopState(null, false));
     dispatch(setHeaderNavbarCssClass('header__navbar-short'));
     return () => {
-      dispatch(setHeaderNavbarCssClass('header__navbar-full'));
+      dispatch(setPageTopState(null, true));
       dispatch(setTermsCloseBtn(false));
-    }
+      dispatch(setHeaderNavbarCssClass('header__navbar-full'));
+    };
   });
 
   const calcScrollTop = () => {

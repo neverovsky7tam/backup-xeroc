@@ -71,15 +71,6 @@ export const setFilters = (value, filter) => {
   store.dispatch(setFiltersState(filter, 'filter', filtersStateObj, isEnableFilter));
   store.dispatch(setFiltersState(filter, 'tag', value, isEnableFilter));
 
-  // const filtersState = store.getState().filtersState;
-  // console.log('filtersState', filtersState);
-  // let filtersCounter = 0;
-  // for (let key in filtersState) {
-  //   console.log('isEnableFilter', filtersState[key].isEnableFilter);
-  //   filtersCounter += filtersState[key].isEnableFilter;
-  // };
-  // console.log('filtersCounter', filtersCounter);
-
   setProductsDisplay(filter, value, isActive);
 };
 
