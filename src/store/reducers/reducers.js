@@ -1,6 +1,8 @@
 import {
   SET_ON_SALE_DISPLAY,
   CHANGE_LANG,
+  SET_PAGE_TOP_STATE,
+  SET_CAROUSEL_MENU_POS,
   SET_MAIN_CONTENT,
   SET_ACCOUNT_MENU,
   SET_TERMS_CLOSE_BTN,
@@ -134,6 +136,25 @@ export const mainContent = (state = 'home', action) => {
   }
 }
 
+export const pageTopState = (state = { content: null, isDisplay: true }, action) => {
+  switch (action.type) {
+    case SET_PAGE_TOP_STATE:
+      const newState = Object.assign(state, action.state);
+      return newState;
+    default:
+      return state;
+  }
+}
+
+export const carouselMenuPos = (state = { pos: 0, itemIndex: 0 }, action) => {
+  switch (action.type) {
+    case SET_CAROUSEL_MENU_POS:
+      return action.store;
+    default:
+      return state;
+  }
+}
+
 export const accountMenu = (state = false, action) => {
   switch (action.type) {
     case SET_ACCOUNT_MENU:
@@ -160,15 +181,6 @@ export const headerNavbarCssClass = (state = 'header__navbar-full', action) => {
       return state;
   }
 }
-
-// export const cartBtnDisplay = (state = true, action) => {
-//   switch (action.type) {
-//     case SET_CART_BTN:
-//       return action.isDisplay;
-//     default:
-//       return state;
-//   }
-// }
 
 export const electricityValue = (state = 0.17, action) => {
   switch (action.type) {

@@ -1,0 +1,16 @@
+.page-top {
+  position: fixed;
+  height: 85px;
+  top: 111px;
+  background: #0b0c23;
+  width: 100%;
+  z-index: 401;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.page-top_auth {
+  height: 113px;
+}
