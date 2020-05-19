@@ -35,7 +35,7 @@ const CarouselMenu = () => {
     items.current.children[currentItemIndex].classList.add('active');
 
     return () => {
-      dispatch(setCarouselMenuPos(initPosition, currentItemIndexnpm ));
+      dispatch(setCarouselMenuPos(initPosition, currentItemIndex));
     }
   }, []);
 

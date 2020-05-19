@@ -1,5 +1,10 @@
 .listings {
+  display: none;
   padding: 0 31px 0 30px;
+
+  @media (min-width: 1440px) {
+    display: block;
+  }
 }
 
 .listings__body {
