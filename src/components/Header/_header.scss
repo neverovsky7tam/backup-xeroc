@@ -103,16 +103,3 @@
     margin-right: 10px;
   }
 }
-
-.header__title {
-  position: fixed;
-  height: 85px;
-  top: 111px;
-  background: #0b0c23;
-  width: 100%;
-  z-index: 401;
-
-  @media (min-width: 768px) {
-    display: none;
-  }
-}

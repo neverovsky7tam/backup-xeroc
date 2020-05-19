@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setMainContent } from '../../store/actions';
 import { ReactComponent as MenuSeparate } from '../../assets/img/Header/menu-separate.svg';
 
-const MenuItems = ({ background, setOverlayMenu, isSeparator }) => {
+const MenuItems = React.forwardRef(({ background, setOverlayMenu, isSeparator }, items) => {
   const dispatch = useDispatch();
   const lang = useSelector((state) => state.langObj.header.menu);
 
@@ -14,7 +14,7 @@ const MenuItems = ({ background, setOverlayMenu, isSeparator }) => {
   };
 
   return (
-    <nav className="main-menu__items">
+    <nav className="main-menu__items" ref={items}>
       <a href="#" onClick={(e) => setContent(e, 'home')}>{lang.home}</a>
       {isSeparator && <MenuSeparate className="main-menu__items-separator" />}
       <a className="p-relative" href="#" onClick={(e) => setContent(e, 'home')}>
@@ -29,6 +29,6 @@ const MenuItems = ({ background, setOverlayMenu, isSeparator }) => {
       <a href="#" onClick={(e) => setContent(e, 'home')}>{lang.support}</a>
     </nav>
   );
-};
+});
 
 export default MenuItems;
