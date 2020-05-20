@@ -208,6 +208,14 @@
       &:hover {
         text-decoration: underline;
       }
+
+      @media (max-width: 424px) {
+        font-size: 11px;
+      }
+
+      @media (max-width: 374px) {
+        font-size: 10px;
+      }
     }
   }
 

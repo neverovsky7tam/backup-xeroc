@@ -2,11 +2,11 @@ import React from 'react';
 import Filter from './Filter/Filter';
 import ByText from './Search/ByText';
 import Price from './Search/ByPrice';
-import Scroll from '../../Scroll/Scroll';
-import { calcToScroll } from '../../Scroll/Scroll';
-import { algorithmsSpecies, coinsSpecies, equipmentSpecies, manufacturerSpecies } from '../../../../data/productsData';
+import Scroll from '../Scroll/Scroll';
+import { calcToScroll } from '../Scroll/Scroll';
+import { algorithmsSpecies, coinsSpecies, equipmentSpecies, manufacturerSpecies } from '../../../data/productsData';
 
-const HomeFilters = () => {
+const Filters = () => {
   const scrollThumb = React.createRef();
   const scrollBlock = React.createRef();
 
@@ -40,4 +40,4 @@ const HomeFilters = () => {
   );
 };
 
-export default HomeFilters;
+export default Filters;

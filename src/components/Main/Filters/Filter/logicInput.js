@@ -1,7 +1,7 @@
 import React from 'react';
-import store from '../../../../../store/store';
+import store from '../../../../store/store';
 import { setFilters } from './logicFilters';
-import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../../data/productsData';
+import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../data/productsData';
 
 const onMouseTag = (e) => {
   if (e.type === 'mouseover') {
