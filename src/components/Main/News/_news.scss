@@ -1,3 +1,12 @@
+.news {
+  display: none;
+
+  @media (min-width: 1440px) {
+    display: block;
+    margin-left: 30px;
+  }
+}
+
 .news__body {
   .banner-wrapper {
     width: 209px;

@@ -1,13 +1,26 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import Select from '../../Select/Select';
-import { BoxDecor } from '../../../Parts/BoxDecor';
-import { ReactComponent as ProductStar } from '../../../../assets/img/product-star.svg';
-import { ReactComponent as ProductHalfStar } from '../../../../assets/img/product-half-star.svg';
-import { ReactComponent as GreenArrow } from '../../../../assets/img/green-arrow.svg';
-import { ReactComponent as RedArrow } from '../../../../assets/img/red-arrow.svg';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setListingsSectionCssClass } from '../../../store/actions';
+import Select from '../Select/Select';
+import { BoxDecor } from '../../Parts/BoxDecor';
+import { ReactComponent as ProductStar } from '../../../assets/img/product-star.svg';
+import { ReactComponent as ProductHalfStar } from '../../../assets/img/product-half-star.svg';
+import { ReactComponent as GreenArrow } from '../../../assets/img/green-arrow.svg';
+import { ReactComponent as RedArrow } from '../../../assets/img/red-arrow.svg';
 
 export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr }) => {
+  const dispatch = useDispatch();
+
+  useLayoutEffect(() => {
+    dispatch(setListingsSectionCssClass('listings-d-var home-page'));
+  });
+
+  useEffect(() => {
+    return () => {
+      dispatch(setListingsSectionCssClass(null));
+    }
+  }, []);
+
   const [price, setPrice] = useState(itemPrice);
   const [hash, setHash] = useState('');
 
@@ -39,7 +52,7 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr }) => {
     setPrice(itemPrice);
     itemCarriage.current.style.right = '0';
     itemInner.current.style.border = '1px solid rgba(255, 255, 255, 0.0)';
-    orderBlock.current.style.right = '-50%';
+    orderBlock.current.style.right = '-60%';
 
     if (select.current.style.overflow) showHashList();
   };
@@ -64,7 +77,7 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr }) => {
       className="list-item-wrapper"
       onMouseEnter={itemHoverOn}
       onMouseLeave={itemHoverOff}>
-      <div 
+      <div
         className="list-item-carriage"
         style={{ backgroundColor: colorItem }}
         ref={itemCarriage}>

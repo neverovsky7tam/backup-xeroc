@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import FilterHead from './FilterHead';
 import FilterMain from './FilterMain';
 import FilterSearch from './FilterSearch';
-import { BoxDecor } from '../../../../Parts/BoxDecor';
+import { BoxDecor } from '../../../Parts/BoxDecor';
 
 const Filter = ({ filterName, filterProps }) => {
   const [isExpand, setExpand] = useState(false);

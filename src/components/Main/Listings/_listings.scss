@@ -1,0 +1,31 @@
+.listings {
+  display: none;
+  padding-left: 31px;
+  padding-right: 1px;
+
+  @media (min-width: 1440px) {
+    display: block;
+  }
+}
+
+// when the "list view products" is enable
+.listings-d-var {
+  display: none;
+
+  @media (min-width: 1920px) {
+    display: block;
+    padding-left: 31px;
+  }
+}
+
+.listings__body {
+  overflow: hidden;
+
+  .scroll-container {
+    overflow-y: scroll;
+  }
+
+  .products__item {
+    margin-bottom: 30px;
+  }
+}

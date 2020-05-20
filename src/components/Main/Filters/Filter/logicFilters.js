@@ -1,7 +1,7 @@
-import store from '../../../../../store/store';
-import { setOnSaleDisplay, setFiltersState, setFilterObj, setJointSearchObj } from '../../../../../store/actions';
-import { sortedProducts } from '../../../../../data/productsProcessing';
-import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../../data/productsData';
+import store from '../../../../store/store';
+import { setOnSaleDisplay, setFiltersState, setFilterObj, setJointSearchObj } from '../../../../store/actions';
+import { sortedProducts } from '../../../../data/productsProcessing';
+import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../data/productsData';
 
 export const setProductsDisplay = (filter, value, isActive) => {
   const filterOrigin = store.getState().filterOrigin;

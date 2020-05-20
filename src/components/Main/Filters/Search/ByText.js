@@ -2,7 +2,7 @@ import React from 'react';
 import { byTextLogic } from './textLogic';
 import { setInputState } from '../Filter/logicInput';
 import { setPreviuosSearch, calcPrevResult } from './logicSearch';
-import { BoxDecor } from '../../../../Parts/BoxDecor';
+import { BoxDecor } from '../../../Parts/BoxDecor';
 
 const ByText = () => {
   const onInputClick = (e) => {

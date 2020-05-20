@@ -1,4 +1,5 @@
 import {
+  SET_DEVICE_TYPE,
   SET_ON_SALE_DISPLAY,
   CHANGE_LANG,
   SET_PAGE_TOP_STATE,
@@ -7,6 +8,7 @@ import {
   SET_ACCOUNT_MENU,
   SET_TERMS_CLOSE_BTN,
   SET_HEADER_NAVBAR_CSS_CLASS,
+  SET_LISTINGS_SECTION_CSS_CLASS,
   SET_ELECTRICITY_VALUE,
   SET_CURRENT_SCROLL_TOP,
   SET_FILTERS_STATE,
@@ -19,6 +21,119 @@ import {
 
 import { langEN, langCH } from '../../data/languages';
 import { productsObj } from '../../data/productsData';
+
+export const deviceType = (state = false, action) => {
+  switch (action.type) {
+    case SET_DEVICE_TYPE:
+      return action.isMobileDevice;
+    default:
+      return state;
+  }
+}
+
+export const productsDisplay = (state = productsObj, action) => {
+  switch (action.type) {
+    case SET_ON_SALE_DISPLAY:
+      if (Array.isArray(action.products)) return action.products;
+      else return productsObj;
+    default:
+      return state;
+  }
+}
+
+export const langObj = (state = langEN, action) => {
+  switch (action.type) {
+    case CHANGE_LANG:
+      const langObj = (action.lang === 'eng') ? langEN : langCH;
+      return langObj;
+    default:
+      return state;
+  }
+}
+
+export const mainContent = (state = 'home', action) => {
+  switch (action.type) {
+    case SET_MAIN_CONTENT:
+      return action.content;
+    default:
+      return state;
+  }
+}
+
+export const pageTopState = (state = { content: null, isDisplay: true }, action) => {
+  switch (action.type) {
+    case SET_PAGE_TOP_STATE:
+      const newState = Object.assign(state, action.state);
+      return newState;
+    default:
+      return state;
+  }
+}
+
+export const carouselMenuPos = (state = { pos: 0, itemIndex: 0 }, action) => {
+  switch (action.type) {
+    case SET_CAROUSEL_MENU_POS:
+      console.log('action.store', action.store);
+      return action.store;
+    default:
+      return state;
+  }
+}
+
+export const accountMenu = (state = false, action) => {
+  switch (action.type) {
+    case SET_ACCOUNT_MENU:
+      return action.isLogin;
+    default:
+      return state;
+  }
+}
+
+export const termsCloseBtn = (state = false, action) => {
+  switch (action.type) {
+    case SET_TERMS_CLOSE_BTN:
+      return action.isOpen;
+    default:
+      return state;
+  }
+}
+
+export const headerNavbarCssClass = (state = 'header__navbar-full', action) => {
+  switch (action.type) {
+    case SET_HEADER_NAVBAR_CSS_CLASS:
+      return action.cssClass;
+    default:
+      return state;
+  }
+}
+
+export const listingsSectionCssClass = (state = null, action) => {
+  switch (action.type) {
+    case SET_LISTINGS_SECTION_CSS_CLASS:
+      return action.cssClass;
+    default:
+      return state;
+  }
+}
+
+export const electricityValue = (state = 0.17, action) => {
+  switch (action.type) {
+    case SET_ELECTRICITY_VALUE:
+      return action.val;
+    default:
+      return state;
+  }
+}
+
+const SATART_POINT_INFINITY_SCROLL = 243;
+export const scrollHeight = (state = SATART_POINT_INFINITY_SCROLL, action) => {
+  switch (action.type) {
+    case SET_CURRENT_SCROLL_TOP:
+      return action.val;
+    default:
+      return state;
+  }
+}
 
 export const filtersState = (state = {}, action) => {
   switch (action.type) {
@@ -84,15 +199,6 @@ export const searchObj = (state = {}, action) => {
   }
 }
 
-export const previousSearch = (state = {}, action) => {
-  switch (action.type) {
-    case SET_PREVIOUS_SEARCH_RESULT:
-      return action.prevSearch;
-    default:
-      return state;
-  }
-}
-
 export const jointSearchObj = (state = {
   isEnable: false,
   globalSearchObj: {},
@@ -107,95 +213,10 @@ export const jointSearchObj = (state = {
   }
 }
 
-export const productsDisplay = (state = productsObj, action) => {
+export const previousSearch = (state = {}, action) => {
   switch (action.type) {
-    case SET_ON_SALE_DISPLAY:
-      if (Array.isArray(action.products)) return action.products;
-      else return productsObj;
-    default:
-      return state;
-  }
-}
-
-export const langObj = (state = langEN, action) => {
-  switch (action.type) {
-    case CHANGE_LANG:
-      const langObj = (action.lang === 'eng') ? langEN : langCH;
-      return langObj;
-    default:
-      return state;
-  }
-}
-
-export const mainContent = (state = 'home', action) => {
-  switch (action.type) {
-    case SET_MAIN_CONTENT:
-      return action.content;
-    default:
-      return state;
-  }
-}
-
-export const pageTopState = (state = { content: null, isDisplay: true }, action) => {
-  switch (action.type) {
-    case SET_PAGE_TOP_STATE:
-      const newState = Object.assign(state, action.state);
-      return newState;
-    default:
-      return state;
-  }
-}
-
-export const carouselMenuPos = (state = { pos: 0, itemIndex: 0 }, action) => {
-  switch (action.type) {
-    case SET_CAROUSEL_MENU_POS:
-      return action.store;
-    default:
-      return state;
-  }
-}
-
-export const accountMenu = (state = false, action) => {
-  switch (action.type) {
-    case SET_ACCOUNT_MENU:
-      return action.isLogin;
-    default:
-      return state;
-  }
-}
-
-export const termsCloseBtn = (state = false, action) => {
-  switch (action.type) {
-    case SET_TERMS_CLOSE_BTN:
-      return action.isOpen;
-    default:
-      return state;
-  }
-}
-
-export const headerNavbarCssClass = (state = 'header__navbar-full', action) => {
-  switch (action.type) {
-    case SET_HEADER_NAVBAR_CSS_CLASS:
-      return action.cssClass;
-    default:
-      return state;
-  }
-}
-
-export const electricityValue = (state = 0.17, action) => {
-  switch (action.type) {
-    case SET_ELECTRICITY_VALUE:
-      return action.val;
-    default:
-      return state;
-  }
-}
-
-const SATART_POINT_INFINITY_SCROLL = 243;
-export const scrollHeight = (state = SATART_POINT_INFINITY_SCROLL, action) => {
-  switch (action.type) {
-    case SET_CURRENT_SCROLL_TOP:
-      return action.val;
+    case SET_PREVIOUS_SEARCH_RESULT:
+      return action.prevSearch;
     default:
       return state;
   }

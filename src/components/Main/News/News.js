@@ -1,9 +1,9 @@
 import React from 'react';
-import { BoxDecor } from '../../../Parts/BoxDecor';
-import { ReactComponent as BannerLogo } from '../../../../assets/img/Banners/logo-banner-1.svg';
-import { ReactComponent as Illustration } from '../../../../assets/img/Banners/illustration.svg';
+import { BoxDecor } from '../../Parts/BoxDecor';
+import { ReactComponent as BannerLogo } from '../../../assets/img/Banners/logo-banner-1.svg';
+import { ReactComponent as Illustration } from '../../../assets/img/Banners/illustration.svg';
 
-const HomeNews = () => {
+const News = () => {
   return (
     <section className="news home-page">
       <div className="main-header">
@@ -32,6 +32,6 @@ const HomeNews = () => {
       </div>
     </section>
   )
-}
+};
 
-export default HomeNews;
+export default News;

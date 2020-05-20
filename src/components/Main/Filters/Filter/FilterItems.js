@@ -1,5 +1,5 @@
 import React from 'react';
-import { BoxDecor } from '../../../../Parts/BoxDecor';
+import { BoxDecor } from '../../../Parts/BoxDecor';
 
 const FilterItems = ({ itemsArr, onItemClick, img }) => {
   const gridColumns = (img) ? 'repeat(3, 1fr)' : 'repeat(2, 1fr)';
