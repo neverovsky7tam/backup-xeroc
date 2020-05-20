@@ -12,6 +12,9 @@ const HomeListings = ({ productsObj }) => {
   const dispatch = useDispatch();
   const scrollTop = useSelector((state) => state.scrollHeight);
 
+  const listingsSectionCssClass = useSelector((state) => state.listingsSectionCssClass);
+  const cssClass = (listingsSectionCssClass) ? listingsSectionCssClass : 'listings home-page';
+
   useLayoutEffect(() => {
     scrollBlock.current.scrollTop = scrollTop;
   });
@@ -34,7 +37,7 @@ const HomeListings = ({ productsObj }) => {
   }
 
   return (
-    <section className="listings home-page">
+    <section className={cssClass}>
       <div className="main-header">
         <h2>new listings</h2>
       </div>

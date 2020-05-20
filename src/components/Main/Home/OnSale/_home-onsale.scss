@@ -1,6 +1,11 @@
 .onsale {
-  @media (min-width: 1024px) {
-    flex-grow: 1;
+  flex-grow: 1;
+
+  @media (min-width: 1440px) {
+    padding-right: 31px;
+  }
+
+  @media (max-width: 1439px) {
     padding-right: 30px;
   }
 }
