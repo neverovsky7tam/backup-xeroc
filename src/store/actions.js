@@ -1,3 +1,4 @@
+export const SET_DEVICE_TYPE = "SET_DEVICE_TYPE";
 export const SET_ON_SALE_DISPLAY = "SET_ON_SALE_DISPLAY";
 export const CHANGE_LANG = "CHANGE_LANG";
 export const SET_PAGE_TOP_STATE = "SET_PAGE_TOP_STATE";
@@ -7,7 +8,6 @@ export const SET_ACCOUNT_MENU = "SET_ACCOUNT_MENU";
 export const SET_TERMS_CLOSE_BTN = "SET_TERMS_CLOSE_BTN";
 export const SET_HEADER_NAVBAR_CSS_CLASS = "SET_HEADER_NAVBAR_CSS_CLASS";
 export const SET_LISTINGS_SECTION_CSS_CLASS = "SET_LISTINGS_SECTION_CSS_CLASS";
-// export const SET_NEWS_SECTION_CSS_CLASS = "SET_NEWS_SECTION_CSS_CLASS";
 export const SET_ELECTRICITY_VALUE = "SET_ELECTRICITY_VALUE";
 export const SET_CURRENT_SCROLL_TOP = "SET_CURRENT_SCROLL_TOP";
 export const SET_FILTERS_STATE = "SET_FILTERS_STATE";
@@ -16,6 +16,11 @@ export const SET_FILTER_OBJ = "SET_FILTER_OBJ";
 export const SET_SEARCH_OBJ = "SET_SEARCH_OBJ";
 export const SET_PREVIOUS_SEARCH_RESULT = "SET_PREVIOUS_SEARCH_RESULT";
 export const SET_JOINT_SEARCH_OBJ = "SET_JOINT_SEARCH_OBJ";
+
+export const setDeviceType = (isMobileDevice) => ({
+  type: SET_DEVICE_TYPE,
+  isMobileDevice,
+})
 
 export const setOnSaleDisplay = (products) => ({
   type: SET_ON_SALE_DISPLAY,
@@ -61,11 +66,6 @@ export const setListingsSectionCssClass = (val) => ({
   type: SET_LISTINGS_SECTION_CSS_CLASS,
   cssClass: val,
 });
-
-// export const setNewsSectionCssClass = (val) => ({
-//   type: SET_NEWS_SECTION_CSS_CLASS,
-//   cssClass: val,
-// });
 
 export const setElectricityValue = (val) => ({
   type: SET_ELECTRICITY_VALUE,

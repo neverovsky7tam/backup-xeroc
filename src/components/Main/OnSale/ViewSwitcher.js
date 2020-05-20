@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setElectricityValue } from '../../../../store/actions';
+import { setElectricityValue } from '../../../store/actions';
 import { ReactComponent as DotsIcon } from './img/3-vert-dot.svg';
 import { ReactComponent as ViewIcon } from './img/view-icon.svg';
-import { ReactComponent as ArrowDots } from '../../../../assets/img/arrow-dots.svg';
+import { ReactComponent as ArrowDots } from '../../../assets/img/arrow-dots.svg';
 
 const ViewSwitcher = ({ view, setView }) => {
   const dispatch = useDispatch();

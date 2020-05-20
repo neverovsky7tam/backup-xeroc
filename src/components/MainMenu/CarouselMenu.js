@@ -6,6 +6,7 @@ import MenuItems from '../MainMenu/MenuItems';
 
 let initPosition = null;
 let touchStart = null;
+let touchStartY = null;
 let currentItemIndex = null;
 let rightBreakpoint = null;
 let leftBreakpoint = null;
@@ -23,6 +24,7 @@ const CarouselMenu = () => {
   useLayoutEffect(() => {
     if (storePosition === 0) {
       const initPos = items.current.children[0].clientWidth / 2;
+      // console.log('start', initPos);
       currentItemIndex = 0;
       stopPos = initPos;
       initPosition = initPos;
@@ -31,6 +33,7 @@ const CarouselMenu = () => {
       stopPos = storePosition;
       initPosition = storePosition;
     }
+    // console.log('initPosition', initPosition);
     setPos(initPosition);
     items.current.children[currentItemIndex].classList.add('active');
 
@@ -42,50 +45,50 @@ const CarouselMenu = () => {
   const onTouchStart = (e) => {
     const breakPointDistance = items.current.children[currentItemIndex].clientWidth / 2;
     touchStart = e.changedTouches[0].clientX;
+    touchStartY = e.changedTouches[0].clientY;
     rightBreakpoint = breakPointDistance;
     leftBreakpoint = -breakPointDistance
   };
 
   const onTouchMove = (e) => {
+    const moveY = e.changedTouches[0].clientY;
+    const deltaY = touchStartY - moveY;
+    if (Math.abs(deltaY) > 65) {
+      onTouchEnd();
+      return;
+    }
+
     const movePos = e.changedTouches[0].clientX
     const delta = touchStart - movePos;
 
-    if ((delta < 0 && currentItemIndex === 0) || (delta > 0 && currentItemIndex === items.current.children.length - 1)) {
-      return;
-    } else {
-      setPos(initPosition + delta);
+    setPos(initPosition + delta);
 
-      if (delta >= rightBreakpoint) {
+    if (delta >= rightBreakpoint) {
+      if (currentItemIndex < items.current.children.length - 1) {
         const prevItemWidth = items.current.children[currentItemIndex].clientWidth;
         scrolledToLeft = scrolledToLeft + prevItemWidth;
         items.current.children[currentItemIndex].classList.remove('active');
 
         currentItemIndex += 1;
-        if (currentItemIndex > items.current.children.length - 1) {
-          currentItemIndex = items.current.children.length - 1;
-          return;
-        } else {
-          const nextItemWidth = items.current.children[currentItemIndex].clientWidth;
-          items.current.children[currentItemIndex].classList.add('active');
-          stopPos = scrolledToLeft + (nextItemWidth / 2);
-          rightBreakpoint = rightBreakpoint + nextItemWidth;
-        }
+        const nextItemWidth = items.current.children[currentItemIndex].clientWidth;
+        items.current.children[currentItemIndex].classList.add('active');
+        stopPos = scrolledToLeft + (nextItemWidth / 2);
+        leftBreakpoint = rightBreakpoint;
+        rightBreakpoint = rightBreakpoint + nextItemWidth;
       }
+    }
 
-      if (delta <= leftBreakpoint) {
+    if (delta < leftBreakpoint) {
+      if (currentItemIndex !== 0) {
         items.current.children[currentItemIndex].classList.remove('active');
 
         currentItemIndex -= 1;
-        if (currentItemIndex < 0) {
-          currentItemIndex = 0;
-          return;
-        } else {
-          const nextItemWidth = items.current.children[currentItemIndex].clientWidth;
-          items.current.children[currentItemIndex].classList.add('active');
-          stopPos = scrolledToLeft - (nextItemWidth / 2)
-          leftBreakpoint = leftBreakpoint - nextItemWidth;
-          scrolledToLeft = scrolledToLeft - nextItemWidth;
-        }
+        const nextItemWidth = items.current.children[currentItemIndex].clientWidth;
+        items.current.children[currentItemIndex].classList.add('active');
+        stopPos = scrolledToLeft - (nextItemWidth / 2);
+        rightBreakpoint = leftBreakpoint;
+        leftBreakpoint = leftBreakpoint - nextItemWidth;
+        scrolledToLeft = scrolledToLeft - nextItemWidth;
       }
     }
   };

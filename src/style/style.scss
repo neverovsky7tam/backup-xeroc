@@ -16,14 +16,14 @@
 @import "../components/Main/main-container";
 @import "../components/Main/Scroll/scroll";
 @import "../components/Main/Select/select";
-@import "../components/Main/Home/home-general";
-@import "../components/Main/Home/Filters//home-filters";
-@import "../components/Main/Home/OnSale/home-onsale";
-@import "../components/Main/Home/OnSale/view-switcher";
-@import "../components/Main/Home/OnSale/product-tile";
-@import "../components/Main/Home/OnSale/product-list";
-@import "../components/Main/Home/Listings/home-listings";
-@import "../components//Main/Home/News/home-news";
+@import "../components/Main/HomeDesctop/home-destop";
+@import "../components/Main/Filters/filters";
+@import "../components/Main/OnSale/onsale";
+@import "../components/Main/OnSale/view-switcher";
+@import "../components/Main/OnSale/product-tile";
+@import "../components/Main/OnSale/product-list";
+@import "../components/Main/Listings/listings";
+@import "../components/Main/News/news";
 
 @import "../components/Footer/footer";
 @import "../components/Footer/feedback-popup";

@@ -1,4 +1,5 @@
 import {
+  SET_DEVICE_TYPE,
   SET_ON_SALE_DISPLAY,
   CHANGE_LANG,
   SET_PAGE_TOP_STATE,
@@ -21,88 +22,10 @@ import {
 import { langEN, langCH } from '../../data/languages';
 import { productsObj } from '../../data/productsData';
 
-export const filtersState = (state = {}, action) => {
+export const deviceType = (state = false, action) => {
   switch (action.type) {
-    case SET_FILTERS_STATE:
-      const newState = Object.assign({}, state);
-      const key = Object.keys(action.filters);
-      const actionFilter = action.filters[key[0]].filter;
-      const actionTag = action.filters[key[0]].tag;
-
-      if (!newState[key[0]]) {
-        newState[key[0]] = { filter: {}, tag: [] }
-      };
-
-      if (actionFilter) newState[key[0]].filter = actionFilter;
-
-      if (actionTag) {
-        if (newState[key[0]].tag.length) {
-          const checkObj = {};
-          newState[key[0]].tag.forEach((el) => {
-            checkObj[el] = 1;
-          });
-
-          if (checkObj[actionTag]) delete checkObj[actionTag];
-          else checkObj[actionTag] = 1;
-
-          newState[key[0]].tag = Object.keys(checkObj);
-        } else {
-          newState[key[0]].tag.push(actionTag);
-        }
-      }
-
-      newState[key[0]].isEnableFilter = action.filters[key[0]].isEnableFilter;
-      return newState;
-    default:
-      return state;
-  }
-}
-
-export const filterOrigin = (state = {}, action) => {
-  switch (action.type) {
-    case SET_FILTER_ORIGIN:
-      return action.obj;
-    default:
-      return state;
-  }
-}
-
-export const filterObj = (state = {}, action) => {
-  switch (action.type) {
-    case SET_FILTER_OBJ:
-      return action.obj;
-    default:
-      return state;
-  }
-}
-
-export const searchObj = (state = {}, action) => {
-  switch (action.type) {
-    case SET_SEARCH_OBJ:
-      return Object.assign({}, state, action.fields);
-    default:
-      return state;
-  }
-}
-
-export const previousSearch = (state = {}, action) => {
-  switch (action.type) {
-    case SET_PREVIOUS_SEARCH_RESULT:
-      return action.prevSearch;
-    default:
-      return state;
-  }
-}
-
-export const jointSearchObj = (state = {
-  isEnable: false,
-  globalSearchObj: {},
-  filterSearchObj: {},
-},
-  action) => {
-  switch (action.type) {
-    case SET_JOINT_SEARCH_OBJ:
-      return action.searchState;
+    case SET_DEVICE_TYPE:
+      return action.isMobileDevice;
     default:
       return state;
   }
@@ -193,15 +116,6 @@ export const listingsSectionCssClass = (state = null, action) => {
   }
 }
 
-// export const newsSectionCssClass = (state = null, action) => {
-//   switch (action.type) {
-//     case SET_NEWS_SECTION_CSS_CLASS:
-//       return action.cssClass;
-//     default:
-//       return state;
-//   }
-// }
-
 export const electricityValue = (state = 0.17, action) => {
   switch (action.type) {
     case SET_ELECTRICITY_VALUE:
@@ -216,6 +130,93 @@ export const scrollHeight = (state = SATART_POINT_INFINITY_SCROLL, action) => {
   switch (action.type) {
     case SET_CURRENT_SCROLL_TOP:
       return action.val;
+    default:
+      return state;
+  }
+}
+
+export const filtersState = (state = {}, action) => {
+  switch (action.type) {
+    case SET_FILTERS_STATE:
+      const newState = Object.assign({}, state);
+      const key = Object.keys(action.filters);
+      const actionFilter = action.filters[key[0]].filter;
+      const actionTag = action.filters[key[0]].tag;
+
+      if (!newState[key[0]]) {
+        newState[key[0]] = { filter: {}, tag: [] }
+      };
+
+      if (actionFilter) newState[key[0]].filter = actionFilter;
+
+      if (actionTag) {
+        if (newState[key[0]].tag.length) {
+          const checkObj = {};
+          newState[key[0]].tag.forEach((el) => {
+            checkObj[el] = 1;
+          });
+
+          if (checkObj[actionTag]) delete checkObj[actionTag];
+          else checkObj[actionTag] = 1;
+
+          newState[key[0]].tag = Object.keys(checkObj);
+        } else {
+          newState[key[0]].tag.push(actionTag);
+        }
+      }
+
+      newState[key[0]].isEnableFilter = action.filters[key[0]].isEnableFilter;
+      return newState;
+    default:
+      return state;
+  }
+}
+
+export const filterOrigin = (state = {}, action) => {
+  switch (action.type) {
+    case SET_FILTER_ORIGIN:
+      return action.obj;
+    default:
+      return state;
+  }
+}
+
+export const filterObj = (state = {}, action) => {
+  switch (action.type) {
+    case SET_FILTER_OBJ:
+      return action.obj;
+    default:
+      return state;
+  }
+}
+
+export const searchObj = (state = {}, action) => {
+  switch (action.type) {
+    case SET_SEARCH_OBJ:
+      return Object.assign({}, state, action.fields);
+    default:
+      return state;
+  }
+}
+
+export const jointSearchObj = (state = {
+  isEnable: false,
+  globalSearchObj: {},
+  filterSearchObj: {},
+},
+  action) => {
+  switch (action.type) {
+    case SET_JOINT_SEARCH_OBJ:
+      return action.searchState;
+    default:
+      return state;
+  }
+}
+
+export const previousSearch = (state = {}, action) => {
+  switch (action.type) {
+    case SET_PREVIOUS_SEARCH_RESULT:
+      return action.prevSearch;
     default:
       return state;
   }

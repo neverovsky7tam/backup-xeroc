@@ -2,7 +2,7 @@ import React from 'react';
 import { setInputState } from '../Filter/logicInput';
 import { priceLogic } from './priceLogic';
 import { setPreviuosSearch, calcPrevResult } from './logicSearch';
-import { BoxDecor } from '../../../../Parts/BoxDecor';
+import { BoxDecor } from '../../../Parts/BoxDecor';
 
 const Price = () => {
   const onInputClick = (e) => {

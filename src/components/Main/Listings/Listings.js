@@ -1,10 +1,10 @@
 import React, { useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentScrollTop } from '../../../../store/actions'
+import { setCurrentScrollTop } from '../../../store/actions'
 import renderProducts from '../OnSale/renderProducts';
 import ProductTile from '../OnSale/ProductTile';
 
-const HomeListings = ({ productsObj }) => {
+const Listings = ({ productsObj }) => {
   const data = productsObj.slice(0, 10);
 
   const scrollBlock = React.createRef();
@@ -53,4 +53,4 @@ const HomeListings = ({ productsObj }) => {
   )
 }
 
-export default HomeListings;
+export default Listings;
