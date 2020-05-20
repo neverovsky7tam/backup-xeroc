@@ -7,6 +7,7 @@ import {
   SET_ACCOUNT_MENU,
   SET_TERMS_CLOSE_BTN,
   SET_HEADER_NAVBAR_CSS_CLASS,
+  SET_LISTINGS_SECTION_CSS_CLASS,
   SET_ELECTRICITY_VALUE,
   SET_CURRENT_SCROLL_TOP,
   SET_FILTERS_STATE,
@@ -182,6 +183,24 @@ export const headerNavbarCssClass = (state = 'header__navbar-full', action) => {
       return state;
   }
 }
+
+export const listingsSectionCssClass = (state = null, action) => {
+  switch (action.type) {
+    case SET_LISTINGS_SECTION_CSS_CLASS:
+      return action.cssClass;
+    default:
+      return state;
+  }
+}
+
+// export const newsSectionCssClass = (state = null, action) => {
+//   switch (action.type) {
+//     case SET_NEWS_SECTION_CSS_CLASS:
+//       return action.cssClass;
+//     default:
+//       return state;
+//   }
+// }
 
 export const electricityValue = (state = 0.17, action) => {
   switch (action.type) {
