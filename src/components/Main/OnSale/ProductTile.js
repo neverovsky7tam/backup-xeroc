@@ -87,9 +87,9 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr }) => {
           <div
             className="order"
             ref={orderBlock}>
-            <div className="order__price-wrapper d-flex justify-content-between align-items-center">
-              <span className="order__price">{price}</span>
-              <span className="order__psu">{item.psu && 'psu'}</span>
+            <div className="item-price-wrapper d-flex justify-content-between align-items-center">
+              <span className="item-price">{price}</span>
+              <span className="item-psu">{item.psu && 'psu'}</span>
             </div>
             <div className="select-wrapper">
               <Select
@@ -98,7 +98,8 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr }) => {
                 hashOpt={item.hash.option}
                 expandFunc={expandItemInner}
                 hashClick={onHashListClick}
-                ref={refObj} />
+                ref={refObj}
+                isDesctopTemplate={true} />
             </div>
             <div className="order__btns-wrapper">
               <button className="order__btn-details"

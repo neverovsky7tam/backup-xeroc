@@ -2,7 +2,7 @@ import React from 'react';
 import { BoxDecor } from '../../Parts/BoxDecor';
 import { ReactComponent as ArrowDropdownMenu } from '../../../assets/img/arrow-dots.svg';
 
-const Select = React.forwardRef(({ hashArr, displayHash, hashOpt, expandFunc, hashClick }, ref) => {
+const Select = React.forwardRef(({ hashArr, displayHash, hashOpt, expandFunc, hashClick, isDesctopTemplate }, ref) => {
   const hashList = () => {
     if (hashArr.length > 1) {
       const arr = hashArr.slice();
@@ -21,15 +21,16 @@ const Select = React.forwardRef(({ hashArr, displayHash, hashOpt, expandFunc, ha
   return (
     <div className="select" ref={ref.select}>
       <div className="select__shown-area">
-        <span className="select__show-title">Hash rate: {displayHash} {hashOpt}</span>
+        <span className="select__show-title">Hash rate: {displayHash} {isDesctopTemplate && hashOpt}</span>
         {(hashArr.length > 1) &&
           <div className="select__show-btn" onClick={expandFunc}>
             <ArrowDropdownMenu ref={ref.arrow} />
           </div>}
       </div>
-      <ul className="select__list">
-        {hashList()}
-      </ul>
+      {(hashArr.length > 1) &&
+        <ul className="select__list">
+          {hashList()}
+        </ul>}
       <BoxDecor />
     </div>
   )
