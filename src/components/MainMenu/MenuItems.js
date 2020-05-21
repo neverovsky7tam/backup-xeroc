@@ -21,38 +21,29 @@ const MenuItems = React.forwardRef(({ isOverlayMenu, setOverlayMenu, isSeparator
     <nav>
       <ul className="main-menu__items" ref={items}>
         <li
-          href="#"
           onClick={(e) => setContent(e, 'home')}>
           {lang.home}
         </li>
         {isSeparator && <MenuSeparate className="main-menu__items-separator" />}
         <li
           className="p-relative"
-          href="#"
-          onClick={(e) => setContent(e, 'home')}
-          onSelect={(e) => e.preventDefault()}>
+          onClick={(e) => setContent(e, 'home')}>
           {lang.sell}
           {isOverlayMenu && <div className="overlay-menu-background">menu</div>}
         </li>
         {isSeparator && <MenuSeparate className="main-menu__items-separator" />}
         <li
-          href="#"
-          onClick={(e) => setContent(e, 'home')}
-          onSelect={(e) => e.preventDefault()}>
+          onClick={(e) => setContent(e, 'home')}>
           {lang.host}
         </li>
         {isSeparator && <MenuSeparate className="main-menu__items-separator" />}
         <li
-          href="#"
-          onClick={(e) => setContent(e, 'home')}
-          onSelect={(e) => e.preventDefault()}>
+          onClick={(e) => setContent(e, 'home')}>
           {lang.about}
         </li>
         {isSeparator && <MenuSeparate className="main-menu__items-separator" />}
         <li
-          href="#"
-          onClick={(e) => setContent(e, 'home')}
-          onSelect={(e) => e.preventDefault()}>
+          onClick={(e) => setContent(e, 'home')}>
           {lang.support}
         </li>
       </ul>
