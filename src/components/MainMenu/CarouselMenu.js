@@ -24,7 +24,6 @@ const CarouselMenu = () => {
   useLayoutEffect(() => {
     if (storePosition === 0) {
       const initPos = items.current.children[0].clientWidth / 2;
-      // console.log('start', initPos);
       currentItemIndex = 0;
       stopPos = initPos;
       initPosition = initPos;
@@ -33,7 +32,6 @@ const CarouselMenu = () => {
       stopPos = storePosition;
       initPosition = storePosition;
     }
-    // console.log('initPosition', initPosition);
     setPos(initPosition);
     items.current.children[currentItemIndex].classList.add('active');
 
@@ -105,7 +103,7 @@ const CarouselMenu = () => {
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}>
-      <MenuItems ref={items} />
+      <MenuItems ref={items} mobile={true} />
     </div>
   );
 };
