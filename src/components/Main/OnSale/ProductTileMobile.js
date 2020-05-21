@@ -1,7 +1,6 @@
 import React, { useState, useLayoutEffect } from 'react';
 import Select from '../Select/Select';
 import { BoxDecor } from '../../Parts/BoxDecor';
-// import { hideDecor } from '../../Parts/BoxDecor';
 import { ReactComponent as ProductStar } from '../../../assets/img/product-star.svg';
 import { ReactComponent as ProductHalfStar } from '../../../assets/img/product-half-star.svg';
 import { ReactComponent as ArrowBack } from '../../../assets/img/arrow_back.svg';
