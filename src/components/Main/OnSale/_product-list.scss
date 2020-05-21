@@ -67,10 +67,6 @@
   .select-wrapper {
     width: 180px;
     margin: 0 15px;
-
-    .select__list {
-      top: 40px;
-    }
   }
 }
 
@@ -89,7 +85,7 @@
   }
 
   @media (max-width: 1439px) {
-    grid-template-columns: 29px 20px 16% 8% 24% 12% 14% 1fr;;
+    grid-template-columns: 29px 20px 16% 8% 24% 12% 14% 1fr;
   }
 }
 
