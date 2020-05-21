@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import renderProducts from './renderProducts';
 import ProductTile from './ProductTile';
+import ProductTileMobile from './ProductTileMobile';
 import { ProductListHead, ProductList } from './ProductList';
 import Scroll from '../Scroll/Scroll';
 import ViewSwitcher from './ViewSwitcher';
@@ -32,7 +33,7 @@ const OnSale = () => {
       content = (
         <ul
           className="products">
-          {renderProducts(ProductTile, data)}
+          {renderProducts(ProductTileMobile, data)}
         </ul>
       )
     } else {

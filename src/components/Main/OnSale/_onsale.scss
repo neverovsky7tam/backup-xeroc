@@ -10,7 +10,7 @@
   }
 
   @media (max-width: 767px) {
-    margin: 0 15px;
+    margin-right: 15px;
     padding: 0;
   }
 }
@@ -20,7 +20,9 @@
 }
 
 .onsale__body {
-  overflow: hidden;
+  @media (min-width: 768px) {
+    overflow: hidden;
+  }
 
   .products__item-wrapper {
     width: 100%;

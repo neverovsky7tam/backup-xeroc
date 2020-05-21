@@ -39,16 +39,6 @@
     padding: 0 15px;
     animation: 0.3s ease-in;
 
-    .order__price {
-      @include open-sans_font($white_font, 16px);
-      font-weight: bold;
-    }
-
-    .order__psu {
-      @include open-sans_font($green, 10px);
-      text-transform: uppercase;
-    }
-
     .order__btns-wrapper {
       display: flex;
       justify-content: space-between;
@@ -67,6 +57,16 @@
     }
   }
 
+  .item-price {
+    @include open-sans_font($white_font, 16px);
+    font-weight: bold;
+  }
+
+  .item-psu {
+    @include open-sans_font($green, 10px);
+    text-transform: uppercase;
+  }
+
   .order_hover-on {
     bottom: 0;
     animation-name: order-hover-on;
@@ -79,10 +79,6 @@
   .select-wrapper {
     height: 30px;
     margin: 15px 0;
-
-    .select__list {
-      top: 30px;
-    }
   }
 }
 
