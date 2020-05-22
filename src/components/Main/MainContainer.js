@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import PageTop from '../PageTop/PageTop';
 import HomeDesctop from './HomeDesctop/HomeDesctop';
 import OnSale from './OnSale/OnSale';
 import Footer from '../Footer/Footer';
@@ -26,6 +27,7 @@ const MainContainer = () => {
 
   return (
     <>
+      {isMobile && <PageTop />}
       <main className="main">
         {content}
       </main>
