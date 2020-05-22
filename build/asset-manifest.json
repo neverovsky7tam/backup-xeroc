@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.590bb0a4.chunk.css",
-    "main.js": "/static/js/main.c5975baa.chunk.js",
-    "main.js.map": "/static/js/main.c5975baa.chunk.js.map",
+    "main.css": "/static/css/main.721ed280.chunk.css",
+    "main.js": "/static/js/main.2844e417.chunk.js",
+    "main.js.map": "/static/js/main.2844e417.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c730f065.js",
     "runtime-main.js.map": "/static/js/runtime-main.c730f065.js.map",
     "static/js/2.e2590fb6.chunk.js": "/static/js/2.e2590fb6.chunk.js",
     "static/js/2.e2590fb6.chunk.js.map": "/static/js/2.e2590fb6.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.6c029d7c0ccc33b4367f0e870ac691b5.js": "/precache-manifest.6c029d7c0ccc33b4367f0e870ac691b5.js",
+    "precache-manifest.d1290c2a8b977a225c9e318ee7ffc8cb.js": "/precache-manifest.d1290c2a8b977a225c9e318ee7ffc8cb.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.590bb0a4.chunk.css.map": "/static/css/main.590bb0a4.chunk.css.map",
+    "static/css/main.721ed280.chunk.css.map": "/static/css/main.721ed280.chunk.css.map",
     "static/js/2.e2590fb6.chunk.js.LICENSE.txt": "/static/js/2.e2590fb6.chunk.js.LICENSE.txt",
     "static/media/3-vert-dot.ecd3988d.svg": "/static/media/3-vert-dot.ecd3988d.svg",
     "static/media/achievment_bronze.0773c997.svg": "/static/media/achievment_bronze.0773c997.svg",
@@ -24,6 +24,7 @@
     "static/media/burger-btn.5a0a9fe7.svg": "/static/media/burger-btn.5a0a9fe7.svg",
     "static/media/cart.4bace8dd.svg": "/static/media/cart.4bace8dd.svg",
     "static/media/china.7f8455b7.svg": "/static/media/china.7f8455b7.svg",
+    "static/media/close-cross.d5b2a76f.svg": "/static/media/close-cross.d5b2a76f.svg",
     "static/media/close-cross.f6a53dbe.svg": "/static/media/close-cross.f6a53dbe.svg",
     "static/media/close.1363b831.svg": "/static/media/close.1363b831.svg",
     "static/media/coinpayments.d2beede8.svg": "/static/media/coinpayments.d2beede8.svg",
@@ -32,7 +33,6 @@
     "static/media/facebook.fbede682.svg": "/static/media/facebook.fbede682.svg",
     "static/media/google.07a425a1.svg": "/static/media/google.07a425a1.svg",
     "static/media/green-arrow.ea90de45.svg": "/static/media/green-arrow.ea90de45.svg",
-    "static/media/hamburger-close.d5b2a76f.svg": "/static/media/hamburger-close.d5b2a76f.svg",
     "static/media/illustration.8e32d059.svg": "/static/media/illustration.8e32d059.svg",
     "static/media/login-icon.f5c2afd0.svg": "/static/media/login-icon.f5c2afd0.svg",
     "static/media/logo-banner-1.7b328335.svg": "/static/media/logo-banner-1.7b328335.svg",
@@ -62,7 +62,7 @@
   "entrypoints": [
     "static/js/runtime-main.c730f065.js",
     "static/js/2.e2590fb6.chunk.js",
-    "static/css/main.590bb0a4.chunk.css",
-    "static/js/main.c5975baa.chunk.js"
+    "static/css/main.721ed280.chunk.css",
+    "static/js/main.2844e417.chunk.js"
   ]
 }
