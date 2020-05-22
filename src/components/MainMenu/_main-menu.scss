@@ -11,6 +11,10 @@
   }
 }
 
+.main-menu__items li {
+  cursor: pointer;
+}
+
 .overlay-menu {
   position: absolute;
   top: 0;
@@ -33,15 +37,15 @@
     flex-direction: column;
     @include exo_font($white_font, 30px, 500);
 
-    a:not(:first-child):not(:last-child) {
+    li:not(:first-child):not(:last-child) {
       margin: 57px 0;
     }
 
-    a:first-child {
+    li:first-child {
       margin-bottom: 57px;
     }
 
-    a:last-child {
+    li:last-child {
       margin-top: 57px;
     }
 
@@ -71,12 +75,11 @@
     display: none;
   }
 
-  .main-menu__items a {
+  .main-menu__items li {
     padding: 0 30px;
     font-family: "Exo", sans-serif;
     font-weight: 500;
     text-transform: uppercase;
-    line-height: 0.85;
     white-space: nowrap;
     color: rgba(255, 255, 255, 0.3);
 

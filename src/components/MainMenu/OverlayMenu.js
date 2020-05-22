@@ -9,7 +9,7 @@ const OverlayMenu = ({ setOverlayMenu }) => {
         onClick={() => setOverlayMenu(false)}>
         <BurgerClose />
       </button>
-      <MenuItems background={true} setOverlayMenu={setOverlayMenu} isSeparator={true} />
+      <MenuItems isOverlayMenu={true} setOverlayMenu={setOverlayMenu} isSeparator={true} />
     </div>
   );
 };

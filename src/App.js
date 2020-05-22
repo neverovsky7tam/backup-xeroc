@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setDeviceType } from './store/actions';
 import Header from './components/Header/Header';
@@ -7,6 +7,11 @@ import MainContainer from './components/Main/MainContainer';
 import TermsCloseBtn from './components/Main/Terms/TermsCloseBtn';
 
 function App() {
+  // useLayoutEffect(() => {
+  //   console.log('doc', document.documentElement.scrollHeight);
+    
+  // })
+
   const dispatch = useDispatch();
   const termsCloseBtn = useSelector((state) => state.termsCloseBtn)
 

@@ -84,7 +84,6 @@ const checkActiveInputs = (searchObj, inputType) => {
 
 const setSearchState = (result) => {
   const filterOrigin = store.getState().filterOrigin;
-
   const globalSearchObj = {};
   const filterSearchObj = {};
 
