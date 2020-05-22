@@ -9,9 +9,6 @@ import ViewSwitcher from './ViewSwitcher';
 import { calcToScroll } from '../Scroll/Scroll';
 
 const OnSale = () => {
-  window.addEventListener('scroll', (e) => {
-    console.log('scroll');
-  })
   const isMobile = useSelector((state) => state.deviceType);
 
   const [view, setView] = useState(true);

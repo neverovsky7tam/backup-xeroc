@@ -9,13 +9,16 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr }) => {
   const [price, setPrice] = useState(hashArr[0].price);
   const [hash, setHash] = useState(hashArr[0].h);
 
+  const productItem = React.createRef();
   const itemInner = React.createRef();
+  const orderBlock = React.createRef();
   const closeOrder = React.createRef();
   const productImg = React.createRef();
   const rateStar = React.createRef();
   const pdoductParam_PSU = React.createRef();
   const openOrderArrow = React.createRef();
-
+  
+  const boxDecor = React.createRef();
   const arrow = React.createRef();
   const select = React.createRef();
   const refObj = { arrow, select };
@@ -40,9 +43,14 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr }) => {
     rateStar.current.classList.toggle('d-none');
     pdoductParam_PSU.current.classList.toggle('d-none');
     openOrderArrow.current.classList.toggle('d-none');
+    boxDecor.current.children[0].classList.toggle('d-none');
+    boxDecor.current.children[2].classList.toggle('d-none');
+    productItem.current.classList.toggle('products__item_active');
 
     if (param) {
-      itemInner.current.style.right = '218px';
+      const orderBlockWidth = orderBlock.current.clientWidth;
+
+      itemInner.current.style.right = `${orderBlockWidth}px`;
       closeOrder.current.style.display = 'block';
     } else {
       closeOrder.current.style = '';
@@ -59,7 +67,8 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr }) => {
     <li className="products__item-wrapper products__item-wrapper_mobile">
       <div className="decor-holder p-relative">
         <div
-          className="products__item">
+          className="products__item"
+          ref={productItem}>
           <div
             className="products__item-inner"
             ref={itemInner}>
@@ -94,7 +103,7 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr }) => {
                 <ArrowBack />
               </div>
             </div>
-            <div className="order-mob">
+            <div className="order-mob" ref={orderBlock}>
               <div className="order-mob__price-shown">
                 <span className="order-mob__price-symb">$</span>
                 <span className="order-mob__price">{price}</span>
@@ -115,7 +124,7 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr }) => {
             </div>
           </div>
         </div>
-        <BoxDecor />
+        <BoxDecor ref={boxDecor} />
       </div>
     </li>
   )
