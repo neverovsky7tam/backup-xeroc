@@ -48,7 +48,7 @@ const SideBar = () => {
 
   const setMenu = (e) => {
     const menuType = e.currentTarget.dataset.menu;
-    console.log('e', e.currentTarget);
+    // console.log('e', e.currentTarget);
     setMenuState(prevMenu, '#c4c4c4');
     prevMenu = e.currentTarget;
     setMenuState(e.currentTarget, '#fff');
