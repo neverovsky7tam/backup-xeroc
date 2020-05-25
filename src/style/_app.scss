@@ -1,12 +1,19 @@
 html,
 body,
 #root {
-  height: 100vh;
+  @media (min-width: 768px) {
+    height: 100vh;
+  }
 }
 
 #root {
   display: flex;
   flex-direction: column;
+}
+
+.stop-scroll-y {
+  height: 100vh;
+  overflow: hidden;
 }
 
 body {
@@ -51,6 +58,10 @@ button {
 
 .p-relative {
   position: relative;
+}
+
+.p-absolute {
+  position: absolute !important;
 }
 
 .d-block {

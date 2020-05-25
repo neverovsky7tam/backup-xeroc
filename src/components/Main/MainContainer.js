@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import PageTop from '../PageTop/PageTop';
 import HomeDesctop from './HomeDesctop/HomeDesctop';
 import OnSale from './OnSale/OnSale';
@@ -7,8 +7,10 @@ import Footer from '../Footer/Footer';
 import SignUp from './Auth/SignIn';
 import LogIn from './Auth/LogIn';
 import Terms from './Terms/Terms';
+import { setPageTopState } from '../../store/actions';
 
 const MainContainer = () => {
+  const dispatch = useDispatch();
   const contentVar = useSelector((state) => state.mainContent);
   const isMobile = useSelector((state) => state.deviceType);
 
@@ -25,10 +27,55 @@ const MainContainer = () => {
     content = <Terms />;
   };
 
+  let checkPoint = 1;
+  let flag = true;
+  let isTouchEnd = false;
+  let distanceSave = 0;
+
+  const scrollProcessing = (e) => {
+    const scrollTop = e.target.documentElement.scrollTop;
+    if (isTouchEnd && (scrollTop < (checkPoint - 5))) {
+      dispatch(setPageTopState(null, true));
+    };
+    isTouchEnd = false;
+
+    if (flag) {
+      const delta = scrollTop - checkPoint;
+
+      if (delta < 0) {
+        checkPoint = scrollTop;
+      }
+
+      if (delta > 100) {
+        flag = false;
+        checkPoint = scrollTop;
+        dispatch(setPageTopState(null, true, 'p-absolute'));
+      }
+    } else {
+      const distanceCurrent = scrollTop - checkPoint;
+
+      if (distanceCurrent >= distanceSave) {
+        distanceSave = distanceCurrent;
+      } else {
+        flag = true;
+        checkPoint = scrollTop;
+        distanceSave = 0;
+      }
+    }
+  }
+
+  document.addEventListener('scroll', scrollProcessing);
+
+  const onTouchEnd = (e) => {
+    isTouchEnd = true;
+  };
+
   return (
     <>
       {isMobile && <PageTop />}
-      <main className="main">
+      <main
+        className="main"
+        onTouchEnd={onTouchEnd}>
         {content}
       </main>
       {!isMobile && <Footer footerState={footerState} />}

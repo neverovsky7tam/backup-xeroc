@@ -1,5 +1,7 @@
 import {
   SET_DEVICE_TYPE,
+  SET_SIDEBAR_STATE,
+  SET_SIDEBAR_MENU,
   SET_ON_SALE_DISPLAY,
   CHANGE_LANG,
   SET_PAGE_TOP_STATE,
@@ -26,6 +28,24 @@ export const deviceType = (state = false, action) => {
   switch (action.type) {
     case SET_DEVICE_TYPE:
       return action.isMobileDevice;
+    default:
+      return state;
+  }
+}
+
+export const sidebarState = (state = false, action) => {
+  switch (action.type) {
+    case SET_SIDEBAR_STATE:
+      return action.isSidebar;
+    default:
+      return state;
+  }
+}
+
+export const sidebarMenu = (state = null, action) => {
+  switch (action.type) {
+    case SET_SIDEBAR_MENU:
+      return action.menu;
     default:
       return state;
   }
@@ -60,7 +80,7 @@ export const mainContent = (state = 'home', action) => {
   }
 }
 
-export const pageTopState = (state = { content: null, isDisplay: true }, action) => {
+export const pageTopState = (state = { content: null, isDisplay: true, additionCssClass: '' }, action) => {
   switch (action.type) {
     case SET_PAGE_TOP_STATE:
       const newState = Object.assign(state, action.state);
