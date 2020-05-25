@@ -1,0 +1,87 @@
+.sidebar__nav-item-btn_filters svg {
+  @media (min-width: 425px) {
+    width: 20px;
+    height: 20.74px;
+  }
+
+  @media (max-width: 424px) {
+    width: 18px;
+    height: 18.67px;
+  }
+
+  @media (max-width: 374px) {
+    width: 16px;
+    height: 16.6px;
+  }
+}
+
+.sidebar__nav-item-btn_auth {
+  @media (min-width: 425px) {
+    width: 17.5px;
+    height: 21.1px;
+  }
+
+  @media (max-width: 424px) {
+    width: 15.8px;
+    height: 19px;
+  }
+
+  @media (max-width: 374px) {
+    width: 14.1px;
+    height: 17px;
+  }
+}
+
+.sidebar__nav-item-btn_balance {
+  @media (min-width: 425px) {
+    width: 20px;
+    height: 18.3px;
+  }
+
+  @media (max-width: 424px) {
+    width: 18px;
+    height: 16.3px;
+  }
+
+  @media (max-width: 374px) {
+    width: 16px;
+    height: 14.5px;
+  }
+}
+
+.sidebar__nav-item-notification {
+  @media (min-width: 425px) {
+    width: 19.1px;
+    height: 21.76px;
+  }
+
+  @media (max-width: 424px) {
+    width: 17.57px;
+    height: 20px;
+  }
+
+  @media (max-width: 374px) {
+    width: 15.8px;
+    height: 18px;
+  }
+}
+
+.sidebar__nav-item-btn_facebook,
+.sidebar__nav-item-btn_sellers,
+.sidebar__nav-item-btn_awards,
+.sidebar__nav-item-btn_lang {
+  @media (min-width: 425px) {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (max-width: 424px) {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media (max-width: 374px) {
+    width: 16px;
+    height: 16px;
+  }
+}
