@@ -41,13 +41,13 @@ const Header = ({ isMobile }) => {
         className={headerNavbarClassName}>
         {
           (isMobile && !isSidebar) &&
-          <button className="controls-btn">
+          <button className="controls-btn controls-btn_open">
             <ControlsMob onClick={() => sideBarToggle(true)} />
           </button>
         }
         {
           (isMobile && isSidebar) &&
-          <button className="controls-btn">
+          <button className="controls-btn controls-btn_close">
             <CloseCross onClick={() => sideBarToggle(false)} />
           </button>
         }
@@ -77,9 +77,9 @@ const Header = ({ isMobile }) => {
               {isLogin ? <UserMenu /> : <GuestMenu />}
             </div>
           }
-          <button className="cart d-flex align-items-center">
+          <div className="cart d-flex align-items-center">
             <Cart isLogin={isLogin} />
-          </button>
+          </div>
         </div>
       </div>
       {overlayMenu && <OverlayMenu setOverlayMenu={setOverlayMenu} />}

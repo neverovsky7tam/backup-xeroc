@@ -15,7 +15,9 @@ const Cart = ({ isLogin }) => {
           <div className="cart__menu-counter line-height-8">0</div>
         </>
       }
-      <CartIcon className="cart-icon cursor-pointer" />
+      <button className="cart__btn cursor-pointer">
+        <CartIcon className="cart-icon" />
+      </button>
     </>
   )
 }
