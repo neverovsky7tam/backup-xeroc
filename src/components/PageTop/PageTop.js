@@ -5,9 +5,12 @@ import CarouselMenu from '../MainMenu/CarouselMenu';
 const PageTop = () => {
   const pageTopContent = useSelector((state) => state.pageTopState.content);
   const pageTopDisplay = useSelector((state) => state.pageTopState.isDisplay);
+  const pageTopAdditionCssClass = useSelector((state) => state.pageTopState.additionCssClass);
 
   let content = <CarouselMenu />;
-  let cssClass = 'page-top';
+
+  const cssClass = (pageTopAdditionCssClass) ? `page-top ${pageTopAdditionCssClass}` : 'page-top';
+
   if (pageTopContent === 'auth') {
     content = '';
   }
