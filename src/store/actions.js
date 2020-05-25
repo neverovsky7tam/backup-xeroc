@@ -1,5 +1,6 @@
 export const SET_DEVICE_TYPE = "SET_DEVICE_TYPE";
 export const SET_SIDEBAR_STATE = "SET_SIDEBAR_STATE";
+export const SET_SIDEBAR_MENU = "SET_SIDEBAR_MENU";
 export const SET_ON_SALE_DISPLAY = "SET_ON_SALE_DISPLAY";
 export const CHANGE_LANG = "CHANGE_LANG";
 export const SET_PAGE_TOP_STATE = "SET_PAGE_TOP_STATE";
@@ -26,6 +27,11 @@ export const setDeviceType = (isMobileDevice) => ({
 export const setSidebarState = (isSidebar) => ({
   type: SET_SIDEBAR_STATE,
   isSidebar,
+});
+
+export const setSidebarMenu = (menu) => ({
+  type: SET_SIDEBAR_MENU,
+  menu,
 });
 
 export const setOnSaleDisplay = (products) => ({

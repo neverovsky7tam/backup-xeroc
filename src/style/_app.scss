@@ -11,6 +11,11 @@ body,
   flex-direction: column;
 }
 
+.stop-scroll-y {
+  height: 100vh;
+  overflow: hidden;
+}
+
 body {
   box-sizing: border-box;
   background-color: $main_bg;

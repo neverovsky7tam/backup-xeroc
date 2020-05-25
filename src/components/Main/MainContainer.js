@@ -13,9 +13,6 @@ const MainContainer = () => {
   const dispatch = useDispatch();
   const contentVar = useSelector((state) => state.mainContent);
   const isMobile = useSelector((state) => state.deviceType);
-  const isSidebar = useSelector((state) => state.sidebarState);
-
-  const menuCssClass = (isSidebar) ? 'main main_covered' : 'main'
 
   let footerState = 'footer-standart';
   let content = null;
@@ -37,7 +34,6 @@ const MainContainer = () => {
 
   const scrollProcessing = (e) => {
     const scrollTop = e.target.documentElement.scrollTop;
-    console.log('scrollTop', scrollTop);
     if (isTouchEnd && (scrollTop < (checkPoint - 5))) {
       dispatch(setPageTopState(null, true));
     };
@@ -78,7 +74,7 @@ const MainContainer = () => {
     <>
       {isMobile && <PageTop />}
       <main
-        className={menuCssClass}
+        className="main"
         onTouchEnd={onTouchEnd}>
         {content}
       </main>
