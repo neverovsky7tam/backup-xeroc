@@ -29,24 +29,26 @@ const MainContainer = () => {
 
   let checkPoint = 1;
   let flag = true;
-  let isTouchEnd = false;
   let distanceSave = 0;
+  let isTouchEnd = false;
+  let fixTouchEndPoint = null;
 
   const scrollProcessing = (e) => {
     const scrollTop = e.target.documentElement.scrollTop;
-    if (isTouchEnd && (scrollTop < (checkPoint - 5))) {
+    console.log('scrollTop', scrollTop);
+    console.log('fixTouchEndPoint', fixTouchEndPoint);
+    if (isTouchEnd && (scrollTop < (fixTouchEndPoint - 10))) {
       dispatch(setPageTopState(null, true));
     };
     isTouchEnd = false;
 
     if (flag) {
       const delta = scrollTop - checkPoint;
-
       if (delta < 0) {
         checkPoint = scrollTop;
       }
 
-      if (delta > 100) {
+      if (delta > 30) {
         flag = false;
         checkPoint = scrollTop;
         dispatch(setPageTopState(null, true, 'p-absolute'));
@@ -66,8 +68,9 @@ const MainContainer = () => {
 
   document.addEventListener('scroll', scrollProcessing);
 
-  const onTouchEnd = (e) => {
+  const onTouchEnd = () => {
     isTouchEnd = true;
+    fixTouchEndPoint = checkPoint;
   };
 
   return (
