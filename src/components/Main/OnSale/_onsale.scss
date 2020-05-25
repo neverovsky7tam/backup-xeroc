@@ -26,7 +26,7 @@
 
   .products__item-wrapper {
     width: 100%;
-    padding-bottom: 100%;
+    padding-bottom: calc(100% - 15px);
 
     @media (max-width: 767px) {
       &:not(:last-child) {

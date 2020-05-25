@@ -14,10 +14,20 @@
 
 .sidebar__nav-item {
   display: flex;
+  flex-direction: column;
   width: 81px;
   height: 81px;
-  justify-content: center;
   align-items: center;
+
+  &.active {
+    background-color: $btn-main_bg;
+  }
+
+  .sidebar__nav-item-main {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+  }
 }
 
 .sidebar__content {

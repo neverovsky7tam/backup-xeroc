@@ -1,16 +1,11 @@
 .main {
   margin-top: 168px;
-  // overflow-y: scroll;
 
   @media (min-width: 768px) {
     margin-top: 120px;
     flex-grow: 1;
     overflow: hidden;
   }
-}
-
-.main_covered {
-  overflow: hidden;
 }
 
 .home-wrapper {

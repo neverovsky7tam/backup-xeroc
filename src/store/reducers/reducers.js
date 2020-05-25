@@ -1,6 +1,7 @@
 import {
   SET_DEVICE_TYPE,
   SET_SIDEBAR_STATE,
+  SET_SIDEBAR_MENU,
   SET_ON_SALE_DISPLAY,
   CHANGE_LANG,
   SET_PAGE_TOP_STATE,
@@ -36,6 +37,15 @@ export const sidebarState = (state = false, action) => {
   switch (action.type) {
     case SET_SIDEBAR_STATE:
       return action.isSidebar;
+    default:
+      return state;
+  }
+}
+
+export const sidebarMenu = (state = null, action) => {
+  switch (action.type) {
+    case SET_SIDEBAR_MENU:
+      return action.menu;
     default:
       return state;
   }
