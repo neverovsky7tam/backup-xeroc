@@ -42,7 +42,7 @@ export const sidebarState = (state = false, action) => {
   }
 }
 
-export const sidebarMenu = (state = null, action) => {
+export const sidebarMenu = (state = { currentMenu: null, prevMenu: null, }, action) => {
   switch (action.type) {
     case SET_SIDEBAR_MENU:
       return action.menu;
