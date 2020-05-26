@@ -1,5 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { setSidebarMenu, setSidebarState, setMainContent } from '../../store/actions';
+import LogIn from '../Main/Auth/LogIn';
+import Test from './Test';
+import Test2 from './Test2';
 import { ReactComponent as MenuSeparate } from '../../assets/img/SideBar/sidebar-menu-separate.svg';
 import { ReactComponent as FiltersIcon } from '../../assets/img/SideBar/filters.svg';
 import { ReactComponent as AuthIcon } from '../../assets/img/SideBar/auth.svg';
@@ -11,24 +15,32 @@ import { ReactComponent as AwardsIcon } from '../../assets/img/SideBar/awards.sv
 import { ReactComponent as LanguageIcon } from '../../assets/img/SideBar/language.svg';
 
 const SideBar = () => {
+  const dispatch = useDispatch();
   const navInner = React.createRef();
-  let prevMenu = useSelector((state) => state.sidebarMenu);
 
-  if (prevMenu) setMenuState(prevMenu, '#fff');
+  let menu = useSelector((state) => state.sidebarMenu);
+  console.log('menu', menu);
+  let prevMenu = null;
+  let content = null;
 
-  const setMenuState = (menuItem, color) => {
-    menuItem.classList.toggle('active');
+  if (!menu.currentMenu) content = <Test />;
+  if (menu.currentMenu === 'Balance') content = <Test2 />
 
-    menuItem.previousElementSibling.classList.toggle('active');
-    if (menuItem.previousElementSibling.firstElementChild) {
-      menuItem.previousElementSibling.firstElementChild.classList.toggle('d-none');
+
+  const setMenuState = (menuElem, color) => {
+    menuElem.classList.toggle('active');
+
+    menuElem.previousElementSibling.classList.toggle('active');
+    if (menuElem.previousElementSibling.firstElementChild) {
+      menuElem.previousElementSibling.firstElementChild.classList.toggle('d-none');
     }
-    menuItem.nextElementSibling.classList.toggle('active');
-    if (menuItem.nextElementSibling.firstElementChild) {
-      menuItem.nextElementSibling.firstElementChild.classList.toggle('d-none');
+
+    menuElem.nextElementSibling.classList.toggle('active');
+    if (menuElem.nextElementSibling.firstElementChild) {
+      menuElem.nextElementSibling.firstElementChild.classList.toggle('d-none');
     }
 
-    const menuIcon = menuItem.firstElementChild.firstElementChild.children;
+    const menuIcon = menuElem.firstElementChild.firstElementChild.children;
     for (let path of menuIcon) {
       path.style.stroke = color;
     }
@@ -37,21 +49,38 @@ const SideBar = () => {
   useEffect(() => {
     const root = document.getElementById('root');
     root.classList.add('stop-scroll-y');
+    const navBar = navInner.current.children;
+    let currentElem = null;
+    let prevElem = null;
 
-    if (!prevMenu) {
-      prevMenu = navInner.current.children[1];
-      setMenuState(prevMenu, '#fff');
+    if (!menu.currentMenu) {
+      currentElem = navBar[1];
+      prevMenu = navBar[1].dataset.menu;
+    } else {
+      for (let elem of navBar) {
+        if (elem.dataset.menu === menu.currentMenu) currentElem = elem;
+        if (elem.dataset.menu === menu.prevMenu) prevElem = elem;
+      };
+      prevMenu = menu.currentMenu;
+      setMenuState(prevElem, '#c4c4c4');
+    };
+    setMenuState(currentElem, '#fff');
+
+    return () => {
+      root.classList.remove('stop-scroll-y');
     }
-    return () => root.classList.remove('stop-scroll-y');
   });
 
 
   const setMenu = (e) => {
-    const menuType = e.currentTarget.dataset.menu;
-    // console.log('e', e.currentTarget);
-    setMenuState(prevMenu, '#c4c4c4');
-    prevMenu = e.currentTarget;
-    setMenuState(e.currentTarget, '#fff');
+    const currentMenu = e.currentTarget.dataset.menu;
+    console.log('set', prevMenu, currentMenu);
+    if (currentMenu !== 'Account') dispatch(setSidebarMenu(currentMenu, prevMenu));
+    else {
+      dispatch(setMainContent('log-in'));
+      dispatch(setSidebarMenu(null, null));
+      dispatch(setSidebarState(false));
+    }
   };
 
   return (
@@ -73,9 +102,9 @@ const SideBar = () => {
             </div>
             <li
               className="sidebar__nav-item"
-              data-menu="Filters"
+              data-menu="Account"
               onClick={setMenu}>
-              <div className="sidebar__nav-item-btn sidebar__nav-item-btn_auth">
+              <div className="sidebar__nav-item-btn sidebar__nav-item-btn_acc">
                 <AuthIcon />
               </div>
             </li>
@@ -84,7 +113,7 @@ const SideBar = () => {
             </div>
             <li
               className="sidebar__nav-item"
-              data-menu="Filters"
+              data-menu="Balance"
               onClick={setMenu}>
               <div className="sidebar__nav-item-btn sidebar__nav-item-btn_balance">
                 <BalanceIcon />
@@ -95,9 +124,9 @@ const SideBar = () => {
             </div>
             <li
               className="sidebar__nav-item"
-              data-menu="Filters"
+              data-menu="Notification"
               onClick={setMenu}>
-              <div className="sidebar__nav-item-btn sidebar__nav-item-notification">
+              <div className="sidebar__nav-item-btn sidebar__nav-item_notification">
                 <NotificationIcon />
               </div>
             </li>
@@ -106,9 +135,9 @@ const SideBar = () => {
             </div>
             <li
               className="sidebar__nav-item"
-              data-menu="Filters"
+              data-menu="Social"
               onClick={setMenu}>
-              <div className="sidebar__nav-item-btn sidebar__nav-item-btn_facebook">
+              <div className="sidebar__nav-item-btn sidebar__nav-item-btn_social">
                 <FacebookIcon />
               </div>
             </li>
@@ -117,7 +146,7 @@ const SideBar = () => {
             </div>
             <li
               className="sidebar__nav-item"
-              data-menu="Filters"
+              data-menu="Sellers"
               onClick={setMenu}>
               <div className="sidebar__nav-item-btn sidebar__nav-item-btn_sellers">
                 <TopSellersIcon />
@@ -128,7 +157,7 @@ const SideBar = () => {
             </div>
             <li
               className="sidebar__nav-item"
-              data-menu="Filters"
+              data-menu="Awards"
               onClick={setMenu}>
               <div className="sidebar__nav-item-btn sidebar__nav-item-btn_awards">
                 <AwardsIcon />
@@ -139,7 +168,7 @@ const SideBar = () => {
             </div>
             <li
               className="sidebar__nav-item"
-              data-menu="Filters"
+              data-menu="Lang"
               onClick={setMenu}>
               <div className="sidebar__nav-item-btn sidebar__nav-item-btn_lang">
                 <LanguageIcon />
@@ -151,7 +180,7 @@ const SideBar = () => {
       </div>
       <div className="sidebar__content">
         <div className="sidebar__content-inner">
-
+          {content}
         </div>
       </div>
     </section>
