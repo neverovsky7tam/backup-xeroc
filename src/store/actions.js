@@ -29,9 +29,9 @@ export const setSidebarState = (isSidebar) => ({
   isSidebar,
 });
 
-export const setSidebarMenu = (menu) => ({
+export const setSidebarMenu = (currentMenu, prevMenu) => ({
   type: SET_SIDEBAR_MENU,
-  menu,
+  menu: { currentMenu, prevMenu },
 });
 
 export const setOnSaleDisplay = (products) => ({
@@ -46,7 +46,7 @@ export const switchLang = (lang) => ({
 
 export const setPageTopState = (content, isDisplay, additionCssClass) => ({
   type: SET_PAGE_TOP_STATE,
-  state: { content, isDisplay, additionCssClass},
+  state: { content, isDisplay, additionCssClass },
 });
 
 export const setCarouselMenuPos = (pos, itemIndex) => ({
