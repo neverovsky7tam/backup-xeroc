@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSidebarMenu, setSidebarState, setMainContent } from '../../store/actions';
+import {Filters} from './Menus/Filters';
 import { AccountContent, AccountBtn } from './Menus/Account';
 
 import Test from './Test';
@@ -28,13 +29,13 @@ const SideBar = () => {
   let buttons = null;
   let contentCssClass = 'sidebar__content-inner';
 
-  if (!menu.currentMenu) content = <Test />;
-  if (menu.currentMenu === 'Filters') content = <Test />;
+  if (!menu.currentMenu) content = <Filters />;
+  if (menu.currentMenu === 'Filters') content = <Filters />;
   if (menu.currentMenu === 'Account' && isLogin) {
     content = <AccountContent />;
     buttons = <AccountBtn />
   };
-  if (menu.currentMenu === 'Account' && !isLogin) content = <Test />; //need filters
+  if (menu.currentMenu === 'Account' && !isLogin) content = <Filters />;
   if (menu.currentMenu === 'Balance') content = <Test2 />;
 
   if (buttons) contentCssClass = 'sidebar__content-inner_mod';
@@ -213,14 +214,14 @@ const SideBar = () => {
           </ul>
         </nav>
       </div>
-      <section className="sidebar__content">
+      <div className="sidebar__content">
         <div className={contentCssClass}>
           {content}
         </div>
         {buttons &&
           <div className="sidebar__buttons-holder">{buttons}</div>
         }
-      </section>
+      </div>
     </div>
   );
 };
