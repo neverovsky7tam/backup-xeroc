@@ -4,10 +4,13 @@
 @import "./elements";
 @import "./buttons";
 @import "./app";
+@import "../components/BlocksUI/main-block-mob";
+@import "../components/BlocksUI/Buttons/buttons";
 @import "../components/Parts/parts";
 @import "../components/Header/header";
 @import "../components/SideBar/side-bar";
 @import "../components/SideBar/side-bar-icons";
+@import "../components//SideBar/Menus/sidebar-content";
 @import "../components/PageTop/page-top";
 @import "../components/MainMenu/main-menu";
 @import "../components/LangSwitcher/lang-switcher";
