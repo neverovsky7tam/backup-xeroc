@@ -18,20 +18,20 @@ import { ReactComponent as LanguageIcon } from '../../assets/img/SideBar/languag
 const SideBar = () => {
   const dispatch = useDispatch();
   const navInner = React.createRef();
+  const accountBtn = React.createRef();
 
   const isLogin = useSelector((state) => state.accountMenu);
   let menu = useSelector((state) => state.sidebarMenu);
+
   let prevMenu = null;
   let content = null;
   let buttons = null;
   let contentCssClass = 'sidebar__content-inner';
-  // let isButtonHolder = false;
 
   if (!menu.currentMenu) content = <Test />;
   if (menu.currentMenu === 'Filters') content = <Test />;
   if (menu.currentMenu === 'Account' && isLogin) {
     content = <AccountContent />;
-    // isButtonHolder = true;
     buttons = <AccountBtn />
   };
   if (menu.currentMenu === 'Account' && !isLogin) content = <Test />; //need filters
@@ -76,7 +76,12 @@ const SideBar = () => {
     }
 
     if (!menu.currentMenu) initState();
-    else if (menu.currentMenu === 'Account' && !isLogin) initState();
+    else if (menu.currentMenu === 'Account' && !isLogin) {
+      initState();
+      if (accountBtn.current.classList.contains('active')) {
+        setMenuState(accountBtn.current, '#c4c4c4', false);
+      }
+    }
     else {
       for (let elem of navBar) {
         if (elem.dataset.menu === menu.currentMenu) currentElem = elem;
@@ -127,7 +132,8 @@ const SideBar = () => {
             <li
               className="sidebar__nav-item"
               data-menu="Account"
-              onClick={setMenu}>
+              onClick={setMenu}
+              ref={accountBtn}>
               <div className="sidebar__nav-item-btn sidebar__nav-item-btn_acc">
                 <AuthIcon />
               </div>
@@ -135,28 +141,33 @@ const SideBar = () => {
             <div className="menu-separate">
               <MenuSeparate />
             </div>
-            <li
-              className="sidebar__nav-item"
-              data-menu="Balance"
-              onClick={setMenu}>
-              <div className="sidebar__nav-item-btn sidebar__nav-item-btn_balance">
-                <BalanceIcon />
-              </div>
-            </li>
-            <div className="menu-separate">
-              <MenuSeparate />
-            </div>
-            <li
-              className="sidebar__nav-item"
-              data-menu="Notification"
-              onClick={setMenu}>
-              <div className="sidebar__nav-item-btn sidebar__nav-item_notification">
-                <NotificationIcon />
-              </div>
-            </li>
-            <div className="menu-separate">
-              <MenuSeparate />
-            </div>
+            {
+              isLogin &&
+              <>
+                <li
+                  className="sidebar__nav-item"
+                  data-menu="Balance"
+                  onClick={setMenu}>
+                  <div className="sidebar__nav-item-btn sidebar__nav-item-btn_balance">
+                    <BalanceIcon />
+                  </div>
+                </li>
+                <div className="menu-separate">
+                  <MenuSeparate />
+                </div>
+                <li
+                  className="sidebar__nav-item"
+                  data-menu="Notification"
+                  onClick={setMenu}>
+                  <div className="sidebar__nav-item-btn sidebar__nav-item_notification">
+                    <NotificationIcon />
+                  </div>
+                </li>
+                <div className="menu-separate">
+                  <MenuSeparate />
+                </div>
+              </>
+            }
             <li
               className="sidebar__nav-item"
               data-menu="Social"
