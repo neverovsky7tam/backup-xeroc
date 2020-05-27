@@ -9,12 +9,12 @@
 
   @media (min-width: 768px) {
     position: static;
-  }
 
-  button {
-    @include exo_font($white_font, 14px, bold);
-    text-transform: uppercase;
-    color: #fff;
+    button {
+      @include exo_font($white_font, 14px, bold);
+      text-transform: uppercase;
+      color: #fff;
+    }
   }
 
   .controls-btn {
@@ -29,7 +29,7 @@
       width: 20px;
       height: 20.74px;
     }
-  
+
     @media (max-width: 374px) {
       width: 18px;
       height: 18.67px;
@@ -41,12 +41,12 @@
       width: 21px;
       height: 20.55px;
     }
-  
+
     @media (max-width: 424px) {
       width: 18px;
       height: 17.62px;
     }
-  
+
     @media (max-width: 374px) {
       width: 16px;
       height: 15.66px;
