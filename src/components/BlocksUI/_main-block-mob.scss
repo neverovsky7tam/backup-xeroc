@@ -1,0 +1,66 @@
+.main-block {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+  background-color: $secondary_bg;
+
+  @media (min-width: 425px) {
+    height: 80px;
+  }
+
+  @media (max-width: 424px) {
+    height: 75px;
+  }
+
+  @media (max-width: 374px) {
+    height: 65px;
+  }
+
+  .left {
+    display: flex;
+    flex-grow: 1;
+    padding-top: 20px;
+
+    @media (max-width: 374px) {
+      padding-top: 18px;
+    }
+
+    .icon {
+      padding: 0 15px;
+
+      svg {
+        @media (min-width: 425px) {
+          width: 15px;
+        }
+  
+        @media (max-width: 424px) {
+          height: 13px;
+        }
+  
+        @media (max-width: 374px) {
+          height: 11px;
+        }
+      }
+    }
+
+    .text {
+      flex-grow: 1;
+
+      span {
+        line-height: 25px;
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+
+    .action-box {
+      padding: 5px;
+    }
+  }
+}

@@ -45,6 +45,36 @@ h2 {
   }
 }
 
+.h4-mob {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  color: $white_font;
+}
+
+.span-mob {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: $grey_font;
+}
+
+.h4-mob,
+.span-mob,
+.btn-text-mob {
+  text-transform: none;
+
+  @media (min-width: 425px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 424px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 374px) {
+    font-size: 12px;
+  }
+}
+
 a {
   text-decoration: none;
   color: inherit;

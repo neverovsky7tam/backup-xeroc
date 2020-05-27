@@ -1,0 +1,25 @@
+.button-mob {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: $white_font;
+
+  @media (min-width: 425px) {
+    height: 55px;
+  }
+
+  @media (max-width: 424px) {
+    height: 50px;
+  }
+
+  @media (max-width: 374px) {
+    height: 40px;
+  }
+}
+
+.button-mob_main {
+  background-color: $btn_main_mob;
+}
