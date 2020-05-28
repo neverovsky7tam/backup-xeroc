@@ -16,6 +16,7 @@ export const SET_FILTERS_STATE = "SET_FILTERS_STATE";
 export const SET_FILTER_ORIGIN = "SET_FILTER_ORIGIN";
 export const SET_FILTER_OBJ = "SET_FILTER_OBJ";
 export const SET_SEARCH_OBJ = "SET_SEARCH_OBJ";
+export const SAVE_SEARCH_VALUE = "SAVE_SEARCH_VALUE";
 export const SET_PREVIOUS_SEARCH_RESULT = "SET_PREVIOUS_SEARCH_RESULT";
 export const SET_JOINT_SEARCH_OBJ = "SET_JOINT_SEARCH_OBJ";
 
@@ -112,6 +113,11 @@ export const setFilterObj = (obj) => ({
 export const setSearchObj = (type, value, data) => ({
   type: SET_SEARCH_OBJ,
   fields: { [type]: { value, data, }, },
+});
+
+export const saveSearchValue = (type, value) => ({
+  type: SAVE_SEARCH_VALUE,
+  fields: { [type]: value, },
 });
 
 export const setPreviuosSearchResult = (data) => ({

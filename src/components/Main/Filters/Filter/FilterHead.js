@@ -8,13 +8,13 @@ const FilterHead = ({ filterName, isExpand, setExpand, isSearch, setSearchExpand
   const filter = React.createRef();
   const arrow = React.createRef();
   const input = React.createRef();
-  const userSelect = useSelector((state) => {
-    if (state.filtersState[filterName]) {
-      return state.filtersState[filterName].tag;
-    }
-  });
 
+  const storeFiltersState = useSelector((state) => state.filtersState);
+
+  let userSelect = null;
   let tags = null;
+  if (storeFiltersState[filterName]) userSelect = storeFiltersState[filterName].tag;
+
   if (userSelect) {
     tags = renderTags(userSelect, filterName);
   };
@@ -54,7 +54,7 @@ const FilterHead = ({ filterName, isExpand, setExpand, isSearch, setSearchExpand
 
   return (
     <div
-      className="filter__select"
+      className="filter__select input-holder"
       data-filter-placeholder={`By ${placeholder}`}
       onClick={onFieldClick}
       ref={filter}>
