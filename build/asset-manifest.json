@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.0485aed0.chunk.css",
-    "main.js": "/static/js/main.6eb8e060.chunk.js",
-    "main.js.map": "/static/js/main.6eb8e060.chunk.js.map",
+    "main.css": "/static/css/main.92846340.chunk.css",
+    "main.js": "/static/js/main.b1d09a34.chunk.js",
+    "main.js.map": "/static/js/main.b1d09a34.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c730f065.js",
     "runtime-main.js.map": "/static/js/runtime-main.c730f065.js.map",
     "static/js/2.0ed90f38.chunk.js": "/static/js/2.0ed90f38.chunk.js",
     "static/js/2.0ed90f38.chunk.js.map": "/static/js/2.0ed90f38.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.9f537b1f6d84cd3dfb00a1b263e7a8f4.js": "/precache-manifest.9f537b1f6d84cd3dfb00a1b263e7a8f4.js",
+    "precache-manifest.c59faa8227cc9997ecefebd845618775.js": "/precache-manifest.c59faa8227cc9997ecefebd845618775.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.0485aed0.chunk.css.map": "/static/css/main.0485aed0.chunk.css.map",
+    "static/css/main.92846340.chunk.css.map": "/static/css/main.92846340.chunk.css.map",
     "static/js/2.0ed90f38.chunk.js.LICENSE.txt": "/static/js/2.0ed90f38.chunk.js.LICENSE.txt",
     "static/media/3-vert-dot.ecd3988d.svg": "/static/media/3-vert-dot.ecd3988d.svg",
     "static/media/achievment_bronze.0773c997.svg": "/static/media/achievment_bronze.0773c997.svg",
@@ -70,6 +70,8 @@
     "static/media/top-sellers.d433d3a5.svg": "/static/media/top-sellers.d433d3a5.svg",
     "static/media/twitter.dd26de2d.svg": "/static/media/twitter.dd26de2d.svg",
     "static/media/united-states.36ab476e.svg": "/static/media/united-states.36ab476e.svg",
+    "static/media/update.2fc656b0.svg": "/static/media/update.2fc656b0.svg",
+    "static/media/usa-flag.673a89d2.svg": "/static/media/usa-flag.673a89d2.svg",
     "static/media/user.27ef6060.svg": "/static/media/user.27ef6060.svg",
     "static/media/vector-star.a849f388.svg": "/static/media/vector-star.a849f388.svg",
     "static/media/verification.e019fb3d.svg": "/static/media/verification.e019fb3d.svg",
@@ -81,7 +83,7 @@
   "entrypoints": [
     "static/js/runtime-main.c730f065.js",
     "static/js/2.0ed90f38.chunk.js",
-    "static/css/main.0485aed0.chunk.css",
-    "static/js/main.6eb8e060.chunk.js"
+    "static/css/main.92846340.chunk.css",
+    "static/js/main.b1d09a34.chunk.js"
   ]
 }
