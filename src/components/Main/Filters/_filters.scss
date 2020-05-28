@@ -16,7 +16,6 @@
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    height: 30px;
     padding: 0 9px;
     border: 1px solid rgba(0, 0, 0, 0);
     background-color: $secondary_bg;
@@ -31,17 +30,49 @@
 
       .filter-tag {
         position: relative;
-        width: 45px;
-        margin-right: 5px;
+        margin-right: 10px;
         text-align: center;
-        @include open-sans_font($white_font, 10px);
-        line-height: 18px;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        color: $white_font;
         background-color: $btn-main_bg;
         overflow: hidden;
         cursor: pointer;
 
+        @media (min-width: 768px) {
+          width: 45px;
+          height: 18px;
+          margin-right: 5px;
+          font-size: 10px;
+        }
+
+        @media (max-width: 767px) {
+          width: 80px;
+          height: 35px;
+          font-size: 12px;
+        }
+
+        @media (max-width: 424px) {
+          width: 60px;
+          height: 30px;
+          font-size: 11px;
+        }
+
+        @media (max-width: 374px) {
+          width: 50px;
+          height: 20px;
+          font-size: 10px;
+        }
+
         .filter-tag__content {
-          font-weight: 300;
+          height: 100%;
+        }
+
+        .filter-tag__content,
+        .filter-tag__close {
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
 
         .filter-tag__close {
@@ -54,19 +85,6 @@
           font-size: 18px;
           background-color: $btn-main_bg;
         }
-      }
-    }
-
-    input {
-      border: 0;
-      @include open-sans_font($white_font, 12px);
-      font-weight: 300;
-      background-color: rgba(0, 0, 0, 0);
-      outline: 0;
-      cursor: default;
-
-      &::placeholder {
-        color: $grey_font;
       }
     }
 
@@ -96,7 +114,6 @@
 
   .filter__items-container {
     display: grid;
-    // grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
     margin-top: 15px;
 
@@ -104,10 +121,6 @@
       border: 1px solid rgba(0, 0, 0, 0);
       background-color: $secondary_bg;
       cursor: pointer;
-
-      &:hover {
-        background-color: $secondary_bg-sec;
-      }
     }
 
     .filter__item_not-found {
@@ -134,20 +147,81 @@
       align-items: center;
       justify-content: center;
       height: 100%;
-      @include open-sans_font($grey_font, 10px);
+      font-family: "Open Sans", sans-serif;
       font-weight: 300;
+      color: $grey_font;
+
+      @media (min-width: 768px) {
+        font-size: 10px;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 12px;
+      }
+
+      @media (max-width: 424px) {
+        font-size: 11px;
+      }
+
+      @media (max-width: 374px) {
+        font-size: 10px;
+      }
 
       .filter__item-img {
         margin-bottom: 13px;
+
+        @media (min-width: 768px) {
+          width: 30px;
+        }
+
+        @media (max-width: 767px) {
+          width: 37px;
+        }
+
+        @media (max-width: 424px) {
+          width: 32px;
+        }
+
+        @media (max-width: 374px) {
+          width: 25.6px;
+        }
       }
     }
   }
 
   .filter__items-container_txt {
-    grid-auto-rows: 30px;
+    @media (min-width: 768px) {
+      grid-auto-rows: 30px;
+    }
+
+    @media (max-width: 767px) {
+      grid-auto-rows: 55px;
+    }
+
+    @media (max-width: 424px) {
+      grid-auto-rows: 50px;
+    }
+
+    @media (max-width: 374px) {
+      grid-auto-rows: 40px;
+    }
   }
 
   .filter__items-container_img {
-    grid-auto-rows: 80px;
+    @media (min-width: 768px) {
+      grid-auto-rows: 80px;
+    }
+
+    @media (max-width: 767px) {
+      grid-auto-rows: 120px;
+    }
+
+    @media (max-width: 424px) {
+      grid-auto-rows: 101px;
+    }
+
+    @media (max-width: 374px) {
+      grid-auto-rows: 82px;
+    }
   }
 }

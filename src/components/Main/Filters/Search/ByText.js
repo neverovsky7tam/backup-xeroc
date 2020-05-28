@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import store from '../../../../store/store';
+import { saveSearchValue } from '../../../../store/actions';
 import { byTextLogic } from './textLogic';
 import { setInputState } from '../Filter/logicInput';
 import { setPreviuosSearch, calcPrevResult } from './logicSearch';
 import { BoxDecor } from '../../../Parts/BoxDecor';
 
 const ByText = () => {
+  const inputText = React.createRef();
+  const storeValue = store.getState().searchValue;
+
+  useEffect(() => {
+    if (storeValue.text) inputText.current.value = storeValue.text;
+
+    return () => {
+      store.dispatch(saveSearchValue('text', inputText.current.value));
+    }
+  });
+
   const onInputClick = (e) => {
     e.target.focus();
     setPreviuosSearch();
@@ -22,14 +35,15 @@ const ByText = () => {
   return (
     <div className="p-relative">
       <div className="p-relative">
-        <div className="filter__select">
+        <div className="filter__select input-holder">
           <input
             type="text"
             placeholder="Search"
             data-type="text"
             onClick={onInputClick}
             onChange={onInputChange}
-            onKeyUp={onInputKey} />
+            onKeyUp={onInputKey}
+            ref={inputText} />
         </div>
         <BoxDecor />
       </div>

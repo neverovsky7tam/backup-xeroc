@@ -4,7 +4,7 @@ import { MainBlockMob } from '../../BlocksUI/MainBlockMob';
 import { ButtonMain } from '../../BlocksUI/Buttons/ButtonMain';
 import { setAccountMenu } from '../../../store/actions';
 import { ReactComponent as Arrow } from '../../../assets/img/SideBar/arrow-white-right.svg';
-import { ReactComponent as SellIcon } from '../../../assets/img/SideBar/Account/sell-icon.svg';
+import { ReactComponent as SellIcon } from '../../../assets/img/SideBar/sell-icon.svg';
 import { ReactComponent as SellHistoryIcon } from '../../../assets/img/SideBar/Account/sell-history.svg';
 import { ReactComponent as HistoryIcon } from '../../../assets/img/SideBar/Account/history.svg';
 import { ReactComponent as ReportIcon } from '../../../assets/img/SideBar/Account/report.svg';
@@ -66,7 +66,8 @@ export const AccountContent = () => {
           icon={<SellerChatIcon />}
           header={'Seller chat'}
           span={'Send a message'}
-          actionIcon={<Arrow />} />
+          actionIcon={<Arrow />}
+          style={{ marginBottom: '0' }} />
       </div>
     </>
   );

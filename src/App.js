@@ -7,11 +7,6 @@ import MainContainer from './components/Main/MainContainer';
 import TermsCloseBtn from './components/Main/Terms/TermsCloseBtn';
 
 function App() {
-  // useLayoutEffect(() => {
-  //   console.log('doc', document.documentElement.scrollHeight);
-    
-  // })
-
   const dispatch = useDispatch();
   const termsCloseBtn = useSelector((state) => state.termsCloseBtn)
 
