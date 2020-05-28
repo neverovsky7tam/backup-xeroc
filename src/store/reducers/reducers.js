@@ -17,6 +17,7 @@ import {
   SET_FILTER_ORIGIN,
   SET_FILTER_OBJ,
   SET_SEARCH_OBJ,
+  SAVE_SEARCH_VALUE,
   SET_JOINT_SEARCH_OBJ,
   SET_PREVIOUS_SEARCH_RESULT,
 } from '../actions';
@@ -213,6 +214,15 @@ export const searchObj = (state = {}, action) => {
   switch (action.type) {
     case SET_SEARCH_OBJ:
       return Object.assign({}, state, action.fields);
+    default:
+      return state;
+  }
+}
+
+export const searchValue = (state = {}, action) => {
+  switch (action.type) {
+    case SAVE_SEARCH_VALUE:
+      return Object.assign(state, action.fields);
     default:
       return state;
   }

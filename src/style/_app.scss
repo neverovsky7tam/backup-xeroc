@@ -75,6 +75,54 @@ h2 {
   }
 }
 
+.input-holder {
+  @media (min-width: 768px) {
+    height: 30px;
+  }
+
+  @media (max-width: 767px) {
+    height: 55px;
+  }
+
+  @media (max-width: 424px) {
+    height: 50px;
+  }
+
+  @media (max-width: 374px) {
+    height: 40px;
+  }
+
+  input {
+    border: 0;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    color: $white_font;
+    background-color: rgba(0, 0, 0, 0);
+    outline: 0;
+    cursor: default;
+
+    &::placeholder {
+      color: $grey_font;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 12px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
+  
+    @media (max-width: 424px) {
+      font-size: 15px;
+    }
+  
+    @media (max-width: 374px) {
+      font-size: 12px;
+    }
+  }
+}
+
 a {
   text-decoration: none;
   color: inherit;
