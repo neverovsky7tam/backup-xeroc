@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSidebarMenu, setSidebarState, setMainContent } from '../../store/actions';
-import {Filters} from './Menus/Filters';
+import { Filters } from './Menus/Filters';
 import { AccountContent, AccountBtn } from './Menus/Account';
-
-import Test from './Test';
-import Test2 from './Test2';
+import { BalanceContent, BalanceBtn } from './Menus/Balance';
 import { ReactComponent as MenuSeparate } from '../../assets/img/SideBar/sidebar-menu-separate.svg';
 import { ReactComponent as FiltersIcon } from '../../assets/img/SideBar/filters.svg';
 import { ReactComponent as AuthIcon } from '../../assets/img/SideBar/auth.svg';
@@ -33,10 +31,13 @@ const SideBar = () => {
   if (menu.currentMenu === 'Filters') content = <Filters />;
   if (menu.currentMenu === 'Account' && isLogin) {
     content = <AccountContent />;
-    buttons = <AccountBtn />
+    buttons = <AccountBtn />;
   };
   if (menu.currentMenu === 'Account' && !isLogin) content = <Filters />;
-  if (menu.currentMenu === 'Balance') content = <Test2 />;
+  if (menu.currentMenu === 'Balance') {
+    content = <BalanceContent />;
+    buttons = <BalanceBtn />;
+  }
 
   if (buttons) contentCssClass = 'sidebar__content-inner_mod';
 
@@ -143,7 +144,7 @@ const SideBar = () => {
               <MenuSeparate />
             </div>
             {
-              isLogin &&
+              true &&
               <>
                 <li
                   className="sidebar__nav-item"

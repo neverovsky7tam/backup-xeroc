@@ -40,12 +40,6 @@
   h2 {
     margin: 59px 0 57px 13px;
   }
-
-  .content {
-    .main-block:last-child {
-      margin-bottom: 0;
-    }
-  }
 }
 
 .sidebar__content-inner_mod {
@@ -63,7 +57,6 @@
 }
 
 .sidebar__buttons-holder {
-  display: flex;
   padding: 15px;
   border-left: 1px solid $secondary_bg;
 }

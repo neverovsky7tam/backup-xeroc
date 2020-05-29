@@ -20,6 +20,7 @@ import {
   SAVE_SEARCH_VALUE,
   SET_JOINT_SEARCH_OBJ,
   SET_PREVIOUS_SEARCH_RESULT,
+  SET_WITHDRAWAL,
 } from '../actions';
 
 import { langEN, langCH } from '../../data/languages';
@@ -246,6 +247,15 @@ export const previousSearch = (state = {}, action) => {
   switch (action.type) {
     case SET_PREVIOUS_SEARCH_RESULT:
       return action.prevSearch;
+    default:
+      return state;
+  }
+}
+
+export const withdrawal = (state = 0, action) => {
+  switch (action.type) {
+    case SET_WITHDRAWAL:
+      return action.value;
     default:
       return state;
   }
