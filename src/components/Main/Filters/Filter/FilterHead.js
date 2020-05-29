@@ -33,6 +33,11 @@ const FilterHead = ({ filterName, isExpand, setExpand, isSearch, setSearchExpand
 
   useLayoutEffect(() => {
     setSelectFieldState(filter.current, input.current, arrow.current, userSelect, isExpand, isSearch);
+
+    if (document.documentElement.clientWidth < 768 && userSelect) {
+      if (userSelect.length) input.current.classList.add('d-none');
+      else input.current.classList.remove('d-none');
+    }
   });
 
   const onInputChange = () => {
