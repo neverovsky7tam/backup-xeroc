@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2c2f2b4c54f644d1327f35f52636fa08",
+    "revision": "a8a35fc2d158d90132c0fae17f61a4ff",
     "url": "/index.html"
   },
   {
-    "revision": "762e18f66f3ab2c5d777",
-    "url": "/static/css/main.4656b972.chunk.css"
+    "revision": "76250fbcf6ea23312f47",
+    "url": "/static/css/main.02836695.chunk.css"
   },
   {
     "revision": "253e8223e125867ee12f",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.0ed90f38.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "762e18f66f3ab2c5d777",
-    "url": "/static/js/main.683879b8.chunk.js"
+    "revision": "76250fbcf6ea23312f47",
+    "url": "/static/js/main.f406da20.chunk.js"
   },
   {
     "revision": "220d64f6f8cb5da655ce",
@@ -46,6 +46,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "9e1335cc83270fb06e5343f2b27f4e8e",
     "url": "/static/media/alipay.9e1335cc.svg"
+  },
+  {
+    "revision": "3a46894db131d25ef5220c5704155792",
+    "url": "/static/media/arrow-back.3a46894d.svg"
   },
   {
     "revision": "7d060a9a6d70e90150b96823ec37efff",
@@ -238,6 +242,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "10fbf738ad453567bc1bc58bff38f889",
     "url": "/static/media/skrill.10fbf738.svg"
+  },
+  {
+    "revision": "be6059048f7bbd72baa59736a66bb4d8",
+    "url": "/static/media/star.be605904.svg"
   },
   {
     "revision": "690eae12791d6cab93e2d607b06035e3",
