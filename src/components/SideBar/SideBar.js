@@ -4,6 +4,7 @@ import { setSidebarMenu, setSidebarState, setMainContent } from '../../store/act
 import { Filters } from './Menus/Filters';
 import { AccountContent, AccountBtn } from './Menus/Account';
 import { BalanceContent, BalanceBtn } from './Menus/Balance';
+import { NotificationsContent, NotificationsBtn } from './Menus/Notifications';
 import { ReactComponent as MenuSeparate } from '../../assets/img/SideBar/sidebar-menu-separate.svg';
 import { ReactComponent as FiltersIcon } from '../../assets/img/SideBar/filters.svg';
 import { ReactComponent as AuthIcon } from '../../assets/img/SideBar/auth.svg';
@@ -37,6 +38,10 @@ const SideBar = () => {
   if (menu.currentMenu === 'Balance') {
     content = <BalanceContent />;
     buttons = <BalanceBtn />;
+  }
+  if (menu.currentMenu === 'Notifications') {
+    content = <NotificationsContent />;
+    buttons = <NotificationsBtn />;
   }
 
   if (buttons) contentCssClass = 'sidebar__content-inner_mod';
@@ -159,10 +164,13 @@ const SideBar = () => {
                 </div>
                 <li
                   className="sidebar__nav-item"
-                  data-menu="Notification"
+                  data-menu="Notifications"
                   onClick={setMenu}>
                   <div className="sidebar__nav-item-btn sidebar__nav-item_notification">
-                    <NotificationIcon />
+                    <div>
+                      <div className="notification-quantity">5</div>
+                      <NotificationIcon />
+                    </div>
                   </div>
                 </li>
                 <div className="menu-separate">
