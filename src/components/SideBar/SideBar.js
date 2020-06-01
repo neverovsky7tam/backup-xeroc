@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSidebarMenu, setSidebarState, setMainContent } from '../../store/actions';
 import { Filters } from './Menus/Filters';
@@ -16,6 +16,7 @@ import { ReactComponent as AwardsIcon } from '../../assets/img/SideBar/awards.sv
 import { ReactComponent as LanguageIcon } from '../../assets/img/SideBar/language.svg';
 
 const SideBar = () => {
+  const [notificationCount, setNotificationCount] = useState(5);
   const dispatch = useDispatch();
   const navInner = React.createRef();
   const accountBtn = React.createRef();
@@ -40,7 +41,7 @@ const SideBar = () => {
     buttons = <BalanceBtn />;
   }
   if (menu.currentMenu === 'Notifications') {
-    content = <NotificationsContent />;
+    content = <NotificationsContent setNotificationCount={setNotificationCount} />;
     buttons = <NotificationsBtn />;
   }
 
@@ -168,7 +169,7 @@ const SideBar = () => {
                   onClick={setMenu}>
                   <div className="sidebar__nav-item-btn sidebar__nav-item_notification">
                     <div>
-                      <div className="notification-quantity">5</div>
+                      <div className="notification-quantity">{notificationCount}</div>
                       <NotificationIcon />
                     </div>
                   </div>
