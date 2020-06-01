@@ -138,7 +138,7 @@ const WithdrawalList = ({ block }) => {
 }
 
 export const BalanceContent = () => {
-  const [payPalList, setPayPalList] = useState(true);
+  const [payPalList, setPayPalList] = useState(false);
   const [coinsList, setCoinsList] = useState(false);
 
   const payPalBlock = React.createRef();

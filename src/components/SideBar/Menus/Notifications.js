@@ -1,0 +1,116 @@
+import React, { useState, useEffect } from 'react';
+import { RollingBlock } from '../../BlocksUI/RollingBlock';
+import { MainBlockMob } from '../../BlocksUI/MainBlockMob';
+import { ButtonMain } from '../../BlocksUI/Buttons/ButtonMain';
+import { ReactComponent as StartIcon } from '../../../assets/img/SideBar/star.svg';
+import { ReactComponent as ArrowBackIcon } from '../../../assets/img/SideBar/arrow-back.svg';
+import { ReactComponent as DeleteIcon } from '../../../assets/img/SideBar/delete.svg';
+import { ReactComponent as NotificationEmptyIcon } from '../../../assets/img/SideBar/notification-empty.svg';
+
+let notificationsArr = [
+  { id: 1, val: '10 mins ago', },
+  { id: 2, val: '1 months ago', },
+  { id: 3, val: '2 days ago', },
+  { id: 4, val: '2 months ago', },
+  { id: 5, val: '3 months ago', },
+];
+
+let clearFunc = null;
+
+export const NotificationsContent = ({ setNotificationCount }) => {
+  const [notifications, setNotifications] = useState(notificationsArr);
+  setNotificationCount(notificationsArr.length);
+  clearFunc = setNotifications;
+
+  const toggleBlock = (rollingBlock, decor) => {
+    decor.current.children[0].classList.toggle('d-none');
+    decor.current.children[2].classList.toggle('d-none');
+
+    const block = rollingBlock.current;
+    const arrowHolder = block.firstElementChild.lastElementChild.firstElementChild;
+
+    if (!+block.dataset.state) {
+      const toLeft = block.lastElementChild.offsetWidth;
+      block.style.right = `${toLeft}px`;
+      block.firstElementChild.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+      block.firstElementChild.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+      arrowHolder.style.transform = 'rotate(180deg)';
+      block.dataset.state = 1;
+    } else {
+      block.style = '';
+      block.firstElementChild.style = '';
+      arrowHolder.style = '';
+      block.dataset.state = 0;
+    }
+  };
+
+  const deleteBlock = (rollingBlock) => {
+    const elementID = +rollingBlock.current.dataset.id;
+    notificationsArr = notificationsArr.filter((el) => el.id !== elementID);
+    setNotifications(notificationsArr);
+  }
+
+  useEffect(() => {
+    if (blockInner.current) {
+      blockInner.current.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+      blockInner.current.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+    }
+  });
+
+  const blockInner = React.createRef();
+  let notificationElements = (
+    <MainBlockMob
+      icon={<NotificationEmptyIcon />}
+      header={'There are no notifications'}
+      span={'Check the settings below'}
+      ref={blockInner} />
+  );
+
+  if (notifications.length) {
+    console.log('notifications', notifications);
+    notificationElements = notifications.map((el) => {
+      const rollingBlock = React.createRef();
+      const decor = React.createRef();
+
+      return (
+        <RollingBlock
+          key={el.id}
+          id={el.id}
+          ref={{ rollingBlock, decor }}
+          icon={<StartIcon />}
+          header={'You have 1 new feedback'}
+          span={el.val}
+          actionIcon={<ArrowBackIcon />}
+          hideIcon={<DeleteIcon />}
+          toggleBlock={() => toggleBlock(rollingBlock, decor)}
+          deleteBlock={() => deleteBlock(rollingBlock)} />
+      );
+    });
+  }
+
+  return (
+    <>
+      <h2>notifications</h2>
+      <div className="content">
+        {notificationElements}
+      </div>
+    </>
+  );
+};
+
+export const NotificationsBtn = () => {
+  const clearAll = () => {
+    notificationsArr.length = 0;
+    clearFunc([]);
+  }
+
+  return (
+    <div className="grid-template-2fr">
+      <ButtonMain
+        text={'Clear all'}
+        func={clearAll} />
+      <ButtonMain
+        text={'Settings'} />
+    </div>
+  );
+};

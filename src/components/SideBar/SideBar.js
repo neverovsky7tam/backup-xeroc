@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSidebarMenu, setSidebarState, setMainContent } from '../../store/actions';
 import { Filters } from './Menus/Filters';
 import { AccountContent, AccountBtn } from './Menus/Account';
 import { BalanceContent, BalanceBtn } from './Menus/Balance';
+import { NotificationsContent, NotificationsBtn } from './Menus/Notifications';
 import { ReactComponent as MenuSeparate } from '../../assets/img/SideBar/sidebar-menu-separate.svg';
 import { ReactComponent as FiltersIcon } from '../../assets/img/SideBar/filters.svg';
 import { ReactComponent as AuthIcon } from '../../assets/img/SideBar/auth.svg';
@@ -15,6 +16,7 @@ import { ReactComponent as AwardsIcon } from '../../assets/img/SideBar/awards.sv
 import { ReactComponent as LanguageIcon } from '../../assets/img/SideBar/language.svg';
 
 const SideBar = () => {
+  const [notificationCount, setNotificationCount] = useState(5);
   const dispatch = useDispatch();
   const navInner = React.createRef();
   const accountBtn = React.createRef();
@@ -37,6 +39,10 @@ const SideBar = () => {
   if (menu.currentMenu === 'Balance') {
     content = <BalanceContent />;
     buttons = <BalanceBtn />;
+  }
+  if (menu.currentMenu === 'Notifications') {
+    content = <NotificationsContent setNotificationCount={setNotificationCount} />;
+    buttons = <NotificationsBtn />;
   }
 
   if (buttons) contentCssClass = 'sidebar__content-inner_mod';
@@ -159,10 +165,13 @@ const SideBar = () => {
                 </div>
                 <li
                   className="sidebar__nav-item"
-                  data-menu="Notification"
+                  data-menu="Notifications"
                   onClick={setMenu}>
                   <div className="sidebar__nav-item-btn sidebar__nav-item_notification">
-                    <NotificationIcon />
+                    <div>
+                      <div className="notification-quantity">{notificationCount}</div>
+                      <NotificationIcon />
+                    </div>
                   </div>
                 </li>
                 <div className="menu-separate">

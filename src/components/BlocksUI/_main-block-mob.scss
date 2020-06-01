@@ -36,6 +36,8 @@
         padding: 0 15px;
 
         svg {
+          height: auto;
+
           @media (min-width: 425px) {
             width: 15px;
           }
