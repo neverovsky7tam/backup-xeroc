@@ -28,6 +28,7 @@ const MainContainer = () => {
   };
 
   let checkPoint = 1;
+  // let dot = null;
   let flag = true;
   let distanceSave = 0;
   let isTouchEnd = false;
@@ -35,21 +36,26 @@ const MainContainer = () => {
 
   const scrollProcessing = () => {
     const scrollTop = document.documentElement.scrollTop;
-    // console.log('scrollTop', scrollTop);
-    // console.log('isTouchEnd', isTouchEnd);
-    // console.log('flag', flag);
-    if (isTouchEnd && (scrollTop < (fixTouchEndPoint - 10))) {
+
+    console.log('scrollTop', scrollTop);
+    console.log('fixTouchEndPoint', fixTouchEndPoint);
+    console.log('flag', flag);
+    console.log('isTouchEnd', isTouchEnd);
+
+    if (isTouchEnd && (scrollTop < (fixTouchEndPoint - 3))) {
       dispatch(setPageTopState(null, true));
     };
-    isTouchEnd = false;
+    setTimeout(() => isTouchEnd = false, 200);
 
     if (flag) {
       const delta = scrollTop - checkPoint;
       if (delta < 0) {
+        console.log('MINUSMINUSMINUSMINUSMINUSMINUS')
         checkPoint = scrollTop;
       }
 
       if (delta > 10) {
+        console.log('HIDHIDEHIDEHIDEHIDEHIDEHIDEHIDEE')
         flag = false;
         checkPoint = scrollTop;
         dispatch(setPageTopState(null, true, 'p-absolute'));
@@ -58,8 +64,10 @@ const MainContainer = () => {
       const distanceCurrent = scrollTop - checkPoint;
 
       if (distanceCurrent >= distanceSave) {
+        console.log('NOT')
         distanceSave = distanceCurrent;
       } else {
+        console.log('YES')
         flag = true;
         checkPoint = scrollTop;
         distanceSave = 0;
