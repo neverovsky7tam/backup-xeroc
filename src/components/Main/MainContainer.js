@@ -45,7 +45,6 @@ const MainContainer = () => {
     if (isTouchEnd && (scrollTop < (fixTouchEndPoint - 3))) {
       dispatch(setPageTopState(null, true));
     };
-    setTimeout(() => isTouchEnd = false, 200);
 
     if (flag) {
       const delta = scrollTop - checkPoint;
@@ -79,6 +78,7 @@ const MainContainer = () => {
 
   const onTouchEnd = () => {
     isTouchEnd = true;
+    setTimeout(() => isTouchEnd = false, 1000);
     fixTouchEndPoint = checkPoint;
     // console.log('TOUCHEND-TOUCHEND-TOUCHEND-TOUCHEND-TOUCHEND', fixTouchEndPoint);
   };
