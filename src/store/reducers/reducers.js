@@ -21,10 +21,12 @@ import {
   SET_JOINT_SEARCH_OBJ,
   SET_PREVIOUS_SEARCH_RESULT,
   SET_WITHDRAWAL,
+  SET_NOTIFICATIONS_DATA,
 } from '../actions';
 
 import { langEN, langCH } from '../../data/languages';
 import { productsObj } from '../../data/productsData';
+import { notificationsArr } from '../../data/notifications';
 
 export const deviceType = (state = false, action) => {
   switch (action.type) {
@@ -260,3 +262,13 @@ export const withdrawal = (state = 0, action) => {
       return state;
   }
 }
+
+export const notificationsData = (state = notificationsArr, action) => {
+  switch (action.type) {
+    case SET_NOTIFICATIONS_DATA:
+      return action.notificationsArr;
+    default:
+      return state;
+  }
+}
+
