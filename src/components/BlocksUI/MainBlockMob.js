@@ -2,10 +2,8 @@ import React from 'react';
 import { BoxDecor } from '../Parts/BoxDecor';
 
 export const MainBlockMob = React.forwardRef(({ icon, header, span, actionIcon, func, style }, ref) => {
-  console.log('check', header, span);
   let title = header;
   let text = span;
-  // if (title.length > 25) title = title.slice(0, 24) + '...';
   if (text.length > 25) text = text.slice(0, 25) + '...';
 
   return (
