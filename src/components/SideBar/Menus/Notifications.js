@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setNotificationsData } from '../../../store/actions';
 import { RollingBlock } from '../../BlocksUI/RollingBlock';
 import { MainBlockMob } from '../../BlocksUI/MainBlockMob';
 import { ButtonMain } from '../../BlocksUI/Buttons/ButtonMain';
@@ -7,20 +9,9 @@ import { ReactComponent as ArrowBackIcon } from '../../../assets/img/SideBar/arr
 import { ReactComponent as DeleteIcon } from '../../../assets/img/SideBar/delete.svg';
 import { ReactComponent as NotificationEmptyIcon } from '../../../assets/img/SideBar/notification-empty.svg';
 
-let notificationsArr = [
-  { id: 1, val: '10 mins ago', },
-  { id: 2, val: '1 months ago', },
-  { id: 3, val: '2 days ago', },
-  { id: 4, val: '2 months ago', },
-  { id: 5, val: '3 months ago', },
-];
-
-let clearFunc = null;
-
-export const NotificationsContent = ({ setNotificationCount }) => {
-  const [notifications, setNotifications] = useState(notificationsArr);
-  setNotificationCount(notificationsArr.length);
-  clearFunc = setNotifications;
+export const NotificationsContent = () => {
+  const dispatch = useDispatch();
+  const notifications = useSelector((state) => state.notificationsData);
 
   const toggleBlock = (rollingBlock, decor) => {
     decor.current.children[0].classList.toggle('d-none');
@@ -46,8 +37,8 @@ export const NotificationsContent = ({ setNotificationCount }) => {
 
   const deleteBlock = (rollingBlock) => {
     const elementID = +rollingBlock.current.dataset.id;
-    notificationsArr = notificationsArr.filter((el) => el.id !== elementID);
-    setNotifications(notificationsArr);
+    const newArr = notifications.filter((el) => el.id !== elementID);
+    dispatch(setNotificationsData(newArr));
   }
 
   useEffect(() => {
@@ -99,9 +90,9 @@ export const NotificationsContent = ({ setNotificationCount }) => {
 };
 
 export const NotificationsBtn = () => {
+  const dispatch = useDispatch();
   const clearAll = () => {
-    notificationsArr.length = 0;
-    clearFunc([]);
+    dispatch(setNotificationsData([]));
   }
 
   return (
