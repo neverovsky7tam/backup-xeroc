@@ -33,10 +33,10 @@ const MainContainer = () => {
   let isTouchEnd = false;
   let fixTouchEndPoint = null;
 
-  const scrollProcessing = (e) => {
-    const scrollTop = e.target.documentElement.scrollTop;
+  const scrollProcessing = () => {
+    const scrollTop = document.documentElement.scrollTop;
 
-    if (isTouchEnd && (scrollTop < (fixTouchEndPoint - 10))) {
+    if (isTouchEnd && (scrollTop < (fixTouchEndPoint - 3))) {
       dispatch(setPageTopState(null, true));
     };
     isTouchEnd = false;
