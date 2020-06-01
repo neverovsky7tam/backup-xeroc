@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a8a35fc2d158d90132c0fae17f61a4ff",
+    "revision": "74d2208d175d90b77cdc3ce6a4dfc925",
     "url": "/index.html"
   },
   {
-    "revision": "76250fbcf6ea23312f47",
-    "url": "/static/css/main.02836695.chunk.css"
+    "revision": "a22f127790dd1f72a2eb",
+    "url": "/static/css/main.c3e66afe.chunk.css"
   },
   {
     "revision": "253e8223e125867ee12f",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.0ed90f38.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "76250fbcf6ea23312f47",
-    "url": "/static/js/main.f406da20.chunk.js"
+    "revision": "a22f127790dd1f72a2eb",
+    "url": "/static/js/main.ca9866e2.chunk.js"
   },
   {
     "revision": "220d64f6f8cb5da655ce",
@@ -116,6 +116,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/corex-logo.2a877e13.svg"
   },
   {
+    "revision": "8bb56aa77b232e85311da418ec514531",
+    "url": "/static/media/delete.8bb56aa7.svg"
+  },
+  {
     "revision": "2b329820ee29e0c0cd84b2470a8e9985",
     "url": "/static/media/facebook.2b329820.svg"
   },
@@ -166,6 +170,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "de3799ae817578fc09599a0b39b2948b",
     "url": "/static/media/menu-separate.de3799ae.svg"
+  },
+  {
+    "revision": "a30bf094a308aeda860a328271d47db5",
+    "url": "/static/media/notification-empty.a30bf094.svg"
   },
   {
     "revision": "2e03323dd150412b5a6b2a67174c82bc",

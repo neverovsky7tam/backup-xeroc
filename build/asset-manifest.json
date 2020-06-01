@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.02836695.chunk.css",
-    "main.js": "/static/js/main.f406da20.chunk.js",
-    "main.js.map": "/static/js/main.f406da20.chunk.js.map",
+    "main.css": "/static/css/main.c3e66afe.chunk.css",
+    "main.js": "/static/js/main.ca9866e2.chunk.js",
+    "main.js.map": "/static/js/main.ca9866e2.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c730f065.js",
     "runtime-main.js.map": "/static/js/runtime-main.c730f065.js.map",
     "static/js/2.0ed90f38.chunk.js": "/static/js/2.0ed90f38.chunk.js",
     "static/js/2.0ed90f38.chunk.js.map": "/static/js/2.0ed90f38.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.6f56c0d415b966e22eb76f47ee90300b.js": "/precache-manifest.6f56c0d415b966e22eb76f47ee90300b.js",
+    "precache-manifest.0dc3a08d6472060e1d1460bcf557dadc.js": "/precache-manifest.0dc3a08d6472060e1d1460bcf557dadc.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.02836695.chunk.css.map": "/static/css/main.02836695.chunk.css.map",
+    "static/css/main.c3e66afe.chunk.css.map": "/static/css/main.c3e66afe.chunk.css.map",
     "static/js/2.0ed90f38.chunk.js.LICENSE.txt": "/static/js/2.0ed90f38.chunk.js.LICENSE.txt",
     "static/media/3-vert-dot.ecd3988d.svg": "/static/media/3-vert-dot.ecd3988d.svg",
     "static/media/achievment_bronze.0773c997.svg": "/static/media/achievment_bronze.0773c997.svg",
@@ -35,6 +35,7 @@
     "static/media/coinpayments.d2beede8.svg": "/static/media/coinpayments.d2beede8.svg",
     "static/media/controls-mob.77da7619.svg": "/static/media/controls-mob.77da7619.svg",
     "static/media/corex-logo.2a877e13.svg": "/static/media/corex-logo.2a877e13.svg",
+    "static/media/delete.8bb56aa7.svg": "/static/media/delete.8bb56aa7.svg",
     "static/media/facebook.2b329820.svg": "/static/media/facebook.2b329820.svg",
     "static/media/facebook.fbede682.svg": "/static/media/facebook.fbede682.svg",
     "static/media/filters.34052113.svg": "/static/media/filters.34052113.svg",
@@ -48,6 +49,7 @@
     "static/media/logo-banner-1.7b328335.svg": "/static/media/logo-banner-1.7b328335.svg",
     "static/media/master-card.7e6b5075.svg": "/static/media/master-card.7e6b5075.svg",
     "static/media/menu-separate.de3799ae.svg": "/static/media/menu-separate.de3799ae.svg",
+    "static/media/notification-empty.a30bf094.svg": "/static/media/notification-empty.a30bf094.svg",
     "static/media/notification.2e03323d.svg": "/static/media/notification.2e03323d.svg",
     "static/media/notification.6971b726.svg": "/static/media/notification.6971b726.svg",
     "static/media/paypal.544318ff.svg": "/static/media/paypal.544318ff.svg",
@@ -85,7 +87,7 @@
   "entrypoints": [
     "static/js/runtime-main.c730f065.js",
     "static/js/2.0ed90f38.chunk.js",
-    "static/css/main.02836695.chunk.css",
-    "static/js/main.f406da20.chunk.js"
+    "static/css/main.c3e66afe.chunk.css",
+    "static/js/main.ca9866e2.chunk.js"
   ]
 }
