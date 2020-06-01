@@ -20,6 +20,7 @@ export const SAVE_SEARCH_VALUE = "SAVE_SEARCH_VALUE";
 export const SET_PREVIOUS_SEARCH_RESULT = "SET_PREVIOUS_SEARCH_RESULT";
 export const SET_JOINT_SEARCH_OBJ = "SET_JOINT_SEARCH_OBJ";
 export const SET_WITHDRAWAL = "SET_WITHDRAWAL";
+export const SET_NOTIFICATIONS_DATA = "SET_NOTIFICATIONS_DATA";
 
 export const setDeviceType = (isMobileDevice) => ({
   type: SET_DEVICE_TYPE,
@@ -138,5 +139,10 @@ export const setJointSearchObj = (isEnable, globalSearchObj, filterSearchObj) =>
 export const setWithdrawal = (value) => ({
   type: SET_WITHDRAWAL,
   value,
+});
+
+export const setNotificationsData = (notificationsArr) => ({
+  type: SET_NOTIFICATIONS_DATA,
+  notificationsArr,
 });
 
