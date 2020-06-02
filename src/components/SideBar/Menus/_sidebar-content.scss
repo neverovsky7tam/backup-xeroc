@@ -53,7 +53,8 @@
       margin: 11.8% 0 3.5%;
     }
 
-    h4, p {
+    h4,
+    p {
       line-height: 20px;
 
       @media (max-width: 424px) {
@@ -67,6 +68,44 @@
 
     .p-mob {
       color: $white_font;
+    }
+  }
+
+  .sellers__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    .img-wrapper img {
+      display: block;
+      width: 37px;
+      border-radius: 50%;
+
+      @media (max-width: 374px) {
+        width: 33px;
+      }
+    }
+
+    .sellers__item-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin-left: 15px;
+    }
+
+    .sellers__item-rating {
+      width: 12px;
+      height: auto;
+      margin-left: 5px;
+
+      @media (max-width: 424px) {
+        width: 11px;
+      }
+
+      @media (max-width: 374px) {
+        width: 10px;
+      }
     }
   }
 }
