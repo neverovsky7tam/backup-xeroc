@@ -1,14 +1,14 @@
 import React from 'react';
 import { BoxDecor } from '../Parts/BoxDecor';
 
-export const MainBlockMob = React.forwardRef(({ icon, header, span, actionIcon, func, style }, ref) => {
+export const MainBlockMob = React.forwardRef(({ icon, header, span, actionIcon, func, style, styleInner }, ref) => {
   let title = header;
   let text = span;
   if (text.length > 25) text = text.slice(0, 25) + '...';
 
   return (
     <div className="main-block" style={style}>
-      <div className="main-block__inner" ref={ref}>
+      <div className="main-block__inner" ref={ref} style={styleInner}>
         <div className="left">
           <div className="icon">{icon}</div>
           <div className="text">

@@ -152,7 +152,7 @@ export const BalanceContent = () => {
       <h2>balance</h2>
       <div className="content" style={{ marginBottom: '30px' }}>
         <MainBlockMob
-          icon={<USAFlagIcon />}
+          icon={<USAFlagIcon className="social-icon__big" />}
           header={'$3500.55'}
           span={'Current balance'}
           actionIcon={<UpdateIcon />} />

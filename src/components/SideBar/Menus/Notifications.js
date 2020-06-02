@@ -41,20 +41,12 @@ export const NotificationsContent = () => {
     dispatch(setNotificationsData(newArr));
   }
 
-  useEffect(() => {
-    if (blockInner.current) {
-      blockInner.current.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-      blockInner.current.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-    }
-  });
-
-  const blockInner = React.createRef();
   let notificationElements = (
     <MainBlockMob
       icon={<NotificationEmptyIcon />}
       header={'There are no notifications'}
       span={'Check the settings below'}
-      ref={blockInner} />
+      styleInner={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', borderColor: 'rgba(255, 255, 255, 0.1)' }} />
   );
 
   if (notifications.length) {

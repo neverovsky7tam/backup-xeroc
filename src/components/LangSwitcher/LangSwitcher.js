@@ -1,31 +1,30 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { switchLang } from '../../store/actions';
-import { langBtnContent } from '../../data/languages';
+import { langEN, langCH } from '../../data/languages';
 import { Diamond } from '../Parts/Parts';
 import { ReactComponent as Planet } from '../../assets/img/Header/planet-earth.svg';
 
 const LangSwitcher = () => {
   const langModal = React.createRef();
 
-  const [langObj, setLang] = useState(langBtnContent[0]);
   const dispatch = useDispatch();
+  const currentLang = useSelector((state) => state.langObj);
 
   const onHover = (elem, action) => {
     elem.current.style.display = action;
   }
 
   const changeLang = (e) => {
-    const nextLang = (langObj.lang === 'eng') ? langBtnContent[1] : langBtnContent[0];
-    setLang(nextLang);
-    dispatch(switchLang(nextLang.lang));
+    const nextLang = (currentLang.lang === 'eng') ? langCH : langEN;
+    dispatch(switchLang(nextLang));
 
     e.target.addEventListener('selectstart', (e) => {
       e.preventDefault();
     })
   }
 
-  const nextLang = (langObj.lang === 'eng') ? langBtnContent[1] : langBtnContent[0];
+  const nextLang = (currentLang.lang === 'eng') ? langCH : langEN;
 
   return (
     <div
@@ -34,7 +33,7 @@ const LangSwitcher = () => {
       <Planet />
       <button
         className="lang-menu__btn cursor-pointer">
-        {langObj.lang}
+        {currentLang.lang}
       </button>
       <div
         className="lang-menu__modal"
@@ -43,7 +42,7 @@ const LangSwitcher = () => {
         onMouseLeave={() => onHover(langModal, '')}>
         <div className="lang-menu__modal-content d-flex justify-content-center align-items-center cursor-pointer">
           <div className="d-flex">
-            <nextLang.pic className="flag-icon" />
+            <nextLang.flag className="flag-icon" />
             <button className="cursor-pointer">{nextLang.lang}</button>
           </div>
           <Diamond />
