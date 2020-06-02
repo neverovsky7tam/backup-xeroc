@@ -72,4 +72,28 @@
       }
     }
   }
+
+  .social-icon__all {
+    width: 17px !important;
+
+    @media (max-width: 424px) {
+      width: 15px !important;
+    }
+
+    @media (max-width: 374px) {
+      width: 13px !important;
+    }
+  }
+
+  .social-icon__facebook {
+    width: 8px !important;
+
+    @media (max-width: 424px) {
+      width: 7px !important;
+    }
+
+    @media (max-width: 374px) {
+      width: 6px !important;
+    }
+  }
 }
