@@ -7,6 +7,8 @@ export const langBtnContent = [
 ]
 
 export const langEN = {
+  lang: 'eng',
+  flag: USFlag,
   header: {
     menu: {
       home: 'home',
@@ -23,6 +25,8 @@ export const langEN = {
 }
 
 export const langCH = {
+  lang: 'chi',
+  flag: ChiFlag,
   header: {
     menu: {
       home: '家里',
