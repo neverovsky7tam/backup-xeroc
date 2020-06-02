@@ -24,7 +24,7 @@ import {
   SET_NOTIFICATIONS_DATA,
 } from '../actions';
 
-import { langEN, langCH } from '../../data/languages';
+import { langEN } from '../../data/languages';
 import { productsObj } from '../../data/productsData';
 import { notificationsArr } from '../../data/notifications';
 
@@ -68,8 +68,7 @@ export const productsDisplay = (state = productsObj, action) => {
 export const langObj = (state = langEN, action) => {
   switch (action.type) {
     case CHANGE_LANG:
-      const langObj = (action.lang === 'eng') ? langEN : langCH;
-      return langObj;
+      return action.lang;
     default:
       return state;
   }

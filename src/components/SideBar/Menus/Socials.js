@@ -18,19 +18,19 @@ export const Socials = () => {
         </a>
         <a href="https://twitter.com" target="_blank" rel="noreferrer noopener">
           <MainBlockMob
-            icon={<TwitterIcon className="social-icon__all" />}
+            icon={<TwitterIcon className="social-icon__big" />}
             header={'Twitter'}
             span={'Join us'} />
         </a>
         <a href="https://www.youtube.com/" target="_blank" rel="noreferrer noopener">
           <MainBlockMob
-            icon={<YoutubeIcon className="social-icon__all" />}
+            icon={<YoutubeIcon className="social-icon__big" />}
             header={'YouTube'}
             span={'Join us'} />
         </a>
         <a href="https://www.reddit.com/" target="_blank" rel="noreferrer noopener">
           <MainBlockMob
-            icon={<RedditIcon className="social-icon__all" />}
+            icon={<RedditIcon className="social-icon__big" />}
             header={'Reddit'}
             span={'Join us'} />
         </a>
