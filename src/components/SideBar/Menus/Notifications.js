@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setNotificationsData } from '../../../store/actions';
 import { RollingBlock } from '../../BlocksUI/RollingBlock';
@@ -58,7 +58,6 @@ export const NotificationsContent = () => {
   );
 
   if (notifications.length) {
-    console.log('notifications', notifications);
     notificationElements = notifications.map((el) => {
       const rollingBlock = React.createRef();
       const decor = React.createRef();

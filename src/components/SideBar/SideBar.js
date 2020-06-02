@@ -5,6 +5,7 @@ import { Filters } from './Menus/Filters';
 import { AccountContent, AccountBtn } from './Menus/Account';
 import { BalanceContent, BalanceBtn } from './Menus/Balance';
 import { NotificationsContent, NotificationsBtn } from './Menus/Notifications';
+import { Socials } from './Menus/Socials';
 import { ReactComponent as MenuSeparate } from '../../assets/img/SideBar/sidebar-menu-separate.svg';
 import { ReactComponent as FiltersIcon } from '../../assets/img/SideBar/filters.svg';
 import { ReactComponent as AuthIcon } from '../../assets/img/SideBar/auth.svg';
@@ -44,9 +45,9 @@ const SideBar = () => {
     content = <NotificationsContent />;
     buttons = <NotificationsBtn />;
   }
+  if (menu.currentMenu === 'Social') content = <Socials />
 
   if (buttons) contentCssClass = 'sidebar__content-inner_mod';
-
 
   const setMenuState = (menuElem, color, param) => {
     let action = null;
@@ -150,7 +151,7 @@ const SideBar = () => {
               <MenuSeparate />
             </div>
             {
-              true &&
+              isLogin &&
               <>
                 <li
                   className="sidebar__nav-item"
