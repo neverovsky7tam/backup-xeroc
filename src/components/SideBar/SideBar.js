@@ -6,6 +6,7 @@ import { AccountContent, AccountBtn } from './Menus/Account';
 import { BalanceContent, BalanceBtn } from './Menus/Balance';
 import { NotificationsContent, NotificationsBtn } from './Menus/Notifications';
 import { Socials } from './Menus/Socials';
+import { TopSellersSidebar } from './Menus/TopSellersSidebar';
 import { Awards } from './Menus/Awards';
 import { LangSwitcher } from './Menus/LangSwitcher';
 import { ReactComponent as MenuSeparate } from '../../assets/img/SideBar/sidebar-menu-separate.svg';
@@ -48,6 +49,7 @@ const SideBar = () => {
     buttons = <NotificationsBtn />;
   }
   if (menu.currentMenu === 'Social') content = <Socials />
+  if (menu.currentMenu === 'Sellers') content = <TopSellersSidebar />
   if (menu.currentMenu === 'Awards') content = <Awards />
   if (menu.currentMenu === 'Lang') content = <LangSwitcher />
 
