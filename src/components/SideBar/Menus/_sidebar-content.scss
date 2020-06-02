@@ -25,6 +25,50 @@
     height: 1px;
     background-color: $white_font;
   }
+
+  .awards__item {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 14% 12.5%;
+    text-align: center;
+    border: 1px solid $secondary_bg;
+    background-color: $secondary_bg-sec;
+
+    svg {
+      width: 140px;
+      height: auto;
+
+      @media (max-width: 424px) {
+        width: 130px;
+      }
+
+      @media (max-width: 374px) {
+        width: 120px;
+      }
+    }
+
+    h4 {
+      margin: 11.8% 0 3.5%;
+    }
+
+    h4, p {
+      line-height: 20px;
+
+      @media (max-width: 424px) {
+        line-height: 19px;
+      }
+
+      @media (max-width: 374px) {
+        line-height: 16px;
+      }
+    }
+
+    .p-mob {
+      color: $white_font;
+    }
+  }
 }
 
 .sidebar__content-inner,

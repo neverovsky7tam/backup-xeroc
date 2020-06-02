@@ -4,13 +4,15 @@
   color: $white_font;
 }
 
-.span-mob {
+.span-mob,
+.p-mob {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   color: $grey_font;
 }
 
 .h4-mob,
+.p-mob,
 .span-mob,
 .btn-text-mob {
   text-transform: none;
