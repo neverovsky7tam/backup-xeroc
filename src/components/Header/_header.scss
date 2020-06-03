@@ -82,7 +82,7 @@
 .header__navbar {
   display: flex;
   justify-content: space-between;
-  padding: 0 30px 42px;
+  padding: 0 30px 45px;
 
   @media (min-width: 768px) {
     padding: 0 30px;
@@ -97,6 +97,10 @@
       visibility: hidden;
     }
   }
+}
+
+.header__navbar_auth {
+  padding-bottom: 169px;
 }
 
 .main-menu {
