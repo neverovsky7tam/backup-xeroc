@@ -117,6 +117,15 @@
     @media (min-width: 1920px) {
       display: none;
     }
+
+    a {
+      display: flex;
+
+      svg {
+        width: 23px;
+        height: 23px;
+      }
+    }
   }
 }
 
