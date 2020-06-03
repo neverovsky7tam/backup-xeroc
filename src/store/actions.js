@@ -47,9 +47,9 @@ export const switchLang = (lang) => ({
   lang,
 });
 
-export const setPageTopState = (content, isDisplay, additionCssClass) => ({
+export const setPageTopState = (content, additionCssClass) => ({
   type: SET_PAGE_TOP_STATE,
-  state: { content, isDisplay, additionCssClass },
+  state: { content, additionCssClass },
 });
 
 export const setCarouselMenuPos = (pos, itemIndex) => ({

@@ -72,8 +72,7 @@
   }
 }
 
-.header__navbar-full,
-.header__navbar-short {
+.header__navbar {
   display: flex;
   justify-content: space-between;
   padding: 0 30px 42px;
@@ -83,7 +82,8 @@
   }
 }
 
-.header__navbar-short {
+.header__navbar_terms,
+.header__navbar_auth {
   @media (max-width: 767px) {
     .controls-btn,
     .cart {
