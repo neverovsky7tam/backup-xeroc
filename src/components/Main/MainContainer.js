@@ -39,7 +39,7 @@ const MainContainer = () => {
     // console.log('isTouchEnd', isTouchEnd);
     // console.log('flag', flag);
     if (isTouchEnd && (scrollTop < (fixTouchEndPoint - 3))) {
-      dispatch(setPageTopState(null, true));
+      dispatch(setPageTopState(null));
     };
     isTouchEnd = false;
 
@@ -52,7 +52,7 @@ const MainContainer = () => {
       if (delta > 10) {
         flag = false;
         checkPoint = scrollTop;
-        dispatch(setPageTopState(null, true, 'p-absolute'));
+        dispatch(setPageTopState(null, 'p-absolute'));
       }
     } else {
       const distanceCurrent = scrollTop - checkPoint;
@@ -75,9 +75,14 @@ const MainContainer = () => {
     // console.log('TOUCHEND-TOUCHEND-TOUCHEND-TOUCHEND-TOUCHEND', fixTouchEndPoint);
   };
 
+  let isPageTop = false;
+  if (isMobile) {
+    if (contentVar !== 'sign-up' && contentVar !== 'log-in' && contentVar !== 'terms') isPageTop = true;
+  }
+
   return (
     <>
-      {isMobile && <PageTop />}
+      {isPageTop && <PageTop />}
       <main
         className="main"
         onTouchEnd={onTouchEnd}>

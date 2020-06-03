@@ -83,7 +83,7 @@ export const mainContent = (state = 'home', action) => {
   }
 }
 
-export const pageTopState = (state = { content: null, isDisplay: true, additionCssClass: '' }, action) => {
+export const pageTopState = (state = { content: null, additionCssClass: '' }, action) => {
   switch (action.type) {
     case SET_PAGE_TOP_STATE:
       const newState = Object.assign(state, action.state);
@@ -120,7 +120,7 @@ export const termsCloseBtn = (state = false, action) => {
   }
 }
 
-export const headerNavbarCssClass = (state = 'header__navbar-full', action) => {
+export const headerNavbarCssClass = (state = 'header__navbar', action) => {
   switch (action.type) {
     case SET_HEADER_NAVBAR_CSS_CLASS:
       return action.cssClass;

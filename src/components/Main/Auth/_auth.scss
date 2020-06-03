@@ -1,6 +1,7 @@
 .auth-content {
   position: relative;
-  margin: 23px 30px 30px;
+  top: 60px;
+  margin: 0 30px 30px;
   text-align: center;
   text-transform: uppercase;
 
@@ -15,7 +16,7 @@
   }
 
   .auth-content__social-wrapper {
-    margin-top: 90px;
+    margin-top: 87px;
 
     @media (min-width: 768px) {
       margin-top: 38px;
@@ -36,7 +37,21 @@
   }
 
   .auth-content__social-link {
-    @include block_centered_content(40px, 40px, $secondary_bg);
+    @media (min-width: 768px) {
+      @include block_centered_content(40px, 40px, $secondary_bg);
+    }
+
+    @media (max-width: 767px) {
+      @include block_centered_content(55px, 55px, $secondary_bg);
+    }
+
+    @media (max-width: 424px) {
+      @include block_centered_content(50px, 50px, $secondary_bg);
+    }
+
+    @media (max-width: 374px) {
+      @include block_centered_content(40px, 40px, $secondary_bg);
+    }
 
     &:not(:last-child) {
       margin-right: 30px;
@@ -44,6 +59,16 @@
 
     &:hover {
       background-color: $hover_btn;
+    }
+
+    svg {
+      @media (max-width: 424px) {
+        height: 14.55px;
+      }
+
+      @media (max-width: 374px) {
+        height: 11.64px;
+      }
     }
   }
 
@@ -104,8 +129,7 @@
         box-sizing: border-box;
         display: block;
         width: 100%;
-        height: 40px;
-        padding: 15px;
+        padding: 0 14px;
         border: 1px solid transparent;
         font-family: "Open Sans", sans-serif;
         font-weight: 300;
@@ -116,18 +140,22 @@
 
         @media (min-width: 768px) {
           width: 320px;
+          height: 40px;
           font-size: $desctop_size_font;
         }
 
         @media (max-width: 767px) {
+          height: 55px;
           font-size: 16px;
         }
 
         @media (max-width: 424px) {
+          height: 50px;
           font-size: 15px;
         }
 
         @media (max-width: 374px) {
+          height: 40px;
           font-size: 12px;
         }
 
@@ -163,6 +191,7 @@
       }
 
       @media (max-width: 767px) {
+        bottom: -4px;
         font-size: 12px;
       }
 
@@ -200,6 +229,12 @@
       font-size: 10px;
     }
 
+    a {
+      @media (max-width: 767px) {
+        text-decoration: underline;
+      }
+    }
+
     .terms-link {
       @include open-sans_font($white_font, 12px);
       text-transform: initial;
@@ -225,6 +260,21 @@
 
     @media (min-width: 768px) {
       margin-top: 37px;
+    }
+
+    @media (max-width: 767px) {
+      height: 55px;
+      font-size: 16px;
+    }
+
+    @media (max-width: 424px) {
+      height: 50px;
+      font-size: 15px;
+    }
+
+    @media (max-width: 374px) {
+      height: 40px;
+      font-size: 12px;
     }
 
     &:hover {
