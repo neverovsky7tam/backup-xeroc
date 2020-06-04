@@ -1,20 +1,35 @@
 .terms__close-btn {
   position: absolute;
+  display: flex;
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  line-height: 0.7;
   z-index: 101;
   cursor: pointer;
+
+  svg {
+    width: 20px;
+    height: 20px;
+
+    @media (max-width: 424px) {
+      width: 17px;
+      height: 17px;
+    }
+
+    @media (max-width: 374px) {
+      width: 15px;
+      height: 15px;
+    }
+  }
 }
 
 .terms {
   position: relative;
-  top: -55px;
+  top: -25px;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: calc(100vh - 195px);
+  height: calc(100vh - 160px);
   margin: auto;
   overflow: hidden;
 
@@ -46,11 +61,19 @@
   .terms-body {
     position: relative;
     height: 100%;
-    margin: 0 30px 22px;
+    margin: 0 30px 55px;
     overflow: hidden;
 
     @media (min-width: 768px) {
       margin: 0;
+    }
+
+    @media (max-width: 424px) {
+      margin-bottom: 53px;
+    }
+
+    @media (max-width: 374px) {
+      margin-bottom: 50px;
     }
 
     .text-underline-desctop {
@@ -97,13 +120,28 @@
     }
   }
 
+  .terms__head-line-height {
+    line-height: 18px;
+
+    @media (max-width: 767px) {
+      line-height: 19px;
+    }
+
+    @media (max-width: 424px) {
+      line-height: 18px;
+    }
+
+    @media (max-width: 374px) {
+      line-height: 17px;
+    }
+  }
+
   h3 {
     max-width: 440px;
     margin: 53px auto 0;
     @include exo_font($white_font, $desctop_size_font, 500);
     text-transform: uppercase;
     text-align: center;
-    line-height: 18px;
 
     @media (max-width: 767px) {
       font-size: 13px;
@@ -142,7 +180,7 @@
 
   p,
   ul {
-    margin-top: 23px;
+    margin-top: 20px;
     @include open-sans_font($white_font, 13px);
     font-weight: 300;
     line-height: 18px;

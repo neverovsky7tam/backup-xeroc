@@ -1,6 +1,6 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState, useLayoutEffect, useEffect } from 'react';
 import store from '../../store/store';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setCarouselMenuPos } from '../../store/actions';
 import MenuItems from '../MainMenu/MenuItems';
 
@@ -12,26 +12,49 @@ let rightBreakpoint = null;
 let leftBreakpoint = null;
 let stopPos = null;
 let scrolledToLeft = null;
+let isMove = false;
+let lang = null;
 
 const CarouselMenu = () => {
   const [pos, setPos] = useState(0);
-  const storePosition = store.getState().carouselMenuPos.pos;
-  const storeItemIndex = store.getState().carouselMenuPos.itemIndex;
 
   const items = React.createRef();
   const dispatch = useDispatch();
 
+  const storePosition = store.getState().carouselMenuPos.pos;
+  const storeItemIndex = store.getState().carouselMenuPos.itemIndex;
+  const currentLang = useSelector((state) => state.langObj.lang);
+
+  // if a language was changed
+  useEffect(() => {
+    if (lang) {
+      let initPos = items.current.children[currentItemIndex].clientWidth / 2;
+      scrolledToLeft = 0;
+
+      let i = 0;
+      while (i < currentItemIndex) {
+        const width = items.current.children[i].clientWidth;
+        initPos += width;
+        scrolledToLeft += width;
+        i += 1;
+      }
+      setPos(initPos);
+    };
+
+    lang = currentLang;
+  }, [currentLang]);
+
   useLayoutEffect(() => {
-    if (storePosition === 0) {
-      const initPos = items.current.children[0].clientWidth / 2;
+    if (storePosition === null) {
       currentItemIndex = 0;
-      stopPos = initPos;
-      initPosition = initPos;
+      initPosition = items.current.children[0].clientWidth / 2;
+      stopPos = initPosition;
     } else {
       currentItemIndex = storeItemIndex;
       stopPos = storePosition;
       initPosition = storePosition;
     }
+
     setPos(initPosition);
     items.current.children[currentItemIndex].classList.add('active');
 
@@ -54,14 +77,41 @@ const CarouselMenu = () => {
     if (Math.abs(deltaY) > 65) {
       onTouchEnd();
       return;
-    }
+    };
 
     const movePos = e.changedTouches[0].clientX
     const delta = touchStart - movePos;
-
     setPos(initPosition + delta);
 
     if (delta >= rightBreakpoint) {
+      isMove = true;
+      Scroll('to-left');
+    };
+
+    if (delta < leftBreakpoint) {
+      isMove = true;
+      Scroll('to-right');
+    };
+  };
+
+  const onTouchEnd = (e) => {
+    if (isMove) {
+      isMove = false;
+    } else {
+      const screenMedian = document.documentElement.clientWidth / 2;
+      const touch = e.changedTouches[0].clientX;
+      const currentItemRightLocation = screenMedian + rightBreakpoint;
+      const currentItemLeftLocation = screenMedian + leftBreakpoint;
+      if (touch > currentItemRightLocation) Scroll('to-left');
+      if (touch < currentItemLeftLocation) Scroll('to-right');
+    };
+
+    initPosition = stopPos;
+    setPos(stopPos);
+  }
+
+  const Scroll = (side) => {
+    if (side === 'to-left') {
       if (currentItemIndex < items.current.children.length - 1) {
         const prevItemWidth = items.current.children[currentItemIndex].clientWidth;
         scrolledToLeft = scrolledToLeft + prevItemWidth;
@@ -74,9 +124,7 @@ const CarouselMenu = () => {
         leftBreakpoint = rightBreakpoint;
         rightBreakpoint = rightBreakpoint + nextItemWidth;
       }
-    }
-
-    if (delta < leftBreakpoint) {
+    } else {
       if (currentItemIndex !== 0) {
         items.current.children[currentItemIndex].classList.remove('active');
 
@@ -90,11 +138,6 @@ const CarouselMenu = () => {
       }
     }
   };
-
-  const onTouchEnd = () => {
-    setPos(stopPos);
-    initPosition = stopPos;
-  }
 
   return (
     <div

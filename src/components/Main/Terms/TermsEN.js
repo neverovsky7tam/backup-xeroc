@@ -20,7 +20,7 @@ export const TermsEN = () => {
       <p>
         This Privacy Policy does not apply to information collected by us offline or through any other means, including on any other website operated by us or any third party (including our affiliates and subsidiaries); or any third party (including our affiliates and subsidiaries), including through any application or content (including advertising) that may link to or be accessible from or on the Site.
         </p>
-      <h3>IF YOU DO NOT AGREE WITH ANY OF THE FOLLOWING PRIVACY POLICY TERMS, DO NOT ACCESS THE SITE.</h3>
+      <h3 className="terms__head-line-height">IF YOU DO NOT AGREE WITH ANY OF THE FOLLOWING PRIVACY POLICY TERMS, DO NOT ACCESS THE SITE.</h3>
       <h4>General</h4>
       <p>This Privacy Policy applies to your personal information when:</p>
       <ul>
@@ -68,7 +68,7 @@ export const TermsEN = () => {
       <p>You can access, update and delete your information by emailing us at <a href="mailto:support@corex.io">support@corex.io</a> com or contact us by mail at PO Box 40113 Bay Village, OH 44140.</p>
       <p>We will handle your request in accordance with state privacy laws. This means there may be legal reasons why we cannot fulfil all requests.</p>
       <p>Customers who exercise their right under state privacy laws will not be discriminated against. This Privacy Policy constitutes our privacy notice to you under such applicable law. Your access and/or use of the Site is permitted only on condition of your agreement with this Privacy Policy. This Privacy Policy does not extend to any website other than our Site, including any website or service you may access by clicking on our Site’s links, or any other party’s use of your personal information other than us. We reserve the right, in our sole discretion, to modify, discontinue, or terminate any element of the Site or to modify this Privacy Policy at any time, without notice to you. Any modifications will be effective as of the date of its posting to our Site. Your continued use of our Site thereafter constitutes your assent to such revised privacy policy.</p>
-      <h4>(Canada) Personal Information Protection and Electronic Documents Act (PIPEDA)</h4>
+      <h4 className="terms__head-line-height">(Canada) Personal Information Protection and Electronic Documents Act (PIPEDA)</h4>
       <p>This section shall be expressly limited to Individuals. “Individuals”, subject to and as set forth in PIPEDA, have several rights under PIPEDA:</p>
       <p>We limit the scope of the data we collect to only what is necessary. We collect information for the following reasons:</p>
       <ul>
