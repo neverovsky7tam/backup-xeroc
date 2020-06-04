@@ -7,6 +7,7 @@ import Footer from '../Footer/Footer';
 import SignUp from './Auth/SignIn';
 import LogIn from './Auth/LogIn';
 import Terms from './Terms/Terms';
+import Sell from './Sell/Sell';
 import { setPageTopState } from '../../store/actions';
 
 const MainContainer = () => {
@@ -26,6 +27,7 @@ const MainContainer = () => {
     footerState = 'footer-mini';
     content = <Terms />;
   };
+  if (contentVar === 'sell') content = <Sell />;
 
   let checkPoint = 1;
   // let dot = null;
@@ -40,7 +42,7 @@ const MainContainer = () => {
     // console.log('isTouchEnd', isTouchEnd);
     // console.log('flag', flag);
     if (isTouchEnd && (scrollTop < (fixTouchEndPoint - 3))) {
-      dispatch(setPageTopState(null, true));
+      dispatch(setPageTopState(null));
     };
 
     if (flag) {
@@ -54,7 +56,7 @@ const MainContainer = () => {
         console.log('HIDHIDEHIDEHIDEHIDEHIDEHIDEHIDEE')
         flag = false;
         checkPoint = scrollTop;
-        dispatch(setPageTopState(null, true, 'p-absolute'));
+        dispatch(setPageTopState(null, 'p-absolute'));
       }
     } else {
       const distanceCurrent = scrollTop - checkPoint;
@@ -79,9 +81,14 @@ const MainContainer = () => {
     // console.log('TOUCHEND-TOUCHEND-TOUCHEND-TOUCHEND-TOUCHEND', fixTouchEndPoint);
   };
 
+  let isPageTop = false;
+  if (isMobile) {
+    if (contentVar !== 'sign-up' && contentVar !== 'log-in' && contentVar !== 'terms') isPageTop = true;
+  }
+
   return (
     <>
-      {isMobile && <PageTop />}
+      {isPageTop && <PageTop />}
       <main
         className="main"
         onTouchEnd={onTouchEnd}>

@@ -18,9 +18,7 @@
   }
 
   .controls-btn {
-    width: 21px;
-    height: 21px;
-    line-height: 0.7;
+    display: flex;
     cursor: pointer;
   }
 
@@ -30,9 +28,14 @@
       height: 20.74px;
     }
 
-    @media (max-width: 374px) {
+    @media (max-width: 424px) {
       width: 18px;
       height: 18.67px;
+    }
+
+    @media (max-width: 374px) {
+      width: 16px;
+      height: 16.59px;
     }
   }
 
@@ -65,31 +68,39 @@
         height: 18.16px;
       }
 
-      @media (max-width: 374px) {
+      @media (max-width: 424px) {
         height: 16.5px;
+      }
+
+      @media (max-width: 374px) {
+        height: 14.85px;
       }
     }
   }
 }
 
-.header__navbar-full,
-.header__navbar-short {
+.header__navbar {
   display: flex;
   justify-content: space-between;
-  padding: 0 30px 42px;
+  padding: 0 30px 45px;
 
   @media (min-width: 768px) {
     padding: 0 30px;
   }
 }
 
-.header__navbar-short {
+.header__navbar_terms,
+.header__navbar_auth {
   @media (max-width: 767px) {
     .controls-btn,
     .cart {
       visibility: hidden;
     }
   }
+}
+
+.header__navbar_auth {
+  padding-bottom: 169px;
 }
 
 .main-menu {
@@ -105,6 +116,15 @@
   .burger-btn {
     @media (min-width: 1920px) {
       display: none;
+    }
+
+    a {
+      display: flex;
+
+      svg {
+        width: 23px;
+        height: 23px;
+      }
     }
   }
 }

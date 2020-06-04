@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setAccountMenu, setMainContent, setTermsCloseBtn, setHeaderNavbarCssClass, setPageTopState } from '../../../store/actions';
+import { setAccountMenu, setMainContent, setTermsCloseBtn, setHeaderNavbarCssClass } from '../../../store/actions';
 import AuthCloseBtn from './AuthCloseBtn';
 import SocialAuth from './SocialAuth';
 import { onInputChange, checkInputValue, checkInputCorrect } from './inputs';
@@ -19,11 +19,9 @@ const SignUp = () => {
   const form = React.createRef();
 
   useEffect(() => {
-    dispatch(setPageTopState('auth', true));
-    dispatch(setHeaderNavbarCssClass('header__navbar-short'));
+    dispatch(setHeaderNavbarCssClass('header__navbar header__navbar_auth'));
     return () => {
-      dispatch(setPageTopState(null, true));
-      dispatch(setHeaderNavbarCssClass('header__navbar-full'));
+      dispatch(setHeaderNavbarCssClass('header__navbar'));
     }
   });
 
