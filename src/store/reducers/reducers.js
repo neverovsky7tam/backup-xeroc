@@ -93,7 +93,7 @@ export const pageTopState = (state = { content: null, additionCssClass: '' }, ac
   }
 }
 
-export const carouselMenuPos = (state = { pos: 0, itemIndex: 0 }, action) => {
+export const carouselMenuPos = (state = { pos: null, itemIndex: null }, action) => {
   switch (action.type) {
     case SET_CAROUSEL_MENU_POS:
       return action.store;
