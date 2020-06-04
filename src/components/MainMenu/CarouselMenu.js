@@ -81,7 +81,6 @@ const CarouselMenu = () => {
 
     const movePos = e.changedTouches[0].clientX
     const delta = touchStart - movePos;
-
     setPos(initPosition + delta);
 
     if (delta >= rightBreakpoint) {
@@ -101,7 +100,6 @@ const CarouselMenu = () => {
     } else {
       const screenMedian = document.documentElement.clientWidth / 2;
       const touch = e.changedTouches[0].clientX;
-
       const currentItemRightLocation = screenMedian + rightBreakpoint;
       const currentItemLeftLocation = screenMedian + leftBreakpoint;
       if (touch > currentItemRightLocation) Scroll('to-left');

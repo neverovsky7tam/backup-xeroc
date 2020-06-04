@@ -76,7 +76,6 @@
   }
 
   .main-menu__items li {
-    padding: 0 30px;
     font-family: "Exo", sans-serif;
     font-weight: 500;
     text-transform: uppercase;
@@ -84,6 +83,7 @@
     color: rgba(255, 255, 255, 0.3);
 
     @media (max-width: 767px) {
+      padding: 0 28px;
       font-size: $mob_h2_425;
     }
 
@@ -92,6 +92,7 @@
     }
 
     @media (max-width: 374px) {
+      padding: 0 22px;
       font-size: $mob_h2_320;
     }
   }
