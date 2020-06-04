@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PageTop from '../PageTop/PageTop';
 import HomeDesctop from './HomeDesctop/HomeDesctop';
@@ -38,10 +38,8 @@ const MainContainer = () => {
 
   const scrollProcessing = () => {
     const scrollTop = document.documentElement.scrollTop;
-    // console.log('scrollTop', scrollTop);
-    // console.log('isTouchEnd', isTouchEnd);
-    // console.log('flag', flag);
-    if (isTouchEnd && (scrollTop < (fixTouchEndPoint - 3))) {
+    // console.log('scrollTop', scrollTop, fixTouchEndPoint, isTouchEnd)
+    if (isTouchEnd && (scrollTop < (fixTouchEndPoint - 13))) {
       dispatch(setPageTopState(null));
     };
 
@@ -73,12 +71,14 @@ const MainContainer = () => {
     }
   }
 
-  document.addEventListener('scroll', scrollProcessing);
+  useEffect(() =>   document.addEventListener('scroll', scrollProcessing), [])
+
+
 
   const onTouchEnd = () => {
     isTouchEnd = true;
+    setTimeout(() => isTouchEnd = false, 300);
     fixTouchEndPoint = document.documentElement.scrollTop;
-    // console.log('TOUCHEND-TOUCHEND-TOUCHEND-TOUCHEND-TOUCHEND', fixTouchEndPoint);
   };
 
   let isPageTop = false;
