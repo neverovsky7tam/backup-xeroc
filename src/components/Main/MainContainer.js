@@ -46,12 +46,10 @@ const MainContainer = () => {
     if (flag) {
       const delta = scrollTop - checkPoint;
       if (delta < 0) {
-        console.log('MINUSMINUSMINUSMINUSMINUSMINUS')
         checkPoint = scrollTop;
       }
 
       if (delta > 10) {
-        console.log('HIDHIDEHIDEHIDEHIDEHIDEHIDEHIDEE')
         flag = false;
         checkPoint = scrollTop;
         dispatch(setPageTopState(null, 'p-absolute'));
@@ -60,10 +58,8 @@ const MainContainer = () => {
       const distanceCurrent = scrollTop - checkPoint;
 
       if (distanceCurrent >= distanceSave) {
-        console.log('NOT')
         distanceSave = distanceCurrent;
       } else {
-        console.log('YES')
         flag = true;
         checkPoint = scrollTop;
         distanceSave = 0;
