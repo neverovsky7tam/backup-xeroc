@@ -21,29 +21,34 @@ const MenuItems = React.forwardRef(({ isOverlayMenu, setOverlayMenu, isSeparator
     <nav>
       <ul className="main-menu__items" ref={items}>
         <li
+          data-menu="home"
           onClick={(e) => setContent(e, 'home')}>
           {lang.home}
         </li>
         {isSeparator && <MenuSeparate className="main-menu__items-separator" />}
         <li
           className="p-relative"
-          onClick={(e) => setContent(e, 'home')}>
+          data-menu="sell"
+          onClick={(e) => setContent(e, 'sell')}>
           {lang.sell}
           {isOverlayMenu && <div className="overlay-menu-background">menu</div>}
         </li>
         {isSeparator && <MenuSeparate className="main-menu__items-separator" />}
         <li
-          onClick={(e) => setContent(e, 'home')}>
+          data-menu="host"
+          onClick={(e) => setContent(e, 'host')}>
           {lang.host}
         </li>
         {isSeparator && <MenuSeparate className="main-menu__items-separator" />}
         <li
-          onClick={(e) => setContent(e, 'home')}>
+          data-menu="about"
+          onClick={(e) => setContent(e, 'about')}>
           {lang.about}
         </li>
         {isSeparator && <MenuSeparate className="main-menu__items-separator" />}
         <li
-          onClick={(e) => setContent(e, 'home')}>
+          data-menu="support"
+          onClick={(e) => setContent(e, 'support')}>
           {lang.support}
         </li>
       </ul>

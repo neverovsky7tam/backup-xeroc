@@ -7,6 +7,7 @@ import Footer from '../Footer/Footer';
 import SignUp from './Auth/SignIn';
 import LogIn from './Auth/LogIn';
 import Terms from './Terms/Terms';
+import Sell from './Sell/Sell';
 import { setPageTopState } from '../../store/actions';
 
 const MainContainer = () => {
@@ -26,6 +27,7 @@ const MainContainer = () => {
     footerState = 'footer-mini';
     content = <Terms />;
   };
+  if (contentVar === 'sell') content = <Sell />;
 
   let checkPoint = 1;
   let flag = true;

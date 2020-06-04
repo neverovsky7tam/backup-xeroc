@@ -12,6 +12,7 @@ let rightBreakpoint = null;
 let leftBreakpoint = null;
 let stopPos = null;
 let scrolledToLeft = null;
+let isMove = false;
 let lang = null;
 
 const CarouselMenu = () => {
@@ -84,6 +85,35 @@ const CarouselMenu = () => {
     setPos(initPosition + delta);
 
     if (delta >= rightBreakpoint) {
+      isMove = true;
+      Scroll('to-left');
+    };
+
+    if (delta < leftBreakpoint) {
+      isMove = true;
+      Scroll('to-right');
+    };
+  };
+
+  const onTouchEnd = (e) => {
+    if (isMove) {
+      isMove = false;
+    } else {
+      const screenMedian = document.documentElement.clientWidth / 2;
+      const touch = e.changedTouches[0].clientX;
+
+      const currentItemRightLocation = screenMedian + rightBreakpoint;
+      const currentItemLeftLocation = screenMedian + leftBreakpoint;
+      if (touch > currentItemRightLocation) Scroll('to-left');
+      if (touch < currentItemLeftLocation) Scroll('to-right');
+    };
+
+    initPosition = stopPos;
+    setPos(stopPos);
+  }
+
+  const Scroll = (side) => {
+    if (side === 'to-left') {
       if (currentItemIndex < items.current.children.length - 1) {
         const prevItemWidth = items.current.children[currentItemIndex].clientWidth;
         scrolledToLeft = scrolledToLeft + prevItemWidth;
@@ -96,9 +126,7 @@ const CarouselMenu = () => {
         leftBreakpoint = rightBreakpoint;
         rightBreakpoint = rightBreakpoint + nextItemWidth;
       }
-    }
-
-    if (delta < leftBreakpoint) {
+    } else {
       if (currentItemIndex !== 0) {
         items.current.children[currentItemIndex].classList.remove('active');
 
@@ -112,11 +140,6 @@ const CarouselMenu = () => {
       }
     }
   };
-
-  const onTouchEnd = () => {
-    setPos(stopPos);
-    initPosition = stopPos;
-  }
 
   return (
     <div
