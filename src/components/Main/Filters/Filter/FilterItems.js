@@ -20,20 +20,22 @@ const FilterItems = ({ itemsArr, onItemClick, img }) => {
           return (
             <li
               key={idx}
-              className={(el[1]) ? 'filter__item filter__item_active' : 'filter__item'}
+              className="filter__item"
               data-active={el[1]}
               data-value={el[0]}
-              onClick={onItemClick}
-              onMouseEnter={(e) => onHoverItem(e, true)}
-              onMouseLeave={(e) => onHoverItem(e, false)}>
-              <div className="filter__item-inner" style={{ textTransform: letterTransform }}>
+              onClick={onItemClick}>
+              <div
+                className={(el[1]) ? 'filter__item-inner item-active' : 'filter__item-inner'}
+                style={{ textTransform: letterTransform }}
+                onMouseEnter={(e) => onHoverItem(e, true)}
+                onMouseLeave={(e) => onHoverItem(e, false)}>
                 {img &&
                   <img
                     className="filter__item-img"
                     src={`/data/filters/coins_img/${el[0]}.svg`} />}
                 {el[0]}
-                <BoxDecor />
               </div>
+              <BoxDecor />
             </li>
           )
         })}
@@ -45,8 +47,8 @@ const FilterItems = ({ itemsArr, onItemClick, img }) => {
         <div className="filter__item filter__item_not-found">
           <div className="filter__item-inner">
             Not found
-            <BoxDecor />
           </div>
+          <BoxDecor />
         </div>
       </div>
     )
