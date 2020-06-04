@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bee933b70b9435f0c7cfbf5aaa1fd50a",
+    "revision": "50f107e5f257d46ebb029b4008971833",
     "url": "/index.html"
   },
   {
-    "revision": "46fe3c3095927d22cdea",
-    "url": "/static/css/main.ec0ef975.chunk.css"
+    "revision": "8d445448d86e7dd85a6e",
+    "url": "/static/css/main.56f87e67.chunk.css"
   },
   {
     "revision": "253e8223e125867ee12f",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.0ed90f38.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "46fe3c3095927d22cdea",
-    "url": "/static/js/main.c666cc54.chunk.js"
+    "revision": "8d445448d86e7dd85a6e",
+    "url": "/static/js/main.47c492d4.chunk.js"
   },
   {
     "revision": "220d64f6f8cb5da655ce",
@@ -80,8 +80,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/balance.39828897.svg"
   },
   {
-    "revision": "5a0a9fe75eedfc314135362388806832",
-    "url": "/static/media/burger-btn.5a0a9fe7.svg"
+    "revision": "43c70da6e23cd6b982ddcb884bce47f2",
+    "url": "/static/media/burger-btn.43c70da6.svg"
   },
   {
     "revision": "4bace8dd1eb529b1e9576b49e8e66da3",
