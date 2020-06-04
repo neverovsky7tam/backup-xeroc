@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FiltersBlock from './FiltersBlock';
 import Scroll from '../Scroll/Scroll';
 import { calcToScroll } from '../Scroll/Scroll';
 
 const Filters = () => {
+  const [isScroll, setScrollDisplay] = useState(false);
+
   const scrollThumb = React.createRef();
   const scrollBlock = React.createRef();
 
   const setScroll = () => {
     const scroll = calcToScroll(scrollBlock.current);
-    scrollThumb.current.style.transform = `translateY(${scroll.toScroll}px)`;
+    if (scrollThumb.current) {
+      scrollThumb.current.style.transform = `translateY(${scroll.toScroll}px)`;
+    }
+  };
+
+  const checkScroll = (filtersBlockHeight) => {
+    const scrollBlockHeight = scrollBlock.current.clientHeight;
+    if (filtersBlockHeight > scrollBlockHeight) setScrollDisplay(true);
+    else setScrollDisplay(false);
   };
 
   return (
@@ -22,10 +32,10 @@ const Filters = () => {
           className="scroll-container"
           ref={scrollBlock}
           onScroll={setScroll}>
-          <FiltersBlock />
+          <FiltersBlock checkScroll={checkScroll} />
         </div>
       </div>
-      <Scroll ref={scrollThumb} scrollBlock={scrollBlock} />
+      {isScroll && <Scroll ref={scrollThumb} scrollBlock={scrollBlock} />}
     </section>
   );
 };

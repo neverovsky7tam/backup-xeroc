@@ -20,14 +20,14 @@ export const calcToScroll = (scrollBlock) => {
   }
 }
 
-const Scroll = React.forwardRef(({ scrollBlock }, ref) => {
+const Scroll = React.forwardRef(({ scrollBlock }, scrollThumb) => {
   const scrollLayer = React.createRef();
 
   useLayoutEffect(() => {
     if (scrollBlock.current) {
-      if (scrollBlock.current.scrollHeight === scrollBlock.current.offsetHeight) ref.current.style.transform = `translateY(0)`;
-    }
-  })
+      if (scrollBlock.current.scrollHeight === scrollBlock.current.offsetHeight) scrollThumb.current.style.transform = `translateY(0)`;
+    };
+  });
 
   const dragThumb = (e) => {
     e.target.addEventListener('selectstart', (evt) => {
@@ -37,7 +37,7 @@ const Scroll = React.forwardRef(({ scrollBlock }, ref) => {
     if (scrollBlock.current) {
       const content = scrollBlock.current;
       const layer = scrollLayer.current;
-      const thumb = ref.current;
+      const thumb = scrollThumb.current;
       layer.style.width = '202px';
 
       const parseTranslateValue = thumb.style.transform.slice(11);
@@ -86,7 +86,7 @@ const Scroll = React.forwardRef(({ scrollBlock }, ref) => {
       <div className="scroll-component">
         <div
           className="scroll-thumb"
-          ref={ref}
+          ref={scrollThumb}
           onMouseDown={dragThumb}
           style={{ transform: 'translateY(0px)' }}>
         </div>

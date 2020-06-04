@@ -20,7 +20,7 @@ const Price = () => {
       store.dispatch(saveSearchValue('minPrice', inputMinPrice.current.value));
       store.dispatch(saveSearchValue('maxPrice', inputMaxPrice.current.value));
     }
-  });
+  }, []);
 
   const onInputClick = (e) => {
     e.target.focus();

@@ -37,7 +37,7 @@ const MainContainer = () => {
 
   const scrollProcessing = () => {
     const scrollTop = document.documentElement.scrollTop;
-    // console.log('scrollTop', scrollTop, fixTouchEndPoint, isTouchEnd)
+
     if (isTouchEnd && (scrollTop < (fixTouchEndPoint - 13))) {
       dispatch(setPageTopState(null));
     };
