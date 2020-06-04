@@ -18,7 +18,7 @@ const MenuItems = React.forwardRef(({ isOverlayMenu, setOverlayMenu, isSeparator
   };
 
   return (
-    <nav>
+    <nav className="main-menu__wrapper">
       <ul className="main-menu__items" ref={items}>
         <li
           data-menu="home"
