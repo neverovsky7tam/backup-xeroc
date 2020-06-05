@@ -1,16 +1,19 @@
 import React from 'react';
+import Ads from './Ads';
 
 const renderProducts = (ProductTemplate, data) => {
-  const items = data.map((el, idx) => {
-    const productProcess = productsProcessing(el);
-
-    return <ProductTemplate
-      key={el.id}
-      idx={idx}
-      item={el}
-      itemHash={productProcess.hash}
-      itemPrice={productProcess.price}
-      hashArr={productProcess.hashArr} />;
+  const items = data.map((el) => {
+    if (el.type === 'banner') {
+      return <Ads key={el.id} item={el} />
+    } else {
+      const productProcess = productsProcessing(el);
+      return <ProductTemplate
+        key={el.id}
+        item={el}
+        itemHash={productProcess.hash}
+        itemPrice={productProcess.price}
+        hashArr={productProcess.hashArr} />;
+    };
   });
 
   return items;
@@ -38,11 +41,11 @@ const productsProcessing = (el) => {
   } else {
     hash = `${hashArr[0].h}`;
     price = `$${hashArr[0].price}`;
-  }
+  };
 
   return {
     hash,
     price,
     hashArr,
-  }
-}
+  };
+};
