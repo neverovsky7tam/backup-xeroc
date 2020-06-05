@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState } from 'react';
 import Select from '../Select/Select';
 import { BoxDecor } from '../../Parts/BoxDecor';
 import { ReactComponent as ProductStar } from '../../../assets/img/product-star.svg';
@@ -17,7 +17,7 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr }) => {
   const rateStar = React.createRef();
   const pdoductParam_PSU = React.createRef();
   const openOrderArrow = React.createRef();
-  
+
   const boxDecor = React.createRef();
   const arrow = React.createRef();
   const select = React.createRef();
@@ -61,11 +61,11 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr }) => {
 
   if (item.title.length > 21) {
     item.title = item.title.slice(0, 23) + '...';
-  }
+  };
 
   return (
     <li className="products__item-wrapper products__item-wrapper_mobile">
-      <div className="decor-holder p-relative">
+      <div className="item-holder p-relative">
         <div
           className="products__item"
           ref={productItem}>
@@ -127,7 +127,7 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr }) => {
         <BoxDecor ref={boxDecor} />
       </div>
     </li>
-  )
+  );
 };
 
 export default ProductTileMobile;

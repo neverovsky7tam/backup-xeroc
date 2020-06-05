@@ -7,6 +7,7 @@ import { ProductListHead, ProductList } from './ProductList';
 import Scroll from '../Scroll/Scroll';
 import ViewSwitcher from './ViewSwitcher';
 import { calcToScroll } from '../Scroll/Scroll';
+import { ReactComponent as Ads } from '../../../assets/img/ads.svg';
 
 const OnSale = () => {
   const isMobile = useSelector((state) => state.deviceType);
@@ -20,16 +21,25 @@ const OnSale = () => {
   const setScroll = () => {
     const scroll = calcToScroll(scrollBlock.current);
     scrollThumb.current.style.transform = `translateY(${scroll.toScroll}px)`;
-  }
+  };
+
+  const setMobProductsList = (data) => {
+    return data.map((el, idx) => {
+      if (idx !== 0 && idx % 4 === 0) return { id: Date.now() + idx, type: 'banner', content: Ads, };
+      else return el;
+    });
+  };
 
   const productsObj = useSelector((state) => state.productsDisplay);
   const plugTextMarginLeft = (view) ? '30px' : '0';
   let content = <p style={{ marginLeft: plugTextMarginLeft }}>Sorry. No products to display</p>;
 
   if (productsObj.length) {
-    const data = productsObj;
+    let data = productsObj;
 
     if (isMobile) {
+      data = setMobProductsList(data);
+      console.log('data', data);
       content = (
         <ul
           className="products">
