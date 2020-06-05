@@ -4085,6 +4085,13 @@ button:focus {
   }
 }
 
+@media (max-width: 1679px) {
+  .list {
+    -ms-grid-columns: 29px 20px 8% 15% 8% 17% 11% 9% 10% 1fr;
+        grid-template-columns: 29px 20px 8% 15% 8% 17% 11% 9% 10% 1fr;
+  }
+}
+
 @media (max-width: 1439px) {
   .list {
     -ms-grid-columns: 29px 20px 16% 8% 24% 12% 14% 1fr;
