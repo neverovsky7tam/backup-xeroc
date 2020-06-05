@@ -3136,6 +3136,12 @@ button:focus {
   cursor: pointer;
 }
 
+@media (min-width: 768px) {
+  .filter-block .filter__select .arrow {
+    right: 6px;
+  }
+}
+
 .filter-block .filter__select_expand {
   background-color: rgba(255, 255, 255, 0.05);
 }
@@ -3227,7 +3233,7 @@ button:focus {
 }
 
 .filter-block .filter__items-container .filter__item-inner .filter__item-img {
-  margin-bottom: 13px;
+  margin-bottom: 12px;
 }
 
 @media (min-width: 768px) {

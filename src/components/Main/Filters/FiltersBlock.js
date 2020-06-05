@@ -7,8 +7,11 @@ import { algorithmsSpecies, coinsSpecies, equipmentSpecies, manufacturerSpecies 
 const FiltersBlock = ({ checkScroll }) => {
   const filterBlock = React.createRef();
 
-  const checkHeight = () => {
-    checkScroll(filterBlock.current.clientHeight);
+  let checkHeight = null;
+  if (checkScroll) {
+    checkHeight = () => {
+      checkScroll(filterBlock.current.clientHeight);
+    };
   }
 
   const filtersArr = [['algorithm', algorithmsSpecies], ['coins', coinsSpecies], ['equipment', equipmentSpecies], ['manufacturer', manufacturerSpecies]];

@@ -5,7 +5,7 @@ const FilterItems = ({ itemsArr, onItemClick, img }) => {
   const onHoverItem = (e, param) => {
     if (document.documentElement.clientWidth < 768) return;
     if (param) e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-    else e.currentTarget.style = '';
+    else e.currentTarget.style.background = '';
   }
 
   const gridColumns = (img) ? 'repeat(3, 1fr)' : 'repeat(2, 1fr)';

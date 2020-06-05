@@ -10,7 +10,7 @@ const Filter = ({ filterName, filterProps, checkHeightBlock }) => {
   const [itemsArr, setItemsArr] = useState([]);
 
   useEffect(() => {
-    checkHeightBlock();
+    if (checkHeightBlock) checkHeightBlock();
   }, [isExpand]);
 
   return (
