@@ -4191,12 +4191,29 @@ button:focus {
   overflow: hidden;
 }
 
+@media (min-width: 2560px) {
+  .listings__body .listings__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 746px;
+  }
+}
+
 .listings__body .scroll-container {
   overflow-y: scroll;
 }
 
-.listings__body .products__item {
+.listings__body .products__item-wrapper {
   margin-bottom: 30px;
+}
+
+@media (min-width: 2560px) {
+  .listings__body .products__item-wrapper {
+    margin: 0 30px 30px 0;
+  }
 }
 
 .news {
@@ -4207,6 +4224,12 @@ button:focus {
   .news {
     display: block;
     margin-left: 30px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .news {
+    margin: 0;
   }
 }
 

@@ -21,11 +21,23 @@
 .listings__body {
   overflow: hidden;
 
+  .listings__list {
+    @media (min-width: 2560px) {
+      display: flex;
+      flex-wrap: wrap;
+      width: 746px;
+    }
+  }
+
   .scroll-container {
     overflow-y: scroll;
   }
 
-  .products__item {
+  .products__item-wrapper {
     margin-bottom: 30px;
+
+    @media (min-width: 2560px) {
+      margin: 0 30px 30px 0;
+    }
   }
 }
