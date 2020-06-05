@@ -4,7 +4,7 @@ import Scroll from '../Scroll/Scroll';
 import { calcToScroll } from '../Scroll/Scroll';
 
 const Filters = () => {
-  const [isScroll, setScrollDisplay] = useState(false);
+  // const [isScroll, setScrollDisplay] = useState(false);
 
   const scrollThumb = React.createRef();
   const scrollBlock = React.createRef();
@@ -18,8 +18,11 @@ const Filters = () => {
 
   const checkScroll = (filtersBlockHeight) => {
     const scrollBlockHeight = scrollBlock.current.clientHeight;
-    if (filtersBlockHeight > scrollBlockHeight) setScrollDisplay(true);
-    else setScrollDisplay(false);
+    if (filtersBlockHeight > scrollBlockHeight) scrollThumb.current.style.display = 'block';
+    else {
+      scrollThumb.current.style.display = 'none';
+      scrollThumb.current.style.transform = '';
+    } 
   };
 
   return (
@@ -35,7 +38,7 @@ const Filters = () => {
           <FiltersBlock checkScroll={checkScroll} />
         </div>
       </div>
-      {isScroll && <Scroll ref={scrollThumb} scrollBlock={scrollBlock} />}
+      <Scroll ref={scrollThumb} scrollBlock={scrollBlock} />
     </section>
   );
 };
