@@ -25,7 +25,7 @@ const OnSale = () => {
 
   const setMobProductsList = (data) => {
     return data.map((el, idx) => {
-      if (idx !== 0 && idx % 4 === 0) return { id: Date.now() + idx, type: 'banner', content: Ads, };
+      if (idx !== 0 && idx % 5 === 0) return { id: Date.now() + idx, type: 'banner', content: Ads, };
       else return el;
     });
   };

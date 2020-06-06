@@ -50,7 +50,7 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr }) => {
     if (param) {
       const orderBlockWidth = orderBlock.current.clientWidth;
 
-      itemInner.current.style.right = `${orderBlockWidth}px`;
+      itemInner.current.style.right = `${orderBlockWidth + 1}px`;
       closeOrder.current.style.display = 'block';
     } else {
       closeOrder.current.style = '';

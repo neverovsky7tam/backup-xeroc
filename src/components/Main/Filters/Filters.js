@@ -4,8 +4,6 @@ import Scroll from '../Scroll/Scroll';
 import { calcToScroll } from '../Scroll/Scroll';
 
 const Filters = () => {
-  // const [isScroll, setScrollDisplay] = useState(false);
-
   const scrollThumb = React.createRef();
   const scrollBlock = React.createRef();
 
