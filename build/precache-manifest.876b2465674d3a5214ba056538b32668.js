@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ccb85f0de9ed0005be902e2a3336aba3",
+    "revision": "8735f0e7b41ea304f553de21c0b80806",
     "url": "/index.html"
   },
   {
-    "revision": "5a318e5f70c28ace8df6",
-    "url": "/static/css/main.467ad6c0.chunk.css"
+    "revision": "2e871e7c7f15f0f87790",
+    "url": "/static/css/main.68de91b0.chunk.css"
   },
   {
     "revision": "253e8223e125867ee12f",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.0ed90f38.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5a318e5f70c28ace8df6",
-    "url": "/static/js/main.180b971a.chunk.js"
+    "revision": "2e871e7c7f15f0f87790",
+    "url": "/static/js/main.1e34ae98.chunk.js"
   },
   {
     "revision": "220d64f6f8cb5da655ce",
@@ -44,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/achievment_silver.ec77365d.svg"
   },
   {
-    "revision": "a2bd6f4d95b66f75e806b4c78d8691e9",
-    "url": "/static/media/ads.a2bd6f4d.svg"
+    "revision": "9720c70b853a7da004b6250e8fdf99e7",
+    "url": "/static/media/ads_content.9720c70b.svg"
   },
   {
     "revision": "9e1335cc83270fb06e5343f2b27f4e8e",
