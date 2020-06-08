@@ -1227,57 +1227,61 @@ button:focus {
 
 .sidebar__content .awards__item {
   position: relative;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 100%;
   margin-bottom: 15px;
-  padding: 14% 12.5%;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-.sidebar__content .awards__item svg {
+.sidebar__content .awards__item .awards__item-inner {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  padding: 45px 12.5%;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar__content .awards__item .awards__item-inner svg {
   width: 140px;
   height: auto;
 }
 
 @media (max-width: 424px) {
-  .sidebar__content .awards__item svg {
+  .sidebar__content .awards__item .awards__item-inner svg {
     width: 130px;
   }
 }
 
 @media (max-width: 374px) {
-  .sidebar__content .awards__item svg {
+  .sidebar__content .awards__item .awards__item-inner svg {
     width: 120px;
   }
 }
 
-.sidebar__content .awards__item h4 {
-  margin: 11.8% 0 3.5%;
+.sidebar__content .awards__item .awards__item-inner h4 {
+  margin: 33px 0 14px;
+  line-height: 0.75;
 }
 
-.sidebar__content .awards__item h4,
-.sidebar__content .awards__item p {
+.sidebar__content .awards__item .awards__item-inner h4,
+.sidebar__content .awards__item .awards__item-inner p {
   line-height: 20px;
 }
 
 @media (max-width: 424px) {
-  .sidebar__content .awards__item h4,
-  .sidebar__content .awards__item p {
+  .sidebar__content .awards__item .awards__item-inner h4,
+  .sidebar__content .awards__item .awards__item-inner p {
     line-height: 19px;
   }
 }
 
 @media (max-width: 374px) {
-  .sidebar__content .awards__item h4,
-  .sidebar__content .awards__item p {
+  .sidebar__content .awards__item .awards__item-inner h4,
+  .sidebar__content .awards__item .awards__item-inner p {
     line-height: 16px;
   }
 }
 
-.sidebar__content .awards__item .p-mob {
+.sidebar__content .awards__item .awards__item-inner .p-mob {
   color: #fff;
 }
 
@@ -1349,9 +1353,25 @@ button:focus {
   overflow-y: scroll;
 }
 
-.sidebar__content-inner h2,
-.sidebar__content-inner_mod h2 {
-  margin: 59px 0 57px 13px;
+@media (min-width: 425px) {
+  .sidebar__content-inner h2,
+  .sidebar__content-inner_mod h2 {
+    margin: 59px 0 57px 13px;
+  }
+}
+
+@media (max-width: 424px) {
+  .sidebar__content-inner h2,
+  .sidebar__content-inner_mod h2 {
+    margin: 53px 0 57px 13px;
+  }
+}
+
+@media (max-width: 374px) {
+  .sidebar__content-inner h2,
+  .sidebar__content-inner_mod h2 {
+    margin: 45px 0 42px 13px;
+  }
 }
 
 @media (min-width: 425px) {

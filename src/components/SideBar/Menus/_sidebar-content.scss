@@ -28,46 +28,50 @@
 
   .awards__item {
     position: relative;
-    box-sizing: border-box;
-    width: 100%;
     margin-bottom: 15px;
-    padding: 14% 12.5%;
-    text-align: center;
-    border: 1px solid $secondary_bg;
     background-color: $secondary_bg-sec;
 
-    svg {
-      width: 140px;
-      height: auto;
+    .awards__item-inner {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 45px 12.5%;
+      text-align: center;
+      border: 1px solid $secondary_bg;
 
-      @media (max-width: 424px) {
-        width: 130px;
+      svg {
+        width: 140px;
+        height: auto;
+
+        @media (max-width: 424px) {
+          width: 130px;
+        }
+
+        @media (max-width: 374px) {
+          width: 120px;
+        }
       }
 
-      @media (max-width: 374px) {
-        width: 120px;
-      }
-    }
-
-    h4 {
-      margin: 11.8% 0 3.5%;
-    }
-
-    h4,
-    p {
-      line-height: 20px;
-
-      @media (max-width: 424px) {
-        line-height: 19px;
+      h4 {
+        margin: 33px 0 14px;
+        line-height: 0.75;
       }
 
-      @media (max-width: 374px) {
-        line-height: 16px;
-      }
-    }
+      h4,
+      p {
+        line-height: 20px;
 
-    .p-mob {
-      color: $white_font;
+        @media (max-width: 424px) {
+          line-height: 19px;
+        }
+
+        @media (max-width: 374px) {
+          line-height: 16px;
+        }
+      }
+
+      .p-mob {
+        color: $white_font;
+      }
     }
   }
 
@@ -121,7 +125,17 @@
   overflow-y: scroll;
 
   h2 {
-    margin: 59px 0 57px 13px;
+    @media (min-width: 425px) {
+      margin: 59px 0 57px 13px;
+    }
+
+    @media (max-width: 424px) {
+      margin: 53px 0 57px 13px;
+    }
+
+    @media (max-width: 374px) {
+      margin: 45px 0 42px 13px;
+    }
   }
 }
 
