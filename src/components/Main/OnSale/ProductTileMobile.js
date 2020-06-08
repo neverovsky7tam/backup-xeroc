@@ -14,7 +14,7 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr }) => {
   const orderBlock = React.createRef();
   const closeOrder = React.createRef();
   const productImg = React.createRef();
-  const rateStar = React.createRef();
+  const itemHeader = React.createRef();
   const pdoductParam_PSU = React.createRef();
   const openOrderArrow = React.createRef();
 
@@ -40,7 +40,7 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr }) => {
 
   const toggleOrder = (param) => {
     productImg.current.classList.toggle('item-img_hover-on');
-    rateStar.current.classList.toggle('d-none');
+    itemHeader.current.classList.toggle('d-none');
     pdoductParam_PSU.current.classList.toggle('d-none');
     openOrderArrow.current.classList.toggle('d-none');
     boxDecor.current.children[0].classList.toggle('d-none');
@@ -73,12 +73,12 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr }) => {
             className="products__item-inner"
             ref={itemInner}>
             <div className="products__item-show-block">
-              <div className="products__item-header d-flex justify-content-between">
+              <div className="products__item-header d-flex justify-content-between" ref={itemHeader}>
                 <div className="products__item-header-text">
                   <h5 className="poducts__item-title">{item.title}</h5>
                   <span className="products__item-hash">{itemHash} {item.hash.option}</span>
                 </div>
-                <div className="products__item-star" ref={rateStar}>
+                <div className="products__item-star">
                   {(!item.star) ? '' : (item.star === 'full') ? <ProductStar /> : <ProductHalfStar />}
                 </div>
               </div>

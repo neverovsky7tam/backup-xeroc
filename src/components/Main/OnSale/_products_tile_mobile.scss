@@ -188,9 +188,8 @@
     .select-wrapper {
       margin: 0 0 30px;
 
-      .select__show-btn svg {
-        width: 13px;
-        height: 9px;
+      .select__show-btn {
+        display: flex;
       }
 
       .select__show-title,
