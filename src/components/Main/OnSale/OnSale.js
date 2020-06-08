@@ -7,7 +7,7 @@ import { ProductListHead, ProductList } from './ProductList';
 import Scroll from '../Scroll/Scroll';
 import ViewSwitcher from './ViewSwitcher';
 import { calcToScroll } from '../Scroll/Scroll';
-import { ReactComponent as Ads } from '../../../assets/img/ads.svg';
+import { ReactComponent as Ads } from '../../../assets/img/ads_content.svg';
 
 const OnSale = () => {
   const isMobile = useSelector((state) => state.deviceType);
@@ -24,10 +24,15 @@ const OnSale = () => {
   };
 
   const setMobProductsList = (data) => {
-    return data.map((el, idx) => {
-      if (idx !== 0 && idx % 5 === 0) return { id: Date.now() + idx, type: 'banner', content: Ads, };
-      else return el;
+    let dataMob = [];
+    let counter = 0;
+    data.forEach((el, idx) => {
+      dataMob.push(el);
+      counter += 1;
+      if (counter % 5 === 0) dataMob.push({ id: Date.now() + idx, type: 'banner', content: Ads, });
     });
+
+    return dataMob;
   };
 
   const productsObj = useSelector((state) => state.productsDisplay);
@@ -35,15 +40,14 @@ const OnSale = () => {
   let content = <p style={{ marginLeft: plugTextMarginLeft }}>Sorry. No products to display</p>;
 
   if (productsObj.length) {
-    let data = productsObj;
+    const data = productsObj.slice();
 
     if (isMobile) {
-      data = setMobProductsList(data);
-      console.log('data', data);
+      const dataMob = setMobProductsList(data);
       content = (
         <ul
           className="products">
-          {renderProducts(ProductTileMobile, data)}
+          {renderProducts(ProductTileMobile, dataMob)}
         </ul>
       )
     } else {
