@@ -496,6 +496,12 @@ button:focus {
   line-height: 25px;
 }
 
+@media (max-width: 374px) {
+  .main-block .main-block__inner .left .text span {
+    line-height: 22px;
+  }
+}
+
 .main-block .main-block__inner .right {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -511,6 +517,13 @@ button:focus {
 
 .main-block .main-block__inner .right .action-box {
   padding: 5px;
+}
+
+@media (max-width: 374px) {
+  .main-block .main-block__inner .right .action-box svg {
+    width: 8px;
+    height: 8px;
+  }
 }
 
 .main-block .social-icon__big {
@@ -624,18 +637,21 @@ button:focus {
 @media (min-width: 425px) {
   .rolling-block .rolling-block__hidden svg {
     width: 17px;
+    height: 21px;
   }
 }
 
 @media (max-width: 424px) {
   .rolling-block .rolling-block__hidden svg {
     width: 15px;
+    height: 19px;
   }
 }
 
 @media (max-width: 374px) {
   .rolling-block .rolling-block__hidden svg {
     width: 13px;
+    height: 16px;
   }
 }
 
@@ -1300,13 +1316,13 @@ button:focus {
 
 .sidebar__content .sellers__item .img-wrapper img {
   display: block;
-  width: 37px;
+  width: 40px;
   border-radius: 50%;
 }
 
 @media (max-width: 374px) {
   .sidebar__content .sellers__item .img-wrapper img {
-    width: 33px;
+    width: 35px;
   }
 }
 

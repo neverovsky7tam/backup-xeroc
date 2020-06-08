@@ -57,6 +57,10 @@
 
         span {
           line-height: 25px;
+
+          @media (max-width: 374px) {
+            line-height: 22px;
+          }
         }
       }
     }
@@ -69,6 +73,13 @@
 
       .action-box {
         padding: 5px;
+
+        svg {
+          @media (max-width: 374px) {
+            width: 8px;
+            height: 8px;
+          }
+        }
       }
     }
   }

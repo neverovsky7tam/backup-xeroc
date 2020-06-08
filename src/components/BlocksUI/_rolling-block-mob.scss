@@ -4,8 +4,6 @@
   .main-block {
     right: 15px;
     width: calc(100% + 15px);
-    // border-top: 1px solid $secondary_bg;
-    // border-bottom: 1px solid $secondary_bg;
     overflow: hidden;
 
     .main-block__inner {
@@ -61,14 +59,17 @@
     svg {
       @media (min-width: 425px) {
         width: 17px;
+        height: 21px;
       }
 
       @media (max-width: 424px) {
         width: 15px;
+        height: 19px;
       }
 
       @media (max-width: 374px) {
         width: 13px;
+        height: 16px;
       }
     }
   }
