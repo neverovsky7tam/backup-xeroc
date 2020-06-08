@@ -16,7 +16,7 @@ const ByText = () => {
     return () => {
       store.dispatch(saveSearchValue('text', inputText.current.value));
     }
-  });
+  }, []);
 
   const onInputClick = (e) => {
     e.target.focus();

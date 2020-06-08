@@ -21,7 +21,7 @@ const Select = React.forwardRef(({ hashArr, displayHash, hashOpt, expandFunc, ha
   return (
     <div className="select" ref={ref.select}>
       <div className="select__shown-area">
-        <span className="select__show-title">Hash rate: {displayHash} {isDesctopTemplate && hashOpt}</span>
+        <span className="select__show-title">Hash{isDesctopTemplate && ' rate'}: {displayHash} {hashOpt}</span>
         {(hashArr.length > 1) &&
           <div className="select__show-btn" onClick={expandFunc}>
             <ArrowDropdownMenu ref={ref.arrow} />

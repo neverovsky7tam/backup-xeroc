@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import FilterHead from './FilterHead';
 import FilterMain from './FilterMain';
 import FilterSearch from './FilterSearch';
 import { BoxDecor } from '../../../Parts/BoxDecor';
 
-const Filter = ({ filterName, filterProps }) => {
+const Filter = ({ filterName, filterProps, checkHeightBlock }) => {
   const [isExpand, setExpand] = useState(false);
   const [isSearch, setSearchExpand] = useState(false);
   const [itemsArr, setItemsArr] = useState([]);
+
+  useEffect(() => {
+    if (checkHeightBlock) checkHeightBlock();
+  }, [isExpand]);
 
   return (
     <div className={`filter ${filterName}`}>

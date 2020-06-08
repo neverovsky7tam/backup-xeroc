@@ -84,7 +84,7 @@ export const TermsEN = () => {
       <p>We limit the use, disclosure and retention of collected data. We ensure the accuracy of the data we collect to the best of our knowledge.</p>
       <p>We obtain consent for collection, use, or disclosure of personal information.</p>
       <p>Individuals hold the right to access, update and delete their personal data. You can access, update and delete your information or submit additional inquires by emailing our Compliance Officer at <a href="mailto:compliance@corex.io">compliance@corex.io</a> or contact them by mail at PO Box 40113 Bay Village, OH 44140.</p>
-      <h4>(EU) General Data Protection Regulation (“GDPR”)</h4>
+      <h4 className="terms__head-line-height">(EU) General Data Protection Regulation (“GDPR”)</h4>
       <p>This section shall be expressly limited to Data Subjects. “Data Subjects”, subject to and as set forth in the GDPR, have several rights under the GDPR:</p>
       <ul className="cascade-list">
         <li>

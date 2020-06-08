@@ -74,10 +74,7 @@ const CarouselMenu = () => {
   const onTouchMove = (e) => {
     const moveY = e.changedTouches[0].clientY;
     const deltaY = touchStartY - moveY;
-    if (Math.abs(deltaY) > 65) {
-      onTouchEnd();
-      return;
-    };
+    if (Math.abs(deltaY) > 40) return;
 
     const movePos = e.changedTouches[0].clientX
     const delta = touchStart - movePos;
@@ -98,12 +95,14 @@ const CarouselMenu = () => {
     if (isMove) {
       isMove = false;
     } else {
-      const screenMedian = document.documentElement.clientWidth / 2;
-      const touch = e.changedTouches[0].clientX;
-      const currentItemRightLocation = screenMedian + rightBreakpoint;
-      const currentItemLeftLocation = screenMedian + leftBreakpoint;
-      if (touch > currentItemRightLocation) Scroll('to-left');
-      if (touch < currentItemLeftLocation) Scroll('to-right');
+      if (e) {
+        const screenMedian = document.documentElement.clientWidth / 2;
+        const touch = e.changedTouches[0].clientX;
+        const currentItemRightLocation = screenMedian + rightBreakpoint;
+        const currentItemLeftLocation = screenMedian + leftBreakpoint;
+        if (touch > currentItemRightLocation) Scroll('to-left');
+        if (touch < currentItemLeftLocation) Scroll('to-right');
+      } else return
     };
 
     initPosition = stopPos;

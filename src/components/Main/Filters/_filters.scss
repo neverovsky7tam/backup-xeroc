@@ -97,6 +97,10 @@
       justify-content: center;
       align-items: center;
       cursor: pointer;
+
+      @media (min-width: 768px) {
+        right: 6px;
+      }
     }
   }
 
@@ -118,37 +122,27 @@
     margin-top: 15px;
 
     .filter__item {
-      border: 1px solid rgba(0, 0, 0, 0);
-      background-color: $secondary_bg;
+      position: relative;
       cursor: pointer;
     }
 
     .filter__item_not-found {
+      position: relative;
       cursor: default;
-
-      &:hover {
-        background-color: $secondary_bg;
-      }
-    }
-
-    .filter__item_active {
-      border: 1px solid $secondary_bg;
-      background-color: $secondary_bg-sec;
-
-      .filter__item-inner {
-        color: $white_font;
-      }
     }
 
     .filter__item-inner {
-      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      box-sizing: border-box;
       height: 100%;
+      width: 100%;
       font-family: "Open Sans", sans-serif;
       font-weight: 300;
+      border: 1px solid rgba(0, 0, 0, 0);
+      background-color: $secondary_bg;
       color: $grey_font;
 
       @media (min-width: 768px) {
@@ -168,7 +162,7 @@
       }
 
       .filter__item-img {
-        margin-bottom: 13px;
+        margin-bottom: 12px;
 
         @media (min-width: 768px) {
           width: 30px;

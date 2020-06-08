@@ -5,6 +5,10 @@
     display: block;
     margin-left: 30px;
   }
+
+  @media (min-width: 2560px) {
+    margin: 0;
+  }
 }
 
 .news__body {
