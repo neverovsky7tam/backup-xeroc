@@ -8,6 +8,12 @@
 }
 
 .filter-block {
+  padding-bottom: 15px;
+
+  @media (min-width: 768px) {
+    padding: 0;
+  }
+
   .filter {
     padding-bottom: 15px;
   }
@@ -16,7 +22,7 @@
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    padding: 0 9px;
+    padding: 0 13px;
     border: 1px solid rgba(0, 0, 0, 0);
     background-color: $secondary_bg;
 
@@ -162,22 +168,24 @@
       }
 
       .filter__item-img {
-        margin-bottom: 12px;
-
         @media (min-width: 768px) {
           width: 30px;
+          margin-bottom: 12px;
         }
 
         @media (max-width: 767px) {
           width: 37px;
+          margin-bottom: 30px;
         }
 
         @media (max-width: 424px) {
           width: 32px;
+          margin-bottom: 25px;
         }
 
         @media (max-width: 374px) {
           width: 25.6px;
+          margin-bottom: 20px;
         }
       }
     }

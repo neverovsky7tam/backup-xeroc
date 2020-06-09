@@ -16,60 +16,6 @@
     width: calc(100% - 73px);
   }
 
-  .toggle-arrow {
-    @media (min-width: 375px) {
-      width: 12px;
-      height: 7.2px;
-    }
-
-    @media (max-width: 374px) {
-      width: 10px;
-      height: 6px;
-    }
-  }
-
-  .toggle-arrow_right {
-    transform: rotate(-90deg);
-  }
-
-  .update-icon {
-    @media (min-width: 425px) {
-      width: 13px;
-    }
-
-    @media (max-width: 424px) {
-      width: 12px;
-    }
-
-    @media (max-width: 374px) {
-      width: 11px;
-    }
-  }
-
-  .notification-arrow {
-    @media (max-width: 374px) {
-      width: 8px;
-      height: 8px;
-    }
-  }
-
-  .notification-delete {
-    @media (min-width: 425px) {
-      width: 17px;
-      height: 21px;
-    }
-
-    @media (max-width: 424px) {
-      width: 15px;
-      height: 19px;
-    }
-
-    @media (max-width: 374px) {
-      width: 13px;
-      height: 16px;
-    }
-  }
-
   &::before {
     content: "";
     position: absolute;

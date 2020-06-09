@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { MainBlockMob } from '../../BlocksUI/MainBlockMob';
 import { ButtonMain } from '../../BlocksUI/Buttons/ButtonMain';
 import { setAccountMenu } from '../../../store/actions';
-import { ReactComponent as ToggleArrow } from '../../../assets/img/SideBar/toggle-arrow.svg';
+import { ReactComponent as ToggleArrow } from '../../../assets/img/toggle-arrow.svg';
 import { ReactComponent as SellIcon } from '../../../assets/img/SideBar/sell-icon.svg';
 import { ReactComponent as SellHistoryIcon } from '../../../assets/img/SideBar/Account/sell-history.svg';
 import { ReactComponent as HistoryIcon } from '../../../assets/img/SideBar/Account/history.svg';

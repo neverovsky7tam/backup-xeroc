@@ -2,7 +2,7 @@ import React, { useLayoutEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { expandFilter } from './logicFilters';
 import { renderTags, deleteTag, setSelectFieldState, setSearchBlock, setSearchFilterItems } from './logicInput';
-import { ReactComponent as ArrowDots } from '../../../../assets/img/arrow-dots.svg';
+import { ReactComponent as ToggleArrow } from '../../../../assets/img/toggle-arrow.svg';
 
 const FilterHead = ({ filterName, isExpand, setExpand, isSearch, setSearchExpand, setItemsArr }) => {
   const filter = React.createRef();
@@ -74,7 +74,7 @@ const FilterHead = ({ filterName, isExpand, setExpand, isSearch, setSearchExpand
           maxLength="10" />
       </div>
       <div className="arrow" ref={arrow}>
-        <ArrowDots />
+        <ToggleArrow className="toggle-arrow" />
       </div>
     </div>
   );

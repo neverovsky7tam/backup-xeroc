@@ -6,7 +6,7 @@ import { ButtonMain } from '../../BlocksUI/Buttons/ButtonMain';
 import { ReactComponent as USAFlagIcon } from '../../../assets/img/SideBar/usa-flag.svg';
 import { ReactComponent as UpdateIcon } from '../../../assets/img/SideBar/update.svg';
 import { ReactComponent as SellIcon } from '../../../assets/img/SideBar/sell-icon.svg';
-import { ReactComponent as ToggleArrow } from '../../../assets/img/SideBar/toggle-arrow.svg';
+import { ReactComponent as ToggleArrow } from '../../../assets/img/toggle-arrow.svg';
 import { BoxDecor } from '../../Parts/BoxDecor';
 
 let currentBlock = null;
