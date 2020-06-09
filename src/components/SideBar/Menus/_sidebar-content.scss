@@ -16,7 +16,7 @@
     width: calc(100% - 73px);
   }
 
-  .dropdown-arrow {
+  .toggle-arrow {
     @media (min-width: 375px) {
       width: 12px;
       height: 7.2px;
@@ -26,6 +26,10 @@
       width: 10px;
       height: 6px;
     }
+  }
+
+  .toggle-arrow_right {
+    transform: rotate(-90deg);
   }
 
   .update-icon {

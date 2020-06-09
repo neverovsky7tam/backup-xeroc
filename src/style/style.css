@@ -570,7 +570,7 @@ button:focus {
 
 @media (max-width: 374px) {
   .main-block .main-block__inner .left .text span {
-    line-height: 22px;
+    line-height: 23px;
   }
 }
 
@@ -588,6 +588,9 @@ button:focus {
 }
 
 .main-block .main-block__inner .right .action-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: 5px;
 }
 
@@ -1276,17 +1279,22 @@ button:focus {
 }
 
 @media (min-width: 375px) {
-  .sidebar__content .dropdown-arrow {
+  .sidebar__content .toggle-arrow {
     width: 12px;
     height: 7.2px;
   }
 }
 
 @media (max-width: 374px) {
-  .sidebar__content .dropdown-arrow {
+  .sidebar__content .toggle-arrow {
     width: 10px;
     height: 6px;
   }
+}
+
+.sidebar__content .toggle-arrow_right {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 
 @media (min-width: 425px) {

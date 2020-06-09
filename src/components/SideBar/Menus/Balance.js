@@ -6,7 +6,7 @@ import { ButtonMain } from '../../BlocksUI/Buttons/ButtonMain';
 import { ReactComponent as USAFlagIcon } from '../../../assets/img/SideBar/usa-flag.svg';
 import { ReactComponent as UpdateIcon } from '../../../assets/img/SideBar/update.svg';
 import { ReactComponent as SellIcon } from '../../../assets/img/SideBar/sell-icon.svg';
-import { ReactComponent as DropdownArrow } from '../../../assets/img/SideBar/dropdown-arrow.svg';
+import { ReactComponent as ToggleArrow } from '../../../assets/img/SideBar/toggle-arrow.svg';
 import { BoxDecor } from '../../Parts/BoxDecor';
 
 let currentBlock = null;
@@ -182,7 +182,7 @@ export const BalanceContent = () => {
           icon={<SellIcon />}
           header={'PayPal'}
           span={'Withdrawal via'}
-          actionIcon={<DropdownArrow style={{ transform: payPalIsOpen }} className="dropdown-arrow" />}
+          actionIcon={<ToggleArrow style={{ transform: payPalIsOpen }} className="toggle-arrow" />}
           func={() => setPayPalList(!payPalList)} />
         {payPalList && <WithdrawalList block={payPalBlock} />}
       </div>
@@ -192,7 +192,7 @@ export const BalanceContent = () => {
           icon={<SellIcon />}
           header={'CoinPayments'}
           span={'Withdrawal via'}
-          actionIcon={<DropdownArrow style={{ transform: coinsIsOpen }} className="dropdown-arrow" />}
+          actionIcon={<ToggleArrow style={{ transform: coinsIsOpen }} className="toggle-arrow" />}
           func={() => setCoinsList(!coinsList)} />
         {coinsList && <WithdrawalList block={coinsBlock} />}
       </div>
