@@ -1183,34 +1183,6 @@ button:focus {
           align-items: center;
 }
 
-.sidebar__nav-item .sidebar__nav-item-btn .notification-quantity {
-  position: relative;
-  left: 3px;
-  margin-bottom: 3px;
-  font-family: "Open Sans", sans-serif;
-  text-align: right;
-  font-weight: normal;
-  color: #c4c4c4;
-}
-
-@media (max-width: 767px) {
-  .sidebar__nav-item .sidebar__nav-item-btn .notification-quantity {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 424px) {
-  .sidebar__nav-item .sidebar__nav-item-btn .notification-quantity {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 374px) {
-  .sidebar__nav-item .sidebar__nav-item-btn .notification-quantity {
-    font-size: 10px;
-  }
-}
-
 @media (min-width: 425px) {
   .sidebar__nav-item-btn_filters svg {
     width: 20px;
@@ -1274,22 +1246,51 @@ button:focus {
   }
 }
 
-@media (min-width: 425px) {
-  .sidebar__nav-item_notification {
+.sidebar__nav-item_notification .notification-quantity {
+  position: absolute;
+  top: 19%;
+  right: -3px;
+  margin-bottom: 3px;
+  font-family: "Open Sans", sans-serif;
+  text-align: right;
+  font-weight: normal;
+  color: #c4c4c4;
+}
+
+@media (max-width: 767px) {
+  .sidebar__nav-item_notification .notification-quantity {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 424px) {
+  .sidebar__nav-item_notification .notification-quantity {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 374px) {
+  .sidebar__nav-item_notification .notification-quantity {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar__nav-item_notification svg {
     width: 19.1px;
     height: 21.76px;
   }
 }
 
 @media (max-width: 424px) {
-  .sidebar__nav-item_notification {
+  .sidebar__nav-item_notification svg {
     width: 17.57px;
     height: 20px;
   }
 }
 
 @media (max-width: 374px) {
-  .sidebar__nav-item_notification {
+  .sidebar__nav-item_notification svg {
     width: 15.8px;
     height: 18px;
   }

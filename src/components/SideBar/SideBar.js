@@ -73,8 +73,15 @@ const SideBar = () => {
     }
 
     const menuIcon = menuElem.firstElementChild.firstElementChild.children;
+
     for (let path of menuIcon) {
       path.style.stroke = color;
+    };
+
+    // notifications amount div
+    if (menuElem.firstElementChild.children.length > 1) {
+      const fontColor = (menuElem.firstElementChild.children[1].style.color) ? '' : '#fff';
+      menuElem.firstElementChild.children[1].style.color = fontColor;
     }
   };
 
@@ -174,11 +181,9 @@ const SideBar = () => {
                   className="sidebar__nav-item"
                   data-menu="Notifications"
                   onClick={setMenu}>
-                  <div className="sidebar__nav-item-btn sidebar__nav-item_notification">
-                    <div>
-                      <div className="notification-quantity">{notificationCounter}</div>
-                      <NotificationIcon />
-                    </div>
+                  <div className="sidebar__nav-item-btn sidebar__nav-item_notification p-relative">
+                    <NotificationIcon />
+                    <div className="notification-quantity">{notificationCounter}</div>
                   </div>
                 </li>
                 <div className="menu-separate">
