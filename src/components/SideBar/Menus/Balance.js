@@ -19,7 +19,6 @@ const WithdrawalList = ({ block }) => {
 
   const onClickItem = (e) => {
     const item = e.currentTarget;
-
     if (currentItem && currentItem !== item) {
       currentItem.classList.remove('item-active');
       currentItem.dataset.active = 0;
@@ -27,8 +26,9 @@ const WithdrawalList = ({ block }) => {
       if (currentItem.dataset.type === 'input') {
         currentItem.firstElementChild.value = '';
         currentItem.firstElementChild.placeholder = 'Otherwise';
-      }
-    }
+        currentItem.style = '';
+      };
+    };
 
     if (currentItem === item && +item.dataset.active) isBlockActive = false;
     else isBlockActive = true;
@@ -61,17 +61,31 @@ const WithdrawalList = ({ block }) => {
   const inputFocus = (e) => {
     const input = e.currentTarget;
     const inputWrapper = e.currentTarget.parentElement;
+
     if (currentItem) {
       currentItem.dataset.active = 0;
       currentItem.classList.remove('item-active');
-    }
-    currentItem = inputWrapper;
+    };
+
     if (e.type === 'focus') {
+      currentItem = inputWrapper;
       currentItem.style.background = 'rgba(255, 255, 255, 0.05)';
       input.placeholder = '';
       dispatch(setWithdrawal(0));
-    } else currentItem.style = '';
-  }
+    };
+
+    if (e.type === 'blur') {
+      const prevInput = currentItem;
+      setTimeout(() => {
+        if (currentItem === currentItem && currentItem.firstElementChild.value) currentItem.classList.add('item-active');
+        else {
+          prevInput.style = '';
+          prevInput.firstElementChild.value = '';
+          prevInput.firstElementChild.placeholder = 'Otherwise';
+        }
+      }, 0);
+    };
+  };
 
   const inputChange = (e) => {
     const value = e.target.value;
