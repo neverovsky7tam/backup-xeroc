@@ -6,7 +6,7 @@ import { ButtonMain } from '../../BlocksUI/Buttons/ButtonMain';
 import { ReactComponent as USAFlagIcon } from '../../../assets/img/SideBar/usa-flag.svg';
 import { ReactComponent as UpdateIcon } from '../../../assets/img/SideBar/update.svg';
 import { ReactComponent as SellIcon } from '../../../assets/img/SideBar/sell-icon.svg';
-import { ReactComponent as Arrow } from '../../../assets/img/SideBar/arrow-white-right.svg';
+import { ReactComponent as ToggleArrow } from '../../../assets/img/toggle-arrow.svg';
 import { BoxDecor } from '../../Parts/BoxDecor';
 
 let currentBlock = null;
@@ -25,10 +25,11 @@ const WithdrawalList = ({ block }) => {
       currentItem.dataset.active = 0;
 
       if (currentItem.dataset.type === 'input') {
+        currentItem.style = '';
         currentItem.firstElementChild.value = '';
         currentItem.firstElementChild.placeholder = 'Otherwise';
-      }
-    }
+      };
+    };
 
     if (currentItem === item && +item.dataset.active) isBlockActive = false;
     else isBlockActive = true;
@@ -61,17 +62,35 @@ const WithdrawalList = ({ block }) => {
   const inputFocus = (e) => {
     const input = e.currentTarget;
     const inputWrapper = e.currentTarget.parentElement;
+
     if (currentItem) {
       currentItem.dataset.active = 0;
       currentItem.classList.remove('item-active');
-    }
+
+      if (currentItem.dataset.type === 'input') {
+        currentItem.style = '';
+        currentItem.firstElementChild.value = '';
+        currentItem.firstElementChild.placeholder = 'Otherwise';
+      }
+    };
+
     currentItem = inputWrapper;
-    if (e.type === 'focus') {
-      currentItem.style.background = 'rgba(255, 255, 255, 0.05)';
-      input.placeholder = '';
-      dispatch(setWithdrawal(0));
-    } else currentItem.style = '';
-  }
+    currentItem.style.background = 'rgba(255, 255, 255, 0.05)';
+    input.placeholder = '';
+    dispatch(setWithdrawal(0));
+  };
+
+  const inputBlur = () => {
+    const prevInput = currentItem;
+    setTimeout(() => {
+      if (currentItem === currentItem && currentItem.firstElementChild.value) currentItem.classList.add('item-active');
+      else {
+        prevInput.style = '';
+        prevInput.firstElementChild.value = '';
+        prevInput.firstElementChild.placeholder = 'Otherwise';
+      }
+    }, 0);
+  };
 
   const inputChange = (e) => {
     const value = e.target.value;
@@ -128,7 +147,7 @@ const WithdrawalList = ({ block }) => {
             type="text"
             placeholder='Otherwise'
             onFocus={inputFocus}
-            onBlur={inputFocus}
+            onBlur={inputBlur}
             onChange={inputChange} />
         </div>
         <BoxDecor />
@@ -144,8 +163,8 @@ export const BalanceContent = () => {
   const payPalBlock = React.createRef();
   const coinsBlock = React.createRef();
 
-  const payPalIsOpen = (payPalList) ? 'rotate(-90deg)' : 'rotate(90deg)';
-  const coinsIsOpen = (coinsList) ? 'rotate(-90deg)' : 'rotate(90deg)';
+  const payPalIsOpen = (payPalList) ? 'rotate(180deg)' : 'rotate(0)';
+  const coinsIsOpen = (coinsList) ? 'rotate(180deg)' : 'rotate(0)';
 
   return (
     <>
@@ -155,7 +174,7 @@ export const BalanceContent = () => {
           icon={<USAFlagIcon className="social-icon__big" />}
           header={'$3500.55'}
           span={'Current balance'}
-          actionIcon={<UpdateIcon />} />
+          actionIcon={<UpdateIcon className="update-icon" />} />
       </div>
       <div className="content" style={{ marginBottom: '15px' }}>
         <MainBlockMob
@@ -163,7 +182,7 @@ export const BalanceContent = () => {
           icon={<SellIcon />}
           header={'PayPal'}
           span={'Withdrawal via'}
-          actionIcon={<Arrow style={{ transform: payPalIsOpen }} />}
+          actionIcon={<ToggleArrow style={{ transform: payPalIsOpen }} className="toggle-arrow" />}
           func={() => setPayPalList(!payPalList)} />
         {payPalList && <WithdrawalList block={payPalBlock} />}
       </div>
@@ -173,7 +192,7 @@ export const BalanceContent = () => {
           icon={<SellIcon />}
           header={'CoinPayments'}
           span={'Withdrawal via'}
-          actionIcon={<Arrow style={{ transform: coinsIsOpen }} />}
+          actionIcon={<ToggleArrow style={{ transform: coinsIsOpen }} className="toggle-arrow" />}
           func={() => setCoinsList(!coinsList)} />
         {coinsList && <WithdrawalList block={coinsBlock} />}
       </div>
@@ -183,17 +202,31 @@ export const BalanceContent = () => {
 
 export const BalanceBtn = () => {
   const withdrawal = useSelector((state) => state.withdrawal);
+
   const box = React.createRef();
   useEffect(() => {
-    if (+withdrawal > 0) box.current.classList.add('item-active');
-    else box.current.classList.remove('item-active');
+    if (+withdrawal > 0) {
+      box.current.classList.add('item-active');
+      box.current.firstElementChild.classList.add('info-input_active');
+    } else {
+      box.current.classList.remove('item-active');
+      box.current.firstElementChild.classList.remove('info-input_active');
+    }
   });
+
+  const inputChange = (e) => {
+    e.currentTarget.value = '';
+  };
 
   return (
     <div className="grid-template-2fr">
       <div className="decor-box">
         <div className="decor-box__inner" ref={box}>
-          <span className="span-mob">${withdrawal}</span>
+          <input
+            className="info-input"
+            type="text"
+            placeholder={`$${withdrawal}`}
+            onChange={inputChange} />
         </div>
         <BoxDecor />
       </div>

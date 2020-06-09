@@ -102,7 +102,7 @@ export const carouselMenuPos = (state = { pos: null, itemIndex: null }, action) 
   }
 }
 
-export const accountMenu = (state = false, action) => {
+export const accountMenu = (state = true, action) => {
   switch (action.type) {
     case SET_ACCOUNT_MENU:
       return action.isLogin;

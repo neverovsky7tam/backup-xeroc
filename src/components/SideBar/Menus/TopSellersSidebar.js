@@ -6,7 +6,7 @@ export const TopSellersSidebar = () => {
   const sellersArr = topSellers.concat(topSellers, topSellers, topSellers, topSellers, topSellers, topSellers, topSellers, topSellers, topSellers);
 
   const renderItems = () => {
-    const items = sellersArr.map((el) => {
+    const items = sellersArr.map((el, idx) => {
       let starArr = [];
       let i = el.star;
       while (i > 0) {
@@ -15,7 +15,7 @@ export const TopSellersSidebar = () => {
       };
 
       return (
-        <li className="sellers__item">
+        <li className="sellers__item" key={idx}>
           <div className="d-flex">
             <div className="img-wrapper">
               <img src={el.img} alt={el.name} />

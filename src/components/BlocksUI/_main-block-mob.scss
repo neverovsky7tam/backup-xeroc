@@ -57,6 +57,10 @@
 
         span {
           line-height: 25px;
+
+          @media (max-width: 374px) {
+            line-height: 23px;
+          }
         }
       }
     }
@@ -68,6 +72,7 @@
       padding-right: 10px;
 
       .action-box {
+        display: flex;
         padding: 5px;
       }
     }
