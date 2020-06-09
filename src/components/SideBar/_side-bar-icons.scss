@@ -50,19 +50,44 @@
 }
 
 .sidebar__nav-item_notification {
-  @media (min-width: 425px) {
-    width: 19.1px;
-    height: 21.76px;
+  .notification-quantity {
+    position: absolute;
+    top: 19%;
+    right: -3px;
+    margin-bottom: 3px;
+    font-family: "Open Sans", sans-serif;
+    text-align: right;
+    font-weight: normal;
+    color: $grey_font;
+
+    @media (max-width: 767px) {
+      font-size: 12px;
+    }
+
+    @media (max-width: 424px) {
+      font-size: 11px;
+    }
+
+    @media (max-width: 374px) {
+      font-size: 10px;
+    }
   }
 
-  @media (max-width: 424px) {
-    width: 17.57px;
-    height: 20px;
-  }
+  svg {
+    @media (max-width: 767px) {
+      width: 19.1px;
+      height: 21.76px;
+    }
 
-  @media (max-width: 374px) {
-    width: 15.8px;
-    height: 18px;
+    @media (max-width: 424px) {
+      width: 17.57px;
+      height: 20px;
+    }
+
+    @media (max-width: 374px) {
+      width: 15.8px;
+      height: 18px;
+    }
   }
 }
 

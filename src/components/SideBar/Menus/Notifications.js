@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React  from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setNotificationsData } from '../../../store/actions';
 import { RollingBlock } from '../../BlocksUI/RollingBlock';
@@ -62,8 +62,8 @@ export const NotificationsContent = () => {
           icon={<StartIcon />}
           header={'You have 1 new feedback'}
           span={el.val}
-          actionIcon={<ArrowBackIcon />}
-          hideIcon={<DeleteIcon />}
+          actionIcon={<ArrowBackIcon className="notification-arrow"/>}
+          hideIcon={<DeleteIcon className="notification-delete" />}
           toggleBlock={() => toggleBlock(rollingBlock, decor)}
           deleteBlock={() => deleteBlock(rollingBlock)} />
       );
@@ -81,16 +81,20 @@ export const NotificationsContent = () => {
 };
 
 export const NotificationsBtn = () => {
+  const notifications = useSelector((state) => state.notificationsData);
+  const btnState = (notifications.length) ? true : false;
+
   const dispatch = useDispatch();
+
   const clearAll = () => {
     dispatch(setNotificationsData([]));
-  }
+  };
 
   return (
-    <div className="grid-template-2fr">
-      <ButtonMain
+    <div className={btnState && 'grid-template-2fr'}>
+      {btnState && <ButtonMain
         text={'Clear all'}
-        func={clearAll} />
+        func={clearAll} />}
       <ButtonMain
         text={'Settings'} />
     </div>

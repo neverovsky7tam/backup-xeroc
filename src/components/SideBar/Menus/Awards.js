@@ -12,43 +12,51 @@ export const Awards = () => {
       <div className="content">
         <ul className="awards">
           <li className="awards__item">
-            <GoldAwards />
-            <h4 className="h4-mob">Best marketplace 2020</h4>
-            <p className="p-mob">
-              A new digital innovation award is aimed at media that uses the
-              latest technology to make
-              of crypto services.
-            </p>
+            <div className="awards__item-inner">
+              <GoldAwards />
+              <h4 className="h4-mob">Best marketplace 2020</h4>
+              <p className="p-mob">
+                A new digital innovation award is aimed at media that uses the
+                latest technology to make
+                of crypto services.
+              </p>
+            </div>
             <BoxDecor />
           </li>
           <li className="awards__item">
-            <PlatinumAwards />
-            <h4 className="h4-mob">Best marketplace 2020</h4>
-            <p className="p-mob">
-              A new digital innovation award is aimed at media that uses the
-              latest technology to make
-              of crypto services.
-            </p>
+            <div className="awards__item-inner">
+              <PlatinumAwards />
+              <h4 className="h4-mob">Best marketplace 2020</h4>
+              <p className="p-mob">
+                A new digital innovation award is aimed at media that uses the
+                latest technology to make
+                of crypto services.
+              </p>
+            </div>
             <BoxDecor />
           </li>
           <li className="awards__item">
-            <SilverAwards />
-            <h4 className="h4-mob">Best marketplace 2020</h4>
-            <p className="p-mob">
-              A new digital innovation award is aimed at media that uses the
-              latest technology to make
-              of crypto services.
-            </p>
+            <div className="awards__item-inner">
+              <SilverAwards />
+              <h4 className="h4-mob">Best marketplace 2020</h4>
+              <p className="p-mob">
+                A new digital innovation award is aimed at media that uses the
+                latest technology to make
+                of crypto services.
+              </p>
+            </div>
             <BoxDecor />
           </li>
           <li className="awards__item">
-            <BronzeAwards />
-            <h4 className="h4-mob">Best marketplace 2020</h4>
-            <p className="p-mob">
-              A new digital innovation award is aimed at media that uses the
-              latest technology to make
-              of crypto services.
-            </p>
+            <div className="awards__item-inner">
+              <BronzeAwards />
+              <h4 className="h4-mob">Best marketplace 2020</h4>
+              <p className="p-mob">
+                A new digital innovation award is aimed at media that uses the
+                latest technology to make
+                of crypto services.
+              </p>
+            </div>
             <BoxDecor />
           </li>
         </ul>

@@ -93,27 +93,5 @@
     display: flex;
     flex-grow: 1;
     align-items: center;
-
-    .notification-quantity {
-      position: relative;
-      left: 3px;
-      margin-bottom: 3px;
-      font-family: "Open Sans", sans-serif;
-      text-align: right;
-      font-weight: normal;
-      color: $grey_font;
-
-      @media (max-width: 767px) {
-        font-size: 12px;
-      }
-
-      @media (max-width: 424px) {
-        font-size: 12px;
-      }
-
-      @media (max-width: 374px) {
-        font-size: 10px;
-      }
-    }
   }
 }
