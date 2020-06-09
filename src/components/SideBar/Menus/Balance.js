@@ -6,7 +6,7 @@ import { ButtonMain } from '../../BlocksUI/Buttons/ButtonMain';
 import { ReactComponent as USAFlagIcon } from '../../../assets/img/SideBar/usa-flag.svg';
 import { ReactComponent as UpdateIcon } from '../../../assets/img/SideBar/update.svg';
 import { ReactComponent as SellIcon } from '../../../assets/img/SideBar/sell-icon.svg';
-import { ReactComponent as Arrow } from '../../../assets/img/SideBar/arrow-white-right.svg';
+import { ReactComponent as DropdownArrow } from '../../../assets/img/SideBar/dropdown-arrow.svg';
 import { BoxDecor } from '../../Parts/BoxDecor';
 
 let currentBlock = null;
@@ -19,14 +19,15 @@ const WithdrawalList = ({ block }) => {
 
   const onClickItem = (e) => {
     const item = e.currentTarget;
+
     if (currentItem && currentItem !== item) {
       currentItem.classList.remove('item-active');
       currentItem.dataset.active = 0;
 
       if (currentItem.dataset.type === 'input') {
+        currentItem.style = '';
         currentItem.firstElementChild.value = '';
         currentItem.firstElementChild.placeholder = 'Otherwise';
-        currentItem.style = '';
       };
     };
 
@@ -65,26 +66,30 @@ const WithdrawalList = ({ block }) => {
     if (currentItem) {
       currentItem.dataset.active = 0;
       currentItem.classList.remove('item-active');
+
+      if (currentItem.dataset.type === 'input') {
+        currentItem.style = '';
+        currentItem.firstElementChild.value = '';
+        currentItem.firstElementChild.placeholder = 'Otherwise';
+      }
     };
 
-    if (e.type === 'focus') {
-      currentItem = inputWrapper;
-      currentItem.style.background = 'rgba(255, 255, 255, 0.05)';
-      input.placeholder = '';
-      dispatch(setWithdrawal(0));
-    };
+    currentItem = inputWrapper;
+    currentItem.style.background = 'rgba(255, 255, 255, 0.05)';
+    input.placeholder = '';
+    dispatch(setWithdrawal(0));
+  };
 
-    if (e.type === 'blur') {
-      const prevInput = currentItem;
-      setTimeout(() => {
-        if (currentItem === currentItem && currentItem.firstElementChild.value) currentItem.classList.add('item-active');
-        else {
-          prevInput.style = '';
-          prevInput.firstElementChild.value = '';
-          prevInput.firstElementChild.placeholder = 'Otherwise';
-        }
-      }, 0);
-    };
+  const inputBlur = () => {
+    const prevInput = currentItem;
+    setTimeout(() => {
+      if (currentItem === currentItem && currentItem.firstElementChild.value) currentItem.classList.add('item-active');
+      else {
+        prevInput.style = '';
+        prevInput.firstElementChild.value = '';
+        prevInput.firstElementChild.placeholder = 'Otherwise';
+      }
+    }, 0);
   };
 
   const inputChange = (e) => {
@@ -142,7 +147,7 @@ const WithdrawalList = ({ block }) => {
             type="text"
             placeholder='Otherwise'
             onFocus={inputFocus}
-            onBlur={inputFocus}
+            onBlur={inputBlur}
             onChange={inputChange} />
         </div>
         <BoxDecor />
@@ -158,8 +163,8 @@ export const BalanceContent = () => {
   const payPalBlock = React.createRef();
   const coinsBlock = React.createRef();
 
-  const payPalIsOpen = (payPalList) ? 'rotate(-90deg)' : 'rotate(90deg)';
-  const coinsIsOpen = (coinsList) ? 'rotate(-90deg)' : 'rotate(90deg)';
+  const payPalIsOpen = (payPalList) ? 'rotate(180deg)' : 'rotate(0)';
+  const coinsIsOpen = (coinsList) ? 'rotate(180deg)' : 'rotate(0)';
 
   return (
     <>
@@ -169,7 +174,7 @@ export const BalanceContent = () => {
           icon={<USAFlagIcon className="social-icon__big" />}
           header={'$3500.55'}
           span={'Current balance'}
-          actionIcon={<UpdateIcon />} />
+          actionIcon={<UpdateIcon className="update-icon" />} />
       </div>
       <div className="content" style={{ marginBottom: '15px' }}>
         <MainBlockMob
@@ -177,7 +182,7 @@ export const BalanceContent = () => {
           icon={<SellIcon />}
           header={'PayPal'}
           span={'Withdrawal via'}
-          actionIcon={<Arrow style={{ transform: payPalIsOpen }} />}
+          actionIcon={<DropdownArrow style={{ transform: payPalIsOpen }} className="dropdown-arrow" />}
           func={() => setPayPalList(!payPalList)} />
         {payPalList && <WithdrawalList block={payPalBlock} />}
       </div>
@@ -187,7 +192,7 @@ export const BalanceContent = () => {
           icon={<SellIcon />}
           header={'CoinPayments'}
           span={'Withdrawal via'}
-          actionIcon={<Arrow style={{ transform: coinsIsOpen }} />}
+          actionIcon={<DropdownArrow style={{ transform: coinsIsOpen }} className="dropdown-arrow" />}
           func={() => setCoinsList(!coinsList)} />
         {coinsList && <WithdrawalList block={coinsBlock} />}
       </div>

@@ -55,22 +55,5 @@
     .button {
       padding: 5px;
     }
-
-    svg {
-      @media (min-width: 425px) {
-        width: 17px;
-        height: 21px;
-      }
-
-      @media (max-width: 424px) {
-        width: 15px;
-        height: 19px;
-      }
-
-      @media (max-width: 374px) {
-        width: 13px;
-        height: 16px;
-      }
-    }
   }
 }

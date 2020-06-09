@@ -73,13 +73,6 @@
 
       .action-box {
         padding: 5px;
-
-        svg {
-          @media (max-width: 374px) {
-            width: 8px;
-            height: 8px;
-          }
-        }
       }
     }
   }

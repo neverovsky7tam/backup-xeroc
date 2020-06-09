@@ -92,7 +92,10 @@
     input {
       width: 100%;
       text-align: center;
+    }
 
+    input,
+    span {
       @media (min-width: 768px) {
         font-size: 10px;
       }

@@ -62,8 +62,8 @@ export const NotificationsContent = () => {
           icon={<StartIcon />}
           header={'You have 1 new feedback'}
           span={el.val}
-          actionIcon={<ArrowBackIcon />}
-          hideIcon={<DeleteIcon />}
+          actionIcon={<ArrowBackIcon className="notification-arrow"/>}
+          hideIcon={<DeleteIcon className="notification-delete" />}
           toggleBlock={() => toggleBlock(rollingBlock, decor)}
           deleteBlock={() => deleteBlock(rollingBlock)} />
       );

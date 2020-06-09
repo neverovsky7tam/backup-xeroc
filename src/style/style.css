@@ -369,25 +369,29 @@ button:focus {
 }
 
 @media (min-width: 768px) {
-  .decor-box .decor-box__inner input {
+  .decor-box .decor-box__inner input,
+  .decor-box .decor-box__inner span {
     font-size: 10px;
   }
 }
 
 @media (max-width: 767px) {
-  .decor-box .decor-box__inner input {
+  .decor-box .decor-box__inner input,
+  .decor-box .decor-box__inner span {
     font-size: 12px;
   }
 }
 
 @media (max-width: 424px) {
-  .decor-box .decor-box__inner input {
+  .decor-box .decor-box__inner input,
+  .decor-box .decor-box__inner span {
     font-size: 11px;
   }
 }
 
 @media (max-width: 374px) {
-  .decor-box .decor-box__inner input {
+  .decor-box .decor-box__inner input,
+  .decor-box .decor-box__inner span {
     font-size: 10px;
   }
 }
@@ -587,13 +591,6 @@ button:focus {
   padding: 5px;
 }
 
-@media (max-width: 374px) {
-  .main-block .main-block__inner .right .action-box svg {
-    width: 8px;
-    height: 8px;
-  }
-}
-
 .main-block .social-icon__big {
   width: 17px !important;
 }
@@ -700,27 +697,6 @@ button:focus {
 
 .rolling-block .rolling-block__hidden .button {
   padding: 5px;
-}
-
-@media (min-width: 425px) {
-  .rolling-block .rolling-block__hidden svg {
-    width: 17px;
-    height: 21px;
-  }
-}
-
-@media (max-width: 424px) {
-  .rolling-block .rolling-block__hidden svg {
-    width: 15px;
-    height: 19px;
-  }
-}
-
-@media (max-width: 374px) {
-  .rolling-block .rolling-block__hidden svg {
-    width: 13px;
-    height: 16px;
-  }
 }
 
 .button-mob {
@@ -1296,6 +1272,66 @@ button:focus {
 @media (max-width: 374px) {
   .sidebar__content {
     width: calc(100% - 73px);
+  }
+}
+
+@media (min-width: 375px) {
+  .sidebar__content .dropdown-arrow {
+    width: 12px;
+    height: 7.2px;
+  }
+}
+
+@media (max-width: 374px) {
+  .sidebar__content .dropdown-arrow {
+    width: 10px;
+    height: 6px;
+  }
+}
+
+@media (min-width: 425px) {
+  .sidebar__content .update-icon {
+    width: 13px;
+  }
+}
+
+@media (max-width: 424px) {
+  .sidebar__content .update-icon {
+    width: 12px;
+  }
+}
+
+@media (max-width: 374px) {
+  .sidebar__content .update-icon {
+    width: 11px;
+  }
+}
+
+@media (max-width: 374px) {
+  .sidebar__content .notification-arrow {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (min-width: 425px) {
+  .sidebar__content .notification-delete {
+    width: 17px;
+    height: 21px;
+  }
+}
+
+@media (max-width: 424px) {
+  .sidebar__content .notification-delete {
+    width: 15px;
+    height: 19px;
+  }
+}
+
+@media (max-width: 374px) {
+  .sidebar__content .notification-delete {
+    width: 13px;
+    height: 16px;
   }
 }
 
