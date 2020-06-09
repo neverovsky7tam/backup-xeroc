@@ -75,7 +75,11 @@ const SideBar = () => {
     const menuIcon = menuElem.firstElementChild.firstElementChild.children;
 
     for (let path of menuIcon) {
-      path.style.stroke = color;
+      if (menuElem.firstElementChild.firstElementChild.dataset.icon === 'facebook') {
+        path.style.fill = color;
+      } else {
+        path.style.stroke = color;
+      }
     };
 
     // notifications amount div
@@ -196,7 +200,7 @@ const SideBar = () => {
               data-menu="Social"
               onClick={setMenu}>
               <div className="sidebar__nav-item-btn sidebar__nav-item-btn_social">
-                <FacebookIcon />
+                <FacebookIcon data-icon="facebook" />
               </div>
             </li>
             <div className="menu-separate">
