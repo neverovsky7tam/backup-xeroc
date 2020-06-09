@@ -197,17 +197,31 @@ export const BalanceContent = () => {
 
 export const BalanceBtn = () => {
   const withdrawal = useSelector((state) => state.withdrawal);
+
   const box = React.createRef();
   useEffect(() => {
-    if (+withdrawal > 0) box.current.classList.add('item-active');
-    else box.current.classList.remove('item-active');
+    if (+withdrawal > 0) {
+      box.current.classList.add('item-active');
+      box.current.firstElementChild.classList.add('info-input_active');
+    } else {
+      box.current.classList.remove('item-active');
+      box.current.firstElementChild.classList.remove('info-input_active');
+    }
   });
+
+  const inputChange = (e) => {
+    e.currentTarget.value = '';
+  };
 
   return (
     <div className="grid-template-2fr">
       <div className="decor-box">
         <div className="decor-box__inner" ref={box}>
-          <span className="span-mob">${withdrawal}</span>
+          <input
+            className="info-input"
+            type="text"
+            placeholder={`$${withdrawal}`}
+            onChange={inputChange} />
         </div>
         <BoxDecor />
       </div>

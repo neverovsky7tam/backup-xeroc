@@ -321,6 +321,7 @@ button:focus {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 100%;
+  padding: 0 15px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -363,6 +364,7 @@ button:focus {
 }
 
 .decor-box .decor-box__inner input {
+  width: 100%;
   text-align: center;
 }
 
@@ -380,7 +382,7 @@ button:focus {
 
 @media (max-width: 424px) {
   .decor-box .decor-box__inner input {
-    font-size: 12px;
+    font-size: 11px;
   }
 }
 
@@ -388,6 +390,72 @@ button:focus {
   .decor-box .decor-box__inner input {
     font-size: 10px;
   }
+}
+
+.decor-box .decor-box__inner .info-input {
+  color: transparent;
+  cursor: default;
+}
+
+@media (max-width: 767px) {
+  .decor-box .decor-box__inner .info-input::-webkit-input-placeholder {
+    font-size: 16px;
+  }
+  .decor-box .decor-box__inner .info-input:-ms-input-placeholder {
+    font-size: 16px;
+  }
+  .decor-box .decor-box__inner .info-input::-ms-input-placeholder {
+    font-size: 16px;
+  }
+  .decor-box .decor-box__inner .info-input::placeholder {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 424px) {
+  .decor-box .decor-box__inner .info-input::-webkit-input-placeholder {
+    font-size: 15px;
+  }
+  .decor-box .decor-box__inner .info-input:-ms-input-placeholder {
+    font-size: 15px;
+  }
+  .decor-box .decor-box__inner .info-input::-ms-input-placeholder {
+    font-size: 15px;
+  }
+  .decor-box .decor-box__inner .info-input::placeholder {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 374px) {
+  .decor-box .decor-box__inner .info-input::-webkit-input-placeholder {
+    font-size: 12px;
+  }
+  .decor-box .decor-box__inner .info-input:-ms-input-placeholder {
+    font-size: 12px;
+  }
+  .decor-box .decor-box__inner .info-input::-ms-input-placeholder {
+    font-size: 12px;
+  }
+  .decor-box .decor-box__inner .info-input::placeholder {
+    font-size: 12px;
+  }
+}
+
+.decor-box .decor-box__inner .info-input_active::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.decor-box .decor-box__inner .info-input_active:-ms-input-placeholder {
+  color: #fff;
+}
+
+.decor-box .decor-box__inner .info-input_active::-ms-input-placeholder {
+  color: #fff;
+}
+
+.decor-box .decor-box__inner .info-input_active::placeholder {
+  color: #fff;
 }
 
 .item-active {

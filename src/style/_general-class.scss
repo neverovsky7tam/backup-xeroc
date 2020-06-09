@@ -60,6 +60,7 @@
     display: flex;
     box-sizing: border-box;
     height: 100%;
+    padding: 0 15px;
     justify-content: center;
     align-items: center;
     font-family: "Open Sans", sans-serif;
@@ -89,6 +90,7 @@
     }
 
     input {
+      width: 100%;
       text-align: center;
 
       @media (min-width: 768px) {
@@ -100,12 +102,35 @@
       }
 
       @media (max-width: 424px) {
-        font-size: 12px;
+        font-size: 11px;
       }
 
       @media (max-width: 374px) {
         font-size: 10px;
       }
+    }
+
+    .info-input {
+      color: transparent;
+      cursor: default;
+
+      &::placeholder {
+        @media (max-width: 767px) {
+          font-size: 16px;
+        }
+
+        @media (max-width: 424px) {
+          font-size: 15px;
+        }
+
+        @media (max-width: 374px) {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .info-input_active::placeholder {
+      color: $white_font;
     }
   }
 }
