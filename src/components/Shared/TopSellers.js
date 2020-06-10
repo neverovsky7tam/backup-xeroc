@@ -3,7 +3,7 @@ import { topSellers } from '../../data/users/users';
 import { ReactComponent as RatingStarSmall } from '../../assets/img/rating-star-smaller.svg';
 
 const TopSellers = () => {
-  const sellersArr = topSellers.concat(topSellers, topSellers, topSellers, topSellers, topSellers, topSellers, topSellers, topSellers, topSellers);
+  const sellersArr = topSellers.concat(topSellers, topSellers, topSellers, topSellers);
 
   const renderItems = () => {
     const sellers = sellersArr.map((item, idx) => {
