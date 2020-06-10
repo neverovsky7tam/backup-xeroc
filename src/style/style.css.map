@@ -38,7 +38,7 @@
         "../components/Main/Listings/_listings.scss",
         "../components/Main/News/_news.scss",
         "../components/Footer/_footer.scss",
-        "../components/Footer/_feedback-popup.scss",
+        "../components/Shared/_feedback-popup.scss",
         "../components/Footer/_awards-popup.scss"
     ],
     "names": [],
