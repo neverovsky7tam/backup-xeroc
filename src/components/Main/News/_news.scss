@@ -12,7 +12,10 @@
 }
 
 .news__body {
+  overflow: hidden;
+  
   .banner-wrapper {
+    position: relative;
     width: 209px;
     height: 699px;
     background-color: $secondary_bg;
