@@ -2254,12 +2254,6 @@ button:focus {
   }
 }
 
-@media (min-width: 768px) and (max-height: 1000px) {
-  .auth-content .auth-content__social-wrapper {
-    display: none;
-  }
-}
-
 .auth-content .auth__close-btn {
   position: fixed;
   top: 140px;
@@ -2380,12 +2374,6 @@ button:focus {
   }
 }
 
-@media (min-width: 768px) and (max-height: 1000px) {
-  .auth-content .auth-content__or {
-    display: none;
-  }
-}
-
 @media (min-width: 425px) {
   .auth-content .auth-content__or {
     font-family: "Open Sans", sans-serif;
@@ -2438,10 +2426,8 @@ button:focus {
   opacity: 0.2;
 }
 
-@media (min-width: 768px) and (max-height: 1000px) {
-  .auth-content .auth-content__form {
-    margin-top: 39px;
-  }
+.auth-content .auth-content__form {
+  margin-top: 39px;
 }
 
 .auth-content .auth-content__form .auth-content__input-wrapper {
