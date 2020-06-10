@@ -69,8 +69,8 @@ const SignUp = () => {
     <section className="auth-content">
       <AuthCloseBtn />
       <h2>sign up</h2>
-      <SocialAuth />
-      <div className="auth-content__or">or</div>
+      {/* <SocialAuth />
+      <div className="auth-content__or">or</div> */}
       <form className="auth-content__form" ref={form}>
         <div className="auth-content__input-wrapper">
           <input

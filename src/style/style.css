@@ -2248,7 +2248,7 @@ button:focus {
   margin-top: 87px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .auth-content .auth-content__social-wrapper {
     margin-top: 38px;
   }
@@ -2424,6 +2424,10 @@ button:focus {
   height: 1px;
   background-color: #fff;
   opacity: 0.2;
+}
+
+.auth-content .auth-content__form {
+  margin-top: 39px;
 }
 
 .auth-content .auth-content__form .auth-content__input-wrapper {
@@ -3288,6 +3292,54 @@ button:focus {
   font-weight: 400;
   font-size: 18px;
   background-color: #1b1b67;
+}
+
+.filter-block .filter__select .select-wrapper .filter-tag__delete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 767px) {
+  .filter-block .filter__select .select-wrapper .filter-tag__delete {
+    width: 35px;
+  }
+}
+
+@media (max-width: 424px) {
+  .filter-block .filter__select .select-wrapper .filter-tag__delete {
+    width: 30px;
+  }
+}
+
+@media (max-width: 374px) {
+  .filter-block .filter__select .select-wrapper .filter-tag__delete {
+    width: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .filter-block .filter__select .select-wrapper .filter-tag__delete svg {
+    width: 10px;
+  }
+}
+
+@media (max-width: 424px) {
+  .filter-block .filter__select .select-wrapper .filter-tag__delete svg {
+    width: 8.57px;
+  }
+}
+
+@media (max-width: 374px) {
+  .filter-block .filter__select .select-wrapper .filter-tag__delete svg {
+    width: 5.71px;
+  }
 }
 
 .filter-block .filter__select .arrow {
@@ -4424,7 +4476,12 @@ button:focus {
   }
 }
 
+.news__body {
+  overflow: hidden;
+}
+
 .news__body .banner-wrapper {
+  position: relative;
   width: 209px;
   height: 699px;
   background-color: rgba(255, 255, 255, 0.1);
