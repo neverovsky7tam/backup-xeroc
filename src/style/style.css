@@ -2248,9 +2248,15 @@ button:focus {
   margin-top: 87px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .auth-content .auth-content__social-wrapper {
     margin-top: 38px;
+  }
+}
+
+@media (min-width: 768px) and (max-height: 1000px) {
+  .auth-content .auth-content__social-wrapper {
+    display: none;
   }
 }
 
@@ -2374,6 +2380,12 @@ button:focus {
   }
 }
 
+@media (min-width: 768px) and (max-height: 1000px) {
+  .auth-content .auth-content__or {
+    display: none;
+  }
+}
+
 @media (min-width: 425px) {
   .auth-content .auth-content__or {
     font-family: "Open Sans", sans-serif;
@@ -2424,6 +2436,12 @@ button:focus {
   height: 1px;
   background-color: #fff;
   opacity: 0.2;
+}
+
+@media (min-width: 768px) and (max-height: 1000px) {
+  .auth-content .auth-content__form {
+    margin-top: 39px;
+  }
 }
 
 .auth-content .auth-content__form .auth-content__input-wrapper {
