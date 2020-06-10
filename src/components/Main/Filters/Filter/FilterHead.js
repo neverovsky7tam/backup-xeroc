@@ -16,7 +16,7 @@ const FilterHead = ({ filterName, isExpand, setExpand, isSearch, setSearchExpand
   if (storeFiltersState[filterName]) userSelect = storeFiltersState[filterName].tag;
 
   if (userSelect) {
-    tags = renderTags(userSelect, filterName);
+    if (userSelect.length) tags = renderTags(userSelect, filterName);
   };
 
   if (isExpand) {

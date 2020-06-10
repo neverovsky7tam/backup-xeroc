@@ -3290,6 +3290,54 @@ button:focus {
   background-color: #1b1b67;
 }
 
+.filter-block .filter__select .select-wrapper .filter-tag__delete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 767px) {
+  .filter-block .filter__select .select-wrapper .filter-tag__delete {
+    width: 35px;
+  }
+}
+
+@media (max-width: 424px) {
+  .filter-block .filter__select .select-wrapper .filter-tag__delete {
+    width: 30px;
+  }
+}
+
+@media (max-width: 374px) {
+  .filter-block .filter__select .select-wrapper .filter-tag__delete {
+    width: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .filter-block .filter__select .select-wrapper .filter-tag__delete svg {
+    width: 10px;
+  }
+}
+
+@media (max-width: 424px) {
+  .filter-block .filter__select .select-wrapper .filter-tag__delete svg {
+    width: 8.57px;
+  }
+}
+
+@media (max-width: 374px) {
+  .filter-block .filter__select .select-wrapper .filter-tag__delete svg {
+    width: 5.71px;
+  }
+}
+
 .filter-block .filter__select .arrow {
   position: absolute;
   display: -webkit-box;

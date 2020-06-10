@@ -92,6 +92,38 @@
           background-color: $btn-main_bg;
         }
       }
+
+      .filter-tag__delete {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: 767px) {
+          width: 35px;
+        }
+
+        @media (max-width: 424px) {
+          width: 30px;
+        }
+
+        @media (max-width: 374px) {
+          width: 20px;
+        }
+
+        svg {
+          @media (max-width: 767px) {
+            width: 10px;
+          }
+
+          @media (max-width: 424px) {
+            width: 8.57px;
+          }
+
+          @media (max-width: 374px) {
+            width: 5.71px;
+          }
+        }
+      }
     }
 
     .arrow {
