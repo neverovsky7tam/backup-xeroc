@@ -9,6 +9,7 @@
 
   @media (min-width: 768px) {
     position: static;
+    z-index: initial;
 
     button {
       @include exo_font($white_font, 14px, bold);

@@ -22,12 +22,12 @@
 <body>
   <!-- Check a browser supporting -->
   <script>
-    var browser = window.navigator.userAgent;
-    var checkYandex = browser.toLowerCase().indexOf('yabrowser');
-    var isYandexBro = (checkYandex === -1) ? false : true;
-    var isIEBro = !!document.documentMode;
+    var userAgent = window.navigator.userAgent;
+    var checkYandex = userAgent.toLowerCase().indexOf('yabrowser');
+    var isYaBrowser = (checkYandex === -1) ? false : true;
+    var isIEBrowser = !!document.documentMode;
 
-    if (isYandexBro || isIEBro) {
+    if (isYaBrowser || isIEBrowser) {
       document.write('<div class="plug"><p>This browser is not supported.</p></div>')
     }
   </script>

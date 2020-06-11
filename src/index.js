@@ -5,11 +5,11 @@ import ReactDOM from 'react-dom';
 import './style/style.css';
 import App from './App';
 
-const browser = window.navigator.userAgent;
-const isYandexBro = browser.toLowerCase().includes('yabrowser');
-const isIEBro = !!document.documentMode;
+const userAgent = window.navigator.userAgent;
+const isYaBrowser = userAgent.toLowerCase().includes('yabrowser');
+const isIEBrowser = !!document.documentMode;
 
-if (!isYandexBro && !isIEBro) {
+if (!isYaBrowser && !isIEBrowser) {
   ReactDOM.render(
     <React.StrictMode>
       <Provider store={store}>
