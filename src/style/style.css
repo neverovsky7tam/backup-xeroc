@@ -4316,7 +4316,7 @@ button:focus {
 
 @media (min-width: 1920px) {
   .list {
-    -ms-grid-columns: 29px 35px (1fr)[10];
+    -ms-grid-columns: 29px 35px repeat(10, 1fr);
         grid-template-columns: 29px 35px repeat(10, 1fr);
   }
 }
