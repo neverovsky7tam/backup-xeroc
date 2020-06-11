@@ -30,6 +30,7 @@ const MainContainer = () => {
   if (contentVar === 'sell') content = <Sell />;
 
   let checkPoint = 1;
+  // let dot = null;
   let flag = true;
   let distanceSave = 0;
   let isTouchEnd = false;

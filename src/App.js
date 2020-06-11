@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setDeviceType } from './store/actions';
 import Header from './components/Header/Header';

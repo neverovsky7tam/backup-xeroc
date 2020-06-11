@@ -2,13 +2,14 @@ import React from 'react';
 import Ads from './Ads';
 
 const renderProducts = (ProductTemplate, data) => {
-  const items = data.map((el) => {
+  const items = data.map((el, idx) => {
     if (el.type === 'banner') {
       return <Ads key={el.id} item={el} />
     } else {
       const productProcess = productsProcessing(el);
       return <ProductTemplate
         key={el.id}
+        idx={idx}
         item={el}
         itemHash={productProcess.hash}
         itemPrice={productProcess.price}
