@@ -5,11 +5,17 @@ import ReactDOM from 'react-dom';
 import './style/style.css';
 import App from './App';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const browser = window.navigator.userAgent;
+const isYandexBro = browser.toLowerCase().includes('yabrowser');
+const isIEBro = !!document.documentMode;
+
+if (!isYandexBro && !isIEBro) {
+  ReactDOM.render(
+    <React.StrictMode>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+};

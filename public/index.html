@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Corex project"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Corex project" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link href="https://fonts.googleapis.com/css?family=Exo:400,500,600,700|Open+Sans:300,400&display=swap"" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/0d715a54d6.js" crossorigin="anonymous"></script>
-    <title>Xeroc</title>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link href="https://fonts.googleapis.com/css?family=Exo:400,500,600,700|Open+Sans:300,400&display=swap"" rel="
+    stylesheet">
+  <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/plug.css">
+  <script src="https://kit.fontawesome.com/0d715a54d6.js" crossorigin="anonymous"></script>
+  <title>Xeroc</title>
+</head>
+
+<body>
+  <!-- Check a browser supporting -->
+  <script>
+    var browser = window.navigator.userAgent;
+    var checkYandex = browser.toLowerCase().indexOf('yabrowser');
+    var isYandexBro = (checkYandex === -1) ? false : true;
+    var isIEBro = !!document.documentMode;
+
+    if (isYandexBro || isIEBro) {
+      document.write('<div class="plug"><p>This browser is not supported.</p></div>')
+    }
+  </script>
+  <div id="root"></div>
+</body>
+
 </html>
