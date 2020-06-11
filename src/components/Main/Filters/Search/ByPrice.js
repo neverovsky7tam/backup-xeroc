@@ -42,7 +42,7 @@ const Price = () => {
 
   return (
     <>
-      <div className="filter p-relative">
+      <div className="filter by-price p-relative">
         <div className="p-relative">
           <div className="filter__select input-holder">
             <input

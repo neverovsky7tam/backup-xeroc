@@ -18,6 +18,13 @@
     padding-bottom: 15px;
   }
 
+  .by-price,
+  .by-text {
+    input {
+      width: 100%;
+    }
+  }
+
   .filter__select {
     display: flex;
     align-items: center;
