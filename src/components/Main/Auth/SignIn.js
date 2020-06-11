@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setAccountMenu, setMainContent, setTermsCloseBtn, setHeaderNavbarCssClass } from '../../../store/actions';
 import AuthCloseBtn from './AuthCloseBtn';
-import SocialAuth from './SocialAuth';
 import { onInputChange, checkInputValue, checkInputCorrect } from './inputs';
 import { hideDecor } from '../../Parts/BoxDecor';
 import { BoxDecor } from '../../Parts/BoxDecor';
@@ -69,8 +68,6 @@ const SignUp = () => {
     <section className="auth-content">
       <AuthCloseBtn />
       <h2>sign up</h2>
-      {/* <SocialAuth />
-      <div className="auth-content__or">or</div> */}
       <form className="auth-content__form" ref={form}>
         <div className="auth-content__input-wrapper">
           <input
