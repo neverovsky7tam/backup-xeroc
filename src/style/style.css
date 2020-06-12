@@ -859,7 +859,7 @@ button:focus {
 .header {
   position: fixed;
   width: 100%;
-  padding: 0 30px;
+  padding-top: 30px;
   font-family: "Exo", sans-serif;
   font-size: 14px;
   font-style: normal;
