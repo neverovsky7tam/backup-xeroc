@@ -1538,7 +1538,7 @@ button:focus {
 
 .page-top {
   position: fixed;
-  top: 94px;
+  top: 91px;
   height: 70px;
   width: 100%;
   background: #0b0c23;
@@ -1690,6 +1690,7 @@ button:focus {
   .carousel-menu .main-menu__items li {
     padding: 0 28px;
     font-size: 36px;
+    line-height: 1.1;
   }
 }
 

@@ -30,7 +30,6 @@ const MainContainer = () => {
   if (contentVar === 'sell') content = <Sell />;
 
   let checkPoint = 1;
-  // let dot = null;
   let flag = true;
   let distanceSave = 0;
   let isTouchEnd = false;
@@ -39,7 +38,7 @@ const MainContainer = () => {
   const scrollProcessing = () => {
     const scrollTop = document.documentElement.scrollTop;
 
-    if (isTouchEnd && (scrollTop < (fixTouchEndPoint - 13))) {
+    if (isTouchEnd && (scrollTop < (fixTouchEndPoint - 8))) {
       dispatch(setPageTopState(null));
     };
 
@@ -69,11 +68,9 @@ const MainContainer = () => {
 
   useEffect(() =>   document.addEventListener('scroll', scrollProcessing), [])
 
-
-
   const onTouchEnd = () => {
     isTouchEnd = true;
-    setTimeout(() => isTouchEnd = false, 300);
+    setTimeout(() => isTouchEnd = false, 50);
     fixTouchEndPoint = document.documentElement.scrollTop;
   };
 
