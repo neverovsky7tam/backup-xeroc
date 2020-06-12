@@ -66,7 +66,10 @@ const MainContainer = () => {
     };
   };
 
-  useEffect(() =>   document.addEventListener('scroll', scrollProcessing), [])
+  useEffect(() => {
+    document.addEventListener('scroll', scrollProcessing);
+    return () => document.removeEventListener('scroll', scrollProcessing);
+  });
 
   const onTouchEnd = () => {
     isTouchEnd = true;
