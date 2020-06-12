@@ -46,7 +46,7 @@ const MainContainer = () => {
       const delta = scrollTop - checkPoint;
       if (delta < 0) {
         checkPoint = scrollTop;
-      }
+      };
 
       if (delta > 10) {
         flag = false;
@@ -63,8 +63,8 @@ const MainContainer = () => {
         checkPoint = scrollTop;
         distanceSave = 0;
       }
-    }
-  }
+    };
+  };
 
   useEffect(() =>   document.addEventListener('scroll', scrollProcessing), [])
 
