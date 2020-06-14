@@ -1,5 +1,17 @@
 {
   "projects": {
-    "default": "xeroc-ff8a7"
+    "default": "xeroc-spa"
+  },
+  "targets": {
+    "xeroc-spa": {
+      "hosting": {
+        "spa": [
+          "xeroc-spa"
+        ],
+        "develop": [
+          "xeroc-develop"
+        ]
+      }
+    }
   }
 }
