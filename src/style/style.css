@@ -3597,13 +3597,16 @@ button:focus {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: calc(100% - 17px);
     -ms-flex-flow: wrap;
         flex-flow: wrap;
     -ms-flex-line-pack: start;
         align-content: flex-start;
     overflow-x: hidden;
   }
+}
+
+.products_mac {
+  width: calc(100% - 17px);
 }
 
 .electicity-switcher {

@@ -16,6 +16,11 @@
 .env.development.local
 .env.test.local
 .env.production.local
+**/.firebase
+.firebaserc
+.gitignore
+firebase.json
+package-lock.json
 
 npm-debug.log*
 yarn-debug.log*

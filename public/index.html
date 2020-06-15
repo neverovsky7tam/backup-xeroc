@@ -23,6 +23,7 @@
   <!-- Check a browser supporting -->
   <script>
     var userAgent = window.navigator.userAgent;
+    console.log('platform', window.navigator.platform);
     var checkYandex = userAgent.toLowerCase().indexOf('yabrowser');
     var isYaBrowser = (checkYandex === -1) ? false : true;
     var isIEBrowser = !!document.documentMode;

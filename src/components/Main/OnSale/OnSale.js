@@ -10,6 +10,10 @@ import { calcToScroll } from '../Scroll/Scroll';
 import { ReactComponent as Ads } from '../../../assets/img/ads_content.svg';
 
 const OnSale = () => {
+  const isMac = window.navigator.platform.toLowerCase().indexOf('mac') >= 0;
+  console.log('isMac', isMac);
+  const listClass = (isMac) ? 'products products_mac' : 'products';
+
   const isMobile = useSelector((state) => state.deviceType);
 
   const [view, setView] = useState(true);
@@ -59,7 +63,7 @@ const OnSale = () => {
             style={scrollBlockStyle}
             ref={scrollBlock}
             onScroll={setScroll}>
-            <ul className="products">
+            <ul className={listClass}>
               {(view) ? renderProducts(ProductTile, data) : renderProducts(ProductList, data)}
             </ul>
           </div>
