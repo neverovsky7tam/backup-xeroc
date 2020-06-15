@@ -292,6 +292,9 @@ button:focus {
   .input-holder {
     height: 55px;
   }
+  .input-holder input {
+    width: 100%;
+  }
 }
 
 @media (max-width: 424px) {
@@ -307,7 +310,6 @@ button:focus {
 }
 
 .input-holder input {
-  width: 100%;
   cursor: default;
 }
 
@@ -3007,6 +3009,7 @@ button:focus {
 
 @media (min-width: 768px) {
   .main {
+    height: 100%;
     margin-top: 120px;
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;

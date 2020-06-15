@@ -37,6 +37,10 @@
 
   @media (max-width: 767px) {
     height: 55px;
+
+    input {
+      width: 100%;
+    }
   }
 
   @media (max-width: 424px) {
@@ -48,7 +52,6 @@
   }
 
   input {
-    width: 100%;
     cursor: default;
   }
 }
