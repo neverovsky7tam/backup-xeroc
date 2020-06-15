@@ -3191,6 +3191,7 @@ button:focus {
 
 @media (min-width: 768px) {
   .filter-block {
+    width: 211px;
     padding: 0;
   }
 }
@@ -3596,6 +3597,7 @@ button:focus {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    width: calc(100% - 17px);
     -ms-flex-flow: wrap;
         flex-flow: wrap;
     -ms-flex-line-pack: start;
@@ -4436,7 +4438,24 @@ button:focus {
 }
 
 .listings__body {
+  width: 213px;
   overflow: hidden;
+}
+
+@media (min-width: 2560px) {
+  .listings__body {
+    width: 729px;
+  }
+}
+
+.listings__body .listings__list {
+  width: 213px;
+}
+
+@media (min-width: 2560px) {
+  .listings__body .listings__list {
+    width: 729px;
+  }
 }
 
 @media (min-width: 2560px) {
@@ -4446,12 +4465,7 @@ button:focus {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    width: 746px;
   }
-}
-
-.listings__body .scroll-container {
-  overflow-y: scroll;
 }
 
 .listings__body .products__item-wrapper {
@@ -4482,6 +4496,7 @@ button:focus {
 }
 
 .news__body {
+  width: 209px;
   overflow: hidden;
 }
 

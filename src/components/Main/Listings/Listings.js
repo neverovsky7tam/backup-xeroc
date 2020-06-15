@@ -42,10 +42,12 @@ const Listings = ({ productsObj }) => {
         <h2>new listings</h2>
       </div>
       <div className="listings__body main-body">
-        <ul
-          className="listings__list scroll-container">
-          {renderProducts(ProductTile, data)}
-        </ul>
+        <div className="scroll-container">
+          <ul
+            className="listings__list">
+            {renderProducts(ProductTile, data)}
+          </ul>
+        </div>
       </div>
     </section>
   )
