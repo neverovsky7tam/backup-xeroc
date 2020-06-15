@@ -44,6 +44,7 @@
 .products {
   @media (min-width: 768px) {
     display: flex;
+    width: calc(100% - 17px);
     flex-flow: wrap;
     align-content: flex-start;
     overflow-x: hidden;

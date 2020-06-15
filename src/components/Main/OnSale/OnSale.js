@@ -54,13 +54,15 @@ const OnSale = () => {
       content = (
         <>
           {!view && <ProductListHead />}
-          <ul
-            className="products scroll-container"
+          <div
+            className="scroll-container"
             style={scrollBlockStyle}
             ref={scrollBlock}
             onScroll={setScroll}>
-            {(view) ? renderProducts(ProductTile, data) : renderProducts(ProductList, data)}
-          </ul>
+            <ul className="products">
+              {(view) ? renderProducts(ProductTile, data) : renderProducts(ProductList, data)}
+            </ul>
+          </div>
         </>
       )
     }

@@ -19,18 +19,24 @@
 }
 
 .listings__body {
+  width: 213px;
   overflow: hidden;
 
+  @media (min-width: 2560px) {
+    width: 729px;
+  }
+
   .listings__list {
+    width: 213px;
+
+    @media (min-width: 2560px) {
+      width: 729px;
+    }
+
     @media (min-width: 2560px) {
       display: flex;
       flex-wrap: wrap;
-      width: 746px;
     }
-  }
-
-  .scroll-container {
-    overflow-y: scroll;
   }
 
   .products__item-wrapper {
