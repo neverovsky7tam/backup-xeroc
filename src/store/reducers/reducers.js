@@ -197,7 +197,8 @@ export const filtersState = (state = {}, action) => {
 export const filterOrigin = (state = {}, action) => {
   switch (action.type) {
     case SET_FILTER_ORIGIN:
-      return action.obj;
+      if (action.isAdd) return Object.assign({}, state, action.obj);
+      else return action.obj;
     default:
       return state;
   }

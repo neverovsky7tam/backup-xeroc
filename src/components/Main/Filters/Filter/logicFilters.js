@@ -1,12 +1,15 @@
 import store from '../../../../store/store';
-import { setOnSaleDisplay, setFiltersState, setFilterObj, setJointSearchObj } from '../../../../store/actions';
+import { setOnSaleDisplay, setFiltersState, setFilterObj, setJointSearchObj, setFilterOrigin } from '../../../../store/actions';
 import { sortedProducts } from '../../../../data/productsProcessing';
 import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../data/productsData';
 
 export const setProductsDisplay = (filter, value, isActive) => {
   const filterOrigin = store.getState().filterOrigin;
-  let filterObj = store.getState().filterObj;
+  const filterOriginObj = {};
+  const filterObj = store.getState().filterObj;
+  console.log('filterObj', filterObj);
   const search = store.getState().jointSearchObj;
+  console.log('search', search);
   const productsArr = Object.values(sortedProducts[filter][value]);
   let renderObj = {};
   let filtersCounter = 0;
@@ -20,10 +23,12 @@ export const setProductsDisplay = (filter, value, isActive) => {
         if (!filterObj[el.id]) renderObj[el.id] = el;
       };
       // save filters without searching data
-      if (!filterOrigin[el.id]) filterOrigin[el.id] = el;
+      if (!filterOrigin[el.id]) filterOriginObj[el.id] = el;
     });
+    store.dispatch(setFilterOrigin(filterOriginObj, true));
 
     renderObj = Object.assign(renderObj, filterObj);
+    console.log('renderObj', renderObj);
     store.dispatch(setFilterObj(renderObj));
     store.dispatch(setJointSearchObj(search.isEnable, search.globalSearchObj, Object.assign(search.filterSearchObj, renderObj)));
   } else {
@@ -31,12 +36,16 @@ export const setProductsDisplay = (filter, value, isActive) => {
 
     for (let key in filtersState) {
       filtersCounter += filtersState[key].isEnableFilter;
+
       if (filtersState[key].isEnableFilter) {
         filtersState[key].tag.forEach((el) => {
           Object.assign(renderObj, sortedProducts[key][el]);
         });
       };
     };
+    // save filters without searching data
+    Object.assign(filterOriginObj, renderObj);
+    store.dispatch(setFilterOrigin(filterOriginObj, false));
 
     if (search.isEnable) {
       const tempObj = {};
@@ -46,9 +55,11 @@ export const setProductsDisplay = (filter, value, isActive) => {
       });
       renderObj = tempObj;
     };
+    
     store.dispatch(setFilterObj(renderObj));
   };
 
+  console.log('filterOrigin-after', store.getState().filterOrigin)
   if (filtersCounter) {
     store.dispatch(setOnSaleDisplay(Object.values(renderObj)));
   } else {

@@ -102,9 +102,10 @@ export const setFiltersState = (filter, prop, value, isEnable) => ({
   },
 });
 
-export const setFilterOrigin = (obj) => ({
+export const setFilterOrigin = (obj, isAdd) => ({
   type: SET_FILTER_ORIGIN,
   obj,
+  isAdd,
 });
 
 export const setFilterObj = (obj) => ({

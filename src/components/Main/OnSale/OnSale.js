@@ -11,7 +11,6 @@ import { ReactComponent as Ads } from '../../../assets/img/ads_content.svg';
 
 const OnSale = () => {
   const isMac = window.navigator.platform.toLowerCase().indexOf('mac') >= 0;
-  console.log('isMac', isMac);
   const listClass = (isMac) ? 'products products_mac' : 'products';
 
   const isMobile = useSelector((state) => state.deviceType);
