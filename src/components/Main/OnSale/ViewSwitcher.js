@@ -35,7 +35,7 @@ const ViewSwitcher = ({ view, setView }) => {
   const viewState = (view) ? 'Grid' : 'Release list';
 
   return (
-    <div className="d-flex">
+    <>
       {!view &&
         <div className="electicity-switcher d-flex align-items-center">
           <div className="electicity-switcher__active">
@@ -43,20 +43,22 @@ const ViewSwitcher = ({ view, setView }) => {
             <div>{val.toFixed(2)}</div>
             <div className="arrow-right"><ArrowDots onClick={(e) => setElectricityVal(e, true)} /></div>
           </div>
-          <div className="electicity-switcher__title">
-            <span className="green-text">$/kWh</span>&nbsp;Electricity
+          <div className="electicity-switcher__title d-flex">
+            <div className="green-text">$/kWh</div>
+            <div>&nbsp;Electricity</div>
           </div>
-        </div>}
+        </div>
+      }
       <div className="view-switcher" onClick={() => setView(!view)}>
         <div className="view-switcher__active">
-          <span className="view-switcher__active-title">View:</span>
-          <button>{viewState}</button>
+          <div className="view-switcher__active-title">View:</div>
+          <div className="view-switcher__active-btn">{viewState}</div>
         </div>
         <ViewIcon className="view-switcher__icon" ref={viewIcon} />
         <DotsIcon className="view-switcher__icon" ref={dotsIcon} />
       </div>
-    </div>
-  )
-}
+    </>
+  );
+};
 
 export default ViewSwitcher;

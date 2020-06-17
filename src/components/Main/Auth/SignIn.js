@@ -50,7 +50,7 @@ const SignUp = () => {
     }
     if (nextStep) {
       dispatch(setAccountMenu(true));
-      dispatch(setMainContent('home'));
+      dispatch(setMainContent('general'));
     };
   };
 

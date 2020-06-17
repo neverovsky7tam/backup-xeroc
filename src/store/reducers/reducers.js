@@ -7,6 +7,8 @@ import {
   SET_PAGE_TOP_STATE,
   SET_CAROUSEL_MENU_POS,
   SET_MAIN_CONTENT,
+  SET_GENERAL_BLOCK_STATE,
+  SET_CURRENT_PRODUCT,
   SET_ACCOUNT_MENU,
   SET_TERMS_CLOSE_BTN,
   SET_HEADER_NAVBAR_CSS_CLASS,
@@ -74,10 +76,28 @@ export const langObj = (state = langEN, action) => {
   }
 }
 
-export const mainContent = (state = 'home', action) => {
+export const mainContent = (state = 'general', action) => {
   switch (action.type) {
     case SET_MAIN_CONTENT:
       return action.content;
+    default:
+      return state;
+  }
+}
+
+export const generalBlockState = (state = 'home', action) => {
+  switch (action.type) {
+    case SET_GENERAL_BLOCK_STATE:
+      return action.content;
+    default:
+      return state;
+  }
+}
+
+export const currentProduct = (state = null, action) => {
+  switch (action.type) {
+    case SET_CURRENT_PRODUCT:
+      return action.product;
     default:
       return state;
   }

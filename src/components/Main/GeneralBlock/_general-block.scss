@@ -1,0 +1,12 @@
+.general-wrapper {
+  @media (min-width: 768px) {
+    display: flex;
+    height: 100%;
+    margin: 0 90px;
+  }
+}
+
+.general-block {
+  position: relative;
+  height: 100%;
+}

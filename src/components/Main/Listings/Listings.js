@@ -1,7 +1,6 @@
-import React, { useLayoutEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentScrollTop } from '../../../store/actions'
-import renderProducts from '../OnSale/renderProducts';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import renderProducts from '../../../utils/renderProducts';
 import ProductTile from '../OnSale/ProductTile';
 
 const Listings = ({ productsObj }) => {
@@ -13,7 +12,7 @@ const Listings = ({ productsObj }) => {
   // const scrollTop = useSelector((state) => state.scrollHeight);
 
   const listingsSectionCssClass = useSelector((state) => state.listingsSectionCssClass);
-  const cssClass = (listingsSectionCssClass) ? listingsSectionCssClass : 'listings home-page';
+  const cssClass = (listingsSectionCssClass) ? listingsSectionCssClass : 'listings general-block';
 
   // useLayoutEffect(() => {
   //   scrollBlock.current.scrollTop = scrollTop;
