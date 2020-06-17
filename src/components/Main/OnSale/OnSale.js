@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import renderProducts from './renderProducts';
+import renderProducts from '../../../utils/renderProducts';
 import ProductTile from './ProductTile';
 import ProductTileMobile from './ProductTileMobile';
 import { ProductListHead, ProductList } from './ProductList';
@@ -11,7 +11,6 @@ import { ReactComponent as Ads } from '../../../assets/img/ads_content.svg';
 
 const OnSale = () => {
   const isMac = window.navigator.platform.toLowerCase().indexOf('mac') >= 0;
-  console.log('isMac', isMac);
   const listClass = (isMac) ? 'products products_mac' : 'products';
 
   const isMobile = useSelector((state) => state.deviceType);
@@ -75,10 +74,10 @@ const OnSale = () => {
   const bodyMarginLeft = (view) ? '0' : '30px';
 
   return (
-    <section className="onsale home-page">
+    <section className="onsale general-block">
       {!isMobile && <div className="main-header">
-        <h2 className="onsale__header">on sale</h2>
-        <div className="main-header__right">
+        <h2 className="main-header__ml-30">on sale</h2>
+        <div className="header-controls">
           <ViewSwitcher view={view} setView={setView} />
         </div>
       </div>}

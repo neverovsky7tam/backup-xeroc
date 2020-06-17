@@ -1,11 +1,11 @@
 import store from '../../../../store/store';
-import { setOnSaleDisplay, setFiltersState, setFilterObj, setJointSearchObj } from '../../../../store/actions';
+import { setOnSaleDisplay, setFiltersState, setFilterObj, setJointSearchObj, setFilterOrigin } from '../../../../store/actions';
 import { sortedProducts } from '../../../../data/productsProcessing';
 import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from '../../../../data/productsData';
 
 export const setProductsDisplay = (filter, value, isActive) => {
   const filterOrigin = store.getState().filterOrigin;
-  let filterObj = store.getState().filterObj;
+  const filterOriginObj = {};
   const search = store.getState().jointSearchObj;
   const productsArr = Object.values(sortedProducts[filter][value]);
   let renderObj = {};
@@ -14,23 +14,31 @@ export const setProductsDisplay = (filter, value, isActive) => {
   if (isActive) {
     filtersCounter = 1;
     productsArr.forEach((el) => {
-      if (search.isEnable) {
-        if (search.globalSearchObj[el.id]) renderObj[el.id] = el;
-      } else {
-        if (!filterObj[el.id]) renderObj[el.id] = el;
-      };
-      // save filters without searching data
-      if (!filterOrigin[el.id]) filterOrigin[el.id] = el;
+      if (!filterOrigin[el.id]) filterOriginObj[el.id] = el;
     });
 
-    renderObj = Object.assign(renderObj, filterObj);
-    store.dispatch(setFilterObj(renderObj));
+    store.dispatch(setFilterOrigin(filterOriginObj, true));
+    const filterOriginMod = store.getState().filterOrigin;
+
+    if (search.isEnable) {
+      const tempObj = {};
+      const filterProductsIDs = Object.keys(filterOriginMod);
+      filterProductsIDs.forEach((id) => {
+        if (search.globalSearchObj[id]) tempObj[id] = search.globalSearchObj[id];
+      });
+      renderObj = tempObj;
+      store.dispatch(setFilterOrigin(renderObj, false));
+    } else {
+      renderObj = Object.assign({}, filterOriginMod);
+    }
+
     store.dispatch(setJointSearchObj(search.isEnable, search.globalSearchObj, Object.assign(search.filterSearchObj, renderObj)));
   } else {
     const filtersState = store.getState().filtersState;
 
     for (let key in filtersState) {
       filtersCounter += filtersState[key].isEnableFilter;
+
       if (filtersState[key].isEnableFilter) {
         filtersState[key].tag.forEach((el) => {
           Object.assign(renderObj, sortedProducts[key][el]);
@@ -40,13 +48,14 @@ export const setProductsDisplay = (filter, value, isActive) => {
 
     if (search.isEnable) {
       const tempObj = {};
-      const compareArr = Object.keys(search.filterSearchObj);
-      compareArr.forEach((el) => {
-        if (renderObj[el]) tempObj[el] = renderObj[el];
+      const productsIDs = Object.keys(renderObj);
+      productsIDs.forEach((id) => {
+        if (search.filterSearchObj[id]) tempObj[id] = search.filterSearchObj[id];
       });
       renderObj = tempObj;
     };
-    store.dispatch(setFilterObj(renderObj));
+
+    store.dispatch(setFilterOrigin(renderObj, false));
   };
 
   if (filtersCounter) {

@@ -3018,19 +3018,6 @@ button:focus {
   }
 }
 
-.home-wrapper {
-  height: 100%;
-  margin: 0 90px;
-}
-
-@media (min-width: 768px) {
-  .home-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
 .main-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3171,7 +3158,17 @@ button:focus {
   margin-bottom: 7px;
 }
 
-.home-page {
+@media (min-width: 768px) {
+  .general-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    margin: 0 90px;
+  }
+}
+
+.general-block {
   position: relative;
   height: 100%;
 }
@@ -3562,8 +3559,14 @@ button:focus {
   }
 }
 
-.onsale__header {
+.main-header__ml-30 {
   margin-left: 30px;
+}
+
+.header-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @media (min-width: 768px) {
@@ -3674,7 +3677,15 @@ button:focus {
           align-items: center;
 }
 
-.view-switcher__active button {
+.view-switcher__active-title {
+  font-family: "Exo", sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: normal;
+  color: #c4c4c4;
+}
+
+.view-switcher__active-btn {
   margin-left: 6px;
   font-family: "Open Sans", sans-serif;
   font-size: 10px;
@@ -3682,14 +3693,6 @@ button:focus {
   font-weight: 400;
   color: #fff;
   cursor: pointer;
-}
-
-.view-switcher__active-title {
-  font-family: "Exo", sans-serif;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: normal;
-  color: #c4c4c4;
 }
 
 .view-switcher__icon {
@@ -4272,6 +4275,7 @@ button:focus {
   right: 0;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .list-item-wrapper .list-item-inner {

@@ -9,15 +9,6 @@
   }
 }
 
-.home-wrapper {
-  height: 100%;
-  margin: 0 90px;
-
-  @media (min-width: 768px) {
-    display: flex;
-  }
-}
-
 .main-header {
   display: flex;
   justify-content: space-between;

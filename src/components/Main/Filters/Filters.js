@@ -24,7 +24,7 @@ const Filters = () => {
   };
 
   return (
-    <section className="filters home-page">
+    <section className="filters general-block">
       <div className="main-header">
         <h2>filters</h2>
       </div>
