@@ -53,7 +53,6 @@ export const calcPrevResult = () => {
 
 export const setPreviuosSearch = () => {
   const jointSearchObj = store.getState().jointSearchObj;
-  console.log('jointSearchObj', jointSearchObj)
 
   if (jointSearchObj.isEnable) {
     if (Object.keys(jointSearchObj.filterSearchObj).length) store.dispatch(setPreviuosSearchResult(jointSearchObj.filterSearchObj));
@@ -84,7 +83,6 @@ const checkActiveInputs = (searchObj, inputType) => {
 };
 
 const setSearchState = (result) => {
-  console.log('result', result);
   const filterOrigin = store.getState().filterOrigin;
   const globalSearchObj = {};
   const filterSearchObj = {};

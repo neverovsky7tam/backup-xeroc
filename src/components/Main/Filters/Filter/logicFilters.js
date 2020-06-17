@@ -6,10 +6,7 @@ import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies 
 export const setProductsDisplay = (filter, value, isActive) => {
   const filterOrigin = store.getState().filterOrigin;
   const filterOriginObj = {};
-  const filterObj = store.getState().filterObj;
-  console.log('filterObj', filterObj);
   const search = store.getState().jointSearchObj;
-  console.log('search', search);
   const productsArr = Object.values(sortedProducts[filter][value]);
   let renderObj = {};
   let filtersCounter = 0;
@@ -17,19 +14,24 @@ export const setProductsDisplay = (filter, value, isActive) => {
   if (isActive) {
     filtersCounter = 1;
     productsArr.forEach((el) => {
-      if (search.isEnable) {
-        if (search.globalSearchObj[el.id]) renderObj[el.id] = el;
-      } else {
-        if (!filterObj[el.id]) renderObj[el.id] = el;
-      };
-      // save filters without searching data
       if (!filterOrigin[el.id]) filterOriginObj[el.id] = el;
     });
-    store.dispatch(setFilterOrigin(filterOriginObj, true));
 
-    renderObj = Object.assign(renderObj, filterObj);
-    console.log('renderObj', renderObj);
-    store.dispatch(setFilterObj(renderObj));
+    store.dispatch(setFilterOrigin(filterOriginObj, true));
+    const filterOriginMod = store.getState().filterOrigin;
+
+    if (search.isEnable) {
+      const tempObj = {};
+      const filterProductsIDs = Object.keys(filterOriginMod);
+      filterProductsIDs.forEach((id) => {
+        if (search.globalSearchObj[id]) tempObj[id] = search.globalSearchObj[id];
+      });
+      renderObj = tempObj;
+      store.dispatch(setFilterOrigin(renderObj, false));
+    } else {
+      renderObj = Object.assign({}, filterOriginMod);
+    }
+
     store.dispatch(setJointSearchObj(search.isEnable, search.globalSearchObj, Object.assign(search.filterSearchObj, renderObj)));
   } else {
     const filtersState = store.getState().filtersState;
@@ -43,23 +45,19 @@ export const setProductsDisplay = (filter, value, isActive) => {
         });
       };
     };
-    // save filters without searching data
-    Object.assign(filterOriginObj, renderObj);
-    store.dispatch(setFilterOrigin(filterOriginObj, false));
 
     if (search.isEnable) {
       const tempObj = {};
-      const compareArr = Object.keys(search.filterSearchObj);
-      compareArr.forEach((el) => {
-        if (renderObj[el]) tempObj[el] = renderObj[el];
+      const productsIDs = Object.keys(renderObj);
+      productsIDs.forEach((id) => {
+        if (search.filterSearchObj[id]) tempObj[id] = search.filterSearchObj[id];
       });
       renderObj = tempObj;
     };
-    
-    store.dispatch(setFilterObj(renderObj));
+
+    store.dispatch(setFilterOrigin(renderObj, false));
   };
 
-  console.log('filterOrigin-after', store.getState().filterOrigin)
   if (filtersCounter) {
     store.dispatch(setOnSaleDisplay(Object.values(renderObj)));
   } else {
