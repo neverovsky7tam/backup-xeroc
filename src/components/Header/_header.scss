@@ -1,7 +1,7 @@
 .header {
   position: fixed;
   width: 100%;
-  padding: 30px 0 45px;
+  padding-top: 30px;
   @include exo_font($white_font, 14px, bold);
   text-transform: uppercase;
   background-color: #0b0c23;
@@ -9,7 +9,6 @@
 
   @media (min-width: 768px) {
     position: static;
-    padding: 30px 0 0;
     z-index: initial;
 
     button {
@@ -84,7 +83,7 @@
 .header__navbar {
   display: flex;
   justify-content: space-between;
-  padding: 0 30px;
+  padding: 0 30px 45px;
 }
 
 .header__navbar_terms,
