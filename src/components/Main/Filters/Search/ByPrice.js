@@ -7,7 +7,6 @@ import { setPreviuosSearch, calcPrevResult } from './logicSearch';
 import { BoxDecor } from '../../../Parts/BoxDecor';
 
 const Price = () => {
-  console.log('price');
   const inputMinPrice = React.createRef();
   const inputMaxPrice = React.createRef();
 
