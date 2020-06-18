@@ -1,22 +1,9 @@
-.onsale {
-  flex-grow: 1;
-
-  @media (min-width: 1440px) {
-    padding-right: 31px;
-  }
-
-  @media (max-width: 1439px) {
-    padding-right: 30px;
-  }
-
-  @media (max-width: 767px) {
-    margin-right: 15px;
-    padding: 0;
-  }
+.main-header__ml-30 {
+  margin-left: 30px;
 }
 
-.onsale__header {
-  margin-left: 30px;
+.header-controls {
+  display: flex;
 }
 
 .onsale__body {
@@ -48,4 +35,8 @@
     align-content: flex-start;
     overflow-x: hidden;
   }
+}
+
+.products_mac {
+  width: calc(100% - 17px);
 }

@@ -20,7 +20,7 @@ const LogIn = () => {
 
   const onLogIn = () => {
     dispatch(setAccountMenu(true));
-    dispatch(setMainContent('home'));
+    dispatch(setMainContent('general'));
   };
 
   const onSwicher = (e) => {

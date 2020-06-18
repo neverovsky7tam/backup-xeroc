@@ -2,18 +2,10 @@
   margin-top: 165px;
 
   @media (min-width: 768px) {
+    height: 100%;
     margin-top: 120px;
     flex-grow: 1;
     overflow: hidden;
-  }
-}
-
-.home-wrapper {
-  height: 100%;
-  margin: 0 90px;
-
-  @media (min-width: 768px) {
-    display: flex;
   }
 }
 

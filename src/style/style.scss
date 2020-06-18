@@ -4,7 +4,7 @@
 @import "./elements";
 @import "./buttons";
 @import "./app";
-@import "./general-class";
+@import "./shared-classes";
 @import "../components/BlocksUI/main-block-mob";
 @import "../components/BlocksUI//rolling-block-mob";
 @import "../components/BlocksUI/Buttons/buttons";
@@ -20,10 +20,10 @@
 @import "../components/Cart/cart";
 @import "../components/Main/Auth/auth";
 @import "../components/Main/Terms/terms";
-@import "../components/Main/main-container";
+@import "../components/Main/main";
 @import "../components/Main/Scroll/scroll";
 @import "../components/Main/Select/select";
-@import "../components/Main/HomeDesctop/home-destop";
+@import "../components/Main/GeneralBlock/general-block";
 @import "../components/Main/Filters/filters";
 @import "../components/Main/OnSale/onsale";
 @import "../components/Main/OnSale/view-switcher";
@@ -33,5 +33,5 @@
 @import "../components/Main/Listings/listings";
 @import "../components/Main/News/news";
 @import "../components/Footer/footer";
-@import "../components/Shared/feedback-popup";
+@import "../components/TopSellers/feedback-popup";
 @import "../components/Footer/awards-popup";

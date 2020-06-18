@@ -8,11 +8,11 @@ import { ReactComponent as ProductHalfStar } from '../../../assets/img/product-h
 import { ReactComponent as GreenArrow } from '../../../assets/img/green-arrow.svg';
 import { ReactComponent as RedArrow } from '../../../assets/img/red-arrow.svg';
 
-export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr }) => {
+export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr, showDetails }) => {
   const dispatch = useDispatch();
 
   useLayoutEffect(() => {
-    dispatch(setListingsSectionCssClass('listings-d-var home-page'));
+    dispatch(setListingsSectionCssClass('listings-d-var'));
   });
 
   useEffect(() => {
@@ -80,7 +80,8 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr }) => {
       <div
         className="list-item-carriage"
         style={{ backgroundColor: colorItem }}
-        ref={itemCarriage}>
+        ref={itemCarriage}
+        onClick={() => showDetails(item)}>
         <div
           className="list-item-inner"
           ref={itemInner}>
@@ -103,7 +104,6 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr }) => {
         </div>
         <BoxDecor />
       </div>
-
       <div
         className="order d-flex"
         ref={orderBlock}>

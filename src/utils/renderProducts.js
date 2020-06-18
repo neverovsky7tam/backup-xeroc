@@ -1,5 +1,12 @@
 import React from 'react';
-import Ads from './Ads';
+import store from '../store/store';
+import { setGeneralBlockState, setCurrentProduct } from '../store/actions';
+import Ads from '../components/Main/OnSale/Ads';
+
+const showDetails = (item) => {
+  store.dispatch(setCurrentProduct(item))
+  store.dispatch(setGeneralBlockState('productDetails'));
+}
 
 const renderProducts = (ProductTemplate, data) => {
   const items = data.map((el, idx) => {
@@ -13,7 +20,8 @@ const renderProducts = (ProductTemplate, data) => {
         item={el}
         itemHash={productProcess.hash}
         itemPrice={productProcess.price}
-        hashArr={productProcess.hashArr} />;
+        hashArr={productProcess.hashArr}
+        showDetails={showDetails} />;
     };
   });
 

@@ -91,7 +91,11 @@ const setSearchState = (result) => {
     // set searching data to redux store
     store.dispatch(setJointSearchObj(false, globalSearchObj, filterSearchObj));
     // render results
-    store.dispatch(setOnSaleDisplay(null));
+    if (Object.keys(filterOrigin).length) {
+      store.dispatch(setOnSaleDisplay(Object.values(filterOrigin)));
+    } else {
+      store.dispatch(setOnSaleDisplay(null));
+    }
   } else if (!result.length) {
     store.dispatch(setJointSearchObj(true, globalSearchObj, filterSearchObj));
     store.dispatch(setOnSaleDisplay([]));
@@ -104,7 +108,7 @@ const setSearchState = (result) => {
     // set searching data to redux store
     store.dispatch(setJointSearchObj(true, globalSearchObj, filterSearchObj));
     // render results
-    if (Object.keys(filterSearchObj).length) {
+    if (Object.keys(filterOrigin).length) {
       store.dispatch(setOnSaleDisplay(Object.values(filterSearchObj)));
     } else {
       store.dispatch(setOnSaleDisplay(Object.values(globalSearchObj)));

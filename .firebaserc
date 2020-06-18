@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "xeroc-spa"
+  },
+  "targets": {
+    "xeroc-spa": {
+      "hosting": {
+        "spa": [
+          "xeroc-spa"
+        ],
+        "develop": [
+          "xeroc-develop"
+        ]
+      }
+    }
+  }
+}

@@ -54,7 +54,7 @@ const Header = ({ isMobile }) => {
         <div className="logo-wrapper d-flex align-items-center">
           <LogoIcon
             className="logo"
-            onClick={() => dispatch(setMainContent('home'))} />
+            onClick={() => dispatch(setMainContent('general'))} />
           <LangSwitcher />
         </div>
         {

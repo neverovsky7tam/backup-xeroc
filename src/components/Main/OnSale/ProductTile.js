@@ -5,7 +5,7 @@ import { hideDecor } from '../../Parts/BoxDecor';
 import { ReactComponent as ProductStar } from '../../../assets/img/product-star.svg';
 import { ReactComponent as ProductHalfStar } from '../../../assets/img/product-half-star.svg';
 
-const ProductTile = ({ item, itemHash, itemPrice, hashArr }) => {
+const ProductTile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
   const [price, setPrice] = useState(itemPrice);
   const [hash, setHash] = useState('');
 
@@ -104,7 +104,8 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr }) => {
             <div className="order__btns-wrapper">
               <button className="order__btn-details"
                 onMouseEnter={() => hideDecor(boxDecor, 'none')}
-                onMouseLeave={() => hideDecor(boxDecor, '')}>
+                onMouseLeave={() => hideDecor(boxDecor, '')}
+                onClick={() => showDetails(item)}>
                 Details
               <BoxDecor ref={boxDecor} />
               </button>

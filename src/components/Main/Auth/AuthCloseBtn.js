@@ -7,7 +7,7 @@ const AuthCloseBtn = () => {
   const dispatch = useDispatch();
 
   const onCloseBtn = () => {
-    dispatch(setMainContent('home'));
+    dispatch(setMainContent('general'));
   };
 
   return (

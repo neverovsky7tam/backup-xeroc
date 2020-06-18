@@ -203,6 +203,10 @@ button:focus {
   width: 100%;
 }
 
+.h-100 {
+  height: 100%;
+}
+
 .align-items-center {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -291,6 +295,9 @@ button:focus {
 @media (max-width: 767px) {
   .input-holder {
     height: 55px;
+  }
+  .input-holder input {
+    width: 100%;
   }
 }
 
@@ -1532,7 +1539,7 @@ button:focus {
 
 .page-top {
   position: fixed;
-  top: 94px;
+  top: 91px;
   height: 70px;
   width: 100%;
   background: #0b0c23;
@@ -1684,6 +1691,7 @@ button:focus {
   .carousel-menu .main-menu__items li {
     padding: 0 28px;
     font-size: 36px;
+    line-height: 1.1;
   }
 }
 
@@ -3000,24 +3008,12 @@ button:focus {
 
 @media (min-width: 768px) {
   .main {
+    height: 100%;
     margin-top: 120px;
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
     overflow: hidden;
-  }
-}
-
-.home-wrapper {
-  height: 100%;
-  margin: 0 90px;
-}
-
-@media (min-width: 768px) {
-  .home-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
   }
 }
 
@@ -3161,9 +3157,44 @@ button:focus {
   margin-bottom: 7px;
 }
 
-.home-page {
-  position: relative;
-  height: 100%;
+@media (min-width: 768px) {
+  .general {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    margin: 0 90px;
+  }
+}
+
+.general__center {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+@media (min-width: 1440px) {
+  .general__center {
+    padding-right: 31px;
+  }
+}
+
+@media (max-width: 1439px) {
+  .general__center {
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .general__center {
+    margin-right: 15px;
+    padding: 0;
+  }
+}
+
+.general__center-right,
+.general__center-left {
+  margin-left: 30px;
 }
 
 .filters {
@@ -3181,6 +3212,7 @@ button:focus {
 
 @media (min-width: 768px) {
   .filter-block {
+    width: 211px;
     padding: 0;
   }
 }
@@ -3531,33 +3563,14 @@ button:focus {
   }
 }
 
-.onsale {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
-@media (min-width: 1440px) {
-  .onsale {
-    padding-right: 31px;
-  }
-}
-
-@media (max-width: 1439px) {
-  .onsale {
-    padding-right: 30px;
-  }
-}
-
-@media (max-width: 767px) {
-  .onsale {
-    margin-right: 15px;
-    padding: 0;
-  }
-}
-
-.onsale__header {
+.main-header__ml-30 {
   margin-left: 30px;
+}
+
+.header-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @media (min-width: 768px) {
@@ -3597,6 +3610,10 @@ button:focus {
         align-content: flex-start;
     overflow-x: hidden;
   }
+}
+
+.products_mac {
+  width: calc(100% - 17px);
 }
 
 .electicity-switcher {
@@ -3664,7 +3681,15 @@ button:focus {
           align-items: center;
 }
 
-.view-switcher__active button {
+.view-switcher__active-title {
+  font-family: "Exo", sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: normal;
+  color: #c4c4c4;
+}
+
+.view-switcher__active-btn {
   margin-left: 6px;
   font-family: "Open Sans", sans-serif;
   font-size: 10px;
@@ -3672,14 +3697,6 @@ button:focus {
   font-weight: 400;
   color: #fff;
   cursor: pointer;
-}
-
-.view-switcher__active-title {
-  font-family: "Exo", sans-serif;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: normal;
-  color: #c4c4c4;
 }
 
 .view-switcher__icon {
@@ -3964,7 +3981,7 @@ button:focus {
       -ms-flex-positive: 1;
           flex-grow: 1;
   width: 80%;
-  margin: 13% auto;
+  margin: 16.3% auto;
   background-size: contain;
 }
 
@@ -4262,6 +4279,7 @@ button:focus {
   right: 0;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .list-item-wrapper .list-item-inner {
@@ -4431,7 +4449,24 @@ button:focus {
 }
 
 .listings__body {
+  width: 213px;
   overflow: hidden;
+}
+
+@media (min-width: 2560px) {
+  .listings__body {
+    width: 729px;
+  }
+}
+
+.listings__body .listings__list {
+  width: 213px;
+}
+
+@media (min-width: 2560px) {
+  .listings__body .listings__list {
+    width: 729px;
+  }
 }
 
 @media (min-width: 2560px) {
@@ -4441,12 +4476,7 @@ button:focus {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    width: 746px;
   }
-}
-
-.listings__body .scroll-container {
-  overflow-y: scroll;
 }
 
 .listings__body .products__item-wrapper {
@@ -4477,6 +4507,7 @@ button:focus {
 }
 
 .news__body {
+  width: 209px;
   overflow: hidden;
 }
 

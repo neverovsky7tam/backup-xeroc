@@ -1,33 +1,23 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PageTop from '../PageTop/PageTop';
-import HomeDesctop from './HomeDesctop/HomeDesctop';
-import OnSale from './OnSale/OnSale';
-import Footer from '../Footer/Footer';
+import GeneralBlock from './GeneralBlock/GeneralBlock';
 import SignUp from './Auth/SignIn';
 import LogIn from './Auth/LogIn';
 import Terms from './Terms/Terms';
-import Sell from './Sell/Sell';
 import { setPageTopState } from '../../store/actions';
 
-const MainContainer = () => {
+const Main = () => {
   const dispatch = useDispatch();
   const contentVar = useSelector((state) => state.mainContent);
   const isMobile = useSelector((state) => state.deviceType);
 
-  let footerState = 'footer-standart';
   let content = null;
 
-  if (contentVar === 'home') {
-    content = (isMobile) ? <OnSale /> : <HomeDesctop />;
-  }
+  if (contentVar === 'general') content = <GeneralBlock />
   if (contentVar === 'sign-up') content = <SignUp />;
   if (contentVar === 'log-in') content = <LogIn />;
-  if (contentVar === 'terms') {
-    footerState = 'footer-mini';
-    content = <Terms />;
-  };
-  if (contentVar === 'sell') content = <Sell />;
+  if (contentVar === 'terms') content = <Terms />;
 
   let checkPoint = 1;
   let flag = true;
@@ -46,7 +36,7 @@ const MainContainer = () => {
       const delta = scrollTop - checkPoint;
       if (delta < 0) {
         checkPoint = scrollTop;
-      }
+      };
 
       if (delta > 10) {
         flag = false;
@@ -63,21 +53,22 @@ const MainContainer = () => {
         checkPoint = scrollTop;
         distanceSave = 0;
       }
-    }
-  }
+    };
+  };
 
-  useEffect(() =>   document.addEventListener('scroll', scrollProcessing), [])
+  useEffect(() => {
+    document.addEventListener('scroll', scrollProcessing);
+    return () => document.removeEventListener('scroll', scrollProcessing);
+  });
 
   const onTouchEnd = () => {
     isTouchEnd = true;
-    setTimeout(() => isTouchEnd = false, 100);
+    setTimeout(() => isTouchEnd = false, 50);
     fixTouchEndPoint = document.documentElement.scrollTop;
   };
 
   let isPageTop = false;
-  if (isMobile) {
-    if (contentVar !== 'sign-up' && contentVar !== 'log-in' && contentVar !== 'terms') isPageTop = true;
-  }
+  if (isMobile && contentVar === 'general') isPageTop = true;
 
   return (
     <>
@@ -87,9 +78,8 @@ const MainContainer = () => {
         onTouchEnd={onTouchEnd}>
         {content}
       </main>
-      {!isMobile && <Footer footerState={footerState} />}
     </>
   );
 };
 
-export default MainContainer;
+export default Main;
