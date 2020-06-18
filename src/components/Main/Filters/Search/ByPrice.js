@@ -7,20 +7,25 @@ import { setPreviuosSearch, calcPrevResult } from './logicSearch';
 import { BoxDecor } from '../../../Parts/BoxDecor';
 
 const Price = () => {
+  console.log('price');
   const inputMinPrice = React.createRef();
   const inputMaxPrice = React.createRef();
 
   const storeValue = store.getState().searchValue;
 
+  let inputMin = null;
+  let inputMax = null;
   useEffect(() => {
-    if (storeValue.minPrice) inputMinPrice.current.value = storeValue.minPrice;
-    if (storeValue.maxPrice) inputMaxPrice.current.value = storeValue.maxPrice;
+    inputMin = inputMinPrice.current;
+    inputMax = inputMaxPrice.current;
+    if (storeValue.minPrice) inputMin.value = storeValue.minPrice;
+    if (storeValue.maxPrice) inputMax.value = storeValue.maxPrice;
 
     return () => {
-      store.dispatch(saveSearchValue('minPrice', inputMinPrice.current.value));
-      store.dispatch(saveSearchValue('maxPrice', inputMaxPrice.current.value));
+      store.dispatch(saveSearchValue('minPrice', inputMin.value));
+      store.dispatch(saveSearchValue('maxPrice', inputMax.value));
     }
-  }, []);
+  });
 
   const onInputClick = (e) => {
     e.target.focus();
@@ -42,7 +47,7 @@ const Price = () => {
 
   return (
     <>
-      <div className="filter p-relative">
+      <div className="filter by-price p-relative">
         <div className="p-relative">
           <div className="filter__select input-holder">
             <input

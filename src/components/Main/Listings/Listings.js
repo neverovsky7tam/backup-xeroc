@@ -12,7 +12,7 @@ const Listings = ({ productsObj }) => {
   // const scrollTop = useSelector((state) => state.scrollHeight);
 
   const listingsSectionCssClass = useSelector((state) => state.listingsSectionCssClass);
-  const cssClass = (listingsSectionCssClass) ? listingsSectionCssClass : 'listings general-block';
+  const cssClass = (listingsSectionCssClass) ? listingsSectionCssClass : 'listings';
 
   // useLayoutEffect(() => {
   //   scrollBlock.current.scrollTop = scrollTop;

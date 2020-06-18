@@ -84,10 +84,6 @@
   display: flex;
   justify-content: space-between;
   padding: 0 30px 45px;
-
-  @media (min-width: 768px) {
-    padding: 0 30px;
-  }
 }
 
 .header__navbar_terms,

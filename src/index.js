@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import store from './store/store';
 import ReactDOM from 'react-dom';
-import './style/style.css';
+import './style/style.scss';
 import App from './App';
 
 const userAgent = window.navigator.userAgent;
