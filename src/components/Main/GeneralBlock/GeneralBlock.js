@@ -16,7 +16,7 @@ const GeneralBlock = () => {
   if (contentVar === 'productDetails') content = <Details />;
 
   return (
-    <div className="general-wrapper">
+    <div className="general">
       {!isMobile && <Filters />}
       {content}
       {!isMobile && <Listings productsObj={productsObj} />}

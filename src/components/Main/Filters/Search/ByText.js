@@ -10,13 +10,15 @@ const ByText = () => {
   const inputText = React.createRef();
   const storeValue = store.getState().searchValue;
 
+  let input = null;
   useEffect(() => {
-    if (storeValue.text) inputText.current.value = storeValue.text;
+    input = inputText.current;
+    if (storeValue.text) input.value = storeValue.text;
 
     return () => {
-      store.dispatch(saveSearchValue('text', inputText.current.value));
+      store.dispatch(saveSearchValue('text', input.value));
     }
-  }, []);
+  });
 
   const onInputClick = (e) => {
     e.target.focus();

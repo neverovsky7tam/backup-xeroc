@@ -4,7 +4,7 @@
 @import "./elements";
 @import "./buttons";
 @import "./app";
-@import "./general-class";
+@import "./shared-classes";
 @import "../components/BlocksUI/main-block-mob";
 @import "../components/BlocksUI//rolling-block-mob";
 @import "../components/BlocksUI/Buttons/buttons";
@@ -33,5 +33,5 @@
 @import "../components/Main/Listings/listings";
 @import "../components/Main/News/news";
 @import "../components/Footer/footer";
-@import "../components/Shared/feedback-popup";
+@import "../components/TopSellers/feedback-popup";
 @import "../components/Footer/awards-popup";

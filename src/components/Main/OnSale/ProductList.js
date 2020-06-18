@@ -12,7 +12,7 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr, showDetai
   const dispatch = useDispatch();
 
   useLayoutEffect(() => {
-    dispatch(setListingsSectionCssClass('listings-d-var general-block'));
+    dispatch(setListingsSectionCssClass('listings-d-var'));
   });
 
   useEffect(() => {

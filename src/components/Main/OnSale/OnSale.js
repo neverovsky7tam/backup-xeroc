@@ -74,7 +74,7 @@ const OnSale = () => {
   const bodyMarginLeft = (view) ? '0' : '30px';
 
   return (
-    <section className="onsale general-block">
+    <section className="general__center p-relative">
       {!isMobile && <div className="main-header">
         <h2 className="main-header__ml-30">on sale</h2>
         <div className="header-controls">

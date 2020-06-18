@@ -5,7 +5,7 @@ import { ReactComponent as Illustration } from '../../../assets/img/Banners/illu
 
 const News = () => {
   return (
-    <section className="news general-block">
+    <section className="news">
       <div className="main-header">
         <h2>news</h2>
       </div>
