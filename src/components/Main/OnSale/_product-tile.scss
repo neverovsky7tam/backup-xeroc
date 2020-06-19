@@ -44,22 +44,22 @@
     padding: 0 15px;
     animation: 0.3s ease-in;
 
-    .order__btns-wrapper {
-      display: flex;
-      justify-content: space-between;
+    // .order__btns-wrapper {
+    //   display: flex;
+    //   justify-content: space-between;
 
-      .order__btn-details {
-        @include dark_btn(84px, 30px);
-      }
+    //   .order__btn-details {
+    //     @include dark_btn(84px, 30px);
+    //   }
 
-      .order__btn-add {
-        @include blue_btn(84px, 30px);
+    //   .order__btn-add {
+    //     @include blue_btn(84px, 30px);
 
-        &:hover {
-          background-color: $btn-main_bg-hover;
-        }
-      }
-    }
+    //     &:hover {
+    //       background-color: $btn-main_bg-hover;
+    //     }
+    //   }
+    // }
   }
 
   .item-price {

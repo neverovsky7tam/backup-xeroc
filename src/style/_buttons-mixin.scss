@@ -17,8 +17,8 @@
   }
 }
 
-@mixin blue_btn($width, $height) {
-  position: relative;
-  @include btn_main($width, $height, $btn-main_bg, 12px);
-  cursor: pointer;
-}
+// @mixin blue_btn($width, $height) {
+//   position: relative;
+//   @include btn_main($width, $height, $btn-main_bg, 12px);
+//   cursor: pointer;
+// }

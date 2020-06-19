@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Select from '../Select/Select';
+import { ButtonMain } from '../../BlocksUI/Buttons/Buttons';
 import { BoxDecor } from '../../Parts/BoxDecor';
 import { hideDecor } from '../../Parts/BoxDecor';
 import { ReactComponent as ProductStar } from '../../../assets/img/product-star.svg';
@@ -105,7 +106,7 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
                 ref={refObj}
                 isDesctopTemplate={true} />
             </div>
-            <div className="order__btns-wrapper">
+            <div className="grid-template-2fr">
               <button className="order__btn-details"
                 onMouseEnter={() => hideDecor(boxDecor, 'none')}
                 onMouseLeave={() => hideDecor(boxDecor, '')}
@@ -113,7 +114,7 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
                 Details
               <BoxDecor ref={boxDecor} />
               </button>
-              <button className="order__btn-add">Add to cart</button>
+              <ButtonMain text={'Add to cart'} func={null} />
             </div>
           </div>
         </div>

@@ -58,14 +58,6 @@
     top: 0;
     right: -60%;
     height: 100%;
-
-    .order__btn-add {
-      @include blue_btn(112px, 40px);
-
-      &:hover {
-        background-color: $btn-main_bg-hover;
-      }
-    }
   }
 
   .select-wrapper {

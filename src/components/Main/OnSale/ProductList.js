@@ -2,6 +2,7 @@ import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setListingsSectionCssClass } from '../../../store/actions';
 import Select from '../Select/Select';
+import { ButtonMain } from '../../BlocksUI/Buttons/Buttons';
 import { BoxDecor } from '../../Parts/BoxDecor';
 import { ReactComponent as ProductStar } from '../../../assets/img/product-star.svg';
 import { ReactComponent as ProductHalfStar } from '../../../assets/img/product-half-star.svg';
@@ -117,7 +118,7 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr, showDetai
             hashClick={onHashListClick}
             ref={refObj} />
         </div>
-        <button className="order__btn-add">Add to cart</button>
+        <ButtonMain text={'Add to cart'} func={null} style={{width: '112px', height: '40px'}} />
       </div>
     </li>
   );
