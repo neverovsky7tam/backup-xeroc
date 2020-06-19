@@ -13,10 +13,29 @@
   }
 
   .drop-list__item {
+    position: relative;
     cursor: pointer;
 
     &:not(:last-child) {
       margin-bottom: 14px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: -14px;
+      width: 2px;
+      height: 10px;
+      background-color: #ffffff00;
+    }
+
+    &:hover {
+      color: $white_font;
+
+      &::before {
+        background-color: $white_font;
+      }
     }
   }
 }

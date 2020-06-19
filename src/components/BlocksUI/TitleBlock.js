@@ -1,4 +1,5 @@
 import React from 'react';
+import ActionPlace from './ActoinPlace';
 import { BoxDecor } from '../Parts/BoxDecor';
 
 const TitleBlock = ({ text, icon, func }) => {
@@ -8,11 +9,7 @@ const TitleBlock = ({ text, icon, func }) => {
         <span>{text}</span>
         {
           icon &&
-          <div
-            className="action-place"
-            onClick={func}>
-            <div className="icon-holder">{icon}</div>
-          </div>
+          <ActionPlace icon={icon} func={func} />
         }
       </div>
       <BoxDecor />

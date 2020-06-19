@@ -2,13 +2,14 @@
 @import "./variables";
 @import "./fonts";
 @import "./elements";
-@import "./buttons";
+@import "./buttons-mixin";
 @import "./app";
 @import "./shared-classes";
 @import "../components/BlocksUI/title-block";
 @import "../components/BlocksUI/drop-list";
 @import "../components/BlocksUI/main-block-mob";
-@import "../components/BlocksUI//rolling-block-mob";
+@import "../components/BlocksUI/rolling-block-mob";
+@import "../components/BlocksUI/action-place";
 @import "../components/BlocksUI/Buttons/buttons";
 @import "../components/Parts/parts";
 @import "../components/Header/header";

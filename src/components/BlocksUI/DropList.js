@@ -3,9 +3,10 @@ import { BoxDecor } from '../Parts/BoxDecor';
 
 const DropList = ({ contentArr }) => {
   const renderList = () => {
-    const items = contentArr.map((el) => {
+    const items = contentArr.map((el, idx) => {
       return (
         <li
+          key={idx}
           className="drop-list__item"
           onClick={el.func}>
           {el.text}

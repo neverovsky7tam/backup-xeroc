@@ -63,7 +63,7 @@
       @include blue_btn(112px, 40px);
 
       &:hover {
-        background-color: #26268f;
+        background-color: $btn-main_bg-hover;
       }
     }
   }

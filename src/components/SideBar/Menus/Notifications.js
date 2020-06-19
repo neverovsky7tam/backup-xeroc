@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setNotificationsData } from '../../../store/actions';
 import { RollingBlock } from '../../BlocksUI/RollingBlock';
 import { MainBlockMob } from '../../BlocksUI/MainBlockMob';
-import { ButtonMain } from '../../BlocksUI/Buttons/ButtonMain';
+import { ButtonMain } from '../../BlocksUI/Buttons/Buttons';
 import { ReactComponent as StartIcon } from '../../../assets/img/SideBar/star.svg';
 import { ReactComponent as ArrowBackIcon } from '../../../assets/img/SideBar/arrow-back.svg';
 import { ReactComponent as DeleteIcon } from '../../../assets/img/delete.svg';
