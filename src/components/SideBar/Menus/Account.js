@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { MainBlockMob } from '../../BlocksUI/MainBlockMob';
-import { ButtonMain } from '../../BlocksUI/Buttons/ButtonMain';
+import { ButtonMain } from '../../BlocksUI/Buttons/Buttons';
 import { setAccountMenu } from '../../../store/actions';
 import { ReactComponent as ToggleArrow } from '../../../assets/img/toggle-arrow.svg';
 import { ReactComponent as SellIcon } from '../../../assets/img/SideBar/sell-icon.svg';

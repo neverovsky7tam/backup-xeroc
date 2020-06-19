@@ -1,0 +1,41 @@
+.drop-list {
+  position: relative;
+  width: 100%;
+  margin-top: 15px;
+  background-color: $secondary_bg-sec;
+
+  .drop-list__inner {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 15px;
+    border: 1px solid $secondary_bg;
+    color: $grey_font;
+  }
+
+  .drop-list__item {
+    position: relative;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: 14px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: -14px;
+      width: 2px;
+      height: 10px;
+      background-color: #ffffff00;
+    }
+
+    &:hover {
+      color: $white_font;
+
+      &::before {
+        background-color: $white_font;
+      }
+    }
+  }
+}

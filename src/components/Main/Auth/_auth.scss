@@ -58,7 +58,7 @@
     }
 
     &:hover {
-      background-color: $hover_btn;
+      background-color: $btn-main_bg;
     }
 
     svg {
@@ -257,33 +257,36 @@
   }
 
   .auth-content__btn {
-    margin-top: 57px;
-    @include btn_main(130px, 40px, $secondary_bg, 14px);
+    margin: 57px auto 0;
+
+    .button__dark {
+      background-color: $secondary_bg;
+
+      &:hover {
+        background-color: $btn-main_bg;
+      }
+    }
 
     @media (min-width: 768px) {
-      margin-top: 37px;
+      width: 130px;
+      margin: 37px auto 0;
+
+      .button {
+        height: 40px;
+        font-size: 14px;
+      }
     }
 
     @media (max-width: 767px) {
       width: 189px;
-      height: 55px;
-      font-size: 16px;
     }
 
     @media (max-width: 424px) {
       width: 172px;
-      height: 50px;
-      font-size: 15px;
     }
 
     @media (max-width: 374px) {
       width: 138px;
-      height: 40px;
-      font-size: 12px;
-    }
-
-    &:hover {
-      background-color: $hover_btn;
     }
   }
 

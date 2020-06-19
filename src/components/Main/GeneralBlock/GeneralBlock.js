@@ -4,7 +4,7 @@ import Filters from '../Filters/Filters';
 import OnSale from '../OnSale/OnSale';
 import Listings from '../Listings/Listings';
 import News from '../News/News';
-import Details from '../ProductDetails/Details';
+import ProductDetails from '../ProductDetails/ProductDetails';
 import { productsObj } from '../../../data/productsData';
 
 const GeneralBlock = () => {
@@ -13,7 +13,7 @@ const GeneralBlock = () => {
 
   let content = null;
   if (contentVar === 'home') content = <OnSale />;
-  if (contentVar === 'productDetails') content = <Details />;
+  if (contentVar === 'productDetails') content = <ProductDetails />;
 
   return (
     <div className="general">

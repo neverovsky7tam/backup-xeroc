@@ -28,7 +28,7 @@ export const RollingBlock = React.forwardRef(({ id, icon, header, span, actionIc
           </div>
           <div className="rolling-block__hidden">
             <button
-              className="button"
+              className="rolling-block__button"
               onClick={deleteBlock}>
               {hideIcon}
             </button>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { hideDecor } from '../../Parts/BoxDecor';
+import { ButtonDark } from '../../BlocksUI/Buttons/Buttons';
 import { BoxDecor } from '../../Parts/BoxDecor';
 import { Diamond } from '../../Parts/Parts';
 import { ReactComponent as BalanceIcon } from '../../../assets/img/Header/balance-icon.svg';
@@ -13,7 +13,6 @@ import { ReactComponent as WebmoneyIcon } from '../../../assets/img/Cart/webmone
 import { ReactComponent as AlipayIcon } from '../../../assets/img/Cart/alipay.svg';
 
 const Balance = ({ onHover }) => {
-  const boxDecor = React.createRef();
   const balancePop = React.createRef();
 
   let currentActiveItem = null;
@@ -90,13 +89,10 @@ const Balance = ({ onHover }) => {
             </ul>
           </div>
           <div className="drop-menu__footer">
-            <button
-              className="drop-menu__footer-btn"
-              onMouseEnter={() => hideDecor(boxDecor, 'none')}
-              onMouseLeave={() => hideDecor(boxDecor, '')}>
-              Withdraw
-            <BoxDecor ref={boxDecor} />
-            </button>
+            <ButtonDark
+              text={'Withdraw'}
+              func={null}
+              wrapperStyle={{ width: '84px' }} />
           </div>
           <Diamond />
         </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Select from '../Select/Select';
+import { ButtonMain, ButtonDark } from '../../BlocksUI/Buttons/Buttons';
 import { BoxDecor } from '../../Parts/BoxDecor';
-import { hideDecor } from '../../Parts/BoxDecor';
 import { ReactComponent as ProductStar } from '../../../assets/img/product-star.svg';
 import { ReactComponent as ProductHalfStar } from '../../../assets/img/product-half-star.svg';
 
@@ -9,41 +9,43 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
   const [price, setPrice] = useState(itemPrice);
   const [hash, setHash] = useState('');
 
+  const product = React.createRef();
   const itemInner = React.createRef();
   const productImg = React.createRef();
   const orderBlock = React.createRef();
-  const boxDecor = React.createRef();
 
   const arrow = React.createRef();
   const select = React.createRef();
   const refObj = { arrow, select };
 
-  const itemHoverOn = (img, order) => {
-    img.current.classList.remove('item-img_hover-off');
-    img.current.classList.add('item-img_hover-on');
-    order.current.classList.remove('order_hover-off');
-    order.current.classList.add('order_hover-on');
+  const itemHoverOn = () => {
+    product.current.classList.add('products__item-desctop_active');
+    productImg.current.classList.remove('item-img_hover-off');
+    productImg.current.classList.add('item-img_hover-on');
+    orderBlock.current.classList.remove('order_hover-off');
+    orderBlock.current.classList.add('order_hover-on');
 
     setPrice(`$${hashArr[0].price}`);
     setHash(hashArr[0].h);
-  }
+  };
 
-  const itemHoverOff = (img, order) => {
-    img.current.classList.remove('item-img_hover-on');
-    img.current.classList.add('item-img_hover-off');
-    order.current.classList.remove('order_hover-on');
-    order.current.classList.add('order_hover-off');
+  const itemHoverOff = () => {
+    product.current.classList.remove('products__item-desctop_active');
+    productImg.current.classList.remove('item-img_hover-on');
+    productImg.current.classList.add('item-img_hover-off');
+    orderBlock.current.classList.remove('order_hover-on');
+    orderBlock.current.classList.add('order_hover-off');
     setPrice(itemPrice);
 
     if (select.current.style.overflow) {
       expandItemInner();
-    }
-  }
+    };
+  };
 
-  const onHashListClick = (item) => {
-    setPrice(`$${item.price}`);
-    setHash(item.h);
-  }
+  const onHashListClick = (el) => {
+    setPrice(`$${el.price}`);
+    setHash(el.h);
+  };
 
   const expandItemInner = () => {
     if (!select.current.style.overflow) {
@@ -54,19 +56,20 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
       itemInner.current.style = '';
       arrow.current.style = '';
       select.current.style = '';
-    }
-  }
+    };
+  };
 
   if (item.title.length > 21) {
     item.title = item.title.slice(0, 23) + '...';
-  }
+  };
 
   return (
     <li className="products__item-wrapper">
       <div
         className="products__item"
-        onMouseEnter={() => itemHoverOn(productImg, orderBlock)}
-        onMouseLeave={() => itemHoverOff(productImg, orderBlock)}>
+        onMouseEnter={itemHoverOn}
+        onMouseLeave={itemHoverOff}
+        ref={product}>
         <div
           className="products__item-inner"
           ref={itemInner}>
@@ -101,15 +104,9 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
                 ref={refObj}
                 isDesctopTemplate={true} />
             </div>
-            <div className="order__btns-wrapper">
-              <button className="order__btn-details"
-                onMouseEnter={() => hideDecor(boxDecor, 'none')}
-                onMouseLeave={() => hideDecor(boxDecor, '')}
-                onClick={() => showDetails(item)}>
-                Details
-              <BoxDecor ref={boxDecor} />
-              </button>
-              <button className="order__btn-add">Add to cart</button>
+            <div className="grid-template-2fr">
+              <ButtonDark text={'Details'} func={null} />
+              <ButtonMain text={'Add to cart'} func={null} />
             </div>
           </div>
         </div>

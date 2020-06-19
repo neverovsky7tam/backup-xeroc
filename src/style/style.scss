@@ -2,11 +2,13 @@
 @import "./variables";
 @import "./fonts";
 @import "./elements";
-@import "./buttons";
 @import "./app";
 @import "./shared-classes";
+@import "../components/BlocksUI/title-block";
+@import "../components/BlocksUI/drop-list";
 @import "../components/BlocksUI/main-block-mob";
-@import "../components/BlocksUI//rolling-block-mob";
+@import "../components/BlocksUI/rolling-block-mob";
+@import "../components/BlocksUI/action-place";
 @import "../components/BlocksUI/Buttons/buttons";
 @import "../components/Parts/parts";
 @import "../components/Header/header";
@@ -32,6 +34,7 @@
 @import "../components/Main/OnSale/product-list";
 @import "../components/Main/Listings/listings";
 @import "../components/Main/News/news";
+@import "../components/Main/ProductDetails/components/details-on-sale";
 @import "../components/Footer/footer";
 @import "../components/TopSellers/feedback-popup";
 @import "../components/Footer/awards-popup";

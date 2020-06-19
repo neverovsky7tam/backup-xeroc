@@ -1,0 +1,15 @@
+.action-place {
+  position: relative;
+  right: -14px;
+  display: flex;
+  width: 45px;
+  height: 30px;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+
+  .icon-holder {
+    position: relative;
+    right: 14px;
+  }
+}

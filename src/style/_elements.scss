@@ -65,11 +65,6 @@
   }
 
   // NOTIFY
-  .drop-menu__notify-btn {
-    margin: auto;
-    @include dark_btn(84px, 30px);
-  }
-  
   .drop-menu__notify-item-icon {
     margin-right: 10px;
   }

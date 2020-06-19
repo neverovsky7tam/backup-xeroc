@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setWithdrawal } from '../../../store/actions';
 import { MainBlockMob } from '../../BlocksUI/MainBlockMob';
-import { ButtonMain } from '../../BlocksUI/Buttons/ButtonMain';
+import { ButtonMain } from '../../BlocksUI/Buttons/Buttons';
 import { ReactComponent as USAFlagIcon } from '../../../assets/img/SideBar/usa-flag.svg';
 import { ReactComponent as UpdateIcon } from '../../../assets/img/SideBar/update.svg';
 import { ReactComponent as SellIcon } from '../../../assets/img/SideBar/sell-icon.svg';

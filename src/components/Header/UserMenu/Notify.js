@@ -1,6 +1,5 @@
 import React from 'react';
-import { hideDecor } from '../../Parts/BoxDecor';
-import { BoxDecor } from '../../Parts/BoxDecor';
+import { ButtonDark } from '../../BlocksUI/Buttons/Buttons';
 import { Diamond } from '../../Parts/Parts';
 import { ReactComponent as BellIcon } from '../../../assets/img/Header/notification.svg';
 import { ReactComponent as VectorStar } from '../../../assets/img/vector-star.svg';
@@ -30,13 +29,10 @@ const Notify = ({ onHover }) => {
             </div>
           </div>
           <div className="drop-menu__btn-wrapper">
-            <button
-              className="drop-menu__notify-btn"
-              onMouseEnter={() => hideDecor(boxDecor, 'none')}
-              onMouseLeave={() => hideDecor(boxDecor, '')}>
-              Show all
-            <BoxDecor ref={boxDecor} />
-            </button>
+            <ButtonDark
+              text={'Show all'}
+              func={null}
+              wrapperStyle={{ width: '84px', margin: 'auto', }} />
           </div>
           <Diamond />
         </div>

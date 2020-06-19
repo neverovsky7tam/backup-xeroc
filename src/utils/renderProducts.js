@@ -14,6 +14,7 @@ const renderProducts = (ProductTemplate, data) => {
       return <Ads key={el.id} item={el} />
     } else {
       const productProcess = productsProcessing(el);
+
       return <ProductTemplate
         key={el.id}
         idx={idx}

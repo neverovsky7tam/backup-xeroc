@@ -56,6 +56,21 @@
   }
 }
 
+.main-font {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $white_font;
+
+  @media (min-width: 768px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 374px) {
+    font-size: 14px;
+  }
+}
+
 .h4-mob {
   font-family: "Open Sans", sans-serif;
   font-weight: normal;
@@ -71,8 +86,7 @@
 
 .h4-mob,
 .p-mob,
-.span-mob,
-.btn-text-mob {
+.span-mob {
   text-transform: none;
 
   @media (min-width: 425px) {
