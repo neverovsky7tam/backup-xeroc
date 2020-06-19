@@ -9,10 +9,13 @@ const GuestMenu = () => {
 
   return (
     <>
-      <button onClick={() => dispatch(setMainContent('sign-up'))}>
+      <button
+        className="header__btn"
+        onClick={() => dispatch(setMainContent('sign-up'))}>
         <PencilIcon className="pencil-icon" />sign up
       </button>
       <button
+        className="header__btn"
         onClick={() => dispatch(setMainContent('log-in'))}
         style={{ marginRight: '90px' }}>
         <LoginIcon className="login-icon" />log in

@@ -11,7 +11,7 @@
     position: static;
     z-index: initial;
 
-    button {
+    .header__btn {
       @include exo_font($white_font, 14px, bold);
       text-transform: uppercase;
       color: #fff;

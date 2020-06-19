@@ -2,14 +2,13 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setMainContent, setAccountMenu, setHeaderNavbarCssClass } from '../../../store/actions';
 import AuthCloseBtn from './AuthCloseBtn';
+import { ButtonDark } from '../../BlocksUI/Buttons/Buttons';
 import SocialAuth from './SocialAuth';
 import { onInputChange } from './inputs';
-import { hideDecor } from '../../Parts/BoxDecor';
 import { BoxDecor } from '../../Parts/BoxDecor';
 
 const LogIn = () => {
   const dispatch = useDispatch();
-  const boxDecor = React.createRef();
 
   useEffect(() => {
     dispatch(setHeaderNavbarCssClass('header__navbar header__navbar_auth'));
@@ -59,14 +58,11 @@ const LogIn = () => {
           Forgot your password?
         </a>
       </div>
-      <button
-        className="auth-content__btn cursor-pointer p-relative"
-        onClick={onLogIn}
-        onMouseEnter={() => hideDecor(boxDecor, 'none')}
-        onMouseLeave={() => hideDecor(boxDecor, '')}>
-        Log in
-        <BoxDecor ref={boxDecor} />
-      </button>
+      <div className="auth-content__btn">
+        <ButtonDark
+          text={'Log in'}
+          func={onLogIn} />
+      </div>
       <a
         className="auth-content__btn-switcher"
         href="#"

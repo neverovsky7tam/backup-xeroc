@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Select from '../Select/Select';
-import { ButtonMain } from '../../BlocksUI/Buttons/Buttons';
+import { ButtonMain, ButtonDark } from '../../BlocksUI/Buttons/Buttons';
 import { BoxDecor } from '../../Parts/BoxDecor';
-import { hideDecor } from '../../Parts/BoxDecor';
 import { ReactComponent as ProductStar } from '../../../assets/img/product-star.svg';
 import { ReactComponent as ProductHalfStar } from '../../../assets/img/product-half-star.svg';
 
@@ -14,7 +13,6 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
   const itemInner = React.createRef();
   const productImg = React.createRef();
   const orderBlock = React.createRef();
-  const boxDecor = React.createRef();
 
   const arrow = React.createRef();
   const select = React.createRef();
@@ -107,13 +105,7 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
                 isDesctopTemplate={true} />
             </div>
             <div className="grid-template-2fr">
-              <button className="order__btn-details"
-                onMouseEnter={() => hideDecor(boxDecor, 'none')}
-                onMouseLeave={() => hideDecor(boxDecor, '')}
-                onClick={() => showDetails(item)}>
-                Details
-              <BoxDecor ref={boxDecor} />
-              </button>
+              <ButtonDark text={'Details'} func={null} />
               <ButtonMain text={'Add to cart'} func={null} />
             </div>
           </div>

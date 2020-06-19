@@ -2,13 +2,12 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setAccountMenu, setMainContent, setTermsCloseBtn, setHeaderNavbarCssClass } from '../../../store/actions';
 import AuthCloseBtn from './AuthCloseBtn';
+import { ButtonDark } from '../../BlocksUI/Buttons/Buttons';
 import { onInputChange, checkInputValue, checkInputCorrect } from './inputs';
-import { hideDecor } from '../../Parts/BoxDecor';
 import { BoxDecor } from '../../Parts/BoxDecor';
 
 const SignUp = () => {
   const dispatch = useDispatch();
-  const boxDecor = React.createRef();
   const nameError = React.createRef();
   const lastnameError = React.createRef();
   const emailError = React.createRef();
@@ -143,14 +142,11 @@ const SignUp = () => {
           Terms and Conditions
           </a>
       </div>
-      <button
-        className="auth-content__btn cursor-pointer p-relative"
-        onClick={globalCheck}
-        onMouseEnter={() => hideDecor(boxDecor, 'none')}
-        onMouseLeave={() => hideDecor(boxDecor, '')}>
-        Sign up
-        <BoxDecor ref={boxDecor} />
-      </button>
+      <div className="auth-content__btn">
+        <ButtonDark
+          text={'Sign up'}
+          func={globalCheck} />
+      </div>
       <a
         className="auth-content__btn-switcher"
         href="#"

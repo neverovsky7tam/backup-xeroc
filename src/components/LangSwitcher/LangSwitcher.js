@@ -32,7 +32,7 @@ const LangSwitcher = () => {
       onMouseEnter={() => onHover(langModal, 'block')}>
       <Planet />
       <button
-        className="lang-menu__btn cursor-pointer">
+        className="lang-menu__btn cursor-pointer header__btn">
         {currentLang.lang}
       </button>
       <div
@@ -43,7 +43,7 @@ const LangSwitcher = () => {
         <div className="lang-menu__modal-content d-flex justify-content-center align-items-center cursor-pointer">
           <div className="d-flex">
             <nextLang.flag className="flag-icon" />
-            <button className="cursor-pointer">{nextLang.lang}</button>
+            <button className="cursor-pointer header__btn">{nextLang.lang}</button>
           </div>
           <Diamond />
         </div>

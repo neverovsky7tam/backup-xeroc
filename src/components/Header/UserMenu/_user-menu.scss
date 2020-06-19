@@ -119,8 +119,4 @@
     justify-content: space-evenly;
     align-items: center;
   }
-
-  .drop-menu__footer-btn {
-    @include dark_btn(84px, 30px);
-  }
 }

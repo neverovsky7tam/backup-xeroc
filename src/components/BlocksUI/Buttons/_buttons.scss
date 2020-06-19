@@ -1,5 +1,4 @@
 .button {
-  position: relative;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -38,6 +37,10 @@
   }
 }
 
-// .button__dark {
-//   background-color:
-// }
+.button__dark {
+  background-color: $btn-dark_bg;
+
+  &:hover {
+    background-color: $btn-main_bg;
+  }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BoxDecor } from '../../Parts/BoxDecor';
+import { hideDecor } from '../../Parts/BoxDecor';
 
 export const ButtonMain = ({ text, func, style }) => {
   return (
@@ -12,15 +13,20 @@ export const ButtonMain = ({ text, func, style }) => {
   );
 };
 
-export const ButtonDark = ({ text, func }) => {
+export const ButtonDark = ({ text, func, wrapperStyle, btnStyle }) => {
+  const boxDecor = React.createRef();
+
   return (
-    <div className="button">
+    <div className="p-relative" style={wrapperStyle}>
       <button
-        className="button__dark"
-        onClick={func}>
+        className="button button__dark"
+        style={btnStyle}
+        onClick={func}
+        onMouseEnter={() => hideDecor(boxDecor, 'none')}
+        onMouseLeave={() => hideDecor(boxDecor, '')}>
         <span>{text}</span>
       </button>
-      <BoxDecor />
+      <BoxDecor ref={boxDecor} />
     </div>
   )
 }
