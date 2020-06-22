@@ -105,7 +105,7 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
                 isDesctopTemplate={true} />
             </div>
             <div className="grid-template-2fr">
-              <ButtonDark text={'Details'} func={null} />
+              <ButtonDark text={'Details'} func={() => showDetails(item)} />
               <ButtonMain text={'Add to cart'} func={null} />
             </div>
           </div>
