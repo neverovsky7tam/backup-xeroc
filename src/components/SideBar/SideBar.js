@@ -168,7 +168,7 @@ const SideBar = () => {
               <MenuSeparate />
             </div>
             {
-              isLogin &&
+              true &&
               <>
                 <li
                   className="sidebar__nav-item"
