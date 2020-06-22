@@ -11,8 +11,11 @@ import { BoxDecor } from '../../Parts/BoxDecor';
 
 let currentBlock = null;
 let currentItem = null;
+let currentItemID = null;
+let currentItemValue = null;
 
 const WithdrawalList = ({ block }) => {
+  const list = React.createRef();
   const dispatch = useDispatch();
 
   let isBlockActive = false;
@@ -35,6 +38,7 @@ const WithdrawalList = ({ block }) => {
     else isBlockActive = true;
 
     currentItem = item;
+    currentItemID = item.parentElement.dataset.id
 
     let isActive = +currentItem.dataset.active;
     currentItem.dataset.active = (isActive) ? 0 : 1;
@@ -60,6 +64,12 @@ const WithdrawalList = ({ block }) => {
   }
 
   const inputFocus = (e) => {
+    if (currentBlock && currentBlock !== block.current) {
+      currentBlock.classList.remove('item-active');
+    }
+    currentBlock = block.current;
+    currentBlock.classList.add('item-active');
+
     const input = e.currentTarget;
     const inputWrapper = e.currentTarget.parentElement;
 
@@ -81,7 +91,11 @@ const WithdrawalList = ({ block }) => {
   };
 
   const inputBlur = () => {
+    block.current.classList.remove('item-active');
     const prevInput = currentItem;
+    currentItemID = currentItem.parentElement.dataset.id;
+    currentItemValue = currentItem.firstElementChild.value;
+
     setTimeout(() => {
       if (currentItem === currentItem && currentItem.firstElementChild.value) currentItem.classList.add('item-active');
       else {
@@ -91,6 +105,21 @@ const WithdrawalList = ({ block }) => {
       }
     }, 0);
   };
+
+  useEffect(() => {
+    if (currentItemID && currentBlock === block.current) {
+      for (let elem of list.current.children) {
+        if (elem.dataset.id === currentItemID) {
+          elem.firstElementChild.classList.add('item-active');
+          currentItem = elem.firstElementChild;
+
+          if (currentItemValue) {
+            elem.firstElementChild.firstElementChild.value = currentItemValue;
+          }
+        }
+      }
+    }
+  });
 
   const inputChange = (e) => {
     const value = e.target.value;
@@ -113,8 +142,8 @@ const WithdrawalList = ({ block }) => {
   }
 
   return (
-    <ul className="grid-template-2fr">
-      <li className="decor-box">
+    <ul className="grid-template-2fr" ref={list}>
+      <li className="decor-box" data-id="1">
         <div
           className="decor-box__inner"
           data-active="0"
@@ -123,26 +152,29 @@ const WithdrawalList = ({ block }) => {
         </div>
         <BoxDecor />
       </li>
-      <li className="decor-box">
+      <li className="decor-box" data-id="2">
         <div
           className="decor-box__inner"
+          data-active="0"
           onClick={onClickItem}>
           <span>$500</span>
         </div>
         <BoxDecor />
       </li>
-      <li className="decor-box">
+      <li className="decor-box" data-id="3">
         <div
           className="decor-box__inner"
+          data-active="0"
           onClick={onClickItem}>
           <span>$1000</span>
         </div>
         <BoxDecor />
       </li>
-      <li className="decor-box">
+      <li className="decor-box" data-id="4">
         <div
           className="decor-box__inner"
-          data-type="input">
+          data-type="input"
+          data-active="0">
           <input
             type="text"
             placeholder='Otherwise'
