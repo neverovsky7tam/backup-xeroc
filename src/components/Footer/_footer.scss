@@ -55,18 +55,6 @@
     transform: translateX(-50%);
   }
 
-  .social__link {
-    @include block_centered_content(30px, 30px, $secondary_bg);
-
-    &:not(:last-child) {
-      margin-right: 15px;
-    }
-
-    &:hover {
-      background-color: $btn-main_bg;
-    }
-  }
-
   .awards__point {
     position: relative;
     padding-left: 15px;

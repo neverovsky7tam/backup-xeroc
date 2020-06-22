@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import FeedbackPopup from './FeedbackPopup';
 import AwardsPopup from './AwardsPopup';
-import Social from './Social';
+import { Facebook, Twitter, Youtube, Reddit } from '../Socials/Socials';
 import { ReactComponent as RatingStar } from '../../assets/img/rating-star.svg';
 import { ReactComponent as AchieveGold } from '../../assets/img/achievment_gold.svg';
 import { ReactComponent as AchieveSilver } from '../../assets/img/achievment_silver.svg';
@@ -48,7 +48,12 @@ const Footer = ({ footerState }) => {
             ref={feedbackPop}
             hidePop={onHover} />
         </div>
-        <Social />
+        <div className="social d-flex">
+          <Facebook />
+          <Twitter />
+          <Youtube />
+          <Reddit />
+        </div>
         <div className="awards p-relative d-flex align-items-center">
           <div className="awards__point">
             <AchieveGold />

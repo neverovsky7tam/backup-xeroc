@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import TitleBlock from '../../../BlocksUI/TitleBlock';
 import DropList from '../../../BlocksUI/DropList';
 import { ButtonMain } from '../../../BlocksUI/Buttons/Buttons';
+import { Facebook, Twitter, Reddit } from '../../../Socials/Socials';
 import { BoxDecor } from '../../../Parts/BoxDecor';
 import { ReactComponent as ProductStar } from '../../../../assets/img/product-star.svg';
 import { ReactComponent as ProductHalfStar } from '../../../../assets/img/product-half-star.svg';
@@ -39,7 +40,7 @@ const DetailsOnSale = () => {
     e.target.addEventListener('selectstart', (e) => {
       console.log('select')
       e.preventDefault();
-    }, {once: true});
+    }, { once: true });
   };
 
   const arrowState = (listState) ? 'rotate(180deg)' : 'rotate(0)';
@@ -98,6 +99,14 @@ const DetailsOnSale = () => {
         </div>
         <ButtonMain text={'Add to cart'} />
       </div>
+      <aside className="socials">
+        <h2>share to</h2>
+        <div className="socials-inner">
+          <Facebook />
+          <Twitter />
+          <Reddit />
+        </div>
+      </aside>
     </div>
   );
 };
