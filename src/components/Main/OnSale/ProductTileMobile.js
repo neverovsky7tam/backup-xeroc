@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import Select from '../Select/Select';
+import { ButtonMain } from '../../BlocksUI/Buttons/Buttons';
 import { BoxDecor } from '../../Parts/BoxDecor';
 import { ReactComponent as ProductStar } from '../../../assets/img/product-star.svg';
 import { ReactComponent as ProductHalfStar } from '../../../assets/img/product-half-star.svg';
 import { ReactComponent as ArrowBack } from '../../../assets/img/arrow_back.svg';
 
-const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr }) => {
+const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
   const [price, setPrice] = useState(hashArr[0].price);
   const [hash, setHash] = useState(hashArr[0].h);
 
@@ -75,8 +76,8 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr }) => {
             <div className="products__item-show-block">
               <div className="products__item-header d-flex justify-content-between" ref={itemHeader}>
                 <div className="products__item-header-text">
-                  <h5 className="poducts__item-title">{item.title}</h5>
-                  <span className="products__item-hash">{itemHash} {item.hash.option}</span>
+                  <h5 className="poducts__item-title main-font">{item.title}</h5>
+                  <span className="main-font">{itemHash} {item.hash.option}</span>
                 </div>
                 <div className="products__item-star">
                   {(!item.star) ? '' : (item.star === 'full') ? <ProductStar /> : <ProductHalfStar />}
@@ -89,7 +90,7 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr }) => {
               </div>
               <div className="products__item-footer">
                 <span className="item-price">{itemPrice}</span>
-                <span className="item-psu" ref={pdoductParam_PSU}>{item.psu && 'psu'}</span>
+                <span className="item-psu main-font" ref={pdoductParam_PSU}>{item.psu && 'psu'}</span>
               </div>
               <div
                 className="products__item-open-order"
@@ -118,8 +119,10 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr }) => {
                   ref={refObj} />
               </div>
               <div className="order-mob__btns-wrapper">
-                <button className="order-mob__btn order-mob__btn_details">Details</button>
-                <button className="order-mob__btn order-mob__btn_add">Add to cart</button>
+                <ButtonMain text={'Details'} func={() => showDetails(item)} style={{ marginBottom: '15px' }} />
+                <ButtonMain text={'Add to cart'} func={null} />
+                {/* <button className="order-mob__btn main-font order-mob__btn_details" onClick={() => showDetails(item)}>Details</button>
+                <button className="order-mob__btn main-font order-mob__btn_add">Add to cart</button> */}
               </div>
             </div>
           </div>

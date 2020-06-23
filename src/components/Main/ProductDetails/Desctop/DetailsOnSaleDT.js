@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { productsProcessing } from '../../../../utils/renderProducts';
 import TitleBlock from '../../../BlocksUI/TitleBlock';
 import DropList from '../../../BlocksUI/DropList';
 import { ButtonMain } from '../../../BlocksUI/Buttons/Buttons';
@@ -9,8 +10,10 @@ import { ReactComponent as ProductStar } from '../../../../assets/img/product-st
 import { ReactComponent as ProductHalfStar } from '../../../../assets/img/product-half-star.svg';
 import { ReactComponent as ToggleArrow } from '../../../../assets/img/toggle-arrow.svg';
 
-const DetailsOnSale = () => {
+const DetailsOnSaleDT = () => {
   const item = useSelector((state) => state.currentProduct);
+  const itemProcessed = productsProcessing(item);
+
   const [price, setPrice] = useState(item.hash.value[0].price);
   const [currentHash, setCurrentHash] = useState(item.hash.value[0].h);
   const [listState, setListState] = useState(false);
@@ -46,7 +49,7 @@ const DetailsOnSale = () => {
   const arrowState = (listState) ? 'rotate(180deg)' : 'rotate(0)';
 
   return (
-    <div className="general__center-right">
+    <div className="details__right">
       <div className="main-header">
         <h2>on sale</h2>
       </div>
@@ -55,8 +58,8 @@ const DetailsOnSale = () => {
           <div className="products__item-inner">
             <div className="products__item-header d-flex justify-content-between">
               <div className="products__item-header-text">
-                <h5 className="poducts__item-title">{item.title}</h5>
-                <span className="products__item-hash">{null} {item.hash.option}</span>
+                <h5 className="poducts__item-title main-font">{item.title}</h5>
+                <span className="main-font">{itemProcessed.hash} {item.hash.option}</span>
               </div>
               <div className="products__item-star">
                 {(!item.star) ? '' : (item.star === 'full') ? <ProductStar /> : <ProductHalfStar />}
@@ -68,7 +71,7 @@ const DetailsOnSale = () => {
             </div>
             <div className="details__item-price-wrapper">
               <span className="item-price">{`$${price}`}</span>
-              <span className="item-psu">{item.psu && 'psu'}</span>
+              <span className="item-psu main-font">{item.psu && 'psu'}</span>
             </div>
           </div>
         </div>
@@ -111,4 +114,4 @@ const DetailsOnSale = () => {
   );
 };
 
-export default DetailsOnSale;
+export default DetailsOnSaleDT;

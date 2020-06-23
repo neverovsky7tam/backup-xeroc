@@ -31,7 +31,7 @@ const renderProducts = (ProductTemplate, data) => {
 
 export default renderProducts;
 
-const productsProcessing = (el) => {
+export const productsProcessing = (el) => {
   let hash = null;
   let price = null;
 

@@ -75,12 +75,14 @@ const OnSale = () => {
 
   return (
     <section className="general__center p-relative">
-      {!isMobile && <div className="main-header">
-        <h2 className="main-header__ml-30">on sale</h2>
-        <div className="header-controls">
-          <ViewSwitcher view={view} setView={setView} />
+      {
+        !isMobile && <div className="main-header">
+          <h2 className="main-header__ml-30">on sale</h2>
+          <div className="header-controls">
+            <ViewSwitcher view={view} setView={setView} />
+          </div>
         </div>
-      </div>}
+      }
       <div className="onsale__body main-body" style={{ marginLeft: bodyMarginLeft }}>
         {content}
       </div>

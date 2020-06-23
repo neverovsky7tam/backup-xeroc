@@ -21,14 +21,14 @@ const Select = React.forwardRef(({ hashArr, displayHash, hashOpt, expandFunc, ha
   return (
     <div className="select" ref={ref.select}>
       <div className="select__shown-area">
-        <span className="select__show-title">Hash{isDesctopTemplate && ' rate'}: {displayHash} {hashOpt}</span>
+        <span className="main-font cursor-default">Hash{isDesctopTemplate && ' rate'}: {displayHash} {hashOpt}</span>
         {(hashArr.length > 1) &&
           <div className="select__show-btn" onClick={expandFunc}>
             <ArrowDropdownMenu ref={ref.arrow} />
           </div>}
       </div>
       {(hashArr.length > 1) &&
-        <ul className="select__list">
+        <ul className="select__list main-font">
           {hashList()}
         </ul>}
       <BoxDecor />

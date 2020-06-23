@@ -1,0 +1,21 @@
+.details {
+  .products__item-wrapper_details {
+    .item-holder {
+      width: 100%;
+      padding-bottom: 100%;
+    }
+
+    .products__item {
+      padding: 30px;
+    }
+
+    .products__item-inner {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .products__item-header {
+      padding: 0;
+    }
+  }
+}
