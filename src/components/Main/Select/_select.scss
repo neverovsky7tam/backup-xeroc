@@ -17,11 +17,8 @@
   background-color: rgba(23, 24, 46, 0.8);
 }
 
-.select__show-title {
-  cursor: default;
-}
-
 .select__show-btn {
+  display: flex;
   cursor: pointer;
 }
 

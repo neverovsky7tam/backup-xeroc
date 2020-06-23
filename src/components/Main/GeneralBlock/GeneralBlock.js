@@ -4,7 +4,8 @@ import Filters from '../Filters/Filters';
 import OnSale from '../OnSale/OnSale';
 import Listings from '../Listings/Listings';
 import News from '../News/News';
-import ProductDetails from '../ProductDetails/ProductDetails';
+import ProductDetailsDT from '../ProductDetails/Desctop/ProductDetailsDT';
+import ProductDetails from '../ProductDetails/Mobile/ProductDetails';
 import { productsObj } from '../../../data/productsData';
 
 const GeneralBlock = () => {
@@ -13,8 +14,10 @@ const GeneralBlock = () => {
 
   let content = null;
   if (contentVar === 'home') content = <OnSale />;
-  if (contentVar === 'productDetails') content = <ProductDetails />;
-
+  if (contentVar === 'productDetails') {
+    content = (isMobile) ? <ProductDetails /> : <ProductDetailsDT />;
+  }
+  
   return (
     <div className="general">
       {!isMobile && <Filters />}

@@ -75,8 +75,8 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
           ref={itemInner}>
           <div className="products__item-header d-flex justify-content-between">
             <div className="products__item-header-text">
-              <h5 className="poducts__item-title">{item.title}</h5>
-              <span className="products__item-hash">{itemHash} {item.hash.option}</span>
+              <h5 className="poducts__item-title main-font">{item.title}</h5>
+              <span className="main-font">{itemHash} {item.hash.option}</span>
             </div>
             <div className="products__item-star">
               {(!item.star) ? '' : (item.star === 'full') ? <ProductStar /> : <ProductHalfStar />}
@@ -92,7 +92,7 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
             ref={orderBlock}>
             <div className="item-price-wrapper d-flex justify-content-between align-items-center">
               <span className="item-price">{price}</span>
-              <span className="item-psu">{item.psu && 'psu'}</span>
+              <span className="item-psu main-font">{item.psu && 'psu'}</span>
             </div>
             <div className="select-wrapper">
               <Select

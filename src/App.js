@@ -14,9 +14,6 @@ function App() {
   else dispatch(setDeviceType(false));
 
   const termsCloseBtn = useSelector((state) => state.termsCloseBtn);
-  // let footerState = ;
-  // if 
-  // footerState = ;
 
   return (
     <>

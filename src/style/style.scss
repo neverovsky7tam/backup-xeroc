@@ -35,7 +35,9 @@
 @import "../components/Main/OnSale/product-list";
 @import "../components/Main/Listings/listings";
 @import "../components/Main/News/news";
-@import "../components/Main/ProductDetails/components/details-on-sale";
+@import "../components/Main/ProductDetails/Mobile/product-details";
+@import "../components/Main/ProductDetails/Desctop/product-details-DT";
+@import "../components/Main/ProductDetails/Desctop/details-on-sale-DT";
 @import "../components/Footer/footer";
 @import "../components/TopSellers/feedback-popup";
 @import "../components/Footer/awards-popup";
