@@ -1,7 +1,7 @@
 @mixin block_centered_content($width, $height, $bg) {
   position: relative;
   display: flex;
-  width: $width;
+  min-width: $width;
   height: $height;
   align-items: center;
   justify-content: center;

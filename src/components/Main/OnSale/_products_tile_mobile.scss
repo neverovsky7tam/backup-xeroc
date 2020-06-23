@@ -4,7 +4,7 @@
   .item-holder {
     position: absolute;
     left: 15px;
-    width: calc(100% - 15px);
+    width: calc(100% - 16px);
     height: 100%;
     background-color: $secondary_bg-hex;
   }
@@ -54,12 +54,6 @@
     height: 100%;
     padding: 30px;
     background-color: $secondary_bg-hex;
-
-    .products__item-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
 
     .products__item-open-order {
       position: absolute;
@@ -159,9 +153,7 @@
 
     .select-wrapper {
       margin: 0 0 30px;
-    }
 
-    .select-wrapper {
       @media (min-width: 425px) {
         height: 55px;
       }
@@ -194,4 +186,10 @@
       font-size: 16px;
     }
   }
+}
+
+.products__item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

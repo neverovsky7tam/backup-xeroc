@@ -79,7 +79,7 @@ const DetailsOnSaleDT = () => {
       </div>
       <TitleBlock text={item.manufacturer} />
       <TitleBlock
-        text={`Hash rate ${currentHash} ${item.hash.option}`}
+        text={`Hash rate: ${currentHash} ${item.hash.option}`}
         icon={(item.hash.value.length > 1) && <ToggleArrow className="toggle-arrow" style={{ transform: arrowState }} />}
         func={() => setListState(!listState)} />
       {listState && <DropList contentArr={renderHashList(item.hash)} />}

@@ -3,7 +3,7 @@ import DetailsOnSale from './DetailsOnSale';
 
 const ProductDetailsDT = () => {
   return (
-    <div className="mobile-wrapper details">
+    <div className="mobile-wrapper">
       <DetailsOnSale />
     </div>
   )

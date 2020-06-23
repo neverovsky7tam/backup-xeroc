@@ -2,9 +2,11 @@ import React from 'react';
 import ActionPlace from './ActoinPlace';
 import { BoxDecor } from '../Parts/BoxDecor';
 
-const TitleBlock = ({ text, icon, func }) => {
+const TitleBlock = ({ text, icon, func, style }) => {
   return (
-    <div className="title-block main-font">
+    <div
+      className="title-block main-font"
+      style={style}>
       <div className="title-block__inner">
         <span>{text}</span>
         {
