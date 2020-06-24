@@ -42,7 +42,7 @@
 
   .item-price {
     @include open-sans_font($white_font, 16px);
-    font-weight: bold;
+    font-weight: 700;
   }
 
   .item-psu {
