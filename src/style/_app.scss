@@ -45,6 +45,12 @@ h2 {
   }
 }
 
+h3 {
+  @media (min-width: 768px) {
+    @include exo_font($white_font, 20px, 500);
+  }
+}
+
 input {
   padding: 0;
   border: 0;

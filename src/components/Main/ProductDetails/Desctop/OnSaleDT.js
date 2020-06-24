@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
 import { productsProcessing } from '../../../../utils/renderProducts';
 import TitleBlock from '../../../BlocksUI/TitleBlock';
 import DropList from '../../../BlocksUI/DropList';
@@ -10,10 +9,8 @@ import { ReactComponent as ProductStar } from '../../../../assets/img/product-st
 import { ReactComponent as ProductHalfStar } from '../../../../assets/img/product-half-star.svg';
 import { ReactComponent as ToggleArrow } from '../../../../assets/img/toggle-arrow.svg';
 
-const DetailsOnSaleDT = () => {
-  const item = useSelector((state) => state.currentProduct);
+const OnSaleDT = ({item}) => {
   const itemProcessed = productsProcessing(item);
-
   const [price, setPrice] = useState(item.hash.value[0].price);
   const [currentHash, setCurrentHash] = useState(item.hash.value[0].h);
   const [listState, setListState] = useState(false);
@@ -49,7 +46,7 @@ const DetailsOnSaleDT = () => {
   const arrowState = (listState) ? 'rotate(180deg)' : 'rotate(0)';
 
   return (
-    <div className="details__right">
+    <>
       <div className="main-header">
         <h2>on sale</h2>
       </div>
@@ -110,8 +107,8 @@ const DetailsOnSaleDT = () => {
           <Reddit />
         </div>
       </aside>
-    </div>
+    </>
   );
 };
 
-export default DetailsOnSaleDT;
+export default OnSaleDT;

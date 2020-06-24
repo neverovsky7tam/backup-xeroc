@@ -1,0 +1,35 @@
+.description__main-txt {
+  @include open-sans_font($white_font, 16px);
+  line-height: 23px;
+}
+
+.description__conditions {
+  margin-top: 28px;
+}
+
+.description__conditions-item {
+  display: flex;
+
+  &:not(:last-child) {
+    margin-bottom: 14px;
+  }
+
+  .icon-holder {
+    width: 30px;
+  }
+
+  .bullet {
+    line-height: 15px;
+  }
+}
+
+.description__seller-text {
+  position: relative;
+  left: 30px;
+  margin-top: 17px;
+
+  span {
+    display: block;
+    line-height: 15px;
+  }
+}

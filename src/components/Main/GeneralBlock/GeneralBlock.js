@@ -41,13 +41,14 @@ const GeneralBlock = () => {
   let checkPoint = 1;
   let flag = true;
   let distanceSave = 0;
-  let isTouchEnd = false;
-  let fixTouchEndPoint = null;
+  let isDownSwipe = false;
+  let startTouchPoint = null;
+  let endTouchPoint = null;
 
   const scrollProcessing = () => {
     const scrollTop = document.documentElement.scrollTop;
 
-    if (isTouchEnd && (scrollTop < (fixTouchEndPoint - 8))) {
+    if (isDownSwipe && (scrollTop < (endTouchPoint - 8))) {
       dispatch(setPageTopState(pageTopContent));
     };
 
@@ -80,10 +81,16 @@ const GeneralBlock = () => {
     return () => document.removeEventListener('scroll', scrollProcessing);
   });
 
+  const onTouchStart = () => {
+    isDownSwipe = false;
+    startTouchPoint = document.documentElement.scrollTop;
+    console.log('startTouchPoint', startTouchPoint);
+  };
+
   const onTouchEnd = () => {
-    isTouchEnd = true;
-    setTimeout(() => isTouchEnd = false, 50);
-    fixTouchEndPoint = document.documentElement.scrollTop;
+    endTouchPoint = document.documentElement.scrollTop;
+    console.log('endTouchPoint', endTouchPoint);
+    if (endTouchPoint < startTouchPoint) isDownSwipe = true;
   };
 
   return (
@@ -91,7 +98,8 @@ const GeneralBlock = () => {
       {isMobile && <PageTop />}
       <div
         className="general"
-        onTouchEnd={onTouchEnd}>
+        onTouchEnd={onTouchEnd}
+        onTouchStart={onTouchStart}>
         {!isMobile && <Filters />}
         {content}
         {!isMobile && <Listings productsObj={productsObj} />}
