@@ -2,3 +2,15 @@
 .details__left {
   margin-left: 30px;
 }
+
+.details__left {
+  flex-grow: 1;
+
+  .description {
+    padding: 30px;
+  }
+
+  .seller-info {
+    margin-top: 57px;
+  }
+}

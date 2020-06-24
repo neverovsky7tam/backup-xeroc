@@ -11,7 +11,7 @@ import { ReactComponent as ToggleArrow } from '../../../../assets/img/toggle-arr
 import { ReactComponent as Dots } from '../../../../assets/img/3dots.svg';
 import { ReactComponent as ShareIcon } from '../../../../assets/img/share.svg';
 
-const DetailsOnSale = () => {
+const OnSale = () => {
   const item = useSelector((state) => state.currentProduct);
   const itemProcessed = productsProcessing(item);
 
@@ -88,4 +88,4 @@ const DetailsOnSale = () => {
   );
 };
 
-export default DetailsOnSale;
+export default OnSale;

@@ -37,7 +37,7 @@ const Header = ({ isMobile }) => {
             <ControlsMob onClick={() => dispatch(setSidebarState(true))} />
           </button>
         }
-        {closeCrossState && <CloseCross isSidebar={isSidebar} />}
+        {(closeCrossState && isMobile) && <CloseCross isSidebar={isSidebar} />}
         <div className="logo-wrapper d-flex align-items-center">
           <LogoIcon
             className="logo"

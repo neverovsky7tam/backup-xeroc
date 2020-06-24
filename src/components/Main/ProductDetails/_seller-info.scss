@@ -1,0 +1,79 @@
+.seller-info__inner {
+  display: flex;
+  margin-top: 28px;
+  justify-content: space-between;
+  flex-flow: wrap;
+}
+
+.seller-info__person {
+  display: flex;
+  margin-right: 25px;
+  padding-bottom: 15px;
+
+  @media (max-width: 1768px) {
+    padding-bottom: 30px;
+  }
+
+  .seller-img-holder {
+    position: relative;
+    margin-right: 20px;
+  }
+
+  .seller-img-holder__ava {
+    display: block;
+    border-radius: 50%;
+  }
+
+  .seller-img-holder__chat {
+    position: absolute;
+    top: 55%;
+    right: -20%;
+    cursor: pointer;
+  }
+
+  .seller-rating-holder {
+    padding-top: 5px;
+    text-align: center;
+  }
+
+  .seller-rating-holder__name {
+    position: relative;
+
+    .seller-rating-holder__verified {
+      position: absolute;
+      display: flex;
+      top: 25%;
+      right: -17px;
+    }
+  }
+}
+
+.seller-info__data {
+  display: flex;
+  align-self: flex-end;
+
+  .seller-info__data-wrapper {
+    display: flex;
+  }
+
+  .seller-info__data-item {
+    &:not(:last-child) {
+      margin-right: 36px;
+    }
+
+    span {
+      display: block;
+    }
+
+    .item__value {
+      @include exo_font($white_font, 32px, 400);
+      text-align: center;
+    }
+
+    .item__caption {
+      margin-top: 6px;
+      @include open-sans_font($grey_font, 10px);
+      text-align: center;
+    }
+  }
+}

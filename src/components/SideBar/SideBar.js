@@ -126,6 +126,7 @@ const SideBar = () => {
 
   useEffect(() => {
     dispatch(setCloseCross(true));
+    return () => dispatch(setCloseCross(false));
   }, []);
 
   const setMenu = (e) => {
