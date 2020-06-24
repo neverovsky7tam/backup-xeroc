@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setSidebarMenu, setSidebarState, setMainContent } from '../../store/actions';
+import { setSidebarMenu, setSidebarState, setMainContent, setCloseCross } from '../../store/actions';
 import { Filters } from './Menus/Filters';
 import { AccountContent, AccountBtn } from './Menus/Account';
 import { BalanceContent, BalanceBtn } from './Menus/Balance';
@@ -21,6 +21,7 @@ import { ReactComponent as LanguageIcon } from '../../assets/img/SideBar/languag
 
 const SideBar = () => {
   const dispatch = useDispatch();
+
   const navInner = React.createRef();
   const accountBtn = React.createRef();
 
@@ -123,6 +124,9 @@ const SideBar = () => {
     }
   });
 
+  useEffect(() => {
+    dispatch(setCloseCross(true));
+  }, []);
 
   const setMenu = (e) => {
     const currentMenu = e.currentTarget.dataset.menu;

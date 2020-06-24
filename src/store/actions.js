@@ -3,6 +3,7 @@ export const SET_SIDEBAR_STATE = "SET_SIDEBAR_STATE";
 export const SET_SIDEBAR_MENU = "SET_SIDEBAR_MENU";
 export const SET_ON_SALE_DISPLAY = "SET_ON_SALE_DISPLAY";
 export const CHANGE_LANG = "CHANGE_LANG";
+export const SET_CLOSE_CROSS = "SET_CLOSE_CROSS";
 export const SET_PAGE_TOP_STATE = "SET_PAGE_TOP_STATE";
 export const SET_CAROUSEL_MENU_POS = "SET_CAROUSEL_MENU_POS";
 export const SET_MAIN_CONTENT = "SET_MAIN_CONTENT";
@@ -47,6 +48,11 @@ export const setOnSaleDisplay = (products) => ({
 export const switchLang = (lang) => ({
   type: CHANGE_LANG,
   lang,
+});
+
+export const setCloseCross = (param) => ({
+  type: SET_CLOSE_CROSS,
+  param,
 });
 
 export const setPageTopState = (content, additionCssClass) => ({

@@ -73,7 +73,7 @@ const DetailsOnSale = () => {
       <div className="grid-template-2fr details-onsale__order">
         <div className="d-flex">
           <div className="input-holder main-font">
-            <input type="text" value="1" />
+            <input type="text" defaultValue="1" />
             <BoxDecor />
           </div>
           <div className="details-onsale__share-holder">

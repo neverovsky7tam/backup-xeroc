@@ -4,6 +4,7 @@ import {
   SET_SIDEBAR_MENU,
   SET_ON_SALE_DISPLAY,
   CHANGE_LANG,
+  SET_CLOSE_CROSS,
   SET_PAGE_TOP_STATE,
   SET_CAROUSEL_MENU_POS,
   SET_MAIN_CONTENT,
@@ -76,6 +77,15 @@ export const langObj = (state = langEN, action) => {
   }
 }
 
+export const closeCrossState = (state = false, action) => {
+  switch (action.type) {
+    case SET_CLOSE_CROSS:
+      return action.param;
+    default:
+      return state;
+  }
+}
+
 export const mainContent = (state = 'general', action) => {
   switch (action.type) {
     case SET_MAIN_CONTENT:
@@ -85,10 +95,14 @@ export const mainContent = (state = 'general', action) => {
   }
 }
 
-export const generalBlockState = (state = 'home', action) => {
+export const generalBlockState = (state = { current: 'home', store: ['home'], }, action) => {
   switch (action.type) {
     case SET_GENERAL_BLOCK_STATE:
-      return action.content;
+      const newState = Object.assign({}, state);
+      newState.current = action.content;
+      newState.store.unshift(action.content);
+      newState.store.length = 2;
+      return newState;
     default:
       return state;
   }

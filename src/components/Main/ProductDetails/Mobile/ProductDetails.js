@@ -1,7 +1,11 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+// import { setPageTopState } from '../../../../store/actions';
 import DetailsOnSale from './DetailsOnSale';
 
-const ProductDetailsDT = () => {
+const ProductDetails = () => {
+  // useDispatch()(setPageTopState('Details'));
+
   return (
     <div className="mobile-wrapper">
       <DetailsOnSale />
@@ -9,4 +13,4 @@ const ProductDetailsDT = () => {
   )
 };
 
-export default ProductDetailsDT;
+export default ProductDetails;
