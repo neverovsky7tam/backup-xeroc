@@ -7,11 +7,11 @@ import LangSwitcher from '../LangSwitcher/LangSwitcher';
 import GuestMenu from './GuestMenu';
 import UserMenu from './UserMenu/UserMenu';
 import Cart from '../Cart/Cart';
+import CloseCross from '../BlocksUI/Buttons/CloseCross';
 import { setMainContent, setGeneralBlockState, setSidebarState } from '../../store/actions';
 import { ReactComponent as LogoIcon } from '../../assets/img/Header/corex-logo.svg';
 import { ReactComponent as BurgerBtn } from '../../assets/img/Header/burger-btn.svg';
 import { ReactComponent as ControlsMob } from '../../assets/img/Header/controls-mob.svg';
-import { ReactComponent as CloseCross } from '../../assets/img/Header/close-cross.svg';
 
 const Header = ({ isMobile }) => {
   const [overlayMenu, setOverlayMenu] = useState(false);
@@ -20,37 +20,24 @@ const Header = ({ isMobile }) => {
   const headerNavbarClassName = useSelector((state) => state.headerNavbarCssClass);
   const isLogin = useSelector((state) => state.accountMenu);
   const isSidebar = useSelector((state) => state.sidebarState);
+  const closeCrossState = useSelector((state) => state.closeCrossState);
 
   const burgerClick = (e) => {
     e.preventDefault();
     setOverlayMenu(true);
   };
 
-  const sideBarToggle = (isTrue) => {
-    if (isTrue) {
-      dispatch(setSidebarState(true));
-    }
-    else {
-      dispatch(setSidebarState(false));
-    }
-  }
-
   return (
     <header className="header">
       <div
         className={headerNavbarClassName}>
         {
-          (isMobile && !isSidebar) &&
+          !closeCrossState &&
           <button className="controls-btn controls-btn_open">
-            <ControlsMob onClick={() => sideBarToggle(true)} />
+            <ControlsMob onClick={() => dispatch(setSidebarState(true))} />
           </button>
         }
-        {
-          (isMobile && isSidebar) &&
-          <button className="controls-btn controls-btn_close">
-            <CloseCross onClick={() => sideBarToggle(false)} />
-          </button>
-        }
+        {closeCrossState && <CloseCross isSidebar={isSidebar} />}
         <div className="logo-wrapper d-flex align-items-center">
           <LogoIcon
             className="logo"
