@@ -32,7 +32,7 @@ const Header = ({ isMobile }) => {
       <div
         className={headerNavbarClassName}>
         {
-          !closeCrossState &&
+          (!closeCrossState && isMobile) &&
           <button className="controls-btn controls-btn_open">
             <ControlsMob onClick={() => dispatch(setSidebarState(true))} />
           </button>
