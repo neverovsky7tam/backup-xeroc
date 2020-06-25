@@ -82,14 +82,6 @@
   }
 }
 
-.open-sans-13-white {
-  @include open-sans_font($white_font, $desctop_size_font_p);
-}
-
-.open-sans-13-grey {
-  @include open-sans_font($grey_font, $desctop_size_font_p);
-}
-
 .h4-mob {
   font-family: "Open Sans", sans-serif;
   font-weight: normal;

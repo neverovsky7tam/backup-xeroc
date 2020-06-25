@@ -1,10 +1,45 @@
+.description-wrapper {
+  padding: 30px;
+}
+
+.wrapper-mob {
+  .description {
+    padding: 29px 14px;
+  }
+}
+
+.details-description {
+  margin-top: 30px;
+}
+
 .description__main-txt {
-  @include open-sans_font($white_font, 16px);
-  line-height: 23px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: $white_font;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 23px;
+  }
+
+  @media (max-width: 767px) {
+    line-height: 20px;
+  }
+
+  @media (max-width: 424px) {
+    font-size: 15px;
+    line-height: 19px;
+  }
+
+  @media (max-width: 374px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
 }
 
 .description__conditions {
   margin-top: 28px;
+  color: $white_font;
 }
 
 .description__conditions-item {
@@ -24,12 +59,31 @@
 }
 
 .description__seller-text {
-  position: relative;
-  left: 30px;
   margin-top: 17px;
+  padding-left: 30px;
+  color: $grey_font;
 
   span {
     display: block;
     line-height: 15px;
+  }
+}
+
+.description__conditions,
+.description__seller-text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: $desctop_size_font_p;
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 424px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 374px) {
+    font-size: 12px;
   }
 }

@@ -45,6 +45,21 @@
     font-weight: 700;
   }
 
+  .item-price,
+  .order-mob__price-shown {
+    @media (max-width: 767px) {
+      font-size: 24px;
+    }
+
+    @media (max-width: 424px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 374px) {
+      font-size: 16px;
+    }
+  }
+
   .item-psu {
     text-transform: uppercase;
     color: $green;

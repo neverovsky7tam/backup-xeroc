@@ -15,9 +15,9 @@ const ProductDetailsDT = () => {
       </div>
       <div className="details__right">
         <Container>
-          <div className="description">
+          <div className="description-wrapper">
             <Description item={item} />
-            <div className="seller-info">
+            <div className="seller-info-header">
               <h3>Seller’s info</h3>
             </div>
             <SellerInfo />
