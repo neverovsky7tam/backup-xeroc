@@ -1,87 +1,83 @@
-.general__center {
-  .details {
+.details__left {
+  .details__item-price-wrapper {
     display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
 
-    .details__item-price-wrapper {
-      display: flex;
-      justify-content: space-between;
-      padding: 0 15px;
-    }
+  .details__order {
+    margin-top: 15px;
 
-    .details__order {
-      margin-top: 15px;
+    .counter-box {
+      position: relative;
+      background-color: $secondary_bg-sec;
 
-      .counter-box {
+      .counter-box__inner {
         position: relative;
-        background-color: $secondary_bg-sec;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        height: 100%;
+        padding: 0 13px;
+        border: 1px solid $secondary_bg;
 
-        .counter-box__inner {
+        .product-quantity {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          cursor: default;
+        }
+
+        .arrow-holder {
           position: relative;
           display: flex;
-          justify-content: space-between;
-          align-items: center;
-          box-sizing: border-box;
+          width: 30px;
           height: 100%;
-          padding: 0 13px;
-          border: 1px solid $secondary_bg;
+          align-items: center;
 
-          .product-quantity {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            cursor: default;
+          cursor: pointer;
+        }
+
+        .arrow-holder__right {
+          justify-content: flex-end;
+          right: -13px;
+        }
+
+        .arrow-holder__left {
+          justify-content: flex-start;
+          left: -13px;
+        }
+
+        .arrow {
+          position: relative;
+          width: 10px;
+          height: 6px;
+
+          path {
+            fill: $grey_font;
           }
+        }
 
-          .arrow-holder {
-            position: relative;
-            display: flex;
-            width: 30px;
-            height: 100%;
-            align-items: center;
+        .arrow_left {
+          left: 11px;
+          transform: rotate(90deg);
+        }
 
-            cursor: pointer;
-          }
-
-          .arrow-holder__right {
-            justify-content: flex-end;
-            right: -13px;
-          }
-
-          .arrow-holder__left {
-            justify-content: flex-start;
-            left: -13px;
-          }
-
-          .arrow {
-            position: relative;
-            width: 10px;
-            height: 6px;
-
-            path {
-              fill: $grey_font;
-            }
-          }
-
-          .arrow_left {
-            left: 11px;
-            transform: rotate(90deg);
-          }
-
-          .arrow_right {
-            right: 11px;
-            transform: rotate(-90deg);
-          }
+        .arrow_right {
+          right: 11px;
+          transform: rotate(-90deg);
         }
       }
     }
+  }
 
-    .socials {
-      margin-top: 60px;
+  .socials {
+    margin-top: 60px;
 
-      .socials-inner {
-        display: flex;
-        margin-top: 28px;
-      }
+    .socials-inner {
+      display: flex;
+      margin-top: 28px;
     }
   }
 }

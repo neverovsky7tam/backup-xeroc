@@ -74,7 +74,7 @@ const OnSale = () => {
   const bodyMarginLeft = (view) ? '0' : '30px';
 
   return (
-    <section className="general__center p-relative">
+    <>
       {
         !isMobile && <div className="main-header">
           <h2 className="main-header__ml-30">on sale</h2>
@@ -83,11 +83,11 @@ const OnSale = () => {
           </div>
         </div>
       }
-      <div className="onsale__body main-body" style={{ marginLeft: bodyMarginLeft }}>
+      <div className="onsale main-body" style={{ marginLeft: bodyMarginLeft }}>
         {content}
       </div>
       {!isMobile && <Scroll ref={scrollThumb} scrollBlock={scrollBlock} />}
-    </section>
+    </>
   )
 }
 

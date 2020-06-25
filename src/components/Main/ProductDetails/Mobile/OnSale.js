@@ -38,7 +38,7 @@ const OnSale = () => {
   return (
     <div className="details-onsale">
       <TitleBlock text={'On sale'} icon={<Dots />} style={{ marginTop: '0' }} />
-      <div className="products__item-wrapper products__item-wrapper_details">
+      <div className="products__item-wrapper">
         <div className="item-holder p-relative">
           <div className="products__item">
             <div className="products__item-inner">

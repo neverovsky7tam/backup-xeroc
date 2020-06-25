@@ -19,7 +19,6 @@
   height: auto;
   position: relative;
   @include open-sans_font($grey_font, 12px);
-  font-weight: 300;
   z-index: 5;
 
   @media (min-width: 768px) {

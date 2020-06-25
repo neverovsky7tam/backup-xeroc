@@ -1,16 +1,22 @@
-.details__right,
-.details__left {
-  margin-left: 30px;
-}
-
-.details__left {
-  flex-grow: 1;
-
-  .description {
-    padding: 30px;
+.general__center {
+  .details {
+    display: flex;
   }
 
-  .seller-info {
-    margin-top: 57px;
+  .details__left,
+  .details__right {
+    margin-left: 30px;
+  }
+
+  .details__right {
+    flex-grow: 1;
+
+    .description {
+      padding: 30px;
+    }
+
+    .seller-info {
+      margin-top: 57px;
+    }
   }
 }

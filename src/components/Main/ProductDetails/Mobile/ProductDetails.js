@@ -4,9 +4,7 @@ import OnSale from './OnSale';
 const ProductDetails = () => {
 
   return (
-    <div className="mobile-wrapper">
-      <OnSale />
-    </div>
+    <OnSale />
   );
 };
 
