@@ -93,20 +93,33 @@ const GeneralBlock = () => {
     if (endTouchPoint < startTouchPoint) isDownSwipe = true;
   };
 
-  return (
-    <>
-      {isMobile && <PageTop />}
-      <div
-        className="general"
-        onTouchEnd={onTouchEnd}
-        onTouchStart={onTouchStart}>
-        {!isMobile && <Filters />}
-        {content}
-        {!isMobile && <Listings productsObj={productsObj} />}
-        {!isMobile && <News />}
+  if (isMobile) {
+    let wrapperClass = 'wrapper-mob';
+    if (contentVar === 'home') wrapperClass = 'home-mob';
+
+    return (
+      <>
+        <PageTop />
+        <div
+          className={wrapperClass}
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}>
+          {content}
+        </div>
+      </>
+    );
+  } else {
+    return (
+      <div className="general">
+        <Filters />
+        <section className="general__center">
+          {content}
+        </section>
+        <Listings productsObj={productsObj} />
+        <News />
       </div>
-    </>
-  );
+    );
+  };
 };
 
 export default GeneralBlock;
