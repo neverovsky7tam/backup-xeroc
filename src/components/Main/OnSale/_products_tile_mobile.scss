@@ -171,21 +171,6 @@
       margin-bottom: 15px;
     }
   }
-
-  .item-price,
-  .order-mob__price-shown {
-    @media (min-width: 425px) {
-      font-size: 24px;
-    }
-
-    @media (max-width: 424px) {
-      font-size: 20px;
-    }
-
-    @media (max-width: 374px) {
-      font-size: 16px;
-    }
-  }
 }
 
 .products__item-footer {

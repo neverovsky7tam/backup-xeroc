@@ -6,7 +6,7 @@ import { ReactComponent as CommonIcon } from '../../../assets/img/Product_detail
 
 const SellerInfo = () => {
   return (
-    <div className="seller-info__inner">
+    <div className="seller-info">
       <div className="seller-info__person">
         <div className="seller-img-holder">
           <img className="seller-img-holder__ava" src={topSellers[0].img} alt={topSellers[0].name} />

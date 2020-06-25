@@ -1,9 +1,9 @@
 import React from 'react';
 import { BoxDecor } from '../Parts/BoxDecor';
 
-const Container = ({ children }) => {
+const Container = ({ children, style }) => {
   return (
-    <div className="container">
+    <div className="container" style={style}>
       <div className="container__inner">
         {children}
       </div>
