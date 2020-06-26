@@ -10,13 +10,14 @@ import ProductDetailsDT from '../ProductDetails/Desctop/ProductDetailsDT';
 import ProductDetails from '../ProductDetails/Mobile/ProductDetails';
 import { productsObj } from '../../../data/productsData';
 
+let pageTopContent = null;
+
 const GeneralBlock = () => {
   const dispatch = useDispatch();
   const isMobile = useSelector((state) => state.deviceType);
   const contentVar = useSelector((state) => state.generalBlockState.current);
 
   let content = null;
-  let pageTopContent = null;
   let isCloseCross = false;
 
   if (contentVar === 'home') {
@@ -24,33 +25,23 @@ const GeneralBlock = () => {
   };
 
   if (contentVar === 'productDetails') {
-    content = (isMobile) ? <ProductDetails /> : <ProductDetailsDT />;
-    pageTopContent = 'Details';
-    isCloseCross = true;
+    if (isMobile) {
+      content = <ProductDetails />;
+      pageTopContent = 'Details';
+      isCloseCross = true;
+    } else {
+      content = <ProductDetailsDT />;
+    }
   };
-
-  useEffect(() => {
-    if (isMobile) dispatch(setPageTopState(pageTopContent));
-  }, [pageTopContent]);
-
-  useEffect(() => {
-    if (isCloseCross) dispatch(setCloseCross(true));
-  }, [isCloseCross]);
 
   // scroll processing. hide/show 'page-top' component
   let checkPoint = 1;
   let flag = true;
   let distanceSave = 0;
-  let isDownSwipe = false;
-  let startTouchPoint = null;
   let endTouchPoint = null;
 
   const scrollProcessing = () => {
     const scrollTop = document.documentElement.scrollTop;
-
-    if (isDownSwipe && (scrollTop < (endTouchPoint - 8))) {
-      dispatch(setPageTopState(pageTopContent));
-    };
 
     if (flag) {
       const delta = scrollTop - checkPoint;
@@ -76,22 +67,26 @@ const GeneralBlock = () => {
     };
   };
 
-  useEffect(() => {
-    document.addEventListener('scroll', scrollProcessing);
-    return () => document.removeEventListener('scroll', scrollProcessing);
-  });
-
-  const onTouchStart = () => {
-    isDownSwipe = false;
-    startTouchPoint = document.documentElement.scrollTop;
-    console.log('startTouchPoint', startTouchPoint);
+  const checkRules = () => {
+    setTimeout(() => {
+      const curretnScroll = document.documentElement.scrollTop;
+      if (curretnScroll < (endTouchPoint - 8)) {
+        dispatch(setPageTopState(pageTopContent));
+      };
+    }, 100);
   };
 
   const onTouchEnd = () => {
     endTouchPoint = document.documentElement.scrollTop;
-    console.log('endTouchPoint', endTouchPoint);
-    if (endTouchPoint < startTouchPoint) isDownSwipe = true;
+    checkRules();
   };
+
+  useEffect(() => {
+    document.addEventListener('scroll', scrollProcessing);
+    if (isMobile) dispatch(setPageTopState(pageTopContent));
+    if (isCloseCross) dispatch(setCloseCross(true));
+    return () => document.removeEventListener('scroll', scrollProcessing);
+  });
 
   if (isMobile) {
     let wrapperClass = 'wrapper-mob';
@@ -102,7 +97,6 @@ const GeneralBlock = () => {
         <PageTop />
         <div
           className={wrapperClass}
-          onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}>
           {content}
         </div>

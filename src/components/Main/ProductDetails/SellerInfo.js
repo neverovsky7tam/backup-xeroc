@@ -14,8 +14,8 @@ const SellerInfo = () => {
         </div>
         <div className="seller-rating-holder">
           <div className="seller-rating-holder__name">
-            <span className="open-sans-13-white">Nick Jones</span>
-            <div className="seller-rating-holder__verified"><VerifiedIcon /></div>
+            <span className="name">Nick Jones</span>
+            <div className="verified"><VerifiedIcon /></div>
           </div>
           <div className="seller-rating-holder__stars">
             <StarsBlockIcon />

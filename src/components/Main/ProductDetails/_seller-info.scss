@@ -73,7 +73,26 @@
       justify-content: center;
     }
 
-    .seller-rating-holder__verified {
+    .name {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 400;
+      font-size: $desctop_size_font_p;
+      color: $white_font;
+
+      @media (max-width: 767px) {
+        font-size: 16px;
+      }
+
+      @media (max-width: 424px) {
+        font-size: 15px;
+      }
+
+      @media (max-width: 374px) {
+        font-size: 12px;
+      }
+    }
+
+    .verified {
       display: flex;
       align-items: flex-end;
       margin-left: 10px;
