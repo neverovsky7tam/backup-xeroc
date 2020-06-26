@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import TitleBlock from '../../../BlocksUI/TitleBlock';
 import Container from '../../../BlocksUI/Container';
@@ -9,6 +9,10 @@ import { ReactComponent as Dots } from '../../../../assets/img/3dots.svg';
 
 const ProductDetails = () => {
   const item = useSelector((state) => state.currentProduct);
+  useEffect(() => {
+    document.documentElement.scrollTop = 0;
+  });
+
   return (
     <>
       <div className="details-onsale">

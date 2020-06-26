@@ -121,8 +121,6 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr, showDetails }) 
               <div className="order-mob__btns-wrapper">
                 <ButtonMain text={'Details'} func={() => showDetails(item)} style={{ marginBottom: '15px' }} />
                 <ButtonMain text={'Add to cart'} func={null} />
-                {/* <button className="order-mob__btn main-font order-mob__btn_details" onClick={() => showDetails(item)}>Details</button>
-                <button className="order-mob__btn main-font order-mob__btn_add">Add to cart</button> */}
               </div>
             </div>
           </div>

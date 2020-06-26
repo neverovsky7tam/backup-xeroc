@@ -1,0 +1,35 @@
+.pdp-controls {
+  position: absolute;
+  top: 1px;
+  right: 0;
+  z-index: 12;
+  display: flex;
+  color: $white_font;
+
+  nav {
+    margin-right: 30px;
+  }
+
+  button {
+    @include open-sans_font($white_font, 12px);
+    cursor: pointer;
+  }
+
+  .arrow-left {
+    margin-right: 10px;
+    transform: rotate(90deg);
+  }
+
+  .arrow-right {
+    margin-left: 10px;
+    transform: rotate(-90deg);
+  }
+
+  .pdp-close-btn {
+    display: flex;
+  }
+
+  .pdp-close-btn__txt {
+    margin-right: 10px;
+  }
+}

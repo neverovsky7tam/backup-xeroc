@@ -1,6 +1,7 @@
 .general__center {
   .details {
     display: flex;
+    height: 100%;
   }
 
   .details__left,
@@ -9,6 +10,22 @@
   }
 
   .details__right {
+    position: relative;
     flex-grow: 1;
+    height: 100%;
+    overflow: hidden;
   }
 }
+
+// TEST
+.magic-header {
+  position: sticky;
+  top: 0;
+  height: 48px;
+  background-color: $main_bg;
+  z-index: 11;
+}
+
+// .specifications {
+//   margin-top: 62px;
+// }

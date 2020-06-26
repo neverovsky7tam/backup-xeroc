@@ -1,12 +1,14 @@
 import React, { useLayoutEffect } from 'react';
 
-export const calcToScroll = (scrollBlock) => {
+export const calcToScroll = (scrollBlock, addParam) => {
   if (scrollBlock) {
     const SCROLL_THUMB_HEIGHT = 90;
     const elem = scrollBlock;
 
     const actualScrollHeight = elem.scrollHeight - elem.offsetHeight;
-    const actualScrollTrackHeight = elem.offsetHeight - SCROLL_THUMB_HEIGHT;
+    let actualScrollTrackHeight = null;
+    if (addParam) actualScrollTrackHeight = elem.offsetHeight - SCROLL_THUMB_HEIGHT - addParam;
+    else actualScrollTrackHeight = elem.offsetHeight - SCROLL_THUMB_HEIGHT;
 
     const scrollStep = actualScrollHeight / actualScrollTrackHeight;
     const toScroll = elem.scrollTop / scrollStep;
@@ -38,7 +40,7 @@ const Scroll = React.forwardRef(({ scrollBlock }, scrollThumb) => {
       const content = scrollBlock.current;
       const layer = scrollLayer.current;
       const thumb = scrollThumb.current;
-      layer.style.width = '202px';
+      layer.style.width = '502px';
 
       const parseTranslateValue = thumb.style.transform.slice(11);
       const currentTranslate = parseFloat(parseTranslateValue);
@@ -74,7 +76,7 @@ const Scroll = React.forwardRef(({ scrollBlock }, scrollThumb) => {
   }
 
   const clear = () => {
-    scrollLayer.current.style.width = '';
+    scrollLayer.current.style = '';
   }
 
   return (

@@ -5,7 +5,6 @@ import { ReactComponent as ShippingIcon } from '../../../assets/img/Product_deta
 
 const Description = ({ item }) => {
   const hashArr = productsProcessing(item).hashArr;
-
   return (
     <div className="description">
       <p className="description__main-txt">
