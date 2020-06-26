@@ -8,7 +8,7 @@ import GuestMenu from './GuestMenu';
 import UserMenu from './UserMenu/UserMenu';
 import Cart from '../Cart/Cart';
 import CloseCross from '../BlocksUI/Buttons/CloseCross';
-import { setMainContent, setGeneralBlockState, setSidebarState } from '../../store/actions';
+import { setMainContent, setGeneralBlockContent, setSidebarState } from '../../store/actions';
 import { ReactComponent as LogoIcon } from '../../assets/img/Header/corex-logo.svg';
 import { ReactComponent as BurgerBtn } from '../../assets/img/Header/burger-btn.svg';
 import { ReactComponent as ControlsMob } from '../../assets/img/Header/controls-mob.svg';
@@ -43,7 +43,7 @@ const Header = ({ isMobile }) => {
             className="logo"
             onClick={() => {
               dispatch(setMainContent('general'));
-              dispatch(setGeneralBlockState('home'));
+              dispatch(setGeneralBlockContent('home'));
             }} />
           <LangSwitcher />
         </div>

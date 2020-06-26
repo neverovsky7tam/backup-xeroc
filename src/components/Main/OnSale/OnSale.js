@@ -9,13 +9,13 @@ import ViewSwitcher from './ViewSwitcher';
 import { calcToScroll } from '../Scroll/Scroll';
 import { ReactComponent as Ads } from '../../../assets/img/ads_content.svg';
 
-const OnSale = () => {
+const OnSale = ({isGridView}) => {
   const isMac = window.navigator.platform.toLowerCase().indexOf('mac') >= 0;
   const listClass = (isMac) ? 'products products_mac' : 'products';
 
   const isMobile = useSelector((state) => state.deviceType);
 
-  const [view, setView] = useState(true);
+  const [view, setView] = useState(isGridView);
   const scrollBlockStyle = (view) ? null : { paddingTop: '45px', boxSizing: 'border-box' };
 
   const scrollThumb = React.createRef();

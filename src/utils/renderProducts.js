@@ -1,11 +1,11 @@
 import React from 'react';
 import store from '../store/store';
-import { setGeneralBlockState, setCurrentProduct } from '../store/actions';
+import { setGeneralBlockContent, setCurrentProduct } from '../store/actions';
 import Ads from '../components/Main/OnSale/Ads';
 
 const showDetails = (item) => {
   store.dispatch(setCurrentProduct(item))
-  store.dispatch(setGeneralBlockState('productDetails'));
+  store.dispatch(setGeneralBlockContent('productDetails'));
 }
 
 const renderProducts = (ProductTemplate, data) => {

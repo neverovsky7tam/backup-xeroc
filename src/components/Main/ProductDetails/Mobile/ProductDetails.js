@@ -9,6 +9,7 @@ import { ReactComponent as Dots } from '../../../../assets/img/3dots.svg';
 
 const ProductDetails = () => {
   const item = useSelector((state) => state.currentProduct);
+  
   useEffect(() => {
     document.documentElement.scrollTop = 0;
   });
