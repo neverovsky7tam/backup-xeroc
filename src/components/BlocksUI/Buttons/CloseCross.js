@@ -1,7 +1,7 @@
 import React from 'react';
 import store from '../../../store/store';
 import { useDispatch } from 'react-redux';
-import { setSidebarState, setCloseCross, setGeneralBlockState } from '../../../store/actions';
+import { setSidebarState, setCloseCross, setGeneralBlockContent } from '../../../store/actions';
 import { ReactComponent as CloseCrossIcon } from '../../../assets/img/Header/close-cross.svg';
 
 const CloseCross = ({ isSidebar }) => {
@@ -10,9 +10,9 @@ const CloseCross = ({ isSidebar }) => {
   const closeAction = () => {
     if (isSidebar) dispatch(setSidebarState(false));
     else {
-      const pageStore = store.getState().generalBlockState.store;
+      const pageStore = store.getState().generalBlockContent.store;
       const prevPage = pageStore[1];
-      dispatch(setGeneralBlockState(prevPage));
+      dispatch(setGeneralBlockContent(prevPage));
     }
     dispatch(setCloseCross(false));
   };

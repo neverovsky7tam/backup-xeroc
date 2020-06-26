@@ -26,7 +26,7 @@ const ProductDetailsDT = () => {
         <OnSaleDT item={item} />
       </div>
       <div className="details__right">
-        <Controls />
+        <Controls itemID={item.id} />
         <div
           className="scroll-container"
           ref={scrollBlock}

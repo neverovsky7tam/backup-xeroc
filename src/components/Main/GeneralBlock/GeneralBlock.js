@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import store from '../../../store/store';
 import { useSelector, useDispatch } from 'react-redux';
 import { setPageTopState, setCloseCross } from '../../../store/actions';
 import PageTop from '../../PageTop/PageTop';
@@ -15,13 +16,14 @@ let pageTopContent = null;
 const GeneralBlock = () => {
   const dispatch = useDispatch();
   const isMobile = useSelector((state) => state.deviceType);
-  const contentVar = useSelector((state) => state.generalBlockState.current);
+  const contentVar = useSelector((state) => state.generalBlockContent.current);
 
   let content = null;
   let isCloseCross = false;
 
   if (contentVar === 'home') {
-    content = <OnSale />;
+    const isGridView = store.getState().productsListType;
+    content = <OnSale isGridView={isGridView} />;
   };
 
   if (contentVar === 'productDetails') {

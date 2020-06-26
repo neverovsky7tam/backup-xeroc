@@ -3,12 +3,13 @@ import {
   SET_SIDEBAR_STATE,
   SET_SIDEBAR_MENU,
   SET_ON_SALE_DISPLAY,
+  SET_PRODUCTS_LIST_TYPE,
   CHANGE_LANG,
   SET_CLOSE_CROSS,
   SET_PAGE_TOP_STATE,
   SET_CAROUSEL_MENU_POS,
   SET_MAIN_CONTENT,
-  SET_GENERAL_BLOCK_STATE,
+  SET_GENERAL_BLOCK_CONTENT,
   SET_CURRENT_PRODUCT,
   SET_ACCOUNT_MENU,
   SET_TERMS_CLOSE_BTN,
@@ -68,6 +69,15 @@ export const productsDisplay = (state = productsObj, action) => {
   }
 }
 
+export const productsListType = (state = true, action) => {
+  switch (action.type) {
+    case SET_PRODUCTS_LIST_TYPE:
+      return action.isGridView;
+    default:
+      return state;
+  }
+}
+
 export const langObj = (state = langEN, action) => {
   switch (action.type) {
     case CHANGE_LANG:
@@ -95,9 +105,9 @@ export const mainContent = (state = 'general', action) => {
   }
 }
 
-export const generalBlockState = (state = { current: 'home', store: ['home'], }, action) => {
+export const generalBlockContent = (state = { current: 'home', store: ['home'], }, action) => {
   switch (action.type) {
-    case SET_GENERAL_BLOCK_STATE:
+    case SET_GENERAL_BLOCK_CONTENT:
       const newState = Object.assign({}, state);
       newState.current = action.content;
       newState.store.unshift(action.content);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setGeneralBlockState } from '../../store/actions';
+import { setGeneralBlockContent } from '../../store/actions';
 import { ReactComponent as MenuSeparate } from '../../assets/img/Header/menu-separate.svg';
 
 const MenuItems = React.forwardRef(({ isOverlayMenu, setOverlayMenu, isSeparator, mobile }, items) => {
@@ -10,9 +10,9 @@ const MenuItems = React.forwardRef(({ isOverlayMenu, setOverlayMenu, isSeparator
   const setContent = (e, page) => {
     e.preventDefault();
     if (mobile) {
-      if (e.target.classList.contains('active')) dispatch(setGeneralBlockState(page));
+      if (e.target.classList.contains('active')) dispatch(setGeneralBlockContent(page));
     } else {
-      dispatch(setGeneralBlockState(page));
+      dispatch(setGeneralBlockContent(page));
       if (isOverlayMenu) setOverlayMenu(false);
     }
   };

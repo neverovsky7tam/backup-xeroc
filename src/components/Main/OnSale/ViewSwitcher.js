@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setElectricityValue } from '../../../store/actions';
+import { setElectricityValue, setProductsListType } from '../../../store/actions';
 import { ReactComponent as DotsIcon } from './img/3-vert-dot.svg';
 import { ReactComponent as ViewIcon } from './img/view-icon.svg';
 import { ReactComponent as ArrowDots } from '../../../assets/img/arrow-dots.svg';
@@ -22,6 +22,11 @@ const ViewSwitcher = ({ view, setView }) => {
   const viewIcon = React.createRef();
   const dotsIcon = React.createRef();
 
+  const switchView = () => {
+    setView(!view);
+    dispatch(setProductsListType(!view)); 
+  };
+
   useEffect(() => {
     if (view) {
       dotsIcon.current.lastChild.style.fill = '#dadada';
@@ -39,9 +44,17 @@ const ViewSwitcher = ({ view, setView }) => {
       {!view &&
         <div className="electicity-switcher d-flex align-items-center">
           <div className="electicity-switcher__active">
-            <div className="arrow-left" onClick={(e) => setElectricityVal(e, false)}><ArrowDots /></div>
+            <div
+              className="arrow-left"
+              onClick={(e) => setElectricityVal(e, false)}>
+              <ArrowDots />
+            </div>
             <div>{val.toFixed(2)}</div>
-            <div className="arrow-right"><ArrowDots onClick={(e) => setElectricityVal(e, true)} /></div>
+            <div
+              className="arrow-right"
+              onClick={(e) => setElectricityVal(e, true)}>
+              <ArrowDots />
+            </div>
           </div>
           <div className="electicity-switcher__title d-flex">
             <div className="green-text">$/kWh</div>
@@ -49,7 +62,7 @@ const ViewSwitcher = ({ view, setView }) => {
           </div>
         </div>
       }
-      <div className="view-switcher" onClick={() => setView(!view)}>
+      <div className="view-switcher" onClick={switchView}>
         <div className="view-switcher__active">
           <div className="view-switcher__active-title">View:</div>
           <div className="view-switcher__active-btn">{viewState}</div>

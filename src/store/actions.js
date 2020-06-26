@@ -2,12 +2,13 @@ export const SET_DEVICE_TYPE = "SET_DEVICE_TYPE";
 export const SET_SIDEBAR_STATE = "SET_SIDEBAR_STATE";
 export const SET_SIDEBAR_MENU = "SET_SIDEBAR_MENU";
 export const SET_ON_SALE_DISPLAY = "SET_ON_SALE_DISPLAY";
+export const SET_PRODUCTS_LIST_TYPE = "SET_PRODUCTS_LIST_TYPE";
 export const CHANGE_LANG = "CHANGE_LANG";
 export const SET_CLOSE_CROSS = "SET_CLOSE_CROSS";
 export const SET_PAGE_TOP_STATE = "SET_PAGE_TOP_STATE";
 export const SET_CAROUSEL_MENU_POS = "SET_CAROUSEL_MENU_POS";
 export const SET_MAIN_CONTENT = "SET_MAIN_CONTENT";
-export const SET_GENERAL_BLOCK_STATE = "SET_GENERAL_BLOCK_STATE";
+export const SET_GENERAL_BLOCK_CONTENT = "SET_GENERAL_BLOCK_CONTENT";
 export const SET_CURRENT_PRODUCT = "CURRENT_PRODUCT";
 export const SET_ACCOUNT_MENU = "SET_ACCOUNT_MENU";
 export const SET_TERMS_CLOSE_BTN = "SET_TERMS_CLOSE_BTN";
@@ -45,6 +46,11 @@ export const setOnSaleDisplay = (products) => ({
   products,
 });
 
+export const setProductsListType = (isGridView) => ({
+  type: SET_PRODUCTS_LIST_TYPE,
+  isGridView,
+});
+
 export const switchLang = (lang) => ({
   type: CHANGE_LANG,
   lang,
@@ -70,8 +76,8 @@ export const setMainContent = (content) => ({
   content,
 });
 
-export const setGeneralBlockState = (content) => ({
-  type: SET_GENERAL_BLOCK_STATE,
+export const setGeneralBlockContent = (content) => ({
+  type: SET_GENERAL_BLOCK_CONTENT,
   content,
 });
 
