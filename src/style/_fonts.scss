@@ -13,3 +13,25 @@
   font-weight: $weight;
   color: $color;
 }
+
+@mixin standart_font($color, $weight) {
+  font-family: "Open Sans", sans-serif;
+  font-weight: $weight;
+  color: $color;
+
+  @media (min-width: 768px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 424px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 374px) {
+    font-size: 12px;
+  }
+}

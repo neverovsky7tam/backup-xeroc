@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import Controls from './Controls';
+import Scroll from '../../Scroll/Scroll';
 import Container from '../../../BlocksUI/Container';
 import OnSaleDT from './OnSaleDT';
 import Description from '../Description';
 import SellerInfo from '../SellerInfo';
-import Controls from './Controls';
-import Scroll from '../../Scroll/Scroll';
+import Specifications from '../Specifications';
 import { calcToScroll } from '../../Scroll/Scroll';
 
 const ProductDetailsDT = () => {
@@ -14,11 +15,19 @@ const ProductDetailsDT = () => {
   const scrollThumb = React.createRef();
   const scrollBlock = React.createRef();
 
+  const descriptionBlock = React.createRef();
+  const specBlock = React.createRef();
+
   const setScroll = () => {
     const HEADER_HEIGHT = 50;
     const scroll = calcToScroll(scrollBlock.current, HEADER_HEIGHT);
     scrollThumb.current.style.transform = `translateY(${scroll.toScroll}px)`;
   };
+
+  useEffect(() => {
+    descriptionBlock.current.style = '';
+    descriptionBlock.current.style.height = `${descriptionBlock.current.clientHeight + 61}px`;
+  });
 
   return (
     <div className="details">
@@ -31,7 +40,7 @@ const ProductDetailsDT = () => {
           className="scroll-container"
           ref={scrollBlock}
           onScroll={setScroll}>
-          <div className="description">
+          <div className="description" ref={descriptionBlock}>
             <div className="magic-header">
               <h2>DESCRIPTION & SHIPPING</h2>
             </div>
@@ -45,47 +54,11 @@ const ProductDetailsDT = () => {
               </div>
             </Container>
           </div>
-          <div className="specifications">
+          <div className="specifications" ref={specBlock}>
             <div className="magic-header">
               <h2>specifications</h2>
             </div>
-            <Container>
-              <div className="description-inner">
-                <Description item={item} />
-                <div className="seller-info-header">
-                  <h3>Seller’s info</h3>
-                </div>
-                <SellerInfo />
-              </div>
-            </Container>
-          </div>
-          <div className="specifications">
-            <div className="magic-header">
-              <h2>minable coins</h2>
-            </div>
-            <Container>
-              <div className="description-inner">
-                <Description item={item} />
-                <div className="seller-info-header">
-                  <h3>Seller’s info</h3>
-                </div>
-                <SellerInfo />
-              </div>
-            </Container>
-          </div>
-          <div className="specifications">
-            <div className="magic-header">
-              <h2>Related products</h2>
-            </div>
-            <Container>
-              <div className="description-inner">
-                <Description item={item} />
-                <div className="seller-info-header">
-                  <h3>Seller’s info</h3>
-                </div>
-                <SellerInfo />
-              </div>
-            </Container>
+            <Specifications item={item} />
           </div>
         </div>
       </div>

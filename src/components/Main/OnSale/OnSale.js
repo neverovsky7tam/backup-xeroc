@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import renderProducts from '../../../utils/renderProducts';
 import ProductTile from './ProductTile';
@@ -9,7 +9,7 @@ import ViewSwitcher from './ViewSwitcher';
 import { calcToScroll } from '../Scroll/Scroll';
 import { ReactComponent as Ads } from '../../../assets/img/ads_content.svg';
 
-const OnSale = ({isGridView}) => {
+const OnSale = ({ isGridView }) => {
   const isMac = window.navigator.platform.toLowerCase().indexOf('mac') >= 0;
   const listClass = (isMac) ? 'products products_mac' : 'products';
 
@@ -62,7 +62,7 @@ const OnSale = ({isGridView}) => {
             style={scrollBlockStyle}
             ref={scrollBlock}
             onScroll={setScroll}>
-            <ul className={listClass}>
+            <ul className={listClass} style={view ? {} : { display: 'block', margin: '0' }}>
               {(view) ? renderProducts(ProductTile, data) : renderProducts(ProductList, data)}
             </ul>
           </div>

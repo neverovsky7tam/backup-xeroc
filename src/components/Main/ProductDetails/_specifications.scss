@@ -1,0 +1,36 @@
+.specification {
+  position: relative;
+}
+
+.specification__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 80px;
+  grid-gap: 1px;
+  border: 1px solid $secondary_bg;
+  background-color: #3A3B4D;
+}
+
+.specification__item {
+  display: flex;
+  padding: 15px;
+  background-color: $secondary_bg-sec-hex;
+
+  .icon-holder {
+    display: flex;
+  }
+
+  .specs {
+    span {
+      display: block;
+    }
+
+    .specs__name {
+      @include standart_font($white_font, 400);
+    }
+
+    .specs__value {
+      @include standart_font($grey_font, 400);
+    }
+  }
+}

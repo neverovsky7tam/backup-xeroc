@@ -27,15 +27,12 @@ const tagsMob = (storeTags, filter) => {
 
   const items = tagsArr.map((el, idx) => {
     let tag = null;
-    let dataTarget = el;
 
     if (idx === 1) {
       tag = `+${length - 1}`;
-      dataTarget = 0;
     } else {
       if (el.length > 3) tag = el.slice(0, 3) + '...';
       else tag = el;
-
       if (filter === 'coins') tag = tag.toUpperCase();
     };
 
@@ -111,6 +108,7 @@ export const renderTags = (storeTags, filter) => {
 export const deleteTag = (filter, tagName) => {
   const state = store.getState();
   const targetObj = state.filtersState[filter];
+  console.log('filters', targetObj);
 
   let hasName = null;
   if (tagName) hasName = (+tagName === 0) ? false : true;
