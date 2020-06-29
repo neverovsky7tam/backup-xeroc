@@ -15,8 +15,8 @@ const ProductDetailsDT = () => {
   const scrollThumb = React.createRef();
   const scrollBlock = React.createRef();
 
-  const descriptionBlock = React.createRef();
-  const specBlock = React.createRef();
+  const description = React.createRef();
+  const specifications = React.createRef();
 
   const setScroll = () => {
     const HEADER_HEIGHT = 50;
@@ -25,8 +25,10 @@ const ProductDetailsDT = () => {
   };
 
   useEffect(() => {
-    descriptionBlock.current.style = '';
-    descriptionBlock.current.style.height = `${descriptionBlock.current.clientHeight + 61}px`;
+    description.current.style = '';
+    specifications.current.style = '';
+    description.current.style.height = `${description.current.clientHeight + 61}px`;
+    specifications.current.style.height = `${specifications.current.clientHeight + 61}px`;
   });
 
   return (
@@ -40,7 +42,7 @@ const ProductDetailsDT = () => {
           className="scroll-container"
           ref={scrollBlock}
           onScroll={setScroll}>
-          <div className="description" ref={descriptionBlock}>
+          <div className="description" ref={description}>
             <div className="magic-header">
               <h2>DESCRIPTION & SHIPPING</h2>
             </div>
@@ -54,7 +56,7 @@ const ProductDetailsDT = () => {
               </div>
             </Container>
           </div>
-          <div className="specifications" ref={specBlock}>
+          <div className="specifications" ref={specifications}>
             <div className="magic-header">
               <h2>specifications</h2>
             </div>
