@@ -5,11 +5,12 @@ import Container from '../../../BlocksUI/Container';
 import OnSale from './OnSale';
 import Description from '../Description';
 import SellerInfo from '../SellerInfo';
+import Specifications from '../Specifications';
 import { ReactComponent as Dots } from '../../../../assets/img/3dots.svg';
 
 const ProductDetails = () => {
   const item = useSelector((state) => state.currentProduct);
-  
+
   useEffect(() => {
     document.documentElement.scrollTop = 0;
   });
@@ -28,6 +29,10 @@ const ProductDetails = () => {
         <Container style={{ marginTop: '15px' }}>
           <SellerInfo />
         </Container>
+      </div>
+      <div className="details-specifications">
+        <TitleBlock text={'Specifications'} icon={<Dots />} style={{ marginTop: '0' }} />
+        <Specifications item={item} />
       </div>
     </>
   );
