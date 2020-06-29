@@ -41,6 +41,7 @@ const Scroll = React.forwardRef(({ scrollBlock }, scrollThumb) => {
       const layer = scrollLayer.current;
       const thumb = scrollThumb.current;
       layer.style.width = '502px';
+      layer.style.zIndex = '1111';
 
       const parseTranslateValue = thumb.style.transform.slice(11);
       const currentTranslate = parseFloat(parseTranslateValue);
@@ -61,13 +62,14 @@ const Scroll = React.forwardRef(({ scrollBlock }, scrollThumb) => {
 
             const contentPosition = dist * getSizes.scrollStep;
             content.scrollTop = contentPosition;
-          }
-        }
+          };
+        };
 
         const disableMoveThumb = () => {
           layer.removeEventListener('mousemove', moveThumb);
-          layer.style.width = '';
-        }
+          layer.style = '';
+        };
+
         layer.addEventListener('mousemove', moveThumb);
         layer.addEventListener('mouseup', disableMoveThumb);
         document.addEventListener('mouseup', disableMoveThumb);
