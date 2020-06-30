@@ -31,6 +31,10 @@
 .details-onsale__order {
   margin-top: 15px;
 
+  .details-onsale__order-input {
+    flex-grow: 1;
+  }
+
   .input-holder {
     position: relative;
     background-color: $secondary_bg-sec;
