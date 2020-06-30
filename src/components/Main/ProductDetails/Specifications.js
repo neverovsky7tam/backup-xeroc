@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BoxDecor } from '../../Parts/BoxDecor';
 import { ReactComponent as ManufacturerIcon } from '../../../assets/img/Product_details/Specifications/manufacturer.svg';
 import { ReactComponent as AlgorithmIcon } from '../../../assets/img/Product_details/Specifications/algorithm.svg';
@@ -98,13 +98,6 @@ const Specifications = ({ item }) => {
       );
     });
 
-    if ((items.lenght % 2 !== 0) && (document.documentElement.clientWidth >= 425)) {
-      const blockPlug = (
-        <li className="specification__item"></li>
-      );
-      items.push(blockPlug);
-    };
-
     return items;
   };
 
@@ -112,6 +105,7 @@ const Specifications = ({ item }) => {
     <div className="specification">
       <ul className="specification__list">
         {renderItems()}
+        <li className="specification__item-plug"></li>
       </ul>
       <BoxDecor />
     </div>

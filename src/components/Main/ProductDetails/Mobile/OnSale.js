@@ -69,7 +69,7 @@ const OnSale = ({ item }) => {
       {listState && <DropList contentArr={renderHashList(item.hash)} />}
       <div className="grid-template-2fr details-onsale__order">
         <div className="d-flex">
-          <div className="input-holder main-font">
+          <div className="input-holder main-font details-onsale__order-input">
             <div className="input-wrapper">
               <input type="text" defaultValue="1" />
             </div>

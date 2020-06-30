@@ -11,19 +11,19 @@ import ProductDetailsDT from '../ProductDetails/Desctop/ProductDetailsDT';
 import ProductDetails from '../ProductDetails/Mobile/ProductDetails';
 import { productsObj } from '../../../data/productsData';
 
-let pageTopContent = null;
-
 const GeneralBlock = () => {
   const dispatch = useDispatch();
   const isMobile = useSelector((state) => state.deviceType);
   const contentVar = useSelector((state) => state.generalBlockContent.current);
 
   let content = null;
+  let pageTopContent = null;
   let isCloseCross = false;
 
   if (contentVar === 'home') {
     const isGridView = store.getState().productsListType;
     content = <OnSale isGridView={isGridView} />;
+    pageTopContent = null;
   };
 
   if (contentVar === 'productDetails') {
