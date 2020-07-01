@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { BoxDecor } from '../Parts/BoxDecor';
 
-const ToggleBlock = ({ children, style, func, isActiveDefault }) => {
+const ToggleBlock = React.forwardRef(({ children, style, func }, initialBlock) => {
   const block = React.createRef();
 
   const onBlockClick = () => {
@@ -9,14 +9,11 @@ const ToggleBlock = ({ children, style, func, isActiveDefault }) => {
     if (func) func(block.current);
   };
 
-  useEffect(() => {
-    if (isActiveDefault) onBlockClick();
-  });
-
   return (
     <div
       className="toggle-block"
       style={style}
+      ref={initialBlock}
       onClick={onBlockClick}>
       <div
         className="toggle-block__inner"
@@ -26,6 +23,6 @@ const ToggleBlock = ({ children, style, func, isActiveDefault }) => {
       <BoxDecor />
     </div>
   );
-};
+});
 
 export default ToggleBlock;

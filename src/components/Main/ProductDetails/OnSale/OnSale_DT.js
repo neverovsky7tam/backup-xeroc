@@ -9,10 +9,9 @@ import { ReactComponent as ProductStar } from '../../../../assets/img/product-st
 import { ReactComponent as ProductHalfStar } from '../../../../assets/img/product-half-star.svg';
 import { ReactComponent as ToggleArrow } from '../../../../assets/img/toggle-arrow.svg';
 
-const OnSale_DT = ({item}) => {
+const OnSale_DT = ({item, currentHash, setCurrentHash}) => {
   const itemProcessed = productsProcessing(item);
   const [price, setPrice] = useState(item.hash.value[0].price);
-  const [currentHash, setCurrentHash] = useState(item.hash.value[0].h);
   const [listState, setListState] = useState(false);
   const [productCounter, setProductCounter] = useState(1);
 

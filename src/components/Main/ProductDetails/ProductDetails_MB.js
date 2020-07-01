@@ -10,6 +10,7 @@ import { ReactComponent as ToggleArrow } from '../../../assets/img/toggle-arrow.
 
 const ProductDetails_MB = () => {
   const item = useSelector((state) => state.currentProduct);
+  const [currentHash, setCurrentHash] = useState(item.hash.value[0].h);
   const [showOnSale, setOnSale] = useState(true);
   const [showDescription, setDescription] = useState(true);
   const [showSpecifications, setSpecifications] = useState(true);
@@ -27,7 +28,13 @@ const ProductDetails_MB = () => {
           icon={showOnSale ? <ToggleArrow /> : <Dots />}
           style={{ marginTop: '0' }}
           func={() => setOnSale(!showOnSale)} />
-        {showOnSale && <OnSale item={item} />}
+        {
+          showOnSale &&
+          <OnSale
+            item={item}
+            currentHash={currentHash}
+            setCurrentHash={setCurrentHash} />
+        }
       </div>
       <div className={showDescription ? "details-description" : "details-description-collapse"}>
         <TitleBlock
@@ -51,7 +58,7 @@ const ProductDetails_MB = () => {
           icon={showCoins ? <ToggleArrow /> : <Dots />}
           style={{ marginTop: '0' }}
           func={() => setCoinsDisplay(!showCoins)} />
-        {showCoins && <Coins item={item} />}
+        {showCoins && <Coins item={item} currentHash={currentHash} />}
       </div>
     </>
   );

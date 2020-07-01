@@ -10,11 +10,10 @@ import { ReactComponent as ToggleArrow } from '../../../../assets/img/toggle-arr
 
 import { ReactComponent as ShareIcon } from '../../../../assets/img/share.svg';
 
-const OnSale_MB = ({ item }) => {
+const OnSale_MB = ({ item, currentHash, setCurrentHash }) => {
   const itemProcessed = productsProcessing(item);
 
   const [price, setPrice] = useState(item.hash.value[0].price);
-  const [currentHash, setCurrentHash] = useState(item.hash.value[0].h);
   const [listState, setListState] = useState(false);
 
   const renderHashList = (hashObj) => {

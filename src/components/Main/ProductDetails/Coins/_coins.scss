@@ -45,7 +45,7 @@
   }
 
   .icon-holder {
-    width: 30px;
+    width: 28px;
 
     @media (max-width: 374px) {
       width: 26px;
@@ -79,18 +79,18 @@
 
     .text-block__subtitle {
       @include standart_font($grey_font, 300);
-      line-height: 15px;
+      line-height: 20px;
 
       @media (max-width: 767px) {
-        line-height: 20px;
+        line-height: 25px;
       }
     
       @media (max-width: 424px) {
-        line-height: 19px;
+        line-height: 24px;
       }
     
       @media (max-width: 374px) {
-        line-height: 16px;
+        line-height: 21px;
       }
     }
   }

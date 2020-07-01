@@ -8,5 +8,117 @@
   .coin-about__header {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .coin-about__header-left {
+    .price {
+      margin-right: 6px;
+      @include exo_font($white_font, 15px, 400);
+
+      @media (max-width: 767px) {
+        font-size: 24px;
+      }
+
+      @media (max-width: 424px) {
+        font-size: 20px;
+      }
+
+      @media (max-width: 374px) {
+        font-size: 16px;
+      }
+
+      .price__unit {
+        color: $grey_font;
+      }
+    }
+
+    .dynamics {
+      margin-right: 9px;
+      @include exo_font($green, 10px, 400);
+
+      @media (max-width: 767px) {
+        margin-right: 11px;
+        font-size: 12px;
+      }
+
+      @media (max-width: 424px) {
+        font-size: 11px;
+      }
+
+      @media (max-width: 374px) {
+        font-size: 10px;
+      }
+    }
+
+    svg {
+      @media (max-width: 767px) {
+        width: 6px;
+        height: 13px;
+      }
+
+      @media (max-width: 374px) {
+        width: 5px;
+        height: 11px;
+      }
+    }
+  }
+
+  .coin-about__txt-block {
+    margin-top: 23px;
+    @include standart_font($grey_font, 400);
+    line-height: 18px;
+
+    @media (max-width: 767px) {
+      line-height: 20px;
+    }
+
+    @media (max-width: 424px) {
+      line-height: 19px;
+    }
+
+    @media (max-width: 374px) {
+      line-height: 16px;
+    }
+  }
+
+  .coin-about__params {
+    margin-top: 54px;
+
+    @media (max-width: 767px) {
+      margin-top: 25px;
+    }
+
+    @media (max-width: 424px) {
+      margin-top: 24px;
+    }
+
+    h3 {
+      line-height: 25px;
+
+      @media (max-width: 767px) {
+        line-height: 30px;
+      }
+
+      @media (max-width: 424px) {
+        line-height: 25px;
+      }
+
+      @media (max-width: 374px) {
+        line-height: 21px;
+      }
+    }
+
+    .digit {
+      display: flex;
+
+      .column {
+        flex-grow: 1;
+
+        .column__header {
+          @include standart_font($white_font, 400);
+        }
+      }
+    }
   }
 }

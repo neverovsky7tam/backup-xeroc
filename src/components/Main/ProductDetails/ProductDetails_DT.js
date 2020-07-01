@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Controls from './Controls/Controls';
 import Scroll from '../Scroll/Scroll';
-import OnSaleDT from './OnSale/OnSale';
+import OnSale from './OnSale/OnSale';
 import DescriptionShipping from './DescriptionShipping/DescriptionShipping';
 import Specifications from './Specifications/Specifications';
 import Coins from './Coins/Coins';
@@ -10,6 +10,7 @@ import { calcToScroll } from '../Scroll/Scroll';
 
 const ProductDetails_DT = () => {
   const item = useSelector((state) => state.currentProduct);
+  const [currentHash, setCurrentHash] = useState(item.hash.value[0].h);
 
   const scrollThumb = React.createRef();
   const scrollBlock = React.createRef();
@@ -33,39 +34,42 @@ const ProductDetails_DT = () => {
 
   return (
     <div className="details">
-      <div className="details__left">
-        <OnSaleDT item={item} />
-      </div>
+      <section className="details__left">
+        <OnSale
+          item={item}
+          currentHash={currentHash}
+          setCurrentHash={setCurrentHash} />
+      </section>
       <div className="details__right">
         <Controls itemID={item.id} />
         <div
           className="scroll-container"
           ref={scrollBlock}
           onScroll={setScroll}>
-          <div
+          <section
             className="details-description"
             ref={description}>
             <div className="magic-header">
               <h2>DESCRIPTION & SHIPPING</h2>
             </div>
             <DescriptionShipping item={item} />
-          </div>
-          <div
+          </section>
+          <section
             className="details-specifications"
             ref={specifications}>
             <div className="magic-header">
               <h2>specifications</h2>
             </div>
             <Specifications item={item} />
-          </div>
-          <div
+          </section>
+          <section
             className="details-coins"
             ref={coins}>
             <div className="magic-header">
               <h2>minable coins</h2>
             </div>
-            <Coins item={item} />
-          </div>
+            <Coins item={item} currentHash={currentHash} />
+          </section>
         </div>
       </div>
       <Scroll ref={scrollThumb} scrollBlock={scrollBlock} />

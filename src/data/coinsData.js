@@ -1,7 +1,8 @@
-export const coinsData = {
-  btc: {
+export const coinsData = [
+  {
+    title: 'Bitcoin',
     value: 'btc',
-    'Bitcoin Price': '9,154.01',
+    'Price': '9,154.01',
     'Market Cap': '168,119,730',
     'Trading Volume': '5,337,362,20',
     '24h Low': '9,095.31',
@@ -21,9 +22,10 @@ export const coinsData = {
     income: 24.57,
     description: 'Bitcoin (BTC) is a cryptocurrency or a form of digital asset. Bitcoin (BTC) price for today is $9,250.09 with a 24-hour trading volume of $31,954,381,605. Price is up 6.3% in the last 24 hours. It has a circulating supply of 17.5 Million coins and a max supply of 21 Million coins. The most active exchange that is trading Bitcoin is LATOKEN. Explore the address and transactions of Bitcoin on block explorers such as blockchair.com, blockchain.info, live.blockcypher.com, bitcoinblockexplorers.com, and btc.tokenview.com. Additional information about Bitcoin coin can be found at http://www.bitcoin.org.',
   },
-  ltc: {
+  {
+    title: 'Litecoin',
     value: 'ltc',
-    'Litecoin Price': '5,345.01',
+    'Price': '5,345.01',
     'Market Cap': '168,119,730',
     'Trading Volume': '5,337,362,20',
     '24h Low': '9,095.31',
@@ -43,4 +45,4 @@ export const coinsData = {
     income: 14.57,
     description: 'Litecoin (LTC) is a cryptocurrency or a form of digital asset. Litecoin (LTC) price for today is $5,345.01 with a 24-hour trading volume of $31,954,381,605. Price is up 6.3% in the last 24 hours. It has a circulating supply of 17.5 Million coins and a max supply of 21 Million coins. The most active exchange that is trading Bitcoin is LATOKEN. Explore the address and transactions of Bitcoin on block explorers such as blockchair.com, blockchain.info, live.blockcypher.com, bitcoinblockexplorers.com, and btc.tokenview.com. Additional information about Bitcoin coin can be found at http://www.bitcoin.org.',
   },
-}
+];
