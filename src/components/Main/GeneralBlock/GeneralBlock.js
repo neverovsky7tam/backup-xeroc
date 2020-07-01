@@ -7,8 +7,8 @@ import Filters from '../Filters/Filters';
 import OnSale from '../OnSale/OnSale';
 import Listings from '../Listings/Listings';
 import News from '../News/News';
-import ProductDetailsDT from '../ProductDetails/Desctop/ProductDetailsDT';
-import ProductDetails from '../ProductDetails/Mobile/ProductDetails';
+import ProductDetails_DT from '../ProductDetails/ProductDetails_DT';
+import ProductDetails_MB from '../ProductDetails/ProductDetails_MB';
 import { productsObj } from '../../../data/productsData';
 
 const GeneralBlock = () => {
@@ -28,11 +28,11 @@ const GeneralBlock = () => {
 
   if (contentVar === 'productDetails') {
     if (isMobile) {
-      content = <ProductDetails />;
+      content = <ProductDetails_MB />;
       pageTopContent = 'Details';
       isCloseCross = true;
     } else {
-      content = <ProductDetailsDT />;
+      content = <ProductDetails_DT />;
     }
   };
 

@@ -1,0 +1,12 @@
+.coin-about {
+  padding: 29px;
+
+  @media (max-width: 767px) {
+    padding: 29px 14px;
+  }
+
+  .coin-about__header {
+    display: flex;
+    justify-content: space-between;
+  }
+}

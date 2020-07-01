@@ -3,13 +3,17 @@
 }
 
 .wrapper-mob {
+  .details-specifications {
+    margin-bottom: 30px;
+  }
+
+  .details-specifications-collapse {
+    margin-bottom: 15px;
+  } 
+
   .specification {
     margin-top: 15px;
   }
-}
-
-.details-specifications {
-  margin-top: 30px;
 }
 
 .specification__list {

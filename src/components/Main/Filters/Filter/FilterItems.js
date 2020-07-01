@@ -32,7 +32,7 @@ const FilterItems = ({ itemsArr, onItemClick, img }) => {
                 {img &&
                   <img
                     className="filter__item-img"
-                    src={`/data/filters/coins_img/${el[0]}.svg`} />}
+                    src={`/data/coins_img/${el[0]}.svg`} />}
                 {el[0]}
               </div>
               <BoxDecor />

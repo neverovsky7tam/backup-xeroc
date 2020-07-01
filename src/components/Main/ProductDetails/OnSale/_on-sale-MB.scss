@@ -1,4 +1,6 @@
 .details-onsale {
+  margin-bottom: 30px;
+
   .products__item-wrapper {
     margin-top: 15px;
 
@@ -26,6 +28,10 @@
       margin-bottom: 4px;
     }
   }
+}
+
+.details-onsale-collapse {
+  margin-bottom: 15px;
 }
 
 .details-onsale__order {

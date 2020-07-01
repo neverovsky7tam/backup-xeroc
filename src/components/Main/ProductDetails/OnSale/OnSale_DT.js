@@ -9,7 +9,7 @@ import { ReactComponent as ProductStar } from '../../../../assets/img/product-st
 import { ReactComponent as ProductHalfStar } from '../../../../assets/img/product-half-star.svg';
 import { ReactComponent as ToggleArrow } from '../../../../assets/img/toggle-arrow.svg';
 
-const OnSaleDT = ({item}) => {
+const OnSale_DT = ({item}) => {
   const itemProcessed = productsProcessing(item);
   const [price, setPrice] = useState(item.hash.value[0].price);
   const [currentHash, setCurrentHash] = useState(item.hash.value[0].h);
@@ -111,4 +111,4 @@ const OnSaleDT = ({item}) => {
   );
 };
 
-export default OnSaleDT;
+export default OnSale_DT;

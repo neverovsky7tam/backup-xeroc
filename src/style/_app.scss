@@ -46,8 +46,18 @@ h2 {
 }
 
 h3 {
-  @media (min-width: 768px) {
+  @include exo_font($white_font, 20px, 500);
+
+  @media (max-width: 767px) {
+    @include exo_font($white_font, 24px, 500);
+  }
+
+  @media (max-width: 424px) {
     @include exo_font($white_font, 20px, 500);
+  }
+
+  @media (max-width: 374px) {
+    @include exo_font($white_font, 16px, 500);
   }
 }
 

@@ -10,7 +10,7 @@ import { ReactComponent as ToggleArrow } from '../../../../assets/img/toggle-arr
 
 import { ReactComponent as ShareIcon } from '../../../../assets/img/share.svg';
 
-const OnSale = ({ item }) => {
+const OnSale_MB = ({ item }) => {
   const itemProcessed = productsProcessing(item);
 
   const [price, setPrice] = useState(item.hash.value[0].price);
@@ -85,4 +85,4 @@ const OnSale = ({ item }) => {
   );
 };
 
-export default OnSale;
+export default OnSale_MB;

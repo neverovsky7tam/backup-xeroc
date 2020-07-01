@@ -28,5 +28,5 @@ export const ButtonDark = ({ text, func, wrapperStyle, btnStyle }) => {
       </button>
       <BoxDecor ref={boxDecor} />
     </div>
-  )
-}
+  );
+};

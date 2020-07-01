@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import Controls from './Controls';
-import Scroll from '../../Scroll/Scroll';
-import Container from '../../../BlocksUI/Container';
-import OnSaleDT from './OnSaleDT';
-import Description from '../Description';
-import SellerInfo from '../SellerInfo';
-import Specifications from '../Specifications';
-import { calcToScroll } from '../../Scroll/Scroll';
+import Controls from './Controls/Controls';
+import Scroll from '../Scroll/Scroll';
+import OnSaleDT from './OnSale/OnSale';
+import DescriptionShipping from './DescriptionShipping/DescriptionShipping';
+import Specifications from './Specifications/Specifications';
+import Coins from './Coins/Coins';
+import { calcToScroll } from '../Scroll/Scroll';
 
-const ProductDetailsDT = () => {
+const ProductDetails_DT = () => {
   const item = useSelector((state) => state.currentProduct);
 
   const scrollThumb = React.createRef();
@@ -17,6 +16,7 @@ const ProductDetailsDT = () => {
 
   const description = React.createRef();
   const specifications = React.createRef();
+  const coins = React.createRef();
 
   const setScroll = () => {
     const HEADER_HEIGHT = 50;
@@ -42,25 +42,29 @@ const ProductDetailsDT = () => {
           className="scroll-container"
           ref={scrollBlock}
           onScroll={setScroll}>
-          <div className="description" ref={description}>
+          <div
+            className="details-description"
+            ref={description}>
             <div className="magic-header">
               <h2>DESCRIPTION & SHIPPING</h2>
             </div>
-            <Container>
-              <div className="description-inner">
-                <Description item={item} />
-                <div className="seller-info-header">
-                  <h3>Seller’s info</h3>
-                </div>
-                <SellerInfo />
-              </div>
-            </Container>
+            <DescriptionShipping item={item} />
           </div>
-          <div className="specifications" ref={specifications}>
+          <div
+            className="details-specifications"
+            ref={specifications}>
             <div className="magic-header">
               <h2>specifications</h2>
             </div>
             <Specifications item={item} />
+          </div>
+          <div
+            className="details-coins"
+            ref={coins}>
+            <div className="magic-header">
+              <h2>minable coins</h2>
+            </div>
+            <Coins item={item} />
           </div>
         </div>
       </div>
@@ -69,4 +73,4 @@ const ProductDetailsDT = () => {
   )
 };
 
-export default ProductDetailsDT;
+export default ProductDetails_DT;

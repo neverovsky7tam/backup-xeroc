@@ -1,0 +1,97 @@
+.wrapper-mob {
+  .details-coins {
+    margin-bottom: 30px;
+  }
+
+  .details-coins-collapse {
+    margin-bottom: 15px;
+  }
+
+  .coins {
+    margin-top: 15px;
+  }
+}
+
+.coins__control {
+  display: grid;
+  grid-template-columns: 145px 145px;
+  grid-gap: 30px;
+  margin-bottom: 30px;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  @media (max-width: 374px) {
+    grid-template-columns: 1fr;
+  }
+
+  .toggle-block {
+    height: 60px;
+
+    @media (max-width: 767px) {
+      height: 80px;
+    }
+  
+    @media (max-width: 424px) {
+      height: 75px;
+    }
+  
+    @media (max-width: 374px) {
+      height: 65px;
+    }
+  }
+
+  .icon-holder {
+    width: 30px;
+
+    @media (max-width: 374px) {
+      width: 26px;
+    }
+
+    img {
+      width: 14px;
+
+      @media (max-width: 767px) {
+        width: 15px;
+      }
+    
+      @media (max-width: 424px) {
+        line-height: 13px;
+      }
+    
+      @media (max-width: 374px) {
+        line-height: 11px;
+      }
+    }
+  }
+
+  .text-block {
+    span {
+      display: block;
+    }
+
+    .text-block__title {
+      @include standart_font($white_font, 400);
+    }
+
+    .text-block__subtitle {
+      @include standart_font($grey_font, 300);
+      line-height: 15px;
+
+      @media (max-width: 767px) {
+        line-height: 20px;
+      }
+    
+      @media (max-width: 424px) {
+        line-height: 19px;
+      }
+    
+      @media (max-width: 374px) {
+        line-height: 16px;
+      }
+    }
+  }
+}
