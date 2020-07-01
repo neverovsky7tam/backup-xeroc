@@ -1,11 +1,17 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { BoxDecor } from '../../Parts/BoxDecor';
 import { ReactComponent as BannerLogo } from '../../../assets/img/Banners/logo-banner-1.svg';
 import { ReactComponent as Illustration } from '../../../assets/img/Banners/illustration.svg';
 
 const News = () => {
+  const contentVar = useSelector((state) => state.generalBlockContent.current);
+
+  let cssClass = 'news';
+  if (contentVar === 'productDetails') cssClass = 'news news_pdp'
+
   return (
-    <section className="news">
+    <section className={cssClass}>
       <div className="main-header">
         <h2>news</h2>
       </div>
