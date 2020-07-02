@@ -44,6 +44,7 @@ const ProductDetails_DT = () => {
         <Controls itemID={item.id} />
         <div
           className="scroll-container"
+          style={{paddingRight: '1px'}}
           ref={scrollBlock}
           onScroll={setScroll}>
           <section

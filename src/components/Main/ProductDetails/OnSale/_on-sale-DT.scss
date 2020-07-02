@@ -29,44 +29,8 @@
           cursor: default;
         }
 
-        .arrow-holder {
-          position: relative;
-          display: flex;
-          width: 30px;
-          height: 100%;
-          align-items: center;
-
-          cursor: pointer;
-        }
-
-        .arrow-holder__right {
-          justify-content: flex-end;
-          right: -13px;
-        }
-
-        .arrow-holder__left {
-          justify-content: flex-start;
-          left: -13px;
-        }
-
         .arrow {
-          position: relative;
-          width: 10px;
-          height: 6px;
-
-          path {
-            fill: $grey_font;
-          }
-        }
-
-        .arrow_left {
-          left: 11px;
-          transform: rotate(90deg);
-        }
-
-        .arrow_right {
-          right: 11px;
-          transform: rotate(-90deg);
+          @include arrow($grey_font);
         }
       }
     }

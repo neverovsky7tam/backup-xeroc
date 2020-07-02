@@ -239,27 +239,6 @@
   grid-gap: 15px;
 }
 
-.toggle-arrow {
-  @media (min-width: 768px) {
-    width: 10px;
-    height: 6px;
-  }
-
-  @media (max-width: 767px) {
-    width: 12px;
-    height: 7.2px;
-  }
-
-  @media (max-width: 374px) {
-    width: 10px;
-    height: 6px;
-  }
-}
-
-.toggle-arrow_right {
-  transform: rotate(-90deg);
-}
-
 .update-icon {
   @media (max-width: 767px) {
     width: 13px;

@@ -1,5 +1,5 @@
 .coin-about {
-  padding: 29px;
+  padding: 30px;
 
   @media (max-width: 767px) {
     padding: 29px 14px;
@@ -120,62 +120,271 @@
       @media (max-width: 374px) {
         margin-top: 24px;
       }
+    }
 
-      .column {
+    .column {
+      box-sizing: border-box;
+      width: 104px;
+      padding-left: 15px;
+
+      @media (max-width: 1439px) {
+        width: auto;
+        padding: 0 10px;
+      }
+
+      @media (max-width: 767px) {
         flex-grow: 1;
-        padding-left: 17px;
+        padding-left: 15px;
+      }
 
-        .column__header {
-          @include standart_font($white_font, 400);
+      .column__header {
+        @include standart_font($white_font, 400);
+      }
+
+      .column__body {
+        margin-top: 28px;
+
+        @media (max-width: 767px) {
+          margin-top: 18px;
         }
+      }
 
-        .column__body {
-          margin-top: 28px;
+      .column__decor {
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -17px;
+          box-sizing: border-box;
+          width: 1px;
+          height: 57px;
+          background-color: rgba(218, 218, 218, 0.1);
+
+          @media (max-width: 1439px) {
+            left: -10px;
+          }
 
           @media (max-width: 767px) {
-            margin-top: 18px;
-          }
-        }
-
-        .column__item {
-          @include open-sans_font($grey_font, 13px);
-
-          @media (max-width: 767px) {
-            font-size: 12px;
-          }
-
-          @media (max-width: 424px) {
-            font-size: 11px;
+            left: -15px;
+            height: 60px;
           }
 
           @media (max-width: 374px) {
-            font-size: 10px;
-          }
-
-          &:not(:first-child) {
-            margin-top: 11px;
-
-            @media (max-width: 767px) {
-              margin-top: 13px;
-            }
+            height: 54px;
           }
         }
+      }
 
-        .column__item_income {
-          color: $white_font;
+      .column__item {
+        @include open-sans_font($grey_font, 13px);
+
+        @media (max-width: 767px) {
+          font-size: 12px;
         }
 
-        .column__item_electricity {
-          color: $red;
+        @media (max-width: 424px) {
+          font-size: 11px;
         }
 
-        .column__item_profit {
+        @media (max-width: 374px) {
+          font-size: 10px;
+        }
+
+        &:not(:first-child) {
+          margin-top: 11px;
+
+          @media (max-width: 767px) {
+            margin-top: 13px;
+          }
+        }
+      }
+
+      .column__item_income {
+        color: $white_font;
+      }
+
+      .column__item_electricity {
+        color: $red;
+      }
+
+      .column__item_profit {
+        color: $green;
+      }
+    }
+
+    .column_head {
+      width: 89px;
+      padding: 0;
+
+      @media (max-width: 767px) {
+        width: auto;
+      }
+    }
+
+    .column_main {
+      @media (max-width: 1439px) {
+        flex-grow: 1;
+      }
+    }
+
+    .column_last {
+      width: 107px;
+
+      @media (max-width: 1439px) {
+        width: auto;
+        padding: 0 0 0 10px;
+      }
+    }
+
+    .column_border-left {
+      border-left: 1px solid rgba(218, 218, 218, 0.1);
+    }
+
+    .column_border-bottom {
+      border-bottom: 1px solid rgba(218, 218, 218, 0.1);
+    }
+
+    .graph {
+      margin-top: 37px;
+
+      @media (min-width: 425px) {
+        margin-top: 28px;
+      }
+
+      .graph__header {
+        @include fontN2($white_font, 300);
+
+        span {
           color: $green;
         }
       }
 
-      .column_head {
-        padding: 0;
+      .graph__inner {
+        position: relative;
+        display: flex;
+        margin-top: 13px;
+        @media (max-width: 767px) {
+          margin-top: 17px;
+        }
+
+        @media (max-width: 424px) {
+          margin-top: 20px;
+        }
+
+        @media (max-width: 374px) {
+          margin-top: 30px;
+        }
+      }
+
+      .graph__control-btn {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        width: 89px;
+        height: 30px;
+        border: 1px solid $secondary_bg;
+        background-color: $secondary_bg-sec;
+
+        .arrow-holder {
+          width: 20px;
+        }
+
+        .arrow {
+          @include arrow($grey_font);
+        }
+
+        .arrow-holder__left {
+          left: 0;
+
+          .arrow_left {
+            left: 6px;
+          }
+        }
+
+        .arrow-holder__right {
+          right: 0;
+
+          .arrow_right {
+            right: 6px;
+          }
+        }
+
+        .electricity-val {
+          @include fontN2($white_font, 300);
+        }
+      }
+
+      .grah__control-input {
+        display: flex;
+        box-sizing: border-box;
+        width: 106px;
+        height: 50px;
+        align-items: center;
+
+        @media (max-width: 374px) {
+          width: 85px;
+          height: 40px;
+        }
+
+        input {
+          width: 100%;
+          text-align: center;
+          @include fontN2($white_font, 300);
+        }
+      }
+
+      .column_border-bottom {
+        width: 89px;
+
+        @media (min-width: 768px) {
+          width: 104px;
+        }
+      }
+
+      // .column_last {
+      //   @media (max-width: 1439px) {
+      //     display: none;
+      //   }
+      // }
+
+      // .column_first {
+      //   @media (max-width: 1439px) {
+      //     width: 104px;
+      //   }
+      // }
+
+      // .column_second {
+      //   @media (max-width: 1439px) {
+      //     flex-grow: 1;
+      //   }
+      // }
+
+      .digit-graphic-holder {
+        position: absolute;
+        bottom: 0;
+        left: 106px;
+        width: calc(100% - 106px);
+        border-bottom: 1px solid $secondary_bg-sec;
+
+        @media (min-width: 768px) {
+          left: 89px;
+          width: calc(100% - 89px);
+        }
+
+        @media (max-width: 374px) {
+          left: 85px;
+          width: calc(100% - 85px);
+        }
+
+        .graphic-img {
+          position: relative;
+          display: block;
+          width: 100%;
+        }
       }
     }
   }
