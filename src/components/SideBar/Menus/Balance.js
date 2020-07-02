@@ -91,7 +91,6 @@ const WithdrawalList = ({ block }) => {
   };
 
   const inputBlur = () => {
-    block.current.classList.remove('item-active');
     const prevInput = currentItem;
     currentItemID = currentItem.parentElement.dataset.id;
     currentItemValue = currentItem.firstElementChild.value;
