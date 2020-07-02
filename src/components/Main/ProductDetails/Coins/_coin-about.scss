@@ -111,13 +111,71 @@
 
     .digit {
       display: flex;
+      margin-top: 28px;
+
+      @media (max-width: 767px) {
+        margin-top: 30px;
+      }
+
+      @media (max-width: 374px) {
+        margin-top: 24px;
+      }
 
       .column {
         flex-grow: 1;
+        padding-left: 17px;
 
         .column__header {
           @include standart_font($white_font, 400);
         }
+
+        .column__body {
+          margin-top: 28px;
+
+          @media (max-width: 767px) {
+            margin-top: 18px;
+          }
+        }
+
+        .column__item {
+          @include open-sans_font($grey_font, 13px);
+
+          @media (max-width: 767px) {
+            font-size: 12px;
+          }
+
+          @media (max-width: 424px) {
+            font-size: 11px;
+          }
+
+          @media (max-width: 374px) {
+            font-size: 10px;
+          }
+
+          &:not(:first-child) {
+            margin-top: 11px;
+
+            @media (max-width: 767px) {
+              margin-top: 13px;
+            }
+          }
+        }
+
+        .column__item_income {
+          color: $white_font;
+        }
+
+        .column__item_electricity {
+          color: $red;
+        }
+
+        .column__item_profit {
+          color: $green;
+        }
+      }
+
+      .column_head {
+        padding: 0;
       }
     }
   }

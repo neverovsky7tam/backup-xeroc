@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import Container from '../../../BlocksUI/Container';
 import { ReactComponent as GreenArrow } from '../../../../assets/img/green-arrow.svg';
@@ -6,6 +6,7 @@ import { ReactComponent as RedArrow } from '../../../../assets/img/red-arrow.svg
 
 
 const CoinAbout = ({ coin, item, currentHash }) => {
+  const [electricityCost, setElectricityCost] = useState(0.17);
   const isMobile = useSelector((state) => state.deviceType);
 
   let price = coin['Price'];
@@ -18,6 +19,10 @@ const CoinAbout = ({ coin, item, currentHash }) => {
   };
 
   const priceDisplay = (isMobile) ? checkPriceLength() : price;
+
+  const incomeDay = (currentHash * (item.efficiency / 3.3)).toFixed(2);
+  const electricityDay = (electricityCost * item.efficiency * currentHash).toFixed(2);
+  const profitDay = (incomeDay - electricityDay).toFixed(2);
 
   return (
     <Container>
@@ -34,36 +39,36 @@ const CoinAbout = ({ coin, item, currentHash }) => {
         <div className="coin-about__params">
           <h3>Mining with {item.manufacturer} {item.model}, HR - {currentHash}</h3>
           <div className="digit">
-            <div className="column">
-              <div className="column__header">Hello</div>
-              <ul className="column__body-head">
-                <li className="column__item"></li>
-                <li className="column__item"></li>
-                <li className="column__item"></li>
-              </ul>
-            </div>
-            <div className="column">
-              <div className="column__header">Hello</div>
+            <div className="column column_head">
+              <div className="column__header">Term</div>
               <ul className="column__body">
-                <li className="column__item"></li>
-                <li className="column__item"></li>
-                <li className="column__item"></li>
+                <li className="column__item">Income</li>
+                <li className="column__item">Electricity</li>
+                <li className="column__item">Profit</li>
               </ul>
             </div>
             <div className="column">
-              <div className="column__header">Hello</div>
-              <ul className="column__bod">
-                <li className="column__item"></li>
-                <li className="column__item"></li>
-                <li className="column__item"></li>
-              </ul>
-            </div>
-            <div className="column">
-              <div className="column__header">Hello</div>
+              <div className="column__header">Day</div>
               <ul className="column__body">
-                <li className="column__item"></li>
-                <li className="column__item"></li>
-                <li className="column__item"></li>
+                <li className="column__item column__item_income">${incomeDay}</li>
+                <li className="column__item column__item_electricity">${electricityDay}</li>
+                <li className="column__item column__item_profit">${profitDay}</li>
+              </ul>
+            </div>
+            <div className="column">
+              <div className="column__header">Month</div>
+              <ul className="column__body">
+                <li className="column__item column__item_income">${(incomeDay * 30).toFixed(2)}</li>
+                <li className="column__item column__item_electricity">${(electricityDay * 30).toFixed(2)}</li>
+                <li className="column__item column__item_profit">${(profitDay * 30).toFixed(2)}</li>
+              </ul>
+            </div>
+            <div className="column">
+              <div className="column__header">Year</div>
+              <ul className="column__body">
+                <li className="column__item column__item_income">${(incomeDay * 365).toFixed(2)}</li>
+                <li className="column__item column__item_electricity">${(electricityDay * 365).toFixed(2)}</li>
+                <li className="column__item column__item_profit">${(profitDay * 365).toFixed(2)}</li>
               </ul>
             </div>
           </div>
