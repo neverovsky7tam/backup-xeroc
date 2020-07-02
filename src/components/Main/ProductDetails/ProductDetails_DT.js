@@ -1,22 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import Controls from './Controls';
-import Scroll from '../../Scroll/Scroll';
-import Container from '../../../BlocksUI/Container';
-import OnSaleDT from './OnSaleDT';
-import Description from '../Description';
-import SellerInfo from '../SellerInfo';
-import Specifications from '../Specifications';
-import { calcToScroll } from '../../Scroll/Scroll';
+import Controls from './Controls/Controls';
+import Scroll from '../Scroll/Scroll';
+import OnSale from './OnSale/OnSale';
+import DescriptionShipping from './DescriptionShipping/DescriptionShipping';
+import Specifications from './Specifications/Specifications';
+import Coins from './Coins/Coins';
+import { calcToScroll } from '../Scroll/Scroll';
 
-const ProductDetailsDT = () => {
+const ProductDetails_DT = () => {
   const item = useSelector((state) => state.currentProduct);
+  const [currentHash, setCurrentHash] = useState(item.hash.value[0].h);
 
   const scrollThumb = React.createRef();
   const scrollBlock = React.createRef();
 
   const description = React.createRef();
   const specifications = React.createRef();
+  const coins = React.createRef();
 
   const setScroll = () => {
     const HEADER_HEIGHT = 50;
@@ -33,35 +34,42 @@ const ProductDetailsDT = () => {
 
   return (
     <div className="details">
-      <div className="details__left">
-        <OnSaleDT item={item} />
-      </div>
+      <section className="details__left">
+        <OnSale
+          item={item}
+          currentHash={currentHash}
+          setCurrentHash={setCurrentHash} />
+      </section>
       <div className="details__right">
         <Controls itemID={item.id} />
         <div
           className="scroll-container"
           ref={scrollBlock}
           onScroll={setScroll}>
-          <div className="description" ref={description}>
+          <section
+            className="details-description"
+            ref={description}>
             <div className="magic-header">
               <h2>DESCRIPTION & SHIPPING</h2>
             </div>
-            <Container>
-              <div className="description-inner">
-                <Description item={item} />
-                <div className="seller-info-header">
-                  <h3>Seller’s info</h3>
-                </div>
-                <SellerInfo />
-              </div>
-            </Container>
-          </div>
-          <div className="specifications" ref={specifications}>
+            <DescriptionShipping item={item} />
+          </section>
+          <section
+            className="details-specifications"
+            ref={specifications}>
             <div className="magic-header">
               <h2>specifications</h2>
             </div>
             <Specifications item={item} />
-          </div>
+          </section>
+          <section
+            className="details-coins"
+            ref={coins}>
+            <div className="magic-header">
+              <h2>minable coins</h2>
+            </div>
+            <Coins item={item} currentHash={currentHash} />
+          </section>
         </div>
       </div>
       <Scroll ref={scrollThumb} scrollBlock={scrollBlock} />
@@ -69,4 +77,4 @@ const ProductDetailsDT = () => {
   )
 };
 
-export default ProductDetailsDT;
+export default ProductDetails_DT;

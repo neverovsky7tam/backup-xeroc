@@ -1,7 +1,7 @@
 import React from 'react';
-import { productsProcessing } from '../../../utils/renderProducts';
-import { ReactComponent as SpecificIcon } from '../../../assets/img/Product_details/specific-notes.svg';
-import { ReactComponent as ShippingIcon } from '../../../assets/img/Product_details/shipping.svg';
+import { productsProcessing } from '../../../../utils/renderProducts';
+import { ReactComponent as SpecificIcon } from '../../../../assets/img/Product_details/specific-notes.svg';
+import { ReactComponent as ShippingIcon } from '../../../../assets/img/Product_details/shipping.svg';
 
 const Description = ({ item }) => {
   const hashArr = productsProcessing(item).hashArr;

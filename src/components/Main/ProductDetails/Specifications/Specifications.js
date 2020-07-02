@@ -1,20 +1,20 @@
 import React from 'react';
-import { BoxDecor } from '../../Parts/BoxDecor';
-import { ReactComponent as ManufacturerIcon } from '../../../assets/img/Product_details/Specifications/manufacturer.svg';
-import { ReactComponent as AlgorithmIcon } from '../../../assets/img/Product_details/Specifications/algorithm.svg';
-import { ReactComponent as EfficiencyIcon } from '../../../assets/img/Product_details/Specifications/efficiency.svg';
-import { ReactComponent as FansIcon } from '../../../assets/img/Product_details/Specifications/fans.svg';
-import { ReactComponent as HashIcon } from '../../../assets/img/Product_details/Specifications/hash-rate.svg';
-import { ReactComponent as HumidityIcon } from '../../../assets/img/Product_details/Specifications/humidity.svg';
-import { ReactComponent as InterfaceIcon } from '../../../assets/img/Product_details/Specifications/interface.svg';
-import { ReactComponent as ModelIcon } from '../../../assets/img/Product_details/Specifications/model.svg';
-import { ReactComponent as NoiseIcon } from '../../../assets/img/Product_details/Specifications/noise-level.svg';
-import { ReactComponent as PowerIcon } from '../../../assets/img/Product_details/Specifications/power.svg';
-import { ReactComponent as ReleaseIcon } from '../../../assets/img/Product_details/Specifications/release.svg';
-import { ReactComponent as SizeIcon } from '../../../assets/img/Product_details/Specifications/size.svg';
-import { ReactComponent as TemperatureIcon } from '../../../assets/img/Product_details/Specifications/temperature.svg';
-import { ReactComponent as VoltageIcon } from '../../../assets/img/Product_details/Specifications/voltage.svg';
-import { ReactComponent as WeightIcon } from '../../../assets/img/Product_details/Specifications/weight.svg';
+import { BoxDecor } from '../../../Parts/BoxDecor';
+import { ReactComponent as ManufacturerIcon } from '../../../../assets/img/Product_details/Specifications/manufacturer.svg';
+import { ReactComponent as AlgorithmIcon } from '../../../../assets/img/Product_details/Specifications/algorithm.svg';
+import { ReactComponent as EfficiencyIcon } from '../../../../assets/img/Product_details/Specifications/efficiency.svg';
+import { ReactComponent as FansIcon } from '../../../../assets/img/Product_details/Specifications/fans.svg';
+import { ReactComponent as HashIcon } from '../../../../assets/img/Product_details/Specifications/hash-rate.svg';
+import { ReactComponent as HumidityIcon } from '../../../../assets/img/Product_details/Specifications/humidity.svg';
+import { ReactComponent as InterfaceIcon } from '../../../../assets/img/Product_details/Specifications/interface.svg';
+import { ReactComponent as ModelIcon } from '../../../../assets/img/Product_details/Specifications/model.svg';
+import { ReactComponent as NoiseIcon } from '../../../../assets/img/Product_details/Specifications/noise-level.svg';
+import { ReactComponent as PowerIcon } from '../../../../assets/img/Product_details/Specifications/power.svg';
+import { ReactComponent as ReleaseIcon } from '../../../../assets/img/Product_details/Specifications/release.svg';
+import { ReactComponent as SizeIcon } from '../../../../assets/img/Product_details/Specifications/size.svg';
+import { ReactComponent as TemperatureIcon } from '../../../../assets/img/Product_details/Specifications/temperature.svg';
+import { ReactComponent as VoltageIcon } from '../../../../assets/img/Product_details/Specifications/voltage.svg';
+import { ReactComponent as WeightIcon } from '../../../../assets/img/Product_details/Specifications/weight.svg';
 
 const Specifications = ({ item }) => {
   const specBullet = ['Manufacturer', 'Model', 'Hash Rate', 'Size', 'Weight', 'Noise Level', 'Fans', 'Power', 'Interface', 'Temperature', 'Humidity', 'Release', 'Algorithm', 'Efficiency', 'Voltage'];
@@ -36,7 +36,6 @@ const Specifications = ({ item }) => {
         value = item.hash.value.map((el) => {
           return el.h;
         }).join(', ');
-        if ((document.documentElement.clientWidth < 768) && (value.length > 10)) value = value.slice(0, 10) + ' ...';
       };
       if (el === 'Size') {
         icon = <SizeIcon />;

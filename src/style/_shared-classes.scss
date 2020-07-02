@@ -183,9 +183,7 @@
 
     input,
     span {
-      @media (min-width: 768px) {
-        font-size: 10px;
-      }
+      font-size: 10px;
 
       @media (max-width: 767px) {
         font-size: 12px;

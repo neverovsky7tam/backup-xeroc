@@ -1,8 +1,8 @@
 import React from 'react';
-import { topSellers } from '../../../data/users/users';
-import { ReactComponent as VerifiedIcon } from '../../../assets/img/Product_details/verified.svg';
-import { ReactComponent as StarsBlockIcon } from '../../../assets/img/Product_details/stars.svg';
-import { ReactComponent as CommonIcon } from '../../../assets/img/Product_details/common.svg';
+import { topSellers } from '../../../../data/users/users';
+import { ReactComponent as VerifiedIcon } from '../../../../assets/img/Product_details/verified.svg';
+import { ReactComponent as StarsBlockIcon } from '../../../../assets/img/Product_details/stars.svg';
+import { ReactComponent as CommonIcon } from '../../../../assets/img/Product_details/common.svg';
 
 const SellerInfo = () => {
   return (

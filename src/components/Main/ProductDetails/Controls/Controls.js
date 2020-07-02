@@ -16,7 +16,7 @@ const Controls = ({ itemID }) => {
       return;
     }
     if (currentItemIndex > productsObj.length - 1) {
-      currentItemIndex = productsObj.length;
+      currentItemIndex = productsObj.length - 1;
       return;
     };
     const currentItem = productsObj[currentItemIndex];

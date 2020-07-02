@@ -309,7 +309,7 @@ export const productsObj = [
     title: 'Antminer DR5 Extra Strong Power',
     hash: {
       option: 'MH/s',
-      value: [{ id: 1, h: 23, price: '1045' }, { id: 2, h: 41, price: '1800' }, { id: 3, h: 39, price: '1560' }, { id: 4, h: 27, price: '1153' }, { id: 5, h: 33, price: '977' }, { id: 6, h: 35, price: '1500' }, { id: 7, h: 31, price: '775' }, { id: 8, h: 41, price: '1960' }, { id: 9, h: 30, price: '1010' }],
+      value: [{ id: 1, h: 23, price: '1045' }, { id: 2, h: 41, price: '1800' }, { id: 3, h: 39, price: '1560' }, { id: 4, h: 27, price: '1153' }, { id: 5, h: 33, price: '977' }, ],
     },
     star: 'half',
     psu: false,
