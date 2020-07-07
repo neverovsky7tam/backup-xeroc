@@ -1,3 +1,52 @@
+.arrow-holder {
+  position: relative;
+  display: flex;
+  width: 30px;
+  height: 100%;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.arrow-holder__right {
+  justify-content: flex-end;
+  right: -13px;
+}
+
+.arrow-holder__left {
+  justify-content: flex-start;
+  left: -13px;
+}
+
+@mixin arrow($fill_color) {
+  position: relative;
+  width: 10px;
+  height: 6px;
+
+  path {
+    fill: $fill_color;
+  }
+}
+
+.arrow_left {
+  left: 11px;
+  transform: rotate(90deg);
+}
+
+.arrow_right {
+  right: 11px;
+  transform: rotate(-90deg);
+}
+
+.toggle-arrow {
+  width: 10px;
+  height: 6px;
+}
+
+.toggle-arrow_right {
+  transform: rotate(-90deg);
+}
+
 @mixin block_centered_content($width, $height, $bg) {
   position: relative;
   display: flex;

@@ -37,7 +37,6 @@ const OnSale_DT = ({item, currentHash, setCurrentHash}) => {
     }
 
     e.target.addEventListener('selectstart', (e) => {
-      console.log('select')
       e.preventDefault();
     }, { once: true });
   };

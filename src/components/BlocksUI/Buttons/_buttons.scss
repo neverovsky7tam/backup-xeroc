@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   font-family: "Open Sans", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   color: $white_font;
   cursor: pointer;
 
@@ -33,7 +33,7 @@
   background-color: $btn-main_bg;
 
   &:hover {
-    background-color: $btn-main_bg-hover;
+    background-color: $btn-main_bg-active;
   }
 }
 
