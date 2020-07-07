@@ -1,10 +1,10 @@
 import React from 'react';
 import { BoxDecor } from '../Parts/BoxDecor';
 
-const Container = ({ children, style }) => {
+const Container = ({ children, style, innerStyle }) => {
   return (
     <div className="container" style={style}>
-      <div className="container__inner">
+      <div className="container__inner" style={innerStyle}>
         {children}
       </div>
       <BoxDecor />
