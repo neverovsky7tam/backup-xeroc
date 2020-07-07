@@ -1,5 +1,6 @@
 .specification {
   position: relative;
+  background-color: $secondary_bg-sec;
 }
 
 .wrapper-mob {
@@ -9,7 +10,7 @@
 
   .details-specifications-collapse {
     margin-bottom: 15px;
-  } 
+  }
 
   .specification {
     margin-top: 15px;
@@ -20,9 +21,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-rows: 60px;
-  grid-gap: 1px;
-  border: 1px solid $secondary_bg;
-  background-color: #3a3b4d;
+  border-top: 1px solid $secondary_bg;
+  border-left: 1px solid $secondary_bg;
 
   @media (max-width: 1919px) {
     grid-template-columns: 1fr 1fr;
@@ -45,7 +45,8 @@
 .specification__item {
   display: flex;
   padding: 15px;
-  background-color: $secondary_bg-sec-hex;
+  border-right: 1px solid $secondary_bg;
+  border-bottom: 1px solid $secondary_bg;
 
   @media (max-width: 767px) {
     padding: 22px 15px;
@@ -121,7 +122,8 @@
 }
 
 .specification__item-plug {
-  background-color: $secondary_bg-sec-hex;
+  border-right: 1px solid $secondary_bg;
+  border-bottom: 1px solid $secondary_bg;
 
   @media (min-width: 1920px) {
     display: none;
