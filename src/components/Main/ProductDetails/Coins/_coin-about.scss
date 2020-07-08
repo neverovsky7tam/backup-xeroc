@@ -87,7 +87,6 @@
   }
 
   .coin-about__params {
-    max-width: 549px;
     margin-top: 54px;
     overflow: hidden;
 
@@ -115,7 +114,7 @@
       }
     }
 
-    .digit {
+    .profit {
       display: flex;
       margin-top: 28px;
 
@@ -351,7 +350,7 @@
         }
       }
 
-      .digit-graphic-holder {
+      .profit-graphic-holder {
         position: relative;
         width: calc(100% - 89px);
         border-bottom: 1px solid $secondary_bg-sec;
@@ -370,7 +369,7 @@
           left: 0;
           display: grid;
           height: 100%;
-          grid-template-columns: repeat(5, 104px);
+          grid-template-columns: repeat(12, 104px);
 
           @media (max-width: 767px) {
             grid-template-columns: repeat(3, 88px);
@@ -381,7 +380,7 @@
           }
         }
 
-        .graphic-img {
+        .profit-graphic {
           position: absolute;
           bottom: 0;
           left: 0;
@@ -391,7 +390,6 @@
   }
 
   .coin-about__dynamics {
-    max-width: 549px;
     margin-top: 30px;
 
     @media (min-width: 768px) {
@@ -498,6 +496,7 @@
 
     .graphics {
       @include fontN2($white_font, 400);
+      overflow: hidden;
 
       @media (min-width: 768px) {
         @include open-sans_font($white_font, 8px);
@@ -505,7 +504,6 @@
 
       .graph-hourly {
         position: relative;
-        overflow: hidden;
       }
 
       .graph-hourly__inner {
@@ -545,33 +543,32 @@
       }
 
       .graph-hourly__scale-wrapper {
-        height: 18px;
+        position: absolute;
+        right: 0;
+        width: calc(100% - 50px);
+        height: 20px;
+        overflow: hidden;
 
         @media (max-width: 767px) {
+          width: calc(100% - 68px);
           height: 25px;
         }
 
         @media (max-width: 424px) {
+          width: calc(100% - 64px);
           height: 23px;
         }
       }
 
       .graph-hourly__scale {
         position: absolute;
-        left: 50px;
+        right: 46px;
         display: grid;
-        grid-template-columns: repeat(10, 92px);
+        grid-template-columns: repeat(26, 92px);
 
         @media (min-width: 768px) {
-          grid-template-columns: repeat(10, 46px);
-        }
-
-        @media (max-width: 768px) {
-          left: 68px;
-        }
-
-        @media (max-width: 424px) {
-          left: 64px;
+          right: 23px;
+          grid-template-columns: repeat(26, 46px);
         }
 
         .scale-item {
@@ -598,19 +595,22 @@
 
       .graphics-holder {
         position: absolute;
-        left: 50px;
+        right: 0;
+        width: calc(100% - 50px);
+        height: 100%;
+        overflow: hidden;
 
         @media (max-width: 768px) {
-          left: 68px;
+          width: calc(100% - 68px);
         }
 
         @media (max-width: 424px) {
-          left: 64px;
+          width: calc(100% - 64px);
         }
 
-        img {
+        .graphic {
           position: absolute;
-          left: 0;
+          right: 0;
         }
       }
 
@@ -621,38 +621,34 @@
           top: 112px;
         }
 
-        img {
+        .graphic {
           top: 0;
         }
       }
 
       .graphics-holder_bottom {
-        bottom: 19px;
+        bottom: 1px;
 
-        @media (max-width: 767px) {
-          bottom: 26px;
-        }
-
-        @media (max-width: 424px) {
-          bottom: 24px;
-        }
-
-        img {
+        .graphic {
           bottom: 0;
         }
       }
 
       .graph-year {
         position: relative;
-        height: 43px;
-        margin-top: 30px;
-        overflow: hidden;
+        height: 53px;
+        margin-top: 54px;
+
+        @media (min-width: 768px) {
+          height: 43px;
+          margin-top: 47px;
+        }
 
         .graph-year__scale {
           position: absolute;
-          right: -98px;
+          right: -69px;
           display: grid;
-          grid-template-columns: repeat(5, 138px);
+          grid-template-columns: repeat(9, 138px);
           border-top: 1px solid $secondary_bg-sec;
           border-bottom: 1px solid $secondary_bg-sec;
 
@@ -664,7 +660,14 @@
             span {
               position: absolute;
               left: -1px;
-              bottom: -14px;
+              bottom: -24px;
+              transform: translateX(-50%);
+
+              @media (min-width: 768px) {
+                left: -1px;
+                bottom: -14px;
+                transform: none;
+              }
             }
           }
         }
@@ -672,7 +675,6 @@
         .graphic {
           position: absolute;
           right: 0;
-          bottom: 16px;
         }
       }
     }

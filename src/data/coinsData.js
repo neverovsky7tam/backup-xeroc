@@ -1,3 +1,16 @@
+import { ReactComponent as BtcProfitGraph } from '../assets/img/Product_details/btc-profit-graph-long.svg';
+import { ReactComponent as BtcLineGraph } from '../assets/img/Product_details/btc-line-graph-long.svg';
+import { ReactComponent as BtcChartGraph } from '../assets/img/Product_details/btc-chart-graph-long.svg';
+import { ReactComponent as BtcColumnGraph } from '../assets/img/Product_details/btc-column-graph-long.svg';
+import { ReactComponent as BtcYearGraph } from '../assets/img/Product_details/btc-year-graph-long.svg';
+import { ReactComponent as LtcProfitGraph } from '../assets/img/Product_details/ltc-profit-graph-long.svg';
+import { ReactComponent as LtcLineGraph } from '../assets/img/Product_details/ltc-line-graph-long.svg';
+import { ReactComponent as LtcChartGraph } from '../assets/img/Product_details/ltc-chart-graph-long.svg';
+import { ReactComponent as LtcColumnGraph } from '../assets/img/Product_details/ltc-column-graph-long.svg';
+import { ReactComponent as LtcYearGraph } from '../assets/img/Product_details/ltc-year-graph-long.svg';
+
+
+
 export const coinsData = [
   {
     title: 'Bitcoin',
@@ -22,11 +35,11 @@ export const coinsData = [
     ratio: 3.3,
     graphicScaleMaxVal: 9280,
     scaleStep: 10,
-    graphProfit: 'btc_graph-profit.svg',
-    graphLine: 'btc_graph-line.svg',
-    graphChart: 'btc_graph-chart.svg',
-    graphColumn: 'btc_graph-column.svg',
-    graphYearDynamics: 'btc_graph-year-dynamics.svg',
+    graphProfit: BtcProfitGraph,
+    graphLine: BtcLineGraph,
+    graphChart: BtcChartGraph,
+    graphColumn: BtcColumnGraph,
+    graphYearDynamics: BtcYearGraph,
     description: 'Bitcoin (BTC) is a cryptocurrency or a form of digital asset. Bitcoin (BTC) price for today is $9,250.09 with a 24-hour trading volume of $31,954,381,605. Price is up 6.3% in the last 24 hours. It has a circulating supply of 17.5 Million coins and a max supply of 21 Million coins. The most active exchange that is trading Bitcoin is LATOKEN. Explore the address and transactions of Bitcoin on block explorers such as blockchair.com, blockchain.info, live.blockcypher.com, bitcoinblockexplorers.com, and btc.tokenview.com. Additional information about Bitcoin coin can be found at http://www.bitcoin.org.',
   },
   {
@@ -52,11 +65,11 @@ export const coinsData = [
     ratio: 4.7,
     graphicScaleMaxVal: 44,
     scaleStep: 0.1,
-    graphProfit: 'btc_graph-profit.svg',
-    graphLine: 'ltc_graph-line.svg',
-    graphChart: 'ltc_graph-chart.svg',
-    graphColumn: 'ltc_graph-column.svg',
-    graphYearDynamics: 'ltc_graph-year-dynamics.svg',
+    graphProfit: LtcProfitGraph,
+    graphLine: LtcLineGraph,
+    graphChart: LtcChartGraph,
+    graphColumn: LtcColumnGraph,
+    graphYearDynamics: LtcYearGraph,
     description: 'Litecoin (LTC) is a cryptocurrency or a form of digital asset. Litecoin (LTC) price for today is $5,345.01 with a 24-hour trading volume of $31,954,381,605. Price is up 6.3% in the last 24 hours. It has a circulating supply of 17.5 Million coins and a max supply of 21 Million coins. The most active exchange that is trading Bitcoin is LATOKEN. Explore the address and transactions of Bitcoin on block explorers such as blockchair.com, blockchain.info, live.blockcypher.com, bitcoinblockexplorers.com, and btc.tokenview.com. Additional information about Bitcoin coin can be found at http://www.bitcoin.org.',
   },
 ];
