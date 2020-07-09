@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import Container from '../../../BlocksUI/Container';
 import ToggleBlock from '../../../BlocksUI/ToggleBlock';
+import { renderCoinInfoItems } from './CoinInfo';
 import CoinAbout from './CoinAbout';
 import CoinInfo from './CoinInfo';
 import { coinsData } from '../../../../data/coinsData';
+import { BoxDecor } from '../../../Parts/BoxDecor';
 
 let prevItem = null;
 const Coins = ({ item, currentHash }) => {
+  const isMobile = useSelector((state) => state.deviceType);
   const [coin, setCoin] = useState(coinsData[0]);
   const initialBlock = React.createRef();
 
@@ -46,10 +50,19 @@ const Coins = ({ item, currentHash }) => {
           </div>
         </ToggleBlock>
       </div>
+      {
+        isMobile &&
+        <div className="coin-info">
+          <div className="coin-info__body">
+            {renderCoinInfoItems(coin, isMobile)}
+          </div>
+          <BoxDecor />
+        </div>
+      }
       <Container >
         <div className="d-flex">
           <CoinAbout coin={coin} item={item} currentHash={currentHash} />
-          <div className="coin-info-widescreen"><CoinInfo /></div>
+          <div className="coin-info-widescreen"><CoinInfo coin={coin} /></div>
         </div>
       </Container>
     </div>
