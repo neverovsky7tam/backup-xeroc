@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import Container from '../../../BlocksUI/Container';
 import ToggleBlock from '../../../BlocksUI/ToggleBlock';
 import CoinAbout from './CoinAbout';
+import CoinInfo from './CoinInfo';
 import { coinsData } from '../../../../data/coinsData';
 
 let prevItem = null;
@@ -44,7 +46,12 @@ const Coins = ({ item, currentHash }) => {
           </div>
         </ToggleBlock>
       </div>
-      <CoinAbout coin={coin} item={item} currentHash={currentHash} />
+      <Container >
+        <div className="d-flex">
+          <CoinAbout coin={coin} item={item} currentHash={currentHash} />
+          <div className="coin-info-widescreen"><CoinInfo /></div>
+        </div>
+      </Container>
     </div>
   );
 };

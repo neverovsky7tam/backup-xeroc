@@ -95,3 +95,11 @@
     }
   }
 }
+
+.coin-info-widescreen {
+  display: none;
+
+  @media (min-width: 1920px) {
+    display: block;
+  }
+}

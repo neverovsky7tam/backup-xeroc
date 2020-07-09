@@ -1,0 +1,14 @@
+.coin-info {
+  box-sizing: border-box;
+  width: 232px;
+  height: 100%;
+  padding: 29px;
+  border-left: 1px solid $secondary_bg-sec;
+}
+
+.coin-info__header,
+.coin-info__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}

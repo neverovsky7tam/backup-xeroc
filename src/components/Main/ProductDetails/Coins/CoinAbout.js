@@ -128,150 +128,175 @@ const CoinAbout = ({ coin, item, currentHash }) => {
   const priceDynamicCssClass = (coin.dynamics >= 0) ? 'growth' : 'growth growth_false';
 
   return (
-    <Container>
-      <section className="coin-about">
-        <div className="coin-about__header">
-          <h3>{coin.title} {coin.value.toUpperCase()}</h3>
-          <div className="coin-about__header-left">
-            <span className="price"><span className="price__unit">$</span>{priceDisplay}</span>
-            <span className={priceDynamicCssClass}>{coin.dynamics}%</span>
-            {(coin.dynamics > 0) ? <GreenArrow /> : <RedArrow />}
+    <section className="coin-about">
+      <div className="coin-about__header">
+        <h3>{coin.title} {coin.value.toUpperCase()}</h3>
+        <div className="coin-about__header-left">
+          <span className="price"><span className="price__unit">$</span>{priceDisplay}</span>
+          <span className={priceDynamicCssClass}>{coin.dynamics}%</span>
+          {(coin.dynamics > 0) ? <GreenArrow /> : <RedArrow />}
+        </div>
+      </div>
+      <p className="coin-about__txt-block">{coin.description}</p>
+      <div className="coin-about__params">
+        <h3>Mining with {item.manufacturer} {item.model}, HR - {currentHash}</h3>
+        <div className="profit">
+          <div className="column column_head">
+            <div className="column__header">Term</div>
+            <ul className="column__body">
+              <li className="column__item">Income</li>
+              <li className="column__item">Electricity</li>
+              <li className="column__item">Profit</li>
+            </ul>
+          </div>
+          <div className="column column_main">
+            <div className="column__header">Day</div>
+            <ul className="column__body column__decor">
+              <li className="column__item column__item_income">${incomeDay}</li>
+              <li className="column__item column__item_electricity">${electricityDay}</li>
+              <li className="column__item column__item_profit">${profitDay}</li>
+            </ul>
+          </div>
+          <div className="column column_main">
+            <div className="column__header">Month</div>
+            <ul className="column__body column__decor">
+              <li className="column__item column__item_income">${(incomeDay * 30).toFixed(2)}</li>
+              <li className="column__item column__item_electricity">${(electricityDay * 30).toFixed(2)}</li>
+              <li className="column__item column__item_profit">${(profitDay * 30).toFixed(2)}</li>
+            </ul>
+          </div>
+          <div className="column column_main column_last">
+            <div className="column__header">Year</div>
+            <ul className="column__body column__decor custom">
+              <li className="column__item column__item_income">${(incomeDay * 365).toFixed(2)}</li>
+              <li className="column__item column__item_electricity">${(electricityDay * 365).toFixed(2)}</li>
+              <li className="column__item column__item_profit">${(profitDay * 365).toFixed(2)}</li>
+            </ul>
           </div>
         </div>
-        <p className="coin-about__txt-block">{coin.description}</p>
-        <div className="coin-about__params">
-          <h3>Mining with {item.manufacturer} {item.model}, HR - {currentHash}</h3>
-          <div className="digit">
-            <div className="column column_head">
-              <div className="column__header">Term</div>
-              <ul className="column__body">
-                <li className="column__item">Income</li>
-                <li className="column__item">Electricity</li>
-                <li className="column__item">Profit</li>
+        <div className="graph">
+          <h5 className="graph__header">Electricity, <span>$/kWh</span></h5>
+          <div className="graph__inner">
+            {electricityControl}
+            <div className="profit-graphic-holder">
+              <ul className="scale">
+                <li className="scale-item"></li>
+                <li className="scale-item"></li>
+                <li className="scale-item"></li>
+                <li className="scale-item"></li>
+                <li className="scale-item"></li>
+                <li className="scale-item"></li>
+                <li className="scale-item"></li>
+                <li className="scale-item"></li>
+                <li className="scale-item"></li>
+                <li className="scale-item"></li>
+                <li className="scale-item"></li>
+                <li className="scale-item"></li>
               </ul>
-            </div>
-            <div className="column column_main">
-              <div className="column__header">Day</div>
-              <ul className="column__body column__decor">
-                <li className="column__item column__item_income">${incomeDay}</li>
-                <li className="column__item column__item_electricity">${electricityDay}</li>
-                <li className="column__item column__item_profit">${profitDay}</li>
-              </ul>
-            </div>
-            <div className="column column_main">
-              <div className="column__header">Month</div>
-              <ul className="column__body column__decor">
-                <li className="column__item column__item_income">${(incomeDay * 30).toFixed(2)}</li>
-                <li className="column__item column__item_electricity">${(electricityDay * 30).toFixed(2)}</li>
-                <li className="column__item column__item_profit">${(profitDay * 30).toFixed(2)}</li>
-              </ul>
-            </div>
-            <div className="column column_main column_last">
-              <div className="column__header">Year</div>
-              <ul className="column__body column__decor custom">
-                <li className="column__item column__item_income">${(incomeDay * 365).toFixed(2)}</li>
-                <li className="column__item column__item_electricity">${(electricityDay * 365).toFixed(2)}</li>
-                <li className="column__item column__item_profit">${(profitDay * 365).toFixed(2)}</li>
-              </ul>
-            </div>
-          </div>
-          <div className="graph">
-            <h5 className="graph__header">Electricity, <span>$/kWh</span></h5>
-            <div className="graph__inner">
-              {electricityControl}
-              <div className="digit-graphic-holder">
-                <ul className="scale">
-                  <li className="scale-item"></li>
-                  <li className="scale-item"></li>
-                  <li className="scale-item"></li>
-                  <li className="scale-item"></li>
-                  <li className="scale-item"></li>
-                </ul>
-                <img className="graphic-img" src={`./data/img/${coin.graphProfit}`} />
-              </div>
+              {<coin.graphProfit className="profit-graphic" />}
             </div>
           </div>
         </div>
-        <div className="coin-about__dynamics">
-          <div className="controls">
-            <div className="btns-wrapper btns-wrapper__left">
-              <button
-                className="btn-graph-line"
-                ref={btnGraphicLine}
-                onClick={() => setGraphicLine(!isGraphicLine)}>
-                <BtnLine />
-              </button>
-              <button
-                className="btn-graph-chart"
-                ref={btnGraphicChart}
-                onClick={() => setGraphicChart(!isGraphicChart)}>
-                <BtnChart />
-              </button>
-            </div>
-            <div className="btns-wrapper btns-wrapper__right">
-              {
-                isMobile &&
-                <button>
-                  <Container
-                    style={{ height: '100%' }}
-                    innerStyle={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    24h
+      </div>
+      <div className="coin-about__dynamics">
+        <div className="controls">
+          <div className="btns-wrapper btns-wrapper__left">
+            <button
+              className="btn-graph-line"
+              ref={btnGraphicLine}
+              onClick={() => setGraphicLine(!isGraphicLine)}>
+              <BtnLine />
+            </button>
+            <button
+              className="btn-graph-chart"
+              ref={btnGraphicChart}
+              onClick={() => setGraphicChart(!isGraphicChart)}>
+              <BtnChart />
+            </button>
+          </div>
+          <div className="btns-wrapper btns-wrapper__right">
+            {
+              isMobile &&
+              <button>
+                <Container
+                  style={{ height: '100%' }}
+                  innerStyle={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  24h
                   </Container>
-                </button>
-              }
-              {!isMobile &&
-                <>
-                  <button className="btn-main">24h</button>
-                  <button>7d</button>
-                  <button>14d</button>
-                  <button>30d</button>
-                  <button>90d</button>
-                  <button>Max</button>
-                </>
-              }
-            </div>
-          </div>
-          <div className="graphics">
-            <div className="graph-hourly">
-              <ul className="graph-hourly__inner">
-                {renderGraphScaleItems()}
-              </ul>
-              <div className="graph-hourly__scale-wrapper">
-                <ul className="graph-hourly__scale">
-                  <li className="scale-item"><span>9PM</span></li>
-                  <li className="scale-item"><span>10Feb</span></li>
-                  <li className="scale-item"><span>3AM</span></li>
-                  <li className="scale-item"><span>6AM</span></li>
-                  <li className="scale-item"><span>9AM</span></li>
-                  <li className="scale-item"><span>12AM</span></li>
-                  <li className="scale-item"><span>3PM</span></li>
-                  <li className="scale-item"><span>6PM</span></li>
-                  <li className="scale-item"><span>9PM</span></li>
-                  <li className="scale-item"><span>1AM</span></li>
-                </ul>
-              </div>
-              <div className="graphics-holder graphics-holder_top">
-                {isGraphicLine && <img className="graph-line" src={`./data/img/${coin.graphLine}`} alt="graphic 1" />}
-                {isGraphicChart && <img className="graph-chart" src={`./data/img/${coin.graphChart}`} alt="graphic 2" />}
-              </div>
-              <div className="graphics-holder graphics-holder_bottom">
-                <img className="graph-line" src={`./data/img/${coin.graphColumn}`} alt="graphic 3" />
-              </div>
-            </div>
-            <div className="graph-year">
-              <ul className="graph-year__scale">
-                <li className="scale-item"><span></span></li>
-                <li className="scale-item"><span>2013</span></li>
-                <li className="scale-item"><span>2017</span></li>
-                <li className="scale-item"><span>2019</span></li>
-                <li className="scale-item"><span>2020</span></li>
-              </ul>
-              <img className="graphic" src={`./data/img/${coin.graphYearDynamics}`} alt="dynamic by the year graphic" />
-            </div>
+              </button>
+            }
+            {!isMobile &&
+              <>
+                <button className="btn-main">24h</button>
+                <button>7d</button>
+                <button>14d</button>
+                <button>30d</button>
+                <button>90d</button>
+                <button>Max</button>
+              </>
+            }
           </div>
         </div>
-      </section>
-    </Container>
+        <div className="graphics">
+          <div className="graph-hourly">
+            <ul className="graph-hourly__inner">
+              {renderGraphScaleItems()}
+            </ul>
+            <div className="graph-hourly__scale-wrapper">
+              <ul className="graph-hourly__scale">
+                <li className="scale-item"><span>9PM</span></li>
+                <li className="scale-item"><span>10Jun</span></li>
+                <li className="scale-item"><span>3AM</span></li>
+                <li className="scale-item"><span>6AM</span></li>
+                <li className="scale-item"><span>9AM</span></li>
+                <li className="scale-item"><span>12AM</span></li>
+                <li className="scale-item"><span>3PM</span></li>
+                <li className="scale-item"><span>6PM</span></li>
+                <li className="scale-item"><span>9PM</span></li>
+                <li className="scale-item"><span>11Jun</span></li>
+                <li className="scale-item"><span>3AM</span></li>
+                <li className="scale-item"><span>6AM</span></li>
+                <li className="scale-item"><span>9AM</span></li>
+                <li className="scale-item"><span>12AM</span></li>
+                <li className="scale-item"><span>3PM</span></li>
+                <li className="scale-item"><span>6PM</span></li>
+                <li className="scale-item"><span>9PM</span></li>
+                <li className="scale-item"><span>12Jun</span></li>
+                <li className="scale-item"><span>3AM</span></li>
+                <li className="scale-item"><span>6AM</span></li>
+                <li className="scale-item"><span>9AM</span></li>
+                <li className="scale-item"><span>12AM</span></li>
+                <li className="scale-item"><span>3PM</span></li>
+                <li className="scale-item"><span>6PM</span></li>
+                <li className="scale-item"><span>9PM</span></li>
+                <li className="scale-item"><span>13Jun</span></li>
+              </ul>
+            </div>
+            <div className="graphics-holder graphics-holder_top">
+              {isGraphicLine && <coin.graphLine className="graphic" />}
+              {isGraphicChart && <coin.graphChart className="graphic" />}
+            </div>
+            <div className="graphics-holder graphics-holder_bottom">
+              <coin.graphColumn className="graphic" />
+            </div>
+          </div>
+          <div className="graph-year">
+            <ul className="graph-year__scale">
+              <li className="scale-item"><span></span></li>
+              <li className="scale-item"><span>2013</span></li>
+              <li className="scale-item"><span>2014</span></li>
+              <li className="scale-item"><span>2015</span></li>
+              <li className="scale-item"><span>2016</span></li>
+              <li className="scale-item"><span>2017</span></li>
+              <li className="scale-item"><span>2018</span></li>
+              <li className="scale-item"><span>2019</span></li>
+              <li className="scale-item"><span>2020</span></li>
+            </ul>
+            <coin.graphYearDynamics className="graphic" />
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
