@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { renderCoinInfoItems } from './CoinInfo';
 import Container from '../../../BlocksUI/Container';
+import { ReactComponent as CloseCross } from '../../../../assets/img/close-cross.svg';
+import { ReactComponent as InfoIcon } from '../../../../assets/img/Product_details/info-icon.svg';
 import { ReactComponent as GreenArrow } from '../../../../assets/img/green-arrow.svg';
 import { ReactComponent as RedArrow } from '../../../../assets/img/red-arrow.svg';
 import { ReactComponent as ToggleArrow } from '../../../../assets/img/toggle-arrow.svg';
 import { ReactComponent as BtnLine } from '../../../../assets/img/Product_details/btn_line.svg';
 import { ReactComponent as BtnChart } from '../../../../assets/img/Product_details/btn_chart.svg';
+import { BoxDecor } from '../../../Parts/BoxDecor';
 
 const CoinAbout = ({ coin, item, currentHash }) => {
   const [electricityCost, setElectricityCost] = useState(0.17);
   const [isGraphicLine, setGraphicLine] = useState(true);
   const [isGraphicChart, setGraphicChart] = useState(true);
+  const coinInfo = React.createRef();
   const btnGraphicLine = React.createRef();
   const btnGraphicChart = React.createRef();
 
@@ -125,16 +130,52 @@ const CoinAbout = ({ coin, item, currentHash }) => {
     }
   });
 
+  const displayCoinInfo = (e) => {
+    if (e.type === 'mouseenter') coinInfo.current.style.display = 'block';
+    else coinInfo.current.style = '';
+  }
+
   const priceDynamicCssClass = (coin.dynamics >= 0) ? 'growth' : 'growth growth_false';
 
   return (
     <section className="coin-about">
       <div className="coin-about__header">
-        <h3>{coin.title} {coin.value.toUpperCase()}</h3>
+        <div className="d-flex">
+          <h3>{coin.title} {coin.value.toUpperCase()}</h3>
+          <div
+            className="coin-info-holder"
+            onMouseEnter={displayCoinInfo}
+            onMouseLeave={displayCoinInfo}>
+            <h3>Info</h3>
+            <section className="drop-menu" ref={coinInfo}>
+              <div className="drop-menu__inner">
+                <div className="diamond-part">
+                  <div className="diamond-bg"></div>
+                </div>
+                <div className="drop-menu__header">
+                  <h4>Info</h4>
+                  <CloseCross className="close-cross" />
+                </div>
+                <div className="drop-menu__box">
+                  <div className="coin-info__header">
+                    <h3>{coin.value.toUpperCase()}</h3>
+                    <InfoIcon />
+                  </div>
+                  <dl className="coin-info__body">
+                    {renderCoinInfoItems(coin)}
+                  </dl>
+                </div>
+              </div>
+              <BoxDecor />
+            </section>
+          </div>
+        </div>
         <div className="coin-about__header-left">
-          <span className="price"><span className="price__unit">$</span>{priceDisplay}</span>
-          <span className={priceDynamicCssClass}>{coin.dynamics}%</span>
-          {(coin.dynamics > 0) ? <GreenArrow /> : <RedArrow />}
+          <div className="price"><span className="price__unit">$</span>{priceDisplay}</div>
+          <div className="coin-dynamics">
+            <span className={priceDynamicCssClass}>{coin.dynamics}%</span>
+            {(coin.dynamics > 0) ? <GreenArrow /> : <RedArrow />}
+          </div>
         </div>
       </div>
       <p className="coin-about__txt-block">{coin.description}</p>

@@ -9,11 +9,48 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+
+    .coin-info-holder {
+      position: relative;
+      display: none;
+      margin-left: 30px;
+
+      @media (max-width: 1919px) {
+        display: block;
+      }
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+
+      & > h3 {
+        cursor: pointer;
+      }
+
+      .drop-menu {
+        @include drop_menu(210px, -142px, 154px);
+
+        .close-cross {
+          width: 12px;
+          height: 12px;
+          cursor: pointer;
+        }
+
+        .drop-menu__box {
+          padding-top: 20px;
+        }
+
+        @media (max-width: 1099px) {
+          @include drop_menu(210px, -104px, 110px);
+        }
+      }
+    }
   }
 
   .coin-about__header-left {
+    display: flex;
+
     .price {
-      margin-right: 6px;
       @include exo_font($white_font, 15px, 400);
 
       @media (max-width: 767px) {
@@ -33,37 +70,46 @@
       }
     }
 
-    .growth {
-      margin-right: 9px;
-      @include exo_font($green, 10px, 400);
+    .coin-dynamics {
+      display: none;
+      margin-left: 6px;
 
-      @media (max-width: 767px) {
-        margin-right: 11px;
-        font-size: 12px;
+      .growth {
+        margin-right: 8px;
+        @include exo_font($green, 10px, 400);
+
+        @media (max-width: 767px) {
+          margin-right: 11px;
+          font-size: 12px;
+        }
+
+        @media (max-width: 424px) {
+          font-size: 11px;
+        }
+
+        @media (max-width: 374px) {
+          font-size: 10px;
+        }
       }
 
-      @media (max-width: 424px) {
-        font-size: 11px;
+      .growth_false {
+        color: $red;
       }
 
-      @media (max-width: 374px) {
-        font-size: 10px;
-      }
-    }
+      svg {
+        @media (max-width: 767px) {
+          width: 6px;
+          height: 13px;
+        }
 
-    .growth_false {
-      color: $red;
-    }
-
-    svg {
-      @media (max-width: 767px) {
-        width: 6px;
-        height: 13px;
+        @media (max-width: 374px) {
+          width: 5px;
+          height: 11px;
+        }
       }
 
-      @media (max-width: 374px) {
-        width: 5px;
-        height: 11px;
+      @media (min-width: 1440px) {
+        display: block;
       }
     }
   }
