@@ -20,7 +20,7 @@ const SignUp = () => {
     dispatch(setHeaderNavbarCssClass('header__navbar header__navbar_auth'));
     return () => {
       dispatch(setHeaderNavbarCssClass('header__navbar'));
-    }
+    };
   });
 
   const checkInput = (e, errorElem, password) => {
@@ -28,7 +28,12 @@ const SignUp = () => {
     const errorElement = errorElem.current;
     if (e.type === 'change') onInputChange(input, errorElement, password);
     if (e.type === 'blur') checkInputValue(input, errorElement, password);
-  }
+
+    if (+e.target.dataset.password) {
+      const valLength = e.target.value.length;
+      e.target.value = new Array(valLength).fill('*').join('');
+    }
+  };
 
   const globalCheck = () => {
     let nextStep = true;
@@ -45,8 +50,8 @@ const SignUp = () => {
         checkInputCorrect(input, errorElement, passwordField);
 
         if (!+input.dataset.check) nextStep = false;
-      }
-    }
+      };
+    };
     if (nextStep) {
       dispatch(setAccountMenu(true));
       dispatch(setMainContent('general'));
@@ -111,8 +116,9 @@ const SignUp = () => {
             data-type="pass"
             data-check="0"
             data-error="0"
+            data-password="1"
             ref={passwordField}
-            type="password"
+            type="text"
             placeholder="Enter your password"
             onChange={(e) => checkInput(e, passwordError)}
             onBlur={(e) => checkInput(e, passwordError)} />
@@ -125,7 +131,8 @@ const SignUp = () => {
             data-type="confirm"
             data-check="0"
             data-error="0"
-            type="password"
+            data-password="1"
+            type="text"
             placeholder="Confirm password"
             onChange={(e) => checkInput(e, passwordConfirmError, passwordField.current)}
             onBlur={(e) => checkInput(e, passwordConfirmError, passwordField.current)} />
