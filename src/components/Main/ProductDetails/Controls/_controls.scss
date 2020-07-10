@@ -1,8 +1,11 @@
-.pdp-controls {
+.pdp-controls_general {
   position: absolute;
   top: 1px;
   right: 0;
   z-index: 12;
+}
+
+.pdp-controls {
   display: flex;
   color: $white_font;
 

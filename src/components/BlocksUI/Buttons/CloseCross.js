@@ -10,9 +10,10 @@ const CloseCross = ({ isSidebar }) => {
   const closeAction = () => {
     if (isSidebar) dispatch(setSidebarState(false));
     else {
-      const pageStore = store.getState().generalBlockContent.store;
-      const prevPage = pageStore[1];
-      dispatch(setGeneralBlockContent(prevPage));
+      // const pageStore = store.getState().generalBlockContent.store;
+      // console.log('pageStore', pageStore);
+      // const prevPage = pageStore[1];
+      dispatch(setGeneralBlockContent('home'));
     }
     dispatch(setCloseCross(false));
   };

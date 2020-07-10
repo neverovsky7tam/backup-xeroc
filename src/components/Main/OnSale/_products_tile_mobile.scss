@@ -143,11 +143,24 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      @include open-sans_font($white_font, 24px);
+
+      @media (max-width: 424px) {
+        font-size: 20px;
+      }
+
+      @media (max-width: 374px) {
+        font-size: 16px;
+      }
+
+      .order-mob__price-symb {
+        color: $grey_font;
+        font-weight: 300;
+      }
 
       .order-mob__price {
         margin-top: 10px;
-        color: $white_font;
-        font-weight: bold;
+        font-weight: 700;
       }
     }
 

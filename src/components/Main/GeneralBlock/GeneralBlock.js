@@ -87,6 +87,7 @@ const GeneralBlock = () => {
     document.addEventListener('scroll', scrollProcessing);
     if (isMobile) dispatch(setPageTopState(pageTopContent));
     if (isCloseCross) dispatch(setCloseCross(true));
+
     return () => document.removeEventListener('scroll', scrollProcessing);
   });
 
