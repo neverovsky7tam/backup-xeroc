@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { setRelatedProd } from './setRelatedProd';
 import Controls from './Controls/Controls';
 import Scroll from '../Scroll/Scroll';
 import OnSale from './OnSale/OnSale';
 import DescriptionShipping from './DescriptionShipping/DescriptionShipping';
 import Specifications from './Specifications/Specifications';
 import Coins from './Coins/Coins';
-import RelatedControlsDT from './Related/RelatedControlsDT';
-import Related from './Related/Related';
+import ProductsSliderControls from './ProductsSlider/ProductsSliderControls';
+import ProductsSlider from './ProductsSlider/ProductsSlider';
 import { calcToScroll } from '../Scroll/Scroll';
 
 const ProductDetails_DT = () => {
@@ -29,16 +30,7 @@ const ProductDetails_DT = () => {
     scrollThumb.current.style.transform = `translateY(${scroll.toScroll}px)`;
   };
 
-  useEffect(() => {
-    description.current.style = '';
-    specifications.current.style = '';
-    coins.current.style = '';
-    related.current.style = '';
-    description.current.style.height = `${description.current.clientHeight + 60}px`;
-    specifications.current.style.height = `${specifications.current.clientHeight + 60}px`;
-    coins.current.style.height = `${coins.current.clientHeight + 60}px`;
-    related.current.style.height = `${related.current.clientHeight + 60}px`;
-  });
+  const relatedProducts = setRelatedProd(item);
 
   return (
     <div className="details">
@@ -55,40 +47,40 @@ const ProductDetails_DT = () => {
           style={{ paddingRight: '1px' }}
           ref={scrollBlock}
           onScroll={setScroll}>
-          <section
-            className="details-description"
-            ref={description}>
+          <section ref={description}>
             <div className="magic-header">
               <h2>DESCRIPTION & SHIPPING</h2>
             </div>
-            <DescriptionShipping item={item} />
+            <div className="content-wrapper">
+              <DescriptionShipping item={item} />
+            </div>
           </section>
-          <section
-            className="details-specifications"
-            ref={specifications}>
+          <section ref={specifications}>
             <div className="magic-header">
               <h2>specifications</h2>
             </div>
-            <Specifications item={item} />
+            <div className="content-wrapper">
+              <Specifications item={item} />
+            </div>
           </section>
-          <section
-            className="details-coins"
-            ref={coins}>
+          <section ref={coins}>
             <div className="magic-header">
               <h2>minable coins</h2>
             </div>
-            <Coins item={item} currentHash={currentHash} />
+            <div className="content-wrapper">
+              <Coins item={item} currentHash={currentHash} />
+            </div>
           </section>
-          <section
-            className="details-related"
-            ref={related}>
-            <div className="related-header">
+          <section ref={related}>
+            <div className="details-header-combine">
               <div className="magic-header">
                 <h2>related products</h2>
               </div>
-              <RelatedControlsDT itemsWrap={relatedItemsWrapper} />
+              <ProductsSliderControls itemsWrapper={relatedItemsWrapper} />
             </div>
-            <Related item={item} ref={relatedItemsWrapper} />
+            <div className="content-wrapper">
+              <ProductsSlider items={relatedProducts} ref={relatedItemsWrapper} />
+            </div>
           </section>
         </div>
       </div>

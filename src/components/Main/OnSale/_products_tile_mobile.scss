@@ -4,7 +4,7 @@
   .item-holder {
     position: absolute;
     left: 15px;
-    width: calc(100% - 16px);
+    width: calc(100% - 15px);
     height: 100%;
     background-color: $secondary_bg-hex;
   }
@@ -21,7 +21,7 @@
   }
 
   .products__item {
-    left: -14px;
+    left: -15px;
     width: calc(100% + 15px);
     padding: 0;
     border-left: 0;
@@ -41,7 +41,7 @@
   .products__item-inner {
     position: absolute;
     right: 0;
-    width: calc(100% - 15px);
+    width: calc(100% - 16px);
     overflow: unset;
   }
 
