@@ -6,6 +6,8 @@ import OnSale from './OnSale/OnSale';
 import DescriptionShipping from './DescriptionShipping/DescriptionShipping';
 import Specifications from './Specifications/Specifications';
 import Coins from './Coins/Coins';
+import RelatedControlsDT from './Related/RelatedControlsDT';
+import Related from './Related/Related';
 import { calcToScroll } from '../Scroll/Scroll';
 
 const ProductDetails_DT = () => {
@@ -18,6 +20,8 @@ const ProductDetails_DT = () => {
   const description = React.createRef();
   const specifications = React.createRef();
   const coins = React.createRef();
+  const related = React.createRef();
+  const relatedItemsWrapper = React.createRef();
 
   const setScroll = () => {
     const HEADER_HEIGHT = 50;
@@ -28,8 +32,12 @@ const ProductDetails_DT = () => {
   useEffect(() => {
     description.current.style = '';
     specifications.current.style = '';
-    description.current.style.height = `${description.current.clientHeight + 61}px`;
-    specifications.current.style.height = `${specifications.current.clientHeight + 61}px`;
+    coins.current.style = '';
+    related.current.style = '';
+    description.current.style.height = `${description.current.clientHeight + 60}px`;
+    specifications.current.style.height = `${specifications.current.clientHeight + 60}px`;
+    coins.current.style.height = `${coins.current.clientHeight + 60}px`;
+    related.current.style.height = `${related.current.clientHeight + 60}px`;
   });
 
   return (
@@ -44,7 +52,7 @@ const ProductDetails_DT = () => {
         <Controls itemID={item.id} />
         <div
           className="scroll-container"
-          style={{paddingRight: '1px'}}
+          style={{ paddingRight: '1px' }}
           ref={scrollBlock}
           onScroll={setScroll}>
           <section
@@ -70,6 +78,17 @@ const ProductDetails_DT = () => {
               <h2>minable coins</h2>
             </div>
             <Coins item={item} currentHash={currentHash} />
+          </section>
+          <section
+            className="details-related"
+            ref={related}>
+            <div className="related-header">
+              <div className="magic-header">
+                <h2>related products</h2>
+              </div>
+              <RelatedControlsDT itemsWrap={relatedItemsWrapper} />
+            </div>
+            <Related item={item} ref={relatedItemsWrapper} />
           </section>
         </div>
       </div>

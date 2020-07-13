@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setCurrentProduct, setGeneralBlockContent } from '../../../../store/actions';
 import { productsObj } from '../../../../data/productsData';
-import { ReactComponent as Arrow } from '../../../../assets/img/toggle-arrow.svg';
+import NavBtns from './NavBtns';
 import { ReactComponent as CloseIcon } from '../../../../assets/img/Product_details/close.svg';
 
 const Controls = ({ itemID }) => {
@@ -28,18 +28,8 @@ const Controls = ({ itemID }) => {
   };
 
   return (
-    <div className="pdp-controls">
-      <nav>
-        <button onClick={() => setNextItem(false)}>
-          <Arrow className="toggle-arrow arrow-left" />
-          <span>prv</span>
-        </button>
-        <span>&nbsp;/&nbsp;</span>
-        <button onClick={() => setNextItem(true)}>
-          <span>nxt</span>
-          <Arrow className="toggle-arrow arrow-right" />
-        </button>
-      </nav>
+    <div className="pdp-controls pdp-controls_general">
+      <NavBtns func={setNextItem} />
       <button className="pdp-close-btn" onClick={closeDetails}>
         <span className="pdp-close-btn__txt">close</span>
         <CloseIcon />

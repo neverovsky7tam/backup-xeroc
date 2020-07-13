@@ -18,10 +18,10 @@
 .main-body {
   height: auto;
   position: relative;
-  @include open-sans_font($grey_font, 12px);
   z-index: 5;
 
   @media (min-width: 768px) {
     height: calc(100% - 50px);
+    @include open-sans_font($grey_font, 12px);
   }
 }

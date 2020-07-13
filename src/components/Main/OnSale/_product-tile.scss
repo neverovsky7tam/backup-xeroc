@@ -45,8 +45,7 @@
     font-weight: 700;
   }
 
-  .item-price,
-  .order-mob__price-shown {
+  .item-price {
     @media (max-width: 767px) {
       font-size: 24px;
     }
