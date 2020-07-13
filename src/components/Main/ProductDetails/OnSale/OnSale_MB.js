@@ -66,15 +66,15 @@ const OnSale_MB = ({ item, currentHash, setCurrentHash }) => {
         icon={<ToggleArrow className="toggle-arrow" style={{ transform: arrowState }} />}
         func={() => setListState(!listState)} />
       {listState && <DropList contentArr={renderHashList(item.hash)} />}
-      <div className="grid-template-2fr details-onsale__order">
+      <div className="grid-template-2fr details__order">
         <div className="d-flex">
-          <div className="input-holder main-font details-onsale__order-input">
+          <div className="input-holder main-font details__order-input">
             <div className="input-wrapper">
               <input type="text" defaultValue="1" />
             </div>
             <BoxDecor />
           </div>
-          <div className="details-onsale__share-holder">
+          <div className="details__order-share-holder">
             <ShareIcon className="share-icon" />
           </div>
         </div>

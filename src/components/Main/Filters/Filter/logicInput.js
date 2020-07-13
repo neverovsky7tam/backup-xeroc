@@ -108,7 +108,6 @@ export const renderTags = (storeTags, filter) => {
 export const deleteTag = (filter, tagName) => {
   const state = store.getState();
   const targetObj = state.filtersState[filter];
-  console.log('filters', targetObj);
 
   let hasName = null;
   if (tagName) hasName = (+tagName === 0) ? false : true;

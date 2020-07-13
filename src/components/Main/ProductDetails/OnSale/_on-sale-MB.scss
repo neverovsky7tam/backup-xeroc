@@ -1,6 +1,4 @@
-.details-onsale {
-  margin-bottom: 30px;
-
+.details_onsale {
   .products__item-wrapper {
     margin-top: 15px;
 
@@ -28,64 +26,62 @@
       margin-bottom: 4px;
     }
   }
-}
 
-.details-onsale-collapse {
-  margin-bottom: 15px;
-}
-
-.details-onsale__order {
-  margin-top: 15px;
-
-  .details-onsale__order-input {
-    flex-grow: 1;
-  }
-
-  .input-holder {
-    position: relative;
-    background-color: $secondary_bg-sec;
-
-    .input-wrapper {
-      display: flex;
-      align-items: center;
-      box-sizing: border-box;
-      width: 100%;
-      height: 100%;
-      border: 1px solid $secondary_bg;
+  .details__order {
+    margin-top: 15px;
+  
+    .details__order-input {
+      flex-grow: 1;
     }
-
-    input {
-      text-align: center;
+  
+    .input-holder {
+      position: relative;
+      background-color: $secondary_bg-sec;
+  
+      .input-wrapper {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        border: 1px solid $secondary_bg;
+      }
+  
+      input {
+        text-align: center;
+      }
     }
   }
-}
-
-.details-onsale__share-holder {
-  @include block_centered_content(55px, 55px, $btn-main_bg);
-  margin-left: 15px;
-
-  @media (max-width: 424px) {
-    min-width: 50px;
-    height: 50px;
-  }
-
-  @media (max-width: 374px) {
-    min-width: 40px;
-    height: 40px;
-  }
-
-  .share-icon {
-    width: 14px;
-    height: 14px;
-
+  
+  .details__order-share-holder {
+    @include block_centered_content(55px, 55px, $btn-main_bg);
+    margin-left: 15px;
+  
     @media (max-width: 424px) {
-      width: 13px;
-      height: 13px;
+      min-width: 50px;
+      height: 50px;
     }
-
+  
     @media (max-width: 374px) {
-      width: 10px;
-      height: 10px;
+      min-width: 40px;
+      height: 40px;
+    }
+  
+    .share-icon {
+      width: 14px;
+      height: 14px;
+  
+      @media (max-width: 424px) {
+        width: 13px;
+        height: 13px;
+      }
+  
+      @media (max-width: 374px) {
+        width: 10px;
+        height: 10px;
+      }
     }
   }
 }
+
+

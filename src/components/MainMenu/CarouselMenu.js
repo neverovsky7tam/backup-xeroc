@@ -107,7 +107,6 @@ const CarouselMenu = () => {
 
     initPosition = stopPos;
     setPos(stopPos);
-    console.log('index', currentItemIndex, items);
   }
 
   const Scroll = (side) => {
