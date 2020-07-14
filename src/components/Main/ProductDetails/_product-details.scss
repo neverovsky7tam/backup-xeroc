@@ -32,6 +32,10 @@
 .wrapper-mob {
   .details {
     margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 15px;
+    }
   }
 
   .details-collapse {
@@ -40,8 +44,9 @@
 }
 
 .details-header-combine {
+  display: flex;
+
   @media (min-width: 768px) {
-    display: flex;
     justify-content: space-between;
   }
 

@@ -482,53 +482,43 @@
       }
 
       .btns-wrapper__left {
-        button {
+        .icon-graph-line {
+          width: 15px;
+          height: 15px;
+
           @media (max-width: 767px) {
-            background-color: $btn-main_bg;
+            width: 14px;
+            height: 14px;
+          }
+
+          @media (max-width: 424px) {
+            width: 13px;
+            height: 13px;
+          }
+
+          @media (max-width: 374px) {
+            width: 10px;
+            height: 10px;
           }
         }
 
-        .btn-graph-line {
-          svg {
+        .icon-graph-chart {
+          width: 16px;
+          height: 19px;
+
+          @media (max-width: 767px) {
             width: 15px;
-            height: 15px;
-
-            @media (max-width: 767px) {
-              width: 14px;
-              height: 14px;
-            }
-
-            @media (max-width: 424px) {
-              width: 13px;
-              height: 13px;
-            }
-
-            @media (max-width: 374px) {
-              width: 10px;
-              height: 10px;
-            }
+            height: 18px;
           }
-        }
 
-        .btn-graph-chart {
-          svg {
-            width: 16px;
-            height: 19px;
+          @media (max-width: 424px) {
+            width: 13px;
+            height: 16px;
+          }
 
-            @media (max-width: 767px) {
-              width: 15px;
-              height: 18px;
-            }
-
-            @media (max-width: 424px) {
-              width: 13px;
-              height: 16px;
-            }
-
-            @media (max-width: 374px) {
-              width: 10px;
-              height: 12px;
-            }
+          @media (max-width: 374px) {
+            width: 10px;
+            height: 12px;
           }
         }
       }

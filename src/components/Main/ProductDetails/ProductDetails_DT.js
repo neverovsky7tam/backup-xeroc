@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { setRelatedProd } from './setRelatedProd';
+import setSliderItems from './ProductsSlider/setSliderItems';
 import Controls from './Controls/Controls';
 import Scroll from '../Scroll/Scroll';
 import OnSale from './OnSale/OnSale';
@@ -17,12 +17,8 @@ const ProductDetails_DT = () => {
 
   const scrollThumb = React.createRef();
   const scrollBlock = React.createRef();
-
-  const description = React.createRef();
-  const specifications = React.createRef();
-  const coins = React.createRef();
-  const related = React.createRef();
   const relatedItemsWrapper = React.createRef();
+  const recentlyItemsWrapper = React.createRef();
 
   const setScroll = () => {
     const HEADER_HEIGHT = 50;
@@ -30,7 +26,8 @@ const ProductDetails_DT = () => {
     scrollThumb.current.style.transform = `translateY(${scroll.toScroll}px)`;
   };
 
-  const relatedProducts = setRelatedProd(item);
+  const relatedProducts = setSliderItems(item, 'related');
+  const recentlyProducts = setSliderItems(item);
 
   return (
     <div className="details">
@@ -47,7 +44,7 @@ const ProductDetails_DT = () => {
           style={{ paddingRight: '1px' }}
           ref={scrollBlock}
           onScroll={setScroll}>
-          <section ref={description}>
+          <section>
             <div className="magic-header">
               <h2>DESCRIPTION & SHIPPING</h2>
             </div>
@@ -55,7 +52,7 @@ const ProductDetails_DT = () => {
               <DescriptionShipping item={item} />
             </div>
           </section>
-          <section ref={specifications}>
+          <section>
             <div className="magic-header">
               <h2>specifications</h2>
             </div>
@@ -63,7 +60,7 @@ const ProductDetails_DT = () => {
               <Specifications item={item} />
             </div>
           </section>
-          <section ref={coins}>
+          <section>
             <div className="magic-header">
               <h2>minable coins</h2>
             </div>
@@ -71,7 +68,7 @@ const ProductDetails_DT = () => {
               <Coins item={item} currentHash={currentHash} />
             </div>
           </section>
-          <section ref={related}>
+          <section>
             <div className="details-header-combine">
               <div className="magic-header">
                 <h2>related products</h2>
@@ -80,6 +77,17 @@ const ProductDetails_DT = () => {
             </div>
             <div className="content-wrapper">
               <ProductsSlider items={relatedProducts} ref={relatedItemsWrapper} />
+            </div>
+          </section>
+          <section>
+            <div className="details-header-combine">
+              <div className="magic-header">
+                <h2>recently viewed</h2>
+              </div>
+              <ProductsSliderControls itemsWrapper={recentlyItemsWrapper} />
+            </div>
+            <div className="content-wrapper">
+              <ProductsSlider items={recentlyProducts} ref={recentlyItemsWrapper} />
             </div>
           </section>
         </div>

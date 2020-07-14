@@ -1,3 +1,25 @@
+.product-slider-mob-controls {
+  margin-left: 15px;
+
+  .arrow {
+    width: 12px;
+    height: 7px;
+
+    @media (max-width: 374px) {
+      width: 10px;
+      height: 6px;
+    }
+  }
+
+  .arrow_left {
+    transform: rotate(90deg);
+  }
+
+  .arrow_right {
+    transform: rotate(-90deg);
+  }
+}
+
 .products-slider-mob {
   position: relative;
   top: 15px;
