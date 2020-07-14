@@ -30,3 +30,19 @@ export const ButtonDark = ({ text, func, wrapperStyle, btnStyle }) => {
     </div>
   );
 };
+
+export const SquareBtn = React.forwardRef(({ icon, func }, btn) => {
+  const onClick = () => {
+    if (btn) btn.current.classList.toggle('square-btn_active');
+    func();
+  };
+
+  return (
+    <button
+      className="square-btn"
+      ref={btn}
+      onClick={onClick}>
+      {icon}
+    </button>
+  );
+});

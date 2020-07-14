@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { setRelatedProd } from './setRelatedProd';
+import setSliderItems from './ProductsSlider/setSliderItems';
 import TitleBlock from '../../BlocksUI/TitleBlock';
 import OnSale from './OnSale/OnSale_MB';
 import DescriptionShipping from './DescriptionShipping/DescriptionShipping';
@@ -13,19 +13,24 @@ import { ReactComponent as ToggleArrow } from '../../../assets/img/toggle-arrow.
 
 const ProductDetails_MB = () => {
   const item = useSelector((state) => state.currentProduct);
+
   const [currentHash, setCurrentHash] = useState(item.hash.value[0].h);
   const [showOnSale, setOnSale] = useState(true);
   const [showDescription, setDescription] = useState(true);
   const [showSpecifications, setSpecifications] = useState(true);
   const [showCoins, setCoinsDisplay] = useState(true);
   const [showRelated, setRelatedDisplay] = useState(true);
+  const [showRecently, setRecentlyDisplay] = useState(true);
 
-  const relatedItemsWrapper = React.createRef();
-  const relatedProducts = setRelatedProd(item);
+  const relatedProducts = setSliderItems(item, 'related');
+  const recentlyProducts = setSliderItems(item);
+
+  const [relatedItem, setRelatedItem] = useState([relatedProducts[0]]);
+  const [recentlyItem, setRecentlyItem] = useState([recentlyProducts[0]]);
 
   useEffect(() => {
     document.documentElement.scrollTop = 0;
-  }, []);
+  }, [item]);
 
   return (
     <>
@@ -68,12 +73,26 @@ const ProductDetails_MB = () => {
         {showCoins && <Coins item={item} currentHash={currentHash} />}
       </div>
       <div className={showRelated ? "details" : "details-collapse"}>
-        <TitleBlock
-          text={'Related products'}
-          icon={showRelated ? <ToggleArrow /> : <Dots />}
-          style={{ marginTop: '0' }}
-          func={() => setRelatedDisplay(!showRelated)} />
-        {showRelated && <ProductsSlider items={relatedProducts} ref={relatedItemsWrapper} />}
+        <div className="details-header-combine">
+          <TitleBlock
+            text={'Related products'}
+            icon={showRelated ? <ToggleArrow /> : <Dots />}
+            style={{ marginTop: '0' }}
+            func={() => setRelatedDisplay(!showRelated)} />
+          <ProductsSliderControls items={relatedProducts} setItem={setRelatedItem} />
+        </div>
+        {showRelated && <ProductsSlider items={relatedItem} />}
+      </div>
+      <div className={showRecently ? "details" : "details-collapse"}>
+        <div className="details-header-combine">
+          <TitleBlock
+            text={'Recently viewed'}
+            icon={showRecently ? <ToggleArrow /> : <Dots />}
+            style={{ marginTop: '0' }}
+            func={() => setRecentlyDisplay(!showRecently)} />
+          <ProductsSliderControls items={recentlyProducts} setItem={setRecentlyItem} />
+        </div>
+        {showRecently && <ProductsSlider items={recentlyItem} />}
       </div>
     </>
   );

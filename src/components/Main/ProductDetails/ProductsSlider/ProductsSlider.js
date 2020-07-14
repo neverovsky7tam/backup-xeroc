@@ -10,9 +10,7 @@ const ProductsSlider = React.forwardRef(({ items }, itemsWrapper) => {
   if (isMobile) {
     return (
       <div className="products-slider-mob">
-        <ul
-          className="products-slider"
-          ref={itemsWrapper}>
+        <ul className="products-slider">
           {renderProducts(ProductTileMobile, items)}
         </ul>
       </div>

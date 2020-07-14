@@ -9,7 +9,7 @@ import { ReactComponent as ProductStar } from '../../../../assets/img/product-st
 import { ReactComponent as ProductHalfStar } from '../../../../assets/img/product-half-star.svg';
 import { ReactComponent as ToggleArrow } from '../../../../assets/img/toggle-arrow.svg';
 
-const OnSale_DT = ({item, currentHash, setCurrentHash}) => {
+const OnSale_DT = ({ item, currentHash, setCurrentHash }) => {
   const itemProcessed = productsProcessing(item);
   const [price, setPrice] = useState(item.hash.value[0].price);
   const [listState, setListState] = useState(false);
@@ -81,17 +81,17 @@ const OnSale_DT = ({item, currentHash, setCurrentHash}) => {
       <div className="grid-template-2fr details__order">
         <div className="counter-box">
           <div className="counter-box__inner main-font">
-            <div
+            <button
               className="arrow-holder arrow-holder__left"
               onClick={(e) => setProductQuantity(e, false)}>
               <ToggleArrow className="arrow arrow_left" />
-            </div>
+            </button>
             <div className="product-quantity">{productCounter}</div>
-            <div
+            <button
               className="arrow-holder arrow-holder__right"
               onClick={(e) => setProductQuantity(e, true)}>
               <ToggleArrow className="arrow arrow_right" />
-            </div>
+            </button>
           </div>
           <BoxDecor />
         </div>

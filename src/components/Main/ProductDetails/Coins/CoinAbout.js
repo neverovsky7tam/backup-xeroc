@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { renderCoinInfoItems } from './CoinInfo';
 import Container from '../../../BlocksUI/Container';
+import { SquareBtn } from '../../../BlocksUI/Buttons/Buttons';
 import { ReactComponent as CloseCross } from '../../../../assets/img/close-cross.svg';
 import { ReactComponent as InfoIcon } from '../../../../assets/img/Product_details/info-icon.svg';
 import { ReactComponent as GreenArrow } from '../../../../assets/img/green-arrow.svg';
@@ -13,8 +14,9 @@ import { BoxDecor } from '../../../Parts/BoxDecor';
 
 const CoinAbout = ({ coin, item, currentHash }) => {
   const [electricityCost, setElectricityCost] = useState(0.17);
-  const [isGraphicLine, setGraphicLine] = useState(true);
-  const [isGraphicChart, setGraphicChart] = useState(true);
+  const [isGraphicLine, setGraphicLine] = useState(false);
+  const [isGraphicChart, setGraphicChart] = useState(false);
+
   const coinInfo = React.createRef();
   const btnGraphicLine = React.createRef();
   const btnGraphicChart = React.createRef();
@@ -68,19 +70,19 @@ const CoinAbout = ({ coin, item, currentHash }) => {
 
   if (!isMobile) {
     electricityControl = (
-      <button className="graph__control-btn">
-        <div
+      <div className="graph__control-btn">
+        <button
           className="arrow-holder arrow-holder__left"
           onClick={(e) => setElectricityVal(e, false)}>
           <ToggleArrow className="arrow arrow_left" />
-        </div>
+        </button>
         <div className="electricity-val">{electricityCost}</div>
-        <div
+        <button
           className="arrow-holder arrow-holder__right"
           onClick={(e) => setElectricityVal(e, true)}>
           <ToggleArrow className="arrow arrow_right" />
-        </div>
-      </button>
+        </button>
+      </div>
     )
   };
 
@@ -107,28 +109,24 @@ const CoinAbout = ({ coin, item, currentHash }) => {
   }
 
   useEffect(() => {
-    if (isMobile) {
-      const setBtnColor = (btn, param) => {
-        if (param) btn.style.background = '#26268f';
-        else btn.style = '';
-      };
-      setBtnColor(btnGraphicLine.current, isGraphicLine);
-      setBtnColor(btnGraphicChart.current, isGraphicChart);
-    } else {
-      const setSvgColor = (svg, param) => {
-        for (let path of svg.children) {
-          const color = (param) ? '#fff' : '#c4c4c4';
-          path.style.stroke = color;
-        }
-      };
+    const setSvgColor = (svg, param) => {
+      for (let path of svg.children) {
+        const color = (param) ? '#fff' : '#c4c4c4';
+        path.style.stroke = color;
+      }
+    };
 
-      const svgGraphicLine = btnGraphicLine.current.firstElementChild;
-      setSvgColor(svgGraphicLine, isGraphicLine);
+    const svgGraphicLine = btnGraphicLine.current.firstElementChild;
+    setSvgColor(svgGraphicLine, isGraphicLine);
 
-      const svgGraphicChart = btnGraphicChart.current.firstElementChild;
-      setSvgColor(svgGraphicChart, isGraphicChart);
-    }
+    const svgGraphicChart = btnGraphicChart.current.firstElementChild;
+    setSvgColor(svgGraphicChart, isGraphicChart);
   });
+
+  useEffect(() => {
+    btnGraphicLine.current.click();
+    btnGraphicChart .current.click();
+  }, []);
 
   const displayCoinInfo = (e) => {
     if (e.type === 'mouseenter') coinInfo.current.style.display = 'block';
@@ -242,18 +240,8 @@ const CoinAbout = ({ coin, item, currentHash }) => {
       <div className="coin-about__dynamics">
         <div className="controls">
           <div className="btns-wrapper btns-wrapper__left">
-            <button
-              className="btn-graph-line"
-              ref={btnGraphicLine}
-              onClick={() => setGraphicLine(!isGraphicLine)}>
-              <BtnLine />
-            </button>
-            <button
-              className="btn-graph-chart"
-              ref={btnGraphicChart}
-              onClick={() => setGraphicChart(!isGraphicChart)}>
-              <BtnChart />
-            </button>
+            <SquareBtn icon={<BtnLine className="icon-graph-line" />} func={() => setGraphicLine(!isGraphicLine)} ref={btnGraphicLine} />
+            <SquareBtn icon={<BtnChart className="icon-graph-chart" />} func={() => setGraphicChart(!isGraphicChart)} ref={btnGraphicChart} />
           </div>
           <div className="btns-wrapper btns-wrapper__right">
             {
@@ -263,7 +251,7 @@ const CoinAbout = ({ coin, item, currentHash }) => {
                   style={{ height: '100%' }}
                   innerStyle={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                   24h
-                  </Container>
+                </Container>
               </button>
             }
             {!isMobile &&

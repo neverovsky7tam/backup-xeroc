@@ -6,7 +6,7 @@ export const coinsSpecies = [['bch', 0], ['bsd', 0], ['btc', 0], ['pac', 0], ['p
 export const productsObj = [
   {
     id: 1,
-    title: 'USED Antminer S9',
+    title: 'Bitfury S9',
     hash: {
       option: 'TH/s',
       value: [{ id: 1, h: 18.5, price: '181' }, { id: 2, h: 11.5, price: '145' }, { id: 3, h: 14.1, price: '136.6' }],
@@ -26,7 +26,7 @@ export const productsObj = [
   },
   {
     id: 2,
-    title: 'Antminer DR5 Extra Strong Power',
+    title: 'Bitfury DR5 Extra Strong Power',
     hash: {
       option: 'MH/s',
       value: [{ id: 1, h: 18.5, price: '181' }, { id: 2, h: 11.5, price: '145' }, { id: 3, h: 14.1, price: '136.6' }],
@@ -60,13 +60,13 @@ export const productsObj = [
     power: 3149,
     algorithm: 'SHA-256',
     efficiency: '17.00',
-    manufacturer: 'Bitfury',
+    manufacturer: 'GPU',
     equipment: 'ASIC miners',
     coins: ['dcr', 'eth', 'lcc'],
   },
   {
     id: 4,
-    title: 'Innosilicon A6',
+    title: 'Canaan A6',
     hash: {
       option: 'PH/s',
       value: [{ id: 1, h: 89, price: '989' }],
@@ -86,7 +86,7 @@ export const productsObj = [
   },
   {
     id: 5,
-    title: 'PandaMiner B3 Pro 4g',
+    title: 'Sunbelt B3 Pro 4g',
     hash: {
       option: 'KH/s',
       value: [{ id: 1, h: 12, price: '2442' }, { id: 2, h: 16.1, price: '1800' }, { id: 3, h: 19, price: '1989' }],
@@ -106,7 +106,7 @@ export const productsObj = [
   },
   {
     id: 6,
-    title: 'Innosilicon A6',
+    title: 'Nvidia Pro',
     hash: {
       option: 'Ksol/s',
       value: [{ id: 1, h: 1.9, price: '376' }],
@@ -115,7 +115,7 @@ export const productsObj = [
     psu: true,
     img: '/data/products/img/6.png',
     release: 'Jan 2020',
-    model: 'A6',
+    model: 'Pro',
     noise: '76db',
     power: 1200,
     algorithm: 'Blake (2b)',
@@ -126,7 +126,7 @@ export const productsObj = [
   },
   {
     id: 7,
-    title: 'GPU Enclosure',
+    title: 'Bitmain Enclosure',
     hash: {
       option: 'GH/s',
       value: [{ id: 1, h: 1.2, price: '672' }, { id: 2, h: 5.0, price: '840' }, { id: 3, h: 1.9, price: '376' }, { id: 4, h: 2.3, price: '290' },],
@@ -146,7 +146,7 @@ export const productsObj = [
   },
   {
     id: 8,
-    title: 'Innosilicon T3',
+    title: 'AsRock Roll',
     hash: {
       option: 'H/s',
       value: [{ id: 1, h: 913, price: '5376' }],
@@ -155,18 +155,18 @@ export const productsObj = [
     psu: true,
     img: '/data/products/img/8.png',
     release: 'Feb 2016',
-    model: 'T3',
+    model: 'Roll',
     noise: '76db',
     power: 1950,
     algorithm: 'NeoScrypt',
     efficiency: '4.70',
     manufacturer: 'AsRock',
     equipment: 'ASIC miners',
-    coins: ['bch', 'bsd', 'btc', 'pac', 'pirl', 'ppc', 'ryo', 'start', 'tzc', 'ubq', 'vivo', 'vtc', 'xdn', 'xmcc', 'xmr', 'xmy', 'xvg', 'xzc', 'zcl', 'zec', 'zen', 'nlg', 'music', 'mona', 'ltc', 'kmd', 'hush', 'generic', 'gbx', 'ftc', 'flo', 'exp', 'etp', 'eth', 'etc', 'ella', 'dcr', 'crw', 'btx', 'btg', 'btcp',],
+    coins: ['bsd', 'btc', 'pac', 'pirl', 'ppc', 'ryo', 'start', 'tzc', 'ubq', 'vivo', 'vtc', 'xdn', 'xmcc', 'xmr', 'xmy', 'xvg', 'xzc', 'zcl', 'zec', 'zen', 'nlg', 'music', 'mona', 'ltc', 'kmd', 'hush', 'generic', 'gbx', 'ftc', 'flo', 'exp', 'etp', 'eth', 'etc', 'ella', 'dcr', 'crw', 'btx', 'btg', 'btcp',],
   },
   {
     id: 9,
-    title: 'Antminer Z9 Mini',
+    title: 'Baikal Z9 Mini',
     hash: {
       option: 'MH/s',
       value: [{ id: 1, h: 230, price: '2209' }],
@@ -186,7 +186,7 @@ export const productsObj = [
   },
   {
     id: 10,
-    title: 'APW3++',
+    title: 'Canaan T3',
     hash: {
       option: 'Hashs/s',
       value: [{ id: 1, h: 19.5, price: '103' }],
@@ -206,7 +206,7 @@ export const productsObj = [
   },
   {
     id: 11,
-    title: 'Innosilicon A11',
+    title: 'CryptoNight A11',
     hash: {
       option: 'GH/s',
       value: [{ id: 1, h: 1.23, price: '3240' }],
@@ -226,7 +226,7 @@ export const productsObj = [
   },
   {
     id: 12,
-    title: 'Dayun Zig Z1+',
+    title: 'Ebit Zig Z1+',
     hash: {
       option: 'PH/s',
       value: [{ id: 1, h: 7.2, price: '1242' }],
@@ -246,7 +246,7 @@ export const productsObj = [
   },
   {
     id: 13,
-    title: 'Antminer S5',
+    title: 'Innosilicon S5',
     hash: {
       option: 'TH/s',
       value: [{ id: 1, h: 55, price: '535' }, { id: 2, h: 59, price: '700' }],
@@ -266,7 +266,7 @@ export const productsObj = [
   },
   {
     id: 14,
-    title: 'GPU Enclosure',
+    title: 'Bitmain Enclosure',
     hash: {
       option: 'Ksol/s',
       value: [{ id: 1, h: 5, price: '1535' }],
@@ -286,7 +286,7 @@ export const productsObj = [
   },
   {
     id: 15,
-    title: 'USED Antminer S9',
+    title: 'AMD S9',
     hash: {
       option: 'TH/s',
       value: [{ id: 1, h: 18.5, price: '181' }, { id: 2, h: 11.5, price: '145' }, { id: 3, h: 14.1, price: '136.6' }],
@@ -306,7 +306,7 @@ export const productsObj = [
   },
   {
     id: 16,
-    title: 'Antminer DR5 Extra Strong Power',
+    title: 'AsRock DR5 Extra Power',
     hash: {
       option: 'MH/s',
       value: [{ id: 1, h: 23, price: '1045' }, { id: 2, h: 41, price: '1800' }, { id: 3, h: 39, price: '1560' }, { id: 4, h: 27, price: '1153' }, { id: 5, h: 33, price: '977' }, ],
@@ -326,7 +326,7 @@ export const productsObj = [
   },
   {
     id: 17,
-    title: 'GPU Enclosure',
+    title: 'Bitmain HT5-U',
     hash: {
       option: 'Hashs/s',
       value: [{ id: 1, h: 22, price: '371' }],
@@ -346,7 +346,7 @@ export const productsObj = [
   },
   {
     id: 18,
-    title: 'Innosilicon A6s',
+    title: 'Canaan A6s',
     hash: {
       option: 'PH/s',
       value: [{ id: 1, h: 89, price: '491' }],
@@ -355,7 +355,7 @@ export const productsObj = [
     psu: true,
     img: '/data/products/img/4.png',
     release: 'Jun 2017',
-    model: 'A6',
+    model: 'A6s',
     noise: '76db',
     power: 1850,
     algorithm: 'X11',
@@ -366,7 +366,7 @@ export const productsObj = [
   },
   {
     id: 19,
-    title: 'PandaMiner B3 Pro 4g',
+    title: 'AMD B3',
     hash: {
       option: 'KH/s',
       value: [{ id: 1, h: 12, price: '2442' }, { id: 2, h: 16.1, price: '2315' }, { id: 3, h: 19, price: '1989' }],
@@ -386,7 +386,7 @@ export const productsObj = [
   },
   {
     id: 20,
-    title: 'Innosilicon A6',
+    title: 'Dayun Enio',
     hash: {
       option: 'Ksol/s',
       value: [{ id: 1, h: 1.9, price: '376' }],
@@ -395,18 +395,18 @@ export const productsObj = [
     psu: true,
     img: '/data/products/img/6.png',
     release: 'Jan 2020',
-    model: 'A6',
+    model: 'Enio',
     noise: '76db',
     power: 1200,
     algorithm: 'Lyra2REv2',
     efficiency: '10.70',
-    manufacturer: 'Bitmain',
+    manufacturer: 'Dayun',
     equipment: 'Motherboards',
     coins: ['btc', 'music',],
   },
   {
     id: 21,
-    title: 'GPU Enclosure',
+    title: 'Ebit BBN-3',
     hash: {
       option: 'GH/s',
       value: [{ id: 1, h: 1.2, price: '672' }, { id: 2, h: 5.0, price: '840' }, { id: 3, h: 1.9, price: '376' }, { id: 4, h: 2.3, price: '290' },],
@@ -415,18 +415,18 @@ export const productsObj = [
     psu: false,
     img: '/data/products/img/7.png',
     release: 'Dec 2018',
-    model: 'Enclosure',
+    model: 'BBN-3',
     noise: '76db',
     power: 1350,
     algorithm: 'X11',
     efficiency: '10.70',
-    manufacturer: 'Bitmain',
+    manufacturer: 'Ebit',
     equipment: 'Motherboards',
     coins: ['btc', 'dcr', 'eth', 'lcc'],
   },
   {
     id: 22,
-    title: 'Innosilicon T3',
+    title: 'AsRock X3',
     hash: {
       option: 'H/s',
       value: [{ id: 1, h: 913, price: '5376' }],
@@ -435,7 +435,7 @@ export const productsObj = [
     psu: true,
     img: '/data/products/img/8.png',
     release: 'Feb 2016',
-    model: 'T3',
+    model: 'X3',
     noise: '76db',
     power: 1950,
     algorithm: 'Quark',
@@ -446,7 +446,7 @@ export const productsObj = [
   },
   {
     id: 23,
-    title: 'Antminer Z9 Mini',
+    title: 'Baikal 0001',
     hash: {
       option: 'MH/s',
       value: [{ id: 1, h: 230, price: '2209' }],
@@ -455,7 +455,7 @@ export const productsObj = [
     psu: false,
     img: '/data/products/img/9.png',
     release: 'Feb 2020',
-    model: 'Z9',
+    model: '0001',
     noise: '76db',
     power: 1950,
     algorithm: 'Pascal',
@@ -466,7 +466,7 @@ export const productsObj = [
   },
   {
     id: 24,
-    title: 'APW3++',
+    title: 'Canaan +++',
     hash: {
       option: 'Hashs/s',
       value: [{ id: 1, h: 19.5, price: '103' }],
@@ -475,7 +475,7 @@ export const productsObj = [
     psu: false,
     img: '/data/products/img/10.png',
     release: 'Apr 2019',
-    model: 'T3',
+    model: '+++',
     noise: '76db',
     power: 1110,
     algorithm: 'CryptoNightV7',
@@ -486,7 +486,7 @@ export const productsObj = [
   },
   {
     id: 25,
-    title: 'Innosilicon A11',
+    title: 'AsRock A11',
     hash: {
       option: 'GH/s',
       value: [{ id: 1, h: 1.23, price: '3240' }],
@@ -506,7 +506,7 @@ export const productsObj = [
   },
   {
     id: 26,
-    title: 'Dayun Zig Z1+',
+    title: 'AMD Zig Z1+',
     hash: {
       option: 'PH/s',
       value: [{ id: 1, h: 7.2, price: '1242' }],
@@ -520,13 +520,13 @@ export const productsObj = [
     power: 1150,
     algorithm: 'CryptoNight',
     efficiency: '12.00',
-    manufacturer: 'Baikal',
+    manufacturer: 'AMD',
     equipment: 'Used rigs',
     coins: ['dcr', 'eth', 'crw', 'btx', 'btg', 'btcp',],
   },
   {
     id: 27,
-    title: 'Antminer A6s',
+    title: 'Innosilicon S5',
     hash: {
       option: 'TH/s',
       value: [{ id: 1, h: 55, price: '590' }, { id: 2, h: 59, price: '725' }],
@@ -546,7 +546,7 @@ export const productsObj = [
   },
   {
     id: 28,
-    title: 'GPU Enclosure',
+    title: 'Bitmain Closure',
     hash: {
       option: 'Ksol/s',
       value: [{ id: 1, h: 5, price: '1535' }],
@@ -555,7 +555,7 @@ export const productsObj = [
     psu: true,
     img: '/data/products/img/15.png',
     release: 'Feb 2016',
-    model: 'Enclosure',
+    model: 'Closure',
     noise: '76db',
     power: 1200,
     algorithm: 'Quark',
@@ -566,7 +566,7 @@ export const productsObj = [
   },
   {
     id: 29,
-    title: 'USED Antminer S9',
+    title: 'AMD Loop00',
     hash: {
       option: 'TH/s',
       value: [{ id: 1, h: 18.5, price: '181' }, { id: 2, h: 11.5, price: '145' }, { id: 3, h: 14.1, price: '136.6' }],
@@ -575,7 +575,7 @@ export const productsObj = [
     psu: true,
     img: '/data/products/img/1.png',
     release: 'Mar 2019',
-    model: 'S9',
+    model: 'Loop00',
     noise: '76db',
     power: 2450,
     algorithm: 'Blake (2b)',
@@ -586,7 +586,7 @@ export const productsObj = [
   },
   {
     id: 30,
-    title: 'Antminer DR5 Extra Strong Power',
+    title: 'AsRock Power',
     hash: {
       option: 'MH/s',
       value: [{ id: 1, h: 23, price: '1045' }, { id: 2, h: 41, price: '1800' }, { id: 3, h: 39, price: '1560' }, { id: 4, h: 27, price: '1153' }, { id: 5, h: 33, price: '977' }, { id: 6, h: 35, price: '1500' }, { id: 7, h: 31, price: '775' }, { id: 8, h: 41, price: '1960' }, { id: 9, h: 30, price: '1010' }],
@@ -595,7 +595,7 @@ export const productsObj = [
     psu: false,
     img: '/data/products/img/2.png',
     release: 'Apr 2019',
-    model: 'DR5',
+    model: 'Power',
     noise: '76db',
     power: 1240,
     algorithm: 'Skein',
@@ -606,7 +606,7 @@ export const productsObj = [
   },
   {
     id: 31,
-    title: 'GPU Enclosure',
+    title: 'Nvidia AA+1',
     hash: {
       option: 'Hashs/s',
       value: [{ id: 1, h: 22, price: '371' }],
@@ -615,7 +615,7 @@ export const productsObj = [
     psu: false,
     img: '/data/products/img/3.png',
     release: 'Apr 2019',
-    model: 'Enclosure',
+    model: 'AA+1',
     noise: '76db',
     power: 3149,
     algorithm: 'NeoScrypt',
@@ -626,7 +626,7 @@ export const productsObj = [
   },
   {
     id: 32,
-    title: 'Innosilicon A6',
+    title: 'Canaan High',
     hash: {
       option: 'PH/s',
       value: [{ id: 1, h: 89, price: '989' }],
@@ -635,7 +635,7 @@ export const productsObj = [
     psu: true,
     img: '/data/products/img/4.png',
     release: 'Jun 2017',
-    model: 'A6',
+    model: 'High',
     noise: '76db',
     power: 1850,
     algorithm: 'X11',
@@ -646,7 +646,7 @@ export const productsObj = [
   },
   {
     id: 33,
-    title: 'PandaMiner B3 Pro 4g',
+    title: 'Pandaminer Pro',
     hash: {
       option: 'KH/s',
       value: [{ id: 1, h: 12, price: '2442' }, { id: 2, h: 16.1, price: '2315' }, { id: 3, h: 19, price: '1989' }],
@@ -655,18 +655,18 @@ export const productsObj = [
     psu: false,
     img: '/data/products/img/5.png',
     release: 'Jan 2020',
-    model: 'B3',
+    model: 'Pro',
     noise: '76db',
     power: 1100,
     algorithm: 'Pascal',
     efficiency: '7.10',
-    manufacturer: 'Sunbelt',
+    manufacturer: 'Pandaminer',
     equipment: 'Video Cards',
     coins: ['btc', 'dcr',],
   },
   {
     id: 34,
-    title: 'Innosilicon A6',
+    title: 'Whatsminer UI',
     hash: {
       option: 'Ksol/s',
       value: [{ id: 1, h: 1.9, price: '376' }],
@@ -675,18 +675,18 @@ export const productsObj = [
     psu: true,
     img: '/data/products/img/6.png',
     release: 'Jan 2020',
-    model: 'A6',
+    model: 'UI',
     noise: '76db',
     power: 1200,
     algorithm: 'Blake (2b)',
     efficiency: '10.70',
-    manufacturer: 'Bitmain',
+    manufacturer: 'Whatsminer',
     equipment: 'Motherboards',
     coins: ['btc', 'music',],
   },
   {
     id: 35,
-    title: 'GPU Enclosure',
+    title: 'iBeLink USA',
     hash: {
       option: 'GH/s',
       value: [{ id: 1, h: 1.2, price: '672' }, { id: 2, h: 5.0, price: '840' }, { id: 3, h: 1.9, price: '376' }, { id: 4, h: 2.3, price: '290' },],
@@ -695,18 +695,18 @@ export const productsObj = [
     psu: false,
     img: '/data/products/img/7.png',
     release: 'Dec 2018',
-    model: 'Enclosure',
+    model: 'USA',
     noise: '76db',
     power: 1350,
     algorithm: 'X11',
     efficiency: '10.70',
-    manufacturer: 'Bitmain',
+    manufacturer: 'iBeLink',
     equipment: 'Motherboards',
     coins: ['btc', 'dcr', 'eth', 'lcc'],
   },
   {
     id: 36,
-    title: 'Innosilicon T3',
+    title: 'AsRock Eco W2',
     hash: {
       option: 'H/s',
       value: [{ id: 1, h: 913, price: '5376' }],
@@ -715,7 +715,7 @@ export const productsObj = [
     psu: true,
     img: '/data/products/img/8.png',
     release: 'Feb 2016',
-    model: 'T3',
+    model: 'Eco W2',
     noise: '76db',
     power: 1950,
     algorithm: 'Quark',
@@ -726,7 +726,7 @@ export const productsObj = [
   },
   {
     id: 37,
-    title: 'Antminer Z9 Mini',
+    title: 'Baikal California',
     hash: {
       option: 'MH/s',
       value: [{ id: 1, h: 230, price: '2209' }],
@@ -735,7 +735,7 @@ export const productsObj = [
     psu: false,
     img: '/data/products/img/9.png',
     release: 'Feb 2020',
-    model: 'Z9',
+    model: 'California',
     noise: '76db',
     power: 1950,
     algorithm: 'Quark',
@@ -746,7 +746,7 @@ export const productsObj = [
   },
   {
     id: 38,
-    title: 'APW3++',
+    title: 'Boundary Electric GHu',
     hash: {
       option: 'Hashs/s',
       value: [{ id: 1, h: 19.5, price: '103' }],
@@ -755,18 +755,18 @@ export const productsObj = [
     psu: false,
     img: '/data/products/img/10.png',
     release: 'Apr 2019',
-    model: 'T3',
+    model: 'GHu',
     noise: '76db',
     power: 1110,
     algorithm: 'CryptoNightV7',
     efficiency: '7.90',
-    manufacturer: 'Canaan',
+    manufacturer: 'Boundary Electric',
     equipment: 'Motherboards',
     coins: ['bch', 'bsd', 'btc', 'pac', 'pirl', 'ppc', 'ryo', 'start', 'tzc', 'ubq', 'vivo', 'vtc', 'xdn', 'xmcc', 'xmr', 'xmy', 'xvg',],
   },
   {
     id: 39,
-    title: 'Innosilicon A11',
+    title: 'Whatsminer A11',
     hash: {
       option: 'GH/s',
       value: [{ id: 1, h: 1.23, price: '3240' }],
@@ -780,13 +780,13 @@ export const productsObj = [
     power: 1550,
     algorithm: 'NeoScrypt',
     efficiency: '23.70',
-    manufacturer: 'AsRock',
+    manufacturer: 'Whatsminer',
     equipment: 'ASIC miners',
     coins: ['xzc', 'zcl', 'zec', 'zen', 'nlg', 'music', 'mona', 'ltc', 'kmd', 'hush', 'generic', 'gbx', 'ftc', 'flo', 'exp', 'etp', 'eth', 'etc', 'ella', 'dcr', 'crw', 'btx', 'btg', 'btcp',],
   },
   {
     id: 40,
-    title: 'Dayun Zig Z1+',
+    title: 'Baikal Lake',
     hash: {
       option: 'PH/s',
       value: [{ id: 1, h: 7.2, price: '1242' }],
@@ -795,7 +795,7 @@ export const productsObj = [
     psu: false,
     img: '/data/products/img/12.png',
     release: 'Okt 2020',
-    model: 'Zig Z1+',
+    model: 'Lake',
     noise: '76db',
     power: 1150,
     algorithm: 'CryptoNight',
@@ -806,7 +806,7 @@ export const productsObj = [
   },
   {
     id: 41,
-    title: 'Antminer S5r',
+    title: 'Innosilicon S5r',
     hash: {
       option: 'TH/s',
       value: [{ id: 1, h: 55, price: '611' }, { id: 2, h: 59, price: '802' }],
@@ -815,7 +815,7 @@ export const productsObj = [
     psu: true,
     img: '/data/products/img/14.png',
     release: 'Aug 2019',
-    model: 'S5',
+    model: 'S5r',
     noise: '76db',
     power: 950,
     algorithm: 'Qubit',
@@ -826,7 +826,7 @@ export const productsObj = [
   },
   {
     id: 42,
-    title: 'GPU Enclosure',
+    title: 'Bitmain 76db',
     hash: {
       option: 'Ksol/s',
       value: [{ id: 1, h: 5, price: '1535' }],
@@ -835,7 +835,7 @@ export const productsObj = [
     psu: true,
     img: '/data/products/img/15.png',
     release: 'Feb 2016',
-    model: 'Enclosure',
+    model: '76db',
     noise: '76db',
     power: 1200,
     algorithm: 'Quark',
@@ -846,7 +846,7 @@ export const productsObj = [
   },
   {
     id: 43,
-    title: 'USED Antminer S9',
+    title: 'AMD mdn33',
     hash: {
       option: 'TH/s',
       value: [{ id: 1, h: 18.5, price: '181' }, { id: 2, h: 11.5, price: '145' }, { id: 3, h: 14.1, price: '136.6' }],
@@ -855,7 +855,7 @@ export const productsObj = [
     psu: true,
     img: '/data/products/img/1.png',
     release: 'Mar 2019',
-    model: 'S9',
+    model: 'mdn33',
     noise: '76db',
     power: 2450,
     algorithm: 'Blake (2b)',
@@ -866,7 +866,7 @@ export const productsObj = [
   },
   {
     id: 44,
-    title: 'Antminer DR5 Extra Strong Power',
+    title: 'Bitfury 5-1-1-5',
     hash: {
       option: 'MH/s',
       value: [{ id: 1, h: 23, price: '1045' }, { id: 2, h: 41, price: '1800' }, { id: 3, h: 39, price: '1560' }, { id: 4, h: 27, price: '1153' }, { id: 5, h: 33, price: '977' }, { id: 6, h: 35, price: '1500' }, { id: 7, h: 31, price: '775' }, { id: 8, h: 41, price: '1960' }, { id: 9, h: 30, price: '1010' }],
@@ -875,18 +875,18 @@ export const productsObj = [
     psu: false,
     img: '/data/products/img/2.png',
     release: 'Apr 2019',
-    model: 'DR5',
+    model: '5-1-1-5',
     noise: '76db',
     power: 1240,
     algorithm: 'SHA256',
     efficiency: '7.00',
-    manufacturer: 'AsRock',
+    manufacturer: 'Bitfury',
     equipment: 'Video Cards',
     coins: ['btc', 'dcr', 'eth', 'lcc'],
   },
   {
     id: 45,
-    title: 'GPU Enclosure',
+    title: 'Whatsminer 3149',
     hash: {
       option: 'Hashs/s',
       value: [{ id: 1, h: 22, price: '371' }],
@@ -895,18 +895,18 @@ export const productsObj = [
     psu: false,
     img: '/data/products/img/3.png',
     release: 'Apr 2019',
-    model: 'Enclosure',
+    model: '3149',
     noise: '76db',
     power: 3149,
     algorithm: 'SHA-256',
     efficiency: '17.00',
-    manufacturer: 'Bitmain',
+    manufacturer: 'Whatsminer',
     equipment: 'ASIC miners',
     coins: ['btc', 'dcr', 'eth', 'lcc'],
   },
   {
     id: 46,
-    title: 'Innosilicon A6',
+    title: 'Canaan Extra',
     hash: {
       option: 'PH/s',
       value: [{ id: 1, h: 89, price: '1007' }],
@@ -915,7 +915,7 @@ export const productsObj = [
     psu: true,
     img: '/data/products/img/4.png',
     release: 'Jun 2017',
-    model: 'A6',
+    model: 'Extra',
     noise: '76db',
     power: 1850,
     algorithm: 'Scrypt',
@@ -926,7 +926,7 @@ export const productsObj = [
   },
   {
     id: 47,
-    title: 'PandaMiner B3 Pro 4g',
+    title: 'AMD 5g',
     hash: {
       option: 'KH/s',
       value: [{ id: 1, h: 12, price: '2442' }, { id: 2, h: 16.1, price: '2315' }, { id: 3, h: 19, price: '1989' }],
@@ -935,7 +935,7 @@ export const productsObj = [
     psu: false,
     img: '/data/products/img/5.png',
     release: 'Jan 2020',
-    model: 'B3',
+    model: '5g',
     noise: '76db',
     power: 1100,
     algorithm: 'Scrypt',
@@ -946,7 +946,7 @@ export const productsObj = [
   },
   {
     id: 48,
-    title: 'Innosilicon A6',
+    title: 'iBeLink 01',
     hash: {
       option: 'Ksol/s',
       value: [{ id: 1, h: 1.9, price: '376' }],
@@ -955,18 +955,18 @@ export const productsObj = [
     psu: true,
     img: '/data/products/img/6.png',
     release: 'Jan 2020',
-    model: 'A6',
-    noise: '76db',
+    model: '01',
+    noise: '47db',
     power: 1200,
     algorithm: 'Blake (2b)',
     efficiency: '10.70',
-    manufacturer: 'Bitmain',
+    manufacturer: 'iBeLink',
     equipment: 'Motherboards',
     coins: ['btc', 'music',],
   },
   {
     id: 49,
-    title: 'GPU Enclosure',
+    title: 'Dayun December',
     hash: {
       option: 'GH/s',
       value: [{ id: 1, h: 1.2, price: '672' }, { id: 2, h: 5.0, price: '840' }, { id: 3, h: 1.9, price: '376' }, { id: 4, h: 2.3, price: '290' },],
@@ -975,18 +975,18 @@ export const productsObj = [
     psu: false,
     img: '/data/products/img/7.png',
     release: 'Dec 2018',
-    model: 'Enclosure',
+    model: 'December',
     noise: '76db',
     power: 1350,
     algorithm: 'X11',
     efficiency: '10.70',
-    manufacturer: 'Bitmain',
+    manufacturer: 'Dayun',
     equipment: 'Motherboards',
     coins: ['btc', 'dcr', 'eth', 'lcc'],
   },
   {
     id: 50,
-    title: 'Innosilicon T3',
+    title: 'AsRock 2020',
     hash: {
       option: 'H/s',
       value: [{ id: 1, h: 913, price: '5376' }],
@@ -995,7 +995,7 @@ export const productsObj = [
     psu: true,
     img: '/data/products/img/8.png',
     release: 'Feb 2016',
-    model: 'T3',
+    model: '2020',
     noise: '76db',
     power: 1950,
     algorithm: 'Quark',
@@ -1006,7 +1006,7 @@ export const productsObj = [
   },
   {
     id: 51,
-    title: 'Antminer Z9 Mini A6',
+    title: 'Baikal WW',
     hash: {
       option: 'MH/s',
       value: [{ id: 1, h: 230, price: '2209' }],
@@ -1015,7 +1015,7 @@ export const productsObj = [
     psu: false,
     img: '/data/products/img/9.png',
     release: 'Feb 2020',
-    model: 'Z9',
+    model: 'WW',
     noise: '76db',
     power: 1950,
     algorithm: 'Quark',
@@ -1026,7 +1026,7 @@ export const productsObj = [
   },
   {
     id: 52,
-    title: 'APW3++',
+    title: 'Canaan AN-2',
     hash: {
       option: 'Hashs/s',
       value: [{ id: 1, h: 19.5, price: '103' }],
@@ -1035,7 +1035,7 @@ export const productsObj = [
     psu: false,
     img: '/data/products/img/10.png',
     release: 'Apr 2019',
-    model: 'T3',
+    model: 'AN-2',
     noise: '76db',
     power: 1110,
     algorithm: 'CryptoNightV7',
@@ -1046,7 +1046,7 @@ export const productsObj = [
   },
   {
     id: 53,
-    title: 'Innosilicon A11',
+    title: 'Boundary Electric Power',
     hash: {
       option: 'GH/s',
       value: [{ id: 1, h: 1.23, price: '3240' }],
@@ -1055,38 +1055,38 @@ export const productsObj = [
     psu: false,
     img: '/data/products/img/11.png',
     release: 'Aug 2016',
-    model: 'A11',
+    model: 'Power',
     noise: '76db',
     power: 1550,
     algorithm: 'CryptoNight',
     efficiency: '23.70',
-    manufacturer: 'AsRock',
+    manufacturer: 'Boundary Electric',
     equipment: 'Containers',
     coins: ['xzc', 'zcl', 'zec', 'zen', 'nlg', 'music', 'mona', 'ltc', 'kmd', 'hush', 'generic', 'gbx', 'ftc', 'flo', 'exp', 'etp', 'eth', 'etc', 'ella', 'dcr', 'crw', 'btx', 'btg', 'btcp',],
   },
   {
     id: 54,
-    title: 'Dayun Zig Z1+',
+    title: 'iBeLink Zero',
     hash: {
       option: 'PH/s',
-      value: [{ id: 1, h: 7.2, price: '1242' }],
+      value: [{ id: 1, h: 7.2, price: '10242' }],
     },
     star: false,
     psu: false,
     img: '/data/products/img/12.png',
     release: 'Okt 2020',
-    model: 'Zig Z1+',
-    noise: '76db',
-    power: 1150,
+    model: 'Zero',
+    noise: '176db',
+    power: 2150,
     algorithm: 'CryptoNight',
     efficiency: '12.00',
-    manufacturer: 'Baikal',
+    manufacturer: 'iBeLink',
     equipment: 'Containers',
     coins: ['btc', 'dcr', 'eth', 'lcc', 'ella', 'dcr', 'crw', 'btx', 'btg', 'btcp',],
   },
   {
     id: 55,
-    title: 'Antminer S5',
+    title: 'Innosilicon S5-00',
     hash: {
       option: 'TH/s',
       value: [{ id: 1, h: 55, price: '536' }, { id: 2, h: 59, price: '700' }],
@@ -1095,7 +1095,7 @@ export const productsObj = [
     psu: true,
     img: '/data/products/img/14.png',
     release: 'Aug 2019',
-    model: 'S5',
+    model: 'S5-00',
     noise: '76db',
     power: 950,
     algorithm: 'Qubit',
@@ -1106,7 +1106,7 @@ export const productsObj = [
   },
   {
     id: 56,
-    title: 'GPU Enclosure vld',
+    title: 'Pandaminer Grizzly',
     hash: {
       option: 'Ksol/s',
       value: [{ id: 1, h: 5, price: '1535' }],
@@ -1115,12 +1115,12 @@ export const productsObj = [
     psu: true,
     img: '/data/products/img/15.png',
     release: 'Feb 2016',
-    model: 'Enclosure',
+    model: 'Grizzly',
     noise: '76db',
     power: 1200,
     algorithm: 'Quark',
     efficiency: '10.00',
-    manufacturer: 'Bitmain',
+    manufacturer: 'Pandaminer',
     equipment: 'GPU Enclosures',
     coins: ['btc', 'dcr', 'eth', 'lcc', 'tzc', 'ubq', 'vivo', 'vtc', 'xdn', 'xmcc', 'xmr', 'xmy', 'xvg', 'xzc', 'zcl', 'zec', 'zen', 'nlg', 'music', 'mona', 'ltc',],
   },
