@@ -13,7 +13,7 @@ export const ButtonMain = ({ text, func, style }) => {
   );
 };
 
-export const ButtonDark = ({ text, func, wrapperStyle, btnStyle }) => {
+export const ButtonDark = ({ func, wrapperStyle, btnStyle, children }) => {
   const boxDecor = React.createRef();
 
   return (
@@ -24,7 +24,7 @@ export const ButtonDark = ({ text, func, wrapperStyle, btnStyle }) => {
         onClick={func}
         onMouseEnter={() => hideDecor(boxDecor, 'none')}
         onMouseLeave={() => hideDecor(boxDecor, '')}>
-        <span>{text}</span>
+        {children}
       </button>
       <BoxDecor ref={boxDecor} />
     </div>

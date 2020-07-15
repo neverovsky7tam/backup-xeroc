@@ -1,8 +1,14 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { setDeviceType } from './store/actions';
 import Header from './components/Header/Header';
-import Main from './components/Main/Main';
+
+import Main from './templates/Main/Main';
+import SignUp from './components/Main/Auth/SignIn';
+import LogIn from './components/Main/Auth/LogIn';
+import Terms from './components/Main/Terms/Terms';
+
 import Footer from './components/Footer/Footer';
 import TermsCloseBtn from './components/Main/Terms/TermsCloseBtn';
 
@@ -16,12 +22,19 @@ function App() {
   const termsCloseBtn = useSelector((state) => state.termsCloseBtn);
 
   return (
-    <>
+    <Router>
       <Header isMobile={isMobile} />
-      <Main />
+      <main className="main">
+        <Main />
+        <Switch>
+          <Route path="/sign-up"><SignUp /></Route>
+          <Route path="/log-in"><LogIn /></Route>
+          <Route path="/terms"><Terms /></Route>
+        </Switch>
+      </main>
       {!isMobile && <Footer footerState={(termsCloseBtn) ? 'footer-mini' : 'footer-standart'} />}
       {termsCloseBtn && <TermsCloseBtn />}
-    </>
+    </Router>
   );
 };
 

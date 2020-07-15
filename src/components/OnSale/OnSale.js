@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import renderProducts from '../../../utils/renderProducts';
 import ProductTile from './ProductTile';
 import ProductTileMobile from './ProductTileMobile';
 import { ProductListHead, ProductList } from './ProductList';
-import Scroll from '../Scroll/Scroll';
+import Scroll from 'components/Scroll/Scroll';
 import ViewSwitcher from './ViewSwitcher';
-import { calcToScroll } from '../Scroll/Scroll';
-import { ReactComponent as Ads } from '../../../assets/img/ads_content.svg';
+import { calcToScroll } from 'components/Scroll/Scroll';
+import { ReactComponent as Ads } from '../../assets/img/ads_content.svg';
 
 const OnSale = ({ isGridView }) => {
   const isMac = window.navigator.platform.toLowerCase().indexOf('mac') >= 0;

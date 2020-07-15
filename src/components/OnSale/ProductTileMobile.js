@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Select from '../Select/Select';
-import { ButtonMain } from '../../BlocksUI/Buttons/Buttons';
-import { BoxDecor } from '../../Parts/BoxDecor';
-import { ReactComponent as ProductStar } from '../../../assets/img/product-star.svg';
-import { ReactComponent as ProductHalfStar } from '../../../assets/img/product-half-star.svg';
-import { ReactComponent as ArrowBack } from '../../../assets/img/arrow_back.svg';
+import Select from 'components/Select/Select';
+import { ButtonMain } from '../BlocksUI/Buttons/Buttons';
+import { BoxDecor } from 'components/Parts/BoxDecor';
+import { ReactComponent as ProductStar } from '../../assets/img/product-star.svg';
+import { ReactComponent as ProductHalfStar } from '../../assets/img/product-half-star.svg';
+import { ReactComponent as ArrowBack } from '../../assets/img/arrow_back.svg';
 
 const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
   const [price, setPrice] = useState(hashArr[0].price);

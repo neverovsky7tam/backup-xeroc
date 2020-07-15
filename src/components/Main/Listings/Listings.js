@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import renderProducts from '../../../utils/renderProducts';
-import ProductTile from '../OnSale/ProductTile';
+import ProductTile from '../../../components/OnSale/ProductTile';
 
 const Listings = ({ productsObj }) => {
   const data = productsObj.slice(0, 12);

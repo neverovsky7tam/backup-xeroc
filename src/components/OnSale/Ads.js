@@ -1,5 +1,5 @@
 import React from 'react';
-import { BoxDecor } from '../../Parts/BoxDecor';
+import { BoxDecor } from '../Parts/BoxDecor';
 
 const Ads = ({ item }) => {
   return (

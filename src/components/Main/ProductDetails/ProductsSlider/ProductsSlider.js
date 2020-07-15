@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import renderProducts from '../../../../utils/renderProducts';
-import ProductTile from '../../OnSale/ProductTile';
-import ProductTileMobile from '../../OnSale/ProductTileMobile';
+import ProductTile from '../../../OnSale/ProductTile';
+import ProductTileMobile from '../../../../components/OnSale/ProductTileMobile';
 
 const ProductsSlider = React.forwardRef(({ items }, itemsWrapper) => {
   const isMobile = useSelector((state) => state.deviceType);
