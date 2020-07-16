@@ -6,7 +6,8 @@ const Home = () => {
   const isGridView = store.getState().productsListType;
 
   return (
-    <OnSale isGridView={isGridView} />
+    <OnSale />
+
   );
 };
 

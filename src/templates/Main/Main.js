@@ -7,7 +7,7 @@ import Home from '../../pages/Home';
 import ProductDetails_DT from '../../components/Main/ProductDetails/ProductDetails_DT';
 import { productsObj } from '../../data/productsData';
 
-const Main = () => {
+const MainLayout = () => {
   let pageTopContent = null;
 
   return (
@@ -27,4 +27,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default MainLayout;
