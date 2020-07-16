@@ -1,7 +1,7 @@
 import React from 'react';
 import store from '../store/store';
 import { setGeneralBlockContent, setCurrentProduct } from '../store/actions';
-import Ads from '../components/Main/OnSale/Ads';
+import Ads from '../components/OnSale/Ads';
 
 const showDetails = (item) => {
   store.dispatch(setCurrentProduct(item))

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import Select from '../Select/Select';
-import { ButtonMain, ButtonDark } from '../../BlocksUI/Buttons/Buttons';
-import { BoxDecor } from '../../Parts/BoxDecor';
-import { ReactComponent as ProductStar } from '../../../assets/img/product-star.svg';
-import { ReactComponent as ProductHalfStar } from '../../../assets/img/product-half-star.svg';
+import { Link } from "react-router-dom";
+import Select from 'components/Select/Select';
+import { ButtonMain, ButtonDark } from '../BlocksUI/Buttons/Buttons';
+import { BoxDecor } from 'components/Parts/BoxDecor';
+import { ReactComponent as ProductStar } from '../../assets/img/product-star.svg';
+import { ReactComponent as ProductHalfStar } from '../../assets/img/product-half-star.svg';
 
 const ProductTile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
   const [price, setPrice] = useState(itemPrice);
@@ -105,7 +106,9 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
                 isDesctopTemplate={true} />
             </div>
             <div className="grid-template-2fr">
-              <ButtonDark text={'Details'} func={() => showDetails(item)} />
+              <ButtonDark text={'Details'} func={() => showDetails(item)}>
+                <Link to="/product-details">Details</Link>
+              </ButtonDark>
               <ButtonMain text={'Add to cart'} func={null} />
             </div>
           </div>
@@ -117,3 +120,5 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
 };
 
 export default ProductTile;
+
+

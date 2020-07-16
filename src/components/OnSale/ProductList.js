@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setListingsSectionCssClass } from '../../../store/actions';
-import Select from '../Select/Select';
-import { ButtonMain } from '../../BlocksUI/Buttons/Buttons';
-import { BoxDecor } from '../../Parts/BoxDecor';
-import { ReactComponent as ProductStar } from '../../../assets/img/product-star.svg';
-import { ReactComponent as ProductHalfStar } from '../../../assets/img/product-half-star.svg';
-import { ReactComponent as GreenArrow } from '../../../assets/img/green-arrow.svg';
-import { ReactComponent as RedArrow } from '../../../assets/img/red-arrow.svg';
+import Select from 'components/Select/Select';
+import { ButtonMain } from '../BlocksUI/Buttons/Buttons';
+import { BoxDecor } from 'components/Parts/BoxDecor';
+import { ReactComponent as ProductStar } from '../../assets/img/product-star.svg';
+import { ReactComponent as ProductHalfStar } from '../../assets/img/product-half-star.svg';
+import { ReactComponent as GreenArrow } from '../../assets/img/green-arrow.svg';
+import { ReactComponent as RedArrow } from '../../assets/img/red-arrow.svg';
 
 export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr, showDetails }) => {
   const dispatch = useDispatch();
