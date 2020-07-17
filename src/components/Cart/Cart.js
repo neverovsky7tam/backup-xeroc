@@ -1,6 +1,5 @@
 import React from 'react';
-import { ReactComponent as MenuSeparate } from '../../assets/img/Header/menu-separate.svg';
-import { ReactComponent as CartIcon } from '../../assets/img/Header/cart.svg';
+import { MenuSeparate, CartIcon } from 'svg/svgHeader';
 
 const Cart = ({ isLogin }) => {
   return (
@@ -11,12 +10,12 @@ const Cart = ({ isLogin }) => {
             <span className="cart__menu-currency line-height-8">$</span>
             <span className="cart__menu-value line-height-8">457</span>
           </div>
-          <MenuSeparate className="user-menu__separate" />
+          <span className="user-menu__separate">{MenuSeparate}</span>
           <div className="cart__menu-counter line-height-8">0</div>
         </>
       }
       <button className="cart__btn cursor-pointer">
-        <CartIcon className="cart-icon" />
+        <span className="cart-icon">{CartIcon}</span>
       </button>
     </>
   )

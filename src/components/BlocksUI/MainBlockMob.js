@@ -1,5 +1,5 @@
 import React from 'react';
-import { BoxDecor } from '../Parts/BoxDecor';
+import { BoxDecor } from 'components/Parts/BoxDecor';
 
 export const MainBlockMob = React.forwardRef(({ icon, header, span, actionIcon, func, style, styleInner }, ref) => {
   let title = header;

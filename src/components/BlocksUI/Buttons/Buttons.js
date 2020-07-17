@@ -1,6 +1,6 @@
 import React from 'react';
-import { BoxDecor } from '../../Parts/BoxDecor';
-import { hideDecor } from '../../Parts/BoxDecor';
+import { BoxDecor } from 'components/Parts/BoxDecor';
+import { hideDecor } from 'components/Parts/BoxDecor';
 
 export const ButtonMain = ({ text, func, style }) => {
   return (

@@ -1,8 +1,8 @@
 import React, { useState, useLayoutEffect, useEffect } from 'react';
-import store from '../../store/store';
+import store from 'store/store';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCarouselMenuPos } from '../../store/actions';
-import MenuItems from '../MainMenu/MenuItems';
+import { setCarouselMenuPos } from 'store/actions';
+import MenuItems from 'components/MainMenu/MenuItems';
 
 let initPosition = null;
 let touchStart = null;

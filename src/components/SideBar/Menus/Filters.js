@@ -1,5 +1,5 @@
 import React from 'react';
-import FiltersBlock from '../../Main/Filters/FiltersBlock';
+import FiltersBlock from 'components/Filters/FiltersBlock';
 
 export const Filters = () => {
   return (

@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setWithdrawal } from '../../../store/actions';
-import { MainBlockMob } from '../../BlocksUI/MainBlockMob';
-import { ButtonMain } from '../../BlocksUI/Buttons/Buttons';
-import { ReactComponent as USAFlagIcon } from '../../../assets/img/SideBar/usa-flag.svg';
-import { ReactComponent as UpdateIcon } from '../../../assets/img/SideBar/update.svg';
-import { ReactComponent as SellIcon } from '../../../assets/img/SideBar/sell-icon.svg';
-import { ReactComponent as ToggleArrow } from '../../../assets/img/toggle-arrow.svg';
-import { BoxDecor } from '../../Parts/BoxDecor';
+import { setWithdrawal } from 'store/actions';
+import { MainBlockMob } from 'components/BlocksUI/MainBlockMob';
+import { ButtonMain } from 'components/BlocksUI/Buttons/Buttons';
+import { BoxDecor } from 'components/Parts/BoxDecor';
+import { USAFlag, ToggleArrow } from 'svg/svg';
+import { UpdateIcon, SellIcon } from 'svg/svgSideBar';
 
 let currentBlock = null;
 let currentItem = null;
@@ -202,28 +200,28 @@ export const BalanceContent = () => {
       <h2>balance</h2>
       <div className="content" style={{ marginBottom: '30px' }}>
         <MainBlockMob
-          icon={<USAFlagIcon className="social-icon__big" />}
+          icon={<span className="social-icon__big">{USAFlag}</span>}
           header={'$3500.55'}
           span={'Current balance'}
-          actionIcon={<UpdateIcon className="update-icon" />} />
+          actionIcon={<span className="update-icon">{UpdateIcon}</span>} />
       </div>
       <div className="content" style={{ marginBottom: '15px' }}>
         <MainBlockMob
           ref={payPalBlock}
-          icon={<SellIcon />}
+          icon={SellIcon}
           header={'PayPal'}
           span={'Withdrawal via'}
-          actionIcon={<ToggleArrow style={{ transform: payPalIsOpen }} className="toggle-arrow" />}
+          actionIcon={<span style={{ transform: payPalIsOpen }} className="toggle-arrow">{ToggleArrow}</span>}
           func={() => setPayPalList(!payPalList)} />
         {payPalList && <WithdrawalList block={payPalBlock} />}
       </div>
       <div className="content">
         <MainBlockMob
           ref={coinsBlock}
-          icon={<SellIcon />}
+          icon={SellIcon}
           header={'CoinPayments'}
           span={'Withdrawal via'}
-          actionIcon={<ToggleArrow style={{ transform: coinsIsOpen }} className="toggle-arrow" />}
+          actionIcon={<span style={{ transform: coinsIsOpen }} className="toggle-arrow">{ToggleArrow}</span>}
           func={() => setCoinsList(!coinsList)} />
         {coinsList && <WithdrawalList block={coinsBlock} />}
       </div>

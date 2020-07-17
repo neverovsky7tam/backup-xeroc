@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setElectricityValue, setProductsListType } from '../../../store/actions';
-import { ReactComponent as DotsIcon } from './img/3-vert-dot.svg';
-import { ReactComponent as ViewIcon } from './img/view-icon.svg';
-import { ReactComponent as ArrowDots } from '../../../assets/img/arrow-dots.svg';
+import { setElectricityValue, setProductsListType } from 'store/actions';
+import { ArrowDots, ThreeDots, ViewIcon } from 'svg/svg';
 
 const ViewSwitcher = ({ view, setView }) => {
   const dispatch = useDispatch();
@@ -24,7 +22,7 @@ const ViewSwitcher = ({ view, setView }) => {
 
   const switchView = () => {
     setView(!view);
-    dispatch(setProductsListType(!view)); 
+    dispatch(setProductsListType(!view));
   };
 
   useEffect(() => {
@@ -47,13 +45,13 @@ const ViewSwitcher = ({ view, setView }) => {
             <div
               className="arrow-left"
               onClick={(e) => setElectricityVal(e, false)}>
-              <ArrowDots />
+              {ArrowDots}
             </div>
             <div>{val.toFixed(2)}</div>
             <div
               className="arrow-right"
               onClick={(e) => setElectricityVal(e, true)}>
-              <ArrowDots />
+              {ArrowDots}
             </div>
           </div>
           <div className="electicity-switcher__title d-flex">
@@ -67,8 +65,8 @@ const ViewSwitcher = ({ view, setView }) => {
           <div className="view-switcher__active-title">View:</div>
           <div className="view-switcher__active-btn">{viewState}</div>
         </div>
-        <ViewIcon className="view-switcher__icon" ref={viewIcon} />
-        <DotsIcon className="view-switcher__icon" ref={dotsIcon} />
+        <span className="view-switcher__icon" ref={viewIcon}>{ViewIcon}</span>
+        <span className="view-switcher__icon" ref={dotsIcon}>{ThreeDots}</span>
       </div>
     </>
   );

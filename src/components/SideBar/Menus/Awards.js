@@ -1,9 +1,6 @@
 import React from 'react';
-import { ReactComponent as GoldAwards } from '../../../assets/img/achievment_gold.svg';
-import { ReactComponent as PlatinumAwards } from '../../../assets/img/achievment_platinum.svg';
-import { ReactComponent as SilverAwards } from '../../../assets/img/achievment_silver.svg';
-import { ReactComponent as BronzeAwards } from '../../../assets/img/achievment_bronze.svg';
-import { BoxDecor } from '../../Parts/BoxDecor';
+import { AchieveGold, AchieveSilver, AchievePlatinum, AchieveBronze } from 'svg/svgAchievement';
+import { BoxDecor } from 'components/Parts/BoxDecor';
 
 export const Awards = () => {
   return (
@@ -13,7 +10,7 @@ export const Awards = () => {
         <ul className="awards">
           <li className="awards__item">
             <div className="awards__item-inner">
-              <GoldAwards />
+              {AchieveGold}
               <h4 className="h4-mob">Best marketplace 2020</h4>
               <p className="p-mob">
                 A new digital innovation award is aimed at media that uses the
@@ -25,7 +22,7 @@ export const Awards = () => {
           </li>
           <li className="awards__item">
             <div className="awards__item-inner">
-              <PlatinumAwards />
+              {AchievePlatinum}
               <h4 className="h4-mob">Best marketplace 2020</h4>
               <p className="p-mob">
                 A new digital innovation award is aimed at media that uses the
@@ -37,7 +34,7 @@ export const Awards = () => {
           </li>
           <li className="awards__item">
             <div className="awards__item-inner">
-              <SilverAwards />
+              {AchieveSilver}
               <h4 className="h4-mob">Best marketplace 2020</h4>
               <p className="p-mob">
                 A new digital innovation award is aimed at media that uses the
@@ -49,7 +46,7 @@ export const Awards = () => {
           </li>
           <li className="awards__item">
             <div className="awards__item-inner">
-              <BronzeAwards />
+              {AchieveBronze}
               <h4 className="h4-mob">Best marketplace 2020</h4>
               <p className="p-mob">
                 A new digital innovation award is aimed at media that uses the

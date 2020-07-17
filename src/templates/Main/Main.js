@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Filters from '../../components/Main/Filters/Filters';
-import Listings from '../../components/Main/Listings/Listings';
-import News from '../../components/Main/News/News';
-import Home from '../../pages/Home';
-import ProductDetails_DT from '../../components/Main/ProductDetails/ProductDetails_DT';
-import { productsObj } from '../../data/productsData';
+import Filters from 'components/Filters/Filters';
+import Listings from 'components/Listings/Listings';
+import News from 'components/News/News';
+import Home from 'pages/Home';
+import ProductDetails_DT from 'components/ProductDetails/ProductDetails_DT';
+import { productsObj } from 'data/productsData';
 
 const MainLayout = () => {
   let pageTopContent = null;

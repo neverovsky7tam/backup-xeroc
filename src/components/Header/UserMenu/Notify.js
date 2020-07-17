@@ -1,18 +1,17 @@
 import React from 'react';
-import { ButtonDark } from '../../BlocksUI/Buttons/Buttons';
-import { Diamond } from '../../Parts/Parts';
-import { ReactComponent as BellIcon } from '../../../assets/img/Header/notification.svg';
-import { ReactComponent as VectorStar } from '../../../assets/img/vector-star.svg';
+import { ButtonDark } from 'components/BlocksUI/Buttons/Buttons';
+import { Diamond } from 'components/Parts/Parts';
+import { BellIcon } from 'svg/svgHeader';
+import { VectorStar } from 'svg/svg';
 
 const Notify = ({ onHover }) => {
   const notifyPop = React.createRef();
-  const boxDecor = React.createRef();
 
   return (
     <div
       className="user-menu__notify d-flex"
       onMouseEnter={() => onHover(notifyPop, 'block')}>
-      <BellIcon className="cursor-pointer" />
+      <span className="cursor-pointer">{BellIcon}</span>
       <div
         className="drop-menu"
         onMouseLeave={() => onHover(notifyPop, '')}
@@ -24,7 +23,7 @@ const Notify = ({ onHover }) => {
           </div>
           <div className="drop-menu__box">
             <div className="drop-menu__notify-wrapper">
-              <span className="drop-menu__notify-item-icon"><VectorStar /></span>
+              <span className="drop-menu__notify-item-icon">{VectorStar}</span>
               <span className="drop-menu__notify-item-text">You have 1 new feedback</span>
             </div>
           </div>

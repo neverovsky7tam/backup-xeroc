@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import FeedbackPopup from './FeedbackPopup';
 import AwardsPopup from './AwardsPopup';
-import { Facebook, Twitter, Youtube, Reddit } from '../Socials/Socials';
-import { ReactComponent as RatingStar } from '../../assets/img/rating-star.svg';
-import { ReactComponent as AchieveGold } from '../../assets/img/achievment_gold.svg';
-import { ReactComponent as AchieveSilver } from '../../assets/img/achievment_silver.svg';
-import { ReactComponent as AchievePlatinum } from '../../assets/img/achievment_platinum.svg';
-import { ReactComponent as AchieveBronze } from '../../assets/img/achievment_bronze.svg';
-
+import { Facebook, Twitter, Youtube, Reddit } from 'components/Socials/Socials';
+import { RatingStar } from 'svg/svg';
+import { AchieveGold, AchieveSilver, AchievePlatinum, AchieveBronze } from 'svg/svgAchievement';
 
 const Footer = ({ footerState }) => {
   const feedbackPop = React.createRef();
@@ -36,11 +32,11 @@ const Footer = ({ footerState }) => {
           <div className="feedback__message">
             <p>Great service and prices!</p>
             <div className="feedback__message-rating d-flex align-items-center">
-              <RatingStar />
-              <RatingStar />
-              <RatingStar />
-              <RatingStar />
-              <RatingStar />
+              {RatingStar}
+              {RatingStar}
+              {RatingStar}
+              {RatingStar}
+              {RatingStar}
               <span className="feedback__author">David Smith</span>
             </div>
           </div>
@@ -56,31 +52,31 @@ const Footer = ({ footerState }) => {
         </div>
         <div className="awards p-relative d-flex align-items-center">
           <div className="awards__point">
-            <AchieveGold />
+            {AchieveGold}
             <div
               className="awards__point-layer"
-              onMouseEnter={() => onHoverAwards(awardsPop, 'block', '87%', <AchieveGold style={{ width: '105px', height: '75px' }} />)}>
+              onMouseEnter={() => onHoverAwards(awardsPop, 'block', '87%', <div className="achievement-icon">{AchieveGold}</div>)}>
             </div>
           </div>
           <div className="awards__point">
-            <AchieveSilver />
+            {AchieveSilver}
             <div
               className="awards__point-layer"
-              onMouseEnter={() => onHoverAwards(awardsPop, 'block', '60%', <AchieveSilver style={{ width: '105px', height: '75px' }} />)}>
+              onMouseEnter={() => onHoverAwards(awardsPop, 'block', '60%', <div className="achievement-icon">{AchieveSilver}</div>)}>
             </div>
           </div>
           <div className="awards__point">
-            <AchievePlatinum />
+            {AchievePlatinum}
             <div
               className="awards__point-layer"
-              onMouseEnter={() => onHoverAwards(awardsPop, 'block', '33%', <AchievePlatinum style={{ width: '105px', height: '75px' }} />)}>
+              onMouseEnter={() => onHoverAwards(awardsPop, 'block', '33%', <div className="achievement-icon">{AchievePlatinum}</div>)}>
             </div>
           </div>
           <div className="awards__point">
-            <AchieveBronze />
+            {AchieveBronze}
             <div
               className="awards__point-layer"
-              onMouseEnter={() => onHoverAwards(awardsPop, 'block', '6%', <AchieveBronze style={{ width: '105px', height: '75px' }} />)}>
+              onMouseEnter={() => onHoverAwards(awardsPop, 'block', '6%', <div className="achievement-icon">{AchieveBronze}</div>)}>
             </div>
           </div>
           <AwardsPopup
@@ -90,7 +86,7 @@ const Footer = ({ footerState }) => {
             onHover={onHoverAwards} />
         </div>
       </div>
-    </footer>
+    </footer >
   )
 }
 

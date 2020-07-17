@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { switchLang } from '../../store/actions';
-import { langEN, langCH } from '../../data/languages';
-import { Diamond } from '../Parts/Parts';
-import { ReactComponent as Planet } from '../../assets/img/Header/planet-earth.svg';
+import { switchLang } from 'store/actions';
+import { langEN, langCH } from 'data/languages';
+import { Diamond } from 'components/Parts/Parts';
+import { Planet } from 'svg/svgHeader';
 
 const LangSwitcher = () => {
   const langModal = React.createRef();
@@ -30,7 +30,7 @@ const LangSwitcher = () => {
     <div
       className="lang-menu d-flex align-items-center cursor-pointer"
       onMouseEnter={() => onHover(langModal, 'block')}>
-      <Planet />
+      {Planet}
       <button
         className="lang-menu__btn cursor-pointer header__btn">
         {currentLang.lang}
@@ -42,7 +42,7 @@ const LangSwitcher = () => {
         onMouseLeave={() => onHover(langModal, '')}>
         <div className="lang-menu__modal-content d-flex justify-content-center align-items-center cursor-pointer">
           <div className="d-flex">
-            <nextLang.flag className="flag-icon" />
+            <span className="flag-icon">{nextLang.flag}</span>
             <button className="cursor-pointer header__btn">{nextLang.lang}</button>
           </div>
           <Diamond />

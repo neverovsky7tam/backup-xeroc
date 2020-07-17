@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import renderProducts from '../../../utils/renderProducts';
+import renderProducts from 'utils/renderProducts';
 import ProductTile from './ProductTile';
 import ProductTileMobile from './ProductTileMobile';
 import { ProductListHead, ProductList } from './ProductList';
 import Scroll from 'components/Scroll/Scroll';
 import ViewSwitcher from './ViewSwitcher';
 import { calcToScroll } from 'components/Scroll/Scroll';
-import { ReactComponent as Ads } from '../../assets/img/ads_content.svg';
+import { AdsSvg } from 'svg/svgAds';
 
 const OnSale = ({ isGridView }) => {
   const isMac = window.navigator.platform.toLowerCase().indexOf('mac') >= 0;
@@ -32,7 +32,7 @@ const OnSale = ({ isGridView }) => {
     data.forEach((el, idx) => {
       dataMob.push(el);
       counter += 1;
-      if (counter % 5 === 0) dataMob.push({ id: Date.now() + idx, type: 'banner', content: Ads, });
+      if (counter % 5 === 0) dataMob.push({ id: Date.now() + idx, type: 'banner', content: AdsSvg, });
     });
 
     return dataMob;

@@ -1,6 +1,6 @@
 import React from 'react';
-import { topSellers } from '../../../data/users/users';
-import { ReactComponent as RatingStar } from '../../../assets/img/rating-star.svg';
+import { topSellers } from 'data/users/users';
+import { RatingStar } from 'svg/svg';
 
 export const TopSellersSidebar = () => {
   const sellersArr = topSellers.concat(topSellers, topSellers, topSellers, topSellers);
@@ -10,7 +10,7 @@ export const TopSellersSidebar = () => {
       let starArr = [];
       let i = el.star;
       while (i > 0) {
-        starArr.push(<RatingStar key={i} className="sellers__item-rating" />);
+        starArr.push(<span key={i} className="sellers__item-rating">{RatingStar}</span>);
         i -= 1;
       };
 

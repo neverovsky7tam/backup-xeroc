@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import Select from 'components/Select/Select';
-import { ButtonMain } from '../BlocksUI/Buttons/Buttons';
+import { ButtonMain } from 'components/BlocksUI/Buttons/Buttons';
 import { BoxDecor } from 'components/Parts/BoxDecor';
-import { ReactComponent as ProductStar } from '../../assets/img/product-star.svg';
-import { ReactComponent as ProductHalfStar } from '../../assets/img/product-half-star.svg';
-import { ReactComponent as ArrowBack } from '../../assets/img/arrow_back.svg';
+import { ProductStar, ProductHalfStar, ArrowBack } from 'svg/svg';
 
 const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
   const [price, setPrice] = useState(hashArr[0].price);
@@ -80,7 +78,7 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr, showDetails }) 
                   <span className="main-font">{itemHash} {item.hash.option}</span>
                 </div>
                 <div className="products__item-star">
-                  {(!item.star) ? '' : (item.star === 'full') ? <ProductStar /> : <ProductHalfStar />}
+                  {(!item.star) ? '' : (item.star === 'full') ? { ProductStar } : { ProductHalfStar }}
                 </div>
               </div>
               <div
@@ -95,13 +93,13 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr, showDetails }) 
               <div
                 className="products__item-open-order"
                 onClick={() => toggleOrder(true)}>
-                <ArrowBack ref={openOrderArrow} />
+                <span ref={openOrderArrow}>{ArrowBack}</span>
               </div>
               <div
                 className="products__item-close-order"
                 onClick={() => toggleOrder(false)}
                 ref={closeOrder}>
-                <ArrowBack />
+                {ArrowBack}
               </div>
             </div>
             <div className="order-mob" ref={orderBlock}>

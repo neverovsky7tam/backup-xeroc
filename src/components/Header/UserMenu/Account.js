@@ -1,7 +1,7 @@
 import React from 'react';
-import { BoxDecor } from '../../Parts/BoxDecor';
-import { ReactComponent as UserIcon } from '../../../assets/img/Header/user.svg';
-import { ReactComponent as ArrowDropdownMenu } from '../../../assets/img/arrow-dots.svg';
+import { BoxDecor } from 'components/Parts/BoxDecor';
+import { UserIcon } from 'svg/svgHeader';
+import { ArrowDropdownMenu } from 'svg/svg';
 
 const Account = ({ onHover }) => {
   const accountPop = React.createRef();
@@ -14,9 +14,9 @@ const Account = ({ onHover }) => {
     <div
       className="user-menu__account d-flex align-items-center p-relative"
       onMouseEnter={() => onHover(accountPop, 'block')}>
-      <UserIcon />
+      {UserIcon}
       <span className="user-menu__my-account line-height-8">my account</span>
-      <ArrowDropdownMenu className="cursor-pointer" />
+      <span className="cursor-pointer">{ArrowDropdownMenu}</span>
       <div
         className="user-menu__account-hover"
         onMouseLeave={() => onHover(accountPop, '')}

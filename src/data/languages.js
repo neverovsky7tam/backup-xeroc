@@ -1,14 +1,13 @@
-import { ReactComponent as USFlag } from '../assets/img/united-states.svg';
-import { ReactComponent as ChiFlag } from '../assets/img/china.svg';
+import { USAFlag, ChinaFlag } from 'svg/svg';
 
 export const langBtnContent = [
-  { lang: 'eng', pic: USFlag },
-  { lang: 'chi', pic: ChiFlag }
+  { lang: 'eng', pic: USAFlag },
+  { lang: 'chi', pic: ChinaFlag }
 ]
 
 export const langEN = {
   lang: 'eng',
-  flag: USFlag,
+  flag: USAFlag,
   header: {
     menu: {
       home: 'home',
@@ -26,7 +25,7 @@ export const langEN = {
 
 export const langCH = {
   lang: 'chi',
-  flag: ChiFlag,
+  flag: ChinaFlag,
   header: {
     menu: {
       home: '家里',

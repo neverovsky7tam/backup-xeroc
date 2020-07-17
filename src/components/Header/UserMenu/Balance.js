@@ -1,16 +1,18 @@
 import React from 'react';
-import { ButtonDark } from '../../BlocksUI/Buttons/Buttons';
-import { BoxDecor } from '../../Parts/BoxDecor';
-import { Diamond } from '../../Parts/Parts';
-import { ReactComponent as BalanceIcon } from '../../../assets/img/Header/balance-icon.svg';
-import { ReactComponent as CloseIcon } from '../../../assets/img/close.svg';
-import { ReactComponent as VisaIcon } from '../../../assets/img/Cart/visa.svg';
-import { ReactComponent as MastercardIcon } from '../../../assets/img/Cart/master-card.svg';
-import { ReactComponent as PaypalIcon } from '../../../assets/img/Cart/paypal.svg';
-import { ReactComponent as CoinpaymentsIcon } from '../../../assets/img/Cart/coinpayments.svg';
-import { ReactComponent as SkrillIcon } from '../../../assets/img/Cart/skrill.svg';
-import { ReactComponent as WebmoneyIcon } from '../../../assets/img/Cart/webmoney.svg';
-import { ReactComponent as AlipayIcon } from '../../../assets/img/Cart/alipay.svg';
+import { ButtonDark } from 'components/BlocksUI/Buttons/Buttons';
+import { BoxDecor } from 'components/Parts/BoxDecor';
+import { Diamond } from 'components/Parts/Parts';
+import { BalanceIcon } from 'svg/svgHeader';
+import { CloseIcon } from 'svg/svg';
+import {
+  VisaIcon,
+  MastercardIcon,
+  PaypalIcon,
+  CoinpaymentsIcon,
+  SkrillIcon,
+  WebmoneyIcon,
+  AlipayIcon
+} from 'svg/svgCart';
 
 const Balance = ({ onHover }) => {
   const balancePop = React.createRef();
@@ -46,43 +48,43 @@ const Balance = ({ onHover }) => {
         <div className="drop-menu__inner">
           <div className="drop-menu__header">
             <h4>Balance <span>$</span>650</h4>
-            <CloseIcon className="cursor-pointer" />
+            <span className="cursor-pointer">{CloseIcon}</span>
           </div>
           <div className="drop-menu__box">
             <ul className="list">
               <li className="list__item list__item_margin-r-b" onClick={activeItem}>
                 <div className="list__item-inner">
-                  <VisaIcon /><MastercardIcon />
+                  {VisaIcon}{MastercardIcon}
                 </div>
                 <BoxDecor />
               </li>
               <li className="list__item list__item_margin-r-b" onClick={activeItem}>
                 <div className="list__item-inner">
-                  <PaypalIcon />
+                  {PaypalIcon}
                 </div>
                 <BoxDecor />
               </li>
               <li className="list__item list__item_margin-b" onClick={activeItem}>
                 <div className="list__item-inner">
-                  <CoinpaymentsIcon />
+                  {CoinpaymentsIcon}
                 </div>
                 <BoxDecor />
               </li>
               <li className="list__item list__item_margin-r" onClick={activeItem}>
                 <div className="list__item-inner">
-                  <SkrillIcon />
+                  {SkrillIcon}
                 </div>
                 <BoxDecor />
               </li>
               <li className="list__item list__item_margin-r" onClick={activeItem}>
                 <div className="list__item-inner">
-                  <WebmoneyIcon />
+                  {WebmoneyIcon}
                 </div>
                 <BoxDecor />
               </li>
               <li className="list__item" onClick={activeItem}>
                 <div className="list__item-inner">
-                  <AlipayIcon />
+                  {AlipayIcon}
                 </div>
                 <BoxDecor />
               </li>

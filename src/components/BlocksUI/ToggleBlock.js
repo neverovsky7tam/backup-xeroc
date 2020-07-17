@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { BoxDecor } from '../Parts/BoxDecor';
+import React from 'react';
+import { BoxDecor } from 'components/Parts/BoxDecor';
 
 const ToggleBlock = React.forwardRef(({ children, style, func }, initialBlock) => {
   const block = React.createRef();

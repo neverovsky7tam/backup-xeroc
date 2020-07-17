@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setGeneralBlockContent } from '../../store/actions';
-import { ReactComponent as MenuSeparate } from '../../assets/img/Header/menu-separate.svg';
+import { setGeneralBlockContent } from 'store/actions';
+import { MenuSeparate } from 'svg/svgHeader';
 
 const MenuItems = React.forwardRef(({ isOverlayMenu, setOverlayMenu, isSeparator, mobile }, items) => {
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ const MenuItems = React.forwardRef(({ isOverlayMenu, setOverlayMenu, isSeparator
           onClick={(e) => setContent(e, 'home')}>
           {lang.home}
         </li>
-        {isSeparator && <MenuSeparate className="main-menu__items-separator" />}
+        {isSeparator && <span className="main-menu__items-separator">{MenuSeparate}</span>}
         <li
           className="p-relative"
           data-menu="sell"
@@ -33,19 +33,19 @@ const MenuItems = React.forwardRef(({ isOverlayMenu, setOverlayMenu, isSeparator
           {lang.sell}
           {isOverlayMenu && <div className="overlay-menu-background">menu</div>}
         </li>
-        {isSeparator && <MenuSeparate className="main-menu__items-separator" />}
+        {isSeparator && <span className="main-menu__items-separator">{MenuSeparate}</span>}
         <li
           data-menu="host"
           onClick={(e) => setContent(e, 'host')}>
           {lang.host}
         </li>
-        {isSeparator && <MenuSeparate className="main-menu__items-separator" />}
+        {isSeparator && <span className="main-menu__items-separator">{MenuSeparate}</span>}
         <li
           data-menu="about"
           onClick={(e) => setContent(e, 'about')}>
           {lang.about}
         </li>
-        {isSeparator && <MenuSeparate className="main-menu__items-separator" />}
+        {isSeparator && <span className="main-menu__items-separator">{MenuSeparate}</span>}
         <li
           data-menu="support"
           onClick={(e) => setContent(e, 'support')}>

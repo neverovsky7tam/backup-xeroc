@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Diamond } from '../Parts/Parts';
-import { BoxDecor } from '../Parts/BoxDecor';
+import { Diamond } from 'components/Parts/Parts';
+import { BoxDecor } from 'components/Parts/BoxDecor';
 
 const AwardsPopup = React.forwardRef(({ diamondRight, icon, onHover }, ref) => {
   const lang = useSelector((state) => state.langObj.footer);

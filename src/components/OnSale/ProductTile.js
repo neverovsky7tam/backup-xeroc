@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import Select from 'components/Select/Select';
-import { ButtonMain, ButtonDark } from '../BlocksUI/Buttons/Buttons';
+import { ButtonMain, ButtonDark } from 'components/BlocksUI/Buttons/Buttons';
 import { BoxDecor } from 'components/Parts/BoxDecor';
-import { ReactComponent as ProductStar } from '../../assets/img/product-star.svg';
-import { ReactComponent as ProductHalfStar } from '../../assets/img/product-half-star.svg';
+import { ProductStar, ProductHalfStar } from 'svg/svg';
 
 const ProductTile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
   const [price, setPrice] = useState(itemPrice);
@@ -64,6 +63,8 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
     item.title = item.title.slice(0, 23) + '...';
   };
 
+  const star = (!item.star) ? '' : (item.star === 'full') ? ProductStar : ProductHalfStar;
+
   return (
     <li className="products__item-wrapper">
       <div
@@ -79,9 +80,7 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
               <h5 className="poducts__item-title main-font">{item.title}</h5>
               <span className="main-font">{itemHash} {item.hash.option}</span>
             </div>
-            <div className="products__item-star">
-              {(!item.star) ? '' : (item.star === 'full') ? <ProductStar /> : <ProductHalfStar />}
-            </div>
+            <div className="products__item-star">{star}</div>
           </div>
           <div
             className="products__item-img"

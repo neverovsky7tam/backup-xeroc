@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import MenuItems from '../MainMenu/MenuItems';
-import OverlayMenu from '../MainMenu/OverlayMenu';
-import SideBar from '../SideBar/SideBar';
-import LangSwitcher from '../LangSwitcher/LangSwitcher';
+import MenuItems from 'components/MainMenu/MenuItems';
+import OverlayMenu from 'components/MainMenu/OverlayMenu';
+import SideBar from 'components/SideBar/SideBar';
+import LangSwitcher from 'components/LangSwitcher/LangSwitcher';
 import GuestMenu from './GuestMenu';
 import UserMenu from './UserMenu/UserMenu';
-import Cart from '../Cart/Cart';
-import CloseCross from '../BlocksUI/Buttons/CloseCross';
-import { setMainContent, setGeneralBlockContent, setSidebarState } from '../../store/actions';
-import { ReactComponent as LogoIcon } from '../../assets/img/Header/corex-logo.svg';
-import { ReactComponent as BurgerBtn } from '../../assets/img/Header/burger-btn.svg';
-import { ReactComponent as ControlsMob } from '../../assets/img/Header/controls-mob.svg';
+import Cart from 'components/Cart/Cart';
+import CloseCrossBtn from 'components/BlocksUI/Buttons/CloseCrossBtn';
+import { setMainContent, setGeneralBlockContent, setSidebarState } from 'store/actions';
+import { LogoIcon, BurgerBtn, ControlsMob } from 'svg/svgHeader';
 
 const Header = ({ isMobile }) => {
   const [overlayMenu, setOverlayMenu] = useState(false);
@@ -34,17 +32,19 @@ const Header = ({ isMobile }) => {
         {
           (!closeCrossState && isMobile) &&
           <button className="controls-btn controls-btn_open">
-            <ControlsMob onClick={() => dispatch(setSidebarState(true))} />
+            <span onClick={() => dispatch(setSidebarState(true))}>{ControlsMob}</span>
           </button>
         }
-        {(closeCrossState && isMobile) && <CloseCross isSidebar={isSidebar} />}
+        {(closeCrossState && isMobile) && <CloseCrossBtn isSidebar={isSidebar} />}
         <div className="logo-wrapper d-flex align-items-center">
-          <LogoIcon
+          <span
             className="logo"
             onClick={() => {
               dispatch(setMainContent('general'));
               dispatch(setGeneralBlockContent('home'));
-            }} />
+            }}>
+            {LogoIcon}
+          </span>
           <LangSwitcher />
         </div>
         {
@@ -55,7 +55,7 @@ const Header = ({ isMobile }) => {
             </div>
             <nav className="burger-btn">
               <a href="#" onClick={burgerClick} >
-                <BurgerBtn />
+                {BurgerBtn}
               </a>
             </nav>
           </div>

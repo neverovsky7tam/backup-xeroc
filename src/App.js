@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import { setDeviceType } from './store/actions';
-import Header from './components/Header/Header';
+import { setDeviceType } from 'store/actions';
+import Header from 'components/Header/Header';
 
-import Main from './templates/Main/Main';
-import SignUp from './components/Main/Auth/SignIn';
-import LogIn from './components/Main/Auth/LogIn';
-import Terms from './components/Main/Terms/Terms';
+import Main from 'templates/Main/Main';
+import SignUp from 'components/Auth/SignIn';
+import LogIn from 'components/Auth/LogIn';
+import Terms from 'components/Terms/Terms';
+import TermsCloseBtn from 'components/Terms/TermsCloseBtn';
+import Footer from 'components/Footer/Footer';
 
-import Footer from './components/Footer/Footer';
-import TermsCloseBtn from './components/Main/Terms/TermsCloseBtn';
 
 function App() {
   const dispatch = useDispatch();

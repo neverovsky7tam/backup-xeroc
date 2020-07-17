@@ -1,13 +1,15 @@
-import React  from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setNotificationsData } from '../../../store/actions';
-import { RollingBlock } from '../../BlocksUI/RollingBlock';
-import { MainBlockMob } from '../../BlocksUI/MainBlockMob';
-import { ButtonMain } from '../../BlocksUI/Buttons/Buttons';
-import { ReactComponent as StartIcon } from '../../../assets/img/SideBar/star.svg';
-import { ReactComponent as ArrowBackIcon } from '../../../assets/img/SideBar/arrow-back.svg';
-import { ReactComponent as DeleteIcon } from '../../../assets/img/delete.svg';
-import { ReactComponent as NotificationEmptyIcon } from '../../../assets/img/SideBar/notification-empty.svg';
+import { setNotificationsData } from 'store/actions';
+import { RollingBlock } from 'components/BlocksUI/RollingBlock';
+import { MainBlockMob } from 'components/BlocksUI/MainBlockMob';
+import { ButtonMain } from 'components/BlocksUI/Buttons/Buttons';
+import {
+  StartIcon,
+  ArrowBackIcon,
+  NotificationEmptyIcon
+} from 'svg/svgSideBar';
+import { DeleteIcon } from 'svg/svg';
 
 export const NotificationsContent = () => {
   const dispatch = useDispatch();
@@ -59,11 +61,11 @@ export const NotificationsContent = () => {
           key={el.id}
           id={el.id}
           ref={{ rollingBlock, decor }}
-          icon={<StartIcon />}
+          icon={StartIcon}
           header={'You have 1 new feedback'}
           span={el.val}
-          actionIcon={<ArrowBackIcon className="notification-arrow"/>}
-          hideIcon={<DeleteIcon className="notification-delete" />}
+          actionIcon={<span className="notification-arrow">{ArrowBackIcon}</span>}
+          hideIcon={<span className="notification-delete">{DeleteIcon}</span>}
           toggleBlock={() => toggleBlock(rollingBlock, decor)}
           deleteBlock={() => deleteBlock(rollingBlock)} />
       );

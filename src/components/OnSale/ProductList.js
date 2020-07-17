@@ -1,13 +1,15 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setListingsSectionCssClass } from '../../../store/actions';
+import { setListingsSectionCssClass } from 'store/actions';
 import Select from 'components/Select/Select';
-import { ButtonMain } from '../BlocksUI/Buttons/Buttons';
+import { ButtonMain } from 'components/BlocksUI/Buttons/Buttons';
 import { BoxDecor } from 'components/Parts/BoxDecor';
-import { ReactComponent as ProductStar } from '../../assets/img/product-star.svg';
-import { ReactComponent as ProductHalfStar } from '../../assets/img/product-half-star.svg';
-import { ReactComponent as GreenArrow } from '../../assets/img/green-arrow.svg';
-import { ReactComponent as RedArrow } from '../../assets/img/red-arrow.svg';
+import {
+  ProductStar,
+  ProductHalfStar,
+  GreenArrow,
+  RedArrow
+} from 'svg/svg';
 
 export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr, showDetails }) => {
   const dispatch = useDispatch();
@@ -38,7 +40,7 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr, showDetai
   const electricityVal = useSelector((state) => state.electricityValue);
   const profit = (+item.efficiency / electricityVal) - (item.power * electricityVal) / 10;
   const colorProfit = (profit > 0) ? '#00a651' : '#d02e32';
-  const rate = (profit > 0) ? <GreenArrow /> : <RedArrow />;
+  const rate = (profit > 0) ? GreenArrow : RedArrow;
 
   const itemHoverOn = () => {
     setPrice(`$${hashArr[0].price}`);
@@ -73,6 +75,8 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr, showDetai
     setHash(item.h);
   };
 
+  const star = (!item.star) ? '' : (item.star === 'full') ? ProductStar : ProductHalfStar;
+
   return (
     <li
       className="list-item-wrapper"
@@ -87,9 +91,7 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr, showDetai
           className="list-item-inner"
           ref={itemInner}>
           <div className="list">
-            <div className="list__star">
-              {(!item.star) ? '' : (item.star === 'full') ? <ProductStar /> : <ProductHalfStar />}
-            </div>
+            <div className="list__star">{star}</div>
             <div className="list__rate">{rate}</div>
             <div className="list__release">{item.release}</div>
             <div className="list__manufacturer">{item.manufacturer}</div>
@@ -118,7 +120,7 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr, showDetai
             hashClick={onHashListClick}
             ref={refObj} />
         </div>
-        <ButtonMain text={'Add to cart'} func={null} style={{width: '112px', height: '40px'}} />
+        <ButtonMain text={'Add to cart'} func={null} style={{ width: '112px', height: '40px' }} />
       </div>
     </li>
   );

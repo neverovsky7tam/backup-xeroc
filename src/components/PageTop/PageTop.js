@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import CarouselMenu from '../MainMenu/CarouselMenu';
+import CarouselMenu from 'components/MainMenu/CarouselMenu';
 
 const PageTop = () => {
   const pageTopContent = useSelector((state) => state.pageTopState.content);

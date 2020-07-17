@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setSidebarMenu, setSidebarState, setMainContent, setCloseCross } from '../../store/actions';
+import { setSidebarMenu, setSidebarState, setMainContent, setCloseCross } from 'store/actions';
 import { Filters } from './Menus/Filters';
 import { AccountContent, AccountBtn } from './Menus/Account';
 import { BalanceContent, BalanceBtn } from './Menus/Balance';
@@ -9,15 +9,17 @@ import { Socials } from './Menus/Socials';
 import { TopSellersSidebar } from './Menus/TopSellersSidebar';
 import { Awards } from './Menus/Awards';
 import { LangSwitcher } from './Menus/LangSwitcher';
-import { ReactComponent as MenuSeparate } from '../../assets/img/SideBar/sidebar-menu-separate.svg';
-import { ReactComponent as FiltersIcon } from '../../assets/img/SideBar/filters.svg';
-import { ReactComponent as AuthIcon } from '../../assets/img/SideBar/auth.svg';
-import { ReactComponent as BalanceIcon } from '../../assets/img/SideBar/balance.svg';
-import { ReactComponent as NotificationIcon } from '../../assets/img/SideBar/notification.svg';
-import { ReactComponent as FacebookIcon } from '../../assets/img/SideBar/facebook.svg';
-import { ReactComponent as TopSellersIcon } from '../../assets/img/SideBar/top-sellers.svg';
-import { ReactComponent as AwardsIcon } from '../../assets/img/SideBar/awards.svg';
-import { ReactComponent as LanguageIcon } from '../../assets/img/SideBar/language.svg';
+import {
+  MenuSeparate,
+  FiltersIcon,
+  AuthIcon,
+  BalanceIcon,
+  NotificationIcon,
+  FacebookIcon,
+  TopSellersIcon,
+  AwardsIcon,
+  LanguageIcon,
+} from 'svg/svgSideBar';
 
 const SideBar = () => {
   const dispatch = useDispatch();
@@ -154,11 +156,11 @@ const SideBar = () => {
               data-menu="Filters"
               onClick={setMenu}>
               <div className="sidebar__nav-item-btn sidebar__nav-item-btn_filters">
-                <FiltersIcon />
+                {FiltersIcon}
               </div>
             </li>
             <div className="menu-separate">
-              <MenuSeparate />
+              {MenuSeparate}
             </div>
             <li
               className="sidebar__nav-item"
@@ -166,11 +168,11 @@ const SideBar = () => {
               onClick={setMenu}
               ref={accountBtn}>
               <div className="sidebar__nav-item-btn sidebar__nav-item-btn_acc">
-                <AuthIcon />
+                {AuthIcon}
               </div>
             </li>
             <div className="menu-separate">
-              <MenuSeparate />
+              {MenuSeparate}
             </div>
             {
               isLogin &&
@@ -180,23 +182,23 @@ const SideBar = () => {
                   data-menu="Balance"
                   onClick={setMenu}>
                   <div className="sidebar__nav-item-btn sidebar__nav-item-btn_balance">
-                    <BalanceIcon />
+                    {BalanceIcon}
                   </div>
                 </li>
                 <div className="menu-separate">
-                  <MenuSeparate />
+                  {MenuSeparate}
                 </div>
                 <li
                   className="sidebar__nav-item"
                   data-menu="Notifications"
                   onClick={setMenu}>
                   <div className="sidebar__nav-item-btn sidebar__nav-item_notification p-relative">
-                    <NotificationIcon />
+                    {NotificationIcon}
                     <div className="notification-quantity">{notificationCounter}</div>
                   </div>
                 </li>
                 <div className="menu-separate">
-                  <MenuSeparate />
+                  {MenuSeparate}
                 </div>
               </>
             }
@@ -205,40 +207,40 @@ const SideBar = () => {
               data-menu="Social"
               onClick={setMenu}>
               <div className="sidebar__nav-item-btn sidebar__nav-item-btn_social">
-                <FacebookIcon data-icon="facebook" />
+                {FacebookIcon}
               </div>
             </li>
             <div className="menu-separate">
-              <MenuSeparate />
+              {MenuSeparate}
             </div>
             <li
               className="sidebar__nav-item"
               data-menu="Sellers"
               onClick={setMenu}>
               <div className="sidebar__nav-item-btn sidebar__nav-item-btn_sellers">
-                <TopSellersIcon />
+                {TopSellersIcon}
               </div>
             </li>
             <div className="menu-separate">
-              <MenuSeparate />
+              {MenuSeparate}
             </div>
             <li
               className="sidebar__nav-item"
               data-menu="Awards"
               onClick={setMenu}>
               <div className="sidebar__nav-item-btn sidebar__nav-item-btn_awards">
-                <AwardsIcon />
+                {AwardsIcon}
               </div>
             </li>
             <div className="menu-separate">
-              <MenuSeparate />
+              {MenuSeparate}
             </div>
             <li
               className="sidebar__nav-item"
               data-menu="Lang"
               onClick={setMenu}>
               <div className="sidebar__nav-item-btn sidebar__nav-item-btn_lang">
-                <LanguageIcon />
+                {LanguageIcon}
               </div>
             </li>
             <div className="menu-separate"></div>

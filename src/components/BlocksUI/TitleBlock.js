@@ -1,6 +1,6 @@
 import React from 'react';
 import ActionPlace from './ActoinPlace';
-import { BoxDecor } from '../Parts/BoxDecor';
+import { BoxDecor } from 'components/Parts/BoxDecor';
 
 const TitleBlock = ({ text, icon, func, style }) => {
   return (
