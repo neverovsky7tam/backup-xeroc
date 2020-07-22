@@ -1,15 +1,15 @@
-import { ReactComponent as BtcProfitGraph } from '../assets/img/Product_details/btc-profit-graph-long.svg';
-import { ReactComponent as BtcLineGraph } from '../assets/img/Product_details/btc-line-graph-long.svg';
-import { ReactComponent as BtcChartGraph } from '../assets/img/Product_details/btc-chart-graph-long.svg';
-import { ReactComponent as BtcColumnGraph } from '../assets/img/Product_details/btc-column-graph-long.svg';
-import { ReactComponent as BtcYearGraph } from '../assets/img/Product_details/btc-year-graph-long.svg';
-import { ReactComponent as LtcProfitGraph } from '../assets/img/Product_details/ltc-profit-graph-long.svg';
-import { ReactComponent as LtcLineGraph } from '../assets/img/Product_details/ltc-line-graph-long.svg';
-import { ReactComponent as LtcChartGraph } from '../assets/img/Product_details/ltc-chart-graph-long.svg';
-import { ReactComponent as LtcColumnGraph } from '../assets/img/Product_details/ltc-column-graph-long.svg';
-import { ReactComponent as LtcYearGraph } from '../assets/img/Product_details/ltc-year-graph-long.svg';
-
-
+import {
+  BtcProfitGraph,
+  BtcLineGraph,
+  BtcChartGraph,
+  BtcColumnGraph,
+  BtcYearGraph,
+  LtcProfitGraph,
+  LtcLineGraph,
+  LtcChartGraph,
+  LtcColumnGraph,
+  LtcYearGraph
+} from 'svg/svgCoinDetails';
 
 export const coinsData = [
   {

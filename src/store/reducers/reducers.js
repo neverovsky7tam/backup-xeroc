@@ -9,7 +9,7 @@ import {
   SET_PAGE_TOP_STATE,
   SET_CAROUSEL_MENU_POS,
   SET_MAIN_CONTENT,
-  SET_GENERAL_BLOCK_CONTENT,
+  // SET_GENERAL_BLOCK_CONTENT,
   SET_CURRENT_PRODUCT,
   SET_ACCOUNT_MENU,
   SET_TERMS_CLOSE_BTN,
@@ -105,18 +105,18 @@ export const mainContent = (state = 'general', action) => {
   }
 }
 
-export const generalBlockContent = (state = { current: 'home', store: ['home'], }, action) => {
-  switch (action.type) {
-    case SET_GENERAL_BLOCK_CONTENT:
-      const newState = Object.assign({}, state);
-      newState.current = action.content;
-      newState.store.unshift(action.content);
-      newState.store.length = 2;
-      return newState;
-    default:
-      return state;
-  }
-}
+// export const generalBlockContent = (state = { current: 'home', store: ['home'], }, action) => {
+//   switch (action.type) {
+//     case SET_GENERAL_BLOCK_CONTENT:
+//       const newState = Object.assign({}, state);
+//       newState.current = action.content;
+//       newState.store.unshift(action.content);
+//       newState.store.length = 2;
+//       return newState;
+//     default:
+//       return state;
+//   }
+// }
 
 export const currentProduct = (state = null, action) => {
   switch (action.type) {

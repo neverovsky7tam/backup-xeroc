@@ -1,6 +1,6 @@
 <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.46875 0.46875V14.4188H14.4692" stroke="white" stroke-width="0.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4.39944 8.75049H2.04004V12.765H4.39944V8.75049Z" stroke="white" stroke-width="0.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M8.99026 1.75488H6.63086V12.7645H8.99026V1.75488Z" stroke="white" stroke-width="0.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M13.5806 4.73486H11.2222V12.7644H13.5806V4.73486Z" stroke="white" stroke-width="0.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0.46875 0.46875V14.4188H14.4692" stroke="white" strokeWidth="0.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M4.39944 8.75049H2.04004V12.765H4.39944V8.75049Z" stroke="white" strokeWidth="0.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M8.99026 1.75488H6.63086V12.7645H8.99026V1.75488Z" stroke="white" strokeWidth="0.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M13.5806 4.73486H11.2222V12.7644H13.5806V4.73486Z" stroke="white" strokeWidth="0.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>

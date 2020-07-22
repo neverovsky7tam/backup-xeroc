@@ -1,12 +1,5 @@
 import React from 'react';
-import store from '../store/store';
-import { setGeneralBlockContent, setCurrentProduct } from '../store/actions';
-import Ads from '../components/OnSale/Ads';
-
-const showDetails = (item) => {
-  store.dispatch(setCurrentProduct(item))
-  store.dispatch(setGeneralBlockContent('productDetails'));
-}
+import Ads from 'pages/Home/modules/Ads';
 
 const renderProducts = (ProductTemplate, data) => {
   const items = data.map((el, idx) => {
@@ -21,8 +14,7 @@ const renderProducts = (ProductTemplate, data) => {
         item={el}
         itemHash={productProcess.hash}
         itemPrice={productProcess.price}
-        hashArr={productProcess.hashArr}
-        showDetails={showDetails} />;
+        hashArr={productProcess.hashArr} />;
     };
   });
 

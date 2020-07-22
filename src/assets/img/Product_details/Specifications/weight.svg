@@ -1,10 +1,10 @@
 <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3.1263 10.5174C4.30018 10.5174 5.25218 9.56626 5.25218 8.39111H1C1 9.56584 1.95158 10.5174 3.1263 10.5174Z" stroke="white" stroke-width="0.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M1 8.39114L3.1263 2.78394L5.25218 8.31393" stroke="white" stroke-width="0.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11.7617 10.5174C12.9364 10.5174 13.888 9.56626 13.888 8.39111H9.63623C9.63623 9.56584 10.5878 10.5174 11.7617 10.5174Z" stroke="white" stroke-width="0.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M9.63623 8.39114L11.7617 2.78394L13.8876 8.31393" stroke="white" stroke-width="0.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M7.44434 0.424316V13.3476" stroke="white" stroke-width="0.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M5.7915 13.3477H9.09635" stroke="white" stroke-width="0.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M1.54346 2.92901L7.44424 1.4624" stroke="white" stroke-width="0.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M13.3439 2.92901L7.44434 1.4624" stroke="white" stroke-width="0.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.1263 10.5174C4.30018 10.5174 5.25218 9.56626 5.25218 8.39111H1C1 9.56584 1.95158 10.5174 3.1263 10.5174Z" stroke="white" strokeWidth="0.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M1 8.39114L3.1263 2.78394L5.25218 8.31393" stroke="white" strokeWidth="0.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M11.7617 10.5174C12.9364 10.5174 13.888 9.56626 13.888 8.39111H9.63623C9.63623 9.56584 10.5878 10.5174 11.7617 10.5174Z" stroke="white" strokeWidth="0.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M9.63623 8.39114L11.7617 2.78394L13.8876 8.31393" stroke="white" strokeWidth="0.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M7.44434 0.424316V13.3476" stroke="white" strokeWidth="0.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M5.7915 13.3477H9.09635" stroke="white" strokeWidth="0.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M1.54346 2.92901L7.44424 1.4624" stroke="white" strokeWidth="0.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M13.3439 2.92901L7.44434 1.4624" stroke="white" strokeWidth="0.7" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>

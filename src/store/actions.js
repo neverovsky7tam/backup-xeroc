@@ -8,7 +8,7 @@ export const SET_CLOSE_CROSS = "SET_CLOSE_CROSS";
 export const SET_PAGE_TOP_STATE = "SET_PAGE_TOP_STATE";
 export const SET_CAROUSEL_MENU_POS = "SET_CAROUSEL_MENU_POS";
 export const SET_MAIN_CONTENT = "SET_MAIN_CONTENT";
-export const SET_GENERAL_BLOCK_CONTENT = "SET_GENERAL_BLOCK_CONTENT";
+// export const SET_GENERAL_BLOCK_CONTENT = "SET_GENERAL_BLOCK_CONTENT";
 export const SET_CURRENT_PRODUCT = "CURRENT_PRODUCT";
 export const SET_ACCOUNT_MENU = "SET_ACCOUNT_MENU";
 export const SET_TERMS_CLOSE_BTN = "SET_TERMS_CLOSE_BTN";
@@ -76,10 +76,10 @@ export const setMainContent = (content) => ({
   content,
 });
 
-export const setGeneralBlockContent = (content) => ({
-  type: SET_GENERAL_BLOCK_CONTENT,
-  content,
-});
+// export const setGeneralBlockContent = (content) => ({
+//   type: SET_GENERAL_BLOCK_CONTENT,
+//   content,
+// });
 
 export const setCurrentProduct = (product) => ({
   type: SET_CURRENT_PRODUCT,

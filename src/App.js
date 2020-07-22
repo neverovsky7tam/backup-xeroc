@@ -1,40 +1,26 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
-import { setDeviceType } from 'store/actions';
-import Header from 'components/Header/Header';
-
-import Main from 'templates/Main/Main';
+import { Switch, Route, useLocation } from "react-router-dom";
+import Layout from 'layouts';
+import Home from 'pages/Home';
+import ProductDetails from 'pages/ProductDetails';
 import SignUp from 'components/Auth/SignIn';
 import LogIn from 'components/Auth/LogIn';
-import Terms from 'components/Terms/Terms';
-import TermsCloseBtn from 'components/Terms/TermsCloseBtn';
-import Footer from 'components/Footer/Footer';
+import Terms from 'pages/Terms';
 
-
-function App() {
-  const dispatch = useDispatch();
-  const isMobile = (document.documentElement.clientWidth < 768) ? true : false;
-
-  if (isMobile) dispatch(setDeviceType(true));
-  else dispatch(setDeviceType(false));
-
-  const termsCloseBtn = useSelector((state) => state.termsCloseBtn);
+const App = () => {
+  // let { pathname } = useLocation()
+  // console.log('APPloc', pathname);
 
   return (
-    <Router>
-      <Header isMobile={isMobile} />
-      <main className="main">
-        <Main />
-        <Switch>
-          <Route path="/sign-up"><SignUp /></Route>
-          <Route path="/log-in"><LogIn /></Route>
-          <Route path="/terms"><Terms /></Route>
-        </Switch>
-      </main>
-      {!isMobile && <Footer footerState={(termsCloseBtn) ? 'footer-mini' : 'footer-standart'} />}
-      {termsCloseBtn && <TermsCloseBtn />}
-    </Router>
+    <Layout>
+      <Switch>
+        <Route exact path="/"><Home /></Route>
+        <Route path="/product-details/:item/:id"><ProductDetails /></Route>
+        <Route path="/sign-up"><SignUp /></Route>
+        <Route path="/log-in"><LogIn /></Route>
+        <Route path="/terms"><Terms /></Route>
+      </Switch>
+    </Layout>
   );
 };
 

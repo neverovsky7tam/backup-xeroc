@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import MenuItems from 'components/MainMenu/MenuItems';
 import OverlayMenu from 'components/MainMenu/OverlayMenu';
@@ -37,14 +38,9 @@ const Header = ({ isMobile }) => {
         }
         {(closeCrossState && isMobile) && <CloseCrossBtn isSidebar={isSidebar} />}
         <div className="logo-wrapper d-flex align-items-center">
-          <span
-            className="logo"
-            onClick={() => {
-              dispatch(setMainContent('general'));
-              dispatch(setGeneralBlockContent('home'));
-            }}>
-            {LogoIcon}
-          </span>
+          <Link to="/">
+            <span className="logo">{LogoIcon}</span>
+          </Link>
           <LangSwitcher />
         </div>
         {
