@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setCloseCross } from 'store/actions';
+import { setCloseCross, setPageTopContent } from 'store/actions';
 import TitleBlock from 'components/BlocksUI/TitleBlock';
 import OnSale from './modules/OnSale/OnSaleMB';
 import DescriptionShipping from './modules/DescriptionShipping';
@@ -34,6 +34,7 @@ const ProductDetailsMB = ({ item }) => {
 
   useEffect(() => {
     dispatch(setCloseCross(true));
+    dispatch(setPageTopContent('Details'));
   }, []);
 
   return (

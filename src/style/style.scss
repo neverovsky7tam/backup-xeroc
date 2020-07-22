@@ -4,6 +4,7 @@
 @import "./elements";
 @import "./app";
 @import "./shared-classes";
+
 @import "../components/BlocksUI/title-block";
 @import "../components/BlocksUI/drop-list";
 @import "../components/BlocksUI/main-block-mob";
@@ -17,7 +18,6 @@
 @import "../components/SideBar/side-bar";
 @import "../components/SideBar/side-bar-icons";
 @import "../components/SideBar/Menus/sidebar-content";
-
 @import "../components/MainMenu/main-menu";
 @import "../components/LangSwitcher/lang-switcher";
 @import "../components/Header/UserMenu/user-menu";
@@ -27,7 +27,6 @@
 @import "../components/ViewSwitcher";
 @import "../components/Scroll/scroll";
 @import "../components/Select/select";
-@import "../components/GeneralBlock/general-block";
 @import "../components/Filters/filters";
 @import "../components/ProductTile";
 @import "../components/ProductTileMobile";
@@ -50,3 +49,5 @@
 @import "../pages/ProductDetails/modules/ProductsSlider";
 @import "../pages/ProductDetails/modules/Specifications";
 @import "../pages/Terms";
+
+@import "../layouts/LayoutMain/";
