@@ -5,7 +5,7 @@ import { ButtonMain, ButtonDark } from 'components/BlocksUI/Buttons/Buttons';
 import { BoxDecor } from 'components/Parts/BoxDecor';
 import { ProductStar, ProductHalfStar } from 'svg/svg';
 
-const ProductTile = ({ item, itemHash, itemPrice, hashArr }) => {
+const ProductTile = ({ item, itemHash, itemPrice, hashArr, itemPath }) => {
   const [price, setPrice] = useState(itemPrice);
   const [hash, setHash] = useState('');
 
@@ -65,8 +65,6 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr }) => {
 
   const star = (!item.star) ? '' : (item.star === 'full') ? ProductStar : ProductHalfStar;
 
-  const itemLink = item.title.replace(/\.+/g, '').replace(/\s+/g, '-');
-
   return (
     <>
       <li className="products__item-wrapper">
@@ -109,7 +107,7 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr }) => {
               </div>
               <div className="grid-template-2fr">
                 <ButtonDark>
-                  <Link to={`/product-details/${itemLink}/${item.id}`} className="link-to">Details</Link>
+                  <Link to={itemPath} className="link-to">Details</Link>
                 </ButtonDark>
                 <ButtonMain text={'Add to cart'} func={null} />
               </div>

@@ -93,7 +93,6 @@ const Balance = ({ onHover }) => {
           <div className="drop-menu__footer">
             <ButtonDark
               text={'Withdraw'}
-              func={null}
               wrapperStyle={{ width: '84px' }} />
           </div>
           <Diamond />

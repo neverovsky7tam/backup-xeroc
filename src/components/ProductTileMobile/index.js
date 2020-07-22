@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import Select from 'components/Select/Select';
 import { ButtonMain } from 'components/BlocksUI/Buttons/Buttons';
 import { BoxDecor } from 'components/Parts/BoxDecor';
 import { ProductStar, ProductHalfStar, ArrowBack } from 'svg/svg';
 
-const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr, showDetails }) => {
+const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr, itemPath }) => {
   const [price, setPrice] = useState(hashArr[0].price);
   const [hash, setHash] = useState(hashArr[0].h);
 
@@ -117,7 +118,9 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr, showDetails }) 
                   ref={refObj} />
               </div>
               <div className="order-mob__btns-wrapper">
-                <ButtonMain text={'Details'} func={() => showDetails(item)} style={{ marginBottom: '15px' }} />
+                <ButtonMain style={{ marginBottom: '15px' }}>
+                  <Link to={itemPath} className="link-to">Details</Link>
+                </ButtonMain>
                 <ButtonMain text={'Add to cart'} func={null} />
               </div>
             </div>

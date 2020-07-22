@@ -120,10 +120,10 @@ const CoinAbout = ({ coin, item, currentHash }) => {
       }
     };
 
-    const svgGraphicLine = btnGraphicLine.current.firstElementChild;
+    const svgGraphicLine = btnGraphicLine.current.firstElementChild.firstElementChild;
     setSvgColor(svgGraphicLine, isGraphicLine);
 
-    const svgGraphicChart = btnGraphicChart.current.firstElementChild;
+    const svgGraphicChart = btnGraphicChart.current.firstElementChild.firstElementChild;
     setSvgColor(svgGraphicChart, isGraphicChart);
   });
 
@@ -244,8 +244,14 @@ const CoinAbout = ({ coin, item, currentHash }) => {
       <div className="coin-about__dynamics">
         <div className="controls">
           <div className="btns-wrapper btns-wrapper__left">
-            <SquareBtn icon={<span className="icon-graph-line">{BtnLine}</span>} func={() => setGraphicLine(!isGraphicLine)} ref={btnGraphicLine} />
-            <SquareBtn icon={<span className="icon-graph-chart">{BtnChart}</span>} func={() => setGraphicChart(!isGraphicChart)} ref={btnGraphicChart} />
+            <SquareBtn
+              icon={<span className="icon-graph-line">{BtnLine}</span>}
+              func={() => setGraphicLine(!isGraphicLine)}
+              ref={btnGraphicLine} />
+            <SquareBtn
+              icon={<span className="icon-graph-chart">{BtnChart}</span>}
+              func={() => setGraphicChart(!isGraphicChart)}
+              ref={btnGraphicChart} />
           </div>
           <div className="btns-wrapper btns-wrapper__right">
             {

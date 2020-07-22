@@ -9,7 +9,7 @@ import GuestMenu from './GuestMenu';
 import UserMenu from './UserMenu/UserMenu';
 import Cart from 'components/Cart/Cart';
 import CloseCrossBtn from 'components/BlocksUI/Buttons/CloseCrossBtn';
-import { setMainContent, setGeneralBlockContent, setSidebarState } from 'store/actions';
+import { setSidebarState } from 'store/actions';
 import { LogoIcon, BurgerBtn, ControlsMob } from 'svg/svgHeader';
 
 const Header = ({ isMobile }) => {
@@ -50,9 +50,7 @@ const Header = ({ isMobile }) => {
               <MenuItems isSeparator={true} />
             </div>
             <nav className="burger-btn">
-              <a href="#" onClick={burgerClick} >
-                {BurgerBtn}
-              </a>
+              <a href="#" onClick={burgerClick}>{BurgerBtn}</a>
             </nav>
           </div>
         }

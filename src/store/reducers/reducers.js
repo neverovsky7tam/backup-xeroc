@@ -90,6 +90,7 @@ export const langObj = (state = langEN, action) => {
 export const closeCrossState = (state = false, action) => {
   switch (action.type) {
     case SET_CLOSE_CROSS:
+      console.log('close-cross');
       return action.param;
     default:
       return state;

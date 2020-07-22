@@ -12,7 +12,7 @@ import {
   RedArrow
 } from 'svg/svg';
 
-export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr }) => {
+export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr, itemPath }) => {
   const dispatch = useDispatch();
 
   useLayoutEffect(() => {
@@ -78,14 +78,12 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr }) => {
 
   const star = (!item.star) ? '' : (item.star === 'full') ? ProductStar : ProductHalfStar;
 
-  const itemLink = item.title.replace(/\.+/g, '').replace(/\s+/g, '-');
-
   return (
     <li
       className="list-item-wrapper"
       onMouseEnter={itemHoverOn}
       onMouseLeave={itemHoverOff}>
-      <Link to={`/product-details/${itemLink}/${item.id}`}>
+      <Link to={itemPath}>
         <div
           className="list-item-carriage"
           style={{ backgroundColor: colorItem }}

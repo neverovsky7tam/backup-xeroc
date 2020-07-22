@@ -8,7 +8,6 @@ const setSliderItems = (item, type) => {
   let productsRaw = source.filter((el) => el.id !== item.id);
   productsRaw = productsRaw.concat(productsRaw);
   const products = productsRaw.map((el) => Object.assign({}, el));
-  products.forEach((el, idx) => el.id = idx);
 
   return products;
 };

@@ -30,7 +30,6 @@ const Notify = ({ onHover }) => {
           <div className="drop-menu__btn-wrapper">
             <ButtonDark
               text={'Show all'}
-              func={null}
               wrapperStyle={{ width: '84px', margin: 'auto', }} />
           </div>
           <Diamond />

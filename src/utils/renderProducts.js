@@ -6,6 +6,9 @@ const renderProducts = (ProductTemplate, data) => {
     if (el.type === 'banner') {
       return <Ads key={el.id} item={el} />
     } else {
+      const itemLink = el.title.replace(/\.+/g, '').replace(/\s+/g, '-');
+      const itemPath = `/product-details/${itemLink}/${el.id}`;
+
       const productProcess = productsProcessing(el);
 
       return <ProductTemplate
@@ -14,7 +17,8 @@ const renderProducts = (ProductTemplate, data) => {
         item={el}
         itemHash={productProcess.hash}
         itemPrice={productProcess.price}
-        hashArr={productProcess.hashArr} />;
+        hashArr={productProcess.hashArr}
+        itemPath={itemPath} />
     };
   });
 

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setCloseCross } from 'store/actions';
 import TitleBlock from 'components/BlocksUI/TitleBlock';
 import OnSale from './modules/OnSale/OnSaleMB';
 import DescriptionShipping from './modules/DescriptionShipping';
@@ -10,6 +12,8 @@ import setSliderItems from './modules/ProductsSlider/setSliderItems';
 import { Dots, ToggleArrow } from 'svg/svg';
 
 const ProductDetailsMB = ({ item }) => {
+  const dispatch = useDispatch();
+
   const [currentHash, setCurrentHash] = useState(item.hash.value[0].h);
   const [showOnSale, setOnSale] = useState(true);
   const [showDescription, setDescription] = useState(true);
@@ -27,6 +31,10 @@ const ProductDetailsMB = ({ item }) => {
   useEffect(() => {
     document.documentElement.scrollTop = 0;
   }, [item]);
+
+  useEffect(() => {
+    dispatch(setCloseCross(true));
+  }, []);
 
   return (
     <>

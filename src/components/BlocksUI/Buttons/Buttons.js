@@ -2,19 +2,22 @@ import React from 'react';
 import { BoxDecor } from 'components/Parts/BoxDecor';
 import { hideDecor } from 'components/Parts/BoxDecor';
 
-export const ButtonMain = ({ text, func, style }) => {
+export const ButtonMain = ({ text, func, style, children }) => {
+  let content = (text) ? <span>{text}</span> : children;
+
   return (
     <button
       className="button button__main"
       style={style}
       onClick={func}>
-      <span>{text}</span>
+      {content}
     </button>
   );
 };
 
-export const ButtonDark = ({ func, wrapperStyle, btnStyle, children }) => {
+export const ButtonDark = ({ text, func, wrapperStyle, btnStyle, children }) => {
   const boxDecor = React.createRef();
+  let content = (text) ? <span>{text}</span> : children;
 
   return (
     <div className="p-relative" style={wrapperStyle}>
@@ -24,7 +27,7 @@ export const ButtonDark = ({ func, wrapperStyle, btnStyle, children }) => {
         onClick={func}
         onMouseEnter={() => hideDecor(boxDecor, 'none')}
         onMouseLeave={() => hideDecor(boxDecor, '')}>
-        {children}
+        {content}
       </button>
       <BoxDecor ref={boxDecor} />
     </div>

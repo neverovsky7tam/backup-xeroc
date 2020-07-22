@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, useLocation } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Layout from 'layouts';
 import Home from 'pages/Home';
 import ProductDetails from 'pages/ProductDetails';
@@ -8,9 +8,6 @@ import LogIn from 'components/Auth/LogIn';
 import Terms from 'pages/Terms';
 
 const App = () => {
-  // let { pathname } = useLocation()
-  // console.log('APPloc', pathname);
-
   return (
     <Layout>
       <Switch>
