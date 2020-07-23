@@ -78,7 +78,7 @@ const ProductDetailsMB = ({ item }) => {
         {showCoins && <Coins item={item} currentHash={currentHash} />}
       </div>
       <div className={showRelated ? "details" : "details-collapse"}>
-        <div className="details-header-combine">
+        <div className="d-flex">
           <TitleBlock
             text={'Related products'}
             icon={showRelated ? <span className="toggle-arrow">{ToggleArrow}</span> : <span className="dots">{Dots}</span>}
@@ -89,7 +89,7 @@ const ProductDetailsMB = ({ item }) => {
         {showRelated && <ProductsSlider items={relatedItem} />}
       </div>
       <div className={showRecently ? "details" : "details-collapse"}>
-        <div className="details-header-combine">
+        <div className="d-flex">
           <TitleBlock
             text={'Recently viewed'}
             icon={showRecently ? <span className="toggle-arrow">{ToggleArrow}</span> : <span className="dots">{Dots}</span>}

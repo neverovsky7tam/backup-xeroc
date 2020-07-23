@@ -5,7 +5,7 @@ import { Close } from 'svg/svgProductDetails';
 
 const Controls = ({ links }) => {
   return (
-    <div className="pdp-controls pdp-controls_general">
+    <div className="pdp-controls">
       <NavBtns links={links} />
       <button className="pdp-close-btn">
         <Link to="/" className="link-to">

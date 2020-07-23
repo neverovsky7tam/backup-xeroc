@@ -1,7 +1,8 @@
-.pdp-controls_general {
-  position: absolute;
-  top: 1px;
-  right: 0;
+.pdp-controls-wrapper {
+  position: sticky;
+  display: inline-block;
+  top: 0;
+  left: 100%;
   z-index: 12;
 }
 

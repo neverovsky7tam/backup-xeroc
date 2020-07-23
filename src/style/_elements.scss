@@ -73,6 +73,11 @@
   justify-content: center;
 }
 
+.stop-scroll-y {
+  height: 100vh;
+  overflow: hidden;
+}
+
 @mixin block_centered_content($width, $height, $bg) {
   position: relative;
   display: flex;

@@ -4,13 +4,13 @@ import FilterMain from './FilterMain';
 import FilterSearch from './FilterSearch';
 import { BoxDecor } from 'components/Parts/BoxDecor';
 
-const Filter = ({ filterName, filterProps, checkHeightBlock }) => {
+const Filter = ({ filterName, filterProps, checkHeight }) => {
   const [isExpand, setExpand] = useState(false);
   const [isSearch, setSearchExpand] = useState(false);
   const [itemsArr, setItemsArr] = useState([]);
 
   useEffect(() => {
-    if (checkHeightBlock) checkHeightBlock();
+    checkHeight();
   }, [isExpand]);
 
   return (

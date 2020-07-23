@@ -35,58 +35,63 @@ const ProductDetailsDT = ({ item, links }) => {
           setCurrentHash={setCurrentHash} />
       </section>
       <div className="details__right">
-        <Controls links={links} />
+        {/* <Controls links={links} /> */}
         <div
           className="scroll-container"
           style={{ paddingRight: '1px' }}
           ref={scrollBlock}
           onScroll={setScroll}>
-          <section>
-            <div className="magic-header">
-              <h2>DESCRIPTION & SHIPPING</h2>
+          <div className="details__main">
+            <div className="pdp-controls-wrapper">
+              <Controls links={links} />
             </div>
-            <div className="content-wrapper">
-              <DescriptionShipping item={item} />
+            <div className="details__main-inner">
+              <section>
+                <div className="magic-header">
+                  <h2>DESCRIPTION & SHIPPING</h2>
+                </div>
+                <div className="content-wrapper">
+                  <DescriptionShipping item={item} />
+                </div>
+              </section>
+              <section>
+                <div className="magic-header">
+                  <h2>specifications</h2>
+                </div>
+                <div className="content-wrapper">
+                  <Specifications item={item} />
+                </div>
+              </section>
+              <section>
+                <div className="magic-header">
+                  <h2>minable coins</h2>
+                </div>
+                <div className="content-wrapper">
+                  <Coins item={item} currentHash={currentHash} />
+                </div>
+              </section>
             </div>
-          </section>
-          <section>
-            <div className="magic-header">
-              <h2>specifications</h2>
-            </div>
-            <div className="content-wrapper">
-              <Specifications item={item} />
-            </div>
-          </section>
-          <section>
-            <div className="magic-header">
-              <h2>minable coins</h2>
-            </div>
-            <div className="content-wrapper">
-              <Coins item={item} currentHash={currentHash} />
-            </div>
-          </section>
-          <section>
-            <div className="details-header-combine">
-              <div className="magic-header">
+          </div>
+          <div className="details__footer">
+            <section>
+              <div className="magic-header d-flex justify-content-between">
                 <h2>related products</h2>
+                <ProductsSliderControls itemsWrapper={relatedItemsWrapper} />
               </div>
-              <ProductsSliderControls itemsWrapper={relatedItemsWrapper} />
-            </div>
-            <div className="content-wrapper">
-              <ProductsSlider items={relatedProducts} ref={relatedItemsWrapper} />
-            </div>
-          </section>
-          <section>
-            <div className="details-header-combine">
-              <div className="magic-header">
+              <div className="content-wrapper">
+                <ProductsSlider items={relatedProducts} ref={relatedItemsWrapper} />
+              </div>
+            </section>
+            <section>
+              <div className="magic-header d-flex justify-content-between">
                 <h2>recently viewed</h2>
+                <ProductsSliderControls itemsWrapper={recentlyItemsWrapper} />
               </div>
-              <ProductsSliderControls itemsWrapper={recentlyItemsWrapper} />
-            </div>
-            <div className="content-wrapper">
-              <ProductsSlider items={recentlyProducts} ref={recentlyItemsWrapper} />
-            </div>
-          </section>
+              <div className="content-wrapper">
+                <ProductsSlider items={recentlyProducts} ref={recentlyItemsWrapper} />
+              </div>
+            </section>
+          </div>
         </div>
       </div>
       <Scroll ref={scrollThumb} scrollBlock={scrollBlock} />

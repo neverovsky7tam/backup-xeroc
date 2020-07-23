@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import FiltersBlock from 'components/Filters/FiltersBlock';
 import Scroll from 'components/Scroll/Scroll';
 import { calcToScroll } from 'components/Scroll/Scroll';
@@ -14,15 +14,6 @@ const Filters = () => {
     }
   };
 
-  const checkScroll = (filtersBlockHeight) => {
-    const scrollBlockHeight = scrollBlock.current.clientHeight;
-    if (filtersBlockHeight > scrollBlockHeight) scrollThumb.current.style.display = 'block';
-    else {
-      scrollThumb.current.style.display = 'none';
-      scrollThumb.current.style.transform = '';
-    } 
-  };
-
   return (
     <section className="filters p-relative">
       <div className="main-header">
@@ -33,10 +24,10 @@ const Filters = () => {
           className="scroll-container"
           ref={scrollBlock}
           onScroll={setScroll}>
-          <FiltersBlock checkScroll={checkScroll} />
+          <FiltersBlock scrollBlock={scrollBlock} scrollThumb={scrollThumb} />
         </div>
       </div>
-      <Scroll ref={scrollThumb} scrollBlock={scrollBlock} />
+      <Scroll ref={scrollThumb} scrollBlock={scrollBlock} style={{ display: 'none' }} />
     </section>
   );
 };

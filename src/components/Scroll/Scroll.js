@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 
 export const calcToScroll = (scrollBlock, addParam) => {
   if (scrollBlock) {
@@ -22,10 +22,10 @@ export const calcToScroll = (scrollBlock, addParam) => {
   }
 }
 
-const Scroll = React.forwardRef(({ scrollBlock }, scrollThumb) => {
+const Scroll = React.forwardRef(({ scrollBlock, style }, scrollThumb) => {
   const scrollLayer = React.createRef();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (scrollBlock.current) {
       if (scrollBlock.current.scrollHeight === scrollBlock.current.offsetHeight) scrollThumb.current.style.transform = `translateY(0)`;
     };
@@ -92,7 +92,7 @@ const Scroll = React.forwardRef(({ scrollBlock }, scrollThumb) => {
           className="scroll-thumb"
           ref={scrollThumb}
           onMouseDown={dragThumb}
-          style={{ transform: 'translateY(0px)' }}>
+          style={style}>
         </div>
       </div>
     </div>

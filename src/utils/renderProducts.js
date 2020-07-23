@@ -12,7 +12,7 @@ const renderProducts = (ProductTemplate, data) => {
       const productProcess = productsProcessing(el);
 
       return <ProductTemplate
-        key={el.id}
+        key={idx}
         idx={idx}
         item={el}
         itemHash={productProcess.hash}
