@@ -15,7 +15,7 @@ const Cart = ({ isLogin }) => {
         </>
       }
       <button className="cart__btn cursor-pointer">
-        <span className="cart-icon">{CartIcon}</span>
+        <div className="cart-icon">{CartIcon}</div>
       </button>
     </>
   )

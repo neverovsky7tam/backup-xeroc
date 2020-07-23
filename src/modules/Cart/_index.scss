@@ -1,7 +1,11 @@
 .cart-icon {
-  @media (min-width: 768px) {
-    width: 22px;
-    height: 22px;
+  display: flex;
+
+  svg {
+    @media (min-width: 768px) {
+      width: 22px;
+      height: 22px;
+    }
   }
 }
 

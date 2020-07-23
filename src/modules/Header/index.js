@@ -33,7 +33,7 @@ const Header = ({ isMobile }) => {
         {
           (!closeCrossState && isMobile) &&
           <button className="controls-btn controls-btn_open">
-            <span onClick={() => dispatch(setSidebarState(true))}>{ControlsMob}</span>
+            <div className="d-flex" onClick={() => dispatch(setSidebarState(true))}>{ControlsMob}</div>
           </button>
         }
         {(closeCrossState && isMobile) && <CloseCrossBtn isSidebar={isSidebar} />}
