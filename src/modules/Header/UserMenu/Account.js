@@ -16,7 +16,7 @@ const Account = ({ onHover }) => {
       onMouseEnter={() => onHover(accountPop, 'block')}>
       {UserIcon}
       <span className="user-menu__my-account line-height-8">my account</span>
-      <span className="cursor-pointer">{ArrowDropdownMenu}</span>
+      <div className="cursor-pointer d-flex">{ArrowDropdownMenu}</div>
       <div
         className="user-menu__account-hover"
         onMouseLeave={() => onHover(accountPop, '')}

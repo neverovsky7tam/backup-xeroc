@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import { setSidebarMenu, setSidebarState, setMainContent, setCloseCross } from 'store/actions';
+import { setSidebarMenu, setSidebarState, setCloseCross } from 'store/actions';
 import { Filters } from './Menus/Filters';
 import { AccountContent, AccountBtn } from './Menus/Account';
 import { BalanceContent, BalanceBtn } from './Menus/Balance';
@@ -132,16 +133,8 @@ const SideBar = () => {
 
   const setMenu = (e) => {
     const currentMenu = e.currentTarget.dataset.menu;
-
-    if (currentMenu !== 'Account') dispatch(setSidebarMenu(currentMenu, prevMenu));
-    else {
-      if (isLogin) dispatch(setSidebarMenu(currentMenu, prevMenu));
-      else {
-        dispatch(setMainContent('log-in'));
-        dispatch(setSidebarMenu(currentMenu, prevMenu));
-        dispatch(setSidebarState(false));
-      }
-    }
+    dispatch(setSidebarMenu(currentMenu, prevMenu));
+    if (currentMenu === 'Account' && !isLogin) dispatch(setSidebarState(false));
   };
 
   return (
@@ -167,7 +160,11 @@ const SideBar = () => {
               onClick={setMenu}
               ref={accountBtn}>
               <div className="sidebar__nav-item-btn sidebar__nav-item-btn_acc">
-                {AuthIcon}
+                {
+                  (isLogin) ?
+                    (<div onClick={setMenu}>{AuthIcon}</div>) :
+                    (<Link to="/log-in">{AuthIcon}</Link>)
+                }
               </div>
             </li>
             <div className="menu-separate">

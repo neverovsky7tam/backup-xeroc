@@ -73,6 +73,11 @@
   justify-content: center;
 }
 
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
 .stop-scroll-y {
   height: 100vh;
   overflow: hidden;

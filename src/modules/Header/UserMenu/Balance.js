@@ -35,7 +35,7 @@ const Balance = ({ onHover }) => {
     <div
       className="user-menu__balance line-height-8"
       onMouseEnter={() => onHover(balancePop, 'block')}>
-      <BalanceIcon className="icon-balance cursor-pointer" />
+      <div className="icon-balance cursor-pointer">{BalanceIcon}</div>
       <div className="responsive-1919">
         <span>balance</span>
         <span className="user-menu__balance-currency">$</span>

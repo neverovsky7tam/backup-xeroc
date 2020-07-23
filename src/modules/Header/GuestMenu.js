@@ -6,14 +6,18 @@ const GuestMenu = () => {
   return (
     <>
       <button className="header__btn">
-        <span className="pencil-icon">{PencilIcon}</span>
-        <Link to="/sign-up">sign up</Link>
+        <Link to="/sign-up" className="vertical-center">
+          <div className="pencil-icon vertical-center">{PencilIcon}</div>
+          <span>sign up</span>
+        </Link>
       </button>
       <button
         className="header__btn"
         style={{ marginRight: '90px' }}>
-        <span className="login-icon">{LoginIcon}</span>
-        <Link to="/log-in">log in</Link>
+        <Link to="/log-in" className="vertical-center">
+          <div className="login-icon vertical-center">{LoginIcon}</div>
+          <span>log in</span>
+        </Link>
       </button>
     </>
   )

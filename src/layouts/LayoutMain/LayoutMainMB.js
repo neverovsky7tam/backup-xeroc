@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { setPageTopStyle } from 'store/actions';
 import PageTop from 'mod/PageTop';
 
-const LayoutMainMB = ({ children }) => {
+const LayoutMainMB = ({ children, isHomePage }) => {
   const dispatch = useDispatch();
 
   // scroll processing. hide/show 'page-top' component
@@ -60,7 +60,7 @@ const LayoutMainMB = ({ children }) => {
   // END scroll processing
 
   let wrapperClass = 'wrapper-mob';
-  if (children.type.name === 'OnSale') wrapperClass = 'home-mob';
+  if (isHomePage) wrapperClass = 'home-mob';
 
   return (
     <>
