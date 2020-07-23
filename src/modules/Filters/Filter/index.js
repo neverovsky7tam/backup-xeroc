@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import FilterHead from './FilterHead';
 import FilterMain from './FilterMain';
 import FilterSearch from './FilterSearch';
@@ -9,8 +10,9 @@ const Filter = ({ filterName, filterProps, checkHeight }) => {
   const [isSearch, setSearchExpand] = useState(false);
   const [itemsArr, setItemsArr] = useState([]);
 
+  const isMobile = useSelector((state) => state.deviceType);
   useEffect(() => {
-    checkHeight();
+    if (!isMobile) checkHeight();
   }, [isExpand]);
 
   return (

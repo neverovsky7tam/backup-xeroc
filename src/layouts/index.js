@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setDeviceType } from 'store/actions'
 import Header from 'mod/Header';
 import Footer from 'mod/Footer';
-import TermsCloseBtn from 'pages/Terms/modules/TermsCloseBtn';
+import PageCloseBtn from 'components/BlocksUI/Buttons/PageCloseBtn';
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
         {children}
       </main>
       {!isMobile && <Footer footerState={(termsCloseBtn) ? 'footer-mini' : 'footer-standart'} />}
-      {termsCloseBtn && <TermsCloseBtn />}
+      {termsCloseBtn && <PageCloseBtn cssClass="terms__close-btn" path={'/sign-up'} />}
     </>
   );
 };

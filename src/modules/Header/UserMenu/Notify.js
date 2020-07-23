@@ -11,7 +11,7 @@ const Notify = ({ onHover }) => {
     <div
       className="user-menu__notify d-flex"
       onMouseEnter={() => onHover(notifyPop, 'block')}>
-      <span className="cursor-pointer">{BellIcon}</span>
+      <div className="cursor-pointer d-flex">{BellIcon}</div>
       <div
         className="drop-menu"
         onMouseLeave={() => onHover(notifyPop, '')}

@@ -61,20 +61,22 @@
     .logo {
       cursor: pointer;
 
-      @media (min-width: 768px) {
-        height: auto;
-      }
+      svg {
+        @media (min-width: 768px) {
+          height: auto;
+        }
 
-      @media (max-width: 767px) {
-        height: 18.16px;
-      }
+        @media (max-width: 767px) {
+          height: 18.16px;
+        }
 
-      @media (max-width: 424px) {
-        height: 16.5px;
-      }
+        @media (max-width: 424px) {
+          height: 16.5px;
+        }
 
-      @media (max-width: 374px) {
-        height: 14.85px;
+        @media (max-width: 374px) {
+          height: 14.85px;
+        }
       }
     }
   }

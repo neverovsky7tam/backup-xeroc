@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
+import { setSidebarState } from 'store/actions';
 import MenuItems from 'mod/MainMenu';
 import OverlayMenu from 'mod/MainMenu/OverlayMenu';
 import SideBar from 'mod/SideBar';
@@ -8,8 +9,7 @@ import Cart from 'mod/Cart';
 import LangSwitcher from 'components/LangSwitcher/LangSwitcher';
 import CloseCrossBtn from 'components/BlocksUI/Buttons/CloseCrossBtn';
 import GuestMenu from './GuestMenu';
-import UserMenu from './UserMenu/UserMenu';
-import { setSidebarState } from 'store/actions';
+import UserMenu from './UserMenu';
 import { LogoIcon, BurgerBtn, ControlsMob } from 'svg/svgHeader';
 
 const Header = ({ isMobile }) => {
@@ -39,7 +39,7 @@ const Header = ({ isMobile }) => {
         {(closeCrossState && isMobile) && <CloseCrossBtn isSidebar={isSidebar} />}
         <div className="logo-wrapper d-flex align-items-center">
           <Link to="/">
-            <span className="logo">{LogoIcon}</span>
+            <div className="logo">{LogoIcon}</div>
           </Link>
           <LangSwitcher />
         </div>

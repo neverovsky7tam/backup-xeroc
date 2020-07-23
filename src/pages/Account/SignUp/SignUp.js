@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
+import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import { setAccountMenu, setMainContent, setTermsCloseBtn, setHeaderNavbarCssClass } from 'store/actions';
-import AuthCloseBtn from './AuthCloseBtn';
+import { setAccountMenu, setTermsCloseBtn, setHeaderNavbarCssClass } from 'store/actions';
 import { ButtonDark } from 'components/BlocksUI/Buttons/Buttons';
-import { onInputChange, checkInputValue, checkInputCorrect } from './inputs';
 import { BoxDecor } from 'components/Parts/BoxDecor';
+import PageCloseBtn from 'components/BlocksUI/Buttons/PageCloseBtn';
+import { onInputChange, checkInputValue, checkInputCorrect } from '../inputs';
 
-const SignUp = () => {
+const SignUp = ({ setConfirm }) => {
   const dispatch = useDispatch();
   const nameError = React.createRef();
   const lastnameError = React.createRef();
@@ -54,23 +55,13 @@ const SignUp = () => {
     };
     if (nextStep) {
       dispatch(setAccountMenu(true));
-      dispatch(setMainContent('general'));
+      setConfirm(true);
     };
-  };
-
-  const onTermsClick = () => {
-    dispatch(setMainContent('terms'));
-    dispatch(setTermsCloseBtn(true));
-  };
-
-  const onSwicher = (e) => {
-    e.preventDefault()
-    dispatch(setMainContent('log-in'));
   };
 
   return (
     <section className="auth-content">
-      <AuthCloseBtn />
+      <PageCloseBtn cssClass={'auth__close-btn'} path={'/'} />
       <h2>sign up</h2>
       <form className="auth-content__form" ref={form}>
         <div className="auth-content__input-wrapper">
@@ -142,24 +133,19 @@ const SignUp = () => {
       </form>
       <div className="auth-content__terms">
         By signing up, you agree to our&nbsp;
-          <a
-          href="#"
+        <Link
+          to="/terms"
           className="terms-link"
-          onClick={onTermsClick}>
+          onClick={() => dispatch(setTermsCloseBtn(true))}>
           Terms and Conditions
-          </a>
+        </Link>
       </div>
       <div className="auth-content__btn">
         <ButtonDark
           text={'Sign up'}
           func={globalCheck} />
       </div>
-      <a
-        className="auth-content__btn-switcher"
-        href="#"
-        onClick={onSwicher}>
-        Log in
-      </a>
+      <Link to="/log-in" className="auth-content__btn-switcher">Log in</Link>
     </section>
   );
 };

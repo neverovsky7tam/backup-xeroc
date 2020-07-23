@@ -1,25 +1,23 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { setMainContent } from 'store/actions';
+import { Link } from "react-router-dom";
 import { PencilIcon, LoginIcon } from 'svg/svgHeader';
 
 const GuestMenu = () => {
-  const dispatch = useDispatch();
-
   return (
     <>
-      <button
-        className="header__btn"
-        onClick={() => dispatch(setMainContent('sign-up'))}>
-        <span className="pencil-icon">{PencilIcon}</span>
-        sign up
+      <button className="header__btn">
+        <Link to="/sign-up" className="vertical-center">
+          <div className="pencil-icon vertical-center">{PencilIcon}</div>
+          <span>sign up</span>
+        </Link>
       </button>
       <button
         className="header__btn"
-        onClick={() => dispatch(setMainContent('log-in'))}
         style={{ marginRight: '90px' }}>
-        <span className="login-icon">{LoginIcon}</span>
-        log in
+        <Link to="/log-in" className="vertical-center">
+          <div className="login-icon vertical-center">{LoginIcon}</div>
+          <span>log in</span>
+        </Link>
       </button>
     </>
   )
