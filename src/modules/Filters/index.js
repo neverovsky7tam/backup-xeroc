@@ -1,5 +1,5 @@
 import React from 'react';
-import FiltersBlock from 'components/Filters/FiltersBlock';
+import FiltersBlock from './FiltersBlock';
 import Scroll from 'components/Scroll/Scroll';
 import { calcToScroll } from 'components/Scroll/Scroll';
 

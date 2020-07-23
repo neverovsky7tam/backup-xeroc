@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import TopSellers from 'components/TopSellers/TopSellers';
+import TopSellers from 'components/TopSellers';
 import { Diamond } from 'components/Parts/Parts';
 import { CloseIcon } from 'svg/svg';
 

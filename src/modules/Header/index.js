@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import MenuItems from 'components/MainMenu/MenuItems';
-import OverlayMenu from 'components/MainMenu/OverlayMenu';
-import SideBar from 'components/SideBar/SideBar';
+import MenuItems from 'mod/MainMenu';
+import OverlayMenu from 'mod/MainMenu/OverlayMenu';
+import SideBar from 'mod/SideBar';
+import Cart from 'mod/Cart';
 import LangSwitcher from 'components/LangSwitcher/LangSwitcher';
+import CloseCrossBtn from 'components/BlocksUI/Buttons/CloseCrossBtn';
 import GuestMenu from './GuestMenu';
 import UserMenu from './UserMenu/UserMenu';
-import Cart from 'components/Cart/Cart';
-import CloseCrossBtn from 'components/BlocksUI/Buttons/CloseCrossBtn';
 import { setSidebarState } from 'store/actions';
 import { LogoIcon, BurgerBtn, ControlsMob } from 'svg/svgHeader';
 

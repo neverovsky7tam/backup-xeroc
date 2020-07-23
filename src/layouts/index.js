@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setDeviceType } from 'store/actions'
-import Header from 'components/Header/Header';
-import Footer from 'components/Footer/Footer';
+import Header from 'mod/Header';
+import Footer from 'mod/Footer';
 import TermsCloseBtn from 'pages/Terms/modules/TermsCloseBtn';
 
 const Layout = ({ children }) => {

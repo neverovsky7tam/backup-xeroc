@@ -1,5 +1,5 @@
 import store from 'store/store';
-import { setOnSaleDisplay, setFiltersState, setFilterObj, setJointSearchObj, setFilterOrigin } from 'store/actions';
+import { setOnSaleDisplay, setFiltersState, setJointSearchObj, setFilterOrigin } from 'store/actions';
 import { sortedProducts } from 'data/productsProcessing';
 import { algorithmsSpecies, manufacturerSpecies, equipmentSpecies, coinsSpecies } from 'data/productsData';
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-//import { setGeneralBlockContent } from 'store/actions';
 import { MenuSeparate } from 'svg/svgHeader';
 
 const MenuItems = React.forwardRef(({ isOverlayMenu, setOverlayMenu, isSeparator, mobile }, items) => {

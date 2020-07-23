@@ -1,5 +1,5 @@
 import React from 'react';
-import Filters from 'components/Filters/Filters';
+import Filters from 'mod/Filters';
 import Listings from 'mod/Listings';
 import News from 'mod/News';
 
