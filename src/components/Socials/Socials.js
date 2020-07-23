@@ -1,10 +1,12 @@
 import React from 'react';
-import { hideDecor } from '../Parts/BoxDecor';
-import { BoxDecor } from '../Parts/BoxDecor';
-import { ReactComponent as FacebookIcon } from '../../assets/img/Social/facebook.svg';
-import { ReactComponent as TwitterIcon } from '../../assets/img/Social/twitter.svg';
-import { ReactComponent as YoutubeIcon } from '../../assets/img/Social/youtube.svg';
-import { ReactComponent as RedditIcon } from '../../assets/img/Social/reddit.svg';
+import { hideDecor } from 'components/Parts/BoxDecor';
+import { BoxDecor } from 'components/Parts/BoxDecor';
+import {
+  FacebookIcon,
+  TwitterIcon,
+  YoutubeIcon,
+  RedditIcon
+} from 'svg/svgSocials';
 
 export const Facebook = () => {
   const decorFacebook = React.createRef();
@@ -12,7 +14,7 @@ export const Facebook = () => {
     <a className="social__link" href="https://www.facebook.com/"
       onMouseEnter={() => hideDecor(decorFacebook, 'none')}
       onMouseLeave={() => hideDecor(decorFacebook, '')}>
-      <FacebookIcon style={{ width: '8.11px', height: '15px' }} />
+      <div className="d-flex" style={{ width: '8.11px', height: '15px' }}>{FacebookIcon}</div>
       <BoxDecor ref={decorFacebook} />
     </a>
   );
@@ -24,7 +26,7 @@ export const Twitter = () => {
     <a className="social__link" href="https://twitter.com/"
       onMouseEnter={() => hideDecor(decorTwitter, 'none')}
       onMouseLeave={() => hideDecor(decorTwitter, '')}>
-      <TwitterIcon style={{ width: '16px', height: '13px' }} />
+      <div className="d-flex" style={{ width: '16px', height: '13px' }}>{TwitterIcon}</div>
       <BoxDecor ref={decorTwitter} />
     </a>
   );
@@ -36,7 +38,7 @@ export const Youtube = () => {
     <a className="social__link" href="https://www.youtube.com/"
       onMouseEnter={() => hideDecor(decorYoutube, 'none')}
       onMouseLeave={() => hideDecor(decorYoutube, '')}>
-      <YoutubeIcon />
+      {YoutubeIcon}
       <BoxDecor ref={decorYoutube} />
     </a>
   );
@@ -48,7 +50,7 @@ export const Reddit = () => {
     <a className="social__link" href="https://www.reddit.com/"
       onMouseEnter={() => hideDecor(decorReddit, 'none')}
       onMouseLeave={() => hideDecor(decorReddit, '')}>
-      <RedditIcon />
+      {RedditIcon}
       <BoxDecor ref={decorReddit} />
     </a>
   );

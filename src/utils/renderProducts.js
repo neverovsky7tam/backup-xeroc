@@ -1,28 +1,24 @@
 import React from 'react';
-import store from '../store/store';
-import { setGeneralBlockContent, setCurrentProduct } from '../store/actions';
-import Ads from '../components/OnSale/Ads';
-
-const showDetails = (item) => {
-  store.dispatch(setCurrentProduct(item))
-  store.dispatch(setGeneralBlockContent('productDetails'));
-}
+import Ads from 'pages/Home/modules/Ads';
 
 const renderProducts = (ProductTemplate, data) => {
   const items = data.map((el, idx) => {
     if (el.type === 'banner') {
       return <Ads key={el.id} item={el} />
     } else {
+      const itemLink = el.title.replace(/\.+/g, '').replace(/\s+/g, '-');
+      const itemPath = `/product-details/${itemLink}/${el.id}`;
+
       const productProcess = productsProcessing(el);
 
       return <ProductTemplate
-        key={el.id}
+        key={idx}
         idx={idx}
         item={el}
         itemHash={productProcess.hash}
         itemPrice={productProcess.price}
         hashArr={productProcess.hashArr}
-        showDetails={showDetails} />;
+        itemPath={itemPath} />
     };
   });
 

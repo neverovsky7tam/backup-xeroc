@@ -1,5 +1,5 @@
 import React from 'react';
-import { BoxDecor } from '../Parts/BoxDecor';
+import { BoxDecor } from 'components/Parts/BoxDecor';
 
 export const RollingBlock = React.forwardRef(({ id, icon, header, span, actionIcon, hideIcon, toggleBlock, deleteBlock }, { rollingBlock, decor }) => {
   return (

@@ -1,15 +1,15 @@
 import {
+  SWITCH_LANG,
   SET_DEVICE_TYPE,
   SET_SIDEBAR_STATE,
   SET_SIDEBAR_MENU,
   SET_ON_SALE_DISPLAY,
   SET_PRODUCTS_LIST_TYPE,
-  CHANGE_LANG,
   SET_CLOSE_CROSS,
-  SET_PAGE_TOP_STATE,
+  SET_PAGE_TOP_STYLE,
+  SET_PAGE_TOP_CONTENT,
   SET_CAROUSEL_MENU_POS,
   SET_MAIN_CONTENT,
-  SET_GENERAL_BLOCK_CONTENT,
   SET_CURRENT_PRODUCT,
   SET_ACCOUNT_MENU,
   SET_TERMS_CLOSE_BTN,
@@ -28,9 +28,18 @@ import {
   SET_NOTIFICATIONS_DATA,
 } from '../actions';
 
-import { langEN } from '../../data/languages';
-import { productsObj } from '../../data/productsData';
-import { notificationsArr } from '../../data/notifications';
+import { langEN } from 'data/languages';
+import { productsObj } from 'data/productsData';
+import { notificationsArr } from 'data/notifications';
+
+export const langObj = (state = langEN, action) => {
+  switch (action.type) {
+    case SWITCH_LANG:
+      return action.lang;
+    default:
+      return state;
+  }
+}
 
 export const deviceType = (state = false, action) => {
   switch (action.type) {
@@ -78,15 +87,6 @@ export const productsListType = (state = true, action) => {
   }
 }
 
-export const langObj = (state = langEN, action) => {
-  switch (action.type) {
-    case CHANGE_LANG:
-      return action.lang;
-    default:
-      return state;
-  }
-}
-
 export const closeCrossState = (state = false, action) => {
   switch (action.type) {
     case SET_CLOSE_CROSS:
@@ -105,19 +105,6 @@ export const mainContent = (state = 'general', action) => {
   }
 }
 
-export const generalBlockContent = (state = { current: 'home', store: ['home'], }, action) => {
-  switch (action.type) {
-    case SET_GENERAL_BLOCK_CONTENT:
-      const newState = Object.assign({}, state);
-      newState.current = action.content;
-      newState.store.unshift(action.content);
-      newState.store.length = 2;
-      return newState;
-    default:
-      return state;
-  }
-}
-
 export const currentProduct = (state = null, action) => {
   switch (action.type) {
     case SET_CURRENT_PRODUCT:
@@ -127,11 +114,19 @@ export const currentProduct = (state = null, action) => {
   }
 }
 
-export const pageTopState = (state = { content: null, additionCssClass: '' }, action) => {
+export const pageTopStyle = (state = null, action) => {
   switch (action.type) {
-    case SET_PAGE_TOP_STATE:
-      const newState = Object.assign(state, action.state);
-      return newState;
+    case SET_PAGE_TOP_STYLE:
+      return action.style;
+    default:
+      return state;
+  }
+}
+
+export const pageTopContent = (state = null, action) => {
+  switch (action.type) {
+    case SET_PAGE_TOP_CONTENT:
+      return action.content;
     default:
       return state;
   }

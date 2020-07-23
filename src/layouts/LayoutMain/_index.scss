@@ -1,0 +1,27 @@
+.general {
+  display: flex;
+  height: 100%;
+  margin: 0 90px;
+}
+
+.general__center {
+  position: relative;
+  flex-grow: 1;
+
+  @media (min-width: 1440px) {
+    padding-right: 31px;
+  }
+
+  @media (max-width: 1439px) {
+    padding-right: 30px;
+  }
+}
+
+.wrapper-mob {
+  padding: 0 15px 15px;
+}
+
+.home-mob {
+  margin-right: 15px;
+  padding: 0;
+}

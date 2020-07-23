@@ -10,7 +10,12 @@ module.exports = [
             alias: {
               'components': './src/components',
               'data': './src/data',
+              'svg': './src/data/SVG',
               'store': './src/store',
+              'pages': './src/pages',
+              'layouts': './src/layouts',
+              'mod': './src/modules',
+              'utils': './src/utils',
             },
           },
         ],
