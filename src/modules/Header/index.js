@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
+import { setSidebarState } from 'store/actions';
 import MenuItems from 'mod/MainMenu';
 import OverlayMenu from 'mod/MainMenu/OverlayMenu';
 import SideBar from 'mod/SideBar';
@@ -9,7 +10,6 @@ import LangSwitcher from 'components/LangSwitcher/LangSwitcher';
 import CloseCrossBtn from 'components/BlocksUI/Buttons/CloseCrossBtn';
 import GuestMenu from './GuestMenu';
 import UserMenu from './UserMenu/UserMenu';
-import { setSidebarState } from 'store/actions';
 import { LogoIcon, BurgerBtn, ControlsMob } from 'svg/svgHeader';
 
 const Header = ({ isMobile }) => {

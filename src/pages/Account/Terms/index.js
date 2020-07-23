@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setHeaderNavbarCssClass, setTermsCloseBtn } from 'store/actions';
-import { TermsEN } from './modules/TermsEN';
+import { TermsEN } from './TermsEN';
 
 const Terms = () => {
   const scrollBox = React.createRef();

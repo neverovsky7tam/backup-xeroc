@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setAccountMenu, setMainContent, setTermsCloseBtn, setHeaderNavbarCssClass } from 'store/actions';
-import AuthCloseBtn from './AuthCloseBtn';
 import { ButtonDark } from 'components/BlocksUI/Buttons/Buttons';
-import { onInputChange, checkInputValue, checkInputCorrect } from './inputs';
 import { BoxDecor } from 'components/Parts/BoxDecor';
+import PageCloseBtn from 'components/BlocksUI/Buttons/PageCloseBtn';
+import { onInputChange, checkInputValue, checkInputCorrect } from '../inputs';
 
 const SignUp = () => {
   const dispatch = useDispatch();
@@ -70,7 +70,7 @@ const SignUp = () => {
 
   return (
     <section className="auth-content">
-      <AuthCloseBtn />
+      <PageCloseBtn cssClass={'auth__close-btn'} path={'/'} />
       <h2>sign up</h2>
       <form className="auth-content__form" ref={form}>
         <div className="auth-content__input-wrapper">

@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { renderCoinInfoItems } from './CoinInfo';
 import Container from 'components/BlocksUI/Container';
 import { SquareBtn } from 'components/BlocksUI/Buttons/Buttons';
+import { BoxDecor } from 'components/Parts/BoxDecor';
 import {
   CloseCross,
   GreenArrow,
@@ -14,7 +15,6 @@ import {
   BtnLine,
   BtnChart
 } from 'svg/svgProductDetails';
-import { BoxDecor } from 'components/Parts/BoxDecor';
 
 const CoinAbout = ({ coin, item, currentHash }) => {
   const [electricityCost, setElectricityCost] = useState(0.17);

@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setMainContent, setAccountMenu, setHeaderNavbarCssClass } from 'store/actions';
-import AuthCloseBtn from './AuthCloseBtn';
 import { ButtonDark } from 'components/BlocksUI/Buttons/Buttons';
-import SocialAuth from './SocialAuth';
-import { onInputChange } from './inputs';
 import { BoxDecor } from 'components/Parts/BoxDecor';
+import PageCloseBtn from 'components/BlocksUI/Buttons/PageCloseBtn';
+import SocialAuth from '../modules/SocialAuth';
+import { onInputChange } from '../inputs';
 
 const LogIn = () => {
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ const LogIn = () => {
 
   return (
     <section className="auth-content">
-      <AuthCloseBtn />
+      <PageCloseBtn cssClass={'auth__close-btn'} path={'/'} />
       <h2>log in</h2>
       <SocialAuth />
       <div className="auth-content__or">or</div>

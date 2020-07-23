@@ -16,7 +16,6 @@
 @import "../components/Parts/parts";
 @import "../components/LangSwitcher/lang-switcher";
 @import "../components/Socials/socials";
-@import "../components/Auth/auth";
 @import "../components/ViewSwitcher";
 @import "../components/Scroll/scroll";
 @import "../components/Select/select";
@@ -48,6 +47,7 @@
 @import "../pages/ProductDetails/modules/OnSale/on-sale-MB";
 @import "../pages/ProductDetails/modules/ProductsSlider";
 @import "../pages/ProductDetails/modules/Specifications";
-@import "../pages/Terms";
+@import "../pages/Account";
+@import "../pages/Account/Terms";
 
 @import "../layouts/LayoutMain/";
