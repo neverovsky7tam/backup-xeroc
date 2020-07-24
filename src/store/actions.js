@@ -11,7 +11,7 @@ export const SET_CAROUSEL_MENU_POS = "SET_CAROUSEL_MENU_POS";
 export const SET_MAIN_CONTENT = "SET_MAIN_CONTENT";
 export const SET_CURRENT_PRODUCT = "CURRENT_PRODUCT";
 export const SET_ACCOUNT_MENU = "SET_ACCOUNT_MENU";
-export const SET_TERMS_CLOSE_BTN = "SET_TERMS_CLOSE_BTN";
+export const SET_FOOTER_STATE = "SET_FOOTER_STATE";
 export const SET_HEADER_NAVBAR_CSS_CLASS = "SET_HEADER_NAVBAR_CSS_CLASS";
 export const SET_LISTINGS_SECTION_CSS_CLASS = "SET_LISTINGS_SECTION_CSS_CLASS";
 export const SET_ELECTRICITY_VALUE = "SET_ELECTRICITY_VALUE";
@@ -91,9 +91,9 @@ export const setAccountMenu = (isLogin) => ({
   isLogin,
 });
 
-export const setTermsCloseBtn = (val) => ({
-  type: SET_TERMS_CLOSE_BTN,
-  isOpen: val,
+export const setFooterState = (cond) => ({
+  type: SET_FOOTER_STATE,
+  cond,
 });
 
 export const setHeaderNavbarCssClass = (val) => ({

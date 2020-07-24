@@ -12,7 +12,7 @@ import {
   SET_MAIN_CONTENT,
   SET_CURRENT_PRODUCT,
   SET_ACCOUNT_MENU,
-  SET_TERMS_CLOSE_BTN,
+  SET_FOOTER_STATE,
   SET_HEADER_NAVBAR_CSS_CLASS,
   SET_LISTINGS_SECTION_CSS_CLASS,
   SET_ELECTRICITY_VALUE,
@@ -150,10 +150,10 @@ export const accountMenu = (state = false, action) => {
   }
 }
 
-export const termsCloseBtn = (state = false, action) => {
+export const footerState = (state = 'footer-standart', action) => {
   switch (action.type) {
-    case SET_TERMS_CLOSE_BTN:
-      return action.isOpen;
+    case SET_FOOTER_STATE:
+      return action.cond;
     default:
       return state;
   }
