@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Scroll, { calcToScroll } from 'components/Scroll/Scroll';
+import Scroll, { calcToScroll } from 'components/Scroll';
 import Controls from './modules/Controls';
 import OnSale from './modules/OnSale/OnSaleDT';
 import DescriptionShipping from './modules/DescriptionShipping';

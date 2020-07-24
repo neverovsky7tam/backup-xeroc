@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setCloseCross, setPageTopContent } from 'store/actions';
+import StickyTitleBlock from 'components/BlocksUI/StickyTitleBlock';
 import TitleBlock from 'components/BlocksUI/TitleBlock';
 import OnSale from './modules/OnSale/OnSaleMB';
 import DescriptionShipping from './modules/DescriptionShipping';
@@ -40,10 +41,9 @@ const ProductDetailsMB = ({ item }) => {
   return (
     <>
       <div className={showOnSale ? "details details_onsale" : "details-collapse"}>
-        <TitleBlock
+        <StickyTitleBlock
           text={'On sale'}
           icon={showOnSale ? <span className="toggle-arrow">{ToggleArrow}</span> : <span className="dots">{Dots}</span>}
-          style={{ marginTop: '0' }}
           func={() => setOnSale(!showOnSale)} />
         {
           showOnSale &&
@@ -54,31 +54,28 @@ const ProductDetailsMB = ({ item }) => {
         }
       </div>
       <div className={showDescription ? "details" : "details-collapse"}>
-        <TitleBlock
+        <StickyTitleBlock
           text={'Description & Shipping details'}
           icon={showDescription ? <span className="toggle-arrow">{ToggleArrow}</span> : <span className="dots">{Dots}</span>}
-          style={{ marginTop: '0' }}
           func={() => setDescription(!showDescription)} />
         {showDescription && <DescriptionShipping item={item} />}
       </div>
       <div className={showSpecifications ? "details" : "details-collapse"}>
-        <TitleBlock
+        <StickyTitleBlock
           text={'Specifications'}
           icon={showSpecifications ? <span className="toggle-arrow">{ToggleArrow}</span> : <span className="dots">{Dots}</span>}
-          style={{ marginTop: '0' }}
           func={() => setSpecifications(!showSpecifications)} />
         {showSpecifications && <Specifications item={item} />}
       </div>
       <div className={showCoins ? "details" : "details-collapse"}>
-        <TitleBlock
+        <StickyTitleBlock
           text={'Minable coins'}
           icon={showCoins ? <span className="toggle-arrow">{ToggleArrow}</span> : <span className="dots">{Dots}</span>}
-          style={{ marginTop: '0' }}
           func={() => setCoinsDisplay(!showCoins)} />
         {showCoins && <Coins item={item} currentHash={currentHash} />}
       </div>
       <div className={showRelated ? "details" : "details-collapse"}>
-        <div className="d-flex">
+        <div className="sticky-header d-flex">
           <TitleBlock
             text={'Related products'}
             icon={showRelated ? <span className="toggle-arrow">{ToggleArrow}</span> : <span className="dots">{Dots}</span>}
@@ -89,7 +86,7 @@ const ProductDetailsMB = ({ item }) => {
         {showRelated && <ProductsSlider items={relatedItem} />}
       </div>
       <div className={showRecently ? "details" : "details-collapse"}>
-        <div className="d-flex">
+        <div className="sticky-header d-flex">
           <TitleBlock
             text={'Recently viewed'}
             icon={showRecently ? <span className="toggle-arrow">{ToggleArrow}</span> : <span className="dots">{Dots}</span>}

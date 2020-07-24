@@ -1,12 +1,6 @@
 @import "./coin-about";
 @import "./coin-info";
 
-.wrapper-mob {
-  .coins {
-    margin-top: 15px;
-  }
-}
-
 .coins__control {
   display: grid;
   grid-template-columns: 145px 145px;

@@ -5,9 +5,8 @@ import renderProducts from 'utils/renderProducts';
 import ProductTile from 'components/ProductTile';
 import ProductTileMobile from 'components/ProductTileMobile';
 import { ProductListHead, ProductList } from 'components/ProductList';
-import Scroll from 'components/Scroll/Scroll';
+import Scroll, { calcToScroll } from 'components/Scroll';
 import ViewSwitcher from 'components/ViewSwitcher';
-import { calcToScroll } from 'components/Scroll/Scroll';
 import { AdsSvg } from 'svg/svgAds';
 
 const OnSale = () => {

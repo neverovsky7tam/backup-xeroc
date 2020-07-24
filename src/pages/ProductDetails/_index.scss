@@ -65,4 +65,16 @@
   .details-collapse {
     margin-bottom: 15px;
   }
+
+  .sticky-header {
+    position: sticky;
+    top: 103px;
+    padding: 1px 0 15px;
+    background: #0b0c23;
+    z-index: 55;
+
+    @media (max-width: 374px) {
+      top: 87px;
+    }
+  }
 }

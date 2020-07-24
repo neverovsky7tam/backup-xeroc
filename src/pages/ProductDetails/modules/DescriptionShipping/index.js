@@ -10,7 +10,7 @@ const DescriptionShipping = ({ item }) => {
   if (isMobile) {
     return (
       <>
-        <Container style={{ marginTop: '15px' }}>
+        <Container>
           <Description item={item} />
         </Container>
         <Container style={{ marginTop: '15px' }}>
