@@ -1,11 +1,14 @@
 .terms__close-btn {
   position: absolute;
-  display: flex;
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 101;
   cursor: pointer;
+
+  a {
+    display: flex;
+  }
 
   svg {
     width: 20px;
@@ -24,29 +27,19 @@
 }
 
 .terms {
-  position: relative;
-  top: -25px;
+  position: absolute;
+  top: 140px;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: calc(100vh - 160px);
+  height: calc(100vh - 140px);
   margin: auto;
-  overflow: hidden;
 
   @media (min-width: 768px) {
+    position: relative;
     top: 0;
     width: 642px;
     height: 100%;
-  }
-
-  .terms__footer-gradient {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 78px;
-    background: linear-gradient(180deg, rgba(11, 12, 35, 0) 0%, #0b0c23 100%);
-    z-index: 41;
   }
 
   .terms__header {
@@ -60,25 +53,32 @@
 
   .terms-body {
     position: relative;
-    height: 100%;
-    margin: 0 30px 55px;
+    height: calc(100% - 160px);
+    margin: 0 30px;
     overflow: hidden;
 
     @media (min-width: 768px) {
+      height: 100%;
       margin: 0;
-    }
-
-    @media (max-width: 424px) {
-      margin-bottom: 53px;
-    }
-
-    @media (max-width: 374px) {
-      margin-bottom: 50px;
     }
 
     .text-underline-desctop {
       @media (min-width: 768px) {
         text-decoration: underline;
+      }
+    }
+
+    .terms__footer-gradient {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 78px;
+      background: linear-gradient(180deg, rgba(11, 12, 35, 0) 0%, #0b0c23 100%);
+      z-index: 41;
+
+      @media (min-width: 768px) {
+        bottom: 78px;
       }
     }
   }

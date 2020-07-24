@@ -1,9 +1,8 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setDeviceType } from 'store/actions'
 import Header from 'mod/Header';
 import Footer from 'mod/Footer';
-import PageCloseBtn from 'components/BlocksUI/Buttons/PageCloseBtn';
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
@@ -12,16 +11,13 @@ const Layout = ({ children }) => {
   if (isMobile) dispatch(setDeviceType(true));
   else dispatch(setDeviceType(false));
 
-  const termsCloseBtn = useSelector((state) => state.termsCloseBtn);
-
   return (
     <>
       <Header isMobile={isMobile} />
       <main className="main">
         {children}
       </main>
-      {!isMobile && <Footer footerState={(termsCloseBtn) ? 'footer-mini' : 'footer-standart'} />}
-      {termsCloseBtn && <PageCloseBtn cssClass="terms__close-btn" path={'/sign-up'} />}
+      {!isMobile && <Footer />}
     </>
   );
 };

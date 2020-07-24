@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import FeedbackPopup from './FeedbackPopup';
 import AwardsPopup from './AwardsPopup';
 import { Facebook, Twitter, Youtube, Reddit } from 'components/Socials';
+import PageCloseBtn from 'components/BlocksUI/Buttons/PageCloseBtn';
 import { RatingStar } from 'svg/svg';
 import { AchieveGold, AchieveSilver, AchievePlatinum, AchieveBronze } from 'svg/svgAchievement';
 
-const Footer = ({ footerState }) => {
+const Footer = () => {
   const feedbackPop = React.createRef();
   const awardsPop = React.createRef();
+
+  const cssClass = useSelector((state) => state.footerState);
 
   const onHover = (element, action) => {
     element.current.style.display = action;
@@ -23,7 +27,7 @@ const Footer = ({ footerState }) => {
   }
 
   return (
-    <footer className={footerState}>
+    <footer className={cssClass}>
       <div className="footer-inner p-relative d-flex justify-content-between">
         <div
           className="feedback p-relative d-flex"
@@ -86,6 +90,7 @@ const Footer = ({ footerState }) => {
             onHover={onHoverAwards} />
         </div>
       </div>
+      {cssClass === 'footer-mini' && <PageCloseBtn cssClass="terms__close-btn" path={'/sign-up'} />}
     </footer >
   )
 }

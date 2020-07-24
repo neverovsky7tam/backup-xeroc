@@ -43,7 +43,7 @@ const ProductDetailsMB = ({ item }) => {
       <div className={showOnSale ? "details details_onsale" : "details-collapse"}>
         <StickyTitleBlock
           text={'On sale'}
-          icon={showOnSale ? <span className="toggle-arrow">{ToggleArrow}</span> : <span className="dots">{Dots}</span>}
+          icon={showOnSale ? <span className="dots">{Dots}</span> : <span className="toggle-arrow">{ToggleArrow}</span>}
           func={() => setOnSale(!showOnSale)} />
         {
           showOnSale &&
@@ -56,21 +56,21 @@ const ProductDetailsMB = ({ item }) => {
       <div className={showDescription ? "details" : "details-collapse"}>
         <StickyTitleBlock
           text={'Description & Shipping details'}
-          icon={showDescription ? <span className="toggle-arrow">{ToggleArrow}</span> : <span className="dots">{Dots}</span>}
+          icon={showDescription ? <span className="dots">{Dots}</span> : <span className="toggle-arrow">{ToggleArrow}</span>}
           func={() => setDescription(!showDescription)} />
         {showDescription && <DescriptionShipping item={item} />}
       </div>
       <div className={showSpecifications ? "details" : "details-collapse"}>
         <StickyTitleBlock
           text={'Specifications'}
-          icon={showSpecifications ? <span className="toggle-arrow">{ToggleArrow}</span> : <span className="dots">{Dots}</span>}
+          icon={showSpecifications ? <span className="dots">{Dots}</span> : <span className="toggle-arrow">{ToggleArrow}</span>}
           func={() => setSpecifications(!showSpecifications)} />
         {showSpecifications && <Specifications item={item} />}
       </div>
       <div className={showCoins ? "details" : "details-collapse"}>
         <StickyTitleBlock
           text={'Minable coins'}
-          icon={showCoins ? <span className="toggle-arrow">{ToggleArrow}</span> : <span className="dots">{Dots}</span>}
+          icon={showCoins ? <span className="dots">{Dots}</span> : <span className="toggle-arrow">{ToggleArrow}</span>}
           func={() => setCoinsDisplay(!showCoins)} />
         {showCoins && <Coins item={item} currentHash={currentHash} />}
       </div>
@@ -78,7 +78,7 @@ const ProductDetailsMB = ({ item }) => {
         <div className="sticky-header d-flex">
           <TitleBlock
             text={'Related products'}
-            icon={showRelated ? <span className="toggle-arrow">{ToggleArrow}</span> : <span className="dots">{Dots}</span>}
+            icon={showRelated ? <span className="dots">{Dots}</span> : <span className="toggle-arrow">{ToggleArrow}</span>}
             style={{ marginTop: '0' }}
             func={() => setRelatedDisplay(!showRelated)} />
           <ProductsSliderControls items={relatedProducts} setItem={setRelatedItem} />
@@ -89,7 +89,7 @@ const ProductDetailsMB = ({ item }) => {
         <div className="sticky-header d-flex">
           <TitleBlock
             text={'Recently viewed'}
-            icon={showRecently ? <span className="toggle-arrow">{ToggleArrow}</span> : <span className="dots">{Dots}</span>}
+            icon={showRecently ? <span className="dots">{Dots}</span> : <span className="toggle-arrow">{ToggleArrow}</span>}
             style={{ marginTop: '0' }}
             func={() => setRecentlyDisplay(!showRecently)} />
           <ProductsSliderControls items={recentlyProducts} setItem={setRecentlyItem} />

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import { setAccountMenu, setTermsCloseBtn, setHeaderNavbarCssClass } from 'store/actions';
+import { setAccountMenu, setHeaderNavbarCssClass } from 'store/actions';
 import { ButtonDark } from 'components/BlocksUI/Buttons/Buttons';
 import { BoxDecor } from 'components/Parts/BoxDecor';
 import PageCloseBtn from 'components/BlocksUI/Buttons/PageCloseBtn';
@@ -135,8 +135,7 @@ const SignUp = ({ setConfirm }) => {
         By signing up, you agree to our&nbsp;
         <Link
           to="/terms"
-          className="terms-link"
-          onClick={() => dispatch(setTermsCloseBtn(true))}>
+          className="terms-link">
           Terms and Conditions
         </Link>
       </div>

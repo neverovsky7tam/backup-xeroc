@@ -34,18 +34,18 @@ export const NotificationsContent = () => {
       block.firstElementChild.style = '';
       arrowHolder.style = '';
       block.dataset.state = 0;
-    }
+    };
   };
 
   const deleteBlock = (rollingBlock) => {
     const elementID = +rollingBlock.current.dataset.id;
     const newArr = notifications.filter((el) => el.id !== elementID);
     dispatch(setNotificationsData(newArr));
-  }
+  };
 
   let notificationElements = (
     <MainBlockMob
-      icon={<NotificationEmptyIcon />}
+      icon={NotificationEmptyIcon}
       header={'There are no notifications'}
       span={'Check the settings below'}
       styleInner={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', borderColor: 'rgba(255, 255, 255, 0.1)' }} />
@@ -70,7 +70,7 @@ export const NotificationsContent = () => {
           deleteBlock={() => deleteBlock(rollingBlock)} />
       );
     });
-  }
+  };
 
   return (
     <>
@@ -83,10 +83,9 @@ export const NotificationsContent = () => {
 };
 
 export const NotificationsBtn = () => {
+  const dispatch = useDispatch();
   const notifications = useSelector((state) => state.notificationsData);
   const btnState = (notifications.length) ? true : false;
-
-  const dispatch = useDispatch();
 
   const clearAll = () => {
     dispatch(setNotificationsData([]));
@@ -97,8 +96,7 @@ export const NotificationsBtn = () => {
       {btnState && <ButtonMain
         text={'Clear all'}
         func={clearAll} />}
-      <ButtonMain
-        text={'Settings'} />
+      <ButtonMain text={'Settings'} />
     </div>
   );
 };
