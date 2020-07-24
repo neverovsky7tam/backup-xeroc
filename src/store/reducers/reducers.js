@@ -9,7 +9,6 @@ import {
   SET_PAGE_TOP_STYLE,
   SET_PAGE_TOP_CONTENT,
   SET_CAROUSEL_MENU_POS,
-  SET_MAIN_CONTENT,
   SET_CURRENT_PRODUCT,
   SET_ACCOUNT_MENU,
   SET_FOOTER_STATE,
@@ -91,15 +90,6 @@ export const closeCrossState = (state = false, action) => {
   switch (action.type) {
     case SET_CLOSE_CROSS:
       return action.param;
-    default:
-      return state;
-  }
-}
-
-export const mainContent = (state = 'general', action) => {
-  switch (action.type) {
-    case SET_MAIN_CONTENT:
-      return action.content;
     default:
       return state;
   }

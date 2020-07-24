@@ -8,7 +8,6 @@ export const SET_CLOSE_CROSS = "SET_CLOSE_CROSS";
 export const SET_PAGE_TOP_STYLE = "SET_PAGE_TOP_STYLE";
 export const SET_PAGE_TOP_CONTENT = "SET_PAGE_TOP_CONTENT";
 export const SET_CAROUSEL_MENU_POS = "SET_CAROUSEL_MENU_POS";
-export const SET_MAIN_CONTENT = "SET_MAIN_CONTENT";
 export const SET_CURRENT_PRODUCT = "CURRENT_PRODUCT";
 export const SET_ACCOUNT_MENU = "SET_ACCOUNT_MENU";
 export const SET_FOOTER_STATE = "SET_FOOTER_STATE";
@@ -74,11 +73,6 @@ export const setPageTopContent = (content) => ({
 export const setCarouselMenuPos = (pos, itemIndex) => ({
   type: SET_CAROUSEL_MENU_POS,
   store: { pos, itemIndex },
-});
-
-export const setMainContent = (content) => ({
-  type: SET_MAIN_CONTENT,
-  content,
 });
 
 export const setCurrentProduct = (product) => ({

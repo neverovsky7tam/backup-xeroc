@@ -15,6 +15,7 @@
 }
 
 .seller-info__person {
+  position: relative;
   padding-bottom: 26px;
 
   @media (max-width: 1768px) {
@@ -29,6 +30,9 @@
 
   .seller-img-holder {
     position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
 
     @media (min-width: 768px) {
       margin-right: 20px;
@@ -48,7 +52,7 @@
   .seller-img-holder__chat {
     position: absolute;
     top: 55%;
-    right: 41%;
+    right: -15%;
     cursor: pointer;
 
     @media (min-width: 768px) {
