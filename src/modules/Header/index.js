@@ -6,7 +6,7 @@ import MenuItems from 'mod/MainMenu';
 import OverlayMenu from 'mod/MainMenu/OverlayMenu';
 import SideBar from 'mod/SideBar';
 import Cart from 'mod/Cart';
-import LangSwitcher from 'components/LangSwitcher/LangSwitcher';
+import LangSwitcher from 'components/LangSwitcher';
 import CloseCrossBtn from 'components/BlocksUI/Buttons/CloseCrossBtn';
 import GuestMenu from './GuestMenu';
 import UserMenu from './UserMenu';

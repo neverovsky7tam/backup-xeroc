@@ -1,7 +1,6 @@
 import React from 'react';
 import FiltersBlock from './FiltersBlock';
-import Scroll from 'components/Scroll/Scroll';
-import { calcToScroll } from 'components/Scroll/Scroll';
+import Scroll, { calcToScroll } from 'components/Scroll';
 
 const Filters = () => {
   const scrollThumb = React.createRef();

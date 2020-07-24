@@ -3,7 +3,7 @@ import { productsProcessing } from 'utils/renderProducts';
 import TitleBlock from 'components/BlocksUI/TitleBlock';
 import DropList from 'components/BlocksUI/DropList';
 import { ButtonMain } from 'components/BlocksUI/Buttons/Buttons';
-import { Facebook, Twitter, Reddit } from 'components/Socials/Socials';
+import { Facebook, Twitter, Reddit } from 'components/Socials';
 import { BoxDecor } from 'components/Parts/BoxDecor';
 import { ProductStar, ProductHalfStar, ToggleArrow } from 'svg/svg';
 

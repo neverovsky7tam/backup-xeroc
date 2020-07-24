@@ -8,7 +8,7 @@ const TitleBlock = ({ text, icon, func, style }) => {
       className="title-block main-font"
       style={style}>
       <div className="title-block__inner">
-        <span>{text}</span>
+        <h4>{text}</h4>
         {
           icon &&
           <ActionPlace icon={icon} func={func} />

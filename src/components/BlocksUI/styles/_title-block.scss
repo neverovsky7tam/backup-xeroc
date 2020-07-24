@@ -30,3 +30,19 @@
   align-items: center;
   border: 1px solid $secondary_bg;
 }
+
+.sticky-title-block {
+  position: sticky;
+  top: 103px;
+  padding-bottom: 15px;
+  background: #0b0c23;
+  z-index: 55;
+  
+  @media (max-width: 374px) {
+    top: 87px;
+  }
+
+  .title-block {
+    margin-top: 0;
+  }
+}

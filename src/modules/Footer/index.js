@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import FeedbackPopup from './FeedbackPopup';
 import AwardsPopup from './AwardsPopup';
-import { Facebook, Twitter, Youtube, Reddit } from 'components/Socials/Socials';
+import { Facebook, Twitter, Youtube, Reddit } from 'components/Socials';
 import { RatingStar } from 'svg/svg';
 import { AchieveGold, AchieveSilver, AchievePlatinum, AchieveBronze } from 'svg/svgAchievement';
 

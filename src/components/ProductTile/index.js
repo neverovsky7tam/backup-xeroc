@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import Select from 'components/Select/Select';
+import Select from 'components/Select';
 import { ButtonMain, ButtonDark } from 'components/BlocksUI/Buttons/Buttons';
 import { BoxDecor } from 'components/Parts/BoxDecor';
 import { ProductStar, ProductHalfStar } from 'svg/svg';

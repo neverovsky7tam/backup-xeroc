@@ -2,7 +2,7 @@ import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { setListingsSectionCssClass } from 'store/actions';
-import Select from 'components/Select/Select';
+import Select from 'components/Select';
 import { ButtonMain } from 'components/BlocksUI/Buttons/Buttons';
 import { BoxDecor } from 'components/Parts/BoxDecor';
 import {
