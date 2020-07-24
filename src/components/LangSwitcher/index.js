@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { switchLang } from 'store/actions';
 import { langEN, langCH } from 'data/languages';
 import { Diamond } from 'components/Parts/Parts';
-import { Planet } from 'svg/svgHeader';
 
 const LangSwitcher = () => {
   const langModal = React.createRef();
@@ -30,7 +29,6 @@ const LangSwitcher = () => {
     <div
       className="lang-menu d-flex align-items-center cursor-pointer"
       onMouseEnter={() => onHover(langModal, 'block')}>
-      {Planet}
       <button
         className="lang-menu__btn cursor-pointer header__btn">
         {currentLang.lang}
