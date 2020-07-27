@@ -36,23 +36,26 @@ const Terms = () => {
   };
 
   return (
-    <section className="terms">
-      <div className="overflow-hidden">
-        <div className="terms__header">
-          <h2>privacy policy</h2>
-        </div>
-        <div className="terms-body">
-          <div
-            className="scroll-container"
-            ref={scrollBox}
-            onScroll={calcScrollTop}>
-            <TermsEN />
+    <div className="terms-wrapper">
+      <section className="terms">
+        <div className="terms__inner">
+          <div className="terms__header">
+            <h2>privacy policy</h2>
           </div>
-          <div className="terms__footer-gradient" ref={gradientBlock}></div>
+          <div className="terms-body">
+            <div
+              className="scroll-container"
+              style={{ width: '100%' }}
+              ref={scrollBox}
+              onScroll={calcScrollTop}>
+              <TermsEN />
+            </div>
+            <div className="terms__footer-gradient" ref={gradientBlock}></div>
+          </div>
         </div>
-      </div>
-      {isMobile && <PageCloseBtn cssClass="terms__close-btn" path={'/sign-up'} />}
-    </section>
+        {isMobile && <PageCloseBtn cssClass="terms__close-btn" path={'/sign-up'} />}
+      </section>
+    </div>
   );
 };
 
