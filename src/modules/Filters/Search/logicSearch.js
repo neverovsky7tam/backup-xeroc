@@ -18,10 +18,10 @@ export const calcPrevResult = () => {
           length = searchObj[key].data.length;
           compareArr = searchObj[key].data;
           compareName = key;
-        };
-      };
-    };
-  };
+        }
+      }
+    }
+  }
 
   let result = [];
   if (length === null) {

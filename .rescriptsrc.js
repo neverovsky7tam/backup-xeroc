@@ -22,4 +22,10 @@ module.exports = [
       ],
     },
   ],
+  [
+    'use-eslint-config',
+    {
+      extends: ['airbnb'], // 'airbnb' || 'react-app' or any other config
+    },
+  ],
 ]
