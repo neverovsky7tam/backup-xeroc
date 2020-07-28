@@ -31,6 +31,10 @@
   top: 0;
   width: 100%;
   height: 100%;
+
+  @media (min-width: 768px) {
+    position: static;
+  }
 }
 
 .terms {
@@ -44,6 +48,7 @@
     top: 0;
     width: 642px;
     height: 100%;
+    margin: auto;
   }
 
   .terms__inner {
@@ -65,8 +70,9 @@
     margin: 0 30px;
 
     @media (min-width: 768px) {
-      height: 100%;
+      height: calc(100% - 78px);
       margin: 0;
+      overflow: hidden;
     }
 
     .text-underline-desctop {
@@ -83,10 +89,6 @@
       height: 78px;
       background: linear-gradient(180deg, rgba(11, 12, 35, 0) 0%, #0b0c23 100%);
       z-index: 41;
-
-      @media (min-width: 768px) {
-        bottom: 78px;
-      }
     }
   }
 

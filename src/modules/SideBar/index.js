@@ -94,8 +94,6 @@ const SideBar = () => {
   };
 
   useEffect(() => {
-    const root = document.getElementById('root');
-    root.classList.add('stop-scroll-y');
     const navBar = navInner.current.children;
     let currentElem = null;
     let prevElem = null;
@@ -121,10 +119,6 @@ const SideBar = () => {
       setMenuState(prevElem, '#c4c4c4', false);
     };
     setMenuState(currentElem, '#fff', true);
-
-    return () => {
-      root.classList.remove('stop-scroll-y');
-    }
   });
 
   useEffect(() => {
@@ -139,118 +133,120 @@ const SideBar = () => {
   };
 
   return (
-    <div className="sidebar">
-      <div className="sidebar__menu">
-        <nav className="sidebar__nav">
-          <ul className="sidebar__nav-inner" ref={navInner}>
-            <div className="menu-separate"></div>
-            <li
-              className="sidebar__nav-item"
-              data-menu="Filters"
-              onClick={setMenu}>
-              <div className="sidebar__nav-item-btn sidebar__nav-item-btn_filters">
-                {FiltersIcon}
-              </div>
-            </li>
-            <div className="menu-separate">
-              {MenuSeparate}
-            </div>
-            <li
-              className="sidebar__nav-item"
-              data-menu="Account"
-              onClick={setMenu}
-              ref={accountBtn}>
-              <div className="sidebar__nav-item-btn sidebar__nav-item-btn_acc">
-                {
-                  (isLogin) ?
-                    (<div onClick={setMenu}>{AuthIcon}</div>) :
-                    (<Link to="/log-in">{AuthIcon}</Link>)
-                }
-              </div>
-            </li>
-            <div className="menu-separate">
-              {MenuSeparate}
-            </div>
-            {
-              isLogin &&
-              <>
-                <li
-                  className="sidebar__nav-item"
-                  data-menu="Balance"
-                  onClick={setMenu}>
-                  <div className="sidebar__nav-item-btn sidebar__nav-item-btn_balance">
-                    {BalanceIcon}
-                  </div>
-                </li>
-                <div className="menu-separate">
-                  {MenuSeparate}
+    <div className="sidebar-wrapper">
+      <div className="sidebar">
+        <div className="sidebar__menu">
+          <nav className="sidebar__nav">
+            <ul className="sidebar__nav-inner" ref={navInner}>
+              <div className="menu-separate"></div>
+              <li
+                className="sidebar__nav-item"
+                data-menu="Filters"
+                onClick={setMenu}>
+                <div className="sidebar__nav-item-btn sidebar__nav-item-btn_filters">
+                  {FiltersIcon}
                 </div>
-                <li
-                  className="sidebar__nav-item"
-                  data-menu="Notifications"
-                  onClick={setMenu}>
-                  <div className="sidebar__nav-item-btn sidebar__nav-item_notification p-relative">
-                    {NotificationIcon}
-                    <div className="notification-quantity">{notificationCounter}</div>
-                  </div>
-                </li>
-                <div className="menu-separate">
-                  {MenuSeparate}
+              </li>
+              <div className="menu-separate">
+                {MenuSeparate}
+              </div>
+              <li
+                className="sidebar__nav-item"
+                data-menu="Account"
+                onClick={setMenu}
+                ref={accountBtn}>
+                <div className="sidebar__nav-item-btn sidebar__nav-item-btn_acc">
+                  {
+                    (isLogin) ?
+                      (<div onClick={setMenu}>{AuthIcon}</div>) :
+                      (<Link to="/log-in">{AuthIcon}</Link>)
+                  }
                 </div>
-              </>
-            }
-            <li
-              className="sidebar__nav-item"
-              data-menu="Social"
-              onClick={setMenu}>
-              <div className="sidebar__nav-item-btn sidebar__nav-item-btn_social">
-                {FacebookIcon}
+              </li>
+              <div className="menu-separate">
+                {MenuSeparate}
               </div>
-            </li>
-            <div className="menu-separate">
-              {MenuSeparate}
-            </div>
-            <li
-              className="sidebar__nav-item"
-              data-menu="Sellers"
-              onClick={setMenu}>
-              <div className="sidebar__nav-item-btn sidebar__nav-item-btn_sellers">
-                {TopSellersIcon}
+              {
+                isLogin &&
+                <>
+                  <li
+                    className="sidebar__nav-item"
+                    data-menu="Balance"
+                    onClick={setMenu}>
+                    <div className="sidebar__nav-item-btn sidebar__nav-item-btn_balance">
+                      {BalanceIcon}
+                    </div>
+                  </li>
+                  <div className="menu-separate">
+                    {MenuSeparate}
+                  </div>
+                  <li
+                    className="sidebar__nav-item"
+                    data-menu="Notifications"
+                    onClick={setMenu}>
+                    <div className="sidebar__nav-item-btn sidebar__nav-item_notification p-relative">
+                      {NotificationIcon}
+                      <div className="notification-quantity">{notificationCounter}</div>
+                    </div>
+                  </li>
+                  <div className="menu-separate">
+                    {MenuSeparate}
+                  </div>
+                </>
+              }
+              <li
+                className="sidebar__nav-item"
+                data-menu="Social"
+                onClick={setMenu}>
+                <div className="sidebar__nav-item-btn sidebar__nav-item-btn_social">
+                  {FacebookIcon}
+                </div>
+              </li>
+              <div className="menu-separate">
+                {MenuSeparate}
               </div>
-            </li>
-            <div className="menu-separate">
-              {MenuSeparate}
-            </div>
-            <li
-              className="sidebar__nav-item"
-              data-menu="Awards"
-              onClick={setMenu}>
-              <div className="sidebar__nav-item-btn sidebar__nav-item-btn_awards">
-                {AwardsIcon}
+              <li
+                className="sidebar__nav-item"
+                data-menu="Sellers"
+                onClick={setMenu}>
+                <div className="sidebar__nav-item-btn sidebar__nav-item-btn_sellers">
+                  {TopSellersIcon}
+                </div>
+              </li>
+              <div className="menu-separate">
+                {MenuSeparate}
               </div>
-            </li>
-            <div className="menu-separate">
-              {MenuSeparate}
-            </div>
-            <li
-              className="sidebar__nav-item"
-              data-menu="Lang"
-              onClick={setMenu}>
-              <div className="sidebar__nav-item-btn sidebar__nav-item-btn_lang">
-                {LanguageIcon}
+              <li
+                className="sidebar__nav-item"
+                data-menu="Awards"
+                onClick={setMenu}>
+                <div className="sidebar__nav-item-btn sidebar__nav-item-btn_awards">
+                  {AwardsIcon}
+                </div>
+              </li>
+              <div className="menu-separate">
+                {MenuSeparate}
               </div>
-            </li>
-            <div className="menu-separate"></div>
-          </ul>
-        </nav>
-      </div>
-      <div className="sidebar__content">
-        <div className={contentCssClass}>
-          {content}
+              <li
+                className="sidebar__nav-item"
+                data-menu="Lang"
+                onClick={setMenu}>
+                <div className="sidebar__nav-item-btn sidebar__nav-item-btn_lang">
+                  {LanguageIcon}
+                </div>
+              </li>
+              <div className="menu-separate"></div>
+            </ul>
+          </nav>
         </div>
-        {buttons &&
-          <div className="sidebar__buttons-holder">{buttons}</div>
-        }
+        <div className="sidebar__content">
+          <div className={contentCssClass}>
+            {content}
+          </div>
+          {buttons &&
+            <div className="sidebar__buttons-holder">{buttons}</div>
+          }
+        </div>
       </div>
     </div>
   );

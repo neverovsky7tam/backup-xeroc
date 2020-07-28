@@ -44,8 +44,7 @@ const Terms = () => {
           </div>
           <div className="terms-body">
             <div
-              className="scroll-container"
-              style={{ width: '100%' }}
+              className={isMobile ? 'scroll-container w-100' : 'scroll-container'}
               ref={scrollBox}
               onScroll={calcScrollTop}>
               <TermsEN />
