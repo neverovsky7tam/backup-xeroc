@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
+import store from 'store/store';
 import { setSidebarState, setCloseCross } from 'store/actions';
 import { CloseCross } from 'svg/svg';
 
-const CloseCrossBtn = ({ isSidebar }) => {
+const CloseCrossBtn = () => {
   const dispatch = useDispatch();
+  const isSidebar = store.getState().sidebarState;
 
   const closeAction = () => {
     if (isSidebar) dispatch(setSidebarState(false));

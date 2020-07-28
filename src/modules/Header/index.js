@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setSidebarState } from 'store/actions';
 import MenuItems from 'mod/MainMenu';
 import OverlayMenu from 'mod/MainMenu/OverlayMenu';
-import SideBar from 'mod/SideBar';
 import Cart from 'mod/Cart';
 import LangSwitcher from 'components/LangSwitcher';
 import CloseCrossBtn from 'components/BlocksUI/Buttons/CloseCrossBtn';
@@ -18,7 +17,6 @@ const Header = ({ isMobile }) => {
 
   const headerNavbarClassName = useSelector((state) => state.headerNavbarCssClass);
   const isLogin = useSelector((state) => state.accountMenu);
-  const isSidebar = useSelector((state) => state.sidebarState);
   const closeCrossState = useSelector((state) => state.closeCrossState);
 
   const burgerClick = (e) => {
@@ -36,7 +34,7 @@ const Header = ({ isMobile }) => {
             <div className="d-flex" onClick={() => dispatch(setSidebarState(true))}>{ControlsMob}</div>
           </button>
         }
-        {(closeCrossState && isMobile) && <CloseCrossBtn isSidebar={isSidebar} />}
+        {(closeCrossState && isMobile) && <CloseCrossBtn />}
         <div className="logo-wrapper d-flex align-items-center">
           <Link to="/">
             <div className="logo">{LogoIcon}</div>
@@ -67,7 +65,6 @@ const Header = ({ isMobile }) => {
         </div>
       </div>
       {overlayMenu && <OverlayMenu setOverlayMenu={setOverlayMenu} />}
-      {isSidebar && <SideBar />}
     </header>
   );
 };
