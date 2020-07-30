@@ -6,7 +6,6 @@ import { MenuSeparate } from 'svg/svgHeader';
 
 const UserMenu = () => {
   const onHover = (element, state) => {
-    console.log('check', element, state);
     element.current.style.display = state;
   }
 

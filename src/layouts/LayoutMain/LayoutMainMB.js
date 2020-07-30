@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setPageTopStyle } from 'store/actions';
-import PageTop from 'mod/PageTop';
 
 const LayoutMainMB = ({ children, isHomePage }) => {
   const dispatch = useDispatch();
@@ -59,18 +58,16 @@ const LayoutMainMB = ({ children, isHomePage }) => {
   }, []);
   // END scroll processing
 
+
   let wrapperClass = 'wrapper-mob';
   if (isHomePage) wrapperClass = 'home-mob';
 
   return (
-    <>
-      <PageTop />
-      <div
-        className={wrapperClass}
-        onTouchEnd={onTouchEnd}>
-        {children}
-      </div>
-    </>
+    <div
+      className={wrapperClass}
+      onTouchEnd={onTouchEnd}>
+      {children}
+    </div>
   );
 };
 

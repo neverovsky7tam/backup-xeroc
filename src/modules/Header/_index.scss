@@ -104,18 +104,13 @@
   }
 }
 
-.header__navbar_terms,
-.header__navbar_auth {
+.header__navbar_terms {
   @media (max-width: 767px) {
     .controls-btn,
     .cart {
       visibility: hidden;
     }
   }
-}
-
-.header__navbar_auth {
-  padding-bottom: 169px;
 }
 
 .main-menu {
@@ -146,6 +141,11 @@
 
 .account-menu {
   position: relative;
+  width: 20px;
+
+  @media (min-width: 768px) {
+    width: initial;
+  }
 }
 
 .account-menu__btn-group {

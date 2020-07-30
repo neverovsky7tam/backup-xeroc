@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setCloseCross, setPageTopContent } from 'store/actions';
+import { setCloseCrossLeft, setPageTopContent } from 'store/actions';
 import StickyTitleBlock from 'components/BlocksUI/StickyTitleBlock';
 import TitleBlock from 'components/BlocksUI/TitleBlock';
 import OnSale from './modules/OnSale/OnSaleMB';
@@ -34,8 +34,9 @@ const ProductDetailsMB = ({ item }) => {
   }, [item]);
 
   useEffect(() => {
-    dispatch(setCloseCross(true));
+    dispatch(setCloseCrossLeft(true));
     dispatch(setPageTopContent('Details'));
+    return () => dispatch(setCloseCrossLeft(false));
   }, []);
 
   return (

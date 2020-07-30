@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import { setSidebarState } from 'store/actions';
-import MenuItems from 'mod/MainMenu';
+import { setSidebarState, setCloseCrossRight } from 'store/actions';
+import MenuItems from 'mod/MainMenu/MenuItems';
 import OverlayMenu from 'mod/MainMenu/OverlayMenu';
 import Cart from 'mod/Cart';
 import LangSwitcher from 'components/LangSwitcher';
@@ -17,11 +17,17 @@ const Header = ({ isMobile }) => {
 
   const headerNavbarClassName = useSelector((state) => state.headerNavbarCssClass);
   const isLogin = useSelector((state) => state.accountMenu);
-  const closeCrossState = useSelector((state) => state.closeCrossState);
+  const closeCrossLeft = useSelector((state) => state.closeCrossLeft);
+  const closeCrossRight = useSelector((state) => state.closeCrossRight);
 
   const burgerClick = (e) => {
     e.preventDefault();
     setOverlayMenu(true);
+  };
+
+  const onSidebarClick = () => {
+    dispatch(setSidebarState(true));
+    if (closeCrossRight) dispatch(setCloseCrossRight(false));
   };
 
   return (
@@ -29,12 +35,12 @@ const Header = ({ isMobile }) => {
       <div
         className={headerNavbarClassName}>
         {
-          (!closeCrossState && isMobile) &&
+          (!closeCrossLeft && isMobile) &&
           <button className="controls-btn controls-btn_open">
-            <div className="d-flex" onClick={() => dispatch(setSidebarState(true))}>{ControlsMob}</div>
+            <div className="d-flex" onClick={onSidebarClick}>{ControlsMob}</div>
           </button>
         }
-        {(closeCrossState && isMobile) && <CloseCrossBtn />}
+        {(closeCrossLeft && isMobile) && <CloseCrossBtn />}
         <div className="logo-wrapper d-flex align-items-center">
           <Link to="/">
             <div className="logo">{LogoIcon}</div>
@@ -59,9 +65,12 @@ const Header = ({ isMobile }) => {
               {isLogin ? <UserMenu /> : <GuestMenu />}
             </div>
           }
-          <div className="cart d-flex align-items-center">
-            <Cart isLogin={isLogin} />
-          </div>
+          {(closeCrossRight && isMobile) ?
+            <CloseCrossBtn /> :
+            (<div className="cart d-flex align-items-center">
+              <Cart isLogin={isLogin} />
+            </div>)
+          }
         </div>
       </div>
       {overlayMenu && <OverlayMenu setOverlayMenu={setOverlayMenu} />}

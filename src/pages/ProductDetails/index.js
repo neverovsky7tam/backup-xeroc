@@ -22,6 +22,7 @@ const ProductDetails = () => {
   let prevLink = null;
   let nextLink = null;
   let prevPath = null;
+
   let nextPath = null;
 
   if (itemIndex === 0) {

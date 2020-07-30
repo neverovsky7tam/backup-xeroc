@@ -4,6 +4,7 @@ import { setDeviceType } from 'store/actions'
 import Header from 'mod/Header';
 import SideBar from 'mod/SideBar';
 import Footer from 'mod/Footer';
+import PageTop from 'mod/PageTop';
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
@@ -25,7 +26,6 @@ const Layout = ({ children }) => {
 
       return () => {
         root.classList.remove('stop-scroll-y');
-        console.log('check', main);
         mainBlock.style = '';
       }
     }
@@ -36,6 +36,7 @@ const Layout = ({ children }) => {
       <Header isMobile={isMobile} />
       {isSidebar && <SideBar />}
       <main className="main" ref={main}>
+        {isMobile && <PageTop />}
         {children}
       </main>
       {!isMobile && <Footer />}

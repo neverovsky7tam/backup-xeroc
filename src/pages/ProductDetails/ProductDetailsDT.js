@@ -35,7 +35,6 @@ const ProductDetailsDT = ({ item, links }) => {
           setCurrentHash={setCurrentHash} />
       </section>
       <div className="details__right">
-        {/* <Controls links={links} /> */}
         <div
           className="scroll-container"
           style={{ paddingRight: '1px' }}

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import { setSidebarMenu, setSidebarState, setCloseCross } from 'store/actions';
+import { setSidebarMenu, setSidebarState, setCloseCrossLeft } from 'store/actions';
 import { Filters } from './Menus/Filters';
 import { AccountContent, AccountBtn } from './Menus/Account';
 import { BalanceContent, BalanceBtn } from './Menus/Balance';
@@ -122,8 +122,8 @@ const SideBar = () => {
   });
 
   useEffect(() => {
-    dispatch(setCloseCross(true));
-    return () => dispatch(setCloseCross(false));
+    dispatch(setCloseCrossLeft(true));
+    return () => dispatch(setCloseCrossLeft(false));
   }, []);
 
   const setMenu = (e) => {

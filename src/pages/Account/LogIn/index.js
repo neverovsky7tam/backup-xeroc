@@ -1,33 +1,36 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
-import { setAccountMenu, setHeaderNavbarCssClass, setSidebarState } from 'store/actions';
-import { ButtonDark } from 'components/BlocksUI/Buttons/Buttons';
+import { setAccountMenu, setSidebarState, setPageTopContent, setCloseCrossRight } from 'store/actions';
+import { ButtonMain } from 'components/BlocksUI/Buttons/Buttons';
 import { BoxDecor } from 'components/Parts/BoxDecor';
-import PageCloseBtn from 'components/BlocksUI/Buttons/PageCloseBtn';
 import SocialAuth from '../modules/SocialAuth';
 import { onInputChange } from '../inputs';
+import LayoutMain from 'layouts/LayoutMain';
+import AccountMenu from 'pages/Account/modules/AccountMenu';
+
+export const useAuthPage = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setPageTopContent(AccountMenu));
+    dispatch(setCloseCrossRight(true));
+    return () => dispatch(setCloseCrossRight(false));
+  }, []);
+};
 
 const LogIn = () => {
   const dispatch = useDispatch();
   const isMobile = useSelector((state) => state.deviceType);
-
-  useEffect(() => {
-    dispatch(setHeaderNavbarCssClass('header__navbar header__navbar_auth'));
-    return () => {
-      dispatch(setHeaderNavbarCssClass('header__navbar'));
-    }
-  });
 
   const success = () => {
     dispatch(setAccountMenu(true));
     if (isMobile) dispatch(setSidebarState(true));
   };
 
-  return (
-    <section className="auth-content">
-      <PageCloseBtn cssClass={'auth__close-btn'} path={'/'} />
-      <h2>log in</h2>
+  useAuthPage();
+
+  const content = (
+    <div className="auth-content">
       <SocialAuth />
       <div className="auth-content__or">or</div>
       <form className="auth-content__form">
@@ -56,14 +59,15 @@ const LogIn = () => {
         </a>
       </div>
       <div className="auth-content__btn">
-        <ButtonDark
+        <ButtonMain
           func={success}>
           <Link to="/" className="link-to">Log in</Link>
-        </ButtonDark>
+        </ButtonMain>
       </div>
-      <Link to="/sign-up" className="auth-content__btn-switcher">Sign up</Link>
-    </section>
-  );
+    </div>);
+
+  if (isMobile) return (<LayoutMain>{content}</LayoutMain>);
+  else return content;
 };
 
 export default LogIn;
