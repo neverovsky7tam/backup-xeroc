@@ -118,6 +118,15 @@ export const Dots = (
   </svg>
 );
 
+export const NotFound = (
+  <svg width="46" height="50" viewBox="0 0 46 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fillRule="evenodd" clipRule="evenodd" d="M13.8119 3.9296C5.92934 5.54666 0 12.519 0 20.8782C0 30.4409 7.75071 38.1918 17.3108 38.1918C26.8649 38.1918 34.6215 30.4411 34.6215 20.8782C34.6215 20.3298 34.596 19.7875 34.546 19.2522L32.8502 19.3778C32.8974 19.8716 32.9215 20.372 32.9215 20.8782C32.9215 29.502 25.9262 36.4918 17.3108 36.4918C8.68979 36.4918 1.7 29.5022 1.7 20.8782C1.7 13.3981 6.96567 7.14857 13.9939 5.62887L13.8119 3.9296Z" fill="white" />
+    <path d="M29.2803 33.6028L37.1964 41.2083L45.1126 48.8139" stroke="white" strokeWidth="1.7" strokeMiterlimit="10" strokeLinecap="round" />
+    <path d="M21.4927 4.40292L30.3078 13.218" stroke="white" strokeWidth="1.7" strokeMiterlimit="10" strokeLinecap="round" />
+    <path d="M30.3032 4.40765L21.4871 13.2238" stroke="white" strokeWidth="1.7" strokeMiterlimit="10" strokeLinecap="round" />
+  </svg>
+);
+
 export const USAFlag = (
   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     viewBox="0 0 512 512" style={{ enableBackground: 'new 0 0 512 512' }} space="preserve">

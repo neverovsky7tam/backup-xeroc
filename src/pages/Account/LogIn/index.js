@@ -31,6 +31,7 @@ const LogIn = () => {
 
   const content = (
     <div className="auth-content">
+      {!isMobile && <h2>log in</h2>}
       <SocialAuth />
       <div className="auth-content__or">or</div>
       <form className="auth-content__form">

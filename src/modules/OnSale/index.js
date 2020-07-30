@@ -5,6 +5,7 @@ import renderProducts from 'utils/renderProducts';
 import ProductTile from 'components/ProductTile';
 import ProductTileMobile from 'components/ProductTileMobile';
 import { ProductListHead, ProductList } from 'components/ProductList';
+import NoProducts from 'components/NoProducts';
 import Scroll, { calcToScroll } from 'components/Scroll';
 import ViewSwitcher from 'components/ViewSwitcher';
 import { AdsSvg } from 'svg/svgAds';
@@ -38,8 +39,8 @@ const OnSale = () => {
   };
 
   const productsObj = useSelector((state) => state.productsDisplay);
-  const plugTextMarginLeft = (view) ? '30px' : '0';
-  let content = <p style={{ marginLeft: plugTextMarginLeft }}>Sorry. No products to display</p>;
+  // const plugTextMarginLeft = (view) ? '30px' : '0';
+  let content = <NoProducts view={view} />
 
   if (productsObj.length) {
     const data = productsObj.slice();
