@@ -1,14 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import CarouselMenu from 'mod/MainMenu/CarouselMenu';
+import CarouselMenu from 'components/CarouselMenu';
 
 const PageTop = () => {
-  const stateContent = useSelector((state) => state.pageTopContent);
+  const pageTopContent = useSelector((state) => state.pageTopContent);
   const stateStyle = useSelector((state) => state.pageTopStyle);
 
-  let content = <CarouselMenu />;
-  if (typeof stateContent === 'string') {
-    content = (<h2 className="page-top__title">{stateContent}</h2>);
+  let content = <CarouselMenu Content={pageTopContent} />;
+  if (typeof pageTopContent === 'string') {
+    content = (<h2 className="page-top__title">{pageTopContent}</h2>);
   };
   const cssClass = (stateStyle) ? `page-top ${stateStyle}` : 'page-top';
 

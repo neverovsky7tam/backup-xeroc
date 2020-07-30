@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route } from 'react-router-dom';
 import Layout from 'layouts';
 import Home from 'pages/Home';
 import ProductDetails from 'pages/ProductDetails';
@@ -16,6 +16,10 @@ const App = () => {
         <Route path="/sign-up"><SignUp /></Route>
         <Route path="/log-in"><LogIn /></Route>
         <Route path="/terms"><Terms /></Route>
+        <Route path="/sell"><Home /></Route>
+        <Route path="/host"><Home /></Route>
+        <Route path="/about"><Home /></Route>
+        <Route path="/support"><Home /></Route>
       </Switch>
     </Layout>
   );

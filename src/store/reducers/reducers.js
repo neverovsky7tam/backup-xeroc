@@ -5,10 +5,10 @@ import {
   SET_SIDEBAR_MENU,
   SET_ON_SALE_DISPLAY,
   SET_PRODUCTS_LIST_TYPE,
-  SET_CLOSE_CROSS,
+  SET_CLOSE_CROSS_LEFT,
+  SET_CLOSE_CROSS_RIGHT,
   SET_PAGE_TOP_STYLE,
   SET_PAGE_TOP_CONTENT,
-  SET_CAROUSEL_MENU_POS,
   SET_CURRENT_PRODUCT,
   SET_ACCOUNT_MENU,
   SET_FOOTER_STATE,
@@ -30,6 +30,7 @@ import {
 import { langEN } from 'data/languages';
 import { productsObj } from 'data/productsData';
 import { notificationsArr } from 'data/notifications';
+import MenuItems from 'mod/MainMenu/MenuItems';
 
 export const langObj = (state = langEN, action) => {
   switch (action.type) {
@@ -86,9 +87,18 @@ export const productsListType = (state = true, action) => {
   }
 }
 
-export const closeCrossState = (state = false, action) => {
+export const closeCrossLeft = (state = false, action) => {
   switch (action.type) {
-    case SET_CLOSE_CROSS:
+    case SET_CLOSE_CROSS_LEFT:
+      return action.param;
+    default:
+      return state;
+  }
+}
+
+export const closeCrossRight = (state = false, action) => {
+  switch (action.type) {
+    case SET_CLOSE_CROSS_RIGHT:
       return action.param;
     default:
       return state;
@@ -113,19 +123,10 @@ export const pageTopStyle = (state = null, action) => {
   }
 }
 
-export const pageTopContent = (state = null, action) => {
+export const pageTopContent = (state = MenuItems, action) => {
   switch (action.type) {
     case SET_PAGE_TOP_CONTENT:
       return action.content;
-    default:
-      return state;
-  }
-}
-
-export const carouselMenuPos = (state = { pos: null, itemIndex: null }, action) => {
-  switch (action.type) {
-    case SET_CAROUSEL_MENU_POS:
-      return action.store;
     default:
       return state;
   }

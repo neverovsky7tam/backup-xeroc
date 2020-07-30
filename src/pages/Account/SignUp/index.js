@@ -9,7 +9,6 @@ const CheckConfirmation = () => {
     return (
       <Route
         render={({ location }) => {
-          console.log('loc', location);
           return (
             <Redirect
               to={{

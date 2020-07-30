@@ -3,11 +3,12 @@ import { useDispatch } from 'react-redux';
 import { setPageTopContent } from 'store/actions';
 import LayoutMain from 'layouts/LayoutMain';
 import OnSale from 'mod/OnSale';
+import MenuItems from 'mod/MainMenu/MenuItems';
 
 const Home = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(setPageTopContent(null))
+    dispatch(setPageTopContent(MenuItems));
   });
 
   return (

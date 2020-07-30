@@ -40,7 +40,7 @@
 
 .magic-header {
   position: sticky;
-  top: 0;
+  top: -1px;
   width: calc(100% + 1px);
   height: 48px;
   background-color: $main_bg;

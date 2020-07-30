@@ -4,10 +4,10 @@ export const SET_SIDEBAR_STATE = "SET_SIDEBAR_STATE";
 export const SET_SIDEBAR_MENU = "SET_SIDEBAR_MENU";
 export const SET_ON_SALE_DISPLAY = "SET_ON_SALE_DISPLAY";
 export const SET_PRODUCTS_LIST_TYPE = "SET_PRODUCTS_LIST_TYPE";
-export const SET_CLOSE_CROSS = "SET_CLOSE_CROSS";
+export const SET_CLOSE_CROSS_LEFT = "SET_CLOSE_CROSS_LEFT";
+export const SET_CLOSE_CROSS_RIGHT = "SET_CLOSE_CROSS_RIGHT";
 export const SET_PAGE_TOP_STYLE = "SET_PAGE_TOP_STYLE";
 export const SET_PAGE_TOP_CONTENT = "SET_PAGE_TOP_CONTENT";
-export const SET_CAROUSEL_MENU_POS = "SET_CAROUSEL_MENU_POS";
 export const SET_CURRENT_PRODUCT = "CURRENT_PRODUCT";
 export const SET_ACCOUNT_MENU = "SET_ACCOUNT_MENU";
 export const SET_FOOTER_STATE = "SET_FOOTER_STATE";
@@ -55,8 +55,13 @@ export const setProductsListType = (isGridView) => ({
   isGridView,
 });
 
-export const setCloseCross = (param) => ({
-  type: SET_CLOSE_CROSS,
+export const setCloseCrossLeft = (param) => ({
+  type: SET_CLOSE_CROSS_LEFT,
+  param,
+});
+
+export const setCloseCrossRight = (param) => ({
+  type: SET_CLOSE_CROSS_RIGHT,
   param,
 });
 
@@ -68,11 +73,6 @@ export const setPageTopStyle = (style) => ({
 export const setPageTopContent = (content) => ({
   type: SET_PAGE_TOP_CONTENT,
   content,
-});
-
-export const setCarouselMenuPos = (pos, itemIndex) => ({
-  type: SET_CAROUSEL_MENU_POS,
-  store: { pos, itemIndex },
 });
 
 export const setCurrentProduct = (product) => ({

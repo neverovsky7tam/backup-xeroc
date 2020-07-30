@@ -1,9 +1,11 @@
 .auth-content {
-  position: relative;
-  top: 54px;
-  margin: 0 30px 30px;
+  margin: 0 15px 45px;
   text-align: center;
   text-transform: uppercase;
+
+  @media (max-width: 374px) {
+    margin-bottom: 30px;
+  }
 
   @media (min-width: 768px) {
     position: absolute;
@@ -16,8 +18,6 @@
   }
 
   .auth-content__social-wrapper {
-    margin-top: 87px;
-
     @media (min-width: 768px) {
       margin-top: 38px;
     }
@@ -117,8 +117,6 @@
   }
 
   .auth-content__form {
-    margin-top: 39px;
-
     .auth-content__input-wrapper {
       position: relative;
 

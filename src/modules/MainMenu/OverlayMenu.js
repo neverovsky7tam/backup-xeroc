@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuItems from './';
+import MenuItems from './MenuItems';
 import { CloseCross } from 'svg/svgHeader';
 
 const OverlayMenu = ({ setOverlayMenu }) => {

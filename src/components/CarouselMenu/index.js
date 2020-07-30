@@ -1,8 +1,6 @@
-import React, { useState, useLayoutEffect, useEffect } from 'react';
-import store from 'store/store';
-import { useDispatch, useSelector } from 'react-redux';
-import { setCarouselMenuPos } from 'store/actions';
-import MenuItems from './';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useHistory, useLocation } from 'react-router-dom';
 
 let initPosition = null;
 let touchStart = null;
@@ -15,17 +13,13 @@ let scrolledToLeft = null;
 let isMove = false;
 let lang = null;
 
-const CarouselMenu = () => {
+const CarouselMenu = ({ Content }) => {
+  const history = useHistory();
   const [pos, setPos] = useState(0);
 
   const items = React.createRef();
-  const dispatch = useDispatch();
-
-  const storePosition = store.getState().carouselMenuPos.pos;
-  const storeItemIndex = store.getState().carouselMenuPos.itemIndex;
-  const currentLang = useSelector((state) => state.langObj.lang);
-
   // if a language was changed
+  const currentLang = useSelector((state) => state.langObj.lang);
   useEffect(() => {
     if (lang) {
       let initPos = items.current.children[currentItemIndex].clientWidth / 2;
@@ -44,24 +38,53 @@ const CarouselMenu = () => {
     lang = currentLang;
   }, [currentLang]);
 
-  useLayoutEffect(() => {
-    if (storePosition === null) {
-      currentItemIndex = 0;
-      initPosition = items.current.children[0].clientWidth / 2;
-      stopPos = initPosition;
-    } else {
-      currentItemIndex = storeItemIndex;
-      stopPos = storePosition;
-      initPosition = storePosition;
-    }
+  const setInitPosition = () => {
+    const currentLocation = history.location.pathname;
+    const elements = Array.from(items.current.children);
+
+    elements.forEach((el, idx) => {
+      if (el.dataset.link === currentLocation) currentItemIndex = idx;
+    });
+    if (currentItemIndex === null) currentItemIndex = 0;
+
+    let prevItemsLength = 0;
+    let index = currentItemIndex;
+    while (index > 0) {
+      index -= 1;
+      prevItemsLength += items.current.children[index].clientWidth;
+      items.current.children[currentItemIndex].classList.remove('active');
+    };
+    scrolledToLeft = prevItemsLength;
+
+    initPosition = (items.current.children[currentItemIndex].clientWidth / 2) + prevItemsLength;
+    stopPos = initPosition;
 
     setPos(initPosition);
     items.current.children[currentItemIndex].classList.add('active');
+  }
+
+  useEffect(() => {
+    setInitPosition();
 
     return () => {
-      dispatch(setCarouselMenuPos(initPosition, currentItemIndex));
-    }
-  }, []);
+      initPosition = null;
+      touchStart = null;
+      touchStartY = null;
+      currentItemIndex = null;
+      rightBreakpoint = null;
+      leftBreakpoint = null;
+      stopPos = null;
+      scrolledToLeft = null;
+      isMove = false;
+      lang = null;
+    };
+  }, [Content]);
+
+  const { pathname } = useLocation();
+  useEffect(() => {
+    const currentItemPath = items.current.children[currentItemIndex].dataset.link;
+    if (pathname !== currentItemPath) setInitPosition();
+  }, [pathname]);
 
   const onTouchStart = (e) => {
     const breakPointDistance = items.current.children[currentItemIndex].clientWidth / 2;
@@ -102,12 +125,15 @@ const CarouselMenu = () => {
         const currentItemLeftLocation = screenMedian + leftBreakpoint;
         if (touch > currentItemRightLocation) Scroll('to-left');
         if (touch < currentItemLeftLocation) Scroll('to-right');
-      } else return
-    };
+      } else return;
+    }
 
     initPosition = stopPos;
     setPos(stopPos);
-  }
+
+    const link = items.current.children[currentItemIndex].dataset.link;
+    history.push(link);
+  };
 
   const Scroll = (side) => {
     if (side === 'to-left') {
@@ -145,7 +171,7 @@ const CarouselMenu = () => {
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}>
-      <MenuItems ref={items} mobile={true} />
+      <Content ref={items} />
     </div>
   );
 };

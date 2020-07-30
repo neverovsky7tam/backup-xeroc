@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
-import { useDispatch } from 'react-redux';
-import { setAccountMenu, setHeaderNavbarCssClass } from 'store/actions';
-import { ButtonDark } from 'components/BlocksUI/Buttons/Buttons';
+import { useDispatch, useSelector } from 'react-redux';
+import { setAccountMenu } from 'store/actions';
+import { ButtonMain } from 'components/BlocksUI/Buttons/Buttons';
 import { BoxDecor } from 'components/Parts/BoxDecor';
-import PageCloseBtn from 'components/BlocksUI/Buttons/PageCloseBtn';
 import { onInputChange, checkInputValue, checkInputCorrect } from '../inputs';
+import LayoutMain from 'layouts/LayoutMain';
+import { useAuthPage } from '../LogIn/';
 
 const SignUp = ({ setConfirm }) => {
   const dispatch = useDispatch();
@@ -17,12 +18,7 @@ const SignUp = ({ setConfirm }) => {
   const passwordField = React.createRef();
   const form = React.createRef();
 
-  useEffect(() => {
-    dispatch(setHeaderNavbarCssClass('header__navbar header__navbar_auth'));
-    return () => {
-      dispatch(setHeaderNavbarCssClass('header__navbar'));
-    };
-  });
+  const isMobile = useSelector((state) => state.deviceType);
 
   const checkInput = (e, errorElem, password) => {
     const input = e.target;
@@ -59,10 +55,10 @@ const SignUp = ({ setConfirm }) => {
     };
   };
 
-  return (
-    <section className="auth-content">
-      <PageCloseBtn cssClass={'auth__close-btn'} path={'/'} />
-      <h2>sign up</h2>
+  useAuthPage();
+
+  const content = (
+    <div className="auth-content">
       <form className="auth-content__form" ref={form}>
         <div className="auth-content__input-wrapper">
           <input
@@ -140,13 +136,15 @@ const SignUp = ({ setConfirm }) => {
         </Link>
       </div>
       <div className="auth-content__btn">
-        <ButtonDark
+        <ButtonMain
           text={'Sign up'}
           func={globalCheck} />
       </div>
-      <Link to="/log-in" className="auth-content__btn-switcher">Log in</Link>
-    </section>
-  );
+    </div>
+  )
+
+  if (isMobile) return (<LayoutMain>{content}</LayoutMain>);
+  else return content;
 };
 
 export default SignUp;
