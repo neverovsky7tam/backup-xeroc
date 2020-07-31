@@ -117,6 +117,10 @@
   }
 
   .auth-content__form {
+    @media (min-width: 768px) {
+      margin-top: 38px;
+    }
+
     .auth-content__input-wrapper {
       position: relative;
 

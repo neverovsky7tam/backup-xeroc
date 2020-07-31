@@ -59,6 +59,7 @@ const SignUp = ({ setConfirm }) => {
 
   const content = (
     <div className="auth-content">
+      {!isMobile && <h2>sign up</h2>}
       <form className="auth-content__form" ref={form}>
         <div className="auth-content__input-wrapper">
           <input

@@ -1,0 +1,111 @@
+.no-products {
+  position: relative;
+  width: calc(100% - 15px);
+  padding-bottom: calc(100% - 15px);
+  margin-left: 15px;
+
+  @media (min-width: 768px) {
+    width: 211px;
+    height: 211px;
+    padding: 0;
+    margin-left: 30px;
+  }
+
+  .content-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .content-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    padding: 29px;
+    border: 1px solid $secondary_bg;
+  
+    @media (min-width: 768px) {
+      padding: 14px;
+    }
+  
+    .title {
+      color: $grey_font;
+    }
+  
+    .center-block {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 54%;
+      height: 47%;
+      align-self: center;
+      background: linear-gradient(0deg, rgba(11, 12, 35, 0.8), rgba(11, 12, 35, 0.8)),
+        url("../../data/img/no-products-img.png");
+      background-size: contain;
+  
+      @media (min-width: 768px) {
+        width: 131px;
+        height: 114px;
+      }
+  
+      svg {
+        width: 30px;
+        height: 33px;
+  
+        @media (max-width: 767px) {
+          width: 45px;
+          height: 49px;
+        }
+  
+        @media (max-width: 424px) {
+          width: 40px;
+          height: 43px;
+        }
+  
+        @media (max-width: 374px) {
+          width: 33px;
+          height: 36px;
+        }
+      }
+    }
+  }
+}
+
+.no-products-list {
+  display: grid;
+  grid-template-columns: 1fr 135px;
+  grid-auto-rows: 40px;
+  grid-column-gap: 15px;
+
+  .content-inner {
+    position: relative;
+    background-color: $secondary_bg-sec;
+  }
+
+  .content-body {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 14px;
+    border: 1px solid $secondary_bg;
+
+    .icon-holder {
+      position: relative;
+      margin-right: 15px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
+
+
