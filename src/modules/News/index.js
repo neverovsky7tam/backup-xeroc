@@ -1,14 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useLocation } from "react-router-dom";
 import { BoxDecor } from 'components/Parts/BoxDecor';
 import { BannerLogo } from 'svg/svgBannerLogo';
 import { Illustration } from 'svg/svgIllustration';
 
 const News = () => {
-//  const contentVar = useSelector((state) => state.generalBlockContent.current);
+  const { pathname } = useLocation();
 
   let cssClass = 'news';
-//  if (contentVar === 'productDetails') cssClass = 'news news_pdp'
+  if (pathname.includes('/product-details')) cssClass = 'news news_pdp';
 
   return (
     <section className={cssClass}>
