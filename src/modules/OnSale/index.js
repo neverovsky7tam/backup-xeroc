@@ -39,7 +39,6 @@ const OnSale = () => {
   };
 
   const productsObj = useSelector((state) => state.productsDisplay);
-  // const plugTextMarginLeft = (view) ? '30px' : '0';
   let content = <NoProducts view={view} />
 
   if (productsObj.length) {
