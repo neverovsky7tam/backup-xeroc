@@ -12,6 +12,7 @@ let stopPos = null;
 let scrolledToLeft = null;
 let isMove = false;
 let lang = null;
+let link = null;
 
 const CarouselMenu = ({ Content }) => {
   const history = useHistory();
@@ -117,6 +118,10 @@ const CarouselMenu = ({ Content }) => {
   const onTouchEnd = (e) => {
     if (isMove) {
       isMove = false;
+      link = items.current.children[currentItemIndex].dataset.link;
+      setTimeout(() => {
+        history.push(link);
+      }, 100)
     } else {
       if (e) {
         const screenMedian = document.documentElement.clientWidth / 2;
@@ -130,9 +135,6 @@ const CarouselMenu = ({ Content }) => {
 
     initPosition = stopPos;
     setPos(stopPos);
-
-    const link = items.current.children[currentItemIndex].dataset.link;
-    history.push(link);
   };
 
   const Scroll = (side) => {

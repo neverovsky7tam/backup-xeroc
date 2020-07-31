@@ -35,6 +35,8 @@
     transform: translateX(-50%);
 
     @media (min-width: 768px) {
+      left: initial;
+      transform: initial;
       margin-right: 20px;
     }
   }
