@@ -75,10 +75,10 @@ export const setPageTopContent = (content) => ({
   content,
 });
 
-export const setCurrentProduct = (product) => ({
-  type: SET_CURRENT_PRODUCT,
-  product,
-});
+// export const setCurrentProduct = (product) => ({
+//   type: SET_CURRENT_PRODUCT,
+//   product,
+// });
 
 export const setAccountMenu = (isLogin) => ({
   type: SET_ACCOUNT_MENU,

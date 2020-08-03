@@ -105,14 +105,14 @@ export const closeCrossRight = (state = false, action) => {
   }
 }
 
-export const currentProduct = (state = null, action) => {
-  switch (action.type) {
-    case SET_CURRENT_PRODUCT:
-      return action.product;
-    default:
-      return state;
-  }
-}
+// export const currentProduct = (state = null, action) => {
+//   switch (action.type) {
+//     case SET_CURRENT_PRODUCT:
+//       return action.product;
+//     default:
+//       return state;
+//   }
+// }
 
 export const pageTopStyle = (state = null, action) => {
   switch (action.type) {

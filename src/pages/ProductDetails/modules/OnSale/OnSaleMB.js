@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { productsProcessing } from 'utils/renderProducts';
+import { productsProcessing } from 'components/Products/renderProducts';
 import TitleBlock from 'components/BlocksUI/TitleBlock';
 import DropList from 'components/BlocksUI/DropList';
 import { ButtonMain } from 'components/BlocksUI/Buttons/Buttons';

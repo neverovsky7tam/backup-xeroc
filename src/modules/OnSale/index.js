@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import store from 'store/store';
 import { useSelector } from 'react-redux';
-import renderProducts from 'utils/renderProducts';
-import ProductTile from 'components/ProductTile';
-import ProductTileMobile from 'components/ProductTileMobile';
-import { ProductListHead, ProductList } from 'components/ProductList';
+import renderProducts from 'components/Products/renderProducts';
+import ProductTile from 'components/Products/ProductTile';
+import ProductTileMobile from 'components/Products/ProductTileMobile';
+import { ProductListHead, ProductList } from 'components/Products/ProductList';
 import NoProducts from 'components/NoProducts';
 import Scroll, { calcToScroll } from 'components/Scroll';
 import ViewSwitcher from 'components/ViewSwitcher';
