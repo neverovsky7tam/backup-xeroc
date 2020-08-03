@@ -5,7 +5,6 @@ let preSelectItem = null;
 export const setPreSelectItem = (item, hashElem) => {
   preSelectItem = Object.assign({}, item);
   preSelectItem.hash = hashElem;
-  // console.log('preSelectItem', preSelectItem);
 };
 
 export const addToCart = (item) => {

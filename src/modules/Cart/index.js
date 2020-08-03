@@ -1,7 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { MenuSeparate, CartIcon } from 'svg/svgHeader';
 
 const Cart = ({ isLogin }) => {
+  const { itemsInCart } = useSelector((state) => state)
+  console.log('itemsInCart', itemsInCart.length);
+
   return (
     <>
       {isLogin &&
@@ -16,6 +20,9 @@ const Cart = ({ isLogin }) => {
       }
       <button className="cart__btn cursor-pointer">
         <div className="cart-icon">{CartIcon}</div>
+        <div className="counter-box">
+          <div className="value-holder">{itemsInCart.length}</div>
+        </div>
       </button>
     </>
   )
