@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Select from 'components/Select';
 import { ButtonMain } from 'components/BlocksUI/Buttons/Buttons';
 import { BoxDecor } from 'components/Parts/BoxDecor';
+import { addToCart } from 'mod/Cart/logic';
 import { ProductStar, ProductHalfStar, ArrowBack } from 'svg/svg';
 
 const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr, itemPath }) => {
@@ -110,6 +111,7 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr, itemPath }) => 
               </div>
               <div className="select-wrapper">
                 <Select
+                  item={item}
                   hashArr={hashArr}
                   displayHash={hash}
                   hashOpt={item.hash.option}
@@ -121,7 +123,7 @@ const ProductTileMobile = ({ item, itemHash, itemPrice, hashArr, itemPath }) => 
                 <ButtonMain style={{ marginBottom: '15px' }}>
                   <Link to={itemPath} className="link-to">Details</Link>
                 </ButtonMain>
-                <ButtonMain text={'Add to cart'} func={null} />
+                <ButtonMain text={'Add to cart'} func={() => addToCart(item)} />
               </div>
             </div>
           </div>

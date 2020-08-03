@@ -5,6 +5,7 @@ import { setListingsSectionCssClass } from 'store/actions';
 import Select from 'components/Select';
 import { ButtonMain } from 'components/BlocksUI/Buttons/Buttons';
 import { BoxDecor } from 'components/Parts/BoxDecor';
+import { addToCart } from 'mod/Cart/logic';
 import {
   ProductStar,
   ProductHalfStar,
@@ -115,6 +116,7 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr, itemPath 
         <div
           className="select-wrapper">
           <Select
+            item={item}
             hashArr={hashArr}
             displayHash={hash}
             hashOpt={item.hash.option}
@@ -122,7 +124,10 @@ export const ProductList = ({ item, idx, itemHash, itemPrice, hashArr, itemPath 
             hashClick={onHashListClick}
             ref={refObj} />
         </div>
-        <ButtonMain text={'Add to cart'} func={null} style={{ width: '112px', height: '40px' }} />
+        <ButtonMain
+          text={'Add to cart'}
+          func={() => addToCart(item)}
+          style={{ width: '112px', height: '40px' }} />
       </div>
     </li>
   );

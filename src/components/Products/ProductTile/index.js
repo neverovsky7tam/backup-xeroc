@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Select from 'components/Select';
 import { ButtonMain, ButtonDark } from 'components/BlocksUI/Buttons/Buttons';
 import { BoxDecor } from 'components/Parts/BoxDecor';
+import { addToCart } from 'mod/Cart/logic';
 import { ProductStar, ProductHalfStar } from 'svg/svg';
 
 const ProductTile = ({ item, itemHash, itemPrice, hashArr, itemPath }) => {
@@ -97,6 +98,7 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr, itemPath }) => {
               </div>
               <div className="select-wrapper">
                 <Select
+                  item={item}
                   hashArr={hashArr}
                   displayHash={hash}
                   hashOpt={item.hash.option}
@@ -109,7 +111,7 @@ const ProductTile = ({ item, itemHash, itemPrice, hashArr, itemPath }) => {
                 <ButtonDark>
                   <Link to={itemPath} className="link-to">Details</Link>
                 </ButtonDark>
-                <ButtonMain text={'Add to cart'} func={null} />
+                <ButtonMain text={'Add to cart'} func={() => addToCart(item)} />
               </div>
             </div>
           </div>

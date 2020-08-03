@@ -1,8 +1,14 @@
 import React from 'react';
+import { setPreSelectItem } from 'mod/Cart/logic';
 import { BoxDecor } from 'components/Parts/BoxDecor';
 import { ArrowDots } from 'svg/svg';
 
-const Select = React.forwardRef(({ hashArr, displayHash, hashOpt, expandFunc, hashClick, isDesctopTemplate }, ref) => {
+const Select = React.forwardRef(({ item, hashArr, displayHash, hashOpt, expandFunc, hashClick, isDesctopTemplate }, ref) => {
+  const onHashClick = (hashElem) => {
+    hashClick(hashElem);
+    setPreSelectItem(item, hashElem);
+  };
+
   const hashList = () => {
     if (hashArr.length > 1) {
       const arr = hashArr.slice();
@@ -10,7 +16,7 @@ const Select = React.forwardRef(({ hashArr, displayHash, hashOpt, expandFunc, ha
         return (
           <li
             key={el.id}
-            onClick={() => hashClick(el)}>
+            onClick={() => onHashClick(el)}>
             {el.h}&nbsp;{hashOpt}
           </li>
         )
