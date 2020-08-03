@@ -9,7 +9,7 @@ import {
   SET_CLOSE_CROSS_RIGHT,
   SET_PAGE_TOP_STYLE,
   SET_PAGE_TOP_CONTENT,
-  SET_CURRENT_PRODUCT,
+  SET_ITEM_TO_CART,
   SET_ACCOUNT_MENU,
   SET_FOOTER_STATE,
   SET_HEADER_NAVBAR_CSS_CLASS,
@@ -105,10 +105,13 @@ export const closeCrossRight = (state = false, action) => {
   }
 }
 
-export const currentProduct = (state = null, action) => {
+export const itemInCart = (state = [], action) => {
   switch (action.type) {
-    case SET_CURRENT_PRODUCT:
-      return action.product;
+    case SET_ITEM_TO_CART:
+      const newState = state.slice();
+      newState.push(action.item);
+      console.log('newState', newState);
+      return newState;
     default:
       return state;
   }

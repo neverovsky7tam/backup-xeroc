@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { productsProcessing } from 'utils/renderProducts';
+import { productsProcessing } from 'components/Products/renderProducts';
 import TitleBlock from 'components/BlocksUI/TitleBlock';
 import DropList from 'components/BlocksUI/DropList';
 import { ButtonMain } from 'components/BlocksUI/Buttons/Buttons';
 import { BoxDecor } from 'components/Parts/BoxDecor';
+import { setPreSelectItem, addToCart } from 'mod/Cart/logic';
 import {
   ProductStar,
   ProductHalfStar,
@@ -25,6 +26,7 @@ const OnSaleMB = ({ item, currentHash, setCurrentHash }) => {
         func: () => {
           setPrice(el.price);
           setCurrentHash(el.h);
+          setPreSelectItem(item, el);
         },
       };
     });
@@ -79,7 +81,7 @@ const OnSaleMB = ({ item, currentHash, setCurrentHash }) => {
             <span className="share-icon">{ShareIcon}</span>
           </div>
         </div>
-        <ButtonMain text={'Add to cart'} />
+        <ButtonMain text={'Add to cart'} func={() => addToCart(item)} />
       </div>
     </>
   );

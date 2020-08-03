@@ -1,5 +1,5 @@
 import React from 'react';
-import { productsProcessing } from 'utils/renderProducts';
+import { productsProcessing } from 'components/Products/renderProducts';
 import { SpecificIcon, ShippingIcon } from 'svg/svgProductDetails';
 
 const Description = ({ item }) => {

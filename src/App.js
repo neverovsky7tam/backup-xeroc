@@ -48,7 +48,7 @@ const App = () => {
 
   if (unserviced) {
     return (
-      <div class="plug"><p>This resolution is not supported.</p></div>
+      <div className="plug"><p>This resolution is not supported.</p></div>
     )
   } else {
     return (
