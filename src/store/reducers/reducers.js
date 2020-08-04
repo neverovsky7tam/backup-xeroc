@@ -105,12 +105,11 @@ export const closeCrossRight = (state = false, action) => {
   }
 }
 
-export const itemInCart = (state = [], action) => {
+export const itemsInCart = (state = [], action) => {
   switch (action.type) {
     case SET_ITEM_TO_CART:
       const newState = state.slice();
       newState.push(action.item);
-      console.log('newState', newState);
       return newState;
     default:
       return state;

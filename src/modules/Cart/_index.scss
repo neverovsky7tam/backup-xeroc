@@ -31,12 +31,25 @@
 }
 
 .cart__btn {
+  position: relative;
   display: flex;
+
+  .counter-box {
+    position: absolute;
+    top: -7px;
+    left: 13px;
+    background-color: $main_bg;
+
+    .value-holder {
+      margin: 0 0 1px 3.5px;
+      @include fontN2($white_font, 400);
+    }
+  }
 
   .cart-icon svg {
     @media (min-width: 768px) {
-      width: 22px;
-      height: 20px;
+      width: 21.2px;
+      height: 18.5px;
     }
 
     @media (max-width: 767px) {
