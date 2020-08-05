@@ -15,6 +15,22 @@ export const ButtonMain = ({ text, func, style, children }) => {
   );
 };
 
+export const ButtonGrey = ({ value, func, children, customClass }) => {
+  let content = (value) ? <div className="value-holder">{value}</div> : children;
+  let cssClass = (customClass) ? `p-relative ${customClass}` : 'p-relative';
+
+  return (
+    <div className={cssClass}>
+      <button
+        className="button button_grey"
+        onClick={func}>
+        {content}
+      </button>
+      <BoxDecor />
+    </div>
+  )
+}
+
 export const ButtonDark = ({ text, func, wrapperStyle, btnStyle, children }) => {
   const boxDecor = React.createRef();
   let content = (text) ? <span>{text}</span> : children;

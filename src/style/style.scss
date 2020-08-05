@@ -29,7 +29,8 @@
 @import "../modules/Header";
 @import "../modules/Header/UserMenu";
 @import "../modules/MainMenu";
-@import "../modules/Cart";
+@import "../modules/Cart/";
+@import "../modules/Cart/components/cart-button";
 @import "../modules/Filters";
 @import "../modules/OnSale";
 @import "../modules/Listings";  
@@ -39,7 +40,7 @@
 @import "../modules/Footer/awards-popup";
 @import "../modules/SideBar";
 @import "../modules/SideBar/side-bar-icons";
-@import "../modules/SideBar/Menus/sidebar-content";
+@import "../modules/SideBar/components/sidebar-components";
 
 @import "../pages/ProductDetails";
 @import "../pages/ProductDetails/modules/Coins";

@@ -6,7 +6,7 @@ const PageTop = () => {
   const pageTopContent = useSelector((state) => state.pageTopContent);
   const stateStyle = useSelector((state) => state.pageTopStyle);
 
-  let content = <CarouselMenu Content={pageTopContent} />;
+  let content = <CarouselMenu />;
   if (typeof pageTopContent === 'string') {
     content = (<h2 className="page-top__title">{pageTopContent}</h2>);
   };

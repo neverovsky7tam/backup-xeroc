@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setSidebarState, setCloseCrossRight } from 'store/actions';
 import MenuItems from 'mod/MainMenu/MenuItems';
 import OverlayMenu from 'mod/MainMenu/OverlayMenu';
-import Cart from 'mod/Cart';
+import CartButton from 'mod/Cart/components/CartButton';
 import LangSwitcher from 'components/LangSwitcher';
 import CloseCrossBtn from 'components/BlocksUI/Buttons/CloseCrossBtn';
 import GuestMenu from './GuestMenu';
@@ -67,8 +67,8 @@ const Header = ({ isMobile }) => {
           }
           {(closeCrossRight && isMobile) ?
             <CloseCrossBtn /> :
-            (<div className="cart d-flex align-items-center">
-              <Cart isLogin={isLogin} />
+            (<div className="cart-btn-holder d-flex align-items-center">
+              <CartButton isLogin={isLogin} />
             </div>)
           }
         </div>

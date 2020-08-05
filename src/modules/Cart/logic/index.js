@@ -24,3 +24,10 @@ export const addToCart = (item) => {
   }
   store.dispatch(setItemToCart(product));
 };
+
+
+window.addEventListener('beforeunload', () => {
+  const { itemsInCart } = store.getState();
+  const obj = JSON.stringify(itemsInCart)
+  localStorage.setItem('xeroc-cart', obj)
+});

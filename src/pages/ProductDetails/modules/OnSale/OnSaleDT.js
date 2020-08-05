@@ -5,6 +5,7 @@ import DropList from 'components/BlocksUI/DropList';
 import { ButtonMain } from 'components/BlocksUI/Buttons/Buttons';
 import { Facebook, Twitter, Reddit } from 'components/Socials';
 import { BoxDecor } from 'components/Parts/BoxDecor';
+import { setPreSelectItem, addToCart } from 'mod/Cart/logic';
 import { ProductStar, ProductHalfStar, ToggleArrow } from 'svg/svg';
 
 const OnSaleDT = ({ item, currentHash, setCurrentHash }) => {
@@ -21,6 +22,7 @@ const OnSaleDT = ({ item, currentHash, setCurrentHash }) => {
         func: () => {
           setPrice(el.price);
           setCurrentHash(el.h);
+          setPreSelectItem(item, el);
         },
       };
     });
@@ -93,7 +95,7 @@ const OnSaleDT = ({ item, currentHash, setCurrentHash }) => {
           </div>
           <BoxDecor />
         </div>
-        <ButtonMain text={'Add to cart'} />
+        <ButtonMain text={'Add to cart'} func={() => addToCart(item)} />
       </div>
       <aside className="socials">
         <h2>share to</h2>

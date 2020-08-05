@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setHeaderNavbarCssClass, setFooterState } from 'store/actions';
+import { setHeaderNavbarCssClass, setFooterState, setPageTopContent } from 'store/actions';
 import PageCloseBtn from 'components/BlocksUI/Buttons/PageCloseBtn';
 import { TermsEN } from './TermsEN';
 
@@ -14,9 +14,11 @@ const Terms = () => {
   useEffect(() => {
     dispatch(setHeaderNavbarCssClass('header__navbar header__navbar_terms'));
     dispatch(setFooterState('footer-mini'));
+    dispatch(setPageTopContent('privacy policy'));
     return () => {
       dispatch(setHeaderNavbarCssClass('header__navbar'));
       dispatch(setFooterState('footer-standart'));
+      dispatch(setPageTopContent(null));
     };
   });
 
