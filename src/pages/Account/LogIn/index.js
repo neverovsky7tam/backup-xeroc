@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
-import { setAccountMenu, setSidebarState, setPageTopContent, setCloseCrossRight } from 'store/actions';
+import { setAccountMenu, setSidebarState, setCarouselData, setCloseCrossRight } from 'store/actions';
 import { ButtonMain } from 'components/BlocksUI/Buttons/Buttons';
 import { BoxDecor } from 'components/Parts/BoxDecor';
 import SocialAuth from '../modules/SocialAuth';
@@ -12,7 +12,7 @@ import AccountMenu from 'pages/Account/modules/AccountMenu';
 export const useAuthPage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(setPageTopContent(AccountMenu));
+    dispatch(setCarouselData(AccountMenu));
     dispatch(setCloseCrossRight(true));
     return () => dispatch(setCloseCrossRight(false));
   }, []);

@@ -1,5 +1,7 @@
 export const SWITCH_LANG = "SWITCH_LANG";
 export const SET_DEVICE_TYPE = "SET_DEVICE_TYPE";
+export const SET_CART_STATE = "SET_CART_STATE";
+export const SET_CART_MENU_STATE = "SET_CART_MENU_STATE";
 export const SET_SIDEBAR_STATE = "SET_SIDEBAR_STATE";
 export const SET_SIDEBAR_MENU = "SET_SIDEBAR_MENU";
 export const SET_ON_SALE_DISPLAY = "SET_ON_SALE_DISPLAY";
@@ -8,6 +10,7 @@ export const SET_CLOSE_CROSS_LEFT = "SET_CLOSE_CROSS_LEFT";
 export const SET_CLOSE_CROSS_RIGHT = "SET_CLOSE_CROSS_RIGHT";
 export const SET_PAGE_TOP_STYLE = "SET_PAGE_TOP_STYLE";
 export const SET_PAGE_TOP_CONTENT = "SET_PAGE_TOP_CONTENT";
+export const SET_CAROUSEL_DATA = "SET_CAROUSEL_DATA"
 export const SET_ITEM_TO_CART = "SET_ITEM_TO_CART";
 export const SET_ACCOUNT_MENU = "SET_ACCOUNT_MENU";
 export const SET_FOOTER_STATE = "SET_FOOTER_STATE";
@@ -33,6 +36,16 @@ export const switchLang = (lang) => ({
 export const setDeviceType = (isMobileDevice) => ({
   type: SET_DEVICE_TYPE,
   isMobileDevice,
+});
+
+export const setCartState = (isCartShow) => ({
+  type: SET_CART_STATE,
+  isCartShow,
+});
+
+export const setCartMenuState = (cssClass) => ({
+  type: SET_CART_MENU_STATE,
+  cssClass,
 });
 
 export const setSidebarState = (isSidebar) => ({
@@ -73,6 +86,11 @@ export const setPageTopStyle = (style) => ({
 export const setPageTopContent = (content) => ({
   type: SET_PAGE_TOP_CONTENT,
   content,
+});
+
+export const setCarouselData = (data) => ({
+  type: SET_CAROUSEL_DATA,
+  data,
 });
 
 export const setItemToCart = (item) => ({

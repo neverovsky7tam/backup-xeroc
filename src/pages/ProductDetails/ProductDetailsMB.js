@@ -35,8 +35,11 @@ const ProductDetailsMB = ({ item }) => {
 
   useEffect(() => {
     dispatch(setCloseCrossLeft(true));
-    dispatch(setPageTopContent('Details'));
-    return () => dispatch(setCloseCrossLeft(false));
+    dispatch(setPageTopContent('details'));
+    return () => {
+      dispatch(setCloseCrossLeft(false));
+      dispatch(setPageTopContent(null));
+    } 
   }, []);
 
   return (

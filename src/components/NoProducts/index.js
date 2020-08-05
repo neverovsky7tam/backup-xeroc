@@ -1,15 +1,9 @@
 import React from 'react';
-import store from 'store/store';
 import { ButtonMain } from 'components/BlocksUI/Buttons/Buttons';
 import { BoxDecor } from 'components/Parts/BoxDecor';
 import { NotFound } from 'svg/svg';
 
 const NoProducts = ({ view }) => {
-  // const clearFilters = () => {
-  //   const filtersState = store.getState().filtersState;
-  //   console.log('filtersState', filtersState);
-  // }
-
   if (view) {
     return (
       <div className="no-products">

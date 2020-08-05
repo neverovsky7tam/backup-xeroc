@@ -27,6 +27,11 @@
     height: 40px;
     font-size: 12px;
   }
+
+  .value-holder {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .button__main {
@@ -43,6 +48,10 @@
   &:hover {
     background-color: $btn-main_bg;
   }
+}
+
+.button_grey {
+  background-color: $secondary_bg;
 }
 
 .square-btn {

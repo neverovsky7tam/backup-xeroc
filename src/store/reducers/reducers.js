@@ -1,6 +1,8 @@
 import {
   SWITCH_LANG,
   SET_DEVICE_TYPE,
+  SET_CART_STATE,
+  SET_CART_MENU_STATE,
   SET_SIDEBAR_STATE,
   SET_SIDEBAR_MENU,
   SET_ON_SALE_DISPLAY,
@@ -9,6 +11,7 @@ import {
   SET_CLOSE_CROSS_RIGHT,
   SET_PAGE_TOP_STYLE,
   SET_PAGE_TOP_CONTENT,
+  SET_CAROUSEL_DATA,
   SET_ITEM_TO_CART,
   SET_ACCOUNT_MENU,
   SET_FOOTER_STATE,
@@ -45,6 +48,24 @@ export const deviceType = (state = false, action) => {
   switch (action.type) {
     case SET_DEVICE_TYPE:
       return action.isMobileDevice;
+    default:
+      return state;
+  }
+}
+
+export const cartState = (state = false, action) => {
+  switch (action.type) {
+    case SET_CART_STATE:
+      return action.isCartShow;
+    default:
+      return state;
+  }
+}
+
+export const cartMenuState = (state = null, action) => {
+  switch (action.type) {
+    case SET_CART_MENU_STATE:
+      return action.cssClass;
     default:
       return state;
   }
@@ -105,13 +126,18 @@ export const closeCrossRight = (state = false, action) => {
   }
 }
 
-export const itemsInCart = (state = [], action) => {
+export const itemsInCart = (state, action) => {
   switch (action.type) {
     case SET_ITEM_TO_CART:
       const newState = state.slice();
-      newState.push(action.item);
+      if (newState.length < 99) newState.push(action.item);
       return newState;
     default:
+      if (localStorage.getItem('xeroc-cart')) {
+        state = localStorage.getItem('xeroc-cart');
+        state = JSON.parse(state);
+      } 
+      else state = [];
       return state;
   }
 }
@@ -125,10 +151,19 @@ export const pageTopStyle = (state = null, action) => {
   }
 }
 
-export const pageTopContent = (state = MenuItems, action) => {
+export const pageTopContent = (state = null, action) => {
   switch (action.type) {
     case SET_PAGE_TOP_CONTENT:
       return action.content;
+    default:
+      return state;
+  }
+}
+
+export const carouselData = (state = MenuItems, action) => {
+  switch (action.type) {
+    case SET_CAROUSEL_DATA:
+      return action.data;
     default:
       return state;
   }

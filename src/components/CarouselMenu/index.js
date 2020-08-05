@@ -13,11 +13,12 @@ let scrolledToLeft = null;
 let isMove = false;
 let lang = null;
 
-const CarouselMenu = ({ Content }) => {
+const CarouselMenu = () => {
+  let Content = useSelector((state) => state.carouselData);
   const history = useHistory();
   const [pos, setPos] = useState(0);
-
   const items = React.createRef();
+
   // if a language was changed
   const currentLang = useSelector((state) => state.langObj.lang);
   useEffect(() => {
@@ -49,6 +50,7 @@ const CarouselMenu = ({ Content }) => {
 
     let prevItemsLength = 0;
     let index = currentItemIndex;
+
     while (index > 0) {
       index -= 1;
       prevItemsLength += items.current.children[index].clientWidth;
@@ -64,20 +66,17 @@ const CarouselMenu = ({ Content }) => {
   }
 
   useEffect(() => {
+    initPosition = null;
+    touchStart = null;
+    touchStartY = null;
+    currentItemIndex = null;
+    rightBreakpoint = null;
+    leftBreakpoint = null;
+    stopPos = null;
+    scrolledToLeft = null;
+    isMove = false;
+    lang = null;
     setInitPosition();
-
-    return () => {
-      initPosition = null;
-      touchStart = null;
-      touchStartY = null;
-      currentItemIndex = null;
-      rightBreakpoint = null;
-      leftBreakpoint = null;
-      stopPos = null;
-      scrolledToLeft = null;
-      isMove = false;
-      lang = null;
-    };
   }, [Content]);
 
   const { pathname } = useLocation();

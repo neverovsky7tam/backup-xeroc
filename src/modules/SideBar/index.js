@@ -2,14 +2,14 @@ import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { setSidebarMenu, setSidebarState, setCloseCrossLeft } from 'store/actions';
-import { Filters } from './Menus/Filters';
-import { AccountContent, AccountBtn } from './Menus/Account';
-import { BalanceContent, BalanceBtn } from './Menus/Balance';
-import { NotificationsContent, NotificationsBtn } from './Menus/Notifications';
-import { Socials } from './Menus/Socials';
-import { TopSellersSidebar } from './Menus/TopSellersSidebar';
-import { Awards } from './Menus/Awards';
-import { LangSwitcher } from './Menus/LangSwitcher';
+import { Filters } from './components/Filters';
+import { AccountContent, AccountBtn } from './components/Account';
+import { BalanceContent, BalanceBtn } from './components/Balance';
+import { NotificationsContent, NotificationsBtn } from './components/Notifications';
+import { Socials } from './components/Socials';
+import { TopSellersSidebar } from './components/TopSellersSidebar';
+import { Awards } from './components/Awards';
+import { LangSwitcher } from './components/LangSwitcher';
 import {
   MenuSeparate,
   FiltersIcon,
