@@ -126,18 +126,13 @@ export const closeCrossRight = (state = false, action) => {
   }
 }
 
-export const itemsInCart = (state, action) => {
+export const itemsInCart = (state = [], action) => {
   switch (action.type) {
     case SET_ITEM_TO_CART:
       const newState = state.slice();
       if (newState.length < 99) newState.push(action.item);
       return newState;
     default:
-      if (localStorage.getItem('xeroc-cart')) {
-        state = localStorage.getItem('xeroc-cart');
-        state = JSON.parse(state);
-      } 
-      else state = [];
       return state;
   }
 }

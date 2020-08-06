@@ -61,8 +61,12 @@
   }
 }
 
-.toggle-arrow_right {
+.toggle-arrow_right svg {
   transform: rotate(-90deg);
+}
+
+.toggle-arrow_left svg {
+  transform: rotate(90deg);
 }
 
 .link-to {

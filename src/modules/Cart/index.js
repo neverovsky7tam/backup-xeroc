@@ -8,6 +8,7 @@ import Container from 'components/BlocksUI/Container';
 import { setActionData, scrollProcess, onTouchEnd } from 'mod/PageTop/scrollProcess';
 import MenuItems from 'mod/MainMenu/MenuItems';
 import AccountMenu from 'pages/Account/modules/AccountMenu';
+import CartItems from './components/CartItems';
 import { DeleteIcon } from 'svg/svg';
 
 const Cart = () => {
@@ -55,7 +56,7 @@ const Cart = () => {
         </div>
         <div className="cart__content">
           <ul className="content">
-            {generate()}
+            <CartItems />
           </ul>
         </div>
         <div className="cart__footer">

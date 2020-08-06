@@ -3,9 +3,24 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setCartState } from 'store/actions';
 import { MenuSeparate, CartIcon } from 'svg/svgHeader';
 
+let initFlag = false;
+
 const CartButton = ({ isLogin }) => {
   const dispatch = useDispatch();
-  const { itemsInCart } = useSelector((state) => state);
+
+  let productsQuantity = useSelector((state) => state.itemsInCart.length);
+  // console.log('productsQuantity', productsQuantity);
+
+  // if (!initFlag) {
+  //   console.log('init');
+  //   initFlag = true;
+  //   if (localStorage.getItem('xeroc-cart')) {
+  //     const json = localStorage.getItem('xeroc-cart');
+  //     const store = JSON.parse(json);
+  //     productsQuantity = store.length;
+  //     console.log('productsQuantity-store', productsQuantity);
+  //   }
+  // }
 
   return (
     <>
@@ -23,7 +38,7 @@ const CartButton = ({ isLogin }) => {
         onClick={() => dispatch(setCartState(true))}>
         <div className="cart-icon">{CartIcon}</div>
         <div className="counter-box">
-          <div className="value-holder">{itemsInCart.length}</div>
+          <div className="value-holder">{productsQuantity}</div>
         </div>
       </button>
     </>

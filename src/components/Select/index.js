@@ -6,7 +6,7 @@ import { ArrowDots } from 'svg/svg';
 const Select = React.forwardRef(({ item, hashArr, displayHash, hashOpt, expandFunc, hashClick, isDesctopTemplate }, ref) => {
   const onHashClick = (hashElem) => {
     hashClick(hashElem);
-    setPreSelectItem(item, hashElem);
+    setPreSelectItem(item, hashElem, hashOpt);
   };
 
   const hashList = () => {
