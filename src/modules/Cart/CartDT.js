@@ -12,12 +12,6 @@ const CartDT = () => {
   const CUT_HEIGHT = 333;
   const height = document.documentElement.clientHeight - CUT_HEIGHT;
   const bodyHeight = { maxHeight: `${height}px` };
-  useEffect(() => {
-    console.log('height', document.documentElement.clientHeight);
-    // const CUT_HEIGHT = 323;
-    // const height = document.documentElement.clientHeight - CUT_HEIGHT;
-    // const bodyHeight = { maxHeight: `${height}px` };
-  });
 
   return (
     <div className="cart-dt">

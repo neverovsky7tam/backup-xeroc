@@ -460,6 +460,7 @@
           }
 
           @media (min-width: 768px) {
+            background-color: transparent;
             @include open-sans_font($grey_font, 11px);
             cursor: pointer;
           }
