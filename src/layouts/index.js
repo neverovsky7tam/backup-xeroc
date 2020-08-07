@@ -31,7 +31,7 @@ const Layout = ({ children, isMobile }) => {
     <>
       <Header isMobile={isMobile} />
       {isSidebar && <SideBar />}
-      {isCartShow && <Cart />}
+      {isCartShow && <Cart isMobile={isMobile} />}
       <main className="main" ref={main}>
         {isMobile && <PageTop />}
         {children}

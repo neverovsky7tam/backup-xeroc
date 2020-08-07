@@ -3,8 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setCartState } from 'store/actions';
 import { MenuSeparate, CartIcon } from 'svg/svgHeader';
 
-let initFlag = false;
-
 const CartButton = ({ isLogin }) => {
   const dispatch = useDispatch();
 

@@ -7,16 +7,15 @@ import {
   DeleteIcon
 } from 'svg/svg';
 
-const Item = (item) => {
-  const [quantity, setQuantity] = useState(item.productsQuantity);
+const Item = (item, idx) => {
+  // const [quantity, setQuantity] = useState(item.productsQuantity);
 
-  console.log('title', item.title.length);
   if (item.title.length > 16) {
-    item.title = item.title.slice(0, 12) + '...';
+    item.title = item.title.slice(0, 11) + '...';
   }
 
   return (
-    <li className="item">
+    <li className="item" key={idx}>
       <div className="left-side">
         <div className="left-side__inner">
           <Container>
@@ -37,7 +36,7 @@ const Item = (item) => {
         </div>
         <div className="item__controls">
           <div className="toggle-arrow toggle-arrow_left item-button"><SquareBtn icon={ToggleArrow} /></div>
-          <div className="counter">{quantity}</div>
+          <div className="counter">{item.productsQuantity}</div>
           <div className="toggle-arrow toggle-arrow_right item-button"><SquareBtn icon={ToggleArrow} /></div>
         </div>
       </div>
@@ -47,10 +46,7 @@ const Item = (item) => {
 
 const CartItems = () => {
   const storeItems = useSelector((state) => state.itemsInCart);
-  console.log('storeItems', storeItems);
-
-  const items = storeItems.map((el) => Item(el));
-
+  const items = storeItems.map((el, idx) => Item(el, idx));
   return (<ul className="item-list">{items}</ul>);
 };
 

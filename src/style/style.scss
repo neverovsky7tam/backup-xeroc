@@ -29,9 +29,11 @@
 @import "../modules/Header";
 @import "../modules/Header/UserMenu";
 @import "../modules/MainMenu";
-@import "../modules/Cart/";
+@import "../modules/Cart/cart-mobile";
+@import "../modules/Cart/cart_desctop";
 @import "../modules/Cart/components/cart-button";
 @import "../modules/Cart/components/cart-item";
+@import "../modules/Cart/components/cart-footer";
 @import "../modules/Filters";
 @import "../modules/OnSale";
 @import "../modules/Listings";  
