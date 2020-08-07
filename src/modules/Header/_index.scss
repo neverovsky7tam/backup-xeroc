@@ -107,7 +107,7 @@
 .header__navbar_terms {
   @media (max-width: 767px) {
     .controls-btn,
-    .cart-btn-holder {
+    .cart-btn {
       visibility: hidden;
     }
   }
@@ -145,12 +145,6 @@
 
   @media (min-width: 768px) {
     width: initial;
-  }
-
-  .cart-btn-holder {
-    position: relative;
-    width: 22px;
-    height: 19px;
   }
 }
 
