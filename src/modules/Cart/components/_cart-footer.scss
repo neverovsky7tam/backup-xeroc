@@ -1,0 +1,55 @@
+.cart__footer {
+  position: fixed;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(11, 12, 35, 0.98);
+
+  @media (min-width: 768px) {
+    position: static;
+    margin-top: 45px;
+  }
+
+  .btns-holder {
+    display: grid;
+    grid-template-columns: 40px auto 104px;
+    grid-column-gap: 15px;
+
+    @media (max-width: 767px) {
+      grid-template-columns: 55px auto 149px;
+    }
+
+    @media (max-width: 424px) {
+      grid-template-columns: 50px auto 127px;
+    }
+
+    @media (max-width: 374px) {
+      grid-template-columns: 40px auto 104px;
+    }
+
+    .button {
+      @media (min-width: 768px) {
+        height: 40px;
+      }
+    }
+  }
+
+  .btn-del {
+    svg {
+      width: 11.5px;
+
+      @media (max-width: 767px) {
+        width: 15px;
+      }
+
+      @media (max-width: 424px) {
+        width: 13.5px;
+      }
+
+      @media (max-width: 374px) {
+        width: 11.5px;
+      }
+    }
+  }
+}

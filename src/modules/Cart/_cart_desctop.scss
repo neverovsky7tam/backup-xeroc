@@ -1,0 +1,49 @@
+.cart-dt {
+  position: absolute;
+  top: 70px;
+  right: 30px;
+  width: 320px;
+  border-top: 1px solid $white_font;
+  border-left: 1px solid $secondary_bg;
+  border-right: 1px solid $secondary_bg;
+  border-bottom: 1px solid $secondary_bg;
+  background-color: $main_bg;
+  z-index: 405;
+
+  .cart__inner {
+    overflow-x: hidden;
+  }
+
+  .cart__header {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+
+    h4 {
+      @include open-sans_font($white_font, 16px);
+    }
+
+    .close-cross {
+      display: flex;
+      cursor: pointer;
+
+      svg {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+
+  .cart__body {
+    margin-right: -17px;
+    overflow-y: scroll;
+  }
+
+  .cart__content {
+    margin: 0 16px 0 15px;
+  }
+
+  .diamond-part {
+    @include diamond_part(30px);
+  }
+}

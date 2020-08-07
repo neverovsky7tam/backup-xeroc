@@ -1,0 +1,42 @@
+.cart-mob {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  .cart__inner {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 104px;
+    width: 100%;
+    height: calc(100% - 104px);
+    background-color: rgba(11, 12, 35, 0.98);
+    overflow-y: scroll;
+    z-index: 405;
+
+    @media (max-width: 374px) {
+      top: 88px;
+      height: calc(100% - 88px);
+    }
+
+    .page-top {
+      background-color: rgba(11, 12, 35, 0.98);
+    }
+
+    .page-top_hide {
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .cart__content {
+    position: relative;
+    top: 87px;
+    margin: 0 15px;
+  
+    @media (max-width: 374px) {
+      top: 64px;
+    }
+  }
+}
