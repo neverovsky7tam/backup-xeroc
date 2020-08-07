@@ -8,11 +8,14 @@ import {
 } from 'svg/svg';
 
 const Item = (item) => {
-  console.log('item', item);
   const [quantity, setQuantity] = useState(item.productsQuantity);
 
-  return (
+  console.log('title', item.title.length);
+  if (item.title.length > 16) {
+    item.title = item.title.slice(0, 12) + '...';
+  }
 
+  return (
     <li className="item">
       <div className="left-side">
         <div className="left-side__inner">

@@ -55,9 +55,7 @@ const Cart = () => {
           <CarouselMenu />
         </div>
         <div className="cart__content">
-          <ul className="content">
-            <CartItems />
-          </ul>
+          <CartItems />
         </div>
         <div className="cart__footer">
           <div className="btns-holder">

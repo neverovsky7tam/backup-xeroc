@@ -2,6 +2,18 @@
   .item {
     display: flex;
 
+    &:last-child {
+      margin-bottom: 85px;
+
+      @media (max-width: 424px) {
+        margin-bottom: 80px;
+      }
+
+      @media (max-width: 374px) {
+        margin-bottom: 70px;
+      }
+    }
+
     &:not(:last-child) {
       margin-bottom: 44px;
 
@@ -126,6 +138,7 @@
     .item__controls {
       display: flex;
       align-items: center;
+      margin-left: 15px;
 
       .counter {
         width: 33px;
