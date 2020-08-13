@@ -52,4 +52,16 @@
       }
     }
   }
+
+  .price-display {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    @include standart_font($white_font, 400);
+
+    @media(min-width: 768px) {
+      font-size: 12px;
+    }
+  }
 }

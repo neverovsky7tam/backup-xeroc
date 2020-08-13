@@ -13,6 +13,7 @@ import {
   SET_PAGE_TOP_CONTENT,
   SET_CAROUSEL_DATA,
   SET_ITEM_TO_CART,
+  SET_TOTAL_PRICE,
   SET_ACCOUNT_MENU,
   SET_FOOTER_STATE,
   SET_HEADER_NAVBAR_CSS_CLASS,
@@ -130,12 +131,25 @@ export const itemsInCart = (state = [], action) => {
   switch (action.type) {
     case SET_ITEM_TO_CART:
       const newState = state.slice();
-      if (newState.length < 99) newState.push(action.item);
+      if (newState.length < 99) {
+        const sameItem = newState.find((stateItem) => action.item.id === stateItem.id);
+        if (!sameItem) newState.push(action.item);
+      };
       return newState;
     default:
       return state;
   }
 }
+
+// export const totalPrice = (state = 0, action) => {
+//   switch (action.type) {
+//     case SET_TOTAL_PRICE:
+//       console.log('action.price', action.price);
+//       return state + action.price;
+//     default:
+//       return state;
+//   }
+// }
 
 export const pageTopStyle = (state = null, action) => {
   switch (action.type) {

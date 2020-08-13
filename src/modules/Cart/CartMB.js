@@ -6,10 +6,9 @@ import CarouselMenu from 'components/CarouselMenu';
 import { setActionData, scrollProcess, onTouchEnd } from 'mod/PageTop/scrollProcess';
 import MenuItems from 'mod/MainMenu/MenuItems';
 import AccountMenu from 'pages/Account/modules/AccountMenu';
-import CartItems from './components/CartItems';
 import CartFooter from './components/CartFooter';
 
-const CartMB = () => {
+const CartMB = ({ items, totalPrice }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const content = React.createRef();
@@ -47,9 +46,9 @@ const CartMB = () => {
           <CarouselMenu />
         </div>
         <div className="cart__content">
-          <CartItems />
+          <ul className="item-list">{items}</ul>
         </div>
-        <CartFooter />
+        <CartFooter totalPrice={totalPrice} />
       </div>
     </div>
   );

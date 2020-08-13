@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setCartState } from 'store/actions';
 import { MenuSeparate, CartIcon } from 'svg/svgHeader';
 
-const CartControl = ({ isLogin }) => {
+const CartButton = ({ isLogin }) => {
   const dispatch = useDispatch();
 
   let productsQuantity = useSelector((state) => state.itemsInCart.length);
@@ -45,4 +45,4 @@ const CartControl = ({ isLogin }) => {
   );
 };
 
-export default CartControl;
+export default CartButton;

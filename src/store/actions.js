@@ -12,6 +12,7 @@ export const SET_PAGE_TOP_STYLE = "SET_PAGE_TOP_STYLE";
 export const SET_PAGE_TOP_CONTENT = "SET_PAGE_TOP_CONTENT";
 export const SET_CAROUSEL_DATA = "SET_CAROUSEL_DATA"
 export const SET_ITEM_TO_CART = "SET_ITEM_TO_CART";
+export const SET_TOTAL_PRICE = "SET_TOTAL_PRICE";
 export const SET_ACCOUNT_MENU = "SET_ACCOUNT_MENU";
 export const SET_FOOTER_STATE = "SET_FOOTER_STATE";
 export const SET_HEADER_NAVBAR_CSS_CLASS = "SET_HEADER_NAVBAR_CSS_CLASS";
@@ -97,6 +98,11 @@ export const setItemToCart = (item) => ({
   type: SET_ITEM_TO_CART,
   item,
 });
+
+// export const setTotalPrice = (item) => ({
+//   type: SET_TOTAL_PRICE,
+//   item,
+// });
 
 export const setAccountMenu = (isLogin) => ({
   type: SET_ACCOUNT_MENU,
