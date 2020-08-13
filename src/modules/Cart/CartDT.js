@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setCartState } from 'store/actions';
-import CartItems from './components/CartItems';
 import CartFooter from './components/CartFooter';
 import { Diamond } from 'components/Parts/Parts';
 import { CloseCross } from 'svg/svg';
 
-const CartDT = () => {
+const CartDT = ({ items, totalPrice }) => {
   const dispatch = useDispatch();
 
   const CUT_HEIGHT = 333;
@@ -28,10 +27,10 @@ const CartDT = () => {
           <div
             className="cart__content"
             style={bodyHeight}>
-            <CartItems />
+            <ul className="item-list">{items}</ul>
           </div>
         </div>
-        <CartFooter />
+        <CartFooter totalPrice={totalPrice} />
       </div>
       <Diamond />
     </div>

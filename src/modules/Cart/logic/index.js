@@ -18,6 +18,7 @@ export const addToCart = (item) => {
     product.hash = item.hash.value[0];
     product.hash.option = item.hash.option;
     product.productsQuantity = 1;
+    product.itemInvoice = +item.hash.value[0].price;
   };
 
   if (!preSelectItem) {
