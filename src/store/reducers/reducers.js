@@ -13,6 +13,8 @@ import {
   SET_PAGE_TOP_CONTENT,
   SET_CAROUSEL_DATA,
   SET_ITEM_TO_CART,
+  DEL_ITEM_IN_CART,
+  CLEAR_CART,
   SET_TOTAL_PRICE,
   SET_ACCOUNT_MENU,
   SET_FOOTER_STATE,
@@ -136,6 +138,15 @@ export const itemsInCart = (state = [], action) => {
         if (!sameItem) newState.push(action.item);
       };
       return newState;
+    case DEL_ITEM_IN_CART:
+      const tempArr = state.slice();
+      const newState2 = tempArr.filter((stateItem) => action.item.id !== stateItem.id);
+      return newState2;
+    case CLEAR_CART:
+      let clearState = state.slice();
+      clearState = [];
+      console.log('clearState', clearState = []);
+      return clearState;
     default:
       return state;
   }

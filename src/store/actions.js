@@ -12,6 +12,8 @@ export const SET_PAGE_TOP_STYLE = "SET_PAGE_TOP_STYLE";
 export const SET_PAGE_TOP_CONTENT = "SET_PAGE_TOP_CONTENT";
 export const SET_CAROUSEL_DATA = "SET_CAROUSEL_DATA"
 export const SET_ITEM_TO_CART = "SET_ITEM_TO_CART";
+export const DEL_ITEM_IN_CART = "DEL_ITEM_IN_CART";
+export const CLEAR_CART = "CLEAR_CART";
 export const SET_TOTAL_PRICE = "SET_TOTAL_PRICE";
 export const SET_ACCOUNT_MENU = "SET_ACCOUNT_MENU";
 export const SET_FOOTER_STATE = "SET_FOOTER_STATE";
@@ -97,6 +99,15 @@ export const setCarouselData = (data) => ({
 export const setItemToCart = (item) => ({
   type: SET_ITEM_TO_CART,
   item,
+});
+
+export const delItemInCart = (item) => ({
+  type: DEL_ITEM_IN_CART,
+  item,
+});
+
+export const clearCart = () => ({
+  type: CLEAR_CART,
 });
 
 // export const setTotalPrice = (item) => ({

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setCartState } from 'store/actions';
+import CartEmpty from './components/CartEmpty';
 import CartFooter from './components/CartFooter';
 import { Diamond } from 'components/Parts/Parts';
 import { CloseCross } from 'svg/svg';
@@ -27,7 +28,10 @@ const CartDT = ({ items, totalPrice }) => {
           <div
             className="cart__content"
             style={bodyHeight}>
-            <ul className="item-list">{items}</ul>
+            {(items.length) ?
+              (<ul className="item-list">{items}</ul>) :
+              <CartEmpty />
+            }
           </div>
         </div>
         <CartFooter totalPrice={totalPrice} />

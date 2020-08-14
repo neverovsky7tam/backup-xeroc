@@ -6,7 +6,6 @@ import CartItem from './components/CartItem';
 
 const Cart = ({ isMobile }) => {
   const storeItems = useSelector((state) => state.itemsInCart);
-  console.log('store', storeItems);
 
   let totalPrice = 0;
   storeItems.forEach((el) => {
@@ -22,22 +21,18 @@ const Cart = ({ isMobile }) => {
       totalPrice={totalPrice} />
   });
 
-  if (storeItems.length) {
-    if (isMobile) {
-      return (
-        <CartMB
-          items={items}
-          totalPrice={totalPrice} />
-      )
-    } else {
-      return (
-        <CartDT
-          items={items}
-          totalPrice={totalPrice} />
-      )
-    }
+  if (isMobile) {
+    return (
+      <CartMB
+        items={items}
+        totalPrice={totalPrice} />
+    )
   } else {
-    return null;
+    return (
+      <CartDT
+        items={items}
+        totalPrice={totalPrice} />
+    )
   }
 };
 
