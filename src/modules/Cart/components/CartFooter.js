@@ -8,7 +8,7 @@ import { DeleteIcon } from 'svg/svg';
 const CartFooter = ({ totalPrice }) => {
   const dispatch = useDispatch();
 
-  const CartControls = (
+  const cartControls = (
     <div className="btns-holder">
       <ButtonGrey
         customClass='btn-del'
@@ -23,7 +23,7 @@ const CartFooter = ({ totalPrice }) => {
     </div>
   );
 
-  const EmptyCartBtn = (
+  const emptyCartBtn = (
     <ButtonMain
       text={'Back to shopping'}
       func={() => dispatch(setCartState(false))} />
@@ -32,7 +32,7 @@ const CartFooter = ({ totalPrice }) => {
   return (
     <div className="cart__footer">
       {(totalPrice) ?
-        CartControls : EmptyCartBtn}
+        cartControls : emptyCartBtn}
     </div>
   );
 };
