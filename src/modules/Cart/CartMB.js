@@ -7,6 +7,7 @@ import { setActionData, scrollProcess, onTouchEnd } from 'mod/PageTop/scrollProc
 import MenuItems from 'mod/MainMenu/MenuItems';
 import AccountMenu from 'pages/Account/modules/AccountMenu';
 import CartFooter from './components/CartFooter';
+import CartEmpty from './components/CartEmpty';
 
 const CartMB = ({ items, totalPrice }) => {
   const history = useHistory();
@@ -46,7 +47,10 @@ const CartMB = ({ items, totalPrice }) => {
           <CarouselMenu />
         </div>
         <div className="cart__content">
-          <ul className="item-list">{items}</ul>
+          {(items.length) ?
+            (<ul className="item-list">{items}</ul>) :
+            <CartEmpty />
+          }
         </div>
         <CartFooter totalPrice={totalPrice} />
       </div>

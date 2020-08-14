@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setTotalPrice } from 'store/actions';
+import { delItemInCart } from 'store/actions';
 import Container from 'components/BlocksUI/Container';
 import { SquareBtn } from 'components/BlocksUI/Buttons/Buttons';
 import {
@@ -18,7 +18,7 @@ const CartItem = ({ item, totalPrice }) => {
     item.title = item.title.slice(0, 11) + '...';
   };
 
-  const onBtnClick = (param) => {
+  const setQuantityItem = (param) => {
     let counter = null;
     let updatedPrice = null;
 
@@ -40,6 +40,10 @@ const CartItem = ({ item, totalPrice }) => {
       setQuantity(counter);
     }
   };
+
+  const deleteItem = () => {
+    dispatch(delItemInCart(item));
+  }
 
   useEffect(() => {
     if (quantity === 1) {
@@ -63,7 +67,11 @@ const CartItem = ({ item, totalPrice }) => {
           <Container>
             <img src={item.img} alt={item.title} />
           </Container>
-          <div className="item-button"><SquareBtn icon={DeleteIcon} /></div>
+          <div
+            className="item-button"
+            onClick={deleteItem}>
+            <SquareBtn icon={DeleteIcon} />
+          </div>
         </div>
       </div>
       <div className="right-side">
@@ -79,7 +87,7 @@ const CartItem = ({ item, totalPrice }) => {
         <div className="item__controls">
           <div
             className="toggle-arrow toggle-arrow_left item-button"
-            onClick={() => onBtnClick(false)}>
+            onClick={() => setQuantityItem(false)}>
             <button
               className="square-btn"
               ref={leftArrow}>
@@ -89,7 +97,7 @@ const CartItem = ({ item, totalPrice }) => {
           <div className="counter">{quantity}</div>
           <div
             className="toggle-arrow toggle-arrow_right item-button"
-            onClick={() => onBtnClick(true)}>
+            onClick={() => setQuantityItem(true)}>
             <button
               className="square-btn"
               ref={rightArrow}>
