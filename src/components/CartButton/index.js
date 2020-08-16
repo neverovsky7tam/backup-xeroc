@@ -6,19 +6,7 @@ import { MenuSeparate, CartIcon } from 'svg/svgHeader';
 const CartButton = ({ isLogin }) => {
   const dispatch = useDispatch();
 
-  let productsQuantity = useSelector((state) => state.itemsInCart.length);
-  // console.log('productsQuantity', productsQuantity);
-
-  // if (!initFlag) {
-  //   console.log('init');
-  //   initFlag = true;
-  //   if (localStorage.getItem('xeroc-cart')) {
-  //     const json = localStorage.getItem('xeroc-cart');
-  //     const store = JSON.parse(json);
-  //     productsQuantity = store.length;
-  //     console.log('productsQuantity-store', productsQuantity);
-  //   }
-  // }
+  let productsQuantity = useSelector((state) => state.itemsInCart.items.length);
 
   return (
     <div className="cart-control">

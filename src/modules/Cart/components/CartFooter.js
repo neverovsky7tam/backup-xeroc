@@ -1,12 +1,14 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { clearCart, setCartState } from 'store/actions';
 import { ButtonGrey, ButtonMain } from 'components/BlocksUI/Buttons/Buttons';
 import Container from 'components/BlocksUI/Container';
 import { DeleteIcon } from 'svg/svg';
 
-const CartFooter = ({ totalPrice }) => {
+const CartFooter = () => {
   const dispatch = useDispatch();
+
+  const invoice = useSelector((state) => state.itemsInCart.totalPrice);
 
   const cartControls = (
     <div className="btns-holder">
@@ -16,7 +18,7 @@ const CartFooter = ({ totalPrice }) => {
         func={() => dispatch(clearCart())} />
       <Container>
         <div className="price-display">
-          ${totalPrice}
+          ${invoice}
         </div>
       </Container>
       <ButtonMain text='Buy' />
@@ -31,7 +33,7 @@ const CartFooter = ({ totalPrice }) => {
 
   return (
     <div className="cart__footer">
-      {(totalPrice) ?
+      {(invoice) ?
         cartControls : emptyCartBtn}
     </div>
   );

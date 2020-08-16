@@ -110,10 +110,10 @@ export const clearCart = () => ({
   type: CLEAR_CART,
 });
 
-// export const setTotalPrice = (item) => ({
-//   type: SET_TOTAL_PRICE,
-//   item,
-// });
+export const setTotalPrice = (price) => ({
+  type: SET_TOTAL_PRICE,
+  price,
+});
 
 export const setAccountMenu = (isLogin) => ({
   type: SET_ACCOUNT_MENU,

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { delItemInCart } from 'store/actions';
+import { delItemInCart, setTotalPrice } from 'store/actions';
 import Container from 'components/BlocksUI/Container';
 import { SquareBtn } from 'components/BlocksUI/Buttons/Buttons';
 import {
@@ -8,9 +8,9 @@ import {
   DeleteIcon
 } from 'svg/svg';
 
-const CartItem = ({ item, totalPrice }) => {
+const CartItem = ({ item }) => {
   const dispatch = useDispatch();
-  const [quantity, setQuantity] = useState(item.productsQuantity);
+  const [quantity, setQuantity] = useState(1);
   const rightArrow = React.createRef();
   const leftArrow = React.createRef();
 
@@ -20,24 +20,23 @@ const CartItem = ({ item, totalPrice }) => {
 
   const setQuantityItem = (param) => {
     let counter = null;
-    let updatedPrice = null;
+    let invoice = null;
 
     if (param) {
       if (quantity < 9) {
         counter = quantity + 1;
-        updatedPrice = totalPrice + (+item.hash.price);
+        invoice = item.itemInvoice;
       }
     } else {
       if (quantity > 1) {
         counter = quantity - 1;
-        updatedPrice = totalPrice - (+item.hash.price);
+        invoice = -item.itemInvoice;
       }
     }
 
     if (counter) {
-      item.productsQuantity = counter;
-      item.itemInvoice = counter * (+item.hash.price);
       setQuantity(counter);
+      dispatch(setTotalPrice(invoice));
     }
   };
 

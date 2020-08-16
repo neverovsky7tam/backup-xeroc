@@ -5,8 +5,7 @@ import CartFooter from './components/CartFooter';
 import { Diamond } from 'components/Parts/Parts';
 import { CloseCross } from 'svg/svg';
 
-const CartDT = ({ items, totalPrice }) => {
-  console.log('items', items)
+const CartDT = ({ items }) => {
   const dispatch = useDispatch();
 
   const CUT_HEIGHT = 333;
@@ -23,7 +22,7 @@ const CartDT = ({ items, totalPrice }) => {
           <ul className="item-list">{items}</ul>
         </div>
       </div>
-      <CartFooter totalPrice={totalPrice} />
+      <CartFooter />
     </>
   );
 

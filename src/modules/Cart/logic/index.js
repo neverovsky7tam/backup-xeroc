@@ -7,7 +7,7 @@ export const setPreSelectItem = (item, hashElem, hashOpt) => {
   preSelectItem = Object.assign({}, item);
   preSelectItem.hash = hashElem;
   preSelectItem.hash.option = hashOpt;
-  preSelectItem.productsQuantity = 1;
+  preSelectItem.itemInvoice = +item.hash.value[0].price;
 };
 
 export const addToCart = (item) => {
@@ -17,7 +17,6 @@ export const addToCart = (item) => {
     product = Object.assign({}, item);
     product.hash = item.hash.value[0];
     product.hash.option = item.hash.option;
-    product.productsQuantity = 1;
     product.itemInvoice = +item.hash.value[0].price;
   };
 
@@ -29,12 +28,3 @@ export const addToCart = (item) => {
   }
   store.dispatch(setItemToCart(product));
 };
-
-
-// window.addEventListener('beforeunload', () => {
-//   const { itemsInCart } = store.getState();
-//   if (itemsInCart.length) {
-//     const obj = JSON.stringify(itemsInCart);
-//     localStorage.setItem('xeroc-cart', obj);
-//   }
-// });
