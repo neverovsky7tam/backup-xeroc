@@ -9,7 +9,7 @@ import AccountMenu from 'pages/Account/modules/AccountMenu';
 import CartFooter from './components/CartFooter';
 import CartEmpty from './components/CartEmpty';
 
-const CartMB = ({ items, totalPrice }) => {
+const CartMB = ({ items }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const content = React.createRef();
@@ -52,7 +52,7 @@ const CartMB = ({ items, totalPrice }) => {
             <CartEmpty />
           }
         </div>
-        <CartFooter totalPrice={totalPrice} />
+        <CartFooter />
       </div>
     </div>
   );

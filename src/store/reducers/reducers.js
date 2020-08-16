@@ -129,38 +129,40 @@ export const closeCrossRight = (state = false, action) => {
   }
 }
 
-export const itemsInCart = (state = [], action) => {
+export const itemsInCart = (state = { totalPrice: 0, items: [], }, action) => {
   switch (action.type) {
     case SET_ITEM_TO_CART:
-      const newState = state.slice();
-      if (newState.length < 99) {
-        const sameItem = newState.find((stateItem) => action.item.id === stateItem.id);
-        if (!sameItem) newState.push(action.item);
+      const newState = Object.assign({}, state);
+      if (newState.items.length < 99) {
+        const sameItem = newState.items.find((stateItem) => {
+          if (action.item.id === stateItem.id) {
+            return action.item.hash.id === stateItem.hash.id;
+          }
+        });
+        if (!sameItem) {
+          newState.items.push(action.item);
+          newState.totalPrice += action.item.itemInvoice;
+        }
       };
       return newState;
+    case SET_TOTAL_PRICE:
+      const cloneStatePrice = Object.assign({}, state);
+      cloneStatePrice.totalPrice += action.price;
+      return cloneStatePrice;
     case DEL_ITEM_IN_CART:
-      const tempArr = state.slice();
-      const newState2 = tempArr.filter((stateItem) => action.item.id !== stateItem.id);
-      return newState2;
+      const cloneState = Object.assign({}, state);
+      cloneState.items = cloneState.items.filter((stateItem) => action.item.id !== stateItem.id);
+      cloneState.totalPrice -= action.item.itemInvoice;
+      return cloneState;
     case CLEAR_CART:
-      let clearState = state.slice();
-      clearState = [];
-      console.log('clearState', clearState = []);
+      const clearState = Object.assign({}, state);
+      clearState.items = [];
+      clearState.totalPrice = 0;
       return clearState;
     default:
       return state;
   }
 }
-
-// export const totalPrice = (state = 0, action) => {
-//   switch (action.type) {
-//     case SET_TOTAL_PRICE:
-//       console.log('action.price', action.price);
-//       return state + action.price;
-//     default:
-//       return state;
-//   }
-// }
 
 export const pageTopStyle = (state = null, action) => {
   switch (action.type) {
